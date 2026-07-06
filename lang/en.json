@@ -1,0 +1,194 @@
+{
+  "SACADIA": {
+    "Stat": {
+      "Power": { "long": "Power", "abbr": "PWR" },
+      "Finesse": { "long": "Finesse", "abbr": "FIN" },
+      "Wiles": { "long": "Wiles", "abbr": "WIL" },
+      "Courage": { "long": "Courage", "abbr": "COU" },
+      "Fate": { "long": "Fate", "abbr": "FAT" }
+    },
+    "Defense": {
+      "AD": "All Defense",
+      "PD": "Physical Defense",
+      "TD": "Toughness Defense",
+      "MD": "Mental Defense",
+      "DR": "Damage Reduction",
+      "CheckDC": "Check DC",
+      "SupersededByAd": "Superseded by AD ({value})"
+    },
+    "Profession": {
+      "Bladedancer": "Bladedancer",
+      "Fatebound": "Fatebound",
+      "HulinariWarrior": "Hulinari Warrior",
+      "Oracle": "Oracle",
+      "Sentinel": "Sentinel",
+      "Soldier": "Soldier",
+      "Thug": "Thug"
+    },
+    "TalentCategory": {
+      "Crafting": "Crafting",
+      "Knowledge": "Knowledge",
+      "Action": "Action",
+      "General": "General"
+    },
+    "Talent": {
+      "Title": "Talents",
+      "Proficient": "Proficient",
+      "Alchemy": "Alchemy",
+      "Art": "Art",
+      "Construction": "Construction",
+      "Cooking": "Cooking",
+      "Herbalism": "Herbalism",
+      "Ritual": "Ritual",
+      "Smithing": "Smithing",
+      "Tailor": "Tailor",
+      "Literary": "Literary",
+      "Fables": "Fables",
+      "Society": "Society",
+      "History": "History",
+      "Magic": "Magic",
+      "Religion": "Religion",
+      "Wilderness": "Wilderness",
+      "Other": "Other",
+      "Acrobatics": "Acrobatics",
+      "Athletics": "Athletics",
+      "NimbleHands": "Nimble Hands",
+      "Performance": "Performance",
+      "Stealth": "Stealth",
+      "Survival": "Survival",
+      "Economy": "Economy",
+      "Medicine": "Medicine",
+      "Perception": "Perception",
+      "SocialGraces": "Social Graces",
+      "Strategy": "Strategy",
+      "Tools": "Tools",
+      "Transport": "Transport"
+    },
+    "Condition": {
+      "Title": "Conditions",
+      "Fumbled": "Fumbled",
+      "Rended": "Rended",
+      "Madness": "Madness",
+      "Fatigue": "Fatigue",
+      "Frenzy": "Frenzy",
+      "Delirium": "Delirium",
+      "Panic": "Panic",
+      "Taunt": "Taunt",
+      "Nausea": "Nausea",
+      "Hemorrhage": "Hemorrhage",
+      "Pinned": "Pinned",
+      "Dying": "Dying"
+    },
+    "Adversarial": {
+      "Corroded": "Corroded",
+      "Debilitated": "Debilitated",
+      "Pulled": "Pulled",
+      "Paralysis": "Paralysis",
+      "Jinxed": "Jinxed",
+      "Slowed": "Slowed",
+      "Sting": "Sting"
+    },
+    "AbilityTag": {
+      "Action": "Action",
+      "Focus": "Focus",
+      "Ceremony": "Ceremony",
+      "Passive": "Passive",
+      "Boost": "Boost",
+      "Reaction": "Reaction",
+      "Lore": "Lore"
+    },
+    "Limb": {
+      "OneArm": "One Arm",
+      "TwoArm": "Two Arms",
+      "Body": "Body",
+      "Mind": "Mind",
+      "Focus": "Focus",
+      "Leg": "Leg"
+    },
+    "Exhaustion": {
+      "LeftArm": "Left Arm",
+      "RightArm": "Right Arm",
+      "Body": "Body",
+      "Mind": "Mind",
+      "Focus": "Focus",
+      "Legs": "Legs",
+      "Reaction": "Reaction"
+    },
+    "AttackCategory": {
+      "Melee": "Melee",
+      "Ranged": "Ranged",
+      "Magic": "Magic"
+    },
+    "Tab": {
+      "Stats": "Stats",
+      "Abilities": "Abilities",
+      "Inventory": "Inventory",
+      "Biography": "Biography",
+      "Effects": "Effects",
+      "Description": "Description",
+      "Attributes": "Attributes"
+    },
+    "Header": {
+      "Primary": "Primary Profession",
+      "Secondary": "Secondary Profession",
+      "Level": "Level"
+    },
+    "Npc": {
+      "Cr": "CR",
+      "Role": "Role"
+    },
+    "TraitExpertise": {
+      "Title": "Trait Expertise",
+      "Reroll": "Reroll"
+    },
+    "Roll": {
+      "RollStat": "Roll {label}",
+      "AdvantagePrompt": "Roll {label}",
+      "Advantage": "Advantage",
+      "Normal": "Normal",
+      "Disadvantage": "Disadvantage"
+    },
+    "Placeholder": {
+      "Abilities": "Abilities, action pools, and temp modifiers arrive in Phase 4.",
+      "Inventory": "Gear and armor arrive in Phase 5.",
+      "ItemAttributes": "Type-specific fields arrive in Phase 4."
+    },
+    "Progression": {
+      "Level": "Level",
+      "Proficiency": "Proficiency",
+      "MaxAp": "Max AP",
+      "Csp": "Combat Skill Points",
+      "CspMax": "Max CSP",
+      "CspSpent": "Spent CSP",
+      "CspCurrent": "Available CSP"
+    },
+    "Resource": {
+      "Health": "Health",
+      "HealthPools": "Health Pools",
+      "Ap": "Action Points"
+    },
+    "SheetLabels": {
+      "Actor": "Sacadia Actor Sheet",
+      "Item": "Sacadia Item Sheet"
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}

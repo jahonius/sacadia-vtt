@@ -1,0 +1,155 @@
+// ApplicationV2 sheet layout for Tales of Sacadia (actor + item sheets).
+// Scoped under `.sacadia` (applied to the AppV2 root via DEFAULT_OPTIONS.classes).
+
+// --- Tab visibility (critical: without this, every tab renders at once) ---
+.tab {
+  &:not(.active) { display: none; }
+  &.active { display: block; }
+}
+
+// --- Tab navigation ---
+.sheet-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+  margin: 0.25rem 0 0.5rem;
+  border-bottom: 2px solid var(--color-border-dark, #7a7971);
+
+  .item {
+    padding: 0.35rem 0.6rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+
+    &.active { border-bottom-color: #911d20; font-weight: bold; }
+    i { margin-right: 0.25rem; }
+  }
+}
+
+// --- Header ---
+.sheet-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+
+  .profile-img {
+    flex: 0 0 auto;
+    border: 1px solid var(--color-border-dark, #7a7971);
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  .header-fields { flex: 1; min-width: 0; }
+
+  .charname {
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .profession-row,
+  .header-stats,
+  .defenses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-end;
+    margin-top: 0.35rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+
+    > span { opacity: 0.75; }
+    select, input { min-width: 4rem; }
+    &.level-field input { width: 3.5rem; }
+  }
+
+  .header-stats .resource .pair { display: flex; align-items: center; gap: 0.2rem; input { width: 3rem; } }
+  .header-stats .derived,
+  .defenses .defense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border-radius: 4px;
+    min-width: 3rem;
+
+    label { font-size: 0.65rem; text-transform: uppercase; opacity: 0.75; }
+    span { font-size: 1.05rem; font-weight: bold; }
+  }
+
+  .defenses .defense.superseded span { color: #911d20; }
+}
+
+// --- Stats tab ---
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  gap: 0.5rem;
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.35rem;
+    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border-radius: 4px;
+
+    .stat-name { font-weight: bold; }
+    a.stat-name { cursor: pointer; &:hover { text-shadow: 0 0 6px #911d20; } }
+    input { width: 3rem; text-align: center; }
+  }
+}
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.35rem;
+
+  .condition {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border-radius: 4px;
+
+    .condition-track { display: flex; align-items: center; gap: 0.35rem; a { cursor: pointer; } }
+    .condition-value { min-width: 1rem; text-align: center; font-weight: bold; }
+  }
+}
+
+.talents {
+  .talent-group { margin-bottom: 0.5rem; }
+  .talent-list { list-style: none; margin: 0; padding: 0; }
+  .talent {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.1rem 0;
+
+    .talent-name { flex: 1; cursor: pointer; &:hover { text-shadow: 0 0 6px #911d20; } }
+    .talent-stat { font-size: 0.7rem; opacity: 0.7; text-transform: uppercase; }
+  }
+}
+
+.placeholder { opacity: 0.6; font-style: italic; padding: 1rem; }
+
+// --- Effects list ---
+.effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .items-header,
+  .item { display: flex; align-items: center; gap: 0.5rem; padding: 0.15rem 0.25rem; }
+  .items-header { border-bottom: 1px solid var(--color-border-dark, #7a7971); font-weight: bold; }
+  .item-name { flex: 1; display: flex; align-items: center; gap: 0.35rem; }
+  .item-controls { display: flex; gap: 0.35rem; a { cursor: pointer; } }
+}

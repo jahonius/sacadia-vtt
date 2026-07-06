@@ -1,0 +1,74 @@
+<header class="sheet-header">
+  <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-field="img"
+       title="{{actor.name}}" height="100" width="100"/>
+
+  <div class="header-fields">
+    <div class="name-row">
+      <input class="charname" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Name'}}"/>
+    </div>
+
+    {{#if isCharacter}}
+    <div class="profession-row">
+      <label class="field">
+        <span>{{localize 'SACADIA.Header.Primary'}}</span>
+        <select name="system.professions.primary.key">
+          {{selectOptions config.professions selected=system.professions.primary.key localize=true blank=""}}
+        </select>
+        <input type="number" name="system.professions.primary.level" value="{{system.professions.primary.level}}"
+               min="0" title="{{localize 'SACADIA.Header.Level'}}"/>
+      </label>
+      <label class="field">
+        <span>{{localize 'SACADIA.Header.Secondary'}}</span>
+        <select name="system.professions.secondary.key">
+          {{selectOptions config.professions selected=system.professions.secondary.key localize=true blank=""}}
+        </select>
+        <input type="number" name="system.professions.secondary.level" value="{{system.professions.secondary.level}}"
+               min="0" title="{{localize 'SACADIA.Header.Level'}}"/>
+      </label>
+      <label class="field level-field">
+        <span>{{localize 'SACADIA.Header.Level'}}</span>
+        <input type="number" name="system.level" value="{{system.level}}" min="1"/>
+      </label>
+    </div>
+    {{else}}
+    <div class="profession-row">
+      <label class="field">
+        <span>{{localize 'SACADIA.Npc.Role'}}</span>
+        <input type="text" name="system.role" value="{{system.role}}" placeholder="—"/>
+      </label>
+      <label class="field level-field">
+        <span>{{localize 'SACADIA.Npc.Cr'}}</span>
+        <input type="number" name="system.cr" value="{{system.cr}}" min="0"/>
+      </label>
+    </div>
+    {{/if}}
+
+    {{!-- Vital + derived stat readouts --}}
+    <div class="header-stats">
+      <div class="resource">
+        <label>{{localize 'SACADIA.Resource.Health'}}</label>
+        <div class="pair">
+          <input type="number" name="system.health.value" value="{{system.health.value}}"/>
+          <span>/</span>
+          <input type="number" name="system.health.max" value="{{system.health.max}}"/>
+        </div>
+      </div>
+
+      {{#if isCharacter}}
+      <div class="derived"><label>{{localize 'SACADIA.Progression.Proficiency'}}</label><span>{{system.proficiency}}</span></div>
+      <div class="derived"><label>{{localize 'SACADIA.Progression.MaxAp'}}</label><span>{{system.ap.value}}/{{system.ap.max}}</span></div>
+      <div class="derived"><label>{{localize 'SACADIA.Defense.CheckDC'}}</label><span>{{system.checkDc.primary}}</span></div>
+      {{/if}}
+    </div>
+
+    {{!-- Defenses --}}
+    <div class="defenses">
+      {{#each system.defenses as |def key|}}
+      <div class="defense {{#if def.supersededByAd}}superseded{{/if}}" title="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}">
+        <label>{{def.label}}</label>
+        <span>{{def.value}}</span>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</header>

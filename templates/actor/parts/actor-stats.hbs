@@ -1,0 +1,76 @@
+<section class="tab {{tabs.stats.cssClass}}" data-group="primary" data-tab="stats">
+
+  {{!-- Core stats + rolls --}}
+  <div class="stats-block">
+    <h3>{{localize 'SACADIA.Tab.Stats'}}</h3>
+    <div class="stats-grid">
+      {{#each system.stats as |stat key|}}
+      <div class="stat">
+        {{#if @root.isCharacter}}
+        <a class="stat-name rollable" data-action="roll" data-roll-type="stat" data-key="{{key}}"
+           title="{{localize 'SACADIA.Roll.RollStat'}}">{{stat.label}}</a>
+        {{else}}
+        <span class="stat-name">{{stat.label}}</span>
+        {{/if}}
+        <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}"/>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  {{#if isCharacter}}
+  {{!-- Trait Expertise --}}
+  <div class="trait-expertise">
+    <h3>{{localize 'SACADIA.TraitExpertise.Title'}}</h3>
+    <label class="toggle">
+      <input type="checkbox" name="system.traitExpertise.slot1" {{checked system.traitExpertise.slot1}}/>
+      <span>{{localize 'SACADIA.TraitExpertise.Reroll'}} 1</span>
+    </label>
+    <label class="toggle">
+      <input type="checkbox" name="system.traitExpertise.slot2" {{checked system.traitExpertise.slot2}}/>
+      <span>{{localize 'SACADIA.TraitExpertise.Reroll'}} 2</span>
+    </label>
+  </div>
+
+  {{!-- Condition dice trackers --}}
+  <div class="conditions">
+    <h3>{{localize 'SACADIA.Condition.Title'}}</h3>
+    <div class="condition-grid">
+      {{#each config.conditions as |label key|}}
+      <div class="condition">
+        <span class="condition-name">{{localize label}}</span>
+        <div class="condition-track">
+          <a data-action="conditionStep" data-key="{{key}}" data-dir="down" title="−"><i class="fa-solid fa-minus"></i></a>
+          <span class="condition-value">{{lookup (lookup @root.system.conditions key) 'value'}}</span>
+          <a data-action="conditionStep" data-key="{{key}}" data-dir="up" title="+"><i class="fa-solid fa-plus"></i></a>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  {{!-- Talents (29, grouped by category) --}}
+  <div class="talents">
+    <h3>{{localize 'SACADIA.Talent.Title'}}</h3>
+    {{#each talentGroups as |group cat|}}
+    <div class="talent-group">
+      <h4>{{localize group.label}}</h4>
+      <ul class="talent-list">
+        {{#each group.talents as |talent|}}
+        <li class="talent">
+          <label class="prof-toggle" title="{{localize 'SACADIA.Talent.Proficient'}}">
+            <input type="checkbox" name="system.talents.{{talent.key}}.proficient" {{checked talent.proficient}}/>
+          </label>
+          <a class="talent-name rollable" data-action="roll" data-roll-type="talent" data-key="{{talent.key}}">
+            {{localize talent.label}}
+          </a>
+          <span class="talent-stat">{{localize (lookup @root.config.statAbbreviations talent.stat)}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+</section>
