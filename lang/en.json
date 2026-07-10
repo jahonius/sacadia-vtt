@@ -66,27 +66,63 @@
     },
     "Condition": {
       "Title": "Conditions",
-      "Fumbled": "Fumbled",
-      "Rended": "Rended",
-      "Madness": "Madness",
-      "Fatigue": "Fatigue",
-      "Frenzy": "Frenzy",
-      "Delirium": "Delirium",
-      "Panic": "Panic",
-      "Taunt": "Taunt",
+      "Automated": "Effect applied automatically",
+      "TurnDamage": "Condition damage",
       "Nausea": "Nausea",
-      "Hemorrhage": "Hemorrhage",
       "Pinned": "Pinned",
-      "Dying": "Dying"
-    },
-    "Adversarial": {
+      "Paralysis": "Paralysis",
       "Corroded": "Corroded",
       "Debilitated": "Debilitated",
       "Pulled": "Pulled",
-      "Paralysis": "Paralysis",
+      "Hemorrhage": "Hemorrhage",
+      "Delirium": "Delirium",
       "Jinxed": "Jinxed",
       "Slowed": "Slowed",
-      "Sting": "Sting"
+      "Silenced": "Silenced",
+      "Sting": "Sting",
+      "Fatigue": "Fatigue",
+      "Frenzy": "Frenzy",
+      "Panic": "Panic",
+      "Taunt": "Taunt",
+      "Fumbled": "Fumbled",
+      "Rended": "Rended",
+      "Madness": "Madness"
+    },
+    "ConditionGroup": {
+      "LesserPhysical": "Physical (Lesser)",
+      "GreaterPhysical": "Physical (Greater)",
+      "LesserMental": "Mental (Lesser)",
+      "GreaterMental": "Mental (Greater)",
+      "Special": "Special"
+    },
+    "ConditionRule": {
+      "Nausea": "−1 to your To-Hit rolls per level. [auto]",
+      "Pinned": "Cannot use leg actions or willingly-moving actions; each level past the first costs one limb from your limb economy.",
+      "Paralysis": "Gain Enduring Exhaustion on a random limb (1d6) per level.",
+      "Corroded": "Take 1 Rend at the start of your turn per level; when you can't be Rended further, remaining levels become Hemorrhage.",
+      "Debilitated": "1× Disadvantage to all To-Hit rolls per level. [auto]",
+      "Pulled": "Enduring Prone + Dragged; moved 5ft toward the source at the start of your turn per level; at most one action while Pulled.",
+      "Hemorrhage": "Take 1d10 damage at the start of your turn per level. [auto]",
+      "Delirium": "−1 to AD/PD/TD/MD per level (DR unaffected). [auto]",
+      "Jinxed": "Gain 1 Fumble at the start of your turn per level (applies to your first roll; persists to your next turn).",
+      "Slowed": "No 5ft Adjust; −5ft move speed per level; −1 reaction (−2 at 4+); leg actions exhausted at 4+.",
+      "Silenced": "Cannot speak or cast spells. Enduring — does not reduce at end of turn; clear it with a Make-Trait-Check action.",
+      "Sting": "+1 to all damage you take per level (applied after DR). [auto — full apply with damage pipeline]",
+      "Fatigue": "−1 AP per level; no reactions. [auto: AP]",
+      "Frenzy": "1× Disadvantage to every Trait Check per level. [auto]",
+      "Panic": "Cannot move toward the Source; 1× Disadvantage on Trait Checks vs the Source per level; at 4+ must spend AP fleeing.",
+      "Taunt": "1× Disadvantage on To-Hit vs anyone but the Source per level; counts the Source as adjacent; can't move away at 4+.",
+      "Fumbled": "Reduce your very next d20 by your Fumble count, then clear it; removed at end of turn.",
+      "Rended": "Randomly remove 1 AD/PD/TD/MD from a piece of your armor per level; a fully-rended piece breaks.",
+      "Madness": "Oracle affliction; at Madness 6 you become Insane."
+    },
+    "Simple": {
+      "Prone": "Prone",
+      "Blinded": "Blinded",
+      "Dragged": "Dragged",
+      "Surprised": "Surprised",
+      "Unconscious": "Unconscious",
+      "Insane": "Insane"
     },
     "AbilityTag": {
       "Action": "Action",
@@ -135,7 +171,8 @@
     },
     "Npc": {
       "Cr": "CR",
-      "Role": "Role"
+      "Role": "Role",
+      "CreatureType": "Type"
     },
     "TraitExpertise": {
       "Title": "Trait Expertise",
@@ -144,14 +181,258 @@
     "Roll": {
       "RollStat": "Roll {label}",
       "AdvantagePrompt": "Roll {label}",
-      "Advantage": "Advantage",
-      "Normal": "Normal",
-      "Disadvantage": "Disadvantage"
+      "Advantage": "Advantage (+1)",
+      "Normal": "Normal (0)",
+      "Disadvantage": "Disadvantage (−1)",
+      "AdvantageLevel": "Custom level",
+      "AdvantageHint": "The buttons below roll the common cases in one click. For 2+ levels, type the total here — positive for Advantage, negative for Disadvantage — and click Roll. Conditions and effects stack on top automatically.",
+      "AdvantageUse": "Roll Custom",
+      "Step": "step",
+      "AdvShort": "Adv",
+      "DisadvShort": "Disadv",
+      "Modifiers": "Modifiers"
     },
     "Placeholder": {
-      "Abilities": "Abilities, action pools, and temp modifiers arrive in Phase 4.",
       "Inventory": "Gear and armor arrive in Phase 5.",
-      "ItemAttributes": "Type-specific fields arrive in Phase 4."
+      "ItemAttributes": "No editable fields for this item type yet."
+    },
+    "Range": {
+      "Self": "Self",
+      "Touch": "Touch",
+      "Melee": "Melee",
+      "Ranged": "Ranged",
+      "Area": "Area",
+      "Feet": "ft",
+      "OutOfRange": "{name}: target is {dist} ft away, beyond its {range} ft range.",
+      "OutOfRangeShort": "Out of Range"
+    },
+    "Modifier": {
+      "Legend": "Conditional Modifiers",
+      "Add": "Add modifier",
+      "Delete": "Remove modifier",
+      "Label": "Label (shown on the card)",
+      "Target": "Moves",
+      "Mode": "Mode",
+      "Value": "Value",
+      "Scope": "Scope",
+      "Predicate": "Only when",
+      "AddAtom": "Add condition",
+      "AtomHint": "e.g. self:combat:consecutive-hits>=2"
+    },
+    "Ability": {
+      "Tag": "Type",
+      "Costs": "Costs",
+      "Limbs": "Limb Cost",
+      "ApCost": "AP Cost",
+      "CspCost": "CSP Cost",
+      "Madness": "Madness",
+      "Meta": "Catalog Info",
+      "Profession": "Profession",
+      "Subpath": "Sub-path",
+      "Prerequisite": "Prerequisite",
+      "Category": "Attack Category",
+      "Trait": "Attack Trait (override)",
+      "Defense": "Target Defense",
+      "Weapon": "Weapon",
+      "WeaponHint": "Which owned weapon this attack uses (base dice + type gating). Auto = first equipped.",
+      "Activities": "Activities",
+      "AddActivity": "Add activity",
+      "DeleteActivity": "Remove activity",
+      "AddDamage": "Add damage part",
+      "Inflict": "Inflicts",
+      "AddInflict": "Add inflicted condition",
+      "InflictAmount": "amount (e.g. 1 or @proficiency)",
+      "Pool": "Pool Cost",
+      "PoolAmount": "amount",
+      "Range": "Range",
+      "NoActivities": "No activities — add one to make this ability do something when used.",
+      "Use": "Use",
+      "Empty": "No abilities yet — drag from a compendium or use +."
+    },
+    "AbilityGroup": {
+      "Active": "Active",
+      "Passive": "Passive",
+      "ReactionsBoosts": "Reactions & Boosts",
+      "Lore": "Lore"
+    },
+    "Economy": {
+      "Ap": "AP",
+      "ApHint": "Action Points remaining this turn. Using an ability or basic action spends AP; reusing an exhausted limb costs +1.",
+      "ResetTurn": "Reset turn (AP to max, limbs cleared)",
+      "ActionsUsed": "Actions this turn",
+      "Undo": "Undo (refund AP, un-exhaust limb)",
+      "NoActions": "Nothing used yet this turn.",
+      "OverspendTitle": "Not enough AP",
+      "OverspendWarn": "{label} costs {cost} AP but you have {current}. Use it anyway?"
+    },
+    "Combat": {
+      "ThisTurn": "This Turn",
+      "Moved": "Moved",
+      "ConsecutiveHits": "Consecutive hits",
+      "Attacks": "Attacks",
+      "Exhaustion": "Exhaustion",
+      "Focus": "Focus & Marks",
+      "Grants": "Active Grants",
+      "Maintained": "maintained",
+      "ConsumedOn": "consumed on {trigger}"
+    },
+    "BasicAction": {
+      "Move": "Move",
+      "Attack": "Attack",
+      "Steady": "Steady",
+      "Other": "Other"
+    },
+    "Activity": {
+      "Attack": "Attack",
+      "Save": "Save",
+      "Damage": "Damage",
+      "Utility": "Utility",
+      "Label": "Label (optional)",
+      "SaveTrait": "Save Trait (target rolls)",
+      "SaveDc": "Save DC",
+      "SaveDcAuto": "auto (your Check DC)"
+    },
+    "Damage": {
+      "Count": "Dice count (e.g. 1 or @madness)",
+      "Denomination": "Die",
+      "Type": "Type",
+      "FormulaOverride": "Formula override"
+    },
+    "Card": {
+      "ToHit": "To Hit",
+      "Vs": "vs",
+      "Damage": "Damage",
+      "RollSave": "Roll Save",
+      "SaveSuccess": "Success",
+      "SaveFailure": "Failure",
+      "NoSaveActor": "Select a token (or set an assigned character) to roll a save.",
+      "Hit": "Hit!",
+      "Miss": "Miss",
+      "ApplyDr": "DR",
+      "ApplyNoDr": "No DR",
+      "Undo": "Undo",
+      "MarkDead": "☠ Dead"
+    },
+    "Settings": {
+      "CombatMode": {
+        "Name": "Combat resolution",
+        "Hint": "Who resolves and applies attacks. Information hiding (players never see NPC defenses/DR/Health) is always on regardless.",
+        "Default": "Auto PC offense, GM-in-the-loop for NPCs",
+        "FullAuto": "Fully automatic (both directions)",
+        "Manual": "Resolve hit/miss only — GM applies damage"
+      }
+    },
+    "Csp": {
+      "Insufficient": "Not enough CSP for {name}: costs {cost}, {current} available."
+    },
+    "Pool": {
+      "Arrangement": "Arrangement",
+      "Glory": "Glory",
+      "Prescient": "Prescient",
+      "Trickshot": "Trickshot",
+      "Savage": "Savage",
+      "Herd": "Herd",
+      "Call": "Call",
+      "Trick": "Trick",
+      "Insufficient": "{label} costs {amount} {pool} but you have {current}. Use it anyway?",
+      "HowMany": "Spend how many {pool} points?",
+      "HowManyMax": "Spend how many {pool} points? (max {max})",
+      "Available": "Available: {current}",
+      "Spend": "Spend"
+    },
+    "Spend": {
+      "HowMany": "Reduce {resource} by how much?",
+      "HowManyMax": "Reduce {resource} by how much? (max {max})",
+      "Available": "Current {resource}: {current}",
+      "Confirm": "Spend"
+    },
+    "Creature": {
+      "Beast": "Beast",
+      "GreatBeast": "Great Beast",
+      "AwokenFlora": "Awoken Flora",
+      "FolkFae": "Folk Fae",
+      "WildFae": "Wild Fae",
+      "Fontmade": "Fontmade",
+      "Undead": "Undead",
+      "Demon": "Demon",
+      "Humanoid": "Humanoid"
+    },
+    "FavoredEnemies": "Favored Enemies",
+    "Madness": {
+      "PrereqTitle": "Madness Requirement",
+      "PrereqIntro": "{name} doesn't meet its Madness requirements:",
+      "NeedInsane": "Requires being Insane.",
+      "NeedMadness": "Requires Madness {n} or higher (you have {current}).",
+      "LockedWhileInsane": "While Insane you may only use abilities marked P:I."
+    },
+    "Insane": {
+      "Title": "Insane Table",
+      "Badge": "Insane",
+      "Boost": "Boost on your first action this turn.",
+      "HpLoss": "Lose {hp} HP",
+      "NoLoss": "No HP lost",
+      "HeatherRoot": "Heather Root −{resist}",
+      "WrithingBlock": "Writhing Block negates the loss",
+      "ApGained": "Gain 1 AP this turn",
+      "Effect1": "Treat all allies as enemies until the start of your next turn.",
+      "Effect2": "Use your first action this turn to attack the nearest creature. If unable, lose 1 AP.",
+      "Effect3": "Spend your first action this turn screaming. You may use a Mind action while you do this.",
+      "Effect4": "1× disadvantage on your first attack this turn. If it imposes a Trait Check, the target rolls at 1× advantage.",
+      "Effect5": "Choose a random limb (Arm/Leg/Body/Mind). You may not use that limb this turn.",
+      "Effect6": "Increase your Move Speed by 10 ft this turn.",
+      "Effect7": "1× advantage on your first attack this turn. If it imposes a Trait Check, the target rolls at 1× disadvantage.",
+      "Effect8": "Gain 1 AP to spend this turn."
+    },
+    "Grant": {
+      "Anchor": "Focus: {label}"
+    },
+    "Gear": {
+      "Quantity": "Quantity",
+      "Weight": "Weight",
+      "Value": "Value",
+      "Traits": "Weapon Traits",
+      "TraitsHint": "e.g. sword, one-handed, melee"
+    },
+    "Armor": {
+      "Defenses": "Defense Bonuses",
+      "MaxStat": "Max Stat",
+      "MaxStatNone": "no cap",
+      "Category": "Weight Class",
+      "Light": "Light",
+      "Medium": "Medium",
+      "Heavy": "Heavy"
+    },
+    "Weapon": {
+      "Legend": "Weapon",
+      "ShieldLegend": "Shield / Bash",
+      "Type": "Weapon Type",
+      "BaseDamage": "Base Damage",
+      "BashDamage": "Bash Damage",
+      "TargetDefense": "Target Defense",
+      "Hands": "Hands",
+      "AttackName": "{weapon} Attack",
+      "BashName": "{weapon} Bash",
+      "Auto": "Auto (first equipped weapon)",
+      "DrawTitle": "Draw Weapon",
+      "DrawPrompt": "{weapon} isn't equipped. Draw it? (costs 1 AP)",
+      "DrawAction": "Draw {weapon}",
+      "Unarmed": "Unarmed",
+      "Dagger": "Dagger",
+      "Sword": "Sword",
+      "Axe": "Axe",
+      "Spear": "Spear",
+      "Bludgeon": "Bludgeon",
+      "Bow": "Bow",
+      "Crossbow": "Crossbow",
+      "Sling": "Sling",
+      "Shield": "Shield",
+      "Other": "Other"
+    },
+    "Inventory": {
+      "Armor": "Armor",
+      "Gear": "Gear",
+      "Equip": "Equip / Unequip",
+      "Empty": "Nothing here yet."
     },
     "Progression": {
       "Level": "Level",
@@ -162,10 +443,23 @@
       "CspSpent": "Spent CSP",
       "CspCurrent": "Available CSP"
     },
+    "Rest": {
+      "Short": "Short Rest",
+      "Long": "Long Rest",
+      "ShortHint": "Quick Rest: recover ability pools, clear most conditions, Rend −1, and spend HP pools to heal.",
+      "LongHint": "Long Rest: full HP, refill HP pools & Lore, recover ability pools, clear conditions & Rend.",
+      "ShortDone": "took a Short Rest.",
+      "LongDone": "took a Long Rest.",
+      "HealTitle": "Spend HP Pools",
+      "HealPrompt": "Each pool heals {per} HP. You have {available} pools. How many to spend?",
+      "HealDo": "Heal",
+      "HealSkip": "Skip"
+    },
     "Resource": {
       "Health": "Health",
       "HealthPools": "Health Pools",
-      "Ap": "Action Points"
+      "Ap": "Action Points",
+      "LorePoints": "Lore"
     },
     "SheetLabels": {
       "Actor": "Sacadia Actor Sheet",
@@ -186,9 +480,9 @@
       "npc": "NPC"
     },
     "Item": {
-      "item": "Item",
-      "feature": "Feature",
-      "spell": "Spell"
+      "ability": "Ability",
+      "armor": "Armor",
+      "gear": "Gear"
     }
   }
 }

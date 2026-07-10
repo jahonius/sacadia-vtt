@@ -33,9 +33,44 @@
       "path": "lang/en.json"
     }
   ],
-  "packs": [],
-  "packFolders": [],
-  "socket": false,
+  "packs": [
+    { "name": "abilities-oracle", "label": "Oracle Abilities", "path": "packs/abilities-oracle", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-general", "label": "General Abilities", "path": "packs/abilities-general", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-soldier", "label": "Soldier Abilities", "path": "packs/abilities-soldier", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-sentinel", "label": "Sentinel Abilities", "path": "packs/abilities-sentinel", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-bladedancer", "label": "Bladedancer Abilities", "path": "packs/abilities-bladedancer", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-thug", "label": "Thug Abilities", "path": "packs/abilities-thug", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-fatebound", "label": "Fatebound Abilities", "path": "packs/abilities-fatebound", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-hulinari", "label": "Hulinari Warrior Abilities", "path": "packs/abilities-hulinari", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "abilities-masteries", "label": "Profession Masteries", "path": "packs/abilities-masteries", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipment-adornments", "label": "Armor Adornments", "path": "packs/equipment-adornments", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipment-trinkets", "label": "Trinkets", "path": "packs/equipment-trinkets", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipment-weapons", "label": "Weapons", "path": "packs/equipment-weapons", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipment-armor", "label": "Armor", "path": "packs/equipment-armor", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } },
+    { "name": "equipment-shields", "label": "Shields", "path": "packs/equipment-shields", "type": "Item", "system": "sacadia", "ownership": { "PLAYER": "OBSERVER", "ASSISTANT": "OWNER" } }
+  ],
+  "packFolders": [
+    { "name": "Abilities", "sorting": "m", "packs": [
+      "abilities-general", "abilities-oracle", "abilities-soldier",
+      "abilities-sentinel", "abilities-bladedancer", "abilities-thug",
+      "abilities-fatebound", "abilities-hulinari", "abilities-masteries"
+    ] },
+    { "name": "Equipment", "sorting": "m", "packs": [
+      "equipment-weapons", "equipment-armor", "equipment-shields", "equipment-adornments", "equipment-trinkets"
+    ] }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {}
+    },
+    "Item": {
+      "ability": {},
+      "armor": {},
+      "gear": {}
+    }
+  },
+  "socket": true,
   "manifest": "https://github.com/jahonius/sacadia-vtt/releases/latest/download/system.json",
   "download": "https://github.com/jahonius/sacadia-vtt/releases/download/v0.1.0/system.zip",
   "background": "systems/sacadia/assets/anvil-impact.png",

@@ -31,24 +31,32 @@
       <span>{{localize 'SACADIA.TraitExpertise.Reroll'}} 2</span>
     </label>
   </div>
+  {{/if}}
 
-  {{!-- Condition dice trackers --}}
+  {{!-- Leveled condition trackers (0–6), grouped. Shown for both types — the automation applies
+       to NPCs too, so the GM sets a monster's conditions here. --}}
   <div class="conditions">
     <h3>{{localize 'SACADIA.Condition.Title'}}</h3>
-    <div class="condition-grid">
-      {{#each config.conditions as |label key|}}
-      <div class="condition">
-        <span class="condition-name">{{localize label}}</span>
-        <div class="condition-track">
-          <a data-action="conditionStep" data-key="{{key}}" data-dir="down" title="−"><i class="fa-solid fa-minus"></i></a>
-          <span class="condition-value">{{lookup (lookup @root.system.conditions key) 'value'}}</span>
-          <a data-action="conditionStep" data-key="{{key}}" data-dir="up" title="+"><i class="fa-solid fa-plus"></i></a>
+    {{#each conditionGroups as |group gkey|}}
+    <div class="condition-group">
+      <h4>{{localize group.label}}</h4>
+      <div class="condition-grid">
+        {{#each group.conditions as |cond|}}
+        <div class="condition {{#if cond.value}}active{{/if}}" title="{{localize cond.rules}}">
+          <span class="condition-name">{{localize cond.label}}{{#if cond.auto}} <i class="fa-solid fa-gear auto-flag" title="{{localize 'SACADIA.Condition.Automated'}}"></i>{{/if}}</span>
+          <div class="condition-track">
+            <a data-action="conditionStep" data-key="{{cond.key}}" data-dir="down"><i class="fa-solid fa-minus"></i></a>
+            <span class="condition-value">{{cond.value}}</span>
+            <a data-action="conditionStep" data-key="{{cond.key}}" data-dir="up"><i class="fa-solid fa-plus"></i></a>
+          </div>
         </div>
+        {{/each}}
       </div>
-      {{/each}}
     </div>
+    {{/each}}
   </div>
 
+  {{#if isCharacter}}
   {{!-- Talents (29, grouped by category) --}}
   <div class="talents">
     <h3>{{localize 'SACADIA.Talent.Title'}}</h3>

@@ -1,3 +1,302 @@
 <section class="tab {{tabs.attributes.cssClass}}" data-group="primary" data-tab="attributes">
+
+  {{#if isAbility}}
+  <div class="ability-fields">
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Ability.Tag'}}</label>
+      <select name="system.tag">{{selectOptions config.abilityTags selected=system.tag localize=true}}</select>
+    </div>
+
+    <fieldset class="costs">
+      <legend>{{localize 'SACADIA.Ability.Costs'}}</legend>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.ApCost'}}</label>
+        <input type="number" name="system.costs.ap" value="{{system.costs.ap}}" min="0"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.CspCost'}}</label>
+        <input type="number" name="system.costs.csp" value="{{system.costs.csp}}" min="0"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Madness'}}</label>
+        <input type="number" name="system.costs.madness" value="{{system.costs.madness}}" min="0"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Pool'}}</label>
+        <select name="system.costs.pool.key">{{selectOptions config.pools selected=system.costs.pool.key localize=true blank=""}}</select>
+        <input type="number" name="system.costs.pool.amount" value="{{system.costs.pool.amount}}" min="0" title="{{localize 'SACADIA.Ability.PoolAmount'}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Limbs'}}</label>
+        <multi-checkbox name="system.costs.limbs">
+          {{selectOptions config.limbs selected=system.costs.limbs localize=true}}
+        </multi-checkbox>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Range'}}</label>
+        <select name="system.range.type">{{selectOptions config.rangeTypes selected=system.range.type localize=true blank=""}}</select>
+        <input type="number" name="system.range.value" value="{{system.range.value}}" min="0" placeholder="{{localize 'SACADIA.Range.Feet'}}"/>
+      </div>
+    </fieldset>
+
+    <fieldset class="meta">
+      <legend>{{localize 'SACADIA.Ability.Meta'}}</legend>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Profession'}}</label>
+        <select name="system.meta.profession">{{selectOptions config.professions selected=system.meta.profession localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Subpath'}}</label>
+        <input type="text" name="system.meta.subpath" value="{{system.meta.subpath}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Prerequisite'}}</label>
+        <input type="text" name="system.meta.prerequisite" value="{{system.meta.prerequisite}}"/>
+      </div>
+    </fieldset>
+
+    <fieldset class="activities">
+      <legend>
+        {{localize 'SACADIA.Ability.Activities'}}
+        <a class="add" data-action="addActivity" title="{{localize 'SACADIA.Ability.AddActivity'}}"><i class="fa-solid fa-plus"></i></a>
+      </legend>
+
+      {{#if hasAttack}}{{#if weaponChoices}}
+      <div class="form-row weapon-binding">
+        <label>{{localize 'SACADIA.Ability.Weapon'}}</label>
+        <select name="flags.sacadia.weapon" title="{{localize 'SACADIA.Ability.WeaponHint'}}">{{selectOptions weaponChoices selected=boundWeapon}}</select>
+      </div>
+      {{/if}}{{/if}}
+
+      {{#each activities as |act|}}
+      <div class="activity">
+        <div class="activity-head">
+          <select name="system.activities.{{act.idx}}.type">{{selectOptions @root.config.activityTypes selected=act.type localize=true}}</select>
+          <input type="text" name="system.activities.{{act.idx}}.label" value="{{act.label}}" placeholder="{{localize 'SACADIA.Activity.Label'}}"/>
+          <a data-action="deleteActivity" data-activity="{{act.idx}}" title="{{localize 'SACADIA.Ability.DeleteActivity'}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+
+        {{#if act.isAttack}}
+        <div class="form-row">
+          <label>{{localize 'SACADIA.Ability.Category'}}</label>
+          <select name="system.activities.{{act.idx}}.attack.category">{{selectOptions @root.config.attackCategories selected=act.attack.category labelAttr="label" localize=true blank=""}}</select>
+        </div>
+        <div class="form-row">
+          <label>{{localize 'SACADIA.Ability.Trait'}}</label>
+          <select name="system.activities.{{act.idx}}.attack.trait">{{selectOptions @root.config.stats selected=act.attack.trait localize=true blank=""}}</select>
+        </div>
+        <div class="form-row">
+          <label>{{localize 'SACADIA.Ability.Defense'}}</label>
+          <select name="system.activities.{{act.idx}}.attack.defense">{{selectOptions @root.config.defenseLabels selected=act.attack.defense localize=true blank=""}}</select>
+        </div>
+        {{/if}}
+
+        {{#if act.isSave}}
+        <div class="form-row">
+          <label>{{localize 'SACADIA.Activity.SaveTrait'}}</label>
+          <select name="system.activities.{{act.idx}}.save.trait">{{selectOptions @root.config.stats selected=act.save.trait localize=true blank=""}}</select>
+        </div>
+        <div class="form-row">
+          <label>{{localize 'SACADIA.Activity.SaveDc'}}</label>
+          <input type="number" name="system.activities.{{act.idx}}.save.dc" value="{{act.save.dc}}" placeholder="{{localize 'SACADIA.Activity.SaveDcAuto'}}" min="0"/>
+        </div>
+        {{/if}}
+
+        {{#if act.showDamage}}
+        <div class="damage-parts">
+          <div class="damage-head">
+            <span>{{localize 'SACADIA.Card.Damage'}}</span>
+            <a data-action="addDamagePart" data-activity="{{act.idx}}" title="{{localize 'SACADIA.Ability.AddDamage'}}"><i class="fa-solid fa-plus"></i></a>
+          </div>
+          {{#each act.damage as |part|}}
+          <div class="damage-part">
+            <input class="count" type="text" name="system.activities.{{act.idx}}.damage.{{part.pIdx}}.count" value="{{part.count}}" title="{{localize 'SACADIA.Damage.Count'}}"/>
+            <select class="denom" name="system.activities.{{act.idx}}.damage.{{part.pIdx}}.denomination" title="{{localize 'SACADIA.Damage.Denomination'}}">{{selectOptions @root.config.dieDenominations selected=part.denomination blank=""}}</select>
+            <select class="trait" name="system.activities.{{act.idx}}.damage.{{part.pIdx}}.trait" title="{{localize 'SACADIA.Ability.Trait'}}">{{selectOptions @root.config.stats selected=part.trait localize=true blank=""}}</select>
+            <input class="type" type="text" name="system.activities.{{act.idx}}.damage.{{part.pIdx}}.type" value="{{part.type}}" placeholder="{{localize 'SACADIA.Damage.Type'}}"/>
+            <input class="formula" type="text" name="system.activities.{{act.idx}}.damage.{{part.pIdx}}.formula" value="{{part.formula}}" placeholder="{{localize 'SACADIA.Damage.FormulaOverride'}}"/>
+            <a data-action="deleteDamagePart" data-activity="{{act.idx}}" data-part="{{part.pIdx}}"><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          {{/each}}
+        </div>
+
+        <div class="inflict-parts">
+          <div class="damage-head">
+            <span>{{localize 'SACADIA.Ability.Inflict'}}</span>
+            <a data-action="addInflict" data-activity="{{act.idx}}" title="{{localize 'SACADIA.Ability.AddInflict'}}"><i class="fa-solid fa-plus"></i></a>
+          </div>
+          {{#each act.inflict as |inf|}}
+          <div class="inflict-part">
+            <select class="condition" name="system.activities.{{act.idx}}.inflict.{{inf.iIdx}}.condition">{{selectOptions @root.config.conditions selected=inf.condition labelAttr="label" localize=true blank=""}}</select>
+            <input class="amount" type="text" name="system.activities.{{act.idx}}.inflict.{{inf.iIdx}}.amount" value="{{inf.amount}}" placeholder="{{localize 'SACADIA.Ability.InflictAmount'}}"/>
+            <a data-action="deleteInflict" data-activity="{{act.idx}}" data-inflict="{{inf.iIdx}}"><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          {{/each}}
+        </div>
+        {{/if}}
+      </div>
+      {{else}}
+      <p class="placeholder">{{localize 'SACADIA.Ability.NoActivities'}}</p>
+      {{/each}}
+    </fieldset>
+
+    {{!-- Conditional modifiers: a buff (effect) gated by a predicate over roll options.
+          See docs/conditional-modifiers.md. --}}
+    <fieldset class="modifiers">
+      <legend>
+        {{localize 'SACADIA.Modifier.Legend'}}
+        <a data-action="addModifier" title="{{localize 'SACADIA.Modifier.Add'}}"><i class="fa-solid fa-plus"></i></a>
+      </legend>
+      {{#each modifiers as |mod|}}
+      <div class="modifier">
+        <div class="modifier-head">
+          <input class="label" type="text" name="system.modifiers.{{mod.idx}}.label" value="{{mod.label}}" placeholder="{{localize 'SACADIA.Modifier.Label'}}"/>
+          <a data-action="deleteModifier" data-modifier="{{mod.idx}}" title="{{localize 'SACADIA.Modifier.Delete'}}"><i class="fa-solid fa-xmark"></i></a>
+        </div>
+        <div class="modifier-effect">
+          <label>{{localize 'SACADIA.Modifier.Target'}}
+            <select name="system.modifiers.{{mod.idx}}.target">{{selectOptions @root.modifierTargets selected=mod.target}}</select>
+          </label>
+          <label>{{localize 'SACADIA.Modifier.Mode'}}
+            <select name="system.modifiers.{{mod.idx}}.mode">{{selectOptions @root.modifierModes selected=mod.mode}}</select>
+          </label>
+          <label>{{localize 'SACADIA.Modifier.Value'}}
+            <input type="text" name="system.modifiers.{{mod.idx}}.value" value="{{mod.value}}" placeholder="2 / @power"/>
+          </label>
+          <label>{{localize 'SACADIA.Modifier.Scope'}}
+            <input type="text" name="system.modifiers.{{mod.idx}}.scope" value="{{mod.scope}}" placeholder="all / melee / catalogId"/>
+          </label>
+        </div>
+        <div class="modifier-predicate">
+          <span>{{localize 'SACADIA.Modifier.Predicate'}}
+            <a data-action="addPredicate" data-modifier="{{mod.idx}}" title="{{localize 'SACADIA.Modifier.AddAtom'}}"><i class="fa-solid fa-plus"></i></a>
+          </span>
+          {{#each mod.predicate as |p|}}
+          <div class="atom">
+            <input type="text" name="system.modifiers.{{mod.idx}}.predicate.{{p.aIdx}}.atom" value="{{p.atom}}" placeholder="{{localize 'SACADIA.Modifier.AtomHint'}}"/>
+            <a data-action="deletePredicate" data-modifier="{{mod.idx}}" data-predicate="{{p.aIdx}}"><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </fieldset>
+  </div>
+
+  {{else if isArmor}}
+  <div class="armor-fields">
+    <label class="toggle">
+      <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
+      <span>{{localize 'SACADIA.Inventory.Equip'}}</span>
+    </label>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Armor.Category'}}</label>
+      <select name="system.category">{{selectOptions config.armorCategories selected=system.category localize=true blank=""}}</select>
+    </div>
+    <fieldset>
+      <legend>{{localize 'SACADIA.Armor.Defenses'}}</legend>
+      <div class="form-row"><label>{{localize 'SACADIA.Defense.AD'}}</label><input type="number" name="system.defenses.ad" value="{{system.defenses.ad}}"/></div>
+      <div class="form-row"><label>{{localize 'SACADIA.Defense.PD'}}</label><input type="number" name="system.defenses.pd" value="{{system.defenses.pd}}"/></div>
+      <div class="form-row"><label>{{localize 'SACADIA.Defense.TD'}}</label><input type="number" name="system.defenses.td" value="{{system.defenses.td}}"/></div>
+      <div class="form-row"><label>{{localize 'SACADIA.Defense.MD'}}</label><input type="number" name="system.defenses.md" value="{{system.defenses.md}}"/></div>
+      <div class="form-row"><label>{{localize 'SACADIA.Defense.DR'}}</label><input type="number" name="system.defenses.dr" value="{{system.defenses.dr}}"/></div>
+    </fieldset>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Armor.MaxStat'}}</label>
+      <input type="number" name="system.maxStat" value="{{system.maxStat}}" placeholder="{{localize 'SACADIA.Armor.MaxStatNone'}}" min="0"/>
+    </div>
+
+    {{!-- Shield facet: set the type to 'shield' with bash dice to make this armor a bashing shield.
+          It gains a generated Shield Bash attack, like any weapon. Leave blank for normal armor. --}}
+    <fieldset class="weapon-facet">
+      <legend>{{localize 'SACADIA.Weapon.ShieldLegend'}}</legend>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.Type'}}</label>
+        <select name="system.weaponType">{{selectOptions config.weaponTypes selected=system.weaponType localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.BashDamage'}}</label>
+        <input class="count" type="text" name="system.weaponDamage.count" value="{{system.weaponDamage.count}}" title="{{localize 'SACADIA.Damage.Count'}}"/>
+        <select class="denom" name="system.weaponDamage.denomination" title="{{localize 'SACADIA.Damage.Denomination'}}">{{selectOptions config.dieDenominations selected=system.weaponDamage.denomination blank=""}}</select>
+        <select class="trait" name="system.weaponDamage.trait" title="{{localize 'SACADIA.Ability.Trait'}}">{{selectOptions config.stats selected=system.weaponDamage.trait localize=true blank=""}}</select>
+        <input class="type" type="text" name="system.damageType" value="{{system.damageType}}" placeholder="{{localize 'SACADIA.Damage.Type'}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.TargetDefense'}}</label>
+        <select name="system.defense">{{selectOptions config.defenseLabels selected=system.defense localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Range'}}</label>
+        <select name="system.range.type">{{selectOptions config.rangeTypes selected=system.range.type localize=true blank=""}}</select>
+        <input type="number" name="system.range.value" value="{{system.range.value}}" min="0" placeholder="{{localize 'SACADIA.Range.Feet'}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.Hands'}}</label>
+        <input type="number" name="system.hands" value="{{system.hands}}" min="1" max="2"/>
+      </div>
+    </fieldset>
+  </div>
+
+  {{else if isGear}}
+  <div class="gear-fields">
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Gear.Quantity'}}</label>
+      <input type="number" name="system.quantity" value="{{system.quantity}}" min="0"/>
+    </div>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Gear.Weight'}}</label>
+      <input type="number" name="system.weight" value="{{system.weight}}" min="0"/>
+    </div>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Gear.Value'}}</label>
+      <input type="number" name="system.value" value="{{system.value}}" min="0"/>
+    </div>
+    <label class="toggle">
+      <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
+      <span>{{localize 'SACADIA.Inventory.Equip'}}</span>
+    </label>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Gear.Traits'}}</label>
+      <input type="text" name="system.traits" value="{{system.traits}}" list="sacadia-weapon-traits"
+             placeholder="{{localize 'SACADIA.Gear.TraitsHint'}}"/>
+      <datalist id="sacadia-weapon-traits">
+        {{#each config.weaponTraits as |t|}}<option value="{{t}}"></option>{{/each}}
+      </datalist>
+    </div>
+
+    {{!-- Weapon facet: setting a type turns this gear into a weapon (base dice + hands + reliable
+          `self:wielding:<type>` gating). Leave the type blank for plain inventory. --}}
+    <fieldset class="weapon-facet">
+      <legend>{{localize 'SACADIA.Weapon.Legend'}}</legend>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.Type'}}</label>
+        <select name="system.weaponType">{{selectOptions config.weaponTypes selected=system.weaponType localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.BaseDamage'}}</label>
+        <input class="count" type="text" name="system.weaponDamage.count" value="{{system.weaponDamage.count}}" title="{{localize 'SACADIA.Damage.Count'}}"/>
+        <select class="denom" name="system.weaponDamage.denomination" title="{{localize 'SACADIA.Damage.Denomination'}}">{{selectOptions config.dieDenominations selected=system.weaponDamage.denomination blank=""}}</select>
+        <select class="trait" name="system.weaponDamage.trait" title="{{localize 'SACADIA.Ability.Trait'}}">{{selectOptions config.stats selected=system.weaponDamage.trait localize=true blank=""}}</select>
+        <input class="type" type="text" name="system.damageType" value="{{system.damageType}}" placeholder="{{localize 'SACADIA.Damage.Type'}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.TargetDefense'}}</label>
+        <select name="system.defense">{{selectOptions config.defenseLabels selected=system.defense localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Ability.Range'}}</label>
+        <select name="system.range.type">{{selectOptions config.rangeTypes selected=system.range.type localize=true blank=""}}</select>
+        <input type="number" name="system.range.value" value="{{system.range.value}}" min="0" placeholder="{{localize 'SACADIA.Range.Feet'}}"/>
+      </div>
+      <div class="form-row">
+        <label>{{localize 'SACADIA.Weapon.Hands'}}</label>
+        <input type="number" name="system.hands" value="{{system.hands}}" min="1" max="2"/>
+      </div>
+    </fieldset>
+  </div>
+
+  {{else}}
   <p class="placeholder">{{localize 'SACADIA.Placeholder.ItemAttributes'}}</p>
+  {{/if}}
+
 </section>

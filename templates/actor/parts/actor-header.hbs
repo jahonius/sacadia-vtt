@@ -5,6 +5,12 @@
   <div class="header-fields">
     <div class="name-row">
       <input class="charname" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Name'}}"/>
+      {{#if isCharacter}}
+      <div class="rest-controls">
+        <a data-action="shortRest" title="{{localize 'SACADIA.Rest.ShortHint'}}"><i class="fa-solid fa-mug-hot"></i> {{localize 'SACADIA.Rest.Short'}}</a>
+        <a data-action="longRest" title="{{localize 'SACADIA.Rest.LongHint'}}"><i class="fa-solid fa-bed"></i> {{localize 'SACADIA.Rest.Long'}}</a>
+      </div>
+      {{/if}}
     </div>
 
     {{#if isCharacter}}
@@ -36,6 +42,12 @@
         <span>{{localize 'SACADIA.Npc.Role'}}</span>
         <input type="text" name="system.role" value="{{system.role}}" placeholder="—"/>
       </label>
+      <label class="field">
+        <span>{{localize 'SACADIA.Npc.CreatureType'}}</span>
+        <select name="system.creatureType">
+          {{selectOptions config.creatureTypes selected=system.creatureType localize=true blank=""}}
+        </select>
+      </label>
       <label class="field level-field">
         <span>{{localize 'SACADIA.Npc.Cr'}}</span>
         <input type="number" name="system.cr" value="{{system.cr}}" min="0"/>
@@ -45,28 +57,60 @@
 
     {{!-- Vital + derived stat readouts --}}
     <div class="header-stats">
-      <div class="resource">
-        <label>{{localize 'SACADIA.Resource.Health'}}</label>
-        <div class="pair">
-          <input type="number" name="system.health.value" value="{{system.health.value}}"/>
-          <span>/</span>
-          <input type="number" name="system.health.max" value="{{system.health.max}}"/>
+      <div class="vital">
+        <label class="sac-label">{{localize 'SACADIA.Resource.Health'}}</label>
+        <div class="sac-meter hp-meter">
+          <div class="fill" style="width: {{hpPct}}%"></div>
+          <div class="num">
+            <input type="number" name="system.health.value" value="{{system.health.value}}"/>
+            <span>/</span>
+            <input type="number" name="system.health.max" value="{{system.health.max}}"/>
+          </div>
         </div>
       </div>
 
       {{#if isCharacter}}
+      <div class="vital">
+        <label class="sac-label">{{localize 'SACADIA.Economy.Ap'}}</label>
+        {{#if apPips}}
+        <div class="sac-pips" title="{{apText}}">{{#each apPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
+        {{else}}
+        <span class="vital-num">{{apText}}</span>
+        {{/if}}
+      </div>
+
+      {{#if showMadness}}
+      <div class="vital">
+        <label class="sac-label">{{localize 'SACADIA.Condition.Madness'}}</label>
+        <div class="madness-track">
+          <div class="sac-pips">{{#each madnessPips as |pip|}}<span class="sac-pip mad {{#if pip.on}}on{{/if}} {{#if pip.threshold}}threshold{{/if}}"></span>{{/each}}</div>
+          {{#if insane}}<span class="insane-note">{{localize 'SACADIA.Insane.Badge'}}</span>{{/if}}
+        </div>
+      </div>
+      {{/if}}
+
       <div class="derived"><label>{{localize 'SACADIA.Progression.Proficiency'}}</label><span>{{system.proficiency}}</span></div>
-      <div class="derived"><label>{{localize 'SACADIA.Progression.MaxAp'}}</label><span>{{system.ap.value}}/{{system.ap.max}}</span></div>
       <div class="derived"><label>{{localize 'SACADIA.Defense.CheckDC'}}</label><span>{{system.checkDc.primary}}</span></div>
+      {{#if system.lorePoints.max}}
+      <div class="derived lore"><label>{{localize 'SACADIA.Resource.LorePoints'}}</label>
+        <span><input type="number" name="system.lorePoints.value" value="{{system.lorePoints.value}}" min="0"/>/{{system.lorePoints.max}}</span>
+      </div>
+      {{/if}}
       {{/if}}
     </div>
 
-    {{!-- Defenses --}}
+    {{!-- Defenses. Characters derive them (read-only); NPCs are hand-authored stat blocks (editable). --}}
     <div class="defenses">
       {{#each system.defenses as |def key|}}
-      <div class="defense {{#if def.supersededByAd}}superseded{{/if}}" title="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}">
+      <div class="defense {{#if def.supersededByAd}}superseded{{/if}} {{#if def.cappedStat}}capped{{/if}}"
+           title="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}{{#if def.cappedStat}} — {{localize 'SACADIA.Armor.MaxStat'}}{{/if}}">
         <label>{{def.label}}</label>
-        <span>{{def.value}}</span>
+        {{#if @root.isCharacter}}
+        <span>{{def.value}}{{#if def.cappedStat}}<sup>*</sup>{{/if}}</span>
+        {{else}}
+        <input type="number" class="def-input" name="system.defenses.{{key}}" value="{{def.base}}" min="0"
+               title="{{#if def.supersededByAd}}{{localize 'SACADIA.Defense.AD'}} {{/if}}{{def.value}}"/>
+        {{/if}}
       </div>
       {{/each}}
     </div>

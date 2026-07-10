@@ -1,12 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@charset "UTF-8";
+:root {
+  --sac-umber: #231a10;
+  --sac-panel: #2d2315;
+  --sac-inset: #191207;
+  --sac-line: #4a3a22;
+  --sac-line-strong: #63512e;
+  --sac-text: #ead9b0;
+  --sac-dim: #a08c68;
+  --sac-gold: #d4a53c;
+  --sac-gold-hi: #f0d078;
+  --sac-gold-lo: #8a6a1d;
+  --sac-olive: #8a8552;
+  --sac-blood: #c05055;
+  --sac-blood-deep: #911d20;
+  --sac-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sac-font-ui: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sac-font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
 /* Global styles */
 .window-app {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--sac-font-ui);
 }
 
 .rollable:hover, .rollable:focus {
-  color: #000;
-  text-shadow: 0 0 10px red;
+  color: var(--sac-gold-hi, #f0d078);
+  text-shadow: 0 0 8px rgba(212, 165, 60, 0.7);
   cursor: pointer;
 }
 
@@ -204,8 +223,217 @@
 }
 
 /* Styles limited to sacadia sheets */
+.sacadia {
+  /* ============================================================
+     Shared component vocabulary (used by slices B/C/D)
+     ============================================================ */
+}
+.sacadia .window-content {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  font-family: var(--sac-font-ui);
+}
+.sacadia h1, .sacadia h2, .sacadia h3, .sacadia h4 {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  border-color: var(--sac-line-strong);
+}
+.sacadia input[type=text],
+.sacadia input[type=number],
+.sacadia select,
+.sacadia textarea {
+  background: var(--sac-inset);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia input[type=text]:focus,
+.sacadia input[type=number]:focus,
+.sacadia select:focus,
+.sacadia textarea:focus {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 4px rgba(212, 165, 60, 0.45);
+  outline: none;
+}
+.sacadia input[type=text]::placeholder,
+.sacadia input[type=number]::placeholder,
+.sacadia select::placeholder,
+.sacadia textarea::placeholder {
+  color: var(--sac-dim);
+  opacity: 0.7;
+}
+.sacadia select option {
+  background: var(--sac-inset);
+  color: var(--sac-text);
+}
+.sacadia button {
+  background: var(--sac-panel);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line-strong);
+}
+.sacadia button:hover, .sacadia button:focus {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 4px rgba(212, 165, 60, 0.35);
+}
+.sacadia a {
+  color: var(--sac-text);
+}
+.sacadia :focus-visible {
+  outline: 1px solid var(--sac-gold);
+  outline-offset: 1px;
+}
+.sacadia .sheet-tabs {
+  border-bottom-color: var(--sac-line-strong);
+}
+.sacadia .sheet-tabs .item {
+  color: var(--sac-dim);
+  font-family: var(--sac-font-display);
+}
+.sacadia .sheet-tabs .item.active {
+  border-bottom-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+}
+.sacadia .sheet-tabs .item:hover {
+  color: var(--sac-text);
+}
+.sacadia .ability-img, .sacadia .inv-img, .sacadia .profile-img, .sacadia .px {
+  image-rendering: pixelated;
+}
+.sacadia ::-webkit-scrollbar {
+  width: 7px;
+}
+.sacadia ::-webkit-scrollbar-track {
+  background: var(--sac-umber);
+}
+.sacadia ::-webkit-scrollbar-thumb {
+  background: var(--sac-line-strong);
+  border-radius: 4px;
+}
+.sacadia .sac-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  font-weight: 600;
+}
+.sacadia .sac-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.42rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line);
+  color: var(--sac-dim);
+  white-space: nowrap;
+}
+.sacadia .sac-chip.tag {
+  border-color: var(--sac-olive);
+  color: var(--sac-olive);
+}
+.sacadia .sac-chip.ap {
+  border-color: var(--sac-gold-lo);
+  color: var(--sac-gold);
+}
+.sacadia .sac-chip.mad {
+  border-color: #6e181b;
+  color: var(--sac-blood);
+}
+.sacadia .sac-chip.pool {
+  background: var(--sac-gold-lo);
+  border-color: var(--sac-gold-lo);
+  color: #14100a;
+}
+.sacadia .sac-chip.live {
+  border-color: var(--sac-olive);
+  color: var(--sac-olive);
+}
+.sacadia .sac-chip.live::before {
+  content: "●";
+  font-size: 0.55rem;
+}
+.sacadia .sac-chip.warn {
+  border-color: var(--sac-blood);
+  color: var(--sac-blood);
+}
+.sacadia .sac-pips {
+  display: flex;
+  gap: 0.28rem;
+  align-items: center;
+}
+.sacadia .sac-pip {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  background: var(--sac-inset);
+}
+.sacadia .sac-pip.on {
+  background: linear-gradient(180deg, #e8c866, #b9872b);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .sac-pip.mad.on {
+  background: linear-gradient(180deg, #d4666b, var(--sac-blood-deep));
+  border-color: #6e181b;
+}
+.sacadia .sac-pip.threshold {
+  border-color: var(--sac-blood);
+  position: relative;
+}
+.sacadia .sac-pip.threshold::after {
+  content: "†";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sac-blood);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.sacadia .sac-meter {
+  height: 0.85rem;
+  min-width: 8rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.sacadia .sac-meter .fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(180deg, #e8c866, #b9872b);
+}
+.sacadia .sac-meter .num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--sac-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sac-streak {
+  display: inline-flex;
+  gap: 2px;
+  vertical-align: middle;
+}
+.sacadia .sac-streak i {
+  width: 5px;
+  height: 11px;
+  background: var(--sac-gold);
+  border-radius: 1px;
+  display: inline-block;
+}
 .sacadia .item-form {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--sac-font-ui);
 }
 .sacadia .sheet-header {
   flex: 0 auto;
@@ -364,18 +592,32 @@
 .sacadia .effects .item .effect-controls {
   border: none;
 }
+.sacadia .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 0.25rem;
+}
+.sacadia .sheet-header,
+.sacadia .sheet-tabs {
+  flex: 0 0 auto;
+}
 .sacadia .tab:not(.active) {
   display: none;
 }
 .sacadia .tab.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 .sacadia .sheet-tabs {
   display: flex;
   flex: 0 0 auto;
   gap: 0.25rem;
   margin: 0.25rem 0 0.5rem;
-  border-bottom: 2px solid var(--color-border-dark, #7a7971);
+  border-bottom: 2px solid var(--sac-line-strong);
 }
 .sacadia .sheet-tabs .item {
   padding: 0.35rem 0.6rem;
@@ -384,7 +626,7 @@
   white-space: nowrap;
 }
 .sacadia .sheet-tabs .item.active {
-  border-bottom-color: #911d20;
+  border-bottom-color: var(--sac-gold);
   font-weight: bold;
 }
 .sacadia .sheet-tabs .item i {
@@ -397,7 +639,7 @@
 }
 .sacadia .sheet-header .profile-img {
   flex: 0 0 auto;
-  border: 1px solid var(--color-border-dark, #7a7971);
+  border: 1px solid var(--sac-line-strong);
   border-radius: 4px;
   object-fit: cover;
   cursor: pointer;
@@ -434,13 +676,49 @@
 .sacadia .sheet-header .field.level-field input {
   width: 3.5rem;
 }
-.sacadia .sheet-header .header-stats .resource .pair {
+.sacadia .sheet-header .header-stats .vital {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.sacadia .sheet-header .header-stats .vital .vital-num {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--sac-gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .hp-meter {
+  width: 11rem;
+}
+.sacadia .sheet-header .hp-meter .num {
+  gap: 0.15rem;
+}
+.sacadia .sheet-header .hp-meter .num input {
+  width: 2.3rem;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--sac-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+.sacadia .sheet-header .hp-meter .num input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid var(--sac-gold);
+}
+.sacadia .sheet-header .madness-track {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.45rem;
 }
-.sacadia .sheet-header .header-stats .resource .pair input {
-  width: 3rem;
+.sacadia .sheet-header .madness-track .insane-note {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-blood);
 }
 .sacadia .sheet-header .header-stats .derived,
 .sacadia .sheet-header .defenses .defense {
@@ -448,23 +726,51 @@
   flex-direction: column;
   align-items: center;
   padding: 0.15rem 0.4rem;
-  border: 1px solid var(--color-border-light-2, #b5b3a4);
+  border: 1px solid var(--sac-line);
   border-radius: 4px;
   min-width: 3rem;
+  background: var(--sac-panel);
 }
 .sacadia .sheet-header .header-stats .derived label,
 .sacadia .sheet-header .defenses .defense label {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.75;
+  color: var(--sac-dim);
+  font-weight: 600;
 }
 .sacadia .sheet-header .header-stats .derived span,
 .sacadia .sheet-header .defenses .defense span {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .header-stats .derived .def-input,
+.sacadia .sheet-header .defenses .defense .def-input {
+  width: 2.6rem;
+  text-align: center;
+  font-size: 1rem;
   font-weight: bold;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.04);
 }
 .sacadia .sheet-header .defenses .defense.superseded span {
-  color: #911d20;
+  color: var(--sac-blood);
+}
+.sacadia .sheet-header .charname {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--sac-line);
+  border-radius: 0;
+}
+.sacadia .sheet-header .charname:focus {
+  border-bottom-color: var(--sac-gold);
+  box-shadow: none;
 }
 .sacadia .stats-grid {
   display: grid;
@@ -477,7 +783,7 @@
   align-items: center;
   gap: 0.2rem;
   padding: 0.35rem;
-  border: 1px solid var(--color-border-light-2, #b5b3a4);
+  border: 1px solid var(--sac-line);
   border-radius: 4px;
 }
 .sacadia .stats-grid .stat .stat-name {
@@ -487,11 +793,18 @@
   cursor: pointer;
 }
 .sacadia .stats-grid .stat a.stat-name:hover {
-  text-shadow: 0 0 6px #911d20;
+  text-shadow: 0 0 6px rgba(212, 165, 60, 0.8);
 }
 .sacadia .stats-grid .stat input {
   width: 3rem;
   text-align: center;
+}
+.sacadia .conditions .condition-group {
+  margin-bottom: 0.4rem;
+}
+.sacadia .conditions .condition-group h4 {
+  margin: 0.2rem 0;
+  opacity: 0.85;
 }
 .sacadia .condition-grid {
   display: grid;
@@ -503,8 +816,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.15rem 0.4rem;
-  border: 1px solid var(--color-border-light-2, #b5b3a4);
+  border: 1px solid var(--sac-line);
   border-radius: 4px;
+}
+.sacadia .condition-grid .condition.active {
+  border-color: var(--sac-blood);
+  background: rgba(145, 29, 32, 0.22);
+}
+.sacadia .condition-grid .condition .condition-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.sacadia .condition-grid .condition .auto-flag {
+  font-size: 0.65rem;
+  opacity: 0.6;
 }
 .sacadia .condition-grid .condition .condition-track {
   display: flex;
@@ -538,7 +864,7 @@
   cursor: pointer;
 }
 .sacadia .talents .talent .talent-name:hover {
-  text-shadow: 0 0 6px #911d20;
+  text-shadow: 0 0 6px rgba(212, 165, 60, 0.8);
 }
 .sacadia .talents .talent .talent-stat {
   font-size: 0.7rem;
@@ -549,6 +875,707 @@
   opacity: 0.6;
   font-style: italic;
   padding: 1rem;
+}
+.sacadia .inv-group {
+  margin-bottom: 0.6rem;
+}
+.sacadia .inv-group .inv-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--sac-line-strong);
+}
+.sacadia .inv-group .inv-head a {
+  cursor: pointer;
+}
+.sacadia .inv-group .inv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .inv-group .inv-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.8rem;
+  padding: 0.15rem 0;
+}
+.sacadia .inv-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
+}
+.sacadia .inv-row:hover {
+  background: rgba(212, 165, 60, 0.07);
+}
+.sacadia .inv-row.equipped {
+  background: rgba(212, 165, 60, 0.13);
+}
+.sacadia .inv-row .equip-toggle {
+  cursor: pointer;
+}
+.sacadia .inv-row .inv-name {
+  flex: 1;
+}
+.sacadia .inv-row .armor-summary {
+  font-size: 0.7rem;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+.sacadia .inv-row .inv-qty {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.sacadia .inv-row .inv-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+.sacadia .inv-row .inv-controls a {
+  cursor: pointer;
+}
+.sacadia .armor-fields fieldset {
+  margin: 0.4rem 0;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+.sacadia .armor-fields fieldset legend {
+  font-weight: bold;
+  padding: 0 0.3rem;
+}
+.sacadia .abilities-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.sacadia .abilities-top .csp-readout .csp-values b {
+  font-size: 1.1rem;
+  color: var(--sac-gold-hi);
+}
+.sacadia .abilities-top .add-ability {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sacadia .action-economy {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+}
+.sacadia .action-economy .ap-readout {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.sacadia .action-economy .ap-readout .ap-values b {
+  font-size: 1.15rem;
+  color: var(--sac-gold-hi);
+}
+.sacadia .action-economy .ap-readout .reset-turn {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.sacadia .action-economy .ap-readout .reset-turn:hover {
+  opacity: 1;
+}
+.sacadia .action-economy .class-pools {
+  grid-column: 1/-1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.sacadia .action-economy .class-pools .class-pool {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.75rem;
+}
+.sacadia .action-economy .class-pools .class-pool span:first-child {
+  font-weight: bold;
+}
+.sacadia .action-economy .class-pools .class-pool input {
+  width: 2.4rem;
+  text-align: center;
+}
+.sacadia .action-economy .basic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.sacadia .action-economy .basic-actions .basic-action {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 10px;
+}
+.sacadia .action-economy .basic-actions .basic-action small {
+  opacity: 0.75;
+}
+.sacadia .action-economy .basic-actions .basic-action:hover {
+  background: rgba(212, 165, 60, 0.1);
+}
+.sacadia .action-economy .action-log {
+  grid-column: 1/-1;
+}
+.sacadia .action-economy .action-log > label {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+.sacadia .action-economy .action-log .log-list {
+  list-style: none;
+  margin: 0.15rem 0 0;
+  padding: 0;
+}
+.sacadia .action-economy .action-log .log-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+.sacadia .action-economy .action-log .log-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  padding: 0.05rem 0;
+}
+.sacadia .action-economy .action-log .log-entry .log-label {
+  flex: 1;
+}
+.sacadia .action-economy .action-log .log-entry .log-ap {
+  opacity: 0.8;
+}
+.sacadia .action-economy .action-log .log-entry a {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.sacadia .action-economy .action-log .log-entry a:hover {
+  opacity: 1;
+}
+.sacadia .combat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.sacadia .combat-strip .cs-group {
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  background: var(--sac-panel);
+  padding: 0.4rem 0.55rem;
+}
+.sacadia .combat-strip .cs-group > .sac-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.sacadia .combat-strip .cs-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.78rem;
+  padding: 0.08rem 0;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .combat-strip .cs-counter b {
+  color: var(--sac-gold-hi);
+}
+.sacadia .combat-strip .limb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.sacadia .combat-strip .limb {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line);
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.sacadia .combat-strip .limb input {
+  display: none;
+}
+.sacadia .combat-strip .limb:hover {
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .combat-strip .limb.spent {
+  background: rgba(145, 29, 32, 0.3);
+  border-color: #6e393c;
+  color: #e0a5a8;
+}
+.sacadia .combat-strip .cs-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  padding: 0.08rem 0;
+}
+.sacadia .combat-strip .cs-line .cs-name {
+  color: var(--sac-gold-hi);
+  font-weight: 600;
+}
+.sacadia .combat-strip .cs-line .cs-detail {
+  color: var(--sac-dim);
+  font-size: 0.7rem;
+}
+.sacadia .ability-group {
+  margin-bottom: 0.5rem;
+}
+.sacadia .ability-group h3 {
+  border-bottom: 1px solid var(--sac-line-strong);
+  margin-bottom: 0.2rem;
+}
+.sacadia .ability-group .ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .ability-group .ability-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.8rem;
+  padding: 0.15rem 0;
+}
+.sacadia .rest-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.sacadia .rest-controls a {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.sacadia .rest-controls a:hover {
+  opacity: 1;
+}
+.sacadia .name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sacadia .ability-card {
+  border: 1px solid var(--sac-line);
+  border-radius: 6px;
+  background: var(--sac-panel);
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+}
+.sacadia .ability-card.expanded {
+  border-color: var(--sac-line-strong);
+}
+.sacadia .ability-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.55rem;
+}
+.sacadia .ability-row:hover {
+  background: rgba(212, 165, 60, 0.06);
+}
+.sacadia .ability-row .ability-img {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+}
+.sacadia .ability-row .ability-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.sacadia .ability-row .ability-name {
+  font-family: var(--sac-font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sacadia .ability-row .ability-name:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .ability-row .ability-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+.sacadia .ability-row .out-of-range {
+  font-size: 0.62rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0 0.3rem;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--sac-blood-deep);
+  white-space: nowrap;
+}
+.sacadia .ability-row.is-out-of-range .ability-name {
+  opacity: 0.6;
+}
+.sacadia .ability-row .ability-controls {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.sacadia .ability-row .ability-controls a {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .ability-row .ability-controls a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .ability-row .ability-controls .use-btn {
+  width: 1.9rem;
+  height: 1.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sac-gold-lo);
+  border-radius: 5px;
+  color: var(--sac-gold);
+}
+.sacadia .ability-row .ability-controls .use-btn:hover {
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  box-shadow: 0 0 5px rgba(212, 165, 60, 0.4);
+}
+.sacadia .ability-drawer {
+  border-top: 1px solid var(--sac-line);
+  background: var(--sac-inset);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--sac-dim);
+}
+.sacadia .ability-drawer p {
+  margin: 0.25rem 0;
+}
+.sacadia .ability-drawer p:first-child {
+  margin-top: 0;
+}
+.sacadia .ability-drawer p:last-child {
+  margin-bottom: 0;
+}
+.sacadia .form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.2rem 0;
+}
+.sacadia .form-row > label {
+  flex: 0 0 9rem;
+  opacity: 0.8;
+}
+.sacadia .form-row > select, .sacadia .form-row > input, .sacadia .form-row > multi-checkbox {
+  flex: 1;
+}
+.sacadia .ability-fields fieldset {
+  margin-top: 0.5rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+.sacadia .ability-fields fieldset legend {
+  font-weight: bold;
+  padding: 0 0.3rem;
+}
+.sacadia .ability-fields fieldset legend a {
+  cursor: pointer;
+}
+.sacadia .activity {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .activity .activity-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.sacadia .activity .activity-head select {
+  flex: 0 0 8rem;
+}
+.sacadia .activity .activity-head input {
+  flex: 1;
+}
+.sacadia .activity .activity-head a {
+  cursor: pointer;
+}
+.sacadia .modifier {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .modifier .modifier-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.sacadia .modifier .modifier-head .label {
+  flex: 1;
+}
+.sacadia .modifier .modifier-head a {
+  cursor: pointer;
+}
+.sacadia .modifier .modifier-effect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+.sacadia .modifier .modifier-effect label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  opacity: 0.85;
+  flex: 1 1 6rem;
+}
+.sacadia .modifier .modifier-predicate {
+  margin-top: 0.3rem;
+}
+.sacadia .modifier .modifier-predicate > span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.sacadia .modifier .modifier-predicate > span a {
+  cursor: pointer;
+  margin-left: 0.3rem;
+}
+.sacadia .modifier .modifier-predicate .atom {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+.sacadia .modifier .modifier-predicate .atom input {
+  flex: 1;
+}
+.sacadia .modifier .modifier-predicate .atom a {
+  cursor: pointer;
+}
+.sacadia .damage-parts {
+  margin-top: 0.3rem;
+}
+.sacadia .damage-parts .damage-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.sacadia .damage-parts .damage-head a {
+  cursor: pointer;
+}
+.sacadia .damage-parts .damage-part {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+.sacadia .damage-parts .damage-part .count {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .denom, .sacadia .damage-parts .damage-part .trait {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .type {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .formula {
+  flex: 1;
+}
+.sacadia .damage-parts .damage-part a {
+  cursor: pointer;
+}
+.sacadia.ability-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sacadia.ability-card .card-header img {
+  border: none;
+}
+.sacadia.ability-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0.85;
+  margin: 0.2rem 0;
+}
+.sacadia.ability-card .card-meta .tag {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.sacadia.ability-card .card-roll {
+  margin: 0.3rem 0;
+}
+.sacadia.ability-card .card-roll h4 {
+  margin: 0.1rem 0;
+}
+.sacadia.ability-card .card-activity {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 0.25rem;
+  margin-top: 0.25rem;
+}
+.sacadia.ability-card .activity-label {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+.sacadia.ability-card .card-save button {
+  width: 100%;
+  cursor: pointer;
+}
+.sacadia.ability-card .card-desc {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+}
+.sacadia.ability-card .card-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: baseline;
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  font-size: 0.75rem;
+}
+.sacadia.ability-card .card-modifiers .mod-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0.7;
+  letter-spacing: 0.03em;
+}
+.sacadia.ability-card .card-modifiers .mod {
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  background: rgba(120, 90, 200, 0.14);
+}
+.sacadia.ability-card .card-resolution:not(:empty) {
+  margin-top: 0.4rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .target {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .hit {
+  color: #1a7f37;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .miss {
+  color: #911d20;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+.sacadia.gm-note {
+  font-size: 0.85rem;
+}
+.sacadia.gm-note .hp-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+.sacadia.gm-note .hp-controls button {
+  flex: 1;
+  min-width: fit-content;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.35rem;
+}
+.sacadia.gm-note .hp-controls button.applied {
+  border-color: #1a7f37;
+  font-weight: bold;
+}
+.sacadia.gm-note .hp-controls button.undo {
+  flex: 0 0 auto;
+  opacity: 0.8;
+}
+.sacadia.gm-note .hp-controls button.mark-dead {
+  flex-basis: 100%;
+  border-color: #911d20;
+  color: #911d20;
+  font-weight: bold;
+}
+.sacadia.gm-note .cond-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+.sacadia.gm-note .cond-controls .cond-name {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.15rem;
+}
+.sacadia.gm-note .cond-controls button {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+}
+.sacadia.gm-note .cond-controls button.apply {
+  border-color: #7a5b1e;
+}
+.sacadia.gm-note .cond-controls button.undo {
+  opacity: 0.8;
+}
+.sacadia .adv-prompt label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.sacadia .adv-prompt .adv-custom-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+.sacadia .adv-prompt .adv-custom-row input[name=level] {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .adv-prompt .adv-custom-row .adv-roll-custom {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sacadia .adv-prompt .hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
 }
 .sacadia .effects-list {
   list-style: none;
@@ -563,7 +1590,7 @@
   padding: 0.15rem 0.25rem;
 }
 .sacadia .effects-list .items-header {
-  border-bottom: 1px solid var(--color-border-dark, #7a7971);
+  border-bottom: 1px solid var(--sac-line-strong);
   font-weight: bold;
 }
 .sacadia .effects-list .item-name {

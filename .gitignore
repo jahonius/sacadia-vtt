@@ -22,3 +22,11 @@ SacadiasArtOfWar_v1.0.pdf
 *.md
 
 .claude/
+# Local Python venv (PDF extraction tooling)
+venv/
+
+# LevelDB compendium runtime noise — the data files (*.ldb, CURRENT, MANIFEST-*) are tracked
+# (packs/.gitattributes marks them binary); these are per-open lock/log files that churn.
+packs/**/LOCK
+packs/**/LOG
+packs/**/LOG.old

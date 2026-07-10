@@ -1,3 +1,58 @@
 <section class="tab {{tabs.inventory.cssClass}}" data-group="primary" data-tab="inventory">
-  <p class="placeholder">{{localize 'SACADIA.Placeholder.Inventory'}}</p>
+
+  {{!-- Armor --}}
+  <div class="inv-group">
+    <div class="inv-head">
+      <h3>{{localize 'SACADIA.Inventory.Armor'}}</h3>
+      <a data-action="createDoc" data-document-class="Item" data-type="armor">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <ol class="inv-list">
+      {{#each inventory.armor as |item|}}
+      <li class="inv-row draggable {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
+        <a class="equip-toggle" data-action="toggleEquip" title="{{localize 'SACADIA.Inventory.Equip'}}">
+          <i class="fa-solid {{#if item.system.equipped}}fa-shield{{else}}fa-shield-halved{{/if}}"></i>
+        </a>
+        <img class="inv-img" src="{{item.img}}" width="28" height="28"/>
+        <span class="inv-name">{{item.name}}</span>
+        <span class="armor-summary">
+          AD {{item.system.defenses.ad}} · PD {{item.system.defenses.pd}} · TD {{item.system.defenses.td}} · MD {{item.system.defenses.md}} · DR {{item.system.defenses.dr}}
+        </span>
+        <div class="inv-controls">
+          <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
+          <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </li>
+      {{else}}
+      <li class="inv-empty">{{localize 'SACADIA.Inventory.Empty'}}</li>
+      {{/each}}
+    </ol>
+  </div>
+
+  {{!-- Gear --}}
+  <div class="inv-group">
+    <div class="inv-head">
+      <h3>{{localize 'SACADIA.Inventory.Gear'}}</h3>
+      <a data-action="createDoc" data-document-class="Item" data-type="gear">
+        <i class="fa-solid fa-plus"></i>
+      </a>
+    </div>
+    <ol class="inv-list">
+      {{#each inventory.gear as |item|}}
+      <li class="inv-row draggable" data-item-id="{{item.id}}">
+        <img class="inv-img" src="{{item.img}}" width="28" height="28"/>
+        <span class="inv-name">{{item.name}}</span>
+        <span class="inv-qty">×{{item.system.quantity}}</span>
+        <div class="inv-controls">
+          <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
+          <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
+        </div>
+      </li>
+      {{else}}
+      <li class="inv-empty">{{localize 'SACADIA.Inventory.Empty'}}</li>
+      {{/each}}
+    </ol>
+  </div>
+
 </section>

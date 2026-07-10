@@ -1,10 +1,27 @@
 // ApplicationV2 sheet layout for Tales of Sacadia (actor + item sheets).
 // Scoped under `.sacadia` (applied to the AppV2 root via DEFAULT_OPTIONS.classes).
 
+// --- Sheet layout: header/tabs fixed, the active tab fills the rest and scrolls ---
+.window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 0.25rem;
+}
+
+.sheet-header,
+.sheet-tabs { flex: 0 0 auto; }
+
 // --- Tab visibility (critical: without this, every tab renders at once) ---
 .tab {
   &:not(.active) { display: none; }
-  &.active { display: block; }
+  &.active {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;      // allow the flex child to shrink so overflow can scroll
+    overflow-y: auto;
+  }
 }
 
 // --- Tab navigation ---
@@ -13,7 +30,7 @@
   flex: 0 0 auto;
   gap: 0.25rem;
   margin: 0.25rem 0 0.5rem;
-  border-bottom: 2px solid var(--color-border-dark, #7a7971);
+  border-bottom: 2px solid var(--sac-line-strong);
 
   .item {
     padding: 0.35rem 0.6rem;
@@ -21,7 +38,7 @@
     border-bottom: 2px solid transparent;
     white-space: nowrap;
 
-    &.active { border-bottom-color: #911d20; font-weight: bold; }
+    &.active { border-bottom-color: var(--sac-gold); font-weight: bold; }
     i { margin-right: 0.25rem; }
   }
 }
@@ -34,7 +51,7 @@
 
   .profile-img {
     flex: 0 0 auto;
-    border: 1px solid var(--color-border-dark, #7a7971);
+    border: 1px solid var(--sac-line-strong);
     border-radius: 4px;
     object-fit: cover;
     cursor: pointer;
@@ -68,22 +85,74 @@
     &.level-field input { width: 3.5rem; }
   }
 
-  .header-stats .resource .pair { display: flex; align-items: center; gap: 0.2rem; input { width: 3rem; } }
+  // Vitals: HP meter, AP pips, Madness track.
+  .header-stats .vital {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .vital-num { font-size: 1.05rem; font-weight: bold; color: var(--sac-gold-hi); font-variant-numeric: tabular-nums; }
+  }
+  .hp-meter {
+    width: 11rem;
+
+    .num {
+      gap: 0.15rem;
+      input {
+        width: 2.3rem; text-align: center; padding: 0;
+        background: transparent; border: none;
+        font-size: 0.72rem; font-weight: 700; color: var(--sac-text);
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+        &:focus { box-shadow: none; border-bottom: 1px solid var(--sac-gold); }
+      }
+    }
+  }
+  .madness-track {
+    display: flex; align-items: center; gap: 0.45rem;
+    .insane-note {
+      font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sac-blood);
+    }
+  }
+
   .header-stats .derived,
   .defenses .defense {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0.15rem 0.4rem;
-    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border: 1px solid var(--sac-line);
     border-radius: 4px;
     min-width: 3rem;
+    background: var(--sac-panel);
 
-    label { font-size: 0.65rem; text-transform: uppercase; opacity: 0.75; }
-    span { font-size: 1.05rem; font-weight: bold; }
+    label {
+      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sac-dim); font-weight: 600;
+    }
+    span {
+      font-size: 1.1rem; font-weight: 600;
+      font-family: var(--sac-font-display);
+      color: var(--sac-gold-hi);
+      font-variant-numeric: tabular-nums;
+    }
+    .def-input {
+      width: 2.6rem; text-align: center; font-size: 1rem; font-weight: bold;
+      padding: 0; border: none; background: rgba(255, 255, 255, 0.04);
+    }
   }
 
-  .defenses .defense.superseded span { color: #911d20; }
+  .defenses .defense.superseded span { color: var(--sac-blood); }
+
+  .charname {
+    font-family: var(--sac-font-display);
+    color: var(--sac-gold-hi);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--sac-line);
+    border-radius: 0;
+    &:focus { border-bottom-color: var(--sac-gold); box-shadow: none; }
+  }
 }
 
 // --- Stats tab ---
@@ -98,14 +167,16 @@
     align-items: center;
     gap: 0.2rem;
     padding: 0.35rem;
-    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border: 1px solid var(--sac-line);
     border-radius: 4px;
 
     .stat-name { font-weight: bold; }
-    a.stat-name { cursor: pointer; &:hover { text-shadow: 0 0 6px #911d20; } }
+    a.stat-name { cursor: pointer; &:hover { text-shadow: 0 0 6px rgba(212, 165, 60, 0.8); } }
     input { width: 3rem; text-align: center; }
   }
 }
+
+.conditions .condition-group { margin-bottom: 0.4rem; h4 { margin: 0.2rem 0; opacity: 0.85; } }
 
 .condition-grid {
   display: grid;
@@ -117,9 +188,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.15rem 0.4rem;
-    border: 1px solid var(--color-border-light-2, #b5b3a4);
+    border: 1px solid var(--sac-line);
     border-radius: 4px;
 
+    &.active { border-color: var(--sac-blood); background: rgba(145, 29, 32, 0.22); }
+    .condition-name { display: flex; align-items: center; gap: 0.25rem; }
+    .auto-flag { font-size: 0.65rem; opacity: 0.6; }
     .condition-track { display: flex; align-items: center; gap: 0.35rem; a { cursor: pointer; } }
     .condition-value { min-width: 1rem; text-align: center; font-weight: bold; }
   }
@@ -134,12 +208,378 @@
     gap: 0.5rem;
     padding: 0.1rem 0;
 
-    .talent-name { flex: 1; cursor: pointer; &:hover { text-shadow: 0 0 6px #911d20; } }
+    .talent-name { flex: 1; cursor: pointer; &:hover { text-shadow: 0 0 6px rgba(212, 165, 60, 0.8); } }
     .talent-stat { font-size: 0.7rem; opacity: 0.7; text-transform: uppercase; }
   }
 }
 
 .placeholder { opacity: 0.6; font-style: italic; padding: 1rem; }
+
+// --- Inventory tab ---
+.inv-group {
+  margin-bottom: 0.6rem;
+
+  .inv-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--sac-line-strong);
+    a { cursor: pointer; }
+  }
+  .inv-list { list-style: none; margin: 0; padding: 0; }
+  .inv-empty { opacity: 0.55; font-style: italic; font-size: 0.8rem; padding: 0.15rem 0; }
+}
+
+.inv-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
+
+  &:hover { background: rgba(212, 165, 60, 0.07); }
+  &.equipped { background: rgba(212, 165, 60, 0.13); }
+  .equip-toggle { cursor: pointer; }
+  .inv-name { flex: 1; }
+  .armor-summary { font-size: 0.7rem; opacity: 0.75; white-space: nowrap; }
+  .inv-qty { font-size: 0.8rem; opacity: 0.8; }
+  .inv-controls { display: flex; gap: 0.35rem; a { cursor: pointer; } }
+}
+
+.armor-fields fieldset {
+  margin: 0.4rem 0;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  legend { font-weight: bold; padding: 0 0.3rem; }
+}
+
+// --- Abilities tab ---
+.abilities-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  .csp-readout .csp-values b { font-size: 1.1rem; color: var(--sac-gold-hi); }
+  .add-ability { cursor: pointer; white-space: nowrap; }
+}
+
+// Action economy: AP tally, basic-action palette, per-turn action log.
+.action-economy {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.6rem;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+
+  .ap-readout {
+    display: flex; align-items: center; gap: 0.35rem;
+    .ap-values b { font-size: 1.15rem; color: var(--sac-gold-hi); }
+    .reset-turn { cursor: pointer; opacity: 0.7; &:hover { opacity: 1; } }
+  }
+
+  .class-pools {
+    grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.5rem;
+    .class-pool {
+      display: flex; align-items: center; gap: 0.2rem; font-size: 0.75rem;
+      span:first-child { font-weight: bold; }
+      input { width: 2.4rem; text-align: center; }
+    }
+  }
+
+  .basic-actions {
+    display: flex; flex-wrap: wrap; gap: 0.3rem;
+    .basic-action {
+      cursor: pointer; white-space: nowrap;
+      font-size: 0.75rem; padding: 0.1rem 0.45rem;
+      border: 1px solid var(--sac-line-strong); border-radius: 10px;
+      small { opacity: 0.75; }
+      &:hover { background: rgba(212, 165, 60, 0.1); }
+    }
+  }
+
+  .action-log {
+    grid-column: 1 / -1;
+    > label { font-size: 0.75rem; opacity: 0.7; }
+    .log-list { list-style: none; margin: 0.15rem 0 0; padding: 0; }
+    .log-empty { opacity: 0.55; font-style: italic; font-size: 0.75rem; }
+    .log-entry {
+      display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem;
+      padding: 0.05rem 0;
+      .log-label { flex: 1; }
+      .log-ap { opacity: 0.8; }
+      a { cursor: pointer; opacity: 0.7; &:hover { opacity: 1; } }
+    }
+  }
+}
+
+// Combat live-state strip: counters, exhaustion, focus/marks, grants (Abilities tab).
+.combat-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+
+  .cs-group {
+    border: 1px solid var(--sac-line);
+    border-radius: 5px;
+    background: var(--sac-panel);
+    padding: 0.4rem 0.55rem;
+
+    > .sac-label { display: block; margin-bottom: 0.3rem; }
+  }
+
+  .cs-counter {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 0.78rem; padding: 0.08rem 0;
+    font-variant-numeric: tabular-nums;
+    b { color: var(--sac-gold-hi); }
+  }
+
+  .limb-grid { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .limb {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 0.22rem 0.45rem; border-radius: 3px;
+    border: 1px solid var(--sac-line); color: var(--sac-dim);
+    cursor: pointer;
+    input { display: none; }
+    &:hover { border-color: var(--sac-gold-lo); }
+    &.spent { background: rgba(145, 29, 32, 0.3); border-color: #6e393c; color: #e0a5a8; }
+  }
+
+  .cs-line {
+    display: flex; align-items: baseline; gap: 0.45rem;
+    font-size: 0.78rem; padding: 0.08rem 0;
+    .cs-name { color: var(--sac-gold-hi); font-weight: 600; }
+    .cs-detail { color: var(--sac-dim); font-size: 0.7rem; }
+  }
+}
+
+.ability-group {
+  margin-bottom: 0.5rem;
+
+  h3 { border-bottom: 1px solid var(--sac-line-strong); margin-bottom: 0.2rem; }
+  .ability-list { list-style: none; margin: 0; padding: 0; }
+  .ability-empty { opacity: 0.55; font-style: italic; font-size: 0.8rem; padding: 0.15rem 0; }
+}
+
+.rest-controls {
+  display: flex; gap: 0.5rem; margin-left: auto;
+  a { cursor: pointer; white-space: nowrap; font-size: 0.8rem; opacity: 0.85; &:hover { opacity: 1; } }
+}
+.name-row { display: flex; align-items: center; gap: 0.5rem; }
+
+// Ability cards: pixel icon at card size, name over a chip line, expandable description drawer.
+.ability-card {
+  border: 1px solid var(--sac-line);
+  border-radius: 6px;
+  background: var(--sac-panel);
+  margin-bottom: 0.45rem;
+  overflow: hidden;
+
+  &.expanded { border-color: var(--sac-line-strong); }
+}
+
+.ability-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.55rem;
+
+  &:hover { background: rgba(212, 165, 60, 0.06); }
+  .ability-img {
+    width: 40px; height: 40px; flex: 0 0 auto;
+    border: 1px solid var(--sac-line); border-radius: 4px;
+  }
+  .ability-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+  .ability-name {
+    font-family: var(--sac-font-display);
+    font-size: 1.02rem; font-weight: 600;
+    cursor: pointer;
+    &:hover { color: var(--sac-gold-hi); }
+  }
+  .ability-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+
+  // Live "Out of Range" marker vs the currently-targeted token (toggled in #refreshRangeMarkers).
+  .out-of-range {
+    font-size: 0.62rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.02em;
+    padding: 0 0.3rem; border-radius: 8px; color: #fff; background: var(--sac-blood-deep); white-space: nowrap;
+  }
+  &.is-out-of-range .ability-name { opacity: 0.6; }
+
+  .ability-controls {
+    display: flex; gap: 0.4rem; align-items: center; flex: 0 0 auto;
+    a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+    .use-btn {
+      width: 1.9rem; height: 1.9rem;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--sac-gold-lo); border-radius: 5px;
+      color: var(--sac-gold);
+      &:hover { border-color: var(--sac-gold); color: var(--sac-gold-hi); box-shadow: 0 0 5px rgba(212, 165, 60, 0.4); }
+    }
+  }
+}
+
+.ability-drawer {
+  border-top: 1px solid var(--sac-line);
+  background: var(--sac-inset);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--sac-dim);
+
+  p { margin: 0.25rem 0; }
+  p:first-child { margin-top: 0; }
+  p:last-child { margin-bottom: 0; }
+}
+
+// --- Item sheet form rows ---
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.2rem 0;
+
+  > label { flex: 0 0 9rem; opacity: 0.8; }
+  > select, > input, > multi-checkbox { flex: 1; }
+}
+
+.ability-fields fieldset {
+  margin-top: 0.5rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+
+  legend { font-weight: bold; padding: 0 0.3rem; a { cursor: pointer; } }
+}
+
+.activity {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+
+  .activity-head {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    select { flex: 0 0 8rem; }
+    input { flex: 1; }
+    a { cursor: pointer; }
+  }
+}
+
+// Conditional-modifier editor (docs/conditional-modifiers.md).
+.modifier {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+
+  .modifier-head { display: flex; gap: 0.4rem; align-items: center; .label { flex: 1; } a { cursor: pointer; } }
+  .modifier-effect {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem;
+    label { display: flex; flex-direction: column; font-size: 0.7rem; opacity: 0.85; flex: 1 1 6rem; }
+  }
+  .modifier-predicate {
+    margin-top: 0.3rem;
+    > span { font-size: 0.72rem; text-transform: uppercase; opacity: 0.75; a { cursor: pointer; margin-left: 0.3rem; } }
+    .atom { display: flex; gap: 0.3rem; align-items: center; margin: 0.2rem 0; input { flex: 1; } a { cursor: pointer; } }
+  }
+}
+
+.damage-parts {
+  margin-top: 0.3rem;
+
+  .damage-head { display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.8; a { cursor: pointer; } }
+  .damage-part {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    margin: 0.2rem 0;
+    .count { flex: 0 0 5rem; }
+    .denom, .trait { flex: 0 0 5rem; }
+    .type { flex: 0 0 5rem; }
+    .formula { flex: 1; }
+    a { cursor: pointer; }
+  }
+}
+
+// --- Chat card (same element carries `sacadia ability-card`) ---
+&.ability-card {
+  .card-header { display: flex; align-items: center; gap: 0.5rem; img { border: none; } }
+  .card-meta {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; opacity: 0.85;
+    margin: 0.2rem 0;
+    .tag { font-weight: bold; text-transform: uppercase; }
+  }
+  .card-roll { margin: 0.3rem 0; h4 { margin: 0.1rem 0; } }
+  .card-activity { border-top: 1px solid rgba(0, 0, 0, 0.1); padding-top: 0.25rem; margin-top: 0.25rem; }
+  .activity-label { font-weight: bold; font-size: 0.85rem; }
+  .card-save button { width: 100%; cursor: pointer; }
+  .card-desc { margin-top: 0.4rem; font-size: 0.85rem; }
+
+  // Tier-1 disclosure: the itemized conditional modifiers that shaped this card's rolls.
+  .card-modifiers {
+    display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: baseline;
+    margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px dashed rgba(0, 0, 0, 0.12);
+    font-size: 0.75rem;
+    .mod-label { font-weight: bold; text-transform: uppercase; opacity: 0.7; letter-spacing: 0.03em; }
+    .mod { padding: 0 0.3rem; border-radius: 0.25rem; background: rgba(120, 90, 200, 0.14); }
+  }
+
+  // GM-filled hit/miss result, sitting in the same card as the to-hit + damage dice.
+  .card-resolution:not(:empty) {
+    margin-top: 0.4rem; padding-top: 0.3rem; border-top: 1px solid rgba(0, 0, 0, 0.1);
+    .resolution-row {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem;
+      .target { font-size: 0.85rem; opacity: 0.85; }
+      .hit { color: #1a7f37; text-transform: uppercase; letter-spacing: 0.03em; }
+      .miss { color: #911d20; text-transform: uppercase; letter-spacing: 0.03em; opacity: 0.85; }
+    }
+  }
+}
+
+// --- GM-only attack whisper (comparison + HP-apply controls) ---
+&.gm-note {
+  font-size: 0.85rem;
+  .hp-controls {
+    display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem;
+    button {
+      flex: 1; min-width: fit-content; cursor: pointer; white-space: nowrap;
+      font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.35rem;
+      &.applied { border-color: #1a7f37; font-weight: bold; } // the outcome auto-apply used
+      &.undo { flex: 0 0 auto; opacity: 0.8; }
+      &.mark-dead { flex-basis: 100%; border-color: #911d20; color: #911d20; font-weight: bold; }
+    }
+  }
+  .cond-controls {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.2rem;
+    .cond-name { font-size: 0.75rem; font-weight: bold; margin-right: 0.15rem; }
+    button {
+      cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem;
+      &.apply { border-color: #7a5b1e; }
+      &.undo { opacity: 0.8; }
+    }
+  }
+}
+
+// --- Advantage roll prompt (DialogV2 content) ---
+.adv-prompt {
+  label { display: block; font-weight: bold; margin-bottom: 0.25rem; }
+  .adv-custom-row {
+    display: flex; align-items: stretch; gap: 0.4rem;
+    input[name="level"] { flex: 1; min-width: 0; }
+    .adv-roll-custom { flex: 0 0 auto; white-space: nowrap; cursor: pointer; }
+  }
+  .hint { margin: 0.4rem 0 0; font-size: 0.8rem; opacity: 0.8; }
+}
 
 // --- Effects list ---
 .effects-list {
@@ -149,7 +589,7 @@
 
   .items-header,
   .item { display: flex; align-items: center; gap: 0.5rem; padding: 0.15rem 0.25rem; }
-  .items-header { border-bottom: 1px solid var(--color-border-dark, #7a7971); font-weight: bold; }
+  .items-header { border-bottom: 1px solid var(--sac-line-strong); font-weight: bold; }
   .item-name { flex: 1; display: flex; align-items: center; gap: 0.35rem; }
   .item-controls { display: flex; gap: 0.35rem; a { cursor: pointer; } }
 }
