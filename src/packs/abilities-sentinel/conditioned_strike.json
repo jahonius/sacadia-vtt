@@ -1,0 +1,40 @@
+{
+  "_id": "2d7998ac40c1f801",
+  "_key": "!items!2d7998ac40c1f801",
+  "name": "Conditioned Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend any number of Trickshot points as a Boost to a ranged attack that causes adversarial conditions. Increase your Check DC by two for each Trickshot point you expend this way.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "conditioned_strike"
+    }
+  }
+}

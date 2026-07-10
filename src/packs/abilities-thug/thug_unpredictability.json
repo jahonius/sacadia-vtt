@@ -1,0 +1,40 @@
+{
+  "_id": "4f85babda10e2ab3",
+  "_key": "!items!4f85babda10e2ab3",
+  "name": "Unpredictability",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn when you make a melee attack against a Surprised creature, you may use a Boost to force that creature to make a Wiles Check against your Check DC. If they fail, they remain Surprised.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_unpredictability"
+    }
+  }
+}

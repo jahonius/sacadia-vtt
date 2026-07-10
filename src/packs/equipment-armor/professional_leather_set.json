@@ -1,0 +1,27 @@
+{
+  "_id": "fc8319acc909248d",
+  "_key": "!items!fc8319acc909248d",
+  "name": "Professional Leather Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[3]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 0,
+      "pd": 3,
+      "td": 6,
+      "md": 2,
+      "dr": 0
+    },
+    "maxStat": 24
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "professional_leather_set",
+      "kind": "armor"
+    }
+  }
+}

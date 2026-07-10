@@ -1,0 +1,40 @@
+{
+  "_id": "c4a26660740ed51f",
+  "_key": "!items!c4a26660740ed51f",
+  "name": "Skittish Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you are Skittish to a target and they deal damage against you, reduce that damage by your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Skittish"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "skittish_step",
+      "transcribed": true
+    }
+  }
+}

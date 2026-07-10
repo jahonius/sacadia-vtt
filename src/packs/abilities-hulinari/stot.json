@@ -1,0 +1,40 @@
+{
+  "_id": "712b86328707b08e",
+  "_key": "!items!712b86328707b08e",
+  "name": "Stot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy coming within 5ft of you, you may jump 5ft into the air. The enemy gains 1X Disadvantage to their first attack against you on their turn.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stot",
+      "transcribed": true
+    }
+  }
+}

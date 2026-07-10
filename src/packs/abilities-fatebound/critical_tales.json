@@ -1,0 +1,40 @@
+{
+  "_id": "37d506cc11557bf8",
+  "_key": "!items!37d506cc11557bf8",
+  "name": "Critical Tales",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use a lore point on Rousing Success to critically succeed at a to-hit action, you may apply one additional critical effect to that attack. Fated</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 4"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "critical_tales",
+      "transcribed": true
+    }
+  }
+}

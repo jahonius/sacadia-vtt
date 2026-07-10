@@ -1,0 +1,40 @@
+{
+  "_id": "3f9efd6de62fd821",
+  "_key": "!items!3f9efd6de62fd821",
+  "name": "Reckless Loosing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to a ranged attack you make on your turn, expend one Trickshot point and make all attacks on this turn at 1X advantage. Until the start of your next turn, all attacks are made against you at 2X advantage.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "reckless_loosing"
+    }
+  }
+}

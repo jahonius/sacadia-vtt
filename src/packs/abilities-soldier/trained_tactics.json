@@ -1,0 +1,40 @@
+{
+  "_id": "548dce604eae67df",
+  "_key": "!items!548dce604eae67df",
+  "name": "Trained Tactics",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy making an attack against an ally within 30ft of you, you may reduce the to-hit by half your Courage Score (rounded up). If you have Steadied, you may reduce it by your Courage Score.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "trained_tactics"
+    }
+  }
+}

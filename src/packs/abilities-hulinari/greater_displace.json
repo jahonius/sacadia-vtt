@@ -1,0 +1,40 @@
+{
+  "_id": "364bfe15a96eefae",
+  "_key": "!items!364bfe15a96eefae",
+  "name": "Greater Displace",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Displace, enemies do not make Trait Checks against the effect and are simply moved. You cannot move into a space if the creatures in that space cannot move out of your way.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Displace, Power 6"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greater_displace",
+      "transcribed": true
+    }
+  }
+}

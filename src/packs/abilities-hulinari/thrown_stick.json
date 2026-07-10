@@ -1,0 +1,40 @@
+{
+  "_id": "6508c98a6489a8dc",
+  "_key": "!items!6508c98a6489a8dc",
+  "name": "Thrown Stick",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you throw a target with Meatclub, they take 1D8 damage for every 10ft they are thrown. If they are thrown into another target and both targets fail their Finesse Check against being knocked Prone, deal this damage to both targets.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Meatclub"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thrown_stick",
+      "transcribed": true
+    }
+  }
+}

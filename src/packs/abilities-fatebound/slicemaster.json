@@ -1,0 +1,40 @@
+{
+  "_id": "85d5b42f0b25817d",
+  "_key": "!items!85d5b42f0b25817d",
+  "name": "Slicemaster",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you wield a slashing divine weapon and a hit with a melee attack reduces a target to 0HP, your weapon cleaves. Choose another target in range of your divine weapon. The remainder of your damage is dealt to them if the original to-hit roll would hit this new target. Continue cleaving until your remaining damage reaches zero.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "slicemaster",
+      "transcribed": true
+    }
+  }
+}

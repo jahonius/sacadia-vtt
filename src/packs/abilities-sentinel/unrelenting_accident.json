@@ -1,0 +1,40 @@
+{
+  "_id": "b2b00152e5134167",
+  "_key": "!items!b2b00152e5134167",
+  "name": "Unrelenting Accident",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make a reaction attack against a creature using a ranged weapon and are Surrounded, increase the dice type by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "I'm Not Supposed to Be Here, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "unrelenting_accident"
+    }
+  }
+}

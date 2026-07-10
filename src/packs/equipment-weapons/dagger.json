@@ -1,0 +1,35 @@
+{
+  "_id": "9338c8fb06dff412",
+  "_key": "!items!9338c8fb06dff412",
+  "name": "Dagger",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p>Versatile: may be thrown up to 40ft.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "dagger",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "dagger",
+      "kind": "weapon"
+    }
+  }
+}

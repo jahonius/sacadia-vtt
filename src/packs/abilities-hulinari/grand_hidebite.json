@@ -1,0 +1,40 @@
+{
+  "_id": "eb03c22408d88f09",
+  "_key": "!items!eb03c22408d88f09",
+  "name": "Grand Hidebite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of attacks of opportunity you make by one additional type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hidebite, Power 4"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "grand_hidebite",
+      "transcribed": true
+    }
+  }
+}

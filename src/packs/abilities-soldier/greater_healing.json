@@ -1,0 +1,49 @@
+{
+  "_id": "cf15986b49c4ff04",
+  "_key": "!items!cf15986b49c4ff04",
+  "name": "Greater Healing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the amount of HP given by Call of Healing from XD4 to XD6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Call of Healing, Courage 4"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Greater Healing",
+        "target": "damage",
+        "mode": "step",
+        "scope": "call_of_healing",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greater_healing"
+    }
+  }
+}

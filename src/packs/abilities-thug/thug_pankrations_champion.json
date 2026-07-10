@@ -1,0 +1,40 @@
+{
+  "_id": "3704366fa2921592",
+  "_key": "!items!3704366fa2921592",
+  "name": "Pankration's Champion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you benefit from Pankration, instead increase the damage dealt by Harm and melee attacks by 2X, where X is the amount of Pin that target has. [With this ability, set the Pankration Temporary Modifier to twice the target's Pin.]</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Pankration, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_pankrations_champion"
+    }
+  }
+}

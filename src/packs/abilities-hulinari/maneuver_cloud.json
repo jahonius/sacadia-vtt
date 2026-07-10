@@ -1,0 +1,56 @@
+{
+  "_id": "128c80be22eb18af",
+  "_key": "!items!128c80be22eb18af",
+  "name": "Maneuver Cloud",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use ‘Hovering Foe’, you may use an action to move yourself and the target of ‘Hovering Foe’ up to 10ft in any direction. They may make a Finesse Check against the effect.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hovering Foe"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "maneuver_cloud",
+      "transcribed": true
+    }
+  }
+}

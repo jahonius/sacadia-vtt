@@ -1,0 +1,40 @@
+{
+  "_id": "c5d7a2fed8a69a20",
+  "_key": "!items!c5d7a2fed8a69a20",
+  "name": "Wild Cleave",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you kill an enemy with a melee weapon, if there is another enemy target who is both within your melee weapon range and within 5ft of that target, you may deal the remainder of your damage to that new target, provided your attack would hit the second target.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "aoean",
+      "prerequisite": "Wild Strike"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_wild_cleave"
+    }
+  }
+}

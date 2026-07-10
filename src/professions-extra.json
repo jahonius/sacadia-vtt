@@ -1,0 +1,1301 @@
+{
+ "fatebound": [
+  {
+   "name": "Fated Strike",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "description": "Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon. Gain training in use of this weapon if you do not already have it. When you make an attack using your divine weapon, add your Fate score to damage dealt (in addition to Power or Finesse). You may switch your Divine Weapon during any long rest. A weapon that loses its divinity turns to dust."
+  },
+  {
+   "name": "Vaulter",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Finesse 3",
+   "description": "Once per turn as a reaction to a creature ending a move action within 5ft of you, you may move 10 feet in any direction. If you have Steadied, you may move 20 feet."
+  },
+  {
+   "name": "Surrounded by Me",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Courage 3",
+   "description": "Once per turn as a Boost to a or melee attack action, increase damage on that attack by half your Proficiency (rounded up) for each enemy within 5ft of you if it successfully hits. Treat Swarm enemies as a single entity for this effect."
+  },
+  {
+   "name": "Surrounded by Friends",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Surrounded by Me, Courage 5",
+   "description": "Count all creatures (not just enemies) when determining the modifier to apply to damage by the Surrounded by Me boost."
+  },
+  {
+   "name": "Treacherous Throw",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Courage 3",
+   "description": "Up to once per turn while wielding two versatile weapons, choose a point within 30ft of you. Every creature within 5Xft from that spot (where X is half your Proficiency, rounded up) makes a Finesse Check against your Check DC or takes 1D4 Fumble. Roll each Fumble separately. When you use this ability, remove one versatile weapon from your inventory until the end of combat."
+  },
+  {
+   "name": "Slickthrow",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Treacherous Throw, Courage 5",
+   "description": "When you use Treacherous Throw, increase the base dice type of Fumble given by one type."
+  },
+  {
+   "name": "Step and Stop",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Courage 4",
+   "description": "When you deal damage on your turn to at least 3 unique enemies, recover limb exhaustion on one if it is exhausted."
+  },
+  {
+   "name": "Bloodletter",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Finesse 6",
+   "description": "When you attempt to give Hemorrhage to a target, they make Trait Checks against the effect at 1X disadvantage for every 3 levels of Hemorrhage you attempt to give them. Aoean"
+  },
+  {
+   "name": "Wild Strike",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "When you hold a versatile weapon in each hand, you may make a melee attack with each weapon using a single AP. Each attack must be made against a different target. This action exhausts ."
+  },
+  {
+   "name": "Wild Cleave",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wild Strike",
+   "description": "Whenever you kill an enemy with a melee weapon, if there is another enemy target who is both within your melee weapon range and within 5ft of that target, you may deal the remainder of your damage to that new target, provided your attack would hit the second target."
+  },
+  {
+   "name": "Wild Chain",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wild Strike",
+   "description": "Whenever you critically hit when you use Wild Strike, you may have the critical effect be for you to make a attack against an additional target. Treat this as part of the same attack. There is no limit to the number of times you can do this if you continue to critically hit."
+  },
+  {
+   "name": "Wild Throws",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Wild Strike, Finesse 3",
+   "description": "When you use Wild Strike with Versatile Weapons, you may make Versatile throws with one or either weapon."
+  },
+  {
+   "name": "Third Arm",
+   "tag": "passive",
+   "cspCost": 7,
+   "prerequisite": "Wild Strike, Finesse 5",
+   "description": "When you use Wild Strike, you may make up to three attacks using Wild Strike using a single AP. All of these attacks must be made against different targets. [3] Parrying FocusF,R: As long as you maintain Focus, any time a creature successfully hits you with a melee attack, you may expend a reaction to make them take damage equal to your Finesse."
+  },
+  {
+   "name": "Blade Aura",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Finesse 2",
+   "description": "In an aura 5ft around you, any creature who enters this space or starts their turn in it makes a Finesse Check or takes 1D6 points of slashing damage. Damage dealt this way increases to 1D8 at level 5, and 1D10 at level 11. Once a creature takes this damage, they cannot take it again until the start of their next turn."
+  },
+  {
+   "name": "Stabby Aura",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Blade Aura, Finesse 3",
+   "description": "Increase the damage dice dealt by Blade Aura by one type."
+  },
+  {
+   "name": "Blindstab",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Stabby Aura, Finesse 4",
+   "description": "Increase the damage dice dealt by Blade Aura by one type."
+  },
+  {
+   "name": "Bladius",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Blade Aura, Finesse 3",
+   "description": "Increase the radius of Blade Aura from 5ft to 10ft."
+  },
+  {
+   "name": "Greatius Bladius",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Bladius, Finesse 5",
+   "description": "Increase the radius of Blade Aura from 10ft to 15ft. The Fatebound A cool mist hovers over a lake. A lost child, called to this place, peers at their still reflection. They do not see themselves, but a kingly presence – a divine god – smirking back at them. The god beckons for them to reach into the lake, and in so doing the child pulls a spear from the water, longer than they are tall, glittering in gold. It radiates power, and they immediately know that they are the son of a god. The Fatebound are the children of gods or else simple folk tricked by Fae into pacts. Wielding a divine weapon granted by their patron, they are tested by fate–and twist it to their will. The blessed Achilles, Kaguya-Hime, the Pandova brothers, and Cu Chulainn are all Fatebound, as is Thor under tribulation. All of these characters share the blessing and curse of fate, and wield holy weapons or powers which grant them power–and pose danger to themselves. Party Role DPS + AoE, Crit-Fishing, Fate Manipulation Aspect... Fated StrikeP: Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon. Gain training in use of this weapon if you do not already have it. When you make an attack using your divine weapon, add your Fate score to damage dealt (in addition to Power or Finesse). You may switch your Divine Weapon during any long rest. A weapon that loses its divinity turns to dust. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit. Check Expertise: Power and Fate Checks Check DC: 9 + Fate + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Imbued Weapons, Light Armor, Medium Armor Hit Points per Level: 9 or roll 2D8 All Fatebound [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Elemental WeaponPB: Your divine weapon does elemental damage (choose one when you take this ability: Earth, Air, Fire, Water, Rot, Salt) instead of normal damage. Elemental damage overcomes physical weapon resistances. Additionally, you may summon and dismiss your divine weapon with a Boost to any action, even if physically separated. The divine weapon does not take up space in your readied item slots (RIS). [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessL: You may use this on any action before or after rolling. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose from one of the following options. Heavy Weapons MasteryP: Gain +1 to attack and damage rolls you make with your divine weapon if you wield a heavy weapon as your divine weapon. Armor MasteryP: You may gain the benefit of one extra visible item while wearing armor that would obscure it (to a max of 3). Critical MasteryP: Once per Quick Rest when you roll a natural 1 on a D20 die, you may treat it as a natural 20. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Boon of the Gods: Your divine weapon is imbued with the aura of your divine patron. Once per quick rest, you may increase the damage dice of an attack by two dice types as a Boost to an attack. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose from one of the following options. Fumble MasteryP: Whenever you give Fumble, increase the dice type of Fumble given by two dice types. Boost MasteryP: Increase the damage of any attack you make against a single target by half your Proficiency (rounded up) when you apply three Boosts to an attack. Aristeia MasteryP: Increase your number of Glory points by two. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] DemigodP: Increase your Power or Fate (choose one) by one additional point, to a maximum of 7."
+  },
+  {
+   "name": "Cascading Cleave",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Slicemaster",
+   "description": "Whenever you cleave through an enemy with Slicemaster, add 1D10 damage to the next target. Increase damage dealt this way to 2D6 at level 11. [3] Hack ‘n’ SlashA: (Prerequisite: Slicemaster, Power 5). Up to once per turn, expend a number of AP up to half your Proficiency (rounded up) in a consistent attack against a single target using a slashing divine weapon. Instead of gaining advantage on to-hit, increase the damage dice by 1 dice type for each AP expended this way if you hit."
+  },
+  {
+   "name": "Bludgeonmaster",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Power 3",
+   "description": "Once per quick rest when wielding a bludgeoning divine weapon, you may slam it into the ground. All enemies within 5ft of you make a Finesse Check or are knocked prone. [2] CrunchP : (Prerequisite: Bludgeonmaster). If you critically hit with a bludgeoning divine weapon and choose to rend, rend an extra 1 point of armor."
+  },
+  {
+   "name": "Concussive Slam",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Bludgeonmaster, Power 4",
+   "description": "As a Boost to Bludgeonmaster, rend one armor on all targets who fail the Bludgeonmaster Check DC."
+  },
+  {
+   "name": "Slamstrike",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Bludgeonmaster, Power 5",
+   "description": "When you make a melee attack using your bludgeoning divine weapon against a creature who is Prone, increase the base damage dice of that weapon by one die type."
+  },
+  {
+   "name": "Piercemaster",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Power 3",
+   "description": "Once per turn when wielding a piercing divine weapon, you may throw it at a target and then summon it to your hands. Make a melee attack against a single target within 30ft of you."
+  },
+  {
+   "name": "Nicking Touch",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Piercemaster",
+   "description": "If you critically hit with a melee attack using a piercing divine weapon and choose to maximize damage dealt, treat the damage dice of your weapon as one dice type higher for the purposes of maximizing that damage."
+  },
+  {
+   "name": "Elegant Polearm",
+   "tag": "boost",
+   "cspCost": 2,
+   "prerequisite": "Piercemaster",
+   "description": "As a Boost to Wild Strike, you may use Wild Strike at 10ft range when wielding a 10ft-range piercing divine weapon."
+  },
+  {
+   "name": "Piercing Pin",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Piercemaster, Power 5",
+   "description": "When you use Piercemaster, you may throw your weapon through one target and into another before summoning it back to you. Make a melee attack roll against two creatures in a line. Both creatures must be within 30ft of you. If the attack would hit both creatures, deal your full damage to the first target in the line, and deal half that damage to the second target (rounded up). If the attack would only hit one target, deal full damage to that target. Heavy Hitter"
+  },
+  {
+   "name": "Heavy Weaponry",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "You gain training in heavy weapons such as greatswords, and may make a Heavy Weapon your Divine Weapon."
+  },
+  {
+   "name": "Humongous",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Heavy Weaponry, Power 3",
+   "description": "Increase the base damage of your divine weapon by one dice type provided your divine weapon is a heavy weapon. Other creatures of your size or smaller cannot pick up or wield your divine weapon due to its immense size."
+  },
+  {
+   "name": "Ridiculous Size",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Humongous, Power 6",
+   "description": "Increase the base damage die of your heavy Divine Weapon by one additional dice type."
+  },
+  {
+   "name": "Goliath Punch",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Humongous",
+   "description": "Whenever you critically hit while wielding an extra heavy weapon, you may choose to have the critical effect be to throw the enemy up to 5X feet away, where X is half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Grandstrike",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Wild Strike, Power 3",
+   "description": "When you use Wild Strike and hit at least three targets, increase the damage dealt to each target by half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Wilder Strike",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wild Strike, Power 3",
+   "description": "The minimum base damage dice of Wild Strike is 1D4."
+  },
+  {
+   "name": "Feralwild",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wilder Strike, Power 5",
+   "description": "The minimum base damage dice of Wild Strike is 1D6."
+  },
+  {
+   "name": "Slicemaster",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Power 3",
+   "description": "When you wield a slashing divine weapon and a hit with a melee attack reduces a target to 0HP, your weapon cleaves. Choose another target in range of your divine weapon. The remainder of your damage is dealt to them if the original to-hit roll would hit this new target. Continue cleaving until your remaining damage reaches zero."
+  },
+  {
+   "name": "Fumbling Slice",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Slicemaster",
+   "description": "When you critically hit a target, give them 1D4 Fumble in addition to other critical effects."
+  },
+  {
+   "name": "Critical Strike",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "",
+   "description": "If you critically hit with your divine weapon, you may make a critical effect be that you make your next attack with an additional 1X advantage."
+  },
+  {
+   "name": "Critical Harm",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "If you critically hit with your divine weapon, you may make a critical effect be that you roll twice as many damage dice."
+  },
+  {
+   "name": "Critical Conditions",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "If you critically hit with your divine weapon, you may make a critical effect be to increase an adversarial condition of the following types: Delirium, Nausea, Hemorrhage, or Frenzy the target already possesses by one (to a maximum of your Proficiency)."
+  },
+  {
+   "name": "Critical Recovery",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "If you critically hit with your divine weapon, you may make a critical effect be that you gain 1D6 temporary HP. Increase HP gained this way to 1D8 at level 5 and 1D10 at level 11."
+  },
+  {
+   "name": "Fumbling Wander",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "As a reaction to an enemy moving to within 5ft range of you, you may attempt to give them 1D8 Fumble. They make a Fate Check against this effect. If you are Steadied, you may give them 8 Fumble if they fail the check."
+  },
+  {
+   "name": "Cunning of Crows",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "",
+   "description": "When you use the Dodge action, you may add half your Fate Score (rounded up) to your Dodge roll."
+  },
+  {
+   "name": "Criticality",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Fate 2",
+   "description": "Your attacks critically hit whenever you roll a natural 19 or 20, rather than only a 20."
+  },
+  {
+   "name": "Divine Criticality",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Criticality, Fate 5",
+   "description": "Your attacks critically hit whenever you roll a natural 18, 19, or 20."
+  },
+  {
+   "name": "Flourishing Touch",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Power 3",
+   "description": "You dismiss and summon your divine weapon with a flourishing touch. Attempt to give a target Surprise (Wiles Check negates). Once you have used this on a target, you cannot use it again on targets that were within visible range of you when you used it until a quick rest has passed."
+  },
+  {
+   "name": "Critical Tales",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Fate 4",
+   "description": "When you use a lore point on Rousing Success to critically succeed at a to-hit action, you may apply one additional critical effect to that attack. Fated"
+  },
+  {
+   "name": "Lucky Break",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "As an action you can harm the fate of enemies around you. Attempt to give 1D6 Fumble to a number of enemies within 10ft of you equal to your Proficiency. They make Fate Checks against this effect. You may use this once per turn."
+  },
+  {
+   "name": "Sapped Fates",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Lucky Break",
+   "description": "Once per turn as a Boost to Lucky Break, you may gain +1 to your next to-hit roll made this turn for each enemy to which you give Fumble."
+  },
+  {
+   "name": "Sapping Strike",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Sapped Fates, Power 3",
+   "description": "When you use the Sapped Fates Boost, additionally increase damage you deal to a target on your next attack roll made this turn by +1 for each enemy given Fumble."
+  },
+  {
+   "name": "God-given Luck",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Lucky Break, Fate 3",
+   "description": "Increase the Fumble given to each target when using Lucky Break by one dice type."
+  },
+  {
+   "name": "Divine Fates",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "God-Given Luck, Fate 5",
+   "description": "Increase the Fumble given to each target when using Lucky Break by one dice type."
+  },
+  {
+   "name": "Longing Fates",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Lucky Break",
+   "description": "Increase the range of Lucky Break to 30ft."
+  },
+  {
+   "name": "Targeted Foe",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Choose one target. As long as you maintain Focus, add half your Fate (rounded up) to all to-hit and damage rolls made against that target. You may use this once per combat."
+  },
+  {
+   "name": "Resilient Foe",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Targeted Foe",
+   "description": "You are resistant to all damage dealt by a targeted foe by your Proficiency."
+  },
+  {
+   "name": "Aware Foe",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Targeted Foe",
+   "description": "Gain 1x advantage to any ‘Make Trait Check’ action to reduce a condition given to you by a targeted foe."
+  },
+  {
+   "name": "Crushing Blow",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Targeted Foe",
+   "description": "When you critically hit a Targeted Foe, increase the dice type of your divine weapon by one dice type."
+  },
+  {
+   "name": "Imbued Fury",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Targeted Foe, Fate 2",
+   "description": "Your attacks target AD (the lowest armor score among MD, TD, PD) when made against a Targeted Foe."
+  },
+  {
+   "name": "Tighten Focus",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Targeted Foe, Power 3",
+   "description": "When you use Targeted Foe, add your Fate to your to-hit and damage against that target instead of half your Fate. Aristeia [0] Aristeia: When you take Aristeia, gain an Action Pool of Glory points equal to your Proficiency Score. You may spend skill points to learn various Aristeia. Whenever you may spend skill points, you may add to the list of Aristeia you know. When you use the ability, you may declare one of your known Aristeia. You get all of Glory points back after a quick rest."
+  },
+  {
+   "name": "Hide of Beasts",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Expend one Glory point. You are resistant to all damage you take by half your Proficiency (rounded up) for as long as you maintain Focus."
+  },
+  {
+   "name": "Touch of Gold",
+   "tag": "action",
+   "cspCost": 5,
+   "prerequisite": "",
+   "description": "Expend one Glory point to attempt to give Fatigue equal to half your Proficiency (rounded up) to one target within 5ft of you. They make a Fate check against this effect."
+  },
+  {
+   "name": "Divine Slam",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Expend one Glory point. All creatures within 10ft of you make a Finesse Check against your Check DC or are pushed 5X ft away from you, where X is half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Blaze of Glory",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Expend 1 Glory point as your armor radiates in light. All enemies within 10ft of you make a Finesse Check against 1D8+Fate elemental damage, taking half as much on a successful check. The damage dice dealt this way increases to 1D10 at level 5, and to 2D6 at level 11. The type of elemental damage is the same as your divine weapon."
+  },
+  {
+   "name": "Elemental Rage",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Fate 5",
+   "description": "When you use Blaze of Glory, increase the dice type of elemental damage dealt by 1 dice type."
+  },
+  {
+   "name": "Hot Iron",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Expend one Glory point as a Boost to any melee attack made against a single target. On a successful hit, deal an additional XD6 elemental damage, where X is your Proficiency. The type of elemental damage is the same as your divine weapon."
+  },
+  {
+   "name": "Compelling Gaze",
+   "tag": "action",
+   "cspCost": 5,
+   "prerequisite": "",
+   "description": "Expend one Glory point to attempt to give X levels of Delirium to every enemy within 5ft of you, where X is half your Proficiency (rounded up). They make a Fate Check against this effect."
+  },
+  {
+   "name": "Hero’s Response",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Expend one Glory point as a reaction. You may take any number of additional reactions before the start of your next turn (to a maximum of your AP). Reduce your AP on your next turn by the number of additional reactions you take."
+  },
+  {
+   "name": "Astonishing Shout",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Expend one Glory point to let out a bellow of rage. For each ally within 5ft of you (to a max of half your Proficiency rounded up), gain X temporary HP. For each enemy within 5ft of you (to a max of half your Proficiency rounded up), increase damage dealt by X on the next attack you attempt this turn if you successfully hit. X is equal to half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Glorious Bellow",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Astonishing Shout, Power 3",
+   "description": "Increase the range of Astonishing Shout by 5ft."
+  },
+  {
+   "name": "Divine Bellow",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Astonishing Shout, Power 6",
+   "description": "When you use the Astonishing Shout, every enemy in range is pushed 5ft away from you."
+  },
+  {
+   "name": "Gods’ Mist",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Fate 2",
+   "description": "Expend one Glory point. For as long as you maintain focus, you are shrouded in a divine mist. The mist has a radius of 5X (where X is half your Proficiency, rounded up) centered on you. Inside of this area it is Dim. The mists move to you at the start of your turn, and do not affect you or your allies."
+  },
+  {
+   "name": "Spirit Blade",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Fate 3",
+   "description": "Expend one Glory point. For as long as you maintain Focus, your divine weapon glows with a spiritual energy. It attacks AD (the lowest armor score among MD, TD, PD) instead of other armor types. Additionally, your weapon can strike incorporeal targets."
+  },
+  {
+   "name": "Blinding Divinity",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Fate 3",
+   "description": "You may expend a Glory point to cause your armor to blaze with divinity. Choose one target. They make a Fate Check against your Check DC or take the Blinded Condition until the start of your next turn. Once you have used this ability on a target (whether they succeed or fail) you may not do so again until a quick rest has passed."
+  },
+  {
+   "name": "Glory of Storms",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Power 4",
+   "description": "You may expend a Glory point as a Boost to any action to ignore the effects of all conditions for your turn, including any Exhaustion you have from being Wounded. You may still roll Trait Checks against any conditions. If you have levels of Wrestle Pin from a creature one size larger or smaller than you, you may still move, but at half speed (rounded up). The creature pinning you moves with you or lets go (removing all Pin). If you use Glory of Storms and are pinned by a creature two sizes larger than you or larger, you still may not use actions. The effects of Glory of Storms end at the end of your turn."
+  },
+  {
+   "name": "Font of Glory",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "The number of Glory points you get per quick rest is equal to twice your Proficiency Score."
+  }
+ ],
+ "hulinari_warrior": [
+  {
+   "name": "Boosted Attack",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "You may apply up to two unique Boosts to attacks made with your divine weapon. Boosts taken this way cannot be the same."
+  },
+  {
+   "name": "Boosted Crit",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Boosted Attack",
+   "description": "As a Boost to an attack made with a divine weapon, you may apply an extra critical effect if you critically hit."
+  },
+  {
+   "name": "Boostbane",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Boosted Attack, Power 4",
+   "description": "Expend two Boosts on a melee attack with your divine weapon. If you miss but your to-hit is greater than or equal to 5 below the target’s defense, reduce your weapon’s base damage by two dice types and deal that damage to the target. Do not add modifiers to damage dealt (only deal base damage dice)."
+  },
+  {
+   "name": "Boost Stack",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Boosted Attack, Power 4",
+   "description": "You may apply up to three unique Boosts to attacks made with your divine weapon. Boosts taken this way cannot be the same."
+  },
+  {
+   "name": "Boosted Range",
+   "tag": "boost",
+   "cspCost": 5,
+   "prerequisite": "",
+   "description": "As a Boost to an attack made with a divine weapon, you may make that attack at 5ft or10ft range. If you use this ability with a polearm that already has 10ft range, you may further extend the range of this attack to 15ft."
+  },
+  {
+   "name": "Boosted Damage",
+   "tag": "boost",
+   "cspCost": 5,
+   "prerequisite": "",
+   "description": "As a Boost to an attack made with a divine weapon, increase the damage dice dealt by this weapon by one type if you hit."
+  },
+  {
+   "name": "Damaging Weapon",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Boosted Damage, Power 2",
+   "description": "As a Boost to an attack made with a divine weapon, increase the damage dice dealt by this weapon by one type if you hit. Treat this as a unique Boost from Boosted Damage."
+  },
+  {
+   "name": "Long Arc",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Power 2",
+   "description": "Once per turn as a Boost to an attack with a divine weapon, you may expend one additional AP to make that attack against two targets. Only apply the base weapon damage dice to all targets (i.e., do not add Power or other modifiers to damage dealt). You may only use this Boost if two enemies are within range and within 5ft of one another."
+  },
+  {
+   "name": "Solar Arc",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Long Arc, Power 5",
+   "description": "When using Long Arc, you may choose to make an attack against up to three targets. Only apply the base weapon damage dice to all targets if you hit. You may only use this Boost if three targets are within 5ft of at least one other target and all targets are in range of your divine weapon."
+  },
+  {
+   "name": "Last Chance",
+   "tag": "boost",
+   "cspCost": 2,
+   "prerequisite": "Fate 2",
+   "description": "As a Boost to an attack with a divine weapon, roll an additional 1D20. If that 1D20 would critically hit, you critically hit. You can only roll this D20 if your roll would originally hit, but not crit."
+  },
+  {
+   "name": "Boostbuster",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Fate 3",
+   "description": "You may apply one Boost to attacks of opportunity."
+  },
+  {
+   "name": "Boosted Fury",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Power 3",
+   "description": "As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency). [3] Greater Elemental Weapon: (Prerequisite: Fate 4). Choose the Boon that matches the elemental damage type dealt by your divine weapon: Vampiric WeaponA: (Prerequisite: Rot Elemental Weapon). Once per quick rest you attempt to steal the life of a target. Choose one target. They make a Fate Check. If they fail, reduce their HP by XD6 and gain temporary HP equal to half the damage dealt (where X is half your Proficiency, rounded up). Crystaline WeaponF: (Prerequisite: Salt Elemental Weapon). Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright. Scorching WeaponF: (Prerequisite: Fire Elemental Weapon). As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest. Spring WeaponR: (Prerequisite: Water Elemental Weapon). Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP. Breezy WeaponB: (Prerequisite: Air Elemental Weapon). Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction. Stone WeaponR: (Prerequisite: Earth Elemental Weapon). Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action. The Hulinari Warrior T he low rumble of an approaching stampede, the roar of a massive bear crushing against the trees, or the fluttering of a thousand butterfly wings. The Hulinari is the force of a species of animal brought fully to battle, and they reflect that animal in their ferocity as well as their natural inclination for savage combat. The Hulinari is at its best in combat against multiple enemies. Reveling in the odds, Hulinari often see their purpose to take down the human world–and what better way to do that than slashing them to pieces five at a time? Party Role Area of Effect Damage, Area Control, Target Debuffing. Aspect... Hulinari SubtypeP: (Prerequisite: Hulinari Heritage). You may only play a Hulinari Warrior if you have the Hulinari Heritage Ancestry and a Hulinari Heritage. When you select your Hulinari Ancestry, you can only take combat abilities from that Hulinari Warrior Ancestry. Antlers, Claws, and TalonsP: When you make an unarmed attack in Beast form, change the damage dice from 1D4 to 1D8. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit Check Expertise: Courage Checks Check DC: 9 + Courage + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Light and Medium Armor. Hit Points per Level: 9 or roll 2D8 All Hulinari Warriors [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Bestial RespectF: Choose one beast within 30ft of you (with CR less than or equal to half your Proficiency, rounded up) to roll a Fate Check. If they fail, they become your ally until you break Focus. Once per turn they may use a action to roll a Fate check against this effect, ending Bestial Respect on a success. Once a creature succeeds against Bestial Respect, they may not be affected by it again until after a quick rest. [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessB: you may use this Boost on any action you choose before or after rolling without expending a Boost to that action. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose one of the following: Mastery of Tooth and ClawP: Gain +1 to unarmed melee attacks and damage. Mastery of Paw and WingP: Increase your movement speed by 5ft (and Fly speed if applicable). Mastery of Feather and HideP: Increase your HP by 1 for every two levels, and increase the size of your HP pools by the same amount. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Bestial RapidityP: When you change forms, it only exhausts . When you do, lose all levels of Pin. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose one of the following: Mastery of the PackP: The first time each turn you move within 5ft of an enemy in Pack Form, deal damage to them equal to your Finesse. Mastery of the BruteP: Increase the dice type of melee attacks made with your claws by one dice type when in Brute form. Mastery of the SwarmP: Your flock constantly swarms around you. Gain damage resistance equal to half your Proficiency (rounded up) against all physical damage when in Swarm Form. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] Mostly HumanB: You may change between a human and beast form as a Boost to another action. Form of The Pack You may only take the below abilities if you have the Pack Hulinari Heritage."
+  },
+  {
+   "name": "Headbutt",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Make a melee attack vs. PD while in Pack Form, dealing 1D8+Finesse damage on a successful hit. Damage dice rolled this way increases to 1D10 at level 5, and 2D6 at level 11."
+  },
+  {
+   "name": "Hornier",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Power 2",
+   "description": "Increase the damage of Headbutt by 1 dice type."
+  },
+  {
+   "name": "Gorier",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "(Prerrequisite: Power 4). Increase the damage of Headbutt by 1 dice type."
+  },
+  {
+   "name": "Skullcharge",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Headbutt, Finesse 3",
+   "description": "When you use ‘Headbutt’ and move in a straight line at least 20ft to an enemy prior to attacking, add XD6 to your damage, where X is half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Gorehorn",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Skullcharge, Finesse 5",
+   "description": "When you apply Skullcharge to Headbutt, change the benefit to apply XD6 where X is equal to your Proficiency, rather than half your Proficiency."
+  },
+  {
+   "name": "Skittish",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "When in Pack Form, declare a target. When you do so, gain 1x advantage to all Trait Checks that enemy makes you roll."
+  },
+  {
+   "name": "Skittish Step",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Skittish",
+   "description": "Whenever you are Skittish to a target and they deal damage against you, reduce that damage by your Proficiency."
+  },
+  {
+   "name": "Defensive Step",
+   "tag": "reaction",
+   "cspCost": 5,
+   "prerequisite": "Skittish, Courage 3",
+   "description": "Whenever you are Skittish to a target and they move within 5ft of you, you may use your reaction to move up to half your movement speed away from them without provoking an attack of opportunity."
+  },
+  {
+   "name": "Confused Dance",
+   "tag": "reaction",
+   "cspCost": 5,
+   "prerequisite": "Skittish, Courage 3",
+   "description": "Whenever you are Skittish to a target, you may use a reaction to give that target 1x disadvantage on a Trait Check."
+  },
+  {
+   "name": "Hindkick",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "When you use the Kick action on an enemy, they gain 1X Disadvantage on the Trait Check against Kick."
+  },
+  {
+   "name": "Powerful Buck",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Hindkick, Power 3",
+   "description": "When you use Kick on an enemy, they are pushed 10ft away instead of 5ft."
+  },
+  {
+   "name": "Bucking Toss",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Powerful Buck, Power 5",
+   "description": "When you use Kick on an enemy, they are pushed up to 20ft away."
+  },
+  {
+   "name": "Tripping Kick",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "(Preqreuisite: Hindkick, Finesse 3). When you use Kick on an enemy and they fail the trait check against it, you may expend a Boost to knock them Prone."
+  },
+  {
+   "name": "Ribcrack",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Hindkick, Finesse 3",
+   "description": "When you use Kick on an enemy and they fail the trait check against it, you may expend a Boost to deal XD6 damage to them, where X is your Finesse."
+  },
+  {
+   "name": "Stot",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "As a reaction to an enemy coming within 5ft of you, you may jump 5ft into the air. The enemy gains 1X Disadvantage to their first attack against you on their turn."
+  },
+  {
+   "name": "Retreat",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "As a reaction to your turn ending, you may move up to half your move speed in any direction. You do provoke attacks of opportunity this way."
+  },
+  {
+   "name": "Charge the Line",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "You may use an action when in Pack Form to move your movement speed in a straight line. Any creature along that line (occupying a square you cross through) must make a Finesse Check or be knocked 5ft away from that line. If they succeed at the Finesse Check, Charge the Line ends and you stop 5ft in front of them. When using Charge the Line, you may not end your movement in an occupied square. Charge the Line provokes reaction attacks from creatures not in the line but within melee range. Creatures in the line may make a reaction attack, but automatically fail against Charge the Line if they do so. Additionally, they make their Reaction Attacks at 1X Disadvantage."
+  },
+  {
+   "name": "Hoofstomp",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Charge the Line, Courage 2",
+   "description": "When you use the ‘Charge the Line’ ability, deal XD4 damage to any creature that fails their Finesse Check, where X is half your proficiency (rounded up)."
+  },
+  {
+   "name": "Flattened Earth",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Hoofstomp, Courage 4",
+   "description": "Increase the damage dealt by Hoofstomp to XD4 damage, where X is your Proficiency."
+  },
+  {
+   "name": "The Stompening",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Flattened Earth, Courage 6",
+   "description": "Increase the damage dealt by Hoofstomp to XD6."
+  },
+  {
+   "name": "Hop Over",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Charge the Line",
+   "description": "When you use Charge the Line, you may apply a Boost to hop over a single medium-sized (or smaller) creature without interrupting the line. They count as a creature not in the line for the purposes of Charge the Line."
+  },
+  {
+   "name": "Momentum",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Charge the Line, Finesse 2",
+   "description": "When you use the ‘Charge the Line’ ability, creatures who fail fall Prone."
+  },
+  {
+   "name": "Erratic Charge",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Charge the Line, Finesse 3",
+   "description": "All creatures who make an attack of opportunity against you when you use Charge the Line do so with 1X Disadvantage. This stacks with other sources of disadvantage."
+  },
+  {
+   "name": "Pack Mule",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "You may carry a teammate on your back when in Pack Form. To initiate, they must use their reaction to climb on your back. Reduce your speed by half. While riding you, your ally has Height Advantage in all physical attacks and has a move speed of zero. They can get off at any time with a action or reaction, ending your Focus. If you or an enemy end your Focus, your ally falls to the ground Prone on a random side of you. If you use Pack Mule and Skittish, your ally gains the benefit of all passive Skittish effects."
+  },
+  {
+   "name": "Carried Sacrifice",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Pack Mule",
+   "description": "If you are carrying an ally on your back and they would take damage from an attack, you may use your reaction to instead take that damage."
+  },
+  {
+   "name": "Carrying the Team",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Pack Mule",
+   "description": "When you use Pack Mule, you may use a reaction to impose 1X advantage on any attack your riding teammate makes or 1X disadvantage on an attack made against them."
+  },
+  {
+   "name": "Head Down",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Carrying the Team",
+   "description": "As a Boost to a Move action when you are using Pack Mule, adversaries may not use Reaction Attacks on an ally you are carrying."
+  },
+  {
+   "name": "Steed and Rider",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Carrying the Team, Courage 3",
+   "description": "When you use Carrying the Team to give an ally advantage, you may give the attack 2X advantage instead of 1X. If you do this, gain 1 Fatigue."
+  },
+  {
+   "name": "Rapidcarry",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Pack Mule, Finesse 4",
+   "description": "Your speed is not reduced when using Pack Mule."
+  },
+  {
+   "name": "Need for Speed",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Finesse 2",
+   "description": "Increase your base movement speed by 10ft in Pack Form."
+  },
+  {
+   "name": "Forest Hooves",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Need for Speed",
+   "description": "Ignore difficult terrain from any cause."
+  },
+  {
+   "name": "Bulk Muscle",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Need for Speed, Finesse 4",
+   "description": "Increase your base Move speed in Pack form by 10ft."
+  },
+  {
+   "name": "Faster Still",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Bulk Muscle, Finesse 6",
+   "description": "Increase your base Move speed in Pack form by 10ft."
+  },
+  {
+   "name": "Ride Like the Wind",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Finesse 2",
+   "description": "As long as you maintain Focus in Pack Form, double your movement speed."
+  },
+  {
+   "name": "Get Down",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Finesse 3",
+   "description": "Whenever you cause an ally to move by any means other than Pack Mule (e.g., Kick), they gain the effects of Half Cover until the start of their turn. [0] Herd Tactics: When you take this ability, you get an Action Pool of herd points equal to your Proficiency Score that you can only use in Pack Form. You get all herd points back after a quick rest. When you take this ability, you may spend skill points to learn herd tactics. Whenever you may spend skill points, you may add to the list of herd tactics you know:"
+  },
+  {
+   "name": "Chaotic Wobble",
+   "tag": "boost",
+   "cspCost": 2,
+   "prerequisite": "",
+   "description": "You may expend a Herd Point as a Boost to any action. You do not provoke attacks of opportunity on that action."
+  },
+  {
+   "name": "Hard Turn",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Charge the Line",
+   "description": "Expend a Herd Point as a Boost to Charge the Line. You may enact a single turn during Charge the Line, turning up to 90 degrees to either side."
+  },
+  {
+   "name": "Blend in with the Herd",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Expend a Herd Point as a reaction to an enemy making an attack against you or an ally within 5ft of you. If you do, roll 1DX, where X is the number of allies within 5ft of you, including yourself, and each outcome on the 1DX roll corresponds to an ally. The enemy’s attack instead targets the target rolled on the 1DX die. If the target is out of range of the enemy’s attack, that attack misses."
+  },
+  {
+   "name": "Protective Instinct",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Expend a Herd point and choose a number of creatures equal to your Proficiency within 15ft of you. Each creature chosen is given the effects of half cover until the start of your next turn. You may not use this on an ally on your back through Pack Mule."
+  },
+  {
+   "name": "Grab and Go",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Finesse 3",
+   "description": "You may expend a Herd Point as a Boost to a Move action. As part of your movement, move through a square occupied by a willing ally, and then immediately half your move speed for the remainder of the Move action. Move your ally with you as you move, placing them in any unoccupied square within 5ft of the end of your Movement. That ally cannot provoke an attack of opportunity when you move them (though you do)."
+  },
+  {
+   "name": "Hoofslam",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Finesse 3",
+   "description": "As a Boost to any action that imposes a trait check on an enemy that will move them if they fail (e.g., Kick, Charge the Line), you may expend one Herd Point per target that rolls a Trait Check against being moved. Each target you selects makes this Trait Check at 1X Disadvantage."
+  },
+  {
+   "name": "Herd Management",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "The number of herd points you get per quick rest is equal to twice your Proficiency Score. Form of the Brute You may only take the below abilities if you have the Brute Hulinari Heritage."
+  },
+  {
+   "name": "Body Slam",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Choose one target within 5ft of you. They make a Finesse Check against your Check DC or are knocked Prone."
+  },
+  {
+   "name": "Shockwave",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Body Slam, Power 3",
+   "description": "As a Boost to Body Slam, you may expend additional AP up to half your Proficiency (rounded up). For each additional AP expensed on the Body Slam action, attempt to knock an additional target Prone."
+  },
+  {
+   "name": "Thunderwave",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Shockwave, Power 5",
+   "description": "Increase the range of Body Slam to 10ft."
+  },
+  {
+   "name": "Bite",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "When you are in Brute Form, you may make an unarmed melee attack with . Your Bite deals 1D10+Power damage on a successful hit.The damage dice dealt this way increases to 2D6 at level 5 and 2D8 at level 11."
+  },
+  {
+   "name": "Indomitable Beast",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Bite Attack",
+   "description": "Every time you kill a creature with a Bite attack, gain 1D10 temporary HP. Increase the dice rolled this way to 2D6 at level 5, and 2D8 at level 11."
+  },
+  {
+   "name": "Necrotic Bite",
+   "tag": "passive",
+   "cspCost": 7,
+   "prerequisite": "Bite Attack",
+   "description": "Your bite attack does necrotic damage of XD6 in addition to your base physical damage, where X is half your Proficiency Score (rounded up)."
+  },
+  {
+   "name": "Drag the Prey",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "Once per turn, you may attempt to drag a prone target with you as you move up to half speed (rounded up). They make a Finesse Check against the effect."
+  },
+  {
+   "name": "Cleaving Claw",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Your claws rend armor. When you critically hit with an unarmed melee attack and choose to rend, rend 2 instead of 1 PD."
+  },
+  {
+   "name": "Surrounded Brute",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "The Surrounded Condition does not reduce your PD."
+  },
+  {
+   "name": "Full Monty",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Surrounded Brute, Courage 5",
+   "description": "If you are Surrounded and have enemies on at least 3 sides, treat enemies as Surprised for your first attack each turn."
+  },
+  {
+   "name": "Enduring Animal",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "",
+   "description": "Roll all Trait Checks against Fatigue using the ‘Make Trait Check’ action at 1X advantage."
+  },
+  {
+   "name": "We Don’t Hibernate",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Enduring Animal, Power 4",
+   "description": "You are immune to the Fatigue condition from any source."
+  },
+  {
+   "name": "Sweeping Claws",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": ", , , When in Brute Form, you may make an unarmed melee attack using your claws against every creature within 5ft of you. Reduce damage dealt this way by one dice type."
+  },
+  {
+   "name": "Strength of Ten Men",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Sweeping Claws, Power 4",
+   "description": "When you use Sweeping Claws, your attack only deals damage to enemies, and does not harm allies."
+  },
+  {
+   "name": "Cornered Courage",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Surrounded Brute, Courage 5",
+   "description": "When you are Surrounded, add half your Courage (rounded up) to damage dealt through Sweeping Claws."
+  },
+  {
+   "name": "Double Claw",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Sweeping Claws, Larger than Life, Power 5",
+   "description": "When you use Sweeping Claws, your attack is made against every creature within 10’ of you."
+  },
+  {
+   "name": "Reaching Claw",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Double Claw",
+   "description": "Make a melee attack against an enemy 15’ from you in Brute Form. If successful, move them to within 10’ of you. Treat them as prone for your next attack made this turn."
+  },
+  {
+   "name": "Tear Apart",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "As a Boost to any attack made against a single target, if you kill that target, you rip them apart. All enemies within 5ft of you gain the Surprised Condition."
+  },
+  {
+   "name": "Spray of Gore",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Tear Apart",
+   "description": "When you use Tear Apart, deal 1D6 damage to any creature you give the Surprised Condition to (apply damage before giving the target Surprised). Increase damage dice dealt this way to 1D8 at level 5, and 1D10 at level 11."
+  },
+  {
+   "name": "Tearing Fright",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Tear Apart, Power 4",
+   "description": "When you use Tear Apart, choose one target within 5ft of you. In addition to Surprise, attempt to give them Panic equal to half your Proficiency (rounded up)."
+  },
+  {
+   "name": "Hidebite",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Power 2",
+   "description": "When you make an attack of opportunity against a target, increase the damage dice of your attack by one dice type."
+  },
+  {
+   "name": "Grand Hidebite",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Hidebite, Power 4",
+   "description": "Increase the dice type of attacks of opportunity you make by one additional type."
+  },
+  {
+   "name": "Toughhide",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Power 2",
+   "description": "When you are surrounded and in Brute Form, gain 1 damage resistance to all physical attacks made against you."
+  },
+  {
+   "name": "Brute Adrenaline",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Toughhide, Power 4",
+   "description": "You may shrug off hits that would otherwise hurt when in Brute Form. As long as you maintain Focus, you are resistant to all physical attacks made against you by half your Courage score (rounded up). This stacks with Toughhide."
+  },
+  {
+   "name": "Larger Than Life",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Power 2",
+   "description": "Your Brute Form is a Large creature rather than Medium."
+  },
+  {
+   "name": "Trapped Animal",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Larger Than Life",
+   "description": "When you are Pinned, you may still use the Move action. Treat all movement distance as affected by Difficult Terrain. If there is a creature pinning you, they may move with you or release you from Pin."
+  },
+  {
+   "name": "Displace",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Larger Than Life, Power 3",
+   "description": "You may use the Displace Boost on a Move action to attempt to end that move action on a space occupied by enemies. Any enemies in a space you attempt to occupy must make a Power Check against your Check DC or are pushed 5ft away into an empty square. Enemies get 1x advantage for each ally also making this Trait Check, but also receive disadvantage from your size if relevant. If any enemies pass their Power Check, you must end your move action in the nearest square you would have moved through prior to moving onto their space."
+  },
+  {
+   "name": "Greater Displace",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Displace, Power 6",
+   "description": "When you use Displace, enemies do not make Trait Checks against the effect and are simply moved. You cannot move into a space if the creatures in that space cannot move out of your way."
+  },
+  {
+   "name": "Mighty Roar",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Courage 3",
+   "description": "You may roar in the face of a prone target within 5ft when in Brute Form. They make a Courage Check against your Check DC, and take X levels of Fatigue if they fail (where X is half your Proficiency, rounded up)."
+  },
+  {
+   "name": "Meatclub",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Power 3",
+   "description": "When you are in Brute Form, you may pick up an enemy and throw them. That enemy must be at least one size smaller than you. You attempt to throw them a distance up to 5Xft, where X is your Proficiency. The target you throw must make a Finesse check against being knocked prone. If you throw a target with Meatclub into another target, both targets must make a Finesse Check against being knocked Prone."
+  },
+  {
+   "name": "Thrown Stick",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Meatclub",
+   "description": "When you throw a target with Meatclub, they take 1D8 damage for every 10ft they are thrown. If they are thrown into another target and both targets fail their Finesse Check against being knocked Prone, deal this damage to both targets."
+  },
+  {
+   "name": "Steeltip",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Courage 6",
+   "description": "Whenever a creature deals damage to you through a melee attack vs. PD, deal damage back to them equal to half your Proficiency (rounded up). [0] Savage Blows: When you take this ability, you get an Action Pool of savage points equal to your Proficiency Score that you can only use in Brute Form. You get all savage points back after a quick rest. When you take this ability, you may spend skill points to learn savage blows. Whenever you may spend skill points, you may add to the list of savage blows you know:"
+  },
+  {
+   "name": "A Deeper Rend",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Expend one savage point and choose a limb (choose or one ). For as long as you maintain focus, increase the damage dice dealt by all attacks made with that limb by one type."
+  },
+  {
+   "name": "Confidence",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Courage 2",
+   "description": "When you make trait checks against mental conditions given to you by an adversary, you may expend one Savage Point to gain 1X advantage on that roll."
+  },
+  {
+   "name": "Enormity",
+   "tag": "boost",
+   "cspCost": 6,
+   "prerequisite": "Body Slam, Power 2",
+   "description": "As a Boost to Body Slam, expense one Savage Point for each creature Body Slam would affect. All targets who roll a Power Check against being knocked prone do so at 1X disadvantage."
+  },
+  {
+   "name": "Barreling Stature",
+   "tag": "boost",
+   "cspCost": 5,
+   "prerequisite": "Power 3",
+   "description": "As a Boost to an action made against a single target, you may expense one Savage Point. Treat that target as prone for that action."
+  },
+  {
+   "name": "Beastly Presence",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Courage 2",
+   "description": "Expense X Savage Points where X is any number up to half your Proficiency (rounded up). Attempt to give one target within 5ft of you that many levels of Panic or Taunt. You may only use this ability once per quick rest on a single target."
+  },
+  {
+   "name": "Ironhide",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Courage 5",
+   "description": "Expense one Savage Point. As long as you maintain Focus, ignore the effects of Nausea, Frenzy, Taunt, or Panic (choose one when you initiate Focus)."
+  },
+  {
+   "name": "Unrestrained Savagery",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "The number of Savage Points you get per quick rest is equal to twice your Proficiency Score. Form of the Swarm You may only take the below abilities if you have the Swarm Hulinari Heritage."
+  },
+  {
+   "name": "Hovering Foe",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "When in Swarm Form, select a single target within 5ft of you.They may make a Finesse Check against your Check DC. If they fail, reduce your Move speed to 0 and move onto that target’s square for as long as you maintain Focus. When they move, you move with them. For as long as you maintain Focus on Hovering Foe and share a square with that target, they are treated as surrounded provided they are your enemy. This has no default effect on allies. Your Focus ends if you move away from them, or if they successfully use a Make Trait Check action to make a Finesse Check against your Check DC."
+  },
+  {
+   "name": "Swarm Confusion",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Hovering Foe",
+   "description": "As an action while you are focusing on Hovering Foe, that target gets 1X Disadvantage on all Trait Checks made against you until the start of your next turn."
+  },
+  {
+   "name": "Disarming Bites",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Hovering Foe",
+   "description": "When you use ‘Hovering Foe’ on a target, you may use a reaction to give that target 1x Disadvantage or 1x Advantage on any Trait check."
+  },
+  {
+   "name": "Armor Nics",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Hovering Foe",
+   "description": "When you use ‘Hovering Foe’ on a target, you may use a reaction to reduce or increase their Mental and Physical Defense by your Finesse score against a single attack. You may declare this ability after the attack roll is made."
+  },
+  {
+   "name": "Maneuver Cloud",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Hovering Foe",
+   "description": "When you use ‘Hovering Foe’, you may use an action to move yourself and the target of ‘Hovering Foe’ up to 10ft in any direction. They may make a Finesse Check against the effect."
+  },
+  {
+   "name": "Birdshield",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Hovering Foe, Courage 3",
+   "description": "For as long as you maintain Focus on Bird Shield, reduce all damage the target of Hovering Foe takes by X, where X is equal to your Proficiency. This ability ends if you drop Focus on Hovering Foe."
+  },
+  {
+   "name": "Birdbite",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Hovering Foe, Courage 3",
+   "description": "For as long as you maintain Focus on Birdbite, the target of your Hovering Foe effect takes XD10 damage at the start of their turn, where X is equal to half your Proficiency (rounded up). There is no Trait Check against this effect. If an enemy successfully uses Make Trait Check against Hovering Foe while you also have Focus on Birdbite, you drop Focus on Birdbite instead."
+  },
+  {
+   "name": "Sharpbeak",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Birdbite, Courage 5",
+   "description": "When you are Focusing on Birdbite, you may make a melee attack against the target’s PD. If you succeed, do not deal damage. Instead, increase the damage of Birdbite by two dice types at the start of their next turn."
+  },
+  {
+   "name": "Speedy Cloud",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "",
+   "description": "(Preqreuisite: Hovering Foe, Finesse 3). When you use Hovering Foe on a target, you may use a reaction in response to them taking the Move action. If you do, you may reduce or increase their Move speed by X, where X is 5 times your Finesse Score. They may make a Finesse Check against this effect."
+  },
+  {
+   "name": "Picking at Armor",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Hovering Foe, Wiles 3",
+   "description": "For as long as you maintain Focus on Picking at Armor, the target of Hovering Foe is rended 1 at the start of each of their turns. If an enemy successfully uses Make Trait Check against Hovering Foe while you also have Focus on Picking at Armor, you drop Focus on Picking at Armor instead."
+  },
+  {
+   "name": "Pick Harder",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Picking ar Armor, Wiles 4",
+   "description": "When you are Focusing on Picking at Armor, you may make a single attack against that target’s MD. If you successfully hit, rend their armor by 1."
+  },
+  {
+   "name": "Lend a Wing",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Hovering Foe, Courage 4",
+   "description": "As a Reaction when you are maintaining Focus on Hovering Foe and the target of Hovering Foe is attacked, you may take all the damage instead."
+  },
+  {
+   "name": "Blackcloud",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "All enemies within 15ft of you get 1X Disadvantage on any mental Trait Check as long as you maintain Focus."
+  },
+  {
+   "name": "Drowning Cloud",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Blackcloud, Wiles 3",
+   "description": "Increase the radius of Blackcloud to 20ft."
+  },
+  {
+   "name": "Cry of Delirium",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Blackcloud",
+   "description": "Attempt to give all enemies within the radius of Blackcloud 1 level of Delirium (Wiles Check negates)."
+  },
+  {
+   "name": "Deafening Caw",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "When in Swarm Form, you may use an action to attempt to give all enemies within 30ft of you 1D4 fumble. Increase this Fumble to 1D6 at level 5, and 1D8 at level 11. They make Fate Checks against this effect."
+  },
+  {
+   "name": "Clawing Talons",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "description": "Choose one target within 5ft of you. Make a melee attack against MD. If you hit, deal 2D6+Wiles Piercing Damage."
+  },
+  {
+   "name": "Focused Claw",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Clawing Talons, Wiles 3",
+   "description": "Increase the damage dice of Clawing Talons by 1 dice type for each Focus action you have maintained or initiated successfully on this turn."
+  },
+  {
+   "name": "Hyperfocused",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Focused Claw, Wiles 5",
+   "description": "Increase the damage dice of Clawing Talons by 1 additional dice type for each Focus action you have maintained or initiated successfully on this turn."
+  }
+ ]
+}

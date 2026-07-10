@@ -1,0 +1,40 @@
+{
+  "_id": "ad14de0349b5b3e0",
+  "_key": "!items!ad14de0349b5b3e0",
+  "name": "Divine Bellow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Astonishing Shout, every enemy in range is pushed 5ft away from you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Astonishing Shout, Power 6"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_bellow",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "47a9085090a63a87",
+  "_key": "!items!47a9085090a63a87",
+  "name": "Fight Reflex",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you maintain Focus on Stood Ground, also increase damage you deal to that target by 1 for each round you maintain Focus on them (beginning on the round you initiate Stood Ground).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Stood Ground, Wiles 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Fight Reflex",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "@combat.focusRounds.stood_ground",
+        "predicate": [
+          {
+            "atom": "self:used:stood_ground"
+          },
+          {
+            "atom": "target:mark:stood-ground"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fight_reflex"
+    }
+  }
+}

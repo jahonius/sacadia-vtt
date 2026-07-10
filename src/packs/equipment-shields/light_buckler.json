@@ -1,0 +1,40 @@
+{
+  "_id": "0d2a42a2407865c8",
+  "_key": "!items!0d2a42a2407865c8",
+  "name": "Light Buckler",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training</em></p>",
+    "equipped": false,
+    "category": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 1,
+      "td": 0,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "light_buckler",
+      "kind": "shield"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "148a555dd9a5400a",
+  "_key": "!items!148a555dd9a5400a",
+  "name": "Composite Bow",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "bow",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 8,
+      "trait": "finesse"
+    },
+    "hands": 2,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "ranged",
+      "value": 200
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "composite_bow",
+      "kind": "weapon"
+    }
+  }
+}

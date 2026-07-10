@@ -1,0 +1,40 @@
+{
+  "_id": "8c5edb61c24805d9",
+  "_key": "!items!8c5edb61c24805d9",
+  "name": "Defensive Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you are Skittish to a target and they move within 5ft of you, you may use your reaction to move up to half your movement speed away from them without provoking an attack of opportunity.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Skittish, Courage 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "defensive_step",
+      "transcribed": true
+    }
+  }
+}

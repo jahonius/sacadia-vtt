@@ -1,0 +1,56 @@
+{
+  "_id": "0d7ca43f59393951",
+  "_key": "!items!0d7ca43f59393951",
+  "name": "Blaze of Glory",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 1 Glory point as your armor radiates in light. All enemies within 10ft of you make a Finesse Check against 1D8+Fate elemental damage, taking half as much on a successful check. The damage dice dealt this way increases to 1D10 at level 5, and to 2D6 at level 11. The type of elemental damage is the same as your divine weapon.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 10,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blaze_of_glory",
+      "transcribed": true
+    }
+  }
+}

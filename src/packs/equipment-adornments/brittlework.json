@@ -1,0 +1,21 @@
+{
+  "_id": "451cabc797031f17",
+  "_key": "!items!451cabc797031f17",
+  "name": "Brittlework",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>The first Rend dealt to you is dealt to this item and breaks it. It can be repaired during a nightly rest.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "brittlework",
+      "kind": "adornment",
+      "armorPrereq": "Wrought Style"
+    }
+  }
+}

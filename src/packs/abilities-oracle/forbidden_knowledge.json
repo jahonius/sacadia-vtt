@@ -1,0 +1,66 @@
+{
+  "_id": "7ec73cba1dfac0d8",
+  "_key": "!items!7ec73cba1dfac0d8",
+  "name": "Forbidden Knowledge",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_knowledge_icon.png",
+  "system": {
+    "description": "<p>Make a ranged attack vs. MD against one enemy within 60ft of you that you can see. If you succeed, do XD8+Fate mental damage where X is half your Proficiency score (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "starting",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": "md"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "ceil(@proficiency/2)",
+            "denomination": 8,
+            "formula": "",
+            "trait": "fate",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "forbidden_knowledge"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_id": "0144a5e09fcdf62c",
+  "_key": "!items!0144a5e09fcdf62c",
+  "name": "Incredulous Will",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/incredulous_will_icon.png",
+  "system": {
+    "description": "<p>Choose one creature within 60ft and make a ranged attack vs. MD against them. If you successfully hit, roll twice on the Insane table and apply one effect to that creature.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": "md"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "incredulous_will"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "49528785010a7bbd",
+  "_key": "!items!49528785010a7bbd",
+  "name": "Slickthrow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Treacherous Throw, increase the base dice type of Fumble given by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Treacherous Throw, Courage 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "slickthrow",
+      "transcribed": true
+    }
+  }
+}

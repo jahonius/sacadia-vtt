@@ -1,0 +1,27 @@
+{
+  "_id": "87ac28d5c169a763",
+  "_key": "!items!87ac28d5c169a763",
+  "name": "Legendary Dye Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training, Prof[6]</em></p>",
+    "equipped": false,
+    "category": "light",
+    "defenses": {
+      "ad": 7,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 27
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_dye_set",
+      "kind": "armor"
+    }
+  }
+}

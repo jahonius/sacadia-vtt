@@ -1,0 +1,35 @@
+{
+  "_id": "e5a3b10bf3966e98",
+  "_key": "!items!e5a3b10bf3966e98",
+  "name": "Shuriken",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Finesse[1]</em></p><p>On a critical hit, may give Hemorrhage at range.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "dagger",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "finesse"
+    },
+    "hands": 1,
+    "defense": "td",
+    "damageType": "Slashing",
+    "range": {
+      "type": "ranged",
+      "value": 60
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shuriken",
+      "kind": "weapon"
+    }
+  }
+}

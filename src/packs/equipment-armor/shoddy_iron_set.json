@@ -1,0 +1,27 @@
+{
+  "_id": "a86a9de7c0adf67c",
+  "_key": "!items!a86a9de7c0adf67c",
+  "name": "Shoddy Iron Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Heavy Armor Training</em></p>",
+    "equipped": false,
+    "category": "heavy",
+    "defenses": {
+      "ad": 0,
+      "pd": 7,
+      "td": 2,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 19
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shoddy_iron_set",
+      "kind": "armor"
+    }
+  }
+}

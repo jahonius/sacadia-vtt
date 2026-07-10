@@ -1,0 +1,40 @@
+{
+  "_id": "e04d5d408cc43103",
+  "_key": "!items!e04d5d408cc43103",
+  "name": "Font of Glory",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The number of Glory points you get per quick rest is equal to twice your Proficiency Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "font_of_glory",
+      "transcribed": true
+    }
+  }
+}

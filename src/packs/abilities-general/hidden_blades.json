@@ -1,0 +1,40 @@
+{
+  "_id": "f40b44e59b4f220a",
+  "_key": "!items!f40b44e59b4f220a",
+  "name": "Hidden Blades",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you bring a new dagger to bear from a readied item slot (RIS) for the first time in combat, treat the first target you attack with this dagger this turn as Surprised.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "Dagger Threat"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hidden_blades"
+    }
+  }
+}

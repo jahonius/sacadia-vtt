@@ -1,0 +1,40 @@
+{
+  "_id": "06e8dfe022ed2ec6",
+  "_key": "!items!06e8dfe022ed2ec6",
+  "name": "Tauntingly Defended",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you critically hit an enemy, you may make a critical effect to give them one level of Taunt if they do not already have one.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tauntingly_defended"
+    }
+  }
+}

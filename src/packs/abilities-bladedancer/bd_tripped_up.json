@@ -1,0 +1,42 @@
+{
+  "_id": "8e75f2099a5e3844",
+  "_key": "!items!8e75f2099a5e3844",
+  "name": "Tripped Up",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a action while you are wielding your named weapon with the Weapon Tail property, attempt to give one target within your versatile weapon's range levels of Pulled equal to half your Proficiency, rounded up. You cannot use your Weapon Tail weapon for as long as this enemy has any levels of Pulled.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Weapon Tail"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_tripped_up"
+    }
+  }
+}

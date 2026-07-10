@@ -1,0 +1,49 @@
+{
+  "_id": "1c62fd66f674358e",
+  "_key": "!items!1c62fd66f674358e",
+  "name": "Supreme Healing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the amount of HP given by Call of Healing from XD6 to XD8.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Greater Healing, Courage 6"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Supreme Healing",
+        "target": "damage",
+        "mode": "step",
+        "scope": "call_of_healing",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "supreme_healing"
+    }
+  }
+}

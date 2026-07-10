@@ -1,0 +1,40 @@
+{
+  "_id": "6ed8e229265da3c0",
+  "_key": "!items!6ed8e229265da3c0",
+  "name": "Carrying the Team",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Pack Mule, you may use a reaction to impose 1X advantage on any attack your riding teammate makes or 1X disadvantage on an attack made against them.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Pack Mule"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "carrying_the_team",
+      "transcribed": true
+    }
+  }
+}

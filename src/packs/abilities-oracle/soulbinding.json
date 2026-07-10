@@ -1,0 +1,61 @@
+{
+  "_id": "dbcec1bd40fce659",
+  "_key": "!items!dbcec1bd40fce659",
+  "name": "Soulbinding",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/soulbinding_icon.png",
+  "system": {
+    "description": "<p>Choose one target within 5ft when you initiate this. Whenever you take damage until you lose or drop Focus, they take half of it and you take half. If you go insane while using this ability, the target makes a Wiles Check against you or takes XD8 points of psychic damage (X is equal to your Proficiency).</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "prereq": 3
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "soulbinding"
+    }
+  }
+}

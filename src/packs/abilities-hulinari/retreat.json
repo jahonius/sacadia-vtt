@@ -1,0 +1,40 @@
+{
+  "_id": "095a6e4c61001fae",
+  "_key": "!items!095a6e4c61001fae",
+  "name": "Retreat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to your turn ending, you may move up to half your move speed in any direction. You do provoke attacks of opportunity this way.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "retreat",
+      "transcribed": true
+    }
+  }
+}

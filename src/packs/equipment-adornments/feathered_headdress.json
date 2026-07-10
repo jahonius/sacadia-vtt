@@ -1,0 +1,21 @@
+{
+  "_id": "6198d75a6d910469",
+  "_key": "!items!6198d75a6d910469",
+  "name": "Feathered Headdress",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>Treat all distances you fall as 10ft shorter.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "feathered_headdress",
+      "kind": "adornment",
+      "armorPrereq": "Feathered Style"
+    }
+  }
+}

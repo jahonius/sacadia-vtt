@@ -1,0 +1,40 @@
+{
+  "_id": "c101e0bc18939e1f",
+  "_key": "!items!c101e0bc18939e1f",
+  "name": "Bloodthreat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you successfully hit a single target with four or more melee attacks in a turn, Consecutive Threat applies to Pained Bash.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Consecutive Threat, Pained Bash"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_bloodthreat"
+    }
+  }
+}

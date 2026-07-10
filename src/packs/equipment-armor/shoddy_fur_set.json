@@ -1,0 +1,27 @@
+{
+  "_id": "b6a0a886ded1358c",
+  "_key": "!items!b6a0a886ded1358c",
+  "name": "Shoddy Fur Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 1,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 1
+    },
+    "maxStat": 14
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shoddy_fur_set",
+      "kind": "armor"
+    }
+  }
+}

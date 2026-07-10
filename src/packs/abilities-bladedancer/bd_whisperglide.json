@@ -1,0 +1,40 @@
+{
+  "_id": "3dfc1d4fc63120ca",
+  "_key": "!items!3dfc1d4fc63120ca",
+  "name": "Whisperglide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack action, you may increase the damage dice of your attack by the number of times you have used the 5ft adjust action this turn (to a maximum of your Proficiency).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Gliding Strike, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_whisperglide"
+    }
+  }
+}

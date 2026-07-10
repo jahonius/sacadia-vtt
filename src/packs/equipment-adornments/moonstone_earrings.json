@@ -1,0 +1,21 @@
+{
+  "_id": "6340e5667e843ab1",
+  "_key": "!items!6340e5667e843ab1",
+  "name": "Moonstone Earrings",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>When you expend a Lore Point, roll 1D10. On a 10, you do not expend the Lore Point.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "moonstone_earrings",
+      "kind": "adornment",
+      "armorPrereq": "Lucky Style"
+    }
+  }
+}

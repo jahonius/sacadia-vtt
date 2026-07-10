@@ -1,0 +1,40 @@
+{
+  "_id": "12308d307a3f9381",
+  "_key": "!items!12308d307a3f9381",
+  "name": "Spiked Metal Shield",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[5]</em></p>",
+    "equipped": false,
+    "category": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 1,
+      "td": 3,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 10,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spiked_metal_shield",
+      "kind": "shield"
+    }
+  }
+}

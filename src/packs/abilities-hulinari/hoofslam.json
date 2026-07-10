@@ -1,0 +1,40 @@
+{
+  "_id": "886fe114c54e0941",
+  "_key": "!items!886fe114c54e0941",
+  "name": "Hoofslam",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to any action that imposes a trait check on an enemy that will move them if they fail (e.g., Kick, Charge the Line), you may expend one Herd Point per target that rolls a Trait Check against being moved. Each target you selects makes this Trait Check at 1X Disadvantage.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "herd",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hoofslam",
+      "transcribed": true
+    }
+  }
+}

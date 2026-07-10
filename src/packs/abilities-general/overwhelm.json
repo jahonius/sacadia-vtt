@@ -1,0 +1,40 @@
+{
+  "_id": "7486f0f74f7f0b4b",
+  "_key": "!items!7486f0f74f7f0b4b",
+  "name": "Overwhelm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you apply this as a boost and would critically hit 2 or more times, apply an additional unique critical effect on top of however many you would normally apply.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "combat",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "overwhelm"
+    }
+  }
+}

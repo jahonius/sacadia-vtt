@@ -1,0 +1,40 @@
+{
+  "_id": "88f96814911e1031",
+  "_key": "!items!88f96814911e1031",
+  "name": "Quiet Smirk",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/quiet_smirk_icon.png",
+  "system": {
+    "description": "<p>Instead of rolling to determine the Madness you gain from a single action, you may expend one Prescient Point as a Boost to that action to gain the minimum amount.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "prescient",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "quiet_smirk"
+    }
+  }
+}

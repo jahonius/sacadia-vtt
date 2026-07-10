@@ -1,0 +1,40 @@
+{
+  "_id": "e8a8213e047cac73",
+  "_key": "!items!e8a8213e047cac73",
+  "name": "Wood Shield",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training</em></p>",
+    "equipped": false,
+    "category": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 0,
+      "td": 2,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wood_shield",
+      "kind": "shield"
+    }
+  }
+}

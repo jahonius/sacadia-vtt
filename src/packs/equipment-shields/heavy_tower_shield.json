@@ -1,0 +1,40 @@
+{
+  "_id": "3fe9fb49c9c99173",
+  "_key": "!items!3fe9fb49c9c99173",
+  "name": "Heavy Tower Shield",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Heavy Armor Training, Power 5</em></p><p>Tower Shield: −5ft Move Speed; creatures directly behind you have Full Cover.</p>",
+    "equipped": false,
+    "category": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 0,
+      "td": 6,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "2",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "heavy_tower_shield",
+      "kind": "shield"
+    }
+  }
+}

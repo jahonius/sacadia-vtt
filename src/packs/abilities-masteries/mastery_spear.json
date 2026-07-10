@@ -1,0 +1,31 @@
+{
+  "_id": "927703c5d70e4d9e",
+  "_key": "!items!927703c5d70e4d9e",
+  "name": "Spear Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain +1 to melee to-hit and damage with weapons in the spear family. When you critically hit with a spear, you may make a critical effect to push the target back 5ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_spear",
+      "mastery": true
+    }
+  }
+}

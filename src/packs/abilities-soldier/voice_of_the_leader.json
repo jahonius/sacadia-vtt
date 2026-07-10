@@ -1,0 +1,40 @@
+{
+  "_id": "dc356b381270c160",
+  "_key": "!items!dc356b381270c160",
+  "name": "Voice of the Leader",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The number of calls you get per quick rest is equal to twice your Proficiency Score, rather than your Proficiency Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "voice_of_the_leader"
+    }
+  }
+}

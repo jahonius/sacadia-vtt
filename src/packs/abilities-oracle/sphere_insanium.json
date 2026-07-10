@@ -1,0 +1,62 @@
+{
+  "_id": "05565067ce58cd0b",
+  "_key": "!items!05565067ce58cd0b",
+  "name": "Sphere Insanium",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sphere_insanium_icon.png",
+  "system": {
+    "description": "<p>As long as you maintain Focus, at the start of your turn give two levels of Delirium to every enemy within 30ft of you even if they already have Delirium. They do not make Trait Checks against this. At the end of every turn after the turn you initiate this, make a Wiles Check against your own Check DC. If you fail, end Focus on Sphere Insanium. You may use this once per quick rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Wiles 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sphere_insanium"
+    }
+  }
+}

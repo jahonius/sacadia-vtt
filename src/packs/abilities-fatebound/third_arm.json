@@ -1,0 +1,40 @@
+{
+  "_id": "b33dd2a62b12f961",
+  "_key": "!items!b33dd2a62b12f961",
+  "name": "Third Arm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Wild Strike, you may make up to three attacks using Wild Strike using a single AP. All of these attacks must be made against different targets. [3] Parrying FocusF,R: As long as you maintain Focus, any time a creature successfully hits you with a melee attack, you may expend a reaction to make them take damage equal to your Finesse.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Wild Strike, Finesse 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "third_arm",
+      "transcribed": true
+    }
+  }
+}

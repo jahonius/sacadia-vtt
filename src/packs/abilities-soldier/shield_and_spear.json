@@ -1,0 +1,56 @@
+{
+  "_id": "2f232cf39c139ba9",
+  "_key": "!items!2f232cf39c139ba9",
+  "name": "Shield and Spear",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you wield both a shield and a spear family weapon in combat, increase your PD by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Shield and Spear",
+        "target": "defense.pd",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "self:wielding:spear"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shield_and_spear"
+    }
+  }
+}

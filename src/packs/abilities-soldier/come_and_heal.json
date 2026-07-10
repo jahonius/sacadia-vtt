@@ -1,0 +1,40 @@
+{
+  "_id": "163b23371803652b",
+  "_key": "!items!163b23371803652b",
+  "name": "Come and Heal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn when an ally moves from 10ft or more away from you and ends that movement within 5ft of you, use a reaction to give them 1D4 temporary HP (1D6 at level 5, 1D8 at level 11). If you have Steadied, you may maximize temporary HP given this way.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "come_and_heal"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "27e4255c58826747",
+  "_key": "!items!27e4255c58826747",
+  "name": "Consecutive Threat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For every successful melee attack you have made consecutively on your turn against a single target, add 1D4 to damage dealt on additional attacks made (to a total maximum added damage of XD4, where X is your Proficiency). [Adds a Temporary Modifier below, off by default - toggle it on and bump its dice per consecutive hit.]</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Consecutive Threat",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "melee",
+        "value": "(min(@combat.consecutiveHits, @proficiency))d4",
+        "predicate": [
+          {
+            "atom": "self:combat:consecutive-hits>=1"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_consecutive_threat"
+    }
+  }
+}

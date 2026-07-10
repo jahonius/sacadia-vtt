@@ -1,0 +1,40 @@
+{
+  "_id": "588d35fa2551d120",
+  "_key": "!items!588d35fa2551d120",
+  "name": "Call of the Enemy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a boost to Imposing Figure, expend X call points (X up to half your Proficiency, rounded up). Attempt to give Taunt to X enemies within 5ft of you rather than specifying only one.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "call",
+        "amount": 0,
+        "variable": true,
+        "max": "ceil(@proficiency/2)"
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Courage 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_the_enemy"
+    }
+  }
+}

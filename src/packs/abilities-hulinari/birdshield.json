@@ -1,0 +1,40 @@
+{
+  "_id": "9bf57626b5e8eec7",
+  "_key": "!items!9bf57626b5e8eec7",
+  "name": "Birdshield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Bird Shield, reduce all damage the target of Hovering Foe takes by X, where X is equal to your Proficiency. This ability ends if you drop Focus on Hovering Foe.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hovering Foe, Courage 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "birdshield",
+      "transcribed": true
+    }
+  }
+}

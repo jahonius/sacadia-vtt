@@ -1,0 +1,35 @@
+{
+  "_id": "dee37268f33b9efa",
+  "_key": "!items!dee37268f33b9efa",
+  "name": "Greater Club",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Heavy Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 10,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greater_club",
+      "kind": "weapon"
+    }
+  }
+}

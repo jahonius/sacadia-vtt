@@ -1,0 +1,40 @@
+{
+  "_id": "0f0965ca92c20591",
+  "_key": "!items!0f0965ca92c20591",
+  "name": "Ride Like the Wind",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As long as you maintain Focus in Pack Form, double your movement speed.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ride_like_the_wind",
+      "transcribed": true
+    }
+  }
+}

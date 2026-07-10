@@ -1,0 +1,27 @@
+{
+  "_id": "fcdc063dfb902147",
+  "_key": "!items!fcdc063dfb902147",
+  "name": "Masterwork Cloth Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training, Prof[5]</em></p>",
+    "equipped": false,
+    "category": "light",
+    "defenses": {
+      "ad": 2,
+      "pd": 0,
+      "td": 0,
+      "md": 11,
+      "dr": 0
+    },
+    "maxStat": 30
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "masterwork_cloth_set",
+      "kind": "armor"
+    }
+  }
+}

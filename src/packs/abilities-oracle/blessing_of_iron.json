@@ -1,0 +1,60 @@
+{
+  "_id": "9f5be85baede35bb",
+  "_key": "!items!9f5be85baede35bb",
+  "name": "Blessing of Iron",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_iron_icon.jpg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you when you initiate this Blessing. As long as you maintain focus, increase the basic damage dice of any weapon they use by one dice type.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Fate 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Blessing of Iron",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.dieStep",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    },
+    "madness": {
+      "prereq": 1,
+      "spend": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_iron"
+    }
+  }
+}

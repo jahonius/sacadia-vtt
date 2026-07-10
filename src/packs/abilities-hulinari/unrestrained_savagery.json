@@ -1,0 +1,40 @@
+{
+  "_id": "358ae192e2d57702",
+  "_key": "!items!358ae192e2d57702",
+  "name": "Unrestrained Savagery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The number of Savage Points you get per quick rest is equal to twice your Proficiency Score. Form of the Swarm You may only take the below abilities if you have the Swarm Hulinari Heritage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "unrestrained_savagery",
+      "transcribed": true
+    }
+  }
+}

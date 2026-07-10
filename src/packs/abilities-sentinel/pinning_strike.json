@@ -1,0 +1,61 @@
+{
+  "_id": "bfdc5745f397ea0a",
+  "_key": "!items!bfdc5745f397ea0a",
+  "name": "Pinning Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy entering a 15ft range of you, you may expend one Trickshot point to attempt to give them X Pin (where X is half your proficiency, rounded up). Finesse Check negates.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "pinned",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pinning_strike"
+    }
+  }
+}

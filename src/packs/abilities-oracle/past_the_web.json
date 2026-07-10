@@ -1,0 +1,57 @@
+{
+  "_id": "b52d63cb76f33194",
+  "_key": "!items!b52d63cb76f33194",
+  "name": "Past the Web",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/past_the_web_icon.png",
+  "system": {
+    "description": "<p>Increase the damage of Forbidden Knowledge by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Forbidden Web, Fate 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Past the Web",
+        "target": "damage",
+        "mode": "step",
+        "scope": "forbidden_knowledge",
+        "value": "1",
+        "predicate": []
+      },
+      {
+        "label": "Past the Web",
+        "target": "damage",
+        "mode": "step",
+        "scope": "forbidden_knowledge",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "past_the_web"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "dc480674c133d0ec",
+  "_key": "!items!dc480674c133d0ec",
+  "name": "Mageslayer Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>You are resistant to attack damage dealt against your MD by your Power Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_mageslayer",
+      "mastery": true
+    }
+  }
+}

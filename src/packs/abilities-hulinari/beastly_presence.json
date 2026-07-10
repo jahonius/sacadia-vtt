@@ -1,0 +1,40 @@
+{
+  "_id": "7d17bbc54302c0cb",
+  "_key": "!items!7d17bbc54302c0cb",
+  "name": "Beastly Presence",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expense X Savage Points where X is any number up to half your Proficiency (rounded up). Attempt to give one target within 5ft of you that many levels of Panic or Taunt. You may only use this ability once per quick rest on a single target.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Courage 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "beastly_presence",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "4ec6452e2b33e965",
+  "_key": "!items!4ec6452e2b33e965",
+  "name": "Step and Slide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a boost to Stepping Strike, increase the damage dealt by your one-handed melee weapon by one dice type.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "Stepping Strike, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "step_and_slide"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "5609e107bff1c340",
+  "_key": "!items!5609e107bff1c340",
+  "name": "War Axe",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "axe",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 8,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "pd",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "war_axe",
+      "kind": "weapon"
+    }
+  }
+}

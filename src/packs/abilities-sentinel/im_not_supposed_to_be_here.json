@@ -1,0 +1,40 @@
+{
+  "_id": "46622e668e747a47",
+  "_key": "!items!46622e668e747a47",
+  "name": "I'm Not Supposed to Be Here",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are Surrounded and make a ranged reaction attack against a creature within 5ft of you, you may make an additional ranged reaction attack against a second creature within 5ft of you. Make this second attack at 1X disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "im_not_supposed_to_be_here"
+    }
+  }
+}

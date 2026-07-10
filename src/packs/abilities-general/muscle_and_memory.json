@@ -1,0 +1,40 @@
+{
+  "_id": "2973abfa046e5ff5",
+  "_key": "!items!2973abfa046e5ff5",
+  "name": "Muscle and Memory",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one limb economy component when you take this ability. Once per turn when you would exhaust a limb of that type, you may choose not to exhaust it. If you choose Focus, this only works while you are wielding a Focus weapon.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "general",
+      "prerequisite": "Level 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "muscle_and_memory"
+    }
+  }
+}

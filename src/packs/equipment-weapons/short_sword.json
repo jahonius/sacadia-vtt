@@ -1,0 +1,35 @@
+{
+  "_id": "c27f4bfe502ecf74",
+  "_key": "!items!c27f4bfe502ecf74",
+  "name": "Short Sword",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "sword",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "short_sword",
+      "kind": "weapon"
+    }
+  }
+}

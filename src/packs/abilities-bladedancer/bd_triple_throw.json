@@ -1,0 +1,40 @@
+{
+  "_id": "76cb4d19f1dbbca5",
+  "_key": "!items!76cb4d19f1dbbca5",
+  "name": "Triple Throw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make an attack using Plural Throw, you may make that attack against up to three targets instead of two (each target must be within 5ft of at least one other target and within your Versatile weapon range).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Plural Throw, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_triple_throw"
+    }
+  }
+}

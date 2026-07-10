@@ -1,0 +1,53 @@
+{
+  "_id": "b808ee2cd9e4602b",
+  "_key": "!items!b808ee2cd9e4602b",
+  "name": "Too Close!",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make an attack against a target within 5ft of you using a ranged weapon, increase the dice type by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Too Close!",
+        "target": "damage",
+        "mode": "step",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:adjacent"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "too_close"
+    }
+  }
+}

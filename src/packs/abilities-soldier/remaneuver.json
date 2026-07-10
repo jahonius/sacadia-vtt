@@ -1,0 +1,40 @@
+{
+  "_id": "1d5d1a77d9fa935b",
+  "_key": "!items!1d5d1a77d9fa935b",
+  "name": "Remaneuver",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a Boost to a melee attack using a one-handed weapon, if that melee attack misses you may increase your to-hit for that attack by any amount up to your Proficiency. Gain 2 Sting when you do this.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "remaneuver"
+    }
+  }
+}

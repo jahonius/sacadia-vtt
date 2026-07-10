@@ -1,0 +1,42 @@
+{
+  "_id": "00eda80bad7b3f6c",
+  "_key": "!items!00eda80bad7b3f6c",
+  "name": "Greased and Wily",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As long as you maintain focus and have Pinned an enemy, melee attacks against you from anyone other than the enemy who you have Pinned are made at 1X disadvantage.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Anointed, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_greased_and_wily"
+    }
+  }
+}

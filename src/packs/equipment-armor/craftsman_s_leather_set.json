@@ -1,0 +1,27 @@
+{
+  "_id": "c38b88195d5a7732",
+  "_key": "!items!c38b88195d5a7732",
+  "name": "Craftsman's Leather Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[4]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 0,
+      "pd": 4,
+      "td": 7,
+      "md": 3,
+      "dr": 0
+    },
+    "maxStat": 27
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "craftsman_s_leather_set",
+      "kind": "armor"
+    }
+  }
+}

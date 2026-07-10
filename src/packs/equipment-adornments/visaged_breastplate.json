@@ -1,0 +1,21 @@
+{
+  "_id": "0879113e5252fe14",
+  "_key": "!items!0879113e5252fe14",
+  "name": "Visaged Breastplate",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>Reduce your Move Speed by 5ft. Whenever you give Taunt or Panic, give one more.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "visaged_breastplate",
+      "kind": "adornment",
+      "armorPrereq": "Bulwark Style"
+    }
+  }
+}

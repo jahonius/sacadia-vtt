@@ -1,0 +1,40 @@
+{
+  "_id": "cef2089fdbb300c4",
+  "_key": "!items!cef2089fdbb300c4",
+  "name": "Targeted Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target. As long as you maintain Focus, add half your Fate (rounded up) to all to-hit and damage rolls made against that target. You may use this once per combat.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "targeted_foe",
+      "transcribed": true
+    }
+  }
+}

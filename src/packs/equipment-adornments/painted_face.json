@@ -1,0 +1,21 @@
+{
+  "_id": "981555e3745b8249",
+  "_key": "!items!981555e3745b8249",
+  "name": "Painted Face",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>Roll 1D6 at the start of combat. You may add that roll to any 1D20 roll made on your first turn.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "painted_face",
+      "kind": "adornment",
+      "armorPrereq": "Dye Set"
+    }
+  }
+}

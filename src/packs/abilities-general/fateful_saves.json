@@ -1,0 +1,40 @@
+{
+  "_id": "b2dfbddf044c696b",
+  "_key": "!items!b2dfbddf044c696b",
+  "name": "Fateful Saves",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest, you may use a Boost to add your Fate Score to all rolls on a Trait Check you make.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "conditions",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fateful_saves"
+    }
+  }
+}

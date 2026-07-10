@@ -1,0 +1,49 @@
+{
+  "_id": "f5ee6848e648ae60",
+  "_key": "!items!f5ee6848e648ae60",
+  "name": "Trained Mind",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may take this ability up to two times. Every time you do, increase your MD by 1 on top of any armor you are wearing. Second instance costs 2 CSP. (Auto-managed +1 MD tempbuff. If taken twice, manually set tempbuff value to 2.)</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Wiles 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Trained Mind",
+        "target": "defense.md",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "trained_mind"
+    }
+  }
+}

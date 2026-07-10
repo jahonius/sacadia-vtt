@@ -1,0 +1,61 @@
+{
+  "_id": "cf8379f0c3bc1e80",
+  "_key": "!items!cf8379f0c3bc1e80",
+  "name": "Blessing of the Shield",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_shield_icon.png",
+  "system": {
+    "description": "<p>Choose one target within 60ft that you can see. The next time that target would take damage, reduce that damage by 4X, where X is equal to your Proficiency. Your Focus on this Blessing immediately ends when this occurs.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Blessing of the Shield",
+      "duration": {
+        "type": "consumed",
+        "on": "damage-taken"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.dr",
+          "mode": 2,
+          "value": "4*@proficiency"
+        }
+      ]
+    },
+    "madness": {
+      "prereq": 3,
+      "spend": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_the_shield"
+    }
+  }
+}

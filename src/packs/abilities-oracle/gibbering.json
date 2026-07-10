@@ -1,0 +1,79 @@
+{
+  "_id": "ee02630b5cdf3dbc",
+  "_key": "!items!ee02630b5cdf3dbc",
+  "name": "Gibbering",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/gibbering_icon.png",
+  "system": {
+    "description": "<p>Make a ranged attack vs. MD against an enemy within 60ft. If successful, deal MD6 points of damage to an enemy. The damage dice type increases to MD8 at level 5, and MD10 at level 11. If you use this with 0 Madness, do not deal damage (but still roll to increase Madness).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": "md"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@madness",
+            "denomination": 6,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gibbering",
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 3
+        },
+        {
+          "level": 11,
+          "ladderIndex": 4
+        }
+      ]
+    }
+  }
+}

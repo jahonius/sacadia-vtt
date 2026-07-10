@@ -1,0 +1,58 @@
+{
+  "_id": "27a98eb806b0f004",
+  "_key": "!items!27a98eb806b0f004",
+  "name": "Calculations",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend X Arrangement points (where X can be any number up to your Proficiency). Move up to your move speed. As you move, attempt to give Surprise to X targets within 5ft of you at any point of this movement. They roll Wiles Checks against the effect.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "arrangement",
+        "amount": 0,
+        "variable": true,
+        "max": "@proficiency"
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_calculations"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "_id": "373374dfc79f1e39",
+  "_key": "!items!373374dfc79f1e39",
+  "name": "Curse of the Bound Tongue",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/curse_of_the_bound_tongue_icon.png",
+  "system": {
+    "description": "<p>Choose up to M targets within 60ft. All targets chosen make Wiles Checks. If they fail, they cannot speak or cast spells until they succeed on a 'Make Trait Check' action against this effect or the spell ends.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "silenced",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "curse_of_the_bound_tongue"
+    }
+  }
+}

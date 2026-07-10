@@ -1,0 +1,40 @@
+{
+  "_id": "4bd3a1c5811d450b",
+  "_key": "!items!4bd3a1c5811d450b",
+  "name": "Gods’ Mist",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point. For as long as you maintain focus, you are shrouded in a divine mist. The mist has a radius of 5X (where X is half your Proficiency, rounded up) centered on you. Inside of this area it is Dim. The mists move to you at the start of your turn, and do not affect you or your allies.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gods_mist",
+      "transcribed": true
+    }
+  }
+}

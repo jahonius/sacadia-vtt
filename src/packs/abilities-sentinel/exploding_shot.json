@@ -1,0 +1,58 @@
+{
+  "_id": "b6e2bd635d477e0d",
+  "_key": "!items!b6e2bd635d477e0d",
+  "name": "Exploding Shot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickshot point and choose a point within range of your ranged weapon that you can see. All creatures within 5ft of that point make a Power Check against your Check DC or are pushed 5Xft away from that point, where X is equal to half your Proficiency, rounded up. Pinned creatures are not affected by this unless the source of their Pin is affected.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "power",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "exploding_shot"
+    }
+  }
+}

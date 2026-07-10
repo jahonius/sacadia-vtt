@@ -1,0 +1,27 @@
+{
+  "_id": "2a9c73f2f2d3c906",
+  "_key": "!items!2a9c73f2f2d3c906",
+  "name": "Shoddy Dye Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training</em></p>",
+    "equipped": false,
+    "category": "light",
+    "defenses": {
+      "ad": 2,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 17
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shoddy_dye_set",
+      "kind": "armor"
+    }
+  }
+}

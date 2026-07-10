@@ -1,0 +1,40 @@
+{
+  "_id": "609ada9fc4ea4831",
+  "_key": "!items!609ada9fc4ea4831",
+  "name": "Boosted Fury",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency). [3] Greater Elemental Weapon: (Prerequisite: Fate 4). Choose the Boon that matches the elemental damage type dealt by your divine weapon: Vampiric WeaponA: (Prerequisite: Rot Elemental Weapon). Once per quick rest you attempt to steal the life of a target. Choose one target. They make a Fate Check. If they fail, reduce their HP by XD6 and gain temporary HP equal to half the damage dealt (where X is half your Proficiency, rounded up). Crystaline WeaponF: (Prerequisite: Salt Elemental Weapon). Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright. Scorching WeaponF: (Prerequisite: Fire Elemental Weapon). As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest. Spring WeaponR: (Prerequisite: Water Elemental Weapon). Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP. Breezy WeaponB: (Prerequisite: Air Elemental Weapon). Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction. Stone WeaponR: (Prerequisite: Earth Elemental Weapon). Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action. The Hulinari Warrior T he low rumble of an approaching stampede, the roar of a massive bear crushing against the trees, or the fluttering of a thousand butterfly wings. The Hulinari is the force of a species of animal brought fully to battle, and they reflect that animal in their ferocity as well as their natural inclination for savage combat. The Hulinari is at its best in combat against multiple enemies. Reveling in the odds, Hulinari often see their purpose to take down the human world–and what better way to do that than slashing them to pieces five at a time? Party Role Area of Effect Damage, Area Control, Target Debuffing. Aspect... Hulinari SubtypeP: (Prerequisite: Hulinari Heritage). You may only play a Hulinari Warrior if you have the Hulinari Heritage Ancestry and a Hulinari Heritage. When you select your Hulinari Ancestry, you can only take combat abilities from that Hulinari Warrior Ancestry. Antlers, Claws, and TalonsP: When you make an unarmed attack in Beast form, change the damage dice from 1D4 to 1D8. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit Check Expertise: Courage Checks Check DC: 9 + Courage + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Light and Medium Armor. Hit Points per Level: 9 or roll 2D8 All Hulinari Warriors [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Bestial RespectF: Choose one beast within 30ft of you (with CR less than or equal to half your Proficiency, rounded up) to roll a Fate Check. If they fail, they become your ally until you break Focus. Once per turn they may use a action to roll a Fate check against this effect, ending Bestial Respect on a success. Once a creature succeeds against Bestial Respect, they may not be affected by it again until after a quick rest. [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessB: you may use this Boost on any action you choose before or after rolling without expending a Boost to that action. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose one of the following: Mastery of Tooth and ClawP: Gain +1 to unarmed melee attacks and damage. Mastery of Paw and WingP: Increase your movement speed by 5ft (and Fly speed if applicable). Mastery of Feather and HideP: Increase your HP by 1 for every two levels, and increase the size of your HP pools by the same amount. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Bestial RapidityP: When you change forms, it only exhausts . When you do, lose all levels of Pin. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose one of the following: Mastery of the PackP: The first time each turn you move within 5ft of an enemy in Pack Form, deal damage to them equal to your Finesse. Mastery of the BruteP: Increase the dice type of melee attacks made with your claws by one dice type when in Brute form. Mastery of the SwarmP: Your flock constantly swarms around you. Gain damage resistance equal to half your Proficiency (rounded up) against all physical damage when in Swarm Form. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] Mostly HumanB: You may change between a human and beast form as a Boost to another action. Form of The Pack You may only take the below abilities if you have the Pack Hulinari Heritage.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boosted_fury",
+      "transcribed": true
+    }
+  }
+}

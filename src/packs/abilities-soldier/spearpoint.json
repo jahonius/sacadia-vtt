@@ -1,0 +1,40 @@
+{
+  "_id": "6135de370ffb198c",
+  "_key": "!items!6135de370ffb198c",
+  "name": "Spearpoint",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Ticket to Enter on an enemy entering your range while wielding a spear, treat them as Surprised.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spearpoint"
+    }
+  }
+}

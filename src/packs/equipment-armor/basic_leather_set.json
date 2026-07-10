@@ -1,0 +1,27 @@
+{
+  "_id": "81c4b92ddb2cbc29",
+  "_key": "!items!81c4b92ddb2cbc29",
+  "name": "Basic Leather Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[2]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 0,
+      "pd": 2,
+      "td": 5,
+      "md": 1,
+      "dr": 0
+    },
+    "maxStat": 22
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_leather_set",
+      "kind": "armor"
+    }
+  }
+}

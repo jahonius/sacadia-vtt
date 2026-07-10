@@ -1,0 +1,40 @@
+{
+  "_id": "d14793119202d9c7",
+  "_key": "!items!d14793119202d9c7",
+  "name": "Resilient Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You are resistant to all damage dealt by a targeted foe by your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Targeted Foe"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "resilient_foe",
+      "transcribed": true
+    }
+  }
+}

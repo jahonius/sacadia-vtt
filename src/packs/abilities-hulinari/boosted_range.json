@@ -1,0 +1,40 @@
+{
+  "_id": "604a26061f107e41",
+  "_key": "!items!604a26061f107e41",
+  "name": "Boosted Range",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack made with a divine weapon, you may make that attack at 5ft or10ft range. If you use this ability with a polearm that already has 10ft range, you may further extend the range of this attack to 15ft.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boosted_range",
+      "transcribed": true
+    }
+  }
+}

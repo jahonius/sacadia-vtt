@@ -1,0 +1,74 @@
+{
+  "_id": "ac4298d017611087",
+  "_key": "!items!ac4298d017611087",
+  "name": "Horn Butting",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a boost to the Kick action, deal 1D10+Power damage if they fail the Trait Check. Increase damage dealt this way to 2D6+Power damage at level 5, and 2D8+Power damage at level 11.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 10,
+            "formula": "",
+            "trait": "power",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_horn_butting",
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 5
+        },
+        {
+          "level": 11,
+          "ladderIndex": 6
+        }
+      ]
+    }
+  }
+}

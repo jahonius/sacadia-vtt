@@ -1,0 +1,40 @@
+{
+  "_id": "5ddef3922ae84d10",
+  "_key": "!items!5ddef3922ae84d10",
+  "name": "Kneejerk",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have given a target levels of Wrestle Pin and they only have one level of Pin, increase the damage dice you deal through melee attacks by one dice type. [Adds a Damage Die Step Temporary Modifier below, off by default - toggle it on when the target has exactly one level of Pin.]</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_kneejerk"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "ddef6f20d5a3d7c3",
+  "_key": "!items!ddef6f20d5a3d7c3",
+  "name": "Hindkick",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Kick action on an enemy, they gain 1X Disadvantage on the Trait Check against Kick.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hindkick",
+      "transcribed": true
+    }
+  }
+}

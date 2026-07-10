@@ -1,0 +1,40 @@
+{
+  "_id": "3d13a3b0ab06169a",
+  "_key": "!items!3d13a3b0ab06169a",
+  "name": "Enormity",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Body Slam, expense one Savage Point for each creature Body Slam would affect. All targets who roll a Power Check against being knocked prone do so at 1X disadvantage.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Body Slam, Power 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "enormity",
+      "transcribed": true
+    }
+  }
+}

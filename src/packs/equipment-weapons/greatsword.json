@@ -1,0 +1,35 @@
+{
+  "_id": "3991154e76ffd0ec",
+  "_key": "!items!3991154e76ffd0ec",
+  "name": "Greatsword",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Heavy Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "sword",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 10,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "pd",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greatsword",
+      "kind": "weapon"
+    }
+  }
+}

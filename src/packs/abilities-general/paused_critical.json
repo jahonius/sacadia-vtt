@@ -1,0 +1,40 @@
+{
+  "_id": "a4ec2e72b4024a09",
+  "_key": "!items!a4ec2e72b4024a09",
+  "name": "Paused Critical",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you critically hit someone with an attack, you may have the critical effect be that you recover limb exhaustion on one limb of your choice. You may not recover Focus with this.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "combat",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "paused_critical"
+    }
+  }
+}

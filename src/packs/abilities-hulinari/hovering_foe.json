@@ -1,0 +1,56 @@
+{
+  "_id": "a0d93c50ebf939b9",
+  "_key": "!items!a0d93c50ebf939b9",
+  "name": "Hovering Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When in Swarm Form, select a single target within 5ft of you.They may make a Finesse Check against your Check DC. If they fail, reduce your Move speed to 0 and move onto that target’s square for as long as you maintain Focus. When they move, you move with them. For as long as you maintain Focus on Hovering Foe and share a square with that target, they are treated as surrounded provided they are your enemy. This has no default effect on allies. Your Focus ends if you move away from them, or if they successfully use a Make Trait Check action to make a Finesse Check against your Check DC.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hovering_foe",
+      "transcribed": true
+    }
+  }
+}

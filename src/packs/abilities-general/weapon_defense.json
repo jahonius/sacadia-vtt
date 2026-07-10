@@ -1,0 +1,73 @@
+{
+  "_id": "f2dddf1df175f23b",
+  "_key": "!items!f2dddf1df175f23b",
+  "name": "Weapon Defense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As an action while wielding a two-handed weapon, you may add an additional +2 to your PD and TD until the start of your next turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Weapon Defense",
+        "target": "defense.pd",
+        "mode": "add",
+        "scope": "all",
+        "value": "2",
+        "predicate": [
+          {
+            "atom": "self:used:weapon_defense"
+          },
+          {
+            "atom": "self:wielding:two-handed"
+          }
+        ]
+      },
+      {
+        "label": "Weapon Defense",
+        "target": "defense.td",
+        "mode": "add",
+        "scope": "all",
+        "value": "2",
+        "predicate": [
+          {
+            "atom": "self:used:weapon_defense"
+          },
+          {
+            "atom": "self:wielding:two-handed"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "weapon_defense"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_id": "261c5a6ee52982fd",
+  "_key": "!items!261c5a6ee52982fd",
+  "name": "Ivory Charm",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>As a reaction when you are Steadied and have an Ivory Charm in your RIS, roll 1D20. The first time on your next turn you would roll a D20, use this roll instead.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ivory_charm",
+      "kind": "trinket"
+    }
+  }
+}

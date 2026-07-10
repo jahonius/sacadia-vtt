@@ -1,0 +1,40 @@
+{
+  "_id": "876bcf834983e049",
+  "_key": "!items!876bcf834983e049",
+  "name": "Feralwild",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The minimum base damage dice of Wild Strike is 1D6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Wilder Strike, Power 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "feralwild",
+      "transcribed": true
+    }
+  }
+}

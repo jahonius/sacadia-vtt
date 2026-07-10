@@ -1,0 +1,40 @@
+{
+  "_id": "3cb71df7326afd33",
+  "_key": "!items!3cb71df7326afd33",
+  "name": "Tearing Fright",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Tear Apart, choose one target within 5ft of you. In addition to Surprise, attempt to give them Panic equal to half your Proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Tear Apart, Power 4"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tearing_fright",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "c52a338b232756ce",
+  "_key": "!items!c52a338b232756ce",
+  "name": "Ironhide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expense one Savage Point. As long as you maintain Focus, ignore the effects of Nausea, Frenzy, Taunt, or Panic (choose one when you initiate Focus).</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Courage 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ironhide",
+      "transcribed": true
+    }
+  }
+}

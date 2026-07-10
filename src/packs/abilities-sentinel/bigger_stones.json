@@ -1,0 +1,40 @@
+{
+  "_id": "26accc927c082e20",
+  "_key": "!items!26accc927c082e20",
+  "name": "Bigger Stones",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may take this ability up to twice. Each time, choose one type of ranged weapon (bow, crossbow, or sling). Increase the damage dice of attacks you make using this weapon by one size.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bigger_stones"
+    }
+  }
+}

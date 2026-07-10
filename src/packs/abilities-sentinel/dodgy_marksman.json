@@ -1,0 +1,40 @@
+{
+  "_id": "611d8e2b4c2d8ee6",
+  "_key": "!items!611d8e2b4c2d8ee6",
+  "name": "Dodgy Marksman",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make a ranged attack and there is an enemy within 5ft of you, they may not use their reaction to make an attack of opportunity against you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Close Marksman, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "dodgy_marksman"
+    }
+  }
+}

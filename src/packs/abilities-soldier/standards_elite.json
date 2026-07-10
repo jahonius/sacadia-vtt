@@ -1,0 +1,40 @@
+{
+  "_id": "7040daac7584c2e2",
+  "_key": "!items!7040daac7584c2e2",
+  "name": "Standards Elite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest, you may use the standards of your people to remove one level of Panic or Fatigue from yourself or an ally as a reaction.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Standard Bearer"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "standards_elite"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "f2a5bb39a0475810",
+  "_key": "!items!f2a5bb39a0475810",
+  "name": "Call of the Raised Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 1 Call Point as a reaction to impose 1X advantage on X targets (you or allies) within 15ft on Trait Checks against one effect. X is half your Proficiency (rounded up).</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_the_raised_shield"
+    }
+  }
+}

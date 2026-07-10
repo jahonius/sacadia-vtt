@@ -1,0 +1,40 @@
+{
+  "_id": "e324df80d2de83c3",
+  "_key": "!items!e324df80d2de83c3",
+  "name": "Hero’s Response",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point as a reaction. You may take any number of additional reactions before the start of your next turn (to a maximum of your AP). Reduce your AP on your next turn by the number of additional reactions you take.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hero_s_response",
+      "transcribed": true
+    }
+  }
+}

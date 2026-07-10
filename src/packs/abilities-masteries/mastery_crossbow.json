@@ -1,0 +1,31 @@
+{
+  "_id": "03605164c6c8869a",
+  "_key": "!items!03605164c6c8869a",
+  "name": "Crossbow Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>When you expend 4 AP or more in a consistent attack with a crossbow against a target who is surrounded or cornered, or against whom you have Height Advantage, you successfully hit even if you would miss.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_crossbow",
+      "mastery": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_id": "6f377ae0edcbefe0",
+  "_key": "!items!6f377ae0edcbefe0",
+  "name": "Lodestone",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>While you have a Lodestone in your RIS, if you attempt to kick or grab a target wearing Iron Armor, they gain 1X Disadvantage.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lodestone",
+      "kind": "trinket"
+    }
+  }
+}

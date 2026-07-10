@@ -1,0 +1,27 @@
+{
+  "_id": "fd890aecb933f1a3",
+  "_key": "!items!fd890aecb933f1a3",
+  "name": "Professional Fur Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[3]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 2,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 5
+    },
+    "maxStat": 19
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "professional_fur_set",
+      "kind": "armor"
+    }
+  }
+}

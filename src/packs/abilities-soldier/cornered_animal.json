@@ -1,0 +1,40 @@
+{
+  "_id": "4c0b40a301b7939a",
+  "_key": "!items!4c0b40a301b7939a",
+  "name": "Cornered Animal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If an enemy within 30ft of you is surrounded or has been pushed at least 10ft back since the start of your last turn, once per turn you may use a reaction to prevent them from reducing either Taunt or Panic (choose one) at the end of their turn.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cornered_animal"
+    }
+  }
+}

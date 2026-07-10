@@ -1,0 +1,40 @@
+{
+  "_id": "0dcb8e5330c8cb6b",
+  "_key": "!items!0dcb8e5330c8cb6b",
+  "name": "Charging Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend any number of Trickshot points (up to your Proficiency) as a Boost to a consistent ranged attack. Increase your advantage on that consistent attack by one for every Trickshot point expended (to a maximum of 6).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 0,
+        "variable": true,
+        "max": "@proficiency"
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "charging_strike"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "58e6598b38807e13",
+  "_key": "!items!58e6598b38807e13",
+  "name": "Legendary Resistance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your Thickskin damage resistance to your Proficiency score for as long as you maintain Focus.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Power 5, Thickskin"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_legendary_resistance"
+    }
+  }
+}

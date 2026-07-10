@@ -1,0 +1,55 @@
+{
+  "_id": "3a19199d763dc90f",
+  "_key": "!items!3a19199d763dc90f",
+  "name": "Call of Power",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend two call points when you initiate Call of Power. You and all allies who can hear you within 15ft add half your Proficiency (rounded up) to all damage dealt from any effect until your Focus ends.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 2,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Call of Power",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:used:call_of_power"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_power"
+    }
+  }
+}

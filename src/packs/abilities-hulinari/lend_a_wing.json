@@ -1,0 +1,40 @@
+{
+  "_id": "1304918d1ec707b3",
+  "_key": "!items!1304918d1ec707b3",
+  "name": "Lend a Wing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Reaction when you are maintaining Focus on Hovering Foe and the target of Hovering Foe is attacked, you may take all the damage instead.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hovering Foe, Courage 4"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lend_a_wing",
+      "transcribed": true
+    }
+  }
+}

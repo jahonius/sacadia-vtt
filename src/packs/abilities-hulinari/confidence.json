@@ -1,0 +1,40 @@
+{
+  "_id": "e6e4e08e0155e873",
+  "_key": "!items!e6e4e08e0155e873",
+  "name": "Confidence",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make trait checks against mental conditions given to you by an adversary, you may expend one Savage Point to gain 1X advantage on that roll.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "savage",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Courage 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "confidence",
+      "transcribed": true
+    }
+  }
+}

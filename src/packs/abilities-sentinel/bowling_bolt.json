@@ -1,0 +1,40 @@
+{
+  "_id": "99d84acb42622d8d",
+  "_key": "!items!99d84acb42622d8d",
+  "name": "Bowling Bolt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you have at least 6X advantage in a consistent crossbow attack and you hit, the target is knocked Prone.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Boltshot Pro"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bowling_bolt"
+    }
+  }
+}

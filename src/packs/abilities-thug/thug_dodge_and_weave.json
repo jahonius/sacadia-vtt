@@ -1,0 +1,70 @@
+{
+  "_id": "b611c137c752befc",
+  "_key": "!items!b611c137c752befc",
+  "name": "Dodge and Weave",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Block reaction on an attack that would hit you, but does not due to your reaction, you may deal 1D10 + Power damage to the enemy target you Block. Increase the damage dealt this way to 2D6+Power when you reach level 11.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Power 3"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 10,
+            "formula": "",
+            "trait": "power",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_dodge_and_weave",
+      "selfScaling": [
+        {
+          "level": 11,
+          "ladderIndex": 5
+        }
+      ]
+    }
+  }
+}

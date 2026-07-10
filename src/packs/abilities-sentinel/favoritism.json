@@ -1,0 +1,53 @@
+{
+  "_id": "f16134c49bcc1370",
+  "_key": "!items!f16134c49bcc1370",
+  "name": "Favoritism",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase all damage you deal to your Favored Enemy type by your Wiles score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Favoritism",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "@wiles",
+        "predicate": [
+          {
+            "atom": "target:favored"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "favoritism"
+    }
+  }
+}

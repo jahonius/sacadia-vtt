@@ -1,0 +1,40 @@
+{
+  "_id": "26173547f7da7682",
+  "_key": "!items!26173547f7da7682",
+  "name": "Pullback",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make a Crossbow attack and would benefit from either Boltshot or Boltshot Pro, increase the damage dealt from that effect from X to XD4.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Boltshot, Finesse 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pullback"
+    }
+  }
+}

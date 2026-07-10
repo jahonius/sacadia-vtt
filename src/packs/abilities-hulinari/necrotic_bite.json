@@ -1,0 +1,40 @@
+{
+  "_id": "47c78848d095f2e0",
+  "_key": "!items!47c78848d095f2e0",
+  "name": "Necrotic Bite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your bite attack does necrotic damage of XD6 in addition to your base physical damage, where X is half your Proficiency Score (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Bite Attack"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "necrotic_bite",
+      "transcribed": true
+    }
+  }
+}

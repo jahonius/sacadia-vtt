@@ -1,0 +1,21 @@
+{
+  "_id": "7fa6e1bb72bbbe97",
+  "_key": "!items!7fa6e1bb72bbbe97",
+  "name": "Cloak of Faces",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>The first time each turn you 5ft adjust, you do not provoke an attack of opportunity.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cloak_of_faces",
+      "kind": "adornment",
+      "armorPrereq": "Cloaked Style"
+    }
+  }
+}

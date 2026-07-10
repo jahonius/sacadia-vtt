@@ -1,0 +1,20 @@
+{
+  "_id": "b4db7d2c58dc352d",
+  "_key": "!items!b4db7d2c58dc352d",
+  "name": "Smudge (Lavender)",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>Hold a lit smudge in both hands: ranged attacks have 1X Disadvantage against you. It goes out after 1 minute, a quick rest, or when you stop holding it. Expend on use.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "smudge_lavender",
+      "kind": "trinket"
+    }
+  }
+}

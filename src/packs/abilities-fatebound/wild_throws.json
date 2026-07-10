@@ -1,0 +1,40 @@
+{
+  "_id": "11d22aad0dcfd3ff",
+  "_key": "!items!11d22aad0dcfd3ff",
+  "name": "Wild Throws",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Wild Strike with Versatile Weapons, you may make Versatile throws with one or either weapon.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Wild Strike, Finesse 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wild_throws",
+      "transcribed": true
+    }
+  }
+}

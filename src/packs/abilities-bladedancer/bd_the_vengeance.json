@@ -1,0 +1,40 @@
+{
+  "_id": "fcff5083c4057b74",
+  "_key": "!items!fcff5083c4057b74",
+  "name": "The Vengeance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Name one versatile weapon you own. This weapon has damage dice one dice type lower against all enemies, except one single enemy (selected when you gain this ability). Select them when you name the enemy. Gain 1X Advantage on all to-hits against that single target with this blade, and increase the damage dice of this weapon by 1 against them. You can change your selected enemy during a Long Rest.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_the_vengeance"
+    }
+  }
+}

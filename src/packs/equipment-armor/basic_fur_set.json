@@ -1,0 +1,27 @@
+{
+  "_id": "b33f80c7abcd2e8e",
+  "_key": "!items!b33f80c7abcd2e8e",
+  "name": "Basic Fur Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[2]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 1,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 3
+    },
+    "maxStat": 16
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_fur_set",
+      "kind": "armor"
+    }
+  }
+}

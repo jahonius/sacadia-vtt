@@ -1,0 +1,49 @@
+{
+  "_id": "1ab50772541495a4",
+  "_key": "!items!1ab50772541495a4",
+  "name": "Madder Chanting",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/madder_chanting_icon.png",
+  "system": {
+    "description": "<p>Increase the damage of Mad Chanting from MD4 to MD6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Mad Chanting, Wiles 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Madder Chanting",
+        "target": "damage",
+        "mode": "step",
+        "scope": "mad_chanting",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "madder_chanting"
+    }
+  }
+}

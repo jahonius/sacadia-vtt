@@ -1,0 +1,42 @@
+{
+  "_id": "0cc1b4ae6c7e7d14",
+  "_key": "!items!0cc1b4ae6c7e7d14",
+  "name": "Surprising Dance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Arrangement point. Move up to your move speed. Give 1D4 Fumble to X targets (where X is equal to your Proficiency) within 5ft of you at any point of this movement. Fumble given increases to 1D6 at level 5, and 1D8 at level 11. Roll Fumble for each target separately.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "arrangement",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_surprising_dance"
+    }
+  }
+}

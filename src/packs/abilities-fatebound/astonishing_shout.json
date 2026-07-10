@@ -1,0 +1,40 @@
+{
+  "_id": "16ec9559f23ef102",
+  "_key": "!items!16ec9559f23ef102",
+  "name": "Astonishing Shout",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point to let out a bellow of rage. For each ally within 5ft of you (to a max of half your Proficiency rounded up), gain X temporary HP. For each enemy within 5ft of you (to a max of half your Proficiency rounded up), increase damage dealt by X on the next attack you attempt this turn if you successfully hit. X is equal to half your Proficiency (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "astonishing_shout",
+      "transcribed": true
+    }
+  }
+}

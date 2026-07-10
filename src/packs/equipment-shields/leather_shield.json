@@ -1,0 +1,40 @@
+{
+  "_id": "10290471363f0702",
+  "_key": "!items!10290471363f0702",
+  "name": "Leather Shield",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[3]</em></p>",
+    "equipped": false,
+    "category": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 1,
+      "td": 2,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "leather_shield",
+      "kind": "shield"
+    }
+  }
+}

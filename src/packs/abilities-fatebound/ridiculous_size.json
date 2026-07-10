@@ -1,0 +1,40 @@
+{
+  "_id": "04ce0c6c6af6b026",
+  "_key": "!items!04ce0c6c6af6b026",
+  "name": "Ridiculous Size",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the base damage die of your heavy Divine Weapon by one additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Humongous, Power 6"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ridiculous_size",
+      "transcribed": true
+    }
+  }
+}

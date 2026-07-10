@@ -1,0 +1,40 @@
+{
+  "_id": "eb1f3c38b0394e6b",
+  "_key": "!items!eb1f3c38b0394e6b",
+  "name": "Picking at Armor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Picking at Armor, the target of Hovering Foe is rended 1 at the start of each of their turns. If an enemy successfully uses Make Trait Check against Hovering Foe while you also have Focus on Picking at Armor, you drop Focus on Picking at Armor instead.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hovering Foe, Wiles 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "picking_at_armor",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "2215dfcd698e73d2",
+  "_key": "!items!2215dfcd698e73d2",
+  "name": "Slamstrike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make a melee attack using your bludgeoning divine weapon against a creature who is Prone, increase the base damage dice of that weapon by one die type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Bludgeonmaster, Power 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "slamstrike",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "40122d1273ba1307",
+  "_key": "!items!40122d1273ba1307",
+  "name": "Trickshot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take Trickshot, gain an Action Pool of Trickshot points equal to your Proficiency Score. You may spend skill points to learn various Trickshots. Whenever you spend skill points, you may add to the list of Trickshots you know. When you use this ability, declare one of your known Trickshots. You get all Trickshot points back after a quick rest. Whenever you apply a Trickshot, add your Wiles score to your to-hit.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "trickshot"
+    }
+  }
+}

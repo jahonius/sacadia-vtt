@@ -1,0 +1,35 @@
+{
+  "_id": "57cb727a927d27c1",
+  "_key": "!items!57cb727a927d27c1",
+  "name": "Divine Bow",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[3], Fate[2]</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 500,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "bow",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "wiles"
+    },
+    "hands": 2,
+    "defense": "md",
+    "damageType": "Piercing",
+    "range": {
+      "type": "ranged",
+      "value": 200
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_bow",
+      "kind": "weapon"
+    }
+  }
+}

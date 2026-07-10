@@ -1,0 +1,43 @@
+{
+  "_id": "d689dfdddb6ca5d3",
+  "_key": "!items!d689dfdddb6ca5d3",
+  "name": "Bleeding Eyes",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bleeding_eyes_bloodsage_icon.png",
+  "system": {
+    "description": "<p>Once per turn as a Boost to an action that reduces your Madness when you are insane, reduce your HP by your Proficiency, then do not reduce your Madness.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Wiles 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bleeding_eyes_bloodsage"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "8367436b6bc5760f",
+  "_key": "!items!8367436b6bc5760f",
+  "name": "Dancing Plan",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When using Boost Step, you may expend an additional 2 AP (for a total of 3 AP expended as a Boost) to double Move speed for that Arrangement.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": "Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_dancing_plan"
+    }
+  }
+}

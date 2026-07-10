@@ -1,0 +1,67 @@
+{
+  "_id": "3cabb0f9f35b2ea5",
+  "_key": "!items!3cabb0f9f35b2ea5",
+  "name": "Curse of the Crying Maiden",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/curse_of_the_crying_maiden_icon.png",
+  "system": {
+    "description": "<p>Attempt to give X levels of Panic to all enemies within 5x your Madness in feet of a point within 60ft (where X is half your Proficiency, rounded up). They roll Wiles Checks against the effect. For each creature given any amount of Panic, reduce your Madness by 1.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Fate 4"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "panic",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "curse_of_the_crying_maiden"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "eb4278f22b94dc19",
+  "_key": "!items!eb4278f22b94dc19",
+  "name": "Get Down",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you cause an ally to move by any means other than Pack Mule (e.g., Kick), they gain the effects of Half Cover until the start of their turn. [0] Herd Tactics: When you take this ability, you get an Action Pool of herd points equal to your Proficiency Score that you can only use in Pack Form. You get all herd points back after a quick rest. When you take this ability, you may spend skill points to learn herd tactics. Whenever you may spend skill points, you may add to the list of herd tactics you know:</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "get_down",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "f52e3d2999986d87",
+  "_key": "!items!f52e3d2999986d87",
+  "name": "Spear",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p>Versatile: may be thrown up to 40ft.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 15,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "spear",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spear",
+      "kind": "weapon"
+    }
+  }
+}

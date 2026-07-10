@@ -1,0 +1,56 @@
+{
+  "_id": "8dec9fd814f1b247",
+  "_key": "!items!8dec9fd814f1b247",
+  "name": "Blade Aura",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In an aura 5ft around you, any creature who enters this space or starts their turn in it makes a Finesse Check or takes 1D6 points of slashing damage. Damage dealt this way increases to 1D8 at level 5, and 1D10 at level 11. Once a creature takes this damage, they cannot take it again until the start of their next turn.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blade_aura",
+      "transcribed": true
+    }
+  }
+}

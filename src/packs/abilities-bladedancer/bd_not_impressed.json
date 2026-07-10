@@ -1,0 +1,40 @@
+{
+  "_id": "91d1057c49db220e",
+  "_key": "!items!91d1057c49db220e",
+  "name": "Not Impressed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one when you take this: Paralysis, Pinned, Pulled. Gain 1X Advantage on trait checks against this condition and on the Make Trait Check action against it. Each time you take this ability, you must choose a different condition.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_not_impressed"
+    }
+  }
+}

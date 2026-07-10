@@ -1,0 +1,27 @@
+{
+  "_id": "702d111fc974b623",
+  "_key": "!items!702d111fc974b623",
+  "name": "Shoddy Cloth Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training</em></p>",
+    "equipped": false,
+    "category": "light",
+    "defenses": {
+      "ad": 0,
+      "pd": 0,
+      "td": 0,
+      "md": 7,
+      "dr": 0
+    },
+    "maxStat": 20
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shoddy_cloth_set",
+      "kind": "armor"
+    }
+  }
+}

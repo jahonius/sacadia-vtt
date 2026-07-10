@@ -1,0 +1,40 @@
+{
+  "_id": "187708ec8e9b1ca8",
+  "_key": "!items!187708ec8e9b1ca8",
+  "name": "Phalanx Push",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Sweep, choose up to X targets within 5ft of you, where X is half your Proficiency (rounded up). Any of those targets who fail their Power Check against Sweep are pushed back 5ft.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Sweep"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "phalanx_push"
+    }
+  }
+}

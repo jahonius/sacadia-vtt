@@ -1,0 +1,31 @@
+{
+  "_id": "6595e91c4358b35b",
+  "_key": "!items!6595e91c4358b35b",
+  "name": "Mastery of the Swift Feet",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>You are not affected by difficult terrain from natural causes. Still treat occupied squares as difficult terrain.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_swift_feet",
+      "mastery": true
+    }
+  }
+}

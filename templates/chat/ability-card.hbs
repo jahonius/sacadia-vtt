@@ -1,0 +1,61 @@
+<div class="sacadia ability-card">
+  <header class="card-header">
+    <img src="{{item.img}}" width="36" height="36"/>
+    <h3>{{item.name}}</h3>
+  </header>
+
+  <div class="card-meta">
+    <span class="tag">{{tagLabel}}</span>
+    {{#if rangeLabel}}<span class="range"><i class="fa-solid fa-ruler"></i> {{rangeLabel}}</span>{{/if}}
+    {{#if limbs.length}}<span class="limbs">{{#each limbs}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>{{/if}}
+    {{#if cspCost}}<span class="csp">{{localize 'SACADIA.Ability.CspCost'}} {{cspCost}}</span>{{/if}}
+  </div>
+
+  {{#each activities as |act|}}
+  <div class="card-activity">
+    {{#if act.label}}<div class="activity-label">{{act.label}}</div>{{/if}}
+
+    {{#if act.toHit}}
+    <div class="card-roll to-hit">
+      <h4>{{localize 'SACADIA.Card.ToHit'}}{{#if act.defenseLabel}} <small>{{localize 'SACADIA.Card.Vs'}} {{act.defenseLabel}}</small>{{/if}}{{#if act.traitLabel}} <small>({{act.traitLabel}})</small>{{/if}}</h4>
+      {{{act.toHit}}}
+    </div>
+    {{/if}}
+
+    {{#if act.save}}
+    <div class="card-save">
+      <button type="button" data-action="rollSave" data-trait="{{act.save.traitKey}}" data-dc="{{act.save.dc}}" data-inflict="{{act.save.inflictData}}">
+        <i class="fa-solid fa-shield-halved"></i>
+        {{localize 'SACADIA.Card.RollSave'}} ({{localize 'SACADIA.Defense.CheckDC'}} {{act.save.dc}}{{#if act.save.traitLabel}} · {{act.save.traitLabel}}{{/if}})
+      </button>
+    </div>
+    {{/if}}
+
+    {{#if act.damage}}
+    <div class="card-roll damage">
+      <h4>{{localize 'SACADIA.Card.Damage'}}</h4>
+      {{{act.damage}}}
+    </div>
+    {{/if}}
+  </div>
+  {{/each}}
+
+  {{#if toHitMods.length}}
+  <div class="card-modifiers">
+    <span class="mod-label">{{localize 'SACADIA.Card.ToHit'}}</span>
+    {{#each toHitMods}}<span class="mod">{{this}}</span>{{/each}}
+  </div>
+  {{/if}}
+  {{#if damageMods.length}}
+  <div class="card-modifiers damage-mods">
+    <span class="mod-label">{{localize 'SACADIA.Card.Damage'}}</span>
+    {{#each damageMods}}<span class="mod">{{this}}</span>{{/each}}
+  </div>
+  {{/if}}
+
+  {{#if description}}<div class="card-desc">{{{description}}}</div>{{/if}}
+
+  {{!-- Filled in-place by the GM-side attack resolution (hit/miss per target). Never holds any
+        secret target data — the defense/DR math stays in the GM whisper. --}}
+  <div class="card-resolution" data-resolution></div>
+</div>

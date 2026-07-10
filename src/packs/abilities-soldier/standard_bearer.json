@@ -1,0 +1,40 @@
+{
+  "_id": "658a07e11976b440",
+  "_key": "!items!658a07e11976b440",
+  "name": "Standard Bearer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>At the beginning of combat as a Boost to your first action, you may attempt to give Taunt levels up to your Proficiency to enemies. Choose how these points are distributed among enemies within 60ft of you. They roll Courage Checks against these effects.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "standard_bearer"
+    }
+  }
+}

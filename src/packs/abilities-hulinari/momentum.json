@@ -1,0 +1,40 @@
+{
+  "_id": "11ccf247ba6516b8",
+  "_key": "!items!11ccf247ba6516b8",
+  "name": "Momentum",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the ‘Charge the Line’ ability, creatures who fail fall Prone.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Charge the Line, Finesse 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "momentum",
+      "transcribed": true
+    }
+  }
+}

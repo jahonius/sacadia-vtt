@@ -1,0 +1,40 @@
+{
+  "_id": "012688edcf666d9d",
+  "_key": "!items!012688edcf666d9d",
+  "name": "Toughhide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are surrounded and in Brute Form, gain 1 damage resistance to all physical attacks made against you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 2"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "toughhide",
+      "transcribed": true
+    }
+  }
+}

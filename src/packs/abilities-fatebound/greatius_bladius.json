@@ -1,0 +1,40 @@
+{
+  "_id": "756be298332316ba",
+  "_key": "!items!756be298332316ba",
+  "name": "Greatius Bladius",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the radius of Blade Aura from 10ft to 15ft. The Fatebound A cool mist hovers over a lake. A lost child, called to this place, peers at their still reflection. They do not see themselves, but a kingly presence – a divine god – smirking back at them. The god beckons for them to reach into the lake, and in so doing the child pulls a spear from the water, longer than they are tall, glittering in gold. It radiates power, and they immediately know that they are the son of a god. The Fatebound are the children of gods or else simple folk tricked by Fae into pacts. Wielding a divine weapon granted by their patron, they are tested by fate–and twist it to their will. The blessed Achilles, Kaguya-Hime, the Pandova brothers, and Cu Chulainn are all Fatebound, as is Thor under tribulation. All of these characters share the blessing and curse of fate, and wield holy weapons or powers which grant them power–and pose danger to themselves. Party Role DPS + AoE, Crit-Fishing, Fate Manipulation Aspect... Fated StrikeP: Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon. Gain training in use of this weapon if you do not already have it. When you make an attack using your divine weapon, add your Fate score to damage dealt (in addition to Power or Finesse). You may switch your Divine Weapon during any long rest. A weapon that loses its divinity turns to dust. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit. Check Expertise: Power and Fate Checks Check DC: 9 + Fate + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Imbued Weapons, Light Armor, Medium Armor Hit Points per Level: 9 or roll 2D8 All Fatebound [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Elemental WeaponPB: Your divine weapon does elemental damage (choose one when you take this ability: Earth, Air, Fire, Water, Rot, Salt) instead of normal damage. Elemental damage overcomes physical weapon resistances. Additionally, you may summon and dismiss your divine weapon with a Boost to any action, even if physically separated. The divine weapon does not take up space in your readied item slots (RIS). [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessL: You may use this on any action before or after rolling. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose from one of the following options. Heavy Weapons MasteryP: Gain +1 to attack and damage rolls you make with your divine weapon if you wield a heavy weapon as your divine weapon. Armor MasteryP: You may gain the benefit of one extra visible item while wearing armor that would obscure it (to a max of 3). Critical MasteryP: Once per Quick Rest when you roll a natural 1 on a D20 die, you may treat it as a natural 20. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Boon of the Gods: Your divine weapon is imbued with the aura of your divine patron. Once per quick rest, you may increase the damage dice of an attack by two dice types as a Boost to an attack. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose from one of the following options. Fumble MasteryP: Whenever you give Fumble, increase the dice type of Fumble given by two dice types. Boost MasteryP: Increase the damage of any attack you make against a single target by half your Proficiency (rounded up) when you apply three Boosts to an attack. Aristeia MasteryP: Increase your number of Glory points by two. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] DemigodP: Increase your Power or Fate (choose one) by one additional point, to a maximum of 7.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Bladius, Finesse 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greatius_bladius",
+      "transcribed": true
+    }
+  }
+}

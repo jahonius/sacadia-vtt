@@ -1,0 +1,40 @@
+{
+  "_id": "3027524f0a64e955",
+  "_key": "!items!3027524f0a64e955",
+  "name": "Blackcloud",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>All enemies within 15ft of you get 1X Disadvantage on any mental Trait Check as long as you maintain Focus.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blackcloud",
+      "transcribed": true
+    }
+  }
+}

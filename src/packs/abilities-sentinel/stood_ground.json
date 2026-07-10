@@ -1,0 +1,49 @@
+{
+  "_id": "c350017286afad62",
+  "_key": "!items!c350017286afad62",
+  "name": "Stood Ground",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target. For each turn that you maintain Focus on that target (beginning on the round you initiate this ability), reduce damage they deal to you by 1 through any effect. If you leave the square you are standing in when you activate Stood Ground through any cause, your Focus immediately ends.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Wiles 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "mark": {
+      "key": "stood-ground",
+      "exclusive": true
+    },
+    "focus": {
+      "breaksOnMove": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stood_ground"
+    }
+  }
+}

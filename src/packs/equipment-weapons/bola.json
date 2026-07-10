@@ -1,0 +1,35 @@
+{
+  "_id": "363aab2337e87947",
+  "_key": "!items!363aab2337e87947",
+  "name": "Bola",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Finesse[1]</em></p><p>Deals no damage. On hit, the target makes Trait Checks against 3 Pin.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "sling",
+    "weaponDamage": {
+      "count": "",
+      "denomination": null,
+      "trait": ""
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "",
+    "range": {
+      "type": "ranged",
+      "value": 60
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bola",
+      "kind": "weapon"
+    }
+  }
+}

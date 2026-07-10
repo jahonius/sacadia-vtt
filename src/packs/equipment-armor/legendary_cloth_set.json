@@ -1,0 +1,27 @@
+{
+  "_id": "d857284a15415fc2",
+  "_key": "!items!d857284a15415fc2",
+  "name": "Legendary Cloth Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training, Prof[6]</em></p>",
+    "equipped": false,
+    "category": "light",
+    "defenses": {
+      "ad": 2,
+      "pd": 0,
+      "td": 0,
+      "md": 12,
+      "dr": 0
+    },
+    "maxStat": 32
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_cloth_set",
+      "kind": "armor"
+    }
+  }
+}

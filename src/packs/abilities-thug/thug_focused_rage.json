@@ -1,0 +1,42 @@
+{
+  "_id": "02adf87be2880f0e",
+  "_key": "!items!02adf87be2880f0e",
+  "name": "Focused Rage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are raging, you may Focus on your damaging strikes. Increase the damage dice of all melee attacks you make by one dice type. [Adds a Damage Die Step Temporary Modifier below, off by default - toggle it on while raging and focused. Freaking Strong: set it to 2.]</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Berserker Rage"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_focused_rage"
+    }
+  }
+}

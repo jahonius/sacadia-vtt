@@ -1,0 +1,42 @@
+{
+  "_id": "6dcf0ca089539aae",
+  "_key": "!items!6dcf0ca089539aae",
+  "name": "Punishment",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a trick point and choose a target to whom you have given Wrestle Pin. For as long as you maintain Focus on Punishment, you do not exhaust the free hand that is not consumed by 'Natural Wrestler'. You lose Focus on Punishment when the target loses all Pin.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "trick",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_punishment"
+    }
+  }
+}

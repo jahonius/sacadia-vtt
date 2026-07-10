@@ -1,0 +1,21 @@
+{
+  "_id": "2e8bdbcd3a888fcf",
+  "_key": "!items!2e8bdbcd3a888fcf",
+  "name": "Momentum Charm",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>Once per turn, when you move 15ft or more towards an enemy just before you make a 1H attack action against them, increase that damage's dice type by one.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "momentum_charm",
+      "kind": "adornment",
+      "armorPrereq": "Padded Style"
+    }
+  }
+}

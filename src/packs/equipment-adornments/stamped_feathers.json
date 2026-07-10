@@ -1,0 +1,21 @@
+{
+  "_id": "f9cb1050ad9ab397",
+  "_key": "!items!f9cb1050ad9ab397",
+  "name": "Stamped Feathers",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>Whenever your armor is fully rended, increase your Move Speed by 10ft.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 30
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stamped_feathers",
+      "kind": "adornment",
+      "armorPrereq": "Platted Style"
+    }
+  }
+}

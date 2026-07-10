@@ -1,0 +1,42 @@
+{
+  "_id": "32449aff0133660d",
+  "_key": "!items!32449aff0133660d",
+  "name": "Call of the Quick Blade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 2 call points when you initiate this call. X allies who can hear you and stand within 15ft of you get one additional reaction until this call ends provided they remain within the aura (where X = your Proficiency). If any ally moves outside the aura radius, the effect ends for them for the duration of the call.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 2,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Courage 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_the_quick_blade"
+    }
+  }
+}

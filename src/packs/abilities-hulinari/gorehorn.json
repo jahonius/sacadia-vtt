@@ -1,0 +1,40 @@
+{
+  "_id": "78d62787791dec39",
+  "_key": "!items!78d62787791dec39",
+  "name": "Gorehorn",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you apply Skullcharge to Headbutt, change the benefit to apply XD6 where X is equal to your Proficiency, rather than half your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Skullcharge, Finesse 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gorehorn",
+      "transcribed": true
+    }
+  }
+}

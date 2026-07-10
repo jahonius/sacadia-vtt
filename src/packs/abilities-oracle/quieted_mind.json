@@ -1,0 +1,46 @@
+{
+  "_id": "0fad650d0150c91a",
+  "_key": "!items!0fad650d0150c91a",
+  "name": "Quieted Mind",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/quieted_mind_icon.png",
+  "system": {
+    "description": "<p>Once per quick rest, remove all levels of any mental adversarial conditions as well as all Madness and Insanity.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Wiles 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "spend": "M"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "quieted_mind"
+    }
+  }
+}

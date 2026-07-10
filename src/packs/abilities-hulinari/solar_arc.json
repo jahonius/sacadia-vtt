@@ -1,0 +1,40 @@
+{
+  "_id": "470f9b538d3da3f8",
+  "_key": "!items!470f9b538d3da3f8",
+  "name": "Solar Arc",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When using Long Arc, you may choose to make an attack against up to three targets. Only apply the base weapon damage dice to all targets if you hit. You may only use this Boost if three targets are within 5ft of at least one other target and all targets are in range of your divine weapon.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Long Arc, Power 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "solar_arc",
+      "transcribed": true
+    }
+  }
+}

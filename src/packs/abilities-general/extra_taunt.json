@@ -1,0 +1,40 @@
+{
+  "_id": "e995f79ad0a76e75",
+  "_key": "!items!e995f79ad0a76e75",
+  "name": "Extra Taunt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Taunting Call, attempt to give levels of Taunt equal to your Proficiency to that target.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "conditions",
+      "prerequisite": "Taunting Call, Courage 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "extra_taunt"
+    }
+  }
+}

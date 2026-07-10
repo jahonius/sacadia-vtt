@@ -1,0 +1,31 @@
+{
+  "_id": "4fa0f0fa0277f8af",
+  "_key": "!items!4fa0f0fa0277f8af",
+  "name": "Mastery of Temperament",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain one additional Slightly Cracked roll each quick rest.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_temperament",
+      "mastery": true
+    }
+  }
+}

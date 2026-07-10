@@ -1,0 +1,31 @@
+{
+  "_id": "bcb01433beafffe3",
+  "_key": "!items!bcb01433beafffe3",
+  "name": "Fist Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain a +1 bonus to attack rolls made with unarmed weapons vs. PD. Additionally, do not reduce your AP on the first turn of combat when you are ambushed.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_fist",
+      "mastery": true
+    }
+  }
+}

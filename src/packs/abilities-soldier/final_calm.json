@@ -1,0 +1,40 @@
+{
+  "_id": "ebfb5bb924f151d0",
+  "_key": "!items!ebfb5bb924f151d0",
+  "name": "Final Calm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Call of Respite, do not roll trait checks against adversary conditions. Instead, simply remove one level of any condition.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Relaxed Call, Courage 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "final_calm"
+    }
+  }
+}

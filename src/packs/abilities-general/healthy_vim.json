@@ -1,0 +1,40 @@
+{
+  "_id": "2bbae83e192b8c40",
+  "_key": "!items!2bbae83e192b8c40",
+  "name": "Healthy Vim",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your HP by 2/level. Whenever you level, increase your HP by 2 points. Increase the size of each HP pool by 2 whenever you take this ability.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "healthy_vim"
+    }
+  }
+}

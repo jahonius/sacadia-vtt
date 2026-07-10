@@ -1,0 +1,65 @@
+{
+  "_id": "75b4411ffe8d6736",
+  "_key": "!items!75b4411ffe8d6736",
+  "name": "Blessing of Hot Coal",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_hot_coal_icon.png",
+  "system": {
+    "description": "<p>Choose a target within 60ft of you. Reduce your Madness by up to M. Increase the damage dealt on that target's next attack (if they hit) by 1 Dice Type per level of Madness expended.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Fate 5"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Blessing of Hot Coal",
+      "duration": {
+        "type": "consumed",
+        "on": "attack"
+      },
+      "spend": {
+        "resource": "madness",
+        "max": "@madness"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.dieStep",
+          "mode": 2,
+          "value": "@spent"
+        }
+      ]
+    },
+    "madness": {
+      "prereq": 5,
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_hot_coal"
+    }
+  }
+}

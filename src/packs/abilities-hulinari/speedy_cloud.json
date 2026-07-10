@@ -1,0 +1,56 @@
+{
+  "_id": "1be9db56012b3846",
+  "_key": "!items!1be9db56012b3846",
+  "name": "Speedy Cloud",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>(Preqreuisite: Hovering Foe, Finesse 3). When you use Hovering Foe on a target, you may use a reaction in response to them taking the Move action. If you do, you may reduce or increase their Move speed by X, where X is 5 times your Finesse Score. They may make a Finesse Check against this effect.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "speedy_cloud",
+      "transcribed": true
+    }
+  }
+}

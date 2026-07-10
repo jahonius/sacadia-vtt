@@ -1,0 +1,49 @@
+{
+  "_id": "10e30e340de99b5a",
+  "_key": "!items!10e30e340de99b5a",
+  "name": "Just Luck",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your AD by 1 on top of any armor you are wearing. You may not take this and Trained Mind, Trained Body, and Trained Finesse. (Auto-managed +1 AD tempbuff.)</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Just Luck",
+        "target": "defense.ad",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "just_luck"
+    }
+  }
+}

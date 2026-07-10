@@ -1,0 +1,56 @@
+{
+  "_id": "baa211b08772eeeb",
+  "_key": "!items!baa211b08772eeeb",
+  "name": "Lucky Break",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As an action you can harm the fate of enemies around you. Attempt to give 1D6 Fumble to a number of enemies within 10ft of you equal to your Proficiency. They make Fate Checks against this effect. You may use this once per turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 10,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lucky_break",
+      "transcribed": true
+    }
+  }
+}

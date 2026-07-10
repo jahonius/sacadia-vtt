@@ -1,0 +1,40 @@
+{
+  "_id": "31e4185790470ded",
+  "_key": "!items!31e4185790470ded",
+  "name": "Pinning Bolt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you critically hit with a ranged attack using a crossbow, you may make the critical effect be that you give one level of Pin.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Boltshot"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pinning_bolt"
+    }
+  }
+}

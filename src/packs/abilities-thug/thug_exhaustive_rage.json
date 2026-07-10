@@ -1,0 +1,40 @@
+{
+  "_id": "f8a2c437b6652c17",
+  "_key": "!items!f8a2c437b6652c17",
+  "name": "Exhaustive Rage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are raging and successfully make at least 5 melee attacks against an enemy in a round, that enemy makes a Power Check against your Check DC or takes one level of Debilitated if they do not already have one.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Berserker Rage, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_exhaustive_rage"
+    }
+  }
+}

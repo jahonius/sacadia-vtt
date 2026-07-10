@@ -1,0 +1,74 @@
+{
+  "_id": "8035feaf967d74e9",
+  "_key": "!items!8035feaf967d74e9",
+  "name": "Vision of the Snapping Turtle",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/vision_of_snapping_turtle_icon.png",
+  "system": {
+    "description": "<p>Whenever someone forces a Mental Trait Check upon you, you may expend one Prescient Point with a reaction to deal MD4 damage to them after resolving the Trait Check. Increase the damage dealt this way to MD6 at Level 6, and MD8 at Level 11.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "prescient",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Future Visions"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@madness",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "vision_of_snapping_turtle",
+      "selfScaling": [
+        {
+          "level": 6,
+          "ladderIndex": 2
+        },
+        {
+          "level": 11,
+          "ladderIndex": 3
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_id": "e6076c0986a51c7d",
+  "_key": "!items!e6076c0986a51c7d",
+  "name": "Informative Scroll",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>Choose one Knowledge Talent you possess. While this scroll is equipped in a RIS slot, gain +1 to all checks made with that Talent. Informative Scrolls do not stack.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "informative_scroll",
+      "kind": "trinket"
+    }
+  }
+}

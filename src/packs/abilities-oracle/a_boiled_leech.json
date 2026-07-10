@@ -1,0 +1,46 @@
+{
+  "_id": "f102a01df9276753",
+  "_key": "!items!f102a01df9276753",
+  "name": "A Boiled Leech",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/a_boiled_leech_icon.png",
+  "system": {
+    "description": "<p>Choose a number of targets within 30ft of you up to half your Proficiency (rounded up). For as long as you maintain focus, whenever you would lose HP from an insane effect, those targets also lose that HP. If you have abilities that prevent you from taking damage from an effect (e.g., Writhing Block), targets still takes damage that would be dealt to you this way.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "a_boiled_leech"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "57341f3c913179c1",
+  "_key": "!items!57341f3c913179c1",
+  "name": "Chaotic Wobble",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a Herd Point as a Boost to any action. You do not provoke attacks of opportunity on that action.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "herd",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "chaotic_wobble",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "fc5a73762994cec8",
+  "_key": "!items!fc5a73762994cec8",
+  "name": "Call to Action",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You receive an Action Pool of call points equal to your Proficiency. Using a call consumes a point (maintaining a Focus call does not expend a call point except for the turn it is initiated). You get all points back after a quick rest. You may only use calls on allies you can see unless an ability specifies otherwise. (Add a 'Call Points' entry to your Pools tracker with Max = Proficiency.)</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_to_action"
+    }
+  }
+}

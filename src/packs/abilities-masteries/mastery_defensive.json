@@ -1,0 +1,31 @@
+{
+  "_id": "110aa21617f9610a",
+  "_key": "!items!110aa21617f9610a",
+  "name": "Defensive Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Do not decrease your move speed by 5ft when you wield a tower shield. Gain 1X Advantage against Panic.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_defensive",
+      "mastery": true
+    }
+  }
+}

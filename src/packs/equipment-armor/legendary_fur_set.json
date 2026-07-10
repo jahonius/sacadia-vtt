@@ -1,0 +1,27 @@
+{
+  "_id": "274bd64e6b521fa8",
+  "_key": "!items!274bd64e6b521fa8",
+  "name": "Legendary Fur Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[6]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 3,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 11
+    },
+    "maxStat": 25
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_fur_set",
+      "kind": "armor"
+    }
+  }
+}

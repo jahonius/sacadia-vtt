@@ -1,0 +1,40 @@
+{
+  "_id": "72dcdafd897293c7",
+  "_key": "!items!72dcdafd897293c7",
+  "name": "Humongous",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the base damage of your divine weapon by one dice type provided your divine weapon is a heavy weapon. Other creatures of your size or smaller cannot pick up or wield your divine weapon due to its immense size.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Heavy Weaponry, Power 3"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "humongous",
+      "transcribed": true
+    }
+  }
+}

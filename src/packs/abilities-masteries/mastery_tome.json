@@ -1,0 +1,40 @@
+{
+  "_id": "d45dcfbbb7c3f9fe",
+  "_key": "!items!d45dcfbbb7c3f9fe",
+  "name": "Tome Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>When you cast 'Forbidden Knowledge', increase the damage dice dealt by one dice type (e.g., XD8 becomes XD10).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Tome Mastery",
+        "target": "damage",
+        "mode": "step",
+        "scope": "forbidden_knowledge",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_tome",
+      "mastery": true
+    }
+  }
+}

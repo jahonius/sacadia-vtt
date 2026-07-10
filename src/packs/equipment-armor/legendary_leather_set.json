@@ -1,0 +1,27 @@
+{
+  "_id": "6aaefea2b1490de2",
+  "_key": "!items!6aaefea2b1490de2",
+  "name": "Legendary Leather Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[6]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 0,
+      "pd": 6,
+      "td": 9,
+      "md": 5,
+      "dr": 0
+    },
+    "maxStat": 32
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_leather_set",
+      "kind": "armor"
+    }
+  }
+}

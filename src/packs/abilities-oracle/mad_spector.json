@@ -1,0 +1,44 @@
+{
+  "_id": "12aae1489e21881e",
+  "_key": "!items!12aae1489e21881e",
+  "name": "Mad Spector",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_spector_icon.png",
+  "system": {
+    "description": "<p>As a Boost to a single action, increase your Madness by 1D3-1 and take damage equal to three times your Madness. Increase your Check DC by your Madness for this action.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Mad Smear, Wiles 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "prereq": 4,
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mad_spector"
+    }
+  }
+}

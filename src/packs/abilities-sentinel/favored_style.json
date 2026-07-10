@@ -1,0 +1,68 @@
+{
+  "_id": "dcc00d0a9c04a131",
+  "_key": "!items!dcc00d0a9c04a131",
+  "name": "Favored Style",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Take the option below that matches your favored enemy. Apply this effect always (not just against your Favored Enemy). Beasts: Add 50ft to the range of all ranged weapons. Great Beast: You cannot be Surrounded. Awoken Flora: Gain 1X advantage to all trait checks made against Pin. Folk Fae: Gain damage resistance equal to half your Wiles Score (rounded up). Wild Fae: When you attack an enemy who is Surprised, gain 1X advantage to your attack. Fontmade: Choose 1 element (Rot, Salt, Earth, Fire, Air, Water); gain resistance to this damage type equal to your Proficiency. Undead: You cannot be given Nausea by any means. Demon: When you are critically hit, use your reaction to turn that critical to-hit into a normal hit (or a miss if you have Steadied).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Wiles 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Favored Style (Folk Fae)",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@wiles/2)",
+        "predicate": [
+          {
+            "atom": "self:favored:folkFae"
+          }
+        ]
+      },
+      {
+        "label": "Favored Style (Wild Fae)",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:favored:wildFae"
+          },
+          {
+            "atom": "target:condition:surprised"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "favored_style"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "0365fb0509db3bf3",
+  "_key": "!items!0365fb0509db3bf3",
+  "name": "Divine Criticality",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your attacks critically hit whenever you roll a natural 18, 19, or 20.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Criticality, Fate 5"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_criticality",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "d7dee67c6a4f007b",
+  "_key": "!items!d7dee67c6a4f007b",
+  "name": "Kris",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[1]</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "dagger",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "wiles"
+    },
+    "hands": 1,
+    "defense": "md",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kris",
+      "kind": "weapon"
+    }
+  }
+}

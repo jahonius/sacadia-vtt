@@ -1,0 +1,40 @@
+{
+  "_id": "ec82eb8bae1f5530",
+  "_key": "!items!ec82eb8bae1f5530",
+  "name": "Faster Still",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your base Move speed in Pack form by 10ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Bulk Muscle, Finesse 6"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "faster_still",
+      "transcribed": true
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "_id": "3397e9287ab880fd",
+  "_key": "!items!3397e9287ab880fd",
+  "name": "Pack Mule",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may carry a teammate on your back when in Pack Form. To initiate, they must use their reaction to climb on your back. Reduce your speed by half. While riding you, your ally has Height Advantage in all physical attacks and has a move speed of zero. They can get off at any time with a action or reaction, ending your Focus. If you or an enemy end your Focus, your ally falls to the ground Prone on a random side of you. If you use Pack Mule and Skittish, your ally gains the benefit of all passive Skittish effects.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pack_mule",
+      "transcribed": true
+    }
+  }
+}

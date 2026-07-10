@@ -1,0 +1,46 @@
+{
+  "_id": "4414662ede9dbd80",
+  "_key": "!items!4414662ede9dbd80",
+  "name": "Blessing of the Hallowed Vale",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_hallowed_vale_icon.jpg",
+  "system": {
+    "description": "<p>As an action, touch an ally and remove any amount of Madness and give 1D4 temporary HP to that ally for each level of Madness removed. The dice type rolled this way increases to 1D6 at level 5, and 1D8 at level 11.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "prereq": 5,
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_the_hallowed_vale"
+    }
+  }
+}

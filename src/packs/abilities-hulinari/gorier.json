@@ -1,0 +1,40 @@
+{
+  "_id": "7aefb3bf93c1272d",
+  "_key": "!items!7aefb3bf93c1272d",
+  "name": "Gorier",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>(Prerrequisite: Power 4). Increase the damage of Headbutt by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gorier",
+      "transcribed": true
+    }
+  }
+}

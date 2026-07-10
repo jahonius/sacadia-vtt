@@ -1,0 +1,27 @@
+{
+  "_id": "c10d55f54beda425",
+  "_key": "!items!c10d55f54beda425",
+  "name": "Masterwork Fur Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training, Prof[5]</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "defenses": {
+      "ad": 3,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 9
+    },
+    "maxStat": 23
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "masterwork_fur_set",
+      "kind": "armor"
+    }
+  }
+}

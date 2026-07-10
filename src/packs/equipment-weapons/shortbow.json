@@ -1,0 +1,35 @@
+{
+  "_id": "85a9b2e16ef7a9fe",
+  "_key": "!items!85a9b2e16ef7a9fe",
+  "name": "Shortbow",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "bow",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "finesse"
+    },
+    "hands": 2,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "ranged",
+      "value": 120
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shortbow",
+      "kind": "weapon"
+    }
+  }
+}

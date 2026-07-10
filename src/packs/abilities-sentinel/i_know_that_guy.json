@@ -1,0 +1,40 @@
+{
+  "_id": "1d14645d3d9b79fa",
+  "_key": "!items!1d14645d3d9b79fa",
+  "name": "I Know That Guy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Favored Enemy, you may additionally learn their level, MD, PD, TD, or current HP if you succeed at your Wiles Check against them.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Wiles 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "i_know_that_guy"
+    }
+  }
+}

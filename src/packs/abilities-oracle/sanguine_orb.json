@@ -1,0 +1,81 @@
+{
+  "_id": "4128883b7a7247fa",
+  "_key": "!items!4128883b7a7247fa",
+  "name": "Sanguine Orb",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sanguine_orb_icon.png",
+  "system": {
+    "description": "<p>Roll XD4 damage, where X is your Proficiency. Take X damage. Choose a point within 60ft of you. All enemies within 5x your Madness in feet of that point roll a Fate Check or take that damage (successful Fate Check halves). The damage dealt this way becomes XD6 at level 5, and XD8 at level 11.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@proficiency",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "prereq": 1,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sanguine_orb",
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 2
+        },
+        {
+          "level": 11,
+          "ladderIndex": 3
+        }
+      ]
+    }
+  }
+}

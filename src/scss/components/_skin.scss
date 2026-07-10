@@ -1,0 +1,152 @@
+// The pixel-antiquity skin (slice A): dark-leather chrome + the shared component vocabulary
+// (chips, pips, meters, streaks) that the vitals header, ability cards, and combat strip build on.
+// Imported inside `.sacadia` BEFORE _sacadia-sheet so per-component rules there can still override.
+//
+// The sheet deliberately commits to the icon set's single dark world (like the icons themselves);
+// it does not follow Foundry's light/dark preference.
+
+// --- Window chrome ---
+.window-content {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  font-family: var(--sac-font-ui);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  border-color: var(--sac-line-strong);
+}
+
+// --- Form elements on the dark ground ---
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  background: var(--sac-inset);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+
+  &:focus {
+    border-color: var(--sac-gold);
+    box-shadow: 0 0 4px rgba(212, 165, 60, 0.45);
+    outline: none;
+  }
+  &::placeholder { color: var(--sac-dim); opacity: 0.7; }
+}
+select option { background: var(--sac-inset); color: var(--sac-text); }
+button {
+  background: var(--sac-panel);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line-strong);
+  &:hover, &:focus { border-color: var(--sac-gold); box-shadow: 0 0 4px rgba(212, 165, 60, 0.35); }
+}
+a { color: var(--sac-text); }
+:focus-visible { outline: 1px solid var(--sac-gold); outline-offset: 1px; }
+
+// --- Tab navigation ---
+.sheet-tabs {
+  border-bottom-color: var(--sac-line-strong);
+  .item {
+    color: var(--sac-dim);
+    font-family: var(--sac-font-display);
+    &.active { border-bottom-color: var(--sac-gold); color: var(--sac-gold-hi); }
+    &:hover { color: var(--sac-text); }
+  }
+}
+
+// --- Pixel art: keep generated icons crisp when scaled ---
+.ability-img, .inv-img, .profile-img, .px { image-rendering: pixelated; }
+
+// --- Scrollbars ---
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--sac-umber); }
+::-webkit-scrollbar-thumb { background: var(--sac-line-strong); border-radius: 4px; }
+
+/* ============================================================
+   Shared component vocabulary (used by slices B/C/D)
+   ============================================================ */
+
+// A small uppercase label above a value/track.
+.sac-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  font-weight: 600;
+}
+
+// Chips: inline badges for tags, costs, ranges, live effects.
+.sac-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.42rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line);
+  color: var(--sac-dim);
+  white-space: nowrap;
+
+  &.tag { border-color: var(--sac-olive); color: var(--sac-olive); }       // ability tag
+  &.ap { border-color: var(--sac-gold-lo); color: var(--sac-gold); }       // AP cost
+  &.mad { border-color: #6e181b; color: var(--sac-blood); }                // madness gain/spend/prereq
+  &.pool { background: var(--sac-gold-lo); border-color: var(--sac-gold-lo); color: #14100a; }
+  &.live { border-color: var(--sac-olive); color: var(--sac-olive); }      // predicate satisfied now
+  &.live::before { content: "\25CF"; font-size: 0.55rem; }
+  &.warn { border-color: var(--sac-blood); color: var(--sac-blood); }
+}
+
+// Pips: discrete resources (AP, Madness, pool points).
+.sac-pips { display: flex; gap: 0.28rem; align-items: center; }
+.sac-pip {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  background: var(--sac-inset);
+
+  &.on { background: linear-gradient(180deg, #e8c866, #b9872b); border-color: var(--sac-gold-lo); }
+  &.mad.on { background: linear-gradient(180deg, #d4666b, var(--sac-blood-deep)); border-color: #6e181b; }
+  &.threshold { border-color: var(--sac-blood); position: relative; }
+  &.threshold::after {
+    content: "\2020"; // dagger — the insanity latch
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sac-blood); font-size: 0.68rem; font-weight: 700;
+  }
+}
+
+// Meter: continuous resource (HP).
+.sac-meter {
+  height: 0.85rem;
+  min-width: 8rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+
+  .fill {
+    position: absolute; inset: 0 auto 0 0;
+    background: linear-gradient(180deg, #e8c866, #b9872b);
+  }
+  .num {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.66rem; font-weight: 700;
+    color: var(--sac-text);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+// Streak: focus-round tally bars.
+.sac-streak {
+  display: inline-flex; gap: 2px; vertical-align: middle;
+  i { width: 5px; height: 11px; background: var(--sac-gold); border-radius: 1px; display: inline-block; }
+}

@@ -1,0 +1,58 @@
+{
+  "_id": "55dd8193da7beed6",
+  "_key": "!items!55dd8193da7beed6",
+  "name": "Natural Wrestler",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn, choose one target within 5ft of you. Attempt to give them Wrestle Pin equal to half your Proficiency (rounded up). Finesse Check negates. For as long as they retain levels of Pin, you cannot use one arm.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "thug-starting",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_natural_wrestler"
+    }
+  }
+}

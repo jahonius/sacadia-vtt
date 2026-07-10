@@ -1,0 +1,56 @@
+{
+  "_id": "711b49284f7f6b28",
+  "_key": "!items!711b49284f7f6b28",
+  "name": "Meatclub",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are in Brute Form, you may pick up an enemy and throw them. That enemy must be at least one size smaller than you. You attempt to throw them a distance up to 5Xft, where X is your Proficiency. The target you throw must make a Finesse check against being knocked prone. If you throw a target with Meatclub into another target, both targets must make a Finesse Check against being knocked Prone.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "meatclub",
+      "transcribed": true
+    }
+  }
+}

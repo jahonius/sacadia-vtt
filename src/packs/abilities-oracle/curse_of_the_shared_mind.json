@@ -1,0 +1,46 @@
+{
+  "_id": "6ba528e3a454b2fe",
+  "_key": "!items!6ba528e3a454b2fe",
+  "name": "Curse of the Shared Mind",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/curse_of_the_shared_mind_icon.png",
+  "system": {
+    "description": "<p>Choose up to M allies within 60ft. Until this spell ends, whenever they would fail a Mental Trait Check against a roll imposed by an enemy, they succeed instead, and you gain 1D3-1 points of Madness.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "prereq": 1,
+      "gain": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "curse_of_the_shared_mind"
+    }
+  }
+}

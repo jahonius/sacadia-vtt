@@ -1,0 +1,40 @@
+{
+  "_id": "69e774a2482efc18",
+  "_key": "!items!69e774a2482efc18",
+  "name": "Sticking your Neck Out",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Remaneuver, you may increase your to-hit by an amount up to twice your Proficiency. Still gain Sting when you do this.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 4, Remaneuver"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sticking_your_neck_out"
+    }
+  }
+}

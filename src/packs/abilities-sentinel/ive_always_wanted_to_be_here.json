@@ -1,0 +1,40 @@
+{
+  "_id": "de83c4f20f332781",
+  "_key": "!items!de83c4f20f332781",
+  "name": "I've Always Wanted to Be Here",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are Surrounded and make a reaction attack on two creatures using a ranged weapon, do not make the second attack at 1X disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "I'm Not Supposed to Be Here, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ive_always_wanted_to_be_here"
+    }
+  }
+}

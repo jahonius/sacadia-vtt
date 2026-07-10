@@ -1,0 +1,35 @@
+{
+  "_id": "07fae0d101141b37",
+  "_key": "!items!07fae0d101141b37",
+  "name": "Black Lance",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[3], Fate[1]</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "spear",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "wiles"
+    },
+    "hands": 2,
+    "defense": "md",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 10
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "black_lance",
+      "kind": "weapon"
+    }
+  }
+}

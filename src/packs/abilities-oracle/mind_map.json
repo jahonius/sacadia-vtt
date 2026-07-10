@@ -1,0 +1,43 @@
+{
+  "_id": "6f3e862f1ece87ea",
+  "_key": "!items!6f3e862f1ece87ea",
+  "name": "Mind Map",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mind_map_icon.png",
+  "system": {
+    "description": "<p>You may expend one Prescient Point to re-roll 1D8 on the Insane table at the start of your turn when you are insane after you have rolled. Choose which roll you take.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "prescient",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mind_map"
+    }
+  }
+}

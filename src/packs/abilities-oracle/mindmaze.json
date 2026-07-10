@@ -1,0 +1,59 @@
+{
+  "_id": "bbc29ab172f26676",
+  "_key": "!items!bbc29ab172f26676",
+  "name": "Mindmaze",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mindmaze_icon.png",
+  "system": {
+    "description": "<p>Whenever you are Insane, add half your Proficiency (rounded up) to damage you deal to any target other than yourself.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mindmaze",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:insane"
+          },
+          {
+            "atom": "!self:ability:labyrinth_gaze"
+          }
+        ]
+      }
+    ],
+    "madness": {
+      "insaneOnly": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mindmaze"
+    }
+  }
+}

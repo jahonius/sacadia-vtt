@@ -1,0 +1,35 @@
+{
+  "_id": "e9da48e9288d0ace",
+  "_key": "!items!e9da48e9288d0ace",
+  "name": "Crossbow",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "equipped": false,
+    "traits": "",
+    "weaponType": "crossbow",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "finesse"
+    },
+    "hands": 2,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "ranged",
+      "value": 120
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "crossbow",
+      "kind": "weapon"
+    }
+  }
+}

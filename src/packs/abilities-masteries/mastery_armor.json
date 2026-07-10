@@ -1,0 +1,31 @@
+{
+  "_id": "940dc19e3402f03e",
+  "_key": "!items!940dc19e3402f03e",
+  "name": "Armor Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>You may gain the benefit of one extra visible item while wearing armor that would obscure it (to a max of 3).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_armor",
+      "mastery": true
+    }
+  }
+}

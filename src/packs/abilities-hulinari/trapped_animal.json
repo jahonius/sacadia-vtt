@@ -1,0 +1,40 @@
+{
+  "_id": "815fbe60ca41eda2",
+  "_key": "!items!815fbe60ca41eda2",
+  "name": "Trapped Animal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are Pinned, you may still use the Move action. Treat all movement distance as affected by Difficult Terrain. If there is a creature pinning you, they may move with you or release you from Pin.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Larger Than Life"
+    },
+    "activities": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "trapped_animal",
+      "transcribed": true
+    }
+  }
+}
