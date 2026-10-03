@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_jagged_blade"
+      "catalogId": "bd_jagged_blade",
+      "buildHash": "332a61580791"
     }
   }
 }

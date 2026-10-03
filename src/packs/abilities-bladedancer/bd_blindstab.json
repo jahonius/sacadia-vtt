@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_blindstab"
+      "catalogId": "bd_blindstab",
+      "buildHash": "7ebe0fe7639e"
     }
   }
 }

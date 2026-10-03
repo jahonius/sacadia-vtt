@@ -29,12 +29,20 @@
       "prerequisite": "Fate 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "fateful_saves"
+      "catalogId": "fateful_saves",
+      "buildHash": "11e551593a05"
     }
   }
 }

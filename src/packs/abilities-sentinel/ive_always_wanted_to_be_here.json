@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "ive_always_wanted_to_be_here"
+      "catalogId": "ive_always_wanted_to_be_here",
+      "buildHash": "43b9766acb31"
     }
   }
 }

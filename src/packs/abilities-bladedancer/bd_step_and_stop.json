@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_step_and_stop"
+      "catalogId": "bd_step_and_stop",
+      "buildHash": "7828c59dd8e7"
     }
   }
 }

@@ -31,12 +31,27 @@
       "prerequisite": "Courage 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Call of the Quick Blade",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.reactions",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_the_quick_blade"
+      "catalogId": "call_of_the_quick_blade",
+      "buildHash": "44d8a3f66895"
     }
   }
 }

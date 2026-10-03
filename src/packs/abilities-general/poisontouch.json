@@ -29,12 +29,25 @@
       "prerequisite": "Level 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "delirium",
+        "nausea",
+        "frenzy",
+        "hemorrhage",
+        "jinxed",
+        "slowed",
+        "sting"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "poisontouch"
+      "catalogId": "poisontouch",
+      "buildHash": "470dc57c048f"
     }
   }
 }

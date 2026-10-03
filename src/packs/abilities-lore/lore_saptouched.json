@@ -1,0 +1,44 @@
+{
+  "_id": "20c61193a890578d",
+  "_key": "!items!20c61193a890578d",
+  "name": "Saptouched",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You are immune to the Pin condition. If a target would attempt to give you Pin, you may expend a Lore Point to force them to make Checks against Pin equal to the number of levels they try to give you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Ancestry",
+      "prerequisite": "Lightly Warped · p.54"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_saptouched",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "cd5688c3d99a"
+    }
+  }
+}

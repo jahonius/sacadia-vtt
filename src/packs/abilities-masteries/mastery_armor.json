@@ -25,7 +25,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_armor",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "9881b8ab2ed1"
     }
   }
 }

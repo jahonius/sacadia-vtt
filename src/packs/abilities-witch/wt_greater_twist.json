@@ -1,0 +1,43 @@
+{
+  "_id": "857d396e18493f16",
+  "_key": "!items!857d396e18493f16",
+  "name": "Greater Twist",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Twisting Touch, count each level of adversarial conditions as separate.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Fate[3], Twisting Touch"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_greater_twist",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "7a3ec41c8339"
+    }
+  }
+}

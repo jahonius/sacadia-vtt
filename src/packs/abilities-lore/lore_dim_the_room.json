@@ -1,0 +1,53 @@
+{
+  "_id": "e031cb86de62ade2",
+  "_key": "!items!e031cb86de62ade2",
+  "name": "Dim the Room",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Lore ability when not in direct sunlight and in an enclosed room, all the lighting in the room seems to be sucked out. Until the start of your next turn, all other creatures within this room are Blinded, except you.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Daemonai",
+      "prerequisite": "Shadesman Daemonai Ancestry · p.171"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "blinded",
+          "amount": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_dim_the_room",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "41d0fff8fb8c"
+    }
+  }
+}

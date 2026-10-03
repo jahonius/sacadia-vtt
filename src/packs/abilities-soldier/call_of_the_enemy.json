@@ -16,7 +16,7 @@
         "key": "call",
         "amount": 0,
         "variable": true,
-        "max": "ceil(@proficiency/2)"
+        "max": "ceil(@proficiency/2) + @owns.call_of_the_drain*(@proficiency - ceil(@proficiency/2))"
       }
     },
     "range": {
@@ -29,12 +29,19 @@
       "prerequisite": "Courage 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "sol_imposing_figure"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_the_enemy"
+      "catalogId": "call_of_the_enemy",
+      "buildHash": "ee93dba35d81"
     }
   }
 }

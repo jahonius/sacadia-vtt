@@ -29,12 +29,20 @@
       "prerequisite": "Slinger, Finesse 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "slingstunner"
+      "catalogId": "slingstunner",
+      "buildHash": "d1fbc7781e96"
     }
   }
 }

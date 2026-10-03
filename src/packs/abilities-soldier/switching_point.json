@@ -29,12 +29,14 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "switching_point"
+      "catalogId": "switching_point",
+      "buildHash": "6b5ef24b298f"
     }
   }
 }

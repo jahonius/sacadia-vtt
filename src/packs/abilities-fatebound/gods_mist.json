@@ -28,13 +28,26 @@
       "subpath": "",
       "prerequisite": "Fate 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*ceil(@proficiency/2)",
+      "anchor": "caster",
+      "followCaster": true,
+      "effect": {
+        "affects": "allies",
+        "includeCaster": true,
+        "insideStatus": "obscured"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "gods_mist",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "35c8acaf78a3"
     }
   }
 }

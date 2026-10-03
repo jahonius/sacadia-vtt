@@ -29,12 +29,24 @@
       "prerequisite": "Level 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "limb"
+    },
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "muscle_and_memory"
+      "catalogId": "muscle_and_memory",
+      "buildHash": "0759e95958c0"
     }
   }
 }

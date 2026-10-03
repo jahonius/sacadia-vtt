@@ -1,6 +1,15 @@
 <section class="tab {{tabs.inventory.cssClass}}" data-group="primary" data-tab="inventory">
 
-  {{!-- Armor --}}
+  {{!-- Item slots (book pp.180–181): readied (RIS) and stored (SIS); over both is Overburdened (half speed). --}}
+  {{#if system.itemSlots}}
+  <div class="item-slots {{#if system.itemSlots.overburdened}}overburdened{{/if}}">
+    <span data-tooltip="{{localize 'SACADIA.Inventory.RisHint'}}">RIS {{system.itemSlots.ris.used}}/{{system.itemSlots.ris.max}}{{#if system.itemSlots.axehappy}} (Axehappy){{/if}}</span>
+    <span data-tooltip="{{localize 'SACADIA.Inventory.SisHint'}}">SIS {{system.itemSlots.sis.used}}/{{system.itemSlots.sis.max}}</span>
+    {{#if system.itemSlots.overburdened}}<span class="sac-chip warn">{{localize 'SACADIA.Inventory.Overburdened'}}</span>{{/if}}
+  </div>
+  {{/if}}
+
+  {{!-- Armor (incl. shields — armor that also carries a Bash weapon facet) --}}
   <div class="inv-group">
     <div class="inv-head">
       <h3>{{localize 'SACADIA.Inventory.Armor'}}</h3>
@@ -16,10 +25,14 @@
         </a>
         <img class="inv-img" src="{{item.img}}" width="28" height="28"/>
         <span class="inv-name">{{item.name}}</span>
+        {{#if item.categoryLabel}}<span class="sac-chip tag">{{item.categoryLabel}}</span>{{/if}}
+        {{#if item.weaponSummary}}<span class="sac-chip ap">{{item.weaponSummary}}</span>{{/if}}
         <span class="armor-summary">
-          AD {{item.system.defenses.ad}} · PD {{item.system.defenses.pd}} · TD {{item.system.defenses.td}} · MD {{item.system.defenses.md}} · DR {{item.system.defenses.dr}}
+          AD {{item.system.defenses.ad}} · PD {{item.system.defenses.pd}} · TD {{item.system.defenses.td}} · MD {{item.system.defenses.md}} · DR {{item.system.defenses.dr}}{{#if item.system.maxStat}} · {{localize 'SACADIA.Armor.MaxStat'}} {{item.system.maxStat}}{{/if}}
         </span>
+        {{#if item.rendText}}<span class="sac-chip warn" data-tooltip="{{localize 'SACADIA.Rend.Hint'}}">{{item.rendText}}</span>{{/if}}
         <div class="inv-controls">
+          <a class="storage-toggle {{item.system.storage}}" data-action="toggleStorage" data-tooltip="{{localize 'SACADIA.Inventory.StorageHint'}}">{{#if (eq item.system.storage 'sis')}}SIS{{else}}RIS{{/if}} {{item.system.slots}}</a>
           <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
           <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
         </div>
@@ -30,7 +43,7 @@
     </ol>
   </div>
 
-  {{!-- Gear --}}
+  {{!-- Gear (weapons carry a summary chip; equipping gates their `self:wielding:*` options) --}}
   <div class="inv-group">
     <div class="inv-head">
       <h3>{{localize 'SACADIA.Inventory.Gear'}}</h3>
@@ -40,11 +53,19 @@
     </div>
     <ol class="inv-list">
       {{#each inventory.gear as |item|}}
-      <li class="inv-row draggable" data-item-id="{{item.id}}">
+      <li class="inv-row draggable {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
+        <a class="equip-toggle" data-action="toggleEquip" title="{{localize 'SACADIA.Inventory.Equip'}}">
+          <i class="fa-solid fa-hand-fist"></i>
+        </a>
         <img class="inv-img" src="{{item.img}}" width="28" height="28"/>
         <span class="inv-name">{{item.name}}</span>
+        {{#if item.weaponSummary}}<span class="sac-chip ap">{{item.weaponSummary}}</span>{{/if}}
+        {{#if item.isSignature}}<span class="sac-chip signature" title="{{localize 'SACADIA.Inventory.SignatureHint'}}"><i class="fa-solid fa-star"></i> {{localize 'SACADIA.Inventory.Signature'}}</span>{{/if}}
         <span class="inv-qty">×{{item.system.quantity}}</span>
+        {{#if item.broken}}<span class="sac-chip warn">{{localize 'SACADIA.Rend.Broken'}}</span>{{/if}}
         <div class="inv-controls">
+          <a class="storage-toggle {{item.system.storage}}" data-action="toggleStorage" data-tooltip="{{localize 'SACADIA.Inventory.StorageHint'}}">{{#if (eq item.system.storage 'sis')}}SIS{{else}}RIS{{/if}} {{item.system.slots}}</a>
+          {{#if item.isWeapon}}<a class="signature-toggle {{#if item.isSignature}}on{{/if}}" data-action="toggleSignature" title="{{localize 'SACADIA.Inventory.SignatureHint'}}"><i class="fa-solid fa-star"></i></a>{{/if}}
           <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
           <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
         </div>

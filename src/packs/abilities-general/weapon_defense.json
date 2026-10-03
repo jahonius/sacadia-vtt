@@ -67,7 +67,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "weapon_defense"
+      "catalogId": "weapon_defense",
+      "buildHash": "3845fa24f3cc"
     }
   }
 }

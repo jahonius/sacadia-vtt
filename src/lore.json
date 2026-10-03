@@ -1,0 +1,712 @@
+[
+ {
+  "id": "lore_sealslam",
+  "name": "Sealslam",
+  "tag": "lore",
+  "section": "ancestry",
+  "page": 32,
+  "prerequisite": "Elephant Seal Curiot Ancestry",
+  "madness": "",
+  "description": "You may use a Lore Point to absolutely body check a single target. Choose one target within 5ft of you. They make an Adversarial Power Check against X levels of “Kick”, where X is your Proficiency. For each level they take, they take 2D6 damage and are knocked back 5ft. If they take any levels, they are knocked Prone."
+ },
+ {
+  "id": "lore_marble_swim",
+  "name": "Marble Swim",
+  "tag": "lore",
+  "section": "ancestry",
+  "page": 44,
+  "prerequisite": "Marblekin Fixerfolk Ancestry",
+  "madness": "",
+  "description": "You may use a Lore Point to swim through marble. If you are within 5ft of marble, you disappear into it. At the start of your next turn, you may reappear anywhere within 50ft of where you disappeared provided the two points are continuously connected by Marble. When you do, treat all enemies as surprised for the very next action you take if it is an attack."
+ },
+ {
+  "id": "lore_toxic_touch",
+  "name": "Toxic Touch",
+  "tag": "lore",
+  "section": "ancestry",
+  "page": 54,
+  "prerequisite": "Toadclan Curiot Ancestry",
+  "madness": "",
+  "description": "Until the end of your turn, all Hemorrhage you give stacks with other levels a target might have from any source."
+ },
+ {
+  "id": "lore_saptouched",
+  "name": "Saptouched",
+  "tag": "passive",
+  "section": "ancestry",
+  "page": 54,
+  "prerequisite": "Lightly Warped",
+  "madness": "",
+  "description": "You are immune to the Pin condition. If a target would attempt to give you Pin, you may expend a Lore Point to force them to make Checks against Pin equal to the number of levels they try to give you."
+ },
+ {
+  "id": "lore_oozing_flow",
+  "name": "Oozing Flow",
+  "tag": "passive",
+  "section": "ancestry",
+  "page": 54,
+  "prerequisite": "Heavily Warped",
+  "madness": "",
+  "description": "You can squeeze through extraordinarily tight spaces with ease out of combat. In combat, you can splash apart and reform. You can expend a lore point to prevent all damage from any single source that would be dealt to you."
+ },
+ {
+  "id": "lore_cursed_contract",
+  "name": "Cursed Contract",
+  "tag": "lore",
+  "section": "ancestry",
+  "page": 64,
+  "prerequisite": "Withered Human Ancestry",
+  "madness": "",
+  "description": "If you have no lore points, you immediately gain a Lore Point (and can spend it immediately on another Lore Point ability). Additionally, gain a Bane T oken when you use this."
+ },
+ {
+  "id": "lore_still_up",
+  "name": "Still Up",
+  "tag": "lore",
+  "section": "general",
+  "page": 170,
+  "prerequisite": "",
+  "madness": "",
+  "description": "If an ability or action would cause you to drop below 0HP, you may expend a Lore Point to gain 1/3 of your Max HP (rounded up)."
+ },
+ {
+  "id": "lore_infallible",
+  "name": "Infallible",
+  "tag": "lore",
+  "section": "general",
+  "page": 170,
+  "prerequisite": "",
+  "madness": "",
+  "description": "Expend one Lore point. Until the end of your turn, any attack you attempt that would miss hits instead. If you use this and it is not your turn (as in, during a reaction attack) it applies until the end of your next turn."
+ },
+ {
+  "id": "lore_no_holds_barred",
+  "name": "No Holds Barred",
+  "tag": "lore",
+  "section": "general",
+  "page": 170,
+  "prerequisite": "",
+  "madness": "",
+  "description": "Expend a lore point. For the remainder of your turn, increase the damage dice of all attacks you make by two dice types."
+ },
+ {
+  "id": "lore_royal_recovery",
+  "name": "Royal Recovery",
+  "tag": "lore",
+  "section": "general",
+  "page": 170,
+  "prerequisite": "",
+  "madness": "",
+  "description": "Expend a lore point to recover half your full AP (rounded up). Do not recover limb exhaustion through this Lore use."
+ },
+ {
+  "id": "lore_last_stand",
+  "name": "Last Stand",
+  "tag": "lore",
+  "section": "human",
+  "page": 170,
+  "prerequisite": "Human",
+  "madness": "",
+  "description": "If you are about to die, you may spend one lore point to take one final turn immediately. After taking your additional turn, you die."
+ },
+ {
+  "id": "lore_bless_this_craft",
+  "name": "Bless This Craft",
+  "tag": "lore",
+  "section": "human",
+  "page": 170,
+  "prerequisite": "Human",
+  "madness": "",
+  "description": "You may expend a Lore Point while crafting an item. If you do, gain 1X Advantage to all craft ingredients you integrate into this craft. If you have additional lore points available, you may use them still on Rousing Success to create a critical success to incorporate any single crafting ingredient."
+ },
+ {
+  "id": "lore_eye_for_deontology",
+  "name": "Eye for Deontology",
+  "tag": "lore",
+  "section": "daemonai",
+  "page": 171,
+  "prerequisite": "Daemonai Heritage",
+  "madness": "",
+  "description": "If you spend at least one minute speaking with someone, you may expend a lore point to immediately know their alignment (according to your moral deontology), deepest desires, and one secret about them."
+ },
+ {
+  "id": "lore_mesmerizing_charm",
+  "name": "Mesmerizing Charm",
+  "tag": "lore",
+  "section": "daemonai",
+  "page": 171,
+  "prerequisite": "Courter Daemonai Ancestry, Not Soulbonded",
+  "madness": "",
+  "description": "Expending a Lore Point while commanding someone. They will follow any single command for the next minute (this time increases to an hour at level 6 and a day at level 11). After the time has ended, they will know you have charmed them. If they take damage, the effect ends. If you Soulbond, replace this ability with Soulbonded Touch."
+ },
+ {
+  "id": "lore_soulbonded_touch",
+  "name": "Soulbonded Touch",
+  "tag": "lore",
+  "section": "daemonai",
+  "page": 171,
+  "prerequisite": "Courter Daemonai Ancestry, Soulbonded",
+  "madness": "",
+  "description": "When you take this ability, denote the talents and abilities that your partner has. If you expend a lore point, you may use any one of these abilities or talents for the next minute, even if you could not normally."
+ },
+ {
+  "id": "lore_dim_the_room",
+  "name": "Dim the Room",
+  "tag": "lore",
+  "section": "daemonai",
+  "page": 171,
+  "prerequisite": "Shadesman Daemonai Ancestry",
+  "madness": "",
+  "description": "As a Lore ability when not in direct sunlight and in an enclosed room, all the lighting in the room seems to be sucked out. Until the start of your next turn, all other creatures within this room are Blinded, except you."
+ },
+ {
+  "id": "lore_friendly_foe",
+  "name": "Friendly Foe",
+  "tag": "lore",
+  "section": "curiot",
+  "page": 171,
+  "prerequisite": "Curiot Heritage",
+  "madness": "",
+  "description": "You may use a Lore Point to turn any single enemy Beast of the same animal species as you from an enemy to an ally. They do not turn on any other allies they have, but they will treat you and your allies as friends instead of enemies. You may only use this on one creature, they must be the same animal species as you, and the effect lasts an hour. You may only use this on Beasts with a level at or below your own."
+ },
+ {
+  "id": "lore_bearmaul",
+  "name": "Bearmaul",
+  "tag": "lore",
+  "section": "curiot",
+  "page": 171,
+  "prerequisite": "Brute Curiot Ancestry",
+  "madness": "",
+  "description": "You may use a Lore Point to perform a savage maul of everything around you. All enemies within 10 feet of you make a Power Check against your Check DC or take XD10 points of damage, where X is your Proficiency Score, and are knocked prone. If they pass the check, they take half damage."
+ },
+ {
+  "id": "lore_farflight",
+  "name": "Farflight",
+  "tag": "lore",
+  "section": "curiot",
+  "page": 171,
+  "prerequisite": "Flying Curiot Ancestry",
+  "madness": "",
+  "description": "You may expend a lore point to take dramatic flight. Move anywhere within 60ft. Ignore difficult terrain, height changes up to 30ft, and do not provoke attacks of opportunity. Anywhere along this path, you may pick up and carry a target anywhere along this distance (though move at half speed if you carry a creature). If they are not willing, they make a Finesse Check against the effect. If they succeed, you may choose a second target along your path."
+ },
+ {
+  "id": "lore_stealthy_step",
+  "name": "Stealthy Step",
+  "tag": "lore",
+  "section": "curiot",
+  "page": 171,
+  "prerequisite": "Stealthy Curiot Ancestry",
+  "madness": "",
+  "description": "Expend a Lore Point to fade into the shadows and disappear at the start of your turn. No one may make an attack on you until the start of your next turn, and your movement does not provoke attacks of opportunity. Treat the first attack you make on every unique target as surprised until the start of your next turn."
+ },
+ {
+  "id": "lore_home_advantage",
+  "name": "Home Advantage",
+  "tag": "lore",
+  "section": "fixerfolk",
+  "page": 172,
+  "prerequisite": "A Nature Fixerfolk Ancestry",
+  "madness": "",
+  "description": "Expend a Lore Point while in the wilderness. Give all unique enemies within 120ft of you Fumble equal to your level (treat swarms as a single enemy). For each enemy given Fumble this way, you gain +1 to all To-Hits you make for the remainder of this turn."
+ },
+ {
+  "id": "lore_suspicious_summons",
+  "name": "Suspicious Summons",
+  "tag": "lore",
+  "section": "fixerfolk",
+  "page": 172,
+  "prerequisite": "A Folk Fixerfolk Ancestry",
+  "madness": "",
+  "description": "Expend a lore point while in a city of your home culture. You summon Folk Fae from your home culture to the fight, with a combined CR up to one fourth your level (rounded up). These Folk Fae are allies to you, and help in the fight."
+ },
+ {
+  "id": "lore_natural_bloom",
+  "name": "Natural Bloom",
+  "tag": "lore",
+  "section": "fixerfolk",
+  "page": 172,
+  "prerequisite": "Sylnfolk Fixerfolk Ancestry",
+  "madness": "",
+  "description": "Expending a Lore Point while in the natural biome of your Sylnfolk Ancestry, defined when you create your character. For the next minute, you gain the following abilities: **Biome’s Touch** (Reaction): As a reaction to an enemy or ally making an attack within your biome while steadied, you can make it succeed or fail. You may not affect nat1s or nat20s rolled this way. **Biomestep** (Boost): As a Boost to a Move action, disappear and reappear within 30ft on the map within your Biome. You do not provoke attacks of opportunity through this boosted teleportation."
+ },
+ {
+  "id": "lore_bloodrage",
+  "name": "Bloodrage",
+  "tag": "lore",
+  "section": "fixerfolk",
+  "page": 172,
+  "prerequisite": "Patlar Fixerfolk Ancestry",
+  "madness": "",
+  "description": "Expend a lore point to go into a blood rage for up to X rounds (X is your Proficiency). When in a blood rage, add Power + Fate to all damage you deal through attacks."
+ },
+ {
+  "id": "lore_foment",
+  "name": "Foment",
+  "tag": "lore",
+  "section": "fixerfolk",
+  "page": 172,
+  "prerequisite": "Auanari Fixerfolk Ancestry",
+  "madness": "",
+  "description": "Expend a lore point. For the next minute, every intelligent creature within 10Xft of you (X is your Proficiency) brashly acts upon feelings with no regard for impact. Creatures may make a Wiles Check against this effect (at 1X Disadvantage if they are not aware of the effect occurring). All attacks made against targets affected by Foment are made at 1X advantage. Creatures may make a Wiles Check against your Check DC as an action to end the effect."
+ },
+ {
+  "id": "lore_trend_to_arcana",
+  "name": "Trend to Arcana",
+  "tag": "lore",
+  "section": "fontborne",
+  "page": 172,
+  "prerequisite": "Weakly Corrupted Fontborne Heritage",
+  "madness": "",
+  "description": "Whenever you or any allies roll 1D10 or 2D6 (or multiples of either of these dice) within 30ft of you, they roll 1D12 instead. Whenever an enemy would roll 2D6 or 2D8, they roll 1D12 instead. This effect lasts for one minute."
+ },
+ {
+  "id": "lore_corrupting_touch",
+  "name": "Corrupting Touch",
+  "tag": "lore",
+  "section": "fontborne",
+  "page": 172,
+  "prerequisite": "Weakly Corrupted Fontborne Heritage",
+  "madness": "",
+  "description": "Until the end of your turn, if you roll a Prime number on a D20 (2, 3, 5, 7, 11, or 13), treat it as a critical hit. For the duration of this effect, do not treat Nat20s rolled as Critical Hits. Also, your weapon damage changes to elemental damage (of the type of your Font’s elemental alignment) until the end of this turn."
+ },
+ {
+  "id": "lore_heavy_bloom",
+  "name": "Heavy Bloom",
+  "tag": "lore",
+  "section": "fontborne",
+  "page": 172,
+  "prerequisite": "Heavily Corrupted Fontborne Heritage",
+  "madness": "",
+  "description": "You warp the earth within 10X feet of you to reflect your Font’s arcane power. Within 10X feet of you when you use this and for the following year, the ground is warped as difficult terrain for all creatures not Fontmade from the same Font. Additionally when you use this, all creatures within the radius of effect take elemental damage (of the type associated with your Font) equal to XD12, where X is half your Proficiency (Power Check halves)."
+ },
+ {
+  "id": "lore_corrupted_iron",
+  "name": "Corrupted Iron",
+  "tag": "lore",
+  "section": "fontborne",
+  "page": 172,
+  "prerequisite": "Heavily Corrupted Fontborne Heritage",
+  "madness": "",
+  "description": "You warp a weapon or armor that you touch. Forever after, that weapon deals elemental damage equal to your Elemental Font type instead of normal damage, and it overcomes non-magical damage resistance. If you apply this effect to armor instead, forever after you gain X Damage Resistance to elemental damage of the same type of your Font, where X is your Proficiency when you apply the effect."
+ },
+ {
+  "id": "lore_summon_beasts",
+  "name": "Summon Beasts",
+  "tag": "focus",
+  "section": "hulinari",
+  "page": 173,
+  "prerequisite": "",
+  "madness": "",
+  "description": "You may expend a lore point to summon animals to your defense. The GM determines what animals are available nearby who come to aid. For the duration of Focus, you can command them to do simple things such as ‘attack’ and ‘defend’. When you initiate this ability, you summon 1 CR of beasts. At level 5, you summon 2 CR worth of beasts. At level 11, you summon 4 CR worth of beasts. You may expense additional lore points to extend how many beasts you summon. If you do so, you need only one Focus action for all points expended this way."
+ },
+ {
+  "id": "lore_consumption",
+  "name": "Consumption",
+  "tag": "boost",
+  "section": "hulinari",
+  "page": 173,
+  "prerequisite": "",
+  "madness": "",
+  "description": "You may expend a Lore Point as a Boost to any attack. For the rest of your turn, whatever damage you do, gain one fourth that much temporary HP (rounded up)."
+ },
+ {
+  "id": "lore_howl_of_the_beast",
+  "name": "Howl of the Beast",
+  "tag": "action",
+  "section": "hulinari",
+  "page": 173,
+  "prerequisite": "Level 13",
+  "madness": "",
+  "description": "Expend a lore point when in animal form. The skies open up, and lightning shocks down. Choose a number of points within 120 feet of you equal to your Courage score. All enemies within 10 feet of those points must make a Finesse Check or take XD8 points of damage, where X is your Proficiency Score."
+ },
+ {
+  "id": "lore_masterful_stepping",
+  "name": "Masterful Stepping",
+  "tag": "lore",
+  "section": "bladedancer",
+  "page": 174,
+  "prerequisite": "Bladedancer",
+  "madness": "",
+  "description": "If you expend a lore point this way, all enemy attacks would miss you even if they would hit until the start of your next turn."
+ },
+ {
+  "id": "lore_bladeslam",
+  "name": "Bladeslam",
+  "tag": "lore",
+  "section": "bladedancer",
+  "page": 174,
+  "prerequisite": "Bladedancer",
+  "madness": "",
+  "description": "Expend a lore point. Make a melee weapon attack against a number of enemies you can see within 30ft of you up to your Proficiency. End this action within 30ft of your starting position in a square you could access with a move action. You do not impose attacks of opportunity through this action."
+ },
+ {
+  "id": "lore_confusing_step",
+  "name": "Confusing Step",
+  "tag": "lore",
+  "section": "bladedancer",
+  "page": 174,
+  "prerequisite": "Bladedancer, Level 9",
+  "madness": "",
+  "description": "Expend a Lore point to take a Move action (without exhausting your limbs or spending AP, regardless of when you use this). Every enemy within 30ft of you at the end of this Move action takes the Surrounded condition until the start of your next turn."
+ },
+ {
+  "id": "lore_every_enemy",
+  "name": "Every Enemy",
+  "tag": "lore",
+  "section": "bladedancer",
+  "page": 174,
+  "prerequisite": "Bladedancer, Level 9",
+  "madness": "",
+  "description": "Expend a Lore Point. Every enemy within 60ft of you makes a Finesse Check against your Check DC. On a failed check, they take X piercing damage (where X is half your Proficiency rounded up, times the number of enemies within 60ft of you). Treat Swarm enemies as a single entity for this effect."
+ },
+ {
+  "id": "lore_fb_infallible",
+  "name": "Infallible",
+  "tag": "lore",
+  "section": "fatebound",
+  "page": 174,
+  "prerequisite": "Fatebound",
+  "madness": "",
+  "description": "Expend one Lore point. Until the start of your next turn, any attack you would miss hits instead."
+ },
+ {
+  "id": "lore_fateful_fumble",
+  "name": "Fateful Fumble",
+  "tag": "lore",
+  "section": "fatebound",
+  "page": 174,
+  "prerequisite": "Fatebound",
+  "madness": "",
+  "description": "Expend one Lore point to give 2D6 Fumble to X targets within 60ft of you, where X is equal to your Proficiency. Fumble given this way increases to 2D8 at level 5, and 2D10 at level 11."
+ },
+ {
+  "id": "lore_blasting_strike",
+  "name": "Blasting Strike",
+  "tag": "lore",
+  "section": "fatebound",
+  "page": 174,
+  "prerequisite": "Fatebound, Wild Strike",
+  "madness": "",
+  "description": "Expend one Lore point to use Wild Strike (instead of actions or exhausting limbs). Do not reduce the base damage die dealt by your Wild Strike. Instead, increase the damage dealt to each target by 1 dice type. Each target you hit is knocked back 5X feet and falls prone, where X is your Proficiency."
+ },
+ {
+  "id": "lore_divine_aura",
+  "name": "Divine Aura",
+  "tag": "lore",
+  "section": "fatebound",
+  "page": 174,
+  "prerequisite": "Fatebound, Level 9",
+  "madness": "",
+  "description": "Expend a lore point. Until the start of your next turn, every enemy who begins their turn within 15ft of you or moves into that range must immediately make Courage Checks against Panic equal to half your Proficiency (rounded up)."
+ },
+ {
+  "id": "lore_glore",
+  "name": "Glore",
+  "tag": "lore",
+  "section": "fatebound",
+  "page": 174,
+  "prerequisite": "Fatebound, Level 13",
+  "madness": "",
+  "description": "Expend a Lore point in addition to making an attack (you may choose to expend this lore point after rolling to hit). When you expend this lore point, expend any number of additional unique Boosts to that attack."
+ },
+ {
+  "id": "lore_predictive_thoughts",
+  "name": "Predictive Thoughts",
+  "tag": "lore",
+  "section": "oracle",
+  "page": 175,
+  "prerequisite": "Oracle",
+  "madness": "",
+  "description": "Expend one lore point. You see what will happen next. The GM tells you everything they intend to do for the next turn with each enemy on the combat map, and respond to limited questions from you as to how their actions will change in response to what you do."
+ },
+ {
+  "id": "lore_webcraft",
+  "name": "Webcraft",
+  "tag": "lore",
+  "section": "oracle",
+  "page": 175,
+  "prerequisite": "Oracle",
+  "madness": "<P: M3, M-X>",
+  "description": "Expend a Lore point to immediately deal 5M damage to X enemies within 60ft, where X is a number up to your Proficiency."
+ },
+ {
+  "id": "lore_unhinge",
+  "name": "Unhinge",
+  "tag": "lore",
+  "section": "oracle",
+  "page": 175,
+  "prerequisite": "Oracle",
+  "madness": "<P:I, M+X>",
+  "description": "While insane, expend a Lore Point. Increase your Madness by X, where X is half your Proficiency, rounded up."
+ },
+ {
+  "id": "lore_gods_eye",
+  "name": "God’s Eye",
+  "tag": "lore",
+  "section": "oracle",
+  "page": 175,
+  "prerequisite": "Oracle, Level 9",
+  "madness": "<M+X, M-X>",
+  "description": "Expend a Lore point. Change your Madness to any number between 0 and 7 now. You may not use this ability while insane."
+ },
+ {
+  "id": "lore_pierce_the_veil",
+  "name": "Pierce the Veil",
+  "tag": "lore",
+  "section": "oracle",
+  "page": 175,
+  "prerequisite": "Oracle, Level 9",
+  "madness": "<P:M1>",
+  "description": "Expend a lore point. For the next minute, you may see into the Hallowfell, allowing you to see creatures’ souls, see invisible creatures, and see through walls, darkness, blindness, dim or bright lighting, or any other obscuring effects. If your madness reaches 0, this effect ends."
+ },
+ {
+  "id": "lore_kickbuck",
+  "name": "Kickbuck",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Pack Hulinari",
+  "madness": "",
+  "description": "Expend a Lore Point. You kick one target within 5ft of you. They are pushed back 5Xft (where X is your Proficiency), and take 2D6 damage per 5ft moved. They are knocked Prone."
+ },
+ {
+  "id": "lore_maneuvering_herd",
+  "name": "Maneuvering Herd",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Pack Hulinari, Level 9",
+  "madness": "",
+  "description": "Expend a Lore point when within 5ft of any number of allies up to your Proficiency. You may then move up to your Move Speed, carrying any number of those allies anywhere along that route with you."
+ },
+ {
+  "id": "lore_group_charge",
+  "name": "Group Charge",
+  "tag": "boost",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Pack Hulinari, Momentum, Level 13",
+  "madness": "",
+  "description": "When you use ‘Charge the Line’, you may expend a Lore Point. If you do, double your move speed. You may turn as much as you would like using Charge the Line. You do not provoke reaction attacks using Charge the Line this way. All creatures gain 1x additional disadvantage against Charge the Line made this way."
+ },
+ {
+  "id": "lore_the_hunted",
+  "name": "The Hunted",
+  "tag": "boost",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Brute Hulinari, Beastly Presence",
+  "madness": "",
+  "description": "As a Boost to Beastly Presence, expend a Lore Point. They automatically fail all Trait Checks against the effect."
+ },
+ {
+  "id": "lore_legendary_form",
+  "name": "Legendary Form",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Brute Hulinari, Larger than Life, Level 9",
+  "madness": "",
+  "description": "Expend a lore point with a Body action while in Brute Form. Increase your size by one type until the start of your next turn."
+ },
+ {
+  "id": "lore_prone_gutting",
+  "name": "Prone Gutting",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Brute Hulinari",
+  "madness": "",
+  "description": "You may expend a Lore Point against a Prone target within 5ft of you. If you do, exhaust a random limb on that target for the remainder of combat."
+ },
+ {
+  "id": "lore_shockflock",
+  "name": "Shockflock",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Swarm Hulinari",
+  "madness": "",
+  "description": "You explode in a viscious cloud. Expend a Lore Point. Every enemy within 30ft of you makes a Wiles Check against your Check DC. If they fail, they are knocked Prone and given Surprise until their turn starts or they take damage."
+ },
+ {
+  "id": "lore_blot_the_skies",
+  "name": "Blot the Skies",
+  "tag": "action",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Swarm Hulinari, Level 9",
+  "madness": "",
+  "description": "Expend a Lore Point in Swarm Form and choose one target within 60ft of you. That target is blinded until the end of your next turn."
+ },
+ {
+  "id": "lore_coordinated_flock",
+  "name": "Coordinated Flock",
+  "tag": "boost",
+  "section": "hulinari_warrior",
+  "page": 175,
+  "prerequisite": "Swarm Hulinari, Clouded Foe, Level 13",
+  "madness": "",
+  "description": "As a Boost to initiating Clouded Foe, expend a Lore point to double the size of your cloud (the number of tiles it covers)."
+ },
+ {
+  "id": "lore_inspire_greatness",
+  "name": "Inspire Greatness",
+  "tag": "lore",
+  "section": "soldier",
+  "page": 176,
+  "prerequisite": "Soldier",
+  "madness": "",
+  "description": "You may expend a lore point to rally yourself or an ally, removing all conditions from the chosen target except those caused by the environment."
+ },
+ {
+  "id": "lore_call_to_recovery",
+  "name": "Call to Recovery",
+  "tag": "lore",
+  "section": "soldier",
+  "page": 176,
+  "prerequisite": "Soldier",
+  "madness": "",
+  "description": "Expend a Lore Point. You and all allies within 15ft of you recover up to X expended Action Pool points (e.g., Trick Strike Points, Glory Points), where X is half your Proficiency, rounded up."
+ },
+ {
+  "id": "lore_shield_wall",
+  "name": "Shield Wall",
+  "tag": "lore",
+  "section": "soldier",
+  "page": 176,
+  "prerequisite": "Soldier, Level 9",
+  "madness": "",
+  "description": "While wielding a tower shield, expend one lore point. You and all allies within 5ft of you have full cover until the start of your next turn from any single direction (declare when you use this)."
+ },
+ {
+  "id": "lore_healing_war_cry",
+  "name": "Healing War Cry",
+  "tag": "lore",
+  "section": "soldier",
+  "page": 176,
+  "prerequisite": "Soldier, Level 9",
+  "madness": "",
+  "description": "As an action when within 5ft of one ally who has less than half HP, expend one lore point. Give that ally temporary HP up to 1/4 of their maximum HP (rounded up)."
+ },
+ {
+  "id": "lore_battle_cry",
+  "name": "Battle Cry",
+  "tag": "lore",
+  "section": "soldier",
+  "page": 176,
+  "prerequisite": "Soldier, Level 13",
+  "madness": "",
+  "description": "You may expend a lore point to rally all of your allies. Until the start of your next turn, you and all of allies within 15ft of you gain X DR and add X to all Trait Checks, where X is your Proficiency."
+ },
+ {
+  "id": "lore_shot_of_legend",
+  "name": "Shot of Legend",
+  "tag": "lore",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel",
+  "madness": "",
+  "description": "Expend this lore point with an attack you make (you may apply it before or after you confirm you hit). If you do, this attack goes right through the first enemy it would hit, and into a second one behind them. Your attack must pass the defense of both targets."
+ },
+ {
+  "id": "lore_i_know_all",
+  "name": "I Know All",
+  "tag": "lore",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel, Favored Style, Level 9",
+  "madness": "",
+  "description": "Choose one target within 60ft of you who is a favored enemy type. Expend one lore point. You may look at their Monster Card until the end of combat."
+ },
+ {
+  "id": "lore_the_sauce",
+  "name": "The Sauce",
+  "tag": "reaction",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel, Evasive Strike, Level 9",
+  "madness": "",
+  "description": "You may spend a lore point to expend half your AP on abilities or actions when it is not your turn through a reaction. You may not use actions or move while you do this. Treat your limbs as unexhausted when you do this, and do not exhaust your limbs."
+ },
+ {
+  "id": "lore_divine_volley",
+  "name": "Divine Volley",
+  "tag": "lore",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel, Level 13",
+  "madness": "",
+  "description": "While wielding a bow, expend one lore point along with an attack made with that bow. Make a ranged attack against a number of enemies up to X within an X by X square, where X is your Proficiency (measured in tiles). The furthest point of that square must be within your bow range. Deal damage as normal to any targets on a successful hit."
+ },
+ {
+  "id": "lore_divine_blast",
+  "name": "Divine Blast",
+  "tag": "lore",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel, Level 13",
+  "madness": "",
+  "description": "While wielding a crossbow, expend one lore point along with an attack made with that crossbow. If you expend all of your AP in this shot, increase the dice type of your attack by 4 dice types."
+ },
+ {
+  "id": "lore_divine_sling",
+  "name": "Divine Sling",
+  "tag": "lore",
+  "section": "sentinel",
+  "page": 176,
+  "prerequisite": "Sentinel, Level 13",
+  "madness": "",
+  "description": "While wielding a sling, expend one lore point along with an attack made with that sling. Choose a number of enemies up to X within an X by X square, where X is your Proficiency (measured in tiles). The furthest point of that square must be within your sling range. Every creature you select makes a Wiles Check against your Check DC or takes the Surprised Condition. This effect is in addition to all other effects your sling attack causes."
+ },
+ {
+  "id": "lore_legendary_toss",
+  "name": "Legendary Toss",
+  "tag": "lore",
+  "section": "thug",
+  "page": 177,
+  "prerequisite": "Thug",
+  "madness": "",
+  "description": "You may expend a lore point to toss an enemy that is within one size of you (e.g., Small, Medium, or Large if you are a Medium Creature). You throw the enemy a number of tiles equal to your Finesse + Power score (+2 if they are a size smaller than you, -1 if they are a size larger than you). They take thrown damage when they land. As they are tossed, they can provoke attacks of opportunity from allies whose melee range the target leaves."
+ },
+ {
+  "id": "lore_no_bars_hold",
+  "name": "No Bars Hold",
+  "tag": "lore",
+  "section": "thug",
+  "page": 177,
+  "prerequisite": "Thug",
+  "madness": "",
+  "description": "Expend a lore point while you use Natural Wrestler. Attempt to give your Proficiency in Wrestle Pin instead of half your Proficiency rounded up."
+ },
+ {
+  "id": "lore_explosive_rage",
+  "name": "Explosive Rage",
+  "tag": "lore",
+  "section": "thug",
+  "page": 177,
+  "prerequisite": "Thug, Berserker Rage, Level 9",
+  "madness": "",
+  "description": "When you are raging, you may expend a lore point as a boost to an action to make all your attacks for the remainder of your turn do maximum damage if they successfully hit. Immediately end your Rage at the end of this turn."
+ },
+ {
+  "id": "lore_deathlock",
+  "name": "Deathlock",
+  "tag": "lore",
+  "section": "thug",
+  "page": 177,
+  "prerequisite": "Thug, Level 9",
+  "madness": "",
+  "description": "Choose one target to whom you have given Wrestle Pin and expend a lore point. Their Pin becomes enduring (does not reduce by one level at the end of their turn)."
+ },
+ {
+  "id": "lore_bonebreaker",
+  "name": "Bonebreaker",
+  "tag": "lore",
+  "section": "thug",
+  "page": 177,
+  "prerequisite": "Thug, Level 13",
+  "madness": "",
+  "description": "When you have a target within 5ft of you pinned by Natural Wrestler, you may expend a lore point with an action. Choose one limb (an arm or a leg) which a target cannot use because that limb is pinned through Natural Wrestler. Deal XD10 damage to that target, where X is your Proficiency, then exhaust that limb until all levels of Pin ends."
+ }
+]

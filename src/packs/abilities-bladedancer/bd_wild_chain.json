@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_wild_chain"
+      "catalogId": "bd_wild_chain",
+      "buildHash": "d175eacae6e2"
     }
   }
 }

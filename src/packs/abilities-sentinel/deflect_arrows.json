@@ -31,12 +31,35 @@
       "prerequisite": "Quick Defense"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Deflect Arrows",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:ranged"
+          },
+          {
+            "atom": "self:used:deflect_arrows"
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "deflect_arrows"
+      "catalogId": "deflect_arrows",
+      "buildHash": "423e606ead19"
     }
   }
 }

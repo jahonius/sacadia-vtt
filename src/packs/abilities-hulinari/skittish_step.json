@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": "Skittish"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Skittish Step",
+        "target": "incomingDr",
+        "mode": "add",
+        "value": "@proficiency",
+        "predicate": [
+          {
+            "atom": "attack:from:mark:skittish"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "skittish_step",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4cbb24dd47d4"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "spearpoint"
+      "catalogId": "spearpoint",
+      "buildHash": "bb4aa7f7b3d3"
     }
   }
 }

@@ -29,12 +29,30 @@
       "prerequisite": "Level 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Sharp Weaponry",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:sharp_weaponry"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sharp_weaponry"
+      "catalogId": "sharp_weaponry",
+      "buildHash": "0e6b874db33d"
     }
   }
 }

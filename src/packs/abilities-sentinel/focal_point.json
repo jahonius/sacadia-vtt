@@ -30,37 +30,28 @@
       "subpath": "ranger",
       "prerequisite": ""
     },
-    "activities": [
-      {
-        "type": "damage",
-        "label": "",
-        "attack": {
-          "category": "",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "",
-          "dc": null
-        },
-        "damage": [
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "square",
+      "size": "10",
+      "anchor": "point",
+      "effect": {
+        "affects": "all",
+        "damageTiers": [
           {
-            "count": "ceil(@proficiency/2)",
-            "denomination": 6,
-            "formula": "",
-            "trait": "",
-            "type": ""
+            "level": 1,
+            "formula": "(ceil(@proficiency/2))d6"
           }
-        ],
-        "inflict": []
+        ]
       }
-    ],
-    "modifiers": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "focal_point"
+      "catalogId": "focal_point",
+      "buildHash": "d04b59d8a2fa"
     }
   }
 }

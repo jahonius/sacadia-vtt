@@ -1,0 +1,86 @@
+{
+  "_id": "21fa520af331386f",
+  "_key": "!items!21fa520af331386f",
+  "name": "Clouded Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are in Swarm Form and initiate focus on Clouded Foe, increase the size of your token to X tiles, where X is your Proficiency. One of those tiles must be the tile you are in, and all must be adjacent to at least one other tile (no diagonals). You may select tiles occupied by creatures. For as long as you maintain Focus on Clouded Foe, when you take the Move action, all tiles move together, cannot separate, and trigger reaction attacks together. If one part of your token would forcibly separate from the others, your Focus immediately ends. When you end Focus on Clouded Foe, choose one tile occupied by Clouded Foe to be your new location. For as long as you maintain Focus on Clouded Foe, enemies in a tile occupied by Clouded Foe are considered Surrounded.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "tiles",
+      "size": "@proficiency + @owns.grey_cloud + 2*@owns.stormcloud",
+      "anchor": "caster",
+      "carry": true,
+      "cloud": "foe",
+      "effect": {
+        "affects": "enemies",
+        "layers": [
+          {
+            "whileFocus": "sharp_cloud",
+            "check": {
+              "trait": "power",
+              "damage": "(@finesse)d10",
+              "affects": "enemies"
+            }
+          },
+          {
+            "whileFocus": "dark_cloud",
+            "insideStatus": "obscured",
+            "statusAffects": "all"
+          },
+          {
+            "key": "dark_steps",
+            "whileFocus": "dark_cloud",
+            "ownsAll": [
+              "dark_steps"
+            ],
+            "difficult": true
+          }
+        ]
+      }
+    },
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:form:swarm"
+        }
+      ],
+      "requiresLabel": "in Swarm Form",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "clouded_foe",
+      "transcribed": true,
+      "buildHash": "824978747e76"
+    }
+  }
+}

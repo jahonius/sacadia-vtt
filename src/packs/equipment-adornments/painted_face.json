@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "painted_face",
       "kind": "adornment",
-      "armorPrereq": "Dye Set"
+      "armorPrereq": "Dye Set",
+      "buildHash": "33321803e4b9"
     }
   }
 }

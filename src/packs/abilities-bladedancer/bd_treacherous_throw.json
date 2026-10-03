@@ -41,18 +41,46 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d4",
+            "predicate": [
+              {
+                "atom": "!self:ability:bd_slickthrow"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d6",
+            "predicate": [
+              {
+                "atom": "self:ability:bd_slickthrow"
+              }
+            ]
+          }
+        ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_treacherous_throw"
+      "catalogId": "bd_treacherous_throw",
+      "buildHash": "7461263aebf9"
     }
   }
 }

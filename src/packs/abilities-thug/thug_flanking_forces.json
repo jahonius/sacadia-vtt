@@ -29,12 +29,33 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Flanking Forces",
+          "target": "advantage.toHit",
+          "mode": "add",
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "target:surrounded"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_flanking_forces"
+      "catalogId": "thug_flanking_forces",
+      "buildHash": "2b5771510fdf"
     }
   }
 }

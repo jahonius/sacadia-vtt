@@ -29,12 +29,26 @@
       "prerequisite": "Sharp Weapon, Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Extra Sharp",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_sharp_weapon"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_extra_sharp"
+      "catalogId": "bd_extra_sharp",
+      "buildHash": "cb0de54a00d5"
     }
   }
 }

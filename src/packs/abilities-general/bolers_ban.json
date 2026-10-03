@@ -29,12 +29,29 @@
       "prerequisite": "Drain Tolerant"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "corroded",
+        "debilitated",
+        "delirium",
+        "hemorrhage",
+        "jinxed",
+        "nausea",
+        "pinned",
+        "paralysis",
+        "pulled",
+        "slowed",
+        "sting"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bolers_ban"
+      "catalogId": "bolers_ban",
+      "buildHash": "54bf7c9643f9"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shattermind"
+      "catalogId": "shattermind",
+      "buildHash": "cbf1efa120c9"
     }
   }
 }

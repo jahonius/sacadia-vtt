@@ -1,0 +1,71 @@
+{
+  "_id": "121834a32a21c570",
+  "_key": "!items!121834a32a21c570",
+  "name": "Shockflock",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You explode in a viscious cloud. Expend a Lore Point. Every enemy within 30ft of you makes a Wiles Check against your Check DC. If they fail, they are knocked Prone and given Surprise until their turn starts or they take damage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Warrior",
+      "prerequisite": "Swarm Hulinari · p.175"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          },
+          {
+            "condition": "surprised",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_shockflock",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "e44283ed7f95"
+    }
+  }
+}

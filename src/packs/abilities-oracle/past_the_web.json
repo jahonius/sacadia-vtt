@@ -37,21 +37,14 @@
         "scope": "forbidden_knowledge",
         "value": "1",
         "predicate": []
-      },
-      {
-        "label": "Past the Web",
-        "target": "damage",
-        "mode": "step",
-        "scope": "forbidden_knowledge",
-        "value": "1",
-        "predicate": []
       }
     ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "past_the_web"
+      "catalogId": "past_the_web",
+      "buildHash": "357cb135c7e6"
     }
   }
 }

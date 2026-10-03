@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -52,12 +53,20 @@
         ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sharp_rocks"
+      "catalogId": "sharp_rocks",
+      "buildHash": "3b97973012b0"
     }
   }
 }

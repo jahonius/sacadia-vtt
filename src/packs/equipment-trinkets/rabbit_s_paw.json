@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "rabbit_s_paw",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "bd8569c5b328"
     }
   }
 }

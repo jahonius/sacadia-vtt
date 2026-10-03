@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Charge the Line"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hard_turn",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "bc1b2df49b7a"
     }
   }
 }

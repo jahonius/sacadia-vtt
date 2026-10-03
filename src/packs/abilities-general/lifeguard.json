@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "lifeguard"
+      "catalogId": "lifeguard",
+      "buildHash": "4bafe8bd1923"
     }
   }
 }

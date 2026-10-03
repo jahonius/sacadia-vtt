@@ -36,14 +36,6 @@
         "mode": "step",
         "scope": "forbidden_knowledge",
         "value": "1",
-        "predicate": []
-      },
-      {
-        "label": "Bloodied Shadows",
-        "target": "damage",
-        "mode": "step",
-        "scope": "forbidden_knowledge",
-        "value": "1",
         "predicate": [
           {
             "atom": "self:hp-below-half"
@@ -55,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodied_shadows"
+      "catalogId": "bloodied_shadows",
+      "buildHash": "c146f5fa7c7c"
     }
   }
 }

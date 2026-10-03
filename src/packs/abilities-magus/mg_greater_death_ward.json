@@ -1,0 +1,45 @@
+{
+  "_id": "3a1c10bb74414a6c",
+  "_key": "!items!3a1c10bb74414a6c",
+  "name": "Greater Death Ward",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you cast Death Ward, choose up to 3 targets. Focus ends when any of the 3 would drop below 0HP. If an effect would cause multiple Focus targets to drop below 0HP, they all simultaneously trigger Death Ward.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Death Ward, Courage[5] · Research: Divination Talent"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_death_ward",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Divination Talent",
+      "buildHash": "37f07ef66891"
+    }
+  }
+}

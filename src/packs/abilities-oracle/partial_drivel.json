@@ -32,6 +32,25 @@
     },
     "activities": [],
     "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Partial Drivel",
+      "allyWith": "absolute_drivel",
+      "duration": {
+        "type": "focus"
+      },
+      "spend": {
+        "resource": "madness",
+        "max": "@madness"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.dr",
+          "mode": 2,
+          "value": "@spent"
+        }
+      ]
+    },
     "madness": {
       "prereq": 1,
       "spend": "N"
@@ -40,7 +59,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "partial_drivel"
+      "catalogId": "partial_drivel",
+      "buildHash": "5b1bc4f3321d"
     }
   }
 }

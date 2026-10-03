@@ -3,7 +3,7 @@
   "_key": "!items!d11c49dd734417a7",
   "name": "Boltshot Pro",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/boltshot_pro_icon.png",
   "system": {
     "description": "<p>Increase X (the damage dealt by Boltshot) from half your Proficiency to your Proficiency.</p>",
     "tag": "passive",
@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "boltshot_pro"
+      "catalogId": "boltshot_pro",
+      "buildHash": "fcfce6b3ed90"
     }
   }
 }

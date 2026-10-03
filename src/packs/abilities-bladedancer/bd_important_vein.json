@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_important_vein"
+      "catalogId": "bd_important_vein",
+      "buildHash": "74212b94d046"
     }
   }
 }

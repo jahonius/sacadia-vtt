@@ -19,13 +19,35 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Mastery of the Versatile Weapon",
+        "target": "toHit",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:trait:versatile"
+          }
+        ]
+      },
+      {
+        "label": "Mastery of the Versatile Weapon",
+        "target": "damage",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:trait:versatile"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_versatile_weapon",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "ee87a02b508f"
     }
   }
 }

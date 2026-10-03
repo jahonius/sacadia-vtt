@@ -1,0 +1,45 @@
+{
+  "_id": "088d093a98ce2fc9",
+  "_key": "!items!088d093a98ce2fc9",
+  "name": "Greater Absorption",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you reduce damage through Absorb Attack, instead reduce the damage by XD6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Absorb Attack, Courage[3] · Research: Thaumaturgy[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_absorption",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Thaumaturgy[3]",
+      "buildHash": "c980d347a3ce"
+    }
+  }
+}

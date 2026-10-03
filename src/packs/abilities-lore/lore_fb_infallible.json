@@ -1,0 +1,59 @@
+{
+  "_id": "99b92ac0883f39bb",
+  "_key": "!items!99b92ac0883f39bb",
+  "name": "Infallible",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Lore point. Until the start of your next turn, any attack you would miss hits instead.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fatebound",
+      "prerequisite": "Fatebound · p.174"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Infallible",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.autoHit",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_fb_infallible",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "4f7e3810ff76"
+    }
+  }
+}

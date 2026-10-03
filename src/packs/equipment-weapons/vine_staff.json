@@ -11,6 +11,9 @@
     "value": 120,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "bludgeon",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "vine_staff",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "da1ec12ec96f"
     }
   }
 }

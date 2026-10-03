@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Heavy Armor Training, Prof[3]</em></p>",
     "equipped": false,
     "category": "heavy",
+    "material": "iron",
     "defenses": {
       "ad": 0,
       "pd": 9,
@@ -15,13 +16,17 @@
       "md": 0,
       "dr": 0
     },
-    "maxStat": 25
+    "maxStat": 25,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "professional_iron_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "12e1c74890a9"
     }
   }
 }

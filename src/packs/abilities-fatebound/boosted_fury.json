@@ -1,0 +1,68 @@
+{
+  "_id": "4d181ea0473b6997",
+  "_key": "!items!4d181ea0473b6997",
+  "name": "Boosted Fury",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Boosted Fury",
+          "target": "toHit",
+          "value": "0 - @spent"
+        },
+        {
+          "label": "Boosted Fury",
+          "target": "damage",
+          "value": "2*@spent"
+        }
+      ],
+      "special": {
+        "requires": [
+          "self:attack:divine"
+        ],
+        "prompt": {
+          "label": "Boosted Fury (X)",
+          "max": "@proficiency"
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boosted_fury",
+      "transcribed": true,
+      "buildHash": "b014c9a49b24"
+    }
+  }
+}

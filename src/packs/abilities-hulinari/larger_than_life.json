@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Power 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "larger_than_life",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4dc4d1cc09ed"
     }
   }
 }

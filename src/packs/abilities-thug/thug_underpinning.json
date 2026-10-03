@@ -31,12 +31,57 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "choice": {
+      "prompt": "Decrease which defense?",
+      "options": [
+        {
+          "value": "pd",
+          "label": "PD"
+        },
+        {
+          "value": "td",
+          "label": "TD"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Underpinning",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1,
+        "on": ""
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - ceil(@finesse/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:thug_underpinning:pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - ceil(@finesse/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:thug_underpinning:td"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_underpinning"
+      "catalogId": "thug_underpinning",
+      "buildHash": "f865993aa22b"
     }
   }
 }

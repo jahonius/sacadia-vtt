@@ -31,12 +31,18 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "cover": "half"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_covering_dance"
+      "catalogId": "bd_covering_dance",
+      "buildHash": "c797f82dc75a"
     }
   }
 }

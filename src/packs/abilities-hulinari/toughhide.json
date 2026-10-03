@@ -28,13 +28,33 @@
       "subpath": "",
       "prerequisite": "Power 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Toughhide",
+        "target": "incomingDr",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:surrounded"
+          },
+          {
+            "atom": "attack:physical"
+          },
+          {
+            "atom": "self:form:brute"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "toughhide",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "ba35d85e639f"
     }
   }
 }

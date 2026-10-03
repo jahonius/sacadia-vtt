@@ -41,10 +41,21 @@
         },
         "save": {
           "trait": "courage",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "surprised",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "self:ability:bd_surprise_disruption"
+              }
+            ]
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +63,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_disruption"
+      "catalogId": "bd_disruption",
+      "buildHash": "757bcfe53bd2"
     }
   }
 }

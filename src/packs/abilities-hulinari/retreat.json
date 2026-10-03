@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "retreat",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8938a120ec0f"
     }
   }
 }

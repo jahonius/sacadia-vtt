@@ -8,6 +8,8 @@
     "description": "<p><em>Prerequisite: Heavy Armor Training, Power 5</em></p><p>Tower Shield: −5ft Move Speed; creatures directly behind you have Full Cover.</p>",
     "equipped": false,
     "category": "",
+    "material": "",
+    "shieldSize": "tower",
     "defenses": {
       "ad": 0,
       "pd": 0,
@@ -16,6 +18,9 @@
       "dr": 0
     },
     "maxStat": null,
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "shield",
     "weaponDamage": {
       "count": "2",
@@ -34,7 +39,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "heavy_tower_shield",
-      "kind": "shield"
+      "kind": "shield",
+      "buildHash": "5eba34c4acfa"
     }
   }
 }

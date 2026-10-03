@@ -19,13 +19,39 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Mastery of Tooth and Claw",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          }
+        ]
+      },
+      {
+        "label": "Mastery of Tooth and Claw",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_tooth_and_claw",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "c9af2848d040"
     }
   }
 }

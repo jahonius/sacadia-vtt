@@ -1,0 +1,64 @@
+{
+  "_id": "e0818087f02d363d",
+  "_key": "!items!e0818087f02d363d",
+  "name": "Boon of the Gods",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your divine weapon is imbued with the aura of your divine patron. Once per quick rest, you may increase the damage dice of an attack by two dice types as a Boost to an attack.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 7"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Boon of the Gods",
+          "target": "damage",
+          "mode": "step",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fb_boon_of_the_gods",
+      "feature": true,
+      "level": 7,
+      "buildHash": "ca819773ca45"
+    }
+  }
+}

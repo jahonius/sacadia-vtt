@@ -32,6 +32,15 @@
     },
     "activities": [],
     "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Curse of the Shared Mind",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    },
     "madness": {
       "prereq": 1,
       "gain": "N"
@@ -40,7 +49,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "curse_of_the_shared_mind"
+      "catalogId": "curse_of_the_shared_mind",
+      "buildHash": "10ae54df1273"
     }
   }
 }

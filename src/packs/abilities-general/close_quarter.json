@@ -50,7 +50,9 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "close_quarter"
+      "catalogId": "close_quarter",
+      "opportunity": true,
+      "buildHash": "ab5be58d5d5a"
     }
   }
 }

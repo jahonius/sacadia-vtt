@@ -29,12 +29,39 @@
       "prerequisite": "Wiles 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Mental Fortitude",
+        "target": "resistBonus",
+        "mode": "add",
+        "value": "@wiles",
+        "predicate": [
+          {
+            "atom": "self:checking:mental"
+          }
+        ]
+      },
+      {
+        "label": "Mental Fortitude",
+        "target": "resistBonus",
+        "mode": "add",
+        "value": "@wiles",
+        "predicate": [
+          {
+            "atom": "self:checking:mental"
+          },
+          {
+            "atom": "self:checking:trait:wiles"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mental_fortitude"
+      "catalogId": "mental_fortitude",
+      "buildHash": "50cdfad771ee"
     }
   }
 }

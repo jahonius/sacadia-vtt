@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_basic_combat_prowess"
+      "catalogId": "bd_basic_combat_prowess",
+      "buildHash": "917b1be118c8"
     }
   }
 }

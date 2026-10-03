@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "spiders_trap"
+      "catalogId": "spiders_trap",
+      "buildHash": "630bcd6ad1c2"
     }
   }
 }

@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -57,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "prone_strike"
+      "catalogId": "prone_strike",
+      "buildHash": "67ea43292de1"
     }
   }
 }

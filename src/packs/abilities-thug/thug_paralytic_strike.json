@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_paralytic_strike"
+      "catalogId": "thug_paralytic_strike",
+      "buildHash": "8628574245af"
     }
   }
 }

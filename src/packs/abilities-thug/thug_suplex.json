@@ -29,12 +29,29 @@
       "prerequisite": "Power 3, Harm, Bully"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Suplex",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_harm",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          },
+          {
+            "atom": "target:condition:prone"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_suplex"
+      "catalogId": "thug_suplex",
+      "buildHash": "d41b9d3f21ff"
     }
   }
 }

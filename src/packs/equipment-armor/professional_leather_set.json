@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Medium Armor Training, Prof[3]</em></p>",
     "equipped": false,
     "category": "medium",
+    "material": "leather",
     "defenses": {
       "ad": 0,
       "pd": 3,
@@ -15,13 +16,17 @@
       "md": 2,
       "dr": 0
     },
-    "maxStat": 24
+    "maxStat": 24,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "professional_leather_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "5eff9d2604d8"
     }
   }
 }

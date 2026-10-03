@@ -29,12 +29,35 @@
       "prerequisite": "Finesse 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "I'm Not Supposed to Be Here",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "self:attack:reaction"
+          },
+          {
+            "atom": "self:surrounded"
+          },
+          {
+            "atom": "self:combat:reaction-attacks>=1"
+          },
+          {
+            "atom": "!self:ability:ive_always_wanted_to_be_here"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "im_not_supposed_to_be_here"
+      "catalogId": "im_not_supposed_to_be_here",
+      "buildHash": "5f5d32b34755"
     }
   }
 }

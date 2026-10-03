@@ -30,13 +30,35 @@
       "subpath": "weapon-skills",
       "prerequisite": "None"
     },
-    "activities": [],
-    "modifiers": []
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        }
+      }
+    ],
+    "modifiers": [],
+    "multiAttack": {
+      "count": 2,
+      "targeting": "same"
+    },
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "dagger_threat"
+      "catalogId": "dagger_threat",
+      "buildHash": "38197d8ea1b2"
     }
   }
 }

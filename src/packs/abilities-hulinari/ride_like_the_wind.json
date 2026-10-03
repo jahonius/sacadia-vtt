@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Finesse 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "ride_like_the_wind",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "2009e4bb265d"
     }
   }
 }

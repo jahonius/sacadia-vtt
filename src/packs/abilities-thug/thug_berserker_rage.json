@@ -31,12 +31,20 @@
       "prerequisite": "Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_berserker_rage"
+      "catalogId": "thug_berserker_rage",
+      "buildHash": "b168d53fbaec"
     }
   }
 }

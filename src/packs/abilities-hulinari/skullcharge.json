@@ -28,13 +28,31 @@
       "subpath": "",
       "prerequisite": "Headbutt, Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Skullcharge",
+        "target": "damageDice",
+        "mode": "dice",
+        "scope": "headbutt",
+        "value": "(ceil(@proficiency/2))d6",
+        "predicate": [
+          {
+            "atom": "self:choice:headbutt:charge"
+          },
+          {
+            "atom": "!self:ability:gorehorn"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "skullcharge",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "9f7d1cd648b5"
     }
   }
 }

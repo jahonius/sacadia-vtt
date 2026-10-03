@@ -1,0 +1,43 @@
+{
+  "_id": "85f570ddadbff433",
+  "_key": "!items!85f570ddadbff433",
+  "name": "Heart of Pine",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": "Needlepine, Finesse[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_heart_of_pine",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "dcf5be9135e7"
+    }
+  }
+}

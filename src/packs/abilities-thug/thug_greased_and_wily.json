@@ -31,12 +31,31 @@
       "prerequisite": "Anointed, Finesse 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Greased and Wily",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:melee"
+          },
+          {
+            "atom": "self:used:thug_greased_and_wily"
+          },
+          {
+            "atom": "!attack:attacker:pinned"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_greased_and_wily"
+      "catalogId": "thug_greased_and_wily",
+      "buildHash": "d15aad66f2aa"
     }
   }
 }

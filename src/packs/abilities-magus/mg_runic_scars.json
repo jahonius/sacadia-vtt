@@ -1,0 +1,65 @@
+{
+  "_id": "ff07abf7a5700761",
+  "_key": "!items!ff07abf7a5700761",
+  "name": "Runic Scars",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy target within 30ft. They make a Fate Check against your Check DC. If they fail, they take XD4 damage, where X is the difference between their roll and your Check DC (i.e., if your Check DC is 20 and they roll a 16 Fate Check, they take 4D4 damage). Once a target has made a Fate Check against Runic Scars, you cannot target them again until a Quick Rest has passed.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Research: Linguist[3]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "marginDice": "d4"
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_runic_scars",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Linguist[3]",
+      "buildHash": "7d8b308c9faa"
+    }
+  }
+}

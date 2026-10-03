@@ -1,0 +1,129 @@
+{
+  "_id": "6a0e7a00f7b1258c",
+  "_key": "!items!6a0e7a00f7b1258c",
+  "name": "Wild Rebuke",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy within 30ft of you attempting to give an ally levels of an adversarial condition, declare the use of Wild Rebuke. For every successful Trait Check your ally makes against the effect, you may expend one Divine Touch point, and the enemy takes one level of that condition. There is no Trait Check against this effect.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "divine",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": "Promise of Justice"
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "pinned",
+          "label": "Pinned"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "corroded",
+          "label": "Corroded"
+        },
+        {
+          "value": "debilitated",
+          "label": "Debilitated"
+        },
+        {
+          "value": "pulled",
+          "label": "Pulled"
+        },
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "silenced",
+          "label": "Silenced"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "fumbled",
+          "label": "Fumbled"
+        },
+        {
+          "value": "rended",
+          "label": "Rended"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "@choice",
+          "amount": "@spent"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_wild_rebuke",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "12be1ba1d787"
+    }
+  }
+}

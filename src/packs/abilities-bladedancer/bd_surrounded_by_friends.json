@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_surrounded_by_friends"
+      "catalogId": "bd_surrounded_by_friends",
+      "buildHash": "d58480ab09bd"
     }
   }
 }

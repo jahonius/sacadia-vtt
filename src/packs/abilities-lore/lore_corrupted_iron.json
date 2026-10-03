@@ -1,0 +1,48 @@
+{
+  "_id": "35d7e946085a31cc",
+  "_key": "!items!35d7e946085a31cc",
+  "name": "Corrupted Iron",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You warp a weapon or armor that you touch. Forever after, that weapon deals elemental damage equal to your Elemental Font type instead of normal damage, and it overcomes non-magical damage resistance. If you apply this effect to armor instead, forever after you gain X Damage Resistance to elemental damage of the same type of your Font, where X is your Proficiency when you apply the effect.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fontborne",
+      "prerequisite": "Heavily Corrupted Fontborne Heritage · p.172"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "element"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_corrupted_iron",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "d9af17cfbe7d"
+    }
+  }
+}

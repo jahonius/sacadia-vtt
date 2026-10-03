@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "dodgy_marksman"
+      "catalogId": "dodgy_marksman",
+      "buildHash": "958590e29d81"
     }
   }
 }

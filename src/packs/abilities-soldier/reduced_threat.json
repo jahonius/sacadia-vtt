@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reduced_threat"
+      "catalogId": "reduced_threat",
+      "buildHash": "461bb72eb06b"
     }
   }
 }

@@ -26,6 +26,7 @@ export default class SacadiaGear extends SacadiaItemBase {
     // `weaponType` is set; a set type turns this gear into a weapon (base dice + reach + `self:wielding:
     // <type>` gating), and adding it to a character auto-creates its attack ability.
     Object.assign(schema, SacadiaItemBase.weaponFacet());
+    Object.assign(schema, SacadiaItemBase.slotFacet());
 
     return schema;
   }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "evasion"
+      "catalogId": "evasion",
+      "buildHash": "ce7b6976f380"
     }
   }
 }

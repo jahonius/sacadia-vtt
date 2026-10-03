@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_deadlier_shadow"
+      "catalogId": "thug_deadlier_shadow",
+      "buildHash": "0cf6e3b8b719"
     }
   }
 }

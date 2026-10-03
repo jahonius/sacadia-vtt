@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Enduring Animal",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:resisting:fatigue"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "enduring_animal",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4320ffe97805"
     }
   }
 }

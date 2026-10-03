@@ -1,0 +1,45 @@
+{
+  "_id": "7bbafb5a1c1a0044",
+  "_key": "!items!7bbafb5a1c1a0044",
+  "name": "Distant Confusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Confusion, the maximum range is 60ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Confusion, Wiles[5] · Research: Cultural Lore[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_distant_confusion",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Cultural Lore[3]",
+      "buildHash": "52de2ae7be28"
+    }
+  }
+}

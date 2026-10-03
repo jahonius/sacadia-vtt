@@ -31,12 +31,28 @@
       "prerequisite": "Power 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "",
+        "ap": "0 - @spent",
+        "lore": "",
+        "reactions": ""
+      },
+      "apNext": "@spent"
+    },
+    "amountPrompt": {
+      "label": "AP to give",
+      "max": "ceil(@apMax/2)"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_fury"
+      "catalogId": "call_of_fury",
+      "buildHash": "2811b19677ae"
     }
   }
 }

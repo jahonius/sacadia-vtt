@@ -1,0 +1,50 @@
+{
+  "_id": "ad27878e63b389bf",
+  "_key": "!items!ad27878e63b389bf",
+  "name": "Ticket to Enter",
+  "type": "ability",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p>Long weapons (10ft range). When an enemy moves from 15ft away from you to 10ft away from you and you are wielding a 10ft range weapon, you may use a reaction to attempt to make a melee attack against them with that weapon. If you are Steadied and then use this reaction while Steadied, treat this attack as a critical hit.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_ticket_to_enter",
+      "basic": true,
+      "opportunity": true,
+      "steadiedCrit": true,
+      "buildHash": "15e118e7c0ef"
+    }
+  }
+}

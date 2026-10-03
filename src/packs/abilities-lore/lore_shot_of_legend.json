@@ -1,0 +1,55 @@
+{
+  "_id": "8d26c21587633e7a",
+  "_key": "!items!8d26c21587633e7a",
+  "name": "Shot of Legend",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend this lore point with an attack you make (you may apply it before or after you confirm you hit). If you do, this attack goes right through the first enemy it would hit, and into a second one behind them. Your attack must pass the defense of both targets.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Sentinel",
+      "prerequisite": "Sentinel · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_shot_of_legend",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "53e9e9a4ee01"
+    }
+  }
+}

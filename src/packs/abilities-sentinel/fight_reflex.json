@@ -50,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "fight_reflex"
+      "catalogId": "fight_reflex",
+      "buildHash": "7c5fe9c1b6db"
     }
   }
 }

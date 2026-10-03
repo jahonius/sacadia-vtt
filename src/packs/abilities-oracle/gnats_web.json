@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "gnats_web"
+      "catalogId": "gnats_web",
+      "buildHash": "79560eb081cd"
     }
   }
 }

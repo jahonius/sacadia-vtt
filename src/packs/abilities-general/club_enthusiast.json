@@ -29,12 +29,29 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Club Enthusiast",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:bludgeon"
+          },
+          {
+            "atom": "self:attack:hands:2"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "club_enthusiast"
+      "catalogId": "club_enthusiast",
+      "buildHash": "553e444d6882"
     }
   }
 }

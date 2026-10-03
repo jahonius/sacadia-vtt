@@ -50,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shield_and_spear"
+      "catalogId": "shield_and_spear",
+      "buildHash": "1c802d32f239"
     }
   }
 }

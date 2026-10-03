@@ -1,0 +1,44 @@
+{
+  "_id": "278f006c4de1f883",
+  "_key": "!items!278f006c4de1f883",
+  "name": "Blood Tome",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Rarity Legendary[1], Element Rot, Prerequisites: Literary General Talent, Heibrim in Empire. Item Slots 1, Attunement Yes, Relic Yes. A dark-papered scroll wrapped around a rod made of bone. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Connection to Blood: You are immune to Hemorrhage if you are attuned to this tome.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Tome",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_blood_tome",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "tome",
+      "buildHash": "81e0d6a6ae2a"
+    }
+  }
+}

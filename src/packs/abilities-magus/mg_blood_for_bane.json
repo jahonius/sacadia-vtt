@@ -1,0 +1,70 @@
+{
+  "_id": "d3703867a1a5f108",
+  "_key": "!items!d3703867a1a5f108",
+  "name": "Blood for Bane",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an action that would use a Spell Slot, take 1D10 damage. If you take 6+ damage, do not expend a Spell Slot. Increase the damage you deal to yourself this way to 2D6 at level 6, and 2D8 at level 11.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Research: Necromantic Lore[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "pool",
+        "pool": "spell"
+      },
+      "special": {
+        "onConsume": {
+          "selfDamageRoll": [
+            {
+              "level": 1,
+              "formula": "1d10"
+            },
+            {
+              "level": 6,
+              "formula": "2d6"
+            },
+            {
+              "level": 11,
+              "formula": "2d8"
+            }
+          ],
+          "refundPoolAt": 6
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_blood_for_bane",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Necromantic Lore[3]",
+      "buildHash": "59ddb7e989ab"
+    }
+  }
+}

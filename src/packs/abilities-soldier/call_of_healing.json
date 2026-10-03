@@ -30,37 +30,19 @@
       "subpath": "signifier",
       "prerequisite": "None"
     },
-    "activities": [
-      {
-        "type": "damage",
-        "label": "",
-        "attack": {
-          "category": "",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "",
-          "dc": null
-        },
-        "damage": [
-          {
-            "count": "ceil(@proficiency/2)",
-            "denomination": 4,
-            "formula": "",
-            "trait": "",
-            "type": ""
-          }
-        ],
-        "inflict": []
-      }
-    ],
-    "modifiers": []
+    "activities": [],
+    "modifiers": [],
+    "tempHp": {
+      "formula": "(ceil(@proficiency/2))d4",
+      "target": "both",
+      "scaleLevels": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_healing"
+      "catalogId": "call_of_healing",
+      "buildHash": "8acb9d6a5416"
     }
   }
 }

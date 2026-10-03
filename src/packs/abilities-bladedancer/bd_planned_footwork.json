@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_planned_footwork"
+      "catalogId": "bd_planned_footwork",
+      "buildHash": "02451dbefa00"
     }
   }
 }

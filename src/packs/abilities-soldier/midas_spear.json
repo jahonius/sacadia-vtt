@@ -29,12 +29,26 @@
       "prerequisite": "Spearpoint"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Midas Spear",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:spear"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "midas_spear"
+      "catalogId": "midas_spear",
+      "buildHash": "c537f3eaa380"
     }
   }
 }

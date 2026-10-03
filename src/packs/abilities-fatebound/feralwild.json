@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Wilder Strike, Power 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "feralwild",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "77df950d29a6"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_greatius_bladius"
+      "catalogId": "bd_greatius_bladius",
+      "buildHash": "f475e49f6087"
     }
   }
 }

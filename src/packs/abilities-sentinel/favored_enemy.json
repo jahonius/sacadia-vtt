@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": []
@@ -52,7 +53,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "favored_enemy"
+      "catalogId": "favored_enemy",
+      "buildHash": "2f5cfc437b90"
     }
   }
 }

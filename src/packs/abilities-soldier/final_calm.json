@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "final_calm"
+      "catalogId": "final_calm",
+      "buildHash": "197ea7ab4707"
     }
   }
 }

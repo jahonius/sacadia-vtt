@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "striking_savant"
+      "catalogId": "striking_savant",
+      "buildHash": "dc2000bd4137"
     }
   }
 }

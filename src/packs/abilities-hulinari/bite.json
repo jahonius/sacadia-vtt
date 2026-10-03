@@ -35,22 +35,32 @@
         "attack": {
           "category": "melee",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
           "dc": null
         },
-        "damage": [],
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 10,
+            "formula": "",
+            "trait": "power",
+            "type": ""
+          }
+        ],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bite",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "94b743a605fa"
     }
   }
 }

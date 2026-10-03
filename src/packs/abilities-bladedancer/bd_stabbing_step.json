@@ -52,7 +52,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_stabbing_step"
+      "catalogId": "bd_stabbing_step",
+      "buildHash": "8843fc1efd3a"
     }
   }
 }

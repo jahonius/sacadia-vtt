@@ -1,0 +1,43 @@
+{
+  "_id": "a9851e0c0c124d00",
+  "_key": "!items!a9851e0c0c124d00",
+  "name": "Second Shot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make your first ranged attack each turn, you do not exhaust any limbs.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 7"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sen_second_shot",
+      "feature": true,
+      "level": 7,
+      "buildHash": "fc0239826b26"
+    }
+  }
+}

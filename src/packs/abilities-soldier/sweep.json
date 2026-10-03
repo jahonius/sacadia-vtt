@@ -41,10 +41,16 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sweep"
+      "catalogId": "sweep",
+      "buildHash": "45dc4cc07310"
     }
   }
 }

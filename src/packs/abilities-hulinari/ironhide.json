@@ -13,8 +13,8 @@
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
-        "amount": 0,
+        "key": "savage",
+        "amount": 1,
         "variable": false,
         "max": ""
       }
@@ -28,13 +28,36 @@
       "subpath": "",
       "prerequisite": "Courage 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Choose the condition to ignore",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "ironhide",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "f43285400031"
     }
   }
 }

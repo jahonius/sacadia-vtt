@@ -41,6 +41,9 @@
         "predicate": [
           {
             "atom": "self:used:thug_thickskin"
+          },
+          {
+            "atom": "!self:ability:thug_legendary_resistance"
           }
         ]
       }
@@ -49,7 +52,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_thickskin"
+      "catalogId": "thug_thickskin",
+      "buildHash": "3e98900481f8"
     }
   }
 }

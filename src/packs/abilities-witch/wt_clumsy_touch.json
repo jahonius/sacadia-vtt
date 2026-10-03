@@ -1,0 +1,70 @@
+{
+  "_id": "7bd1fa018f16c1f1",
+  "_key": "!items!7bd1fa018f16c1f1",
+  "name": "Clumsy Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy target within 5ft of you who has levels of Fumbled. For each level of Fumble they possess (up to your Proficiency), they make a Finesse Check against your Check DC (they do not apply their Fumbled to these Checks). For each failed Finesse Check made, they gain 1 Jinxed, and lose 1 Fumbled.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "checks": "min(@target.fumbled, @proficiency)",
+            "ignoreFumble": true,
+            "perFail": {
+              "self": {
+                "jinxed": 1,
+                "fumbled": -1
+              }
+            }
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_clumsy_touch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "7a2096c868a5"
+    }
+  }
+}

@@ -41,10 +41,30 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "hemorrhage",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "!self:ability:bd_bleeding_dance"
+              }
+            ]
+          },
+          {
+            "condition": "hemorrhage",
+            "amount": "ceil(@proficiency/2)",
+            "predicate": [
+              {
+                "atom": "self:ability:bd_bleeding_dance"
+              }
+            ]
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +72,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_bleedstep"
+      "catalogId": "bd_bleedstep",
+      "buildHash": "dfdf97a01bfb"
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "_id": "5c3c156764ce7047",
+  "_key": "!items!5c3c156764ce7047",
+  "name": "Mastery of the Tome",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 3 Spell Slots.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Level Feature",
+      "prerequisite": "Magus Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_mastery_of_the_tome",
+      "feature": true,
+      "level": 5,
+      "buildHash": "b1744e23582d"
+    }
+  }
+}

@@ -19,17 +19,26 @@
   </div>
 
   {{#if isCharacter}}
-  {{!-- Trait Expertise --}}
+  {{!-- Trait Expertise: reroll-one-failed-d20 toggles, one per trait of the primary profession. --}}
   <div class="trait-expertise">
     <h3>{{localize 'SACADIA.TraitExpertise.Title'}}</h3>
-    <label class="toggle">
-      <input type="checkbox" name="system.traitExpertise.slot1" {{checked system.traitExpertise.slot1}}/>
-      <span>{{localize 'SACADIA.TraitExpertise.Reroll'}} 1</span>
-    </label>
-    <label class="toggle">
-      <input type="checkbox" name="system.traitExpertise.slot2" {{checked system.traitExpertise.slot2}}/>
-      <span>{{localize 'SACADIA.TraitExpertise.Reroll'}} 2</span>
-    </label>
+    {{#if traitExpertise.length}}
+    <div class="expertise-slots">
+      {{#each traitExpertise as |slot|}}
+      <label class="expertise-slot {{#if slot.on}}on{{/if}}"
+             data-tooltip-text="{{localize 'SACADIA.TraitExpertise.Hint' trait=(localize slot.statLabel)}}">
+        <input type="checkbox" name="{{slot.name}}" {{checked slot.on}}/>
+        <i class="fa-solid fa-dice-d20 expertise-icon"></i>
+        <span class="expertise-body">
+          <span class="expertise-trait">{{localize slot.statLabel}}</span>
+          <span class="expertise-sub">{{localize 'SACADIA.TraitExpertise.Reroll'}}</span>
+        </span>
+      </label>
+      {{/each}}
+    </div>
+    {{else}}
+    <p class="expertise-empty">{{localize 'SACADIA.TraitExpertise.NoProfession'}}</p>
+    {{/if}}
   </div>
   {{/if}}
 
@@ -42,8 +51,10 @@
       <h4>{{localize group.label}}</h4>
       <div class="condition-grid">
         {{#each group.conditions as |cond|}}
-        <div class="condition {{#if cond.value}}active{{/if}}" title="{{localize cond.rules}}">
-          <span class="condition-name">{{localize cond.label}}{{#if cond.auto}} <i class="fa-solid fa-gear auto-flag" title="{{localize 'SACADIA.Condition.Automated'}}"></i>{{/if}}</span>
+        <div class="condition {{#if cond.value}}active{{/if}}" data-tooltip-html="{{cond.tooltip}}">
+          {{!-- Click the name to roll resistance for THIS condition (book p258): one Trait Check per
+               incoming level, take a level per fail. The d20 cue signals it's clickable. --}}
+          <a class="condition-name" data-action="resistCondition" data-key="{{cond.key}}">{{localize cond.label}} <i class="fa-solid fa-dice-d20 resist-cue" title="{{localize 'SACADIA.Resist.RollFor'}}"></i></a>
           <div class="condition-track">
             <a data-action="conditionStep" data-key="{{cond.key}}" data-dir="down"><i class="fa-solid fa-minus"></i></a>
             <span class="condition-value">{{cond.value}}</span>
@@ -78,6 +89,21 @@
       </ul>
     </div>
     {{/each}}
+    {{!-- Specialized talents (book p.146): roll as the general talent with 1X advantage per rank. --}}
+    <div class="talent-group specialties">
+      <h4>{{localize 'SACADIA.Talent.Specialties'}} <a data-action="addSpecialty" title="{{localize 'SACADIA.Talent.AddSpecialty'}}"><i class="fa-solid fa-plus"></i></a></h4>
+      <ul class="talent-list">
+        {{#each system.specialties as |sp idx|}}
+        <li class="talent specialty" data-index="{{idx}}">
+          <input type="text" name="system.specialties.{{idx}}.name" value="{{sp.name}}" placeholder="{{localize 'SACADIA.Talent.SpecialtyName'}}"/>
+          <select name="system.specialties.{{idx}}.talent">{{selectOptions @root.talentChoices selected=sp.talent localize=true blank=""}}</select>
+          <input type="number" class="rank" name="system.specialties.{{idx}}.rank" value="{{sp.rank}}" min="0" max="6" title="{{localize 'SACADIA.Talent.Rank'}}"/>
+          <a class="rollable" data-action="roll" data-roll-type="specialty" data-key="{{idx}}" title="{{localize 'SACADIA.Talent.RollSpecialty'}}"><i class="fa-solid fa-dice-d20"></i></a>
+          <a data-action="removeSpecialty" title="{{localize 'SACADIA.Talent.RemoveSpecialty'}}"><i class="fa-solid fa-trash"></i></a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
   </div>
   {{/if}}
 

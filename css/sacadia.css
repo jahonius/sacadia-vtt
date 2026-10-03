@@ -662,6 +662,31 @@
   align-items: flex-end;
   margin-top: 0.35rem;
 }
+.sacadia .sheet-header .header-stats {
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  align-items: flex-end;
+  flex: 1 1 22rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child {
+  flex: 1 1 10rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child .sac-meter {
+  width: auto;
+}
+.sacadia .sheet-header .header-stats .derived-cluster {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.sacadia .sheet-header .defenses .defense {
+  flex: 1 1 5.5rem;
+}
 .sacadia .sheet-header .field {
   display: flex;
   flex-direction: column;
@@ -759,6 +784,27 @@
 }
 .sacadia .sheet-header .defenses .defense.superseded span {
   color: var(--sac-blood);
+}
+.sacadia .sheet-header .header-stats .derived.lore span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.05rem;
+}
+.sacadia .sheet-header .header-stats .derived.lore span input {
+  width: 2rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  background: transparent;
+  border: none;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .header-stats .derived.lore span input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid var(--sac-gold);
 }
 .sacadia .sheet-header .charname {
   font-family: var(--sac-font-display);
@@ -903,7 +949,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.15rem 0.25rem;
+  padding: 0.2rem 0.3rem;
   border-radius: 3px;
 }
 .sacadia .inv-row:hover {
@@ -914,6 +960,14 @@
 }
 .sacadia .inv-row .equip-toggle {
   cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .inv-row.equipped .equip-toggle {
+  color: var(--sac-gold);
+}
+.sacadia .inv-row .inv-img {
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
 }
 .sacadia .inv-row .inv-name {
   flex: 1;
@@ -933,6 +987,10 @@
 }
 .sacadia .inv-row .inv-controls a {
   cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .inv-row .inv-controls a:hover {
+  color: var(--sac-gold-hi);
 }
 .sacadia .armor-fields fieldset {
   margin: 0.4rem 0;
@@ -1407,40 +1465,70 @@
 .sacadia .damage-parts .damage-part a {
   cursor: pointer;
 }
+.sacadia.ability-card {
+  background: var(--sac-umber);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  color: var(--sac-text);
+}
 .sacadia.ability-card .card-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  border-bottom: 1px solid var(--sac-line);
+  padding-bottom: 0.3rem;
 }
 .sacadia.ability-card .card-header img {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+.sacadia.ability-card .card-header h3 {
+  margin: 0;
   border: none;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
 }
 .sacadia.ability-card .card-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 0.75rem;
-  opacity: 0.85;
-  margin: 0.2rem 0;
+  font-size: 0.72rem;
+  margin: 0.25rem 0;
+  color: var(--sac-dim);
 }
 .sacadia.ability-card .card-meta .tag {
   font-weight: bold;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sac-olive);
 }
 .sacadia.ability-card .card-roll {
   margin: 0.3rem 0;
 }
 .sacadia.ability-card .card-roll h4 {
   margin: 0.1rem 0;
+  color: var(--sac-dim);
+  border: none;
+  font-family: var(--sac-font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.sacadia.ability-card .card-roll h4 small {
+  text-transform: none;
+  letter-spacing: 0;
 }
 .sacadia.ability-card .card-activity {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--sac-line);
   padding-top: 0.25rem;
   margin-top: 0.25rem;
 }
 .sacadia.ability-card .activity-label {
   font-weight: bold;
   font-size: 0.85rem;
+  color: var(--sac-gold-hi);
 }
 .sacadia.ability-card .card-save button {
   width: 100%;
@@ -1449,6 +1537,12 @@
 .sacadia.ability-card .card-desc {
   margin-top: 0.4rem;
   font-size: 0.85rem;
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .dice-roll .dice-formula, .sacadia.ability-card .dice-roll .dice-total {
+  background: var(--sac-inset);
+  border-color: var(--sac-line-strong);
+  color: var(--sac-text);
 }
 .sacadia.ability-card .card-modifiers {
   display: flex;
@@ -1457,24 +1551,25 @@
   align-items: baseline;
   margin-top: 0.35rem;
   padding-top: 0.3rem;
-  border-top: 1px dashed rgba(0, 0, 0, 0.12);
+  border-top: 1px dashed var(--sac-line);
   font-size: 0.75rem;
 }
 .sacadia.ability-card .card-modifiers .mod-label {
   font-weight: bold;
   text-transform: uppercase;
-  opacity: 0.7;
+  color: var(--sac-dim);
   letter-spacing: 0.03em;
 }
 .sacadia.ability-card .card-modifiers .mod {
   padding: 0 0.3rem;
   border-radius: 0.25rem;
-  background: rgba(120, 90, 200, 0.14);
+  background: rgba(212, 165, 60, 0.16);
+  color: var(--sac-text);
 }
 .sacadia.ability-card .card-resolution:not(:empty) {
   margin-top: 0.4rem;
   padding-top: 0.3rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--sac-line);
 }
 .sacadia.ability-card .card-resolution:not(:empty) .resolution-row {
   display: flex;
@@ -1484,18 +1579,17 @@
 }
 .sacadia.ability-card .card-resolution:not(:empty) .resolution-row .target {
   font-size: 0.85rem;
-  opacity: 0.85;
+  color: var(--sac-dim);
 }
 .sacadia.ability-card .card-resolution:not(:empty) .resolution-row .hit {
-  color: #1a7f37;
+  color: #6fbf85;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 .sacadia.ability-card .card-resolution:not(:empty) .resolution-row .miss {
-  color: #911d20;
+  color: var(--sac-blood);
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  opacity: 0.85;
 }
 .sacadia.gm-note {
   font-size: 0.85rem;

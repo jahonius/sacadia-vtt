@@ -1,0 +1,54 @@
+{
+  "_id": "9be3f31f01964a34",
+  "_key": "!items!9be3f31f01964a34",
+  "name": "Greater Glaring",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Each turn you maintain Focus on Barbed Stare, increase the damage dice by one additional dice type if you have not moved (willingly or unwillingly) since you initiated Focus on Barbed Stare. Once you move, the dice type increases by only one per turn for as long as you maintain Focus.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Barbed Stare, Courage[3] · Research: Magic Beast Lore[2]"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Greater Glaring",
+        "target": "damage",
+        "mode": "step",
+        "scope": "mg_barbed_stare",
+        "value": "@combat.stillRounds.mg_barbed_stare",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_glaring",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Magic Beast Lore[2]",
+      "buildHash": "c1984f94f76d"
+    }
+  }
+}

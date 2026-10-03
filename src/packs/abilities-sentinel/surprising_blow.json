@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "surprising_blow"
+      "catalogId": "surprising_blow",
+      "buildHash": "a4f5ed1f9637"
     }
   }
 }

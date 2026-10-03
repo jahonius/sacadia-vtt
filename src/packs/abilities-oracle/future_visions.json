@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "future_visions"
+      "catalogId": "future_visions",
+      "buildHash": "600445a358ee"
     }
   }
 }

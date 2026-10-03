@@ -35,7 +35,7 @@
         "attack": {
           "category": "melee",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
@@ -44,13 +44,32 @@
         "damage": [],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": [
+      {
+        "label": "Sweeping Claws",
+        "target": "damage",
+        "mode": "step",
+        "scope": "sweeping_claws",
+        "value": "-1"
+      }
+    ],
+    "multiAttack": {
+      "count": 0,
+      "targeting": "each",
+      "requiresAbility": "",
+      "upgrade": {
+        "ability": "",
+        "count": 0
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "sweeping_claws",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "7349380dffad"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "quickdraw"
+      "catalogId": "quickdraw",
+      "buildHash": "2e86d26d3da0"
     }
   }
 }

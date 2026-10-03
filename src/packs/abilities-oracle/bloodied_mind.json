@@ -29,12 +29,28 @@
       "prerequisite": "Bloodied Shadows, Wiles 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Bloodied Mind",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:checking:mental"
+          },
+          {
+            "atom": "self:hp-below-half"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodied_mind"
+      "catalogId": "bloodied_mind",
+      "buildHash": "9209c63fffae"
     }
   }
 }

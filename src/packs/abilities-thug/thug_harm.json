@@ -45,7 +45,7 @@
         },
         "damage": [
           {
-            "count": "1",
+            "count": "@target.pinned",
             "denomination": 10,
             "formula": "",
             "trait": "",
@@ -60,7 +60,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_harm"
+      "catalogId": "thug_harm",
+      "buildHash": "877cc059ab70"
     }
   }
 }

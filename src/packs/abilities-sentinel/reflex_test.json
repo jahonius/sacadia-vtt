@@ -30,13 +30,35 @@
       "subpath": "tactician",
       "prerequisite": ""
     },
-    "activities": [],
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "slowed",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
     "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reflex_test"
+      "catalogId": "reflex_test",
+      "buildHash": "ebb35d50ff34"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_bleeding_expert"
+      "catalogId": "bd_bleeding_expert",
+      "buildHash": "11dba8a86ca6"
     }
   }
 }

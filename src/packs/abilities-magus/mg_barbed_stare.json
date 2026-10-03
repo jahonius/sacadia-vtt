@@ -1,0 +1,79 @@
+{
+  "_id": "88d5a9e724268024",
+  "_key": "!items!88d5a9e724268024",
+  "name": "Barbed Stare",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you initiate Focus on this effect, choose one enemy target within 30ft. That target takes 1D6 damage. Each turn you maintain Focus on this effect, deal 1D6 damage to that target. Increase the dice type of damage you deal with Barbed Stare by 1 Dice Type each turn (i.e., on your second round of Focus, deal 1D8 damage). Your Focus ends on this effect if you leave 30ft range of the target.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Research: Magic Beast Lore[1]"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": "md"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 6,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": [],
+        "autoHit": true
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Barbed Stare",
+        "target": "damage",
+        "mode": "step",
+        "scope": "mg_barbed_stare",
+        "value": "max(0, @combat.focusRounds.mg_barbed_stare - 1)",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_barbed_stare",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Magic Beast Lore[1]",
+      "buildHash": "552a1c199033"
+    }
+  }
+}

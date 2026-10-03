@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Light Armor Training, Prof[5]</em></p>",
     "equipped": false,
     "category": "light",
+    "material": "dye",
     "defenses": {
       "ad": 6,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 0,
       "dr": 0
     },
-    "maxStat": 25
+    "maxStat": 25,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "masterwork_dye_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "ed79de210e02"
     }
   }
 }

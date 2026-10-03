@@ -1,0 +1,58 @@
+{
+  "_id": "f501281a21bead14",
+  "_key": "!items!f501281a21bead14",
+  "name": "Dancerwind",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you. On their next turn, their Move Speed is increased by 5ft, and they can 5ft adjust into difficult terrain.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": "Finesse[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Dancerwind",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.speed",
+          "mode": 2,
+          "value": "5"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_dancerwind",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "344b33a81fd3"
+    }
+  }
+}

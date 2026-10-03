@@ -29,12 +29,26 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Carmine Approach",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:cover:half"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "carmine_approach"
+      "catalogId": "carmine_approach",
+      "buildHash": "f417040f8d7a"
     }
   }
 }

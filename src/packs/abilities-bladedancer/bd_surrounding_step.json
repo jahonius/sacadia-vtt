@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_surrounding_step"
+      "catalogId": "bd_surrounding_step",
+      "buildHash": "2a625b80acce"
     }
   }
 }

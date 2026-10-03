@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "healthy_soul"
+      "catalogId": "healthy_soul",
+      "buildHash": "3cb3f4f3d981"
     }
   }
 }

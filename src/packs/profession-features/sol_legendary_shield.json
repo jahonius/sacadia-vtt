@@ -1,0 +1,74 @@
+{
+  "_id": "3da940a150ca8aea",
+  "_key": "!items!3da940a150ca8aea",
+  "name": "Legendary Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your PD, TD, and MD by 1. Increase the damage dice dealt by melee attacks you make while wielding a shield by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 15"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Legendary Shield",
+        "target": "defense.pd",
+        "value": "1",
+        "predicate": []
+      },
+      {
+        "label": "Legendary Shield",
+        "target": "defense.td",
+        "value": "1",
+        "predicate": []
+      },
+      {
+        "label": "Legendary Shield",
+        "target": "defense.md",
+        "value": "1",
+        "predicate": []
+      },
+      {
+        "label": "Legendary Shield",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sol_legendary_shield",
+      "feature": true,
+      "level": 15,
+      "buildHash": "f9fede45eb56"
+    }
+  }
+}

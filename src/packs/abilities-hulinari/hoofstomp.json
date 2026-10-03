@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Charge the Line, Courage 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hoofstomp",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5bf5eb41a3a0"
     }
   }
 }

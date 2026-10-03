@@ -29,12 +29,36 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Agile Dance",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:opportunity"
+          }
+        ]
+      },
+      {
+        "label": "Agile Dance",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:ability:basic_grab"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_agile_dance"
+      "catalogId": "bd_agile_dance",
+      "buildHash": "d1b4218144df"
     }
   }
 }

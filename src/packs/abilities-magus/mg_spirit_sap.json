@@ -1,0 +1,54 @@
+{
+  "_id": "f730e04b635b0ed7",
+  "_key": "!items!f730e04b635b0ed7",
+  "name": "Spirit Sap",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot as a Boost to Chill Touch. Remove all temporary HP they possess. Damage from Chill Touch is applied after the removal of their temporary HP.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Chill Touch, Fate[2] · Research: Astrology[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "mg_chill_touch"
+      },
+      "special": {
+        "stripTempHp": true
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_spirit_sap",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Astrology[2]",
+      "buildHash": "f795166f35c3"
+    }
+  }
+}

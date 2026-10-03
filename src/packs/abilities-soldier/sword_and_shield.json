@@ -29,12 +29,29 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Sword and Shield",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@shieldDefense",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "!self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sword_and_shield"
+      "catalogId": "sword_and_shield",
+      "buildHash": "1dbc4a30cc1b"
     }
   }
 }

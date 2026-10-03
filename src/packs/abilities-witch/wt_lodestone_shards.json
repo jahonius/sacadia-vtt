@@ -1,0 +1,43 @@
+{
+  "_id": "2920d004ca985d31",
+  "_key": "!items!2920d004ca985d31",
+  "name": "Lodestone Shards",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": "Grasses of Kish, Finesse[5]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_lodestone_shards",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "6ef9bc5702f2"
+    }
+  }
+}

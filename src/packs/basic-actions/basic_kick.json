@@ -1,0 +1,50 @@
+{
+  "_id": "b20816fe0b701c3e",
+  "_key": "!items!b20816fe0b701c3e",
+  "name": "Kick",
+  "type": "ability",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "description": "<p>Choose a single target within 5ft of you. They attempt a Power Check against your Check DC or are moved 5ft away from you into a free square, if there is a free square they can enter, or is knocked prone if there is not a free square behind them.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "leg"
+      ]
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "power",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_kick",
+      "basic": true,
+      "buildHash": "7a37e36b1486"
+    }
+  }
+}

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_the_drain"
+      "catalogId": "call_of_the_drain",
+      "buildHash": "351a616819c6"
     }
   }
 }

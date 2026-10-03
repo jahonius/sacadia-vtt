@@ -13,8 +13,8 @@
  *  - Structured damage is carried for the entries whose catalog encoded it (`damage` block) as a
  *    `damage` activity; attack-category / save-trait tagging lives only in prose, so it's left for
  *    a manual polish pass (recorded honestly — not guessed).
- *  - `modifiesDamage` (per-ability die-step passives) is stashed in `flags.sacadia` for a later
- *    pass; our die-step sink is global, so it isn't auto-wired to a specific target here.
+ *  - Per-ability damage buffs (die-steps / flat boosts that one ability grants another) are authored
+ *    as unified `system.modifiers` in src/modifiers.mjs (MODIFIER_OVERRIDES), keyed by catalogId.
  */
 
 import fs from 'node:fs';
@@ -23,15 +23,21 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { ClassicLevel } from 'classic-level';
 import { MASTERIES } from './masteries.mjs';
+import { BASICS } from './basics.mjs';
+import { PROGRESSION } from './progression.mjs';
+import { buildManual } from './manual.mjs';
 import { ADORNMENTS, TRINKETS, WEAPONS, ARMORS, SHIELDS } from './equipment.mjs';
-import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES } from './modifiers.mjs';
+import { inferMaterial, inferShieldSize } from '../module/helpers/actor-utils.mjs';
+import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES, BOOST_OVERRIDES, ACTIVITY_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, ZONE_OVERRIDES, TEXT_OVERRIDES, TAG_OVERRIDES, EXTRAAP_OVERRIDES, POOL_OVERRIDES, AMOUNTPROMPT_OVERRIDES, LORE_MADNESS, USAGE_OVERRIDES, USAGE_UPGRADES, AID_RESIST_OVERRIDES, OPPORTUNITY_IDS } from './modifiers.mjs';
 import { MADNESS_ANNOTATIONS } from './madness.mjs';
+import { LORE_NO_COST } from './lore-overrides.mjs';
 
 // Pool-granting abilities (one per pool): they set the pool's max, never charge it. Their pool cost is
 // blanked at build so the detector's "consumes a point" flavour doesn't mis-charge them.
 const POOL_GRANT_IDS = new Set([
   'bd_arrangement', 'tighten_focus', 'future_visions', 'trickshot',
   'steeltip', 'get_down', 'call_to_action', 'thug_wrestling_trick',
+  'trickster_tactics', 'mg_spell_slots', 'wt_divine_touch_slots',
 ]);
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -120,6 +126,12 @@ function makeId(pack, catalogId) {
  */
 const deref = (s) => String(s ?? '').replace(/@\{(?:condition_)?(\w+)\}/g, '@$1');
 
+// Catalog text defects: Roll20 sheet notes ("[Adds a Temporary Modifier below …]") and the next section's
+// heading bled onto the end of an entry ("… Aoean", "… Heavy Hitter", "… Fated").
+const TRAILING_HEADING = /\s+(?:Aoean|Heavy Hitter|Fated)\s*$/;
+const cleanDescription = (s) => deref(s).replace(/\s*\[Adds a [^\]]*\]\s*$/, '').replace(/\s*\((?:Add|Toggle|Set|Auto-managed) [^)]*(?:manually|tempbuff)[^)]*\)\s*$/i, '')
+  .replace(TRAILING_HEADING, '').trim();
+
 /** One structured damage part from a catalog `damage` block. */
 function buildDamagePart({ countFormula, baseLadderIndex, suffix }) {
   // A trailing `+ @{stat}` becomes the part's trait; anything else stays in the freeform formula.
@@ -191,7 +203,7 @@ function detectInflict(desc) {
 
 // Signature class point-pool names → keys (for auto-detecting "expend N <Pool> point(s)"). Includes
 // Soldier "call" and Thug "trick" pools (both `CONFIG.SACADIA.pools` ids).
-const POOL_NAMES = { arrangement: 'arrangement', glory: 'glory', prescient: 'prescient', trickshot: 'trickshot', savage: 'savage', herd: 'herd', call: 'call', trick: 'trick' };
+const POOL_NAMES = { arrangement: 'arrangement', glory: 'glory', prescient: 'prescient', trickshot: 'trickshot', savage: 'savage', herd: 'herd', call: 'call', trick: 'trick', trickster: 'trickster', spell: 'spell', divine: 'divine' };
 const WORD_NUM = { a: 1, an: 1, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6 };
 
 /**
@@ -201,13 +213,19 @@ const WORD_NUM = { a: 1, an: 1, one: 1, two: 2, three: 3, four: 4, five: 5, six:
  * Case-insensitive (prose often opens a sentence with "Expend").
  */
 function detectPoolCost(desc) {
-  const m = /\bexpend[a-z]*\s+(\d+|a number of|any number of|any|an|a|one|two|three|four|five|six|your|x)\s+(?:additional\s+|more\s+)?([a-z]+)\s+points?/i.exec(desc);
+  // "expend" — and the Hulinari catalog's "expense" ("Expense one Savage Point").
+  // "<Pool> Point(s)", plus the prestige pools' "Spell Slot(s)" (Magus) and "Divine Touch Point(s)" (Witch).
+  const m = /\bexpen[ds][a-z]*\s+(\d+|a number of|any number of|any|an|a|one|two|three|four|five|six|your|x)\s+(?:additional\s+|more\s+)?([a-z]+)(?:\s+touch)?\s+(?:points?|slots?)\b/i.exec(desc);
   const key = m && POOL_NAMES[m[2].toLowerCase()];
   if (!key) return { key: '', amount: 0, variable: false, max: '' };
   const q = m[1].toLowerCase();
-  const variable = q === 'x' || q === 'any' || q === 'any number of' || q === 'a number of';
+  // "one Savage Point for each creature" / "one Herd Point per target" — a per-target price, chosen at use.
+  const perEach = /^\s*(?:for each|per)\b/i.test(desc.slice(m.index + m[0].length, m.index + m[0].length + 12));
+  const variable = perEach || q === 'x' || q === 'any' || q === 'any number of' || q === 'a number of';
   // "up to (half )?your <Stat>" bound following the phrase → an @ref for the prompt ceiling.
-  const upTo = /up to\s+(half\s+)?your\s+(\w+)/i.exec(desc.slice(m.index, m.index + 90));
+  // "up to (half) your X" or "(to a maximum of half your X …)" (Beak & Blade, Cloudsurge).
+  // "(X maxes at half your Proficiency, rounded up)" (Siphon Soul).
+  const upTo = /(?:up to|to a maximum of|maxes at)\s+(half\s+)?your\s+(\w+)/i.exec(desc.slice(m.index, m.index + 130));
   const max = upTo ? (upTo[1] ? `ceil(@${upTo[2].toLowerCase()}/2)` : `@${upTo[2].toLowerCase()}`) : '';
   if (variable) return { key, amount: 0, variable: true, max };
   const amount = /\d+/.test(q) ? parseInt(q, 10) : (WORD_NUM[q] ?? 1);
@@ -275,7 +293,9 @@ function buildActivities(entry, cfg, tag) {
     }
     const saveTrait = detectSaveTrait(desc);
     if (saveTrait !== null) {
-      return [{ type: 'save', label: '', attack: blankAtk, save: { trait: saveTrait, dc: null }, damage, inflict }];
+      // "…taking half damage on success" → a successful save halves the damage instead of negating it.
+      const onSuccess = /half (?:the )?damage|takes? half|half as much/i.test(desc) ? 'half' : 'none';
+      return [{ type: 'save', label: '', attack: blankAtk, save: { trait: saveTrait, dc: null, onSuccess }, damage, inflict }];
     }
   }
 
@@ -283,24 +303,67 @@ function buildActivities(entry, cfg, tag) {
   return [];
 }
 
-/** Transform one Roll20 catalog entry into a Sacadia `ability` Item document. */
 /**
- * Convert the legacy per-ability die-step shape `[{target, ladderSteps}]` into unified
- * `system.modifiers` entries (see docs/conditional-modifiers.md): an unconditional die-step scoped to
- * the named ability's catalogId.
+ * The override-derived `system` fields keyed by catalogId, shared by both the main `toItem` and the
+ * `extraToItem` used for the Fatebound/Hulinari catalogs — so authored modifiers/mechanics apply to
+ * *every* profession, not just the six in `CATALOGS`. (INFLICT + ACTIVITY overrides mutate `activities`
+ * and are applied by the callers.)
  */
-function modifiesToModifiers(list = [], label = '') {
-  return (list ?? []).filter((m) => m?.target).map((m) => ({
-    label, target: 'damage', mode: 'step', scope: m.target, value: String(m.ladderSteps ?? 0), predicate: [],
-  }));
+/** "Once per turn / quick rest / combat" (and "twice per turn") → a usage limit. */
+function detectUsage(description) {
+  const d = description ?? '';
+  if (/twice per turn/i.test(d)) return { per: 'turn', max: 2 };
+  if (/once per turn/i.test(d)) return { per: 'turn', max: 1 };
+  if (/once per (?:quick |fitful |nightly |long )?rest/i.test(d)) return { per: 'rest', max: 1 };
+  if (/once per (?:combat|encounter|fight)/i.test(d)) return { per: 'combat', max: 1 };
+  return null;
 }
 
+/** The owned-passive upgrades that target this ability's usage (USAGE_UPGRADES, keyed by the upgrader). */
+function usageUpgradesFor(catalogId) {
+  return Object.entries(USAGE_UPGRADES).filter(([, u]) => u?.ability === catalogId)
+    .map(([ability, u]) => ({ ability, max: u.max ?? null, maxFormula: u.maxFormula ?? '', requires: u.requires ?? [], requiresLabel: u.requiresLabel ?? '' }));
+}
+
+function overrideFields(catalogId, tag, description) {
+  const reactionTrigger = tag === 'reaction' && /\bmov(e|es|ing|ement)\b/i.test(description) && !/turn end/i.test(description) ? 'move' : '';
+  return {
+    modifiers: MODIFIER_OVERRIDES[catalogId] ?? [],
+    ...(CHOICE_OVERRIDES[catalogId] ? { choice: CHOICE_OVERRIDES[catalogId] } : {}),
+    ...(MARK_OVERRIDES[catalogId] ? { mark: MARK_OVERRIDES[catalogId] } : {}),
+    ...(FOCUS_OVERRIDES[catalogId] ? { focus: FOCUS_OVERRIDES[catalogId] } : {}),
+    ...(GRANT_OVERRIDES[catalogId] ? { grant: GRANT_OVERRIDES[catalogId] } : {}),
+    ...(TEMPHP_OVERRIDES[catalogId] ? { tempHp: TEMPHP_OVERRIDES[catalogId] } : {}),
+    ...(REACTION_GRANT_OVERRIDES[catalogId] ? { grantsReaction: REACTION_GRANT_OVERRIDES[catalogId] } : {}),
+    ...(reactionTrigger ? { reactionTrigger } : {}),
+    ...(NEXT_ATTACK_OVERRIDES[catalogId] ? { nextAttack: { on: '', advantage: '', toHit: '', damage: '', targetCondition: '', label: '', ...NEXT_ATTACK_OVERRIDES[catalogId] } } : {}),
+    ...(ONUSE_OVERRIDES[catalogId] ? { onUse: ONUSE_OVERRIDES[catalogId] } : {}),
+    ...(KILLTRIGGER_OVERRIDES[catalogId] ? { killTrigger: KILLTRIGGER_OVERRIDES[catalogId] } : {}),
+    ...(MULTIATTACK_OVERRIDES[catalogId] ? { multiAttack: MULTIATTACK_OVERRIDES[catalogId] } : {}),
+    ...(CHOICEREDIRECT_OVERRIDES[catalogId] ? { choiceRedirect: CHOICEREDIRECT_OVERRIDES[catalogId] } : {}),
+    ...(PICK_OVERRIDES[catalogId] ? { pick: { options: [], ...PICK_OVERRIDES[catalogId] } } : {}),
+    ...(ZONE_OVERRIDES[catalogId] ? { zone: ZONE_OVERRIDES[catalogId] } : {}),
+    ...(EXTRAAP_OVERRIDES[catalogId] ? { extraAp: { max: '', label: '', selfDamagePerAp: '', ...EXTRAAP_OVERRIDES[catalogId] } } : {}),
+    ...(AMOUNTPROMPT_OVERRIDES[catalogId] ? { amountPrompt: { label: '', max: '', ...AMOUNTPROMPT_OVERRIDES[catalogId] } } : {}),
+    ...(TEXT_OVERRIDES[catalogId] ? { description: `<p>${TEXT_OVERRIDES[catalogId]}</p>` } : {}),
+    ...(AID_RESIST_OVERRIDES[catalogId] ? { aidResist: { levels: '1', maxTargets: '1', autoWith: '', autoIfSteadied: false, advantageWith: '',
+      spendMadness: false, mentalOnly: false, funnel: false, ...AID_RESIST_OVERRIDES[catalogId] } } : {}),
+    ...((detectUsage(description) || USAGE_OVERRIDES[catalogId] || usageUpgradesFor(catalogId).length) ? { usage: { per: '', max: 1, requires: [], requiresLabel: '',
+      ...(detectUsage(description) ?? {}), ...(USAGE_OVERRIDES[catalogId] ?? {}), upgrades: usageUpgradesFor(catalogId) } } : {}),
+    ...(BOOST_OVERRIDES[catalogId] ? { boost: BOOST_OVERRIDES[catalogId] } : {}),
+    ...(MADNESS_ANNOTATIONS[catalogId] ? { madness: MADNESS_ANNOTATIONS[catalogId] } : {}),
+  };
+}
+
+/** Transform one Roll20 catalog entry into a Sacadia `ability` Item document. */
 function toItem(pack, cfg, catalogId, entry) {
   const _id = makeId(pack, catalogId);
-  const tag = TAG_MAP[String(entry.tag ?? '').toLowerCase()] ?? 'action';
+  const tag = TAG_OVERRIDES[catalogId] ?? TAG_MAP[String(entry.tag ?? '').toLowerCase()] ?? 'action';
   const limbs = entry.limb != null && LIMB_MAP[entry.limb] ? [LIMB_MAP[entry.limb]] : [];
   const madness = Number(entry.madness);
-  const activities = buildActivities(entry, cfg, tag);
+  // Authored activities (ACTIVITY_OVERRIDES) replace the prose-detected set when the detector can't
+  // build it correctly (unnamed target defense, inflict-instead-of-damage, a missed save-inflict).
+  const activities = ACTIVITY_OVERRIDES[catalogId] ?? buildActivities(entry, cfg, tag);
   // Authored inflict for effects whose prose doesn't name a tracked condition (e.g. Bound Tongue's
   // "cannot speak or cast spells" → Silenced): attach to the activity that carries inflict.
   if (INFLICT_OVERRIDES[catalogId] && activities.length) activities[0].inflict = INFLICT_OVERRIDES[catalogId];
@@ -311,7 +374,7 @@ function toItem(pack, cfg, catalogId, entry) {
     type: 'ability',
     img: iconFor(pack, catalogId) ?? DEFAULT_IMG,
     system: {
-      description: entry.description ? `<p>${deref(entry.description)}</p>` : '',
+      description: entry.description ? `<p>${cleanDescription(entry.description)}</p>` : '',
       tag,
       costs: {
         ap: ACTIVE_TAGS.has(tag) ? 1 : 0,
@@ -320,9 +383,9 @@ function toItem(pack, cfg, catalogId, entry) {
         limbs,
         // A pool-granting ability *creates* the pool; it never spends it — so blank the cost the
         // detector reads from its "using a call consumes a point" flavour (see POOL_GRANT_IDS).
-        pool: POOL_GRANT_IDS.has(catalogId)
+        pool: POOL_OVERRIDES[catalogId] ?? (POOL_GRANT_IDS.has(catalogId)
           ? { key: '', amount: 0, variable: false, max: '' }
-          : detectPoolCost(entry.description ?? ''),
+          : detectPoolCost(entry.description ?? '')),
       },
       range: detectRange(entry.description ?? ''),
       meta: {
@@ -331,21 +394,16 @@ function toItem(pack, cfg, catalogId, entry) {
         prerequisite: entry.prerequisite ?? '',
       },
       activities,
-      // Unified conditional modifiers (docs/conditional-modifiers.md): legacy per-ability die-steps
-      // plus any hand-authored overrides for this catalogId. `selfScaling` (level-based base-die
-      // growth) stays a flag — it's a different mechanism, not a conditional buff.
-      modifiers: [...modifiesToModifiers(entry.modifiesDamage, entry.name ?? catalogId), ...(MODIFIER_OVERRIDES[catalogId] ?? [])],
-      ...(CHOICE_OVERRIDES[catalogId] ? { choice: CHOICE_OVERRIDES[catalogId] } : {}),
-      ...(MARK_OVERRIDES[catalogId] ? { mark: MARK_OVERRIDES[catalogId] } : {}),
-      ...(FOCUS_OVERRIDES[catalogId] ? { focus: FOCUS_OVERRIDES[catalogId] } : {}),
-      ...(GRANT_OVERRIDES[catalogId] ? { grant: GRANT_OVERRIDES[catalogId] } : {}),
-      ...(MADNESS_ANNOTATIONS[catalogId] ? { madness: MADNESS_ANNOTATIONS[catalogId] } : {}),
+      // Unified conditional modifiers + all authored mechanic overrides, keyed by catalogId (shared with
+      // extraToItem so every profession gets them). `selfScaling` stays a flag — a different mechanism.
+      ...overrideFields(catalogId, tag, entry.description ?? ''),
     },
     effects: [],
     flags: {
       sacadia: {
         catalogId,
-        ...(entry.damage?.selfScaling ? { selfScaling: entry.damage.selfScaling } : {}),
+        ...(OPPORTUNITY_IDS.includes(catalogId) ? { opportunity: true } : {}),
+        ...((entry.damage?.selfScaling || SELFSCALING_OVERRIDES[catalogId]) ? { selfScaling: entry.damage?.selfScaling ?? SELFSCALING_OVERRIDES[catalogId] } : {}),
       },
     },
   };
@@ -366,10 +424,140 @@ function masteryToItem(m) {
       costs: { ap: 0, csp: 0, madness: 0, limbs: [] },
       meta: { profession: m.profession, subpath: '', prerequisite: 'Level 5' },
       activities: [],
-      modifiers: [...modifiesToModifiers(m.modifiesDamage, m.name), ...(MODIFIER_OVERRIDES[m.id] ?? [])],
+      modifiers: MODIFIER_OVERRIDES[m.id] ?? [],
     },
     effects: [],
     flags: { sacadia: { catalogId: m.id, mastery: true } },
+  };
+}
+
+/** A profession level feature or Legendary Mastery (src/progression.mjs) → an `ability` Item, run through the
+ *  same override pipeline as the catalog abilities (modifiers, boosts, activities …). */
+function featureToItem(f) {
+  const _id = makeId('profession-features', f.id);
+  const activities = ACTIVITY_OVERRIDES[f.id] ?? [];
+  return {
+    _id,
+    _key: `!items!${_id}`,
+    name: f.name,
+    type: 'ability',
+    img: iconFor('profession-features', f.id) ?? (f.legendary ? 'icons/svg/upgrade.svg' : 'icons/svg/book.svg'),
+    system: {
+      description: `<p>${f.description}</p>`,
+      tag: f.tag,
+      costs: { ap: ACTIVE_TAGS.has(f.tag) ? 1 : 0, csp: 0, madness: 0, limbs: [],
+        pool: { key: '', amount: 0, variable: false, max: '' } },
+      range: detectRange(f.description),
+      // Prestige features gate on the profession's own level ("according to your Magus level").
+      meta: { profession: f.profession, subpath: f.legendary ? 'Legendary Mastery' : 'Level Feature',
+        prerequisite: f.prestige ? `${f.profession[0].toUpperCase()}${f.profession.slice(1)} Level ${f.level}` : `Level ${f.level}` },
+      activities,
+      ...overrideFields(f.id, f.tag, f.description),
+    },
+    effects: [],
+    flags: { sacadia: { catalogId: f.id, feature: true, level: f.level, ...(f.legendary ? { legendary: true } : {}) } },
+  };
+}
+
+/** Human labels for the prestige sub-sections (Magus Tomes, Witch branches). */
+const PRESTIGE_SECTIONS = {
+  core: '', tome: 'Tome', any: 'Any Tome', blood: 'Blood Tome', contract: 'Contract Tome', elder: 'Elder Tome',
+  general: '', promise: 'Promise', wellspring: 'Wellspring', balancer: 'Balancer', conditionmaker: 'Conditionmaker', calming_hands: 'Calming Hands',
+};
+
+/**
+ * A prestige profession ability (src/prestige.json — transcribed from the Prestige Classes addendum) → an `ability`
+ * Item. Rolls come only from authored overrides (no prose detection: the addendum's wording is too varied); the
+ * research requirement rides the prerequisite text and `flags.sacadia.research`, the Magus Tome in `flags.sacadia.tome`.
+ */
+function prestigeToItem(pack, profession, e) {
+  const _id = makeId(pack, e.id);
+  const prereq = [e.prerequisite, e.research ? `Research: ${e.research}` : ''].filter(Boolean).join(' · ');
+  return {
+    _id,
+    _key: `!items!${_id}`,
+    name: e.name,
+    type: 'ability',
+    img: iconFor(pack, e.id) ?? DEFAULT_IMG,
+    system: {
+      description: `<p>${e.description}</p>${e.note ? `<p><em>${e.note}</em></p>` : ''}`,
+      tag: e.tag,
+      costs: { ap: ACTIVE_TAGS.has(e.tag) ? 1 : 0, csp: e.cspCost || 0, madness: 0, limbs: [],
+        pool: POOL_OVERRIDES[e.id] ?? (POOL_GRANT_IDS.has(e.id) ? { key: '', amount: 0, variable: false, max: '' } : detectPoolCost(e.description || '')) },
+      range: detectRange(e.description || ''),
+      meta: { profession, subpath: PRESTIGE_SECTIONS[e.section] ?? '', prerequisite: prereq },
+      activities: ACTIVITY_OVERRIDES[e.id] ?? [],
+      ...overrideFields(e.id, e.tag, e.description || ''),
+    },
+    effects: [],
+    flags: { sacadia: { catalogId: e.id, transcribed: true, prestige: profession,
+      ...(profession === 'magus' && e.section !== 'core' ? { tome: e.section } : {}),
+      ...(e.research ? { research: e.research } : {}),
+      ...(OPPORTUNITY_IDS.includes(e.id) ? { opportunity: true } : {}),
+      ...(SELFSCALING_OVERRIDES[e.id] ? { selfScaling: SELFSCALING_OVERRIDES[e.id] } : {}) } },
+  };
+}
+
+/** Human labels for the Lore sections (who may take them, book pp.168–177; ancestry uses from the culture chapters). */
+const LORE_SECTIONS = {
+  general: 'General', ancestry: 'Ancestry', human: 'Human', daemonai: 'Daemonai', curiot: 'Curiot', fixerfolk: 'Fixerfolk',
+  fontborne: 'Fontborne', hulinari: 'Hulinari Heritage', bladedancer: 'Bladedancer', fatebound: 'Fatebound', oracle: 'Oracle',
+  hulinari_warrior: 'Hulinari Warrior', soldier: 'Soldier', sentinel: 'Sentinel', thug: 'Thug',
+};
+
+/**
+ * A Lore ability (src/lore.json, transcribed from v1.2) → an `ability` Item. Each costs one Lore point (`costs.lore`)
+ * unless its point is charged elsewhere (a Lore Boost on consume, Oozing Flow's post-roll button) or it costs none.
+ * Abilities marked L cost no AP (tag `lore`); those marked A / F (Kickbuck, Summon Beasts) are actions / Focus too.
+ */
+function loreToItem(e) {
+  const _id = makeId('abilities-lore', e.id);
+  const prereq = [e.prerequisite, `p.${e.page}`].filter(Boolean).join(' · ');
+  return {
+    _id,
+    _key: `!items!${_id}`,
+    name: e.name,
+    type: 'ability',
+    img: iconFor('abilities-lore', e.id) ?? 'icons/svg/book.svg',
+    system: {
+      description: `<p>${e.description}</p>`,
+      tag: e.tag,
+      costs: { ap: ACTIVE_TAGS.has(e.tag) ? 1 : 0, csp: 0, madness: 0, lore: LORE_NO_COST.has(e.id) ? 0 : 1, limbs: [],
+        pool: { key: '', amount: 0, variable: false, max: '' } },
+      range: detectRange(e.description),
+      meta: { profession: '', subpath: LORE_SECTIONS[e.section] ?? '', prerequisite: prereq },
+      activities: ACTIVITY_OVERRIDES[e.id] ?? [],
+      ...overrideFields(e.id, e.tag, e.description),
+      ...(LORE_MADNESS[e.id] ? { madness: LORE_MADNESS[e.id] } : {}),
+    },
+    effects: [],
+    flags: { sacadia: { catalogId: e.id, transcribed: true, lore: true } },
+  };
+}
+
+/** A basic action/reaction (src/basics.mjs, book pp.237–240) → an `ability` Item. Auto-granted to every
+ *  character (flags.sacadia.basic) — see reconcileBasicGrants in sacadia.mjs. */
+function basicToItem(b) {
+  const _id = makeId('basic-actions', b.id);
+  return {
+    _id,
+    _key: `!items!${_id}`,
+    name: b.name,
+    type: 'ability',
+    img: b.tag === 'reaction' ? 'icons/svg/shield.svg' : 'icons/svg/combat.svg',
+    system: {
+      description: `<p>${b.description}</p>`,
+      tag: b.tag,
+      costs: { ap: b.ap ?? 0, csp: 0, madness: 0, limbs: b.limbs ?? [] },
+      meta: { profession: '', subpath: 'basic', prerequisite: '' },
+      activities: b.activities ?? [],
+      modifiers: MODIFIER_OVERRIDES[b.id] ?? [],
+      ...(b.grant ? { grant: b.grant } : {}),
+      // Rend Armor: "rend 1 armor (PD, MD, or TD — your choice)".
+      ...(CHOICE_OVERRIDES[b.id] ? { choice: CHOICE_OVERRIDES[b.id] } : {}),
+    },
+    effects: [],
+    flags: { sacadia: { catalogId: b.id, basic: true, ...(b.flags ?? {}) } },
   };
 }
 
@@ -379,6 +567,10 @@ function extraToItem(pack, cfg, entry) {
   const id = entry.name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   const _id = makeId(pack, id);
   const tag = entry.tag;
+  // Same override pipeline as toItem, so Fatebound/Hulinari authoring (modifiers, activities, inflicts,
+  // temp-HP / kill-trigger / multi-attack / on-use / pool-grant) actually reaches the compendium.
+  const activities = ACTIVITY_OVERRIDES[id] ?? buildActivities(entry, cfg, tag);
+  if (INFLICT_OVERRIDES[id] && activities.length) activities[0].inflict = INFLICT_OVERRIDES[id];
   return {
     _id,
     _key: `!items!${_id}`,
@@ -386,15 +578,19 @@ function extraToItem(pack, cfg, entry) {
     type: 'ability',
     img: iconFor(pack, id) ?? DEFAULT_IMG,
     system: {
-      description: entry.description ? `<p>${deref(entry.description)}</p>` : '',
+      description: entry.description ? `<p>${cleanDescription(entry.description)}</p>` : '',
       tag,
-      costs: { ap: ACTIVE_TAGS.has(tag) ? 1 : 0, csp: entry.cspCost || 0, madness: 0, limbs: [], pool: detectPoolCost(entry.description || '') },
+      costs: { ap: ACTIVE_TAGS.has(tag) ? 1 : 0, csp: entry.cspCost || 0, madness: 0, limbs: [],
+        pool: POOL_OVERRIDES[id] ?? (POOL_GRANT_IDS.has(id) ? { key: '', amount: 0, variable: false, max: '' } : detectPoolCost(entry.description || '')) },
       range: detectRange(entry.description || ''),
       meta: { profession: cfg.profession, subpath: '', prerequisite: entry.prerequisite || '' },
-      activities: buildActivities(entry, cfg, tag),
+      activities,
+      ...overrideFields(id, tag, entry.description || ''),
     },
     effects: [],
-    flags: { sacadia: { catalogId: id, transcribed: true } },
+    flags: { sacadia: { catalogId: id, transcribed: true,
+      ...(OPPORTUNITY_IDS.includes(id) ? { opportunity: true } : {}),
+      ...(SELFSCALING_OVERRIDES[id] ? { selfScaling: SELFSCALING_OVERRIDES[id] } : {}) } },
   };
 }
 
@@ -432,7 +628,10 @@ function weaponToItem(pack, e) {
   return {
     _id, _key: `!items!${_id}`, name: e.name, type: 'gear', img: 'icons/svg/sword.svg',
     system: {
-      description: descParts.join(''), quantity: 1, weight: 0, value: e.value ?? 0, equipped: false, traits: '',
+      // Versatile weapons (the throwable ones) carry the trait, read as `self:attack:trait:versatile`.
+      description: descParts.join(''), quantity: 1, weight: 0, value: e.value ?? 0, equipped: false, traits: e.throw ? 'versatile' : '',
+      // Item slots (book p.187): basic weapons 1, military 2, heavy 3.
+      slots: /heavy/i.test(e.prereq ?? '') ? 3 : /military/i.test(e.prereq ?? '') ? 2 : 1, storage: 'ris', providesSis: 0,
       weaponType: e.type,
       weaponDamage: { count: e.denom ? String(e.count ?? 1) : '', denomination: e.denom ?? null, trait: e.denom ? weaponTrait(e) : '' },
       hands: e.hands ?? 1,
@@ -454,7 +653,7 @@ function armorToItem(pack, e) {
     _id, _key: `!items!${_id}`, name: e.name, type: 'armor', img: 'icons/svg/shield.svg',
     system: {
       description: e.prereq ? `<p><em>Prerequisite: ${e.prereq}</em></p>` : '',
-      equipped: false, category: e.category, defenses, maxStat: e.maxStat ?? null,
+      equipped: false, category: e.category, material: inferMaterial(e.name), defenses, maxStat: e.maxStat ?? null, slots: 1, storage: 'ris', providesSis: 0,
     },
     effects: [],
     flags: { sacadia: { catalogId: id, kind: 'armor' } },
@@ -472,7 +671,9 @@ function shieldToItem(pack, e) {
     _id, _key: `!items!${_id}`, name: e.name, type: 'armor', img: 'icons/svg/shield.svg',
     system: {
       description: descParts.join(''),
-      equipped: false, category: '', defenses, maxStat: null,
+      equipped: false, category: '', material: inferMaterial(e.name), shieldSize: inferShieldSize(e.name), defenses, maxStat: null,
+      // Item slots (book p.195): bucklers 1, shields 2, tower shields 3.
+      slots: { buckler: 1, shield: 2, tower: 3 }[inferShieldSize(e.name)], storage: 'ris', providesSis: 0,
       // Shield Bash: a Bludgeon attack vs PD (Power), reach 5ft.
       weaponType: 'shield',
       weaponDamage: { count: String(e.count ?? 1), denomination: e.denom, trait: 'power' },
@@ -484,7 +685,41 @@ function shieldToItem(pack, e) {
 }
 
 /** Write reviewable per-item source JSON, then compile a LevelDB compendium Foundry loads natively. */
+/**
+ * Write a JournalEntry pack: each entry at `!journal!<id>` (its `pages` as ids) and each page at
+ * `!journal.pages!<entryId>.<pageId>` — Foundry's LevelDB layout for embedded pages.
+ */
+async function writeJournalPack(pack, entry, pages) {
+  const srcDir = path.join(SRC_PACKS, pack);
+  fs.rmSync(srcDir, { recursive: true, force: true });
+  fs.mkdirSync(srcDir, { recursive: true });
+  fs.writeFileSync(path.join(srcDir, 'manual.json'), JSON.stringify({ ...entry, pages }, null, 2));
+  const db = new ClassicLevel(path.join(OUT_PACKS, pack), { keyEncoding: 'utf8', valueEncoding: 'json' });
+  try {
+    await db.open();
+  } catch (err) {
+    throw new Error(`Cannot open pack "${pack}" — is Foundry running with the world loaded?\n  ${err.message}`);
+  }
+  await db.clear();
+  const batch = db.batch();
+  batch.put(entry._key, entry);
+  for (const p of pages) batch.put(p._key, p);
+  await batch.write();
+  await db.close();
+}
+
+/**
+ * Stamp an item with a hash of its content (`flags.sacadia.buildHash`): an owned copy whose hash differs from the
+ * compendium's is out of date, and the system offers to refresh it (module/helpers/refresh.mjs).
+ */
+function stampBuildHash(item) {
+  const content = JSON.stringify({ name: item.name, img: item.img, system: item.system,
+    flags: Object.fromEntries(Object.entries(item.flags?.sacadia ?? {}).filter(([k]) => k !== 'buildHash')) });
+  item.flags.sacadia.buildHash = crypto.createHash('sha1').update(content).digest('hex').slice(0, 12);
+}
+
 async function writePack(pack, items) {
+  for (const item of items) stampBuildHash(item);
   const srcDir = path.join(SRC_PACKS, pack);
   fs.rmSync(srcDir, { recursive: true, force: true });
   fs.mkdirSync(srcDir, { recursive: true });
@@ -529,12 +764,18 @@ async function main() {
   // Hand-transcribed content (not in the Roll20 catalogs): the two missing profession trees,
   // Masteries, Adornments, Trinkets.
   const prof = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'professions-extra.json'), 'utf8'));
+  const prestige = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'prestige.json'), 'utf8'));
   const fbCfg = { profession: 'fatebound', atkCategory: 'melee' };
   const hulCfg = { profession: 'hulinari_warrior', atkCategory: 'melee' };
   const extra = [
     ['abilities-fatebound', prof.fatebound.map((e) => extraToItem('abilities-fatebound', fbCfg, e)), 'abilities'],
     ['abilities-hulinari', prof.hulinari_warrior.map((e) => extraToItem('abilities-hulinari', hulCfg, e)), 'abilities'],
     ['abilities-masteries', MASTERIES.map(masteryToItem), 'masteries'],
+    ['basic-actions', BASICS.map(basicToItem), 'basic actions'],
+    ['profession-features', PROGRESSION.map(featureToItem), 'profession features'],
+    ['abilities-magus', prestige.magus.map((e) => prestigeToItem('abilities-magus', 'magus', e)), 'abilities'],
+    ['abilities-witch', prestige.witch.map((e) => prestigeToItem('abilities-witch', 'witch', e)), 'abilities'],
+    ['abilities-lore', JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'lore.json'), 'utf8')).map(loreToItem), 'lore abilities'],
     ['equipment-adornments', ADORNMENTS.map((e) => equipmentToItem('equipment-adornments', 'adornment', e)), 'adornments'],
     ['equipment-trinkets', TRINKETS.map((e) => equipmentToItem('equipment-trinkets', 'trinket', e)), 'trinkets'],
     ['equipment-weapons', WEAPONS.map((e) => weaponToItem('equipment-weapons', e)), 'weapons'],
@@ -547,7 +788,12 @@ async function main() {
     console.log(`  ${pack.padEnd(24)} ${String(items.length).padStart(3)} ${noun}`);
   }
 
-  console.log(`\nBuilt ${Object.keys(CATALOGS).length + extra.length} packs, ${grand} items total.`);
+  // The User Manual (src/manual/*.md → one JournalEntry).
+  const manual = buildManual(path.join(ROOT, 'src', 'manual'), (k) => makeId('user-manual', k));
+  await writeJournalPack('user-manual', manual.entry, manual.pages);
+  console.log(`  ${'user-manual'.padEnd(24)} ${String(manual.pages.length).padStart(3)} manual pages`);
+
+  console.log(`\nBuilt ${Object.keys(CATALOGS).length + extra.length + 1} packs, ${grand} items total.`);
   console.log(`  (range auto-detected on ${ranged} catalog abilities)`);
 }
 

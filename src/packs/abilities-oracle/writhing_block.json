@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "writhing_block"
+      "catalogId": "writhing_block",
+      "buildHash": "bc8a32859c40"
     }
   }
 }

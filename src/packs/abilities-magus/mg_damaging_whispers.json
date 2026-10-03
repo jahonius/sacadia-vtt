@@ -1,0 +1,67 @@
+{
+  "_id": "6a16cf31e32398a7",
+  "_key": "!items!6a16cf31e32398a7",
+  "name": "Damaging Whispers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Hallowfell’s Whisper, if the target fails their Fate Check against Hallowfell’s Whisper, they take 2D6 damage. Increase the damage dealt this way to 2D8 at Level 5, and 2D10 at Level 11.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Hallowfell’s Whisper, Fate[4] · Research: Astrology[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "mg_hallowfells_whisper"
+      },
+      "special": {
+        "saveDamage": [
+          {
+            "level": 1,
+            "formula": "2d6"
+          },
+          {
+            "level": 5,
+            "formula": "2d8"
+          },
+          {
+            "level": 11,
+            "formula": "2d10"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_damaging_whispers",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Astrology[3]",
+      "buildHash": "be573bb35554"
+    }
+  }
+}

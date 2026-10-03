@@ -1,0 +1,43 @@
+{
+  "_id": "212d62380f6705ea",
+  "_key": "!items!212d62380f6705ea",
+  "name": "Atone",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Take a Long Rest Action in your Divine Site. Recover the use of Witch abilities at the end of this Long Rest action. If your Witch's Promise has fully ended (e.g., if you have completed your Pact of Vengeance), you may use the Atone action to choose a new Promise.</p>",
+    "tag": "ceremony",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_atone",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "7a6c2b1d2b92"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "711c7813484be9e3",
+  "_key": "!items!711c7813484be9e3",
+  "name": "Mastery of Schools",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Choose one ability from a different subclass than yours. Research that ability and add it to your Tome. You may take this ability (as may those who follow).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Magus Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_legendary_schools",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "09ef2a6ceb4a"
+    }
+  }
+}

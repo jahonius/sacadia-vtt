@@ -10,7 +10,10 @@
     "weight": 0,
     "value": 15,
     "equipped": false,
-    "traits": "",
+    "traits": "versatile",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "spear",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "spear",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "96df697377ab"
     }
   }
 }

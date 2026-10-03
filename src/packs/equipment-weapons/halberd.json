@@ -11,6 +11,9 @@
     "value": 200,
     "equipped": false,
     "traits": "",
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "spear",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "halberd",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "4e39f4af5a45"
     }
   }
 }

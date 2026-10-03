@@ -29,12 +29,22 @@
       "prerequisite": "Fate 3, Fateful Saves"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Graceful Saving",
+        "target": "trait",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "graceful_saving"
+      "catalogId": "graceful_saving",
+      "buildHash": "e318845fda0c"
     }
   }
 }

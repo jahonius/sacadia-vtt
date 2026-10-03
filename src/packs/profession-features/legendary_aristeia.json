@@ -1,0 +1,44 @@
+{
+  "_id": "da16953ab567ff4b",
+  "_key": "!items!da16953ab567ff4b",
+  "name": "Aristeia Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase your number of Glory points by two.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_aristeia",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "e420d5814ea9"
+    }
+  }
+}

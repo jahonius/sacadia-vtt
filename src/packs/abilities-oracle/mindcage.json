@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mindcage"
+      "catalogId": "mindcage",
+      "buildHash": "0a2a29431519"
     }
   }
 }

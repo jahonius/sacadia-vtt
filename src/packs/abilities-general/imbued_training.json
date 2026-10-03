@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "imbued_training"
+      "catalogId": "imbued_training",
+      "buildHash": "ff63c6db7354"
     }
   }
 }

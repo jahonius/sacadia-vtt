@@ -29,12 +29,35 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "special": {
+        "onConsume": {
+          "turnFlags": {
+            "turnAdvantage": {
+              "value": 1,
+              "category": "melee",
+              "vs": "pd",
+              "label": "Reckless Physical Attack"
+            }
+          },
+          "exposed": {
+            "adv": 1,
+            "vs": "pd"
+          }
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reckless_physical_attack"
+      "catalogId": "reckless_physical_attack",
+      "buildHash": "f91b74649643"
     }
   }
 }

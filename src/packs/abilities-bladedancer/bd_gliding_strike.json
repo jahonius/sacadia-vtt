@@ -29,12 +29,32 @@
       "prerequisite": "Glidestep, Finesse 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Gliding Strike",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@finesse",
+        "predicate": [
+          {
+            "atom": "target:new"
+          },
+          {
+            "atom": "self:used:basic:fiveFootAdjust"
+          },
+          {
+            "atom": "self:ability:bd_glidestep"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_gliding_strike"
+      "catalogId": "bd_gliding_strike",
+      "buildHash": "e1993935d9be"
     }
   }
 }

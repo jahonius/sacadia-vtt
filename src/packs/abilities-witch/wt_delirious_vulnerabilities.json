@@ -1,0 +1,53 @@
+{
+  "_id": "8171f0dea02ddc80",
+  "_key": "!items!8171f0dea02ddc80",
+  "name": "Delirious Vulnerabilities",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Touch a target within 5ft of you with any levels of Delirium. That Delirium no longer reduces their AD, MD, TD, and PD. Instead, it reduces their Damage Resistance to a minimum of zero.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "sourcePatch": {
+        "condition": "delirium",
+        "patch": {
+          "toDr": true
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_delirious_vulnerabilities",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "4ae4128d103d"
+    }
+  }
+}

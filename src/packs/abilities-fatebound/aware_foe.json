@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": "Targeted Foe"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Aware Foe",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:resisting:from:targeted-foe"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "aware_foe",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e8ab13114081"
     }
   }
 }

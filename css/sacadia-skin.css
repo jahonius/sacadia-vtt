@@ -1,0 +1,2939 @@
+@charset "UTF-8";
+:root {
+  --sac-umber: #231a10;
+  --sac-panel: #2d2315;
+  --sac-inset: #191207;
+  --sac-line: #4a3a22;
+  --sac-line-strong: #63512e;
+  --sac-text: #ead9b0;
+  --sac-dim: #a08c68;
+  --sac-gold: #d4a53c;
+  --sac-gold-hi: #f0d078;
+  --sac-gold-lo: #8a6a1d;
+  --sac-olive: #8a8552;
+  --sac-blood: #c05055;
+  --sac-blood-deep: #911d20;
+  --sac-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sac-font-ui: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sac-font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+/* Global styles */
+.window-app {
+  font-family: var(--sac-font-ui);
+}
+
+.rollable:hover, .rollable:focus {
+  color: var(--sac-gold-hi, #f0d078);
+  text-shadow: 0 0 8px rgba(212, 165, 60, 0.7);
+  cursor: pointer;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2/span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3/span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4/span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5/span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 6/span 6;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7/span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8/span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9/span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10/span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11/span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12/span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
+
+.align-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.align-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.align-center {
+  justify-content: center;
+  text-align: center;
+}
+
+.sac-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 11rem;
+  text-align: left;
+  font-family: var(--sac-font-ui);
+}
+.sac-tip .tip-title {
+  font-family: var(--sac-font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-gold);
+  border-bottom: 1px solid var(--sac-line);
+  padding-bottom: 0.15rem;
+  margin-bottom: 0.1rem;
+}
+.sac-tip .tip-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.sac-tip .tip-row .tip-k {
+  color: var(--sac-dim);
+  white-space: nowrap;
+}
+.sac-tip .tip-row .tip-k small {
+  opacity: 0.8;
+  font-style: italic;
+}
+.sac-tip .tip-row .tip-v {
+  font-family: var(--sac-font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--sac-text);
+  text-align: right;
+}
+.sac-tip .tip-row.total {
+  margin-top: 0.1rem;
+  padding-top: 0.15rem;
+  border-top: 1px solid var(--sac-line);
+}
+.sac-tip .tip-row.total .tip-k {
+  color: var(--sac-text);
+}
+.sac-tip .tip-row.total .tip-v {
+  color: var(--sac-gold);
+  font-weight: 700;
+}
+.sac-tip .tip-note {
+  color: var(--sac-dim);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+.sac-tip .tip-rule {
+  color: var(--sac-text);
+  font-size: 0.85rem;
+}
+.sac-tip .tip-level {
+  color: var(--sac-dim);
+  font-size: 0.82rem;
+}
+.sac-tip .tip-level.on {
+  color: var(--sac-gold-hi);
+  font-weight: 700;
+}
+
+.sac-rolltip .tip-warn {
+  color: var(--sac-blood);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+.sac-rolltip .tip-mods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-top: 0.15rem;
+  padding-top: 0.15rem;
+  border-top: 1px dashed var(--sac-line);
+}
+.sac-rolltip .tip-mods .tip-mods-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sac-rolltip .tip-mods .tip-mod {
+  font-size: 0.82rem;
+  color: var(--sac-gold-hi);
+}
+
+/* Styles limited to sacadia sheets */
+.sacadia {
+  /* ============================================================
+     Shared component vocabulary (used by slices B/C/D)
+     ============================================================ */
+  /* Save-to-negate row (Slinger et al.): the defender's own "Roll Save to Negate" button on a hit. */
+}
+.sacadia .window-content {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  font-family: var(--sac-font-ui);
+}
+.sacadia h1, .sacadia h2, .sacadia h3, .sacadia h4 {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  border-color: var(--sac-line-strong);
+}
+.sacadia input[type=text],
+.sacadia input[type=number],
+.sacadia select,
+.sacadia textarea {
+  background: var(--sac-inset);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia input[type=text]:focus,
+.sacadia input[type=number]:focus,
+.sacadia select:focus,
+.sacadia textarea:focus {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 4px rgba(212, 165, 60, 0.45);
+  outline: none;
+}
+.sacadia input[type=text]::placeholder,
+.sacadia input[type=number]::placeholder,
+.sacadia select::placeholder,
+.sacadia textarea::placeholder {
+  color: var(--sac-dim);
+  opacity: 0.7;
+}
+.sacadia select option {
+  background: var(--sac-inset);
+  color: var(--sac-text);
+}
+.sacadia button {
+  background: var(--sac-panel);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line-strong);
+}
+.sacadia button:hover, .sacadia button:focus {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 4px rgba(212, 165, 60, 0.35);
+}
+.sacadia a {
+  color: var(--sac-text);
+}
+.sacadia :focus-visible {
+  outline: 1px solid var(--sac-gold);
+  outline-offset: 1px;
+}
+.sacadia .sheet-tabs {
+  border-bottom-color: var(--sac-line-strong);
+}
+.sacadia .sheet-tabs .item {
+  color: var(--sac-dim);
+  font-family: var(--sac-font-display);
+}
+.sacadia .sheet-tabs .item.active {
+  border-bottom-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+}
+.sacadia .sheet-tabs .item:hover {
+  color: var(--sac-text);
+}
+.sacadia .px {
+  image-rendering: pixelated;
+}
+.sacadia ::-webkit-scrollbar {
+  width: 7px;
+}
+.sacadia ::-webkit-scrollbar-track {
+  background: var(--sac-umber);
+}
+.sacadia ::-webkit-scrollbar-thumb {
+  background: var(--sac-line-strong);
+  border-radius: 4px;
+}
+.sacadia .sac-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  font-weight: 600;
+}
+.sacadia .sac-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.42rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line);
+  color: var(--sac-dim);
+  white-space: nowrap;
+}
+.sacadia .sac-chip.tag {
+  border-color: var(--sac-olive);
+  color: var(--sac-olive);
+}
+.sacadia .sac-chip.ap {
+  border-color: var(--sac-gold-lo);
+  color: var(--sac-gold);
+}
+.sacadia .sac-chip.mad {
+  border-color: #6e181b;
+  color: var(--sac-blood);
+}
+.sacadia .sac-chip.warn {
+  border-color: var(--sac-blood-deep);
+  color: var(--sac-blood);
+}
+.sacadia .sac-chip.pool {
+  background: var(--sac-gold-lo);
+  border-color: var(--sac-gold-lo);
+  color: #14100a;
+}
+.sacadia .sac-chip.live {
+  border-color: var(--sac-olive);
+  color: var(--sac-olive);
+}
+.sacadia .sac-chip.live::before {
+  content: "●";
+  font-size: 0.55rem;
+}
+.sacadia .sac-chip.warn {
+  border-color: var(--sac-blood);
+  color: var(--sac-blood);
+}
+.sacadia .sac-pips {
+  display: flex;
+  gap: 0.28rem;
+  align-items: center;
+}
+.sacadia .sac-pip {
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  background: var(--sac-inset);
+}
+.sacadia .sac-pip.on {
+  background: linear-gradient(180deg, #e8c866, #b9872b);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .sac-pip.mad.on {
+  background: linear-gradient(180deg, #d4666b, var(--sac-blood-deep));
+  border-color: #6e181b;
+}
+.sacadia .sac-pip.threshold {
+  border-color: var(--sac-blood);
+  position: relative;
+}
+.sacadia .sac-pip.threshold::after {
+  content: "†";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sac-blood);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.sacadia .sac-meter {
+  height: 0.85rem;
+  min-width: 8rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.sacadia .sac-meter .fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: linear-gradient(180deg, #e8c866, #b9872b);
+}
+.sacadia .sac-meter .num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--sac-text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sac-streak {
+  display: inline-flex;
+  gap: 2px;
+  vertical-align: middle;
+}
+.sacadia .sac-streak i {
+  width: 5px;
+  height: 11px;
+  background: var(--sac-gold);
+  border-radius: 1px;
+  display: inline-block;
+}
+.sacadia .item-form {
+  font-family: var(--sac-font-ui);
+}
+.sacadia .sheet-header {
+  flex: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.sacadia .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.sacadia .sheet-header .header-fields {
+  flex: 1;
+}
+.sacadia .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+.sacadia .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.sacadia .sheet-tabs {
+  flex: 0;
+}
+.sacadia .sheet-body,
+.sacadia .sheet-body .tab,
+.sacadia .sheet-body .tab .editor {
+  height: 100%;
+}
+.sacadia .tox .tox-editor-container {
+  background: #fff;
+}
+.sacadia .tox .tox-edit-area {
+  padding: 0 8px;
+}
+.sacadia .resource-label {
+  font-weight: bold;
+}
+.sacadia .effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .effects-list .items-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0.15rem;
+  padding: 0.25rem 0.45rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  font-family: var(--sac-font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sacadia .effects-list .items-header .effect-name {
+  flex: 2;
+  margin: 0;
+  font-size: 0.74rem;
+  color: var(--sac-gold);
+  text-align: left;
+}
+.sacadia .effects-list .items-header .effect-source,
+.sacadia .effects-list .items-header .effect-duration {
+  flex: 1;
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: var(--sac-dim);
+}
+.sacadia .effects-list .items-header .item-controls {
+  flex: 0 0 auto;
+}
+.sacadia .effects-list .items-header .item-controls a {
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.sacadia .effects-list .items-header .item-controls a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .effects-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .effects-list .item.effect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.22rem 0.45rem;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .effects-list .item.effect:last-child {
+  border-bottom: none;
+}
+.sacadia .effects-list .item.effect:hover {
+  background: rgba(212, 165, 60, 0.05);
+}
+.sacadia .effects-list .item.effect .effect-name {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+.sacadia .effects-list .item.effect .effect-name .item-image {
+  flex: 0 0 auto;
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  background: var(--sac-inset);
+}
+.sacadia .effects-list .item.effect .effect-name h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--sac-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sacadia .effects-list .item.effect .effect-source,
+.sacadia .effects-list .item.effect .effect-duration {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sacadia .effects-list .item.effect .item-controls {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 0.55rem;
+}
+.sacadia .effects-list .item.effect .item-controls a {
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.sacadia .effects-list .item.effect .item-controls a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .effects-list .item.effect:has(.fa-toggle-off) {
+  opacity: 0.5;
+}
+.sacadia .effects-list .item.effect:has(.fa-toggle-off) .effect-name h4 {
+  font-style: italic;
+}
+.sacadia .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 0.25rem;
+}
+.sacadia .sheet-header,
+.sacadia .sheet-tabs {
+  flex: 0 0 auto;
+}
+.sacadia .tab:not(.active) {
+  display: none;
+}
+.sacadia .tab.active {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.sacadia .sheet-tabs {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.25rem;
+  margin: 0.25rem 0 0.5rem;
+  border-bottom: 2px solid var(--sac-line-strong);
+}
+.sacadia .sheet-tabs .item {
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.sacadia .sheet-tabs .item.active {
+  border-bottom-color: var(--sac-gold);
+  font-weight: bold;
+}
+.sacadia .sheet-tabs .item i {
+  margin-right: 0.25rem;
+}
+.sacadia .sheet-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.sacadia .sheet-header .profile-img {
+  flex: 0 0 auto;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.sacadia .sheet-header .header-fields {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .sheet-header .charname {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.sacadia .sheet-header .profession-row,
+.sacadia .sheet-header .header-stats,
+.sacadia .sheet-header .defenses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+  margin-top: 0.35rem;
+}
+.sacadia .sheet-header .header-stats {
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  align-items: flex-end;
+  flex: 1 1 22rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child {
+  flex: 1 1 10rem;
+}
+.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child .sac-meter {
+  width: auto;
+}
+.sacadia .sheet-header .header-stats .derived-cluster {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+.sacadia .sheet-header .defenses .defense {
+  flex: 1 1 5.5rem;
+}
+.sacadia .sheet-header .field {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+}
+.sacadia .sheet-header .field > span {
+  opacity: 0.75;
+}
+.sacadia .sheet-header .field select, .sacadia .sheet-header .field input {
+  min-width: 4rem;
+}
+.sacadia .sheet-header .field.level-field input {
+  width: 3.5rem;
+}
+.sacadia .sheet-header .header-stats .vital {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.sacadia .sheet-header .header-stats .vital .vital-num {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--sac-gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .hp-vital .hp-readout {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-cur {
+  width: 3rem;
+  text-align: center;
+  padding: 0.05rem 0.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .sep {
+  color: var(--sac-dim);
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-max {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  cursor: help;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-adj {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: 0.5rem;
+  cursor: help;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-adj-sign {
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-temp {
+  margin-left: 0.4rem;
+  padding: 0.02rem 0.35rem;
+  cursor: help;
+  font-family: var(--sac-font-ui);
+  font-weight: bold;
+  font-size: 0.72rem;
+  color: var(--sac-gold-hi);
+  background: rgba(212, 165, 60, 0.16);
+  border: 1px solid var(--sac-gold);
+  border-radius: 0.7rem;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-bonus {
+  width: 2.1rem;
+  text-align: center;
+  padding: 0.02rem 0.15rem;
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+  background: var(--sac-inset);
+  border: 1px dashed var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .sheet-header .hp-vital .hp-readout .hp-bonus:focus {
+  color: var(--sac-text);
+  border-style: solid;
+}
+.sacadia .sheet-header .hp-vital .hp-meter {
+  width: 11rem;
+  margin-top: 0.28rem;
+  height: 0.55rem;
+}
+.sacadia .sheet-header .madness-track {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.sacadia .sheet-header .madness-track .insane-note {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-blood);
+}
+.sacadia .sheet-header .header-stats .derived,
+.sacadia .sheet-header .defenses .defense {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  min-width: 3rem;
+  background: var(--sac-panel);
+}
+.sacadia .sheet-header .header-stats .derived label,
+.sacadia .sheet-header .defenses .defense label {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  font-weight: 600;
+}
+.sacadia .sheet-header .header-stats .derived span,
+.sacadia .sheet-header .defenses .defense span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .header-stats .derived .def-input,
+.sacadia .sheet-header .defenses .defense .def-input {
+  width: 2.6rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.04);
+}
+.sacadia .sheet-header .defenses .defense.superseded span {
+  color: var(--sac-dim);
+}
+.sacadia .sheet-header .defenses .defense .ad-mark {
+  margin-left: 0.12rem;
+  font-family: var(--sac-font-ui);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--sac-gold);
+  vertical-align: super;
+}
+.sacadia .sheet-header .header-stats .derived.lore span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.05rem;
+}
+.sacadia .sheet-header .header-stats .derived.lore span input {
+  width: 2rem;
+  text-align: center;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  background: transparent;
+  border: none;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .sheet-header .header-stats .derived.lore span input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid var(--sac-gold);
+}
+.sacadia .sheet-header .charname {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--sac-line);
+  border-radius: 0;
+}
+.sacadia .sheet-header .charname:focus {
+  border-bottom-color: var(--sac-gold);
+  box-shadow: none;
+}
+.sacadia .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  gap: 0.5rem;
+}
+.sacadia .stats-grid .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.35rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+}
+.sacadia .stats-grid .stat .stat-name {
+  font-weight: bold;
+}
+.sacadia .stats-grid .stat a.stat-name {
+  cursor: pointer;
+}
+.sacadia .stats-grid .stat a.stat-name:hover {
+  text-shadow: 0 0 6px rgba(212, 165, 60, 0.8);
+}
+.sacadia .stats-grid .stat input {
+  width: 3rem;
+  text-align: center;
+}
+.sacadia .trait-expertise {
+  margin: 0.6rem 0;
+}
+.sacadia .trait-expertise .expertise-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 0.4rem;
+}
+.sacadia .trait-expertise .expertise-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  background: var(--sac-inset);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.sacadia .trait-expertise .expertise-slot input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+.sacadia .trait-expertise .expertise-slot .expertise-icon {
+  font-size: 1.1rem;
+  color: var(--sac-dim);
+  transition: color 0.12s ease, filter 0.12s ease;
+}
+.sacadia .trait-expertise .expertise-slot .expertise-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.15;
+}
+.sacadia .trait-expertise .expertise-slot .expertise-trait {
+  font-family: var(--sac-font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--sac-text);
+}
+.sacadia .trait-expertise .expertise-slot .expertise-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .trait-expertise .expertise-slot:hover {
+  border-color: var(--sac-line-strong);
+  background: rgba(212, 165, 60, 0.05);
+}
+.sacadia .trait-expertise .expertise-slot:has(input:focus-visible) {
+  outline: 2px solid var(--sac-gold);
+  outline-offset: 1px;
+}
+.sacadia .trait-expertise .expertise-slot:has(input:checked) {
+  border-color: var(--sac-gold-lo);
+  background: rgba(212, 165, 60, 0.1);
+}
+.sacadia .trait-expertise .expertise-slot:has(input:checked) .expertise-icon {
+  color: var(--sac-gold);
+  filter: drop-shadow(0 0 5px rgba(212, 165, 60, 0.5));
+}
+.sacadia .trait-expertise .expertise-slot:has(input:checked) .expertise-trait {
+  color: var(--sac-gold-hi);
+}
+.sacadia .trait-expertise .expertise-slot:has(input:checked) .expertise-sub {
+  color: var(--sac-gold);
+}
+.sacadia .trait-expertise .expertise-empty {
+  margin: 0.2rem 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--sac-dim);
+}
+.sacadia .conditions .condition-group {
+  margin-bottom: 0.55rem;
+}
+.sacadia .conditions .condition-group h4 {
+  margin: 0 0 0.3rem;
+  padding-bottom: 0.15rem;
+  font-family: var(--sac-font-ui);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  border: none;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .condition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.3rem 0.6rem;
+}
+.sacadia .condition-grid .condition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.14rem 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: var(--sac-panel);
+}
+.sacadia .condition-grid .condition:hover {
+  border-color: var(--sac-line-strong);
+}
+.sacadia .condition-grid .condition .condition-name {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--sac-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.sacadia .condition-grid .condition .condition-name:hover {
+  color: var(--sac-text);
+}
+.sacadia .condition-grid .condition .condition-name:hover .resist-cue {
+  opacity: 0.9;
+  color: var(--sac-gold);
+}
+.sacadia .condition-grid .condition .resist-cue {
+  font-size: 0.62rem;
+  opacity: 0.28;
+  transition: opacity 0.1s, color 0.1s;
+}
+.sacadia .condition-grid .condition .condition-track {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+}
+.sacadia .condition-grid .condition .condition-track a {
+  cursor: pointer;
+  font-size: 0.68rem;
+  color: var(--sac-dim);
+  opacity: 0.4;
+  padding: 0 0.1rem;
+}
+.sacadia .condition-grid .condition .condition-track .condition-value {
+  min-width: 1.1rem;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--sac-dim);
+}
+.sacadia .condition-grid .condition:hover .condition-track a {
+  opacity: 1;
+}
+.sacadia .condition-grid .condition:hover .condition-track a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .condition-grid .condition.active {
+  border-color: var(--sac-blood);
+  background: rgba(145, 29, 32, 0.18);
+}
+.sacadia .condition-grid .condition.active .condition-name {
+  color: var(--sac-text);
+}
+.sacadia .condition-grid .condition.active .condition-value {
+  color: #e88d91;
+}
+.sacadia .tab[data-tab=stats] > div > h3 {
+  font-size: 1.05rem;
+  margin: 0.65rem 0 0.35rem;
+  padding-bottom: 0.12rem;
+  border-bottom: 1px solid var(--sac-line-strong);
+}
+.sacadia .talents .talent-group {
+  margin-bottom: 0.55rem;
+}
+.sacadia .talents .talent-group h4 {
+  margin: 0 0 0.3rem;
+  padding-bottom: 0.15rem;
+  font-family: var(--sac-font-ui);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  border: none;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .talents .talent-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.1rem 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .talents .talent {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.08rem 0.3rem;
+  border-radius: 4px;
+}
+.sacadia .talents .talent:hover {
+  background: rgba(212, 165, 60, 0.06);
+}
+.sacadia .talents .talent .prof-toggle {
+  display: flex;
+}
+.sacadia .talents .talent .prof-toggle input {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0;
+  accent-color: var(--sac-gold);
+}
+.sacadia .talents .talent .talent-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--sac-dim);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sacadia .talents .talent .talent-name:hover {
+  text-shadow: 0 0 6px rgba(212, 165, 60, 0.8);
+}
+.sacadia .talents .talent .talent-stat {
+  flex: 0 0 auto;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  opacity: 0.65;
+}
+.sacadia .talents .talent:has(input:checked) .talent-name {
+  color: var(--sac-gold-hi);
+  font-weight: 600;
+}
+.sacadia .talents .talent:has(input:checked) .talent-stat {
+  color: var(--sac-gold);
+  opacity: 1;
+}
+.sacadia .identity-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 0.45rem;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.7rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+}
+.sacadia .identity-band .id-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.sacadia .identity-band .id-field.wide {
+  grid-column: span 2;
+}
+.sacadia .identity-band .id-field > span {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .identity-band .id-field input, .sacadia .identity-band .id-field select {
+  width: 100%;
+  padding: 0.12rem 0.3rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  color: var(--sac-text);
+  font-family: var(--sac-font-display);
+  font-size: 0.85rem;
+}
+.sacadia .identity-band .id-field input:focus, .sacadia .identity-band .id-field select:focus {
+  border-color: var(--sac-gold-lo);
+  outline: none;
+}
+.sacadia .bio-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.sacadia .bio-section .bio-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .bio-section .bio-label {
+  font-family: var(--sac-font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--sac-gold);
+}
+.sacadia .bio-section .bio-hint {
+  min-width: 0;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--sac-dim);
+}
+.sacadia .bio-section .bio-input {
+  display: block;
+  width: 100%;
+  min-height: 2.6rem;
+  height: 6rem;
+  resize: vertical !important;
+  overflow: auto;
+  padding: 0.35rem 0.45rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  color: var(--sac-text);
+  font-family: var(--sac-font-ui);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.sacadia .bio-section .bio-input:focus {
+  border-color: var(--sac-gold-lo);
+  outline: none;
+}
+.sacadia .bio-section .bio-input[readonly] {
+  opacity: 0.85;
+  cursor: default;
+}
+.sacadia .placeholder {
+  opacity: 0.6;
+  font-style: italic;
+  padding: 1rem;
+}
+.sacadia .inv-group {
+  margin-bottom: 0.6rem;
+}
+.sacadia .inv-group .inv-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--sac-line-strong);
+}
+.sacadia .inv-group .inv-head a {
+  cursor: pointer;
+}
+.sacadia .inv-group .inv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .inv-group .inv-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.8rem;
+  padding: 0.15rem 0;
+}
+.sacadia .inv-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 3px;
+}
+.sacadia .inv-row:hover {
+  background: rgba(212, 165, 60, 0.07);
+}
+.sacadia .inv-row.equipped {
+  background: rgba(212, 165, 60, 0.13);
+}
+.sacadia .inv-row .equip-toggle {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .inv-row.equipped .equip-toggle {
+  color: var(--sac-gold);
+}
+.sacadia .inv-row .inv-img {
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .inv-row .inv-name {
+  flex: 1;
+}
+.sacadia .inv-row .armor-summary {
+  font-size: 0.7rem;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+.sacadia .inv-row .inv-qty {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.sacadia .inv-row .inv-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+.sacadia .inv-row .inv-controls a {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .inv-row .inv-controls a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .inv-row .signature-toggle {
+  color: var(--sac-dim);
+}
+.sacadia .inv-row .signature-toggle.on {
+  color: var(--sac-gold);
+}
+.sacadia .inv-row .sac-chip.signature {
+  color: var(--sac-gold-hi);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .inv-row .sac-chip.signature i {
+  color: var(--sac-gold);
+}
+.sacadia .inv-row .storage-toggle {
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--sac-gold);
+  white-space: nowrap;
+}
+.sacadia .inv-row .storage-toggle.sis {
+  color: var(--sac-dim);
+}
+.sacadia .sacadia .item-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--sac-dim);
+}
+.sacadia .sacadia .item-slots.overburdened {
+  color: var(--sac-blood);
+}
+.sacadia .sacadia .resistances-field, .sacadia .sacadia .size-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+}
+.sacadia .sacadia .resistances-field span, .sacadia .sacadia .size-field span {
+  color: var(--sac-dim);
+  white-space: nowrap;
+}
+.sacadia .sacadia .resistances-field input, .sacadia .sacadia .size-field input {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .sacadia .talent-group.specialties h4 a {
+  cursor: pointer;
+  margin-left: 0.3rem;
+}
+.sacadia .sacadia .talent-group.specialties .specialty {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+.sacadia .sacadia .talent-group.specialties .specialty input[type=text] {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .sacadia .talent-group.specialties .specialty select {
+  flex: 0 1 8rem;
+  min-width: 0;
+}
+.sacadia .sacadia .talent-group.specialties .specialty .rank {
+  width: 2.6rem;
+}
+.sacadia .sacadia .talent-group.specialties .specialty a {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .sacadia .talent-group.specialties .specialty a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .research-list .prereq-met {
+  color: var(--sac-olive);
+}
+.sacadia .research-list .prereq-unmet {
+  color: var(--sac-blood);
+}
+.sacadia.item .sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.sacadia.item .sheet-header .profile-img {
+  flex: 0 0 auto;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  background: var(--sac-inset);
+}
+.sacadia.item .sheet-header .header-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+  flex: 1;
+}
+.sacadia.item .sheet-header .charname {
+  font-family: var(--sac-font-display);
+  font-size: 1.3rem;
+}
+.sacadia.item .sheet-header .item-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-gold);
+}
+.sacadia .armor-fields .toggle,
+.sacadia .gear-fields .toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+  cursor: pointer;
+}
+.sacadia .armor-fields .toggle input,
+.sacadia .gear-fields .toggle input {
+  accent-color: var(--sac-gold);
+}
+.sacadia.item .tab[data-tab=description] prose-mirror, .sacadia.item .tab[data-tab=description] > .prose {
+  display: block;
+  min-height: 8rem;
+  padding: 0.4rem 0.5rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+}
+.sacadia .abilities-top {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .abilities-top .add-ability {
+  cursor: pointer;
+  white-space: nowrap;
+}
+.sacadia .statblock-prompt .hint {
+  margin: 0 0 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+.sacadia .statblock-prompt textarea {
+  width: 100%;
+  min-height: 14rem;
+  resize: vertical;
+  font-family: var(--sac-font-mono, monospace);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.sacadia .statblock-prompt .statblock-help {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+}
+.sacadia .statblock-prompt .statblock-help summary {
+  cursor: pointer;
+  font-weight: bold;
+  opacity: 0.85;
+}
+.sacadia .statblock-prompt .statblock-help summary:hover {
+  opacity: 1;
+}
+.sacadia .statblock-prompt .statblock-help .sbh-body {
+  padding: 0.3rem 0.1rem 0;
+}
+.sacadia .statblock-prompt .statblock-help .sbh-body p {
+  margin: 0.4rem 0 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sacadia .statblock-prompt .statblock-help .sbh-body code {
+  padding: 0 0.2rem;
+}
+.sacadia .statblock-prompt .statblock-help pre {
+  margin: 0.15rem 0;
+  padding: 0.4rem 0.55rem;
+  overflow-x: auto;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  font-family: var(--sac-font-mono, monospace);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  white-space: pre;
+  user-select: text;
+  -webkit-user-select: text;
+  cursor: text;
+}
+.sacadia .statblock-prompt .statblock-help .sbh-use-example {
+  flex: 0 0 auto;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  padding: 0.05rem 0.5rem;
+  width: auto;
+}
+.sacadia .statblock-prompt .statblock-help .sbh-use-example i {
+  margin-right: 0.15rem;
+}
+.sacadia .combat-panel {
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  background: var(--sac-panel);
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.sacadia .combat-panel .cp-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1rem;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .combat-panel .cp-pools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.7rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--sac-line);
+}
+.sacadia .combat-panel .cp-pools .cp-pool {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.sacadia .combat-panel .cp-pools .cp-pool label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .combat-panel .cp-pools .cp-pool input {
+  flex: 0 0 auto;
+  width: 2.4rem !important;
+  text-align: center;
+  padding: 0.05rem 0.2rem;
+  font-family: var(--sac-font-display);
+  font-size: 0.95rem;
+  color: var(--sac-gold-hi);
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .combat-panel .cp-pools .cp-pool .sep {
+  color: var(--sac-dim);
+}
+.sacadia .combat-panel .cp-cover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--sac-line);
+}
+.sacadia .combat-panel .cp-cover > i {
+  color: var(--sac-gold);
+}
+.sacadia .combat-panel .cp-cover > .sac-label {
+  margin: 0;
+}
+.sacadia .combat-panel .cp-cover select {
+  flex: 0 0 auto;
+  width: auto !important;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.8rem;
+  color: var(--sac-text);
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .combat-panel .ap-readout {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.sacadia .combat-panel .ap-readout > i {
+  color: var(--sac-gold);
+}
+.sacadia .combat-panel .ap-readout > label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .combat-panel .ap-readout .ap-values {
+  font-family: var(--sac-font-display);
+}
+.sacadia .combat-panel .ap-readout .ap-values b {
+  font-size: 1.35rem;
+  color: var(--sac-gold-hi);
+}
+.sacadia .combat-panel .ap-readout .ap-max {
+  width: 2.4rem;
+  text-align: center;
+  padding: 0.02rem 0.2rem;
+  font-family: var(--sac-font-display);
+  font-size: 1rem;
+  color: var(--sac-gold-hi);
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+}
+.sacadia .combat-panel .ap-readout .reset-turn {
+  cursor: pointer;
+  opacity: 0.7;
+  margin-left: 0.1rem;
+}
+.sacadia .combat-panel .ap-readout .reset-turn:hover {
+  opacity: 1;
+  color: var(--sac-gold-hi);
+}
+.sacadia .combat-panel .cp-counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin-left: auto;
+}
+.sacadia .combat-panel .cp-counters .cp-counter {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .combat-panel .cp-counters .cp-counter label {
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .combat-panel .cp-counters .cp-counter b {
+  color: var(--sac-gold-hi);
+}
+.sacadia .combat-panel .cp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: flex-start;
+}
+.sacadia .combat-panel .cp-block {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+.sacadia .combat-panel .cp-block > .sac-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.sacadia .combat-panel .cp-live {
+  margin-top: 0.45rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--sac-line);
+}
+.sacadia .combat-panel .cp-live > .sac-label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.sacadia .combat-panel .limb-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.sacadia .combat-panel .limb {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line);
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.sacadia .combat-panel .limb input {
+  display: none;
+}
+.sacadia .combat-panel .limb:hover {
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .combat-panel .limb.spent {
+  background: rgba(145, 29, 32, 0.3);
+  border-color: #6e393c;
+  color: #e0a5a8;
+}
+.sacadia .combat-panel .log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .combat-panel .log-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+.sacadia .combat-panel .log-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  padding: 0.05rem 0;
+}
+.sacadia .combat-panel .log-entry .log-label {
+  flex: 1;
+}
+.sacadia .combat-panel .log-entry .log-ap {
+  opacity: 0.8;
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .combat-panel .log-entry a {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.sacadia .combat-panel .log-entry a:hover {
+  opacity: 1;
+}
+.sacadia .combat-panel .cs-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  padding: 0.08rem 0;
+}
+.sacadia .combat-panel .cs-line .cs-name {
+  color: var(--sac-gold-hi);
+  font-weight: 600;
+}
+.sacadia .combat-panel .cs-line .cs-detail {
+  color: var(--sac-dim);
+  font-size: 0.7rem;
+}
+.sacadia .combat-aux {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.sacadia .combat-aux .aux-group {
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  background: var(--sac-panel);
+  padding: 0.4rem 0.55rem;
+}
+.sacadia .combat-aux .aux-group > .sac-label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.sacadia .combat-aux .favored-group {
+  flex: 1 1 14rem;
+}
+.sacadia .combat-aux .cracked-rolls {
+  display: flex;
+  gap: 0.3rem;
+}
+.sacadia .combat-aux .cracked-die {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.sacadia .combat-aux .basic-actions-group {
+  flex: 1 1 100%;
+}
+.sacadia .combat-aux .bigger-stones-group {
+  flex: 1 1 12rem;
+}
+.sacadia .combat-aux .bigger-stones-group .bigger-stones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.sacadia .combat-aux .bigger-stones-group .bs-slot {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+.sacadia .combat-aux .bigger-stones-group .bs-slot input {
+  width: 2.6rem;
+  text-align: center;
+}
+.sacadia .combat-aux .favored-enemies {
+  width: 100%;
+}
+.sacadia .combat-aux .basic-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.sacadia .combat-aux .basic-action {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  padding: 0.12rem 0.5rem;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 10px;
+  color: var(--sac-text);
+}
+.sacadia .combat-aux .basic-action small {
+  opacity: 0.7;
+  margin-left: 0.1rem;
+}
+.sacadia .combat-aux .basic-action:hover {
+  background: rgba(212, 165, 60, 0.12);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .csp-footer {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--sac-line);
+}
+.sacadia .csp-footer label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.sacadia .csp-footer .csp-values {
+  font-size: 0.82rem;
+}
+.sacadia .csp-footer .csp-values b {
+  font-size: 1.05rem;
+  color: var(--sac-gold-hi);
+}
+.sacadia .csp-footer .csp-values small {
+  color: var(--sac-dim);
+  margin-left: 0.25rem;
+}
+.sacadia .boost-tray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.5rem;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid var(--sac-gold);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--sac-gold) 12%, var(--sac-panel));
+}
+.sacadia .boost-tray .boost-tray-label {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  color: var(--sac-gold-hi);
+  margin-right: 0.2rem;
+}
+.sacadia .boost-tray .boost-chip {
+  cursor: pointer;
+}
+.sacadia .boost-tray .boost-chip:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .sac-chip.armed {
+  border-color: var(--sac-gold);
+  background: color-mix(in srgb, var(--sac-gold) 22%, transparent);
+  color: var(--sac-gold-hi);
+}
+.sacadia .ability-card.armed {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 0 1px var(--sac-gold) inset;
+}
+.sacadia .ability-group {
+  margin-bottom: 0.5rem;
+}
+.sacadia .ability-group h3 {
+  border-bottom: 1px solid var(--sac-line-strong);
+  margin-bottom: 0.2rem;
+}
+.sacadia .ability-group .ability-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-auto-flow: row dense;
+  gap: 0.5rem;
+  align-items: start;
+}
+.sacadia .ability-group .ability-empty {
+  opacity: 0.55;
+  font-style: italic;
+  font-size: 0.8rem;
+  padding: 0.15rem 0;
+  grid-column: 1/-1;
+}
+.sacadia .rest-controls,
+.sacadia .npc-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.sacadia .rest-controls a,
+.sacadia .npc-controls a {
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.sacadia .rest-controls a:hover,
+.sacadia .npc-controls a:hover {
+  opacity: 1;
+}
+.sacadia .npc-controls a {
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 10px;
+  color: var(--sac-text);
+}
+.sacadia .npc-controls a:hover {
+  background: rgba(212, 165, 60, 0.12);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .npc-controls a i {
+  color: var(--sac-gold);
+}
+.sacadia .name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sacadia .refresh-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--sac-gold-lo);
+  border-radius: 6px;
+  background: rgba(212, 165, 60, 0.08);
+  font-size: 0.8rem;
+  color: var(--sac-text);
+}
+.sacadia .refresh-notice i {
+  color: var(--sac-gold);
+}
+.sacadia .refresh-notice a {
+  margin-left: auto;
+  cursor: pointer;
+  color: var(--sac-gold-hi);
+  font-weight: 600;
+}
+.sacadia .refresh-notice a:hover {
+  text-decoration: underline;
+}
+.sacadia .refresh-list {
+  max-height: 14rem;
+  overflow-y: auto;
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+}
+.sacadia .ability-card {
+  border: 1px solid var(--sac-line);
+  border-radius: 6px;
+  background: var(--sac-panel);
+  overflow: hidden;
+}
+.sacadia .ability-card.expanded {
+  border-color: var(--sac-line-strong);
+  grid-column: 1/-1;
+}
+.sacadia .ability-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+}
+.sacadia .ability-row:hover {
+  background: rgba(212, 165, 60, 0.06);
+}
+.sacadia .ability-row .ability-use {
+  position: relative;
+  flex: 0 0 auto;
+  display: block;
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.sacadia .ability-row .ability-use .ability-img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  border: none;
+  border-radius: 0;
+}
+.sacadia .ability-row .ability-use .use-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 14, 6, 0.55);
+  color: var(--sac-gold-hi);
+  font-size: 1.6rem;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.sacadia .ability-row .ability-use:hover {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 6px rgba(212, 165, 60, 0.45);
+}
+.sacadia .ability-row .ability-use:hover .use-overlay {
+  opacity: 1;
+}
+.sacadia .ability-row .ability-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-top: 0.1rem;
+}
+.sacadia .ability-row .ability-name {
+  font-family: var(--sac-font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.15;
+  cursor: pointer;
+}
+.sacadia .ability-row .ability-name:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .ability-row .ability-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  align-items: center;
+}
+.sacadia .ability-row .out-of-range {
+  font-size: 0.62rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0 0.3rem;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--sac-blood-deep);
+  white-space: nowrap;
+}
+.sacadia .ability-row.is-out-of-range .ability-name {
+  opacity: 0.6;
+}
+.sacadia .ability-row .ability-controls {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+.sacadia .ability-row .ability-controls a {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .ability-row .ability-controls a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .ability-drawer {
+  border-top: 1px solid var(--sac-line);
+  background: var(--sac-inset);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--sac-dim);
+}
+.sacadia .ability-drawer p {
+  margin: 0.25rem 0;
+}
+.sacadia .ability-drawer p:first-child {
+  margin-top: 0;
+}
+.sacadia .ability-drawer p:last-child {
+  margin-bottom: 0;
+}
+.sacadia .form-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.2rem 0;
+}
+.sacadia .form-row > label {
+  flex: 0 0 9rem;
+  opacity: 0.8;
+}
+.sacadia .form-row > select, .sacadia .form-row > input, .sacadia .form-row > multi-checkbox {
+  flex: 1;
+}
+.sacadia .ability-fields fieldset,
+.sacadia .armor-fields fieldset,
+.sacadia .gear-fields fieldset {
+  margin: 0.5rem 0;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem 0.5rem;
+}
+.sacadia .ability-fields fieldset legend,
+.sacadia .armor-fields fieldset legend,
+.sacadia .gear-fields fieldset legend {
+  padding: 0 0.35rem;
+  font-family: var(--sac-font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sac-gold);
+}
+.sacadia .ability-fields fieldset legend a,
+.sacadia .armor-fields fieldset legend a,
+.sacadia .gear-fields fieldset legend a {
+  margin-left: 0.3rem;
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .ability-fields fieldset legend a:hover,
+.sacadia .armor-fields fieldset legend a:hover,
+.sacadia .gear-fields fieldset legend a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .activity {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .activity .activity-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.sacadia .activity .activity-head select {
+  flex: 0 0 8rem;
+}
+.sacadia .activity .activity-head input {
+  flex: 1;
+}
+.sacadia .activity .activity-head a {
+  cursor: pointer;
+}
+.sacadia .modifier {
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .modifier .modifier-head {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.sacadia .modifier .modifier-head .label {
+  flex: 1;
+}
+.sacadia .modifier .modifier-head a {
+  cursor: pointer;
+}
+.sacadia .modifier .modifier-effect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+.sacadia .modifier .modifier-effect label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  opacity: 0.85;
+  flex: 1 1 6rem;
+}
+.sacadia .modifier .modifier-predicate {
+  margin-top: 0.3rem;
+}
+.sacadia .modifier .modifier-predicate > span {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.sacadia .modifier .modifier-predicate > span a {
+  cursor: pointer;
+  margin-left: 0.3rem;
+}
+.sacadia .modifier .modifier-predicate .atom {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+.sacadia .modifier .modifier-predicate .atom input {
+  flex: 1;
+}
+.sacadia .modifier .modifier-predicate .atom a {
+  cursor: pointer;
+}
+.sacadia .damage-parts {
+  margin-top: 0.3rem;
+}
+.sacadia .damage-parts .damage-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+.sacadia .damage-parts .damage-head a {
+  cursor: pointer;
+}
+.sacadia .damage-parts .damage-part {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin: 0.2rem 0;
+}
+.sacadia .damage-parts .damage-part .count {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .denom, .sacadia .damage-parts .damage-part .trait {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .type {
+  flex: 0 0 5rem;
+}
+.sacadia .damage-parts .damage-part .formula {
+  flex: 1;
+}
+.sacadia .damage-parts .damage-part a {
+  cursor: pointer;
+}
+.sacadia.ability-card {
+  background: var(--sac-umber);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  color: var(--sac-text);
+}
+.sacadia.ability-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-bottom: 1px solid var(--sac-line);
+  padding-bottom: 0.3rem;
+}
+.sacadia.ability-card .card-header img {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 auto;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 5px;
+}
+.sacadia.ability-card .card-header h3 {
+  margin: 0;
+  border: none;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  margin: 0.25rem 0;
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .card-meta .tag {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sac-olive);
+}
+.sacadia.ability-card .card-roll {
+  margin: 0.3rem 0;
+}
+.sacadia.ability-card .card-roll h4 {
+  margin: 0.1rem 0;
+  color: var(--sac-dim);
+  border: none;
+  font-family: var(--sac-font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.sacadia.ability-card .card-roll h4 small {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.sacadia.ability-card .card-roll.to-hit.is-crit {
+  border-radius: 0.3rem;
+  box-shadow: 0 0 0 1px var(--sac-gold) inset;
+  padding: 0.15rem 0.3rem;
+}
+.sacadia.ability-card .crit-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--sac-font-ui);
+  font-weight: bold;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card .crit-banner i {
+  color: var(--sac-gold);
+}
+.sacadia.ability-card .card-temphp {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: #6fbf85;
+}
+.sacadia.ability-card .card-temphp small {
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .pend-note {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--sac-font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card .pend-note i {
+  color: var(--sac-gold);
+}
+.sacadia.ability-card .card-onuse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  font-size: 0.78rem;
+}
+.sacadia.ability-card .card-onuse i {
+  color: var(--sac-gold);
+}
+.sacadia.ability-card .card-onuse .onuse-note {
+  padding: 0.05rem 0.35rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 0.7rem;
+  background: rgba(0, 0, 0, 0.12);
+}
+.sacadia.ability-card .resolution-row .crit-tag {
+  font-family: var(--sac-font-ui);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card.reaction-prompt {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--sac-gold);
+  border-radius: 0.3rem;
+  background: rgba(212, 165, 60, 0.1);
+}
+.sacadia.ability-card.reaction-prompt .reaction-head {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--sac-font-ui);
+  font-weight: bold;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card.reaction-prompt .reaction-head i {
+  color: var(--sac-gold);
+}
+.sacadia.ability-card.reaction-prompt .reaction-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+}
+.sacadia.ability-card.reaction-prompt .reaction-opt {
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 0.75rem;
+  font-size: 0.78rem;
+  background: rgba(0, 0, 0, 0.12);
+}
+.sacadia.ability-card .crit-chooser {
+  margin-top: 0.35rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--sac-gold);
+  border-radius: 0.3rem;
+  background: rgba(212, 165, 60, 0.1);
+}
+.sacadia.ability-card .crit-chooser .crit-chooser-head {
+  font-family: var(--sac-font-ui);
+  font-weight: bold;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card .crit-chooser .crit-chooser-head i {
+  color: var(--sac-gold);
+  margin-right: 0.25rem;
+}
+.sacadia.ability-card .crit-chooser ul {
+  margin: 0.2rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.sacadia.ability-card .crit-chooser .crit-choice {
+  font-size: 0.8rem;
+  padding: 0.05rem 0;
+}
+.sacadia.ability-card .crit-chooser .crit-choice small {
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .crit-chooser .crit-choice.kind-damage {
+  color: var(--sac-gold-hi);
+  font-weight: bold;
+}
+.sacadia.ability-card .crit-chooser .crit-choice.kind-note {
+  opacity: 0.75;
+}
+.sacadia.ability-card .crit-chooser .crit-self {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.25rem;
+}
+.sacadia.ability-card .crit-chooser .crit-self button {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+  border-color: var(--sac-gold);
+}
+.sacadia.ability-card .card-activity {
+  border-top: 1px solid var(--sac-line);
+  padding-top: 0.25rem;
+  margin-top: 0.25rem;
+}
+.sacadia.ability-card .activity-label {
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--sac-gold-hi);
+}
+.sacadia.ability-card .card-save button {
+  width: 100%;
+  cursor: pointer;
+}
+.sacadia.ability-card .card-desc {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .dice-roll .dice-formula, .sacadia.ability-card .dice-roll .dice-total {
+  background: var(--sac-inset);
+  border-color: var(--sac-line-strong);
+  color: var(--sac-text);
+}
+.sacadia.ability-card .card-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: baseline;
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px dashed var(--sac-line);
+  font-size: 0.75rem;
+}
+.sacadia.ability-card .card-modifiers .mod-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  letter-spacing: 0.03em;
+}
+.sacadia.ability-card .card-modifiers .mod {
+  padding: 0 0.3rem;
+  border-radius: 0.25rem;
+  background: rgba(212, 165, 60, 0.16);
+  color: var(--sac-text);
+}
+.sacadia.ability-card .card-resolution:not(:empty) {
+  margin-top: 0.4rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid var(--sac-line);
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .target {
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .hit {
+  color: #6fbf85;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.sacadia.ability-card .card-resolution:not(:empty) .resolution-row .miss {
+  color: var(--sac-blood);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.sacadia.gm-note {
+  font-size: 0.85rem;
+}
+.sacadia.gm-note .hp-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+.sacadia.gm-note .hp-controls button {
+  flex: 1;
+  min-width: fit-content;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.35rem;
+}
+.sacadia.gm-note .hp-controls button.applied {
+  border-color: #1a7f37;
+  font-weight: bold;
+}
+.sacadia.gm-note .hp-controls button.undo {
+  flex: 0 0 auto;
+  opacity: 0.8;
+}
+.sacadia.gm-note .hp-controls button.mark-dead {
+  flex-basis: 100%;
+  border-color: #911d20;
+  color: #911d20;
+  font-weight: bold;
+}
+.sacadia.gm-note .cond-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+.sacadia.gm-note .cond-controls .cond-name {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 0.15rem;
+}
+.sacadia.gm-note .cond-controls button {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+}
+.sacadia.gm-note .cond-controls button.apply {
+  border-color: #7a5b1e;
+}
+.sacadia.gm-note .cond-controls button.undo {
+  opacity: 0.8;
+}
+.sacadia.gm-note .crit-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+  padding-top: 0.2rem;
+  border-top: 1px dashed var(--sac-gold);
+}
+.sacadia.gm-note .crit-controls .crit-label {
+  flex-basis: 100%;
+  font-family: var(--sac-font-ui);
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sac-gold-hi);
+}
+.sacadia.gm-note .crit-controls button.crit-opt {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+  border-color: var(--sac-gold);
+}
+.sacadia.gm-note .post-roll-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+.sacadia.gm-note button.post-roll {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  font-weight: bold;
+}
+.sacadia .sacadia .resolution-row.save-negate {
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.sacadia .sacadia .resolution-row.save-negate button {
+  cursor: pointer;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.05rem 0.4rem;
+}
+.sacadia .adv-prompt label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.sacadia .adv-prompt .adv-custom-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.4rem;
+}
+.sacadia .adv-prompt .adv-custom-row input[name=level] {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .adv-prompt .adv-custom-row .adv-roll-custom {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sacadia .adv-prompt .hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.sacadia .resist-prompt .rp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+.sacadia .resist-prompt .rp-row label {
+  flex: 0 0 8rem;
+  font-weight: bold;
+}
+.sacadia .resist-prompt .rp-row select, .sacadia .resist-prompt .rp-row input {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .resist-prompt .source-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  font-weight: bold;
+}
+.sacadia .resist-prompt .hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.sacadia .research-list {
+  display: grid;
+  gap: 0.2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 0.4rem;
+}
+.sacadia .research-list .research-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.sacadia .research-list .research-row small {
+  opacity: 0.75;
+}
+.sacadia.resist-card {
+  background: var(--sac-umber);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  color: var(--sac-text);
+}
+.sacadia.resist-card .rc-head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--sac-line);
+  padding-bottom: 0.3rem;
+}
+.sacadia.resist-card .rc-head i {
+  color: var(--sac-gold);
+}
+.sacadia.resist-card .rc-sub {
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+  margin: 0.3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.sacadia.resist-card .rc-dice {
+  list-style: none;
+  margin: 0.2rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.sacadia.resist-card .rc-die {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-variant-numeric: tabular-nums;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  background: var(--sac-inset);
+}
+.sacadia.resist-card .rc-die .rc-d20 {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  min-width: 1.6rem;
+}
+.sacadia.resist-card .rc-die .rc-plus {
+  color: var(--sac-dim);
+  font-size: 0.8rem;
+}
+.sacadia.resist-card .rc-die .rc-total {
+  font-weight: bold;
+  margin-left: 0.1rem;
+}
+.sacadia.resist-card .rc-die b {
+  margin-left: auto;
+}
+.sacadia.resist-card .rc-die.pass b {
+  color: #6fbf85;
+}
+.sacadia.resist-card .rc-die.fail b {
+  color: var(--sac-blood);
+}
+.sacadia.resist-card .rc-die.dropped {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+.sacadia.resist-card .rc-die.auto {
+  font-style: italic;
+  color: var(--sac-dim);
+}
+.sacadia.resist-card .rc-die.pending {
+  color: var(--sac-text);
+}
+.sacadia.resist-card .rc-resolution {
+  margin-top: 0.35rem;
+  padding-top: 0.3rem;
+  border-top: 1px solid var(--sac-line);
+  font-weight: bold;
+  text-align: center;
+  color: var(--sac-dim);
+}
+.sacadia.resist-card .rc-resolution .took {
+  color: var(--sac-blood);
+}
+.sacadia.resist-card .rc-resolution .clean {
+  color: #6fbf85;
+}
+.sacadia.resist-card .rc-resolution .pending {
+  color: var(--sac-dim);
+  font-style: italic;
+  font-weight: normal;
+}
+.sacadia.gm-note .rc-manual-dice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.25rem 0;
+}
+.sacadia.gm-note .rc-manual-dice .rc-total {
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  font-variant-numeric: tabular-nums;
+}
+.sacadia .effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sacadia .effects-list .items-header,
+.sacadia .effects-list .item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.15rem 0.25rem;
+}
+.sacadia .effects-list .items-header {
+  border-bottom: 1px solid var(--sac-line-strong);
+  font-weight: bold;
+}
+.sacadia .effects-list .item-name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.sacadia .effects-list .item-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+.sacadia .effects-list .item-controls a {
+  cursor: pointer;
+}

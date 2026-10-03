@@ -28,13 +28,23 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hindkick",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "scope": "basic_kick"
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hindkick",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "ea579ce6374a"
     }
   }
 }

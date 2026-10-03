@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "phalanx_push"
+      "catalogId": "phalanx_push",
+      "buildHash": "f2257c3d143c"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_tricky_boy"
+      "catalogId": "bd_tricky_boy",
+      "buildHash": "836b1cd0ddde"
     }
   }
 }

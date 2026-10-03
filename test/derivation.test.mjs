@@ -16,6 +16,9 @@ import {
   loreLimit,
   effectiveDefenseValue,
   damageAfterDr,
+  poolsAfterDamage,
+  deathThreshold,
+  foldPendingAttack,
   matchesAtom,
   evaluatePredicate,
   resolveModifierValue,
@@ -66,8 +69,8 @@ test("defenseValue", () => {
 // Check DC (book p.218): 9 + profession stat + Proficiency + floor(Courage/3).
 test("checkDc", () => {
   assert.equal(checkDc({ professionStat: 0, proficiency: 1, courage: 0 }), 10);
-  assert.equal(checkDc({ professionStat: 3, proficiency: 1, courage: 6 }), 15); // 9+3+1+2
-  assert.equal(checkDc({ professionStat: 4, proficiency: 3, courage: 8 }), 18); // 9+4+3+floor(8/3)=2
+  assert.equal(checkDc({ professionStat: 3, proficiency: 1, courage: 6 }), 16); // 9+3+1+floor(6/2)=3 (v1.2)
+  assert.equal(checkDc({ professionStat: 4, proficiency: 3, courage: 7 }), 19); // 9+4+3+floor(7/2)=3
 });
 
 // Suggested Max Health: Σ (profession HP/level × that track's level).
@@ -154,7 +157,8 @@ test("effectiveDefenseValue", () => {
 // DR soaks damage, floored at 0.
 test("damageAfterDr", () => {
   assert.equal(damageAfterDr(10, 3), 7);
-  assert.equal(damageAfterDr(2, 5), 0); // never negative
+  assert.equal(damageAfterDr(2, 5), 1); // an attack deals at least 1 (p.192)
+  assert.equal(damageAfterDr(0, 5), 0); // no damage stays no damage
   assert.equal(damageAfterDr(8, 0), 8);
 });
 
@@ -211,4 +215,42 @@ test("diceLadderFormula", () => {
   assert.equal(diceLadderFormula(null, LADDER), ""); // no ladder value
   assert.equal(diceLadderFormula(99, LADDER), "2d10"); // clamped to last
   assert.equal(diceLadderFormula(2, null), ""); // no ladder
+});
+
+test("poolsAfterDamage: temp HP absorbs before real HP (book p.223)", () => {
+  // Temp fully absorbs a small hit; real HP untouched.
+  assert.deepEqual(poolsAfterDamage(20, 5, 3), { temp: 2, value: 20 });
+  // Hit exactly empties temp.
+  assert.deepEqual(poolsAfterDamage(20, 5, 5), { temp: 0, value: 20 });
+  // Overflow spills past temp into real HP.
+  assert.deepEqual(poolsAfterDamage(20, 5, 8), { temp: 0, value: 17 });
+  // No temp → straight to HP, and on below 0.
+  assert.deepEqual(poolsAfterDamage(4, 0, 10), { temp: 0, value: -6 }); // below 0 = Wounded (book p.230)
+  // Undefended defaults are safe.
+  assert.deepEqual(poolsAfterDamage(10, undefined, undefined), { temp: 0, value: 10 });
+});
+
+test("foldPendingAttack: sums one-shot next-attack buffs into flat sinks + target conditions", () => {
+  // Critical Strike (advantage) + Sapped Fates (to-hit) + Sapping Strike (damage) stacked.
+  const f = foldPendingAttack([
+    { advantage: 1, label: "Critical Strike" },
+    { toHit: 3, label: "Sapped Fates" },
+    { damage: 2, dieStep: 1, label: "Sapping Strike" },
+  ]);
+  assert.equal(f.advantage, 1);
+  assert.equal(f.toHit, 3);
+  assert.equal(f.damage, 2);
+  assert.equal(f.dieStep, 1);
+  assert.deepEqual(f.notes, ["Critical Strike", "Sapped Fates", "Sapping Strike"]);
+  // "Treat the next target as …" conditions collect (Killing Frenzy → Surprised, Reaching Claw → Prone).
+  const g = foldPendingAttack([{ targetCondition: "surprised", label: "Killing Frenzy" }]);
+  assert.deepEqual(g.conditions, ["surprised"]);
+  // Empty / undefined is the zero fold.
+  assert.deepEqual(foldPendingAttack(), { advantage: 0, toHit: 0, damage: 0, dieStep: 0, conditions: [], notes: [] });
+});
+
+test("deathThreshold: −½ max HP, rounded toward zero (book p.230)", () => {
+  assert.equal(deathThreshold(60), -30);
+  assert.equal(deathThreshold(59), -29);
+  assert.equal(deathThreshold(10), -5);
 });

@@ -28,13 +28,16 @@
       "subpath": "",
       "prerequisite": "Skittish, Courage 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "defensive_step",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4e644dd9b4fd"
     }
   }
 }

@@ -1,0 +1,50 @@
+{
+  "_id": "5d056b4dbe7f568d",
+  "_key": "!items!5d056b4dbe7f568d",
+  "name": "Stone Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Earth Elemental Weapon"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move",
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stone_weapon",
+      "transcribed": true,
+      "buildHash": "7b701f8aedc0"
+    }
+  }
+}

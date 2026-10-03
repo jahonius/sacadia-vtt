@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "tauntingly_defended"
+      "catalogId": "tauntingly_defended",
+      "buildHash": "e37c05d49c15"
     }
   }
 }

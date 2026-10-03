@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Targeted Foe"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "crushing_blow",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e8cf5e7aeb70"
     }
   }
 }

@@ -29,12 +29,20 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Reverse Pankration",
+        "target": "saveDc",
+        "mode": "add",
+        "value": "floor(@target.hits/2)"
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_reverse_pankration"
+      "catalogId": "thug_reverse_pankration",
+      "buildHash": "b5a495d398f6"
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "_id": "f705e6abf648bb31",
+  "_key": "!items!f705e6abf648bb31",
+  "name": "Research Breakthrough",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Immediately research up to 3 abilities for which you meet the requirements, without expending a long rest action.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Level Feature",
+      "prerequisite": "Magus Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_research_breakthrough",
+      "feature": true,
+      "level": 5,
+      "buildHash": "b21aaaa3805a"
+    }
+  }
+}

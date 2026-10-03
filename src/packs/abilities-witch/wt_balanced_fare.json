@@ -1,0 +1,43 @@
+{
+  "_id": "fed3f2942145b774",
+  "_key": "!items!fed3f2942145b774",
+  "name": "Balanced Fare",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In response to an ally within 5ft of you attempting to hit a target and missing, you may deal XD6 damage to them, where X is the amount by which they missed. They then hit. You cannot use this to turn a natural 1 into a hit. They must agree to take this damage before you roll the dice, and before the attack hits.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Promise of Justice"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_balanced_fare",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "4698014879ab"
+    }
+  }
+}

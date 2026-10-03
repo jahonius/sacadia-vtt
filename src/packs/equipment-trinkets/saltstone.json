@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "saltstone",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "28c75432ae1e"
     }
   }
 }

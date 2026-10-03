@@ -29,12 +29,32 @@
       "prerequisite": "Finesse 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "special": {
+        "onConsume": {
+          "turnFlags": {
+            "turnAdvantage": {
+              "value": 1,
+              "label": "Reckless Loosing"
+            }
+          },
+          "exposed": {
+            "adv": 2
+          }
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reckless_loosing"
+      "catalogId": "reckless_loosing",
+      "buildHash": "9796cd1b45df"
     }
   }
 }

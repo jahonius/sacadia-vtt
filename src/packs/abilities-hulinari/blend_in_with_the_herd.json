@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "blend_in_with_the_herd",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "03596f490ed8"
     }
   }
 }

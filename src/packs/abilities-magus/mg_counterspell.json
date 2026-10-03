@@ -1,0 +1,63 @@
+{
+  "_id": "aacd1d088f34cfa4",
+  "_key": "!items!aacd1d088f34cfa4",
+  "name": "Counterspell",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In reaction to a target who you can see and hear casting a spell or using a mental attack within 60ft of you, expend a Spell Slot and force them to make a Wiles Check. If they fail the Wiles Check against your Check DC, cancel the effects of that spell or mental attack. They still expend AP and exhaust limbs as though they used that ability.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[2] · Research: Magic Detection Talent"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_counterspell",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magic Detection Talent",
+      "buildHash": "f92926fc7e35"
+    }
+  }
+}

@@ -50,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "excuse_me"
+      "catalogId": "excuse_me",
+      "buildHash": "443d012d74a4"
     }
   }
 }

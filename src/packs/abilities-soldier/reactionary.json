@@ -31,12 +31,14 @@
       "prerequisite": "Courage 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grantsReaction": 1
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reactionary"
+      "catalogId": "reactionary",
+      "buildHash": "7918c71f9aa6"
     }
   }
 }

@@ -30,6 +30,24 @@
     },
     "activities": [],
     "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "effects": [
+        {
+          "label": "Mad Spector",
+          "target": "saveDc",
+          "value": "@madness"
+        }
+      ],
+      "special": {
+        "onConsume": {
+          "madness": "1d3-1",
+          "selfDamage": "3*@madness"
+        }
+      }
+    },
     "madness": {
       "prereq": 4,
       "gain": "1d3-1"
@@ -38,7 +56,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mad_spector"
+      "catalogId": "mad_spector",
+      "buildHash": "81edaa106e93"
     }
   }
 }

@@ -39,18 +39,39 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
-        "damage": [],
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 6,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "blade_aura",
-      "transcribed": true
+      "transcribed": true,
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 3
+        },
+        {
+          "level": 11,
+          "ladderIndex": 4
+        }
+      ],
+      "buildHash": "c239011da81c"
     }
   }
 }

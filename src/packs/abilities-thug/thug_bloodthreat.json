@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_bloodthreat"
+      "catalogId": "thug_bloodthreat",
+      "buildHash": "c52bcffeecc5"
     }
   }
 }

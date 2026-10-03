@@ -8,6 +8,7 @@ import {
   suggestedMaxHealth,
   suggestedMaxHealthPools,
 } from "../helpers/derivation.mjs";
+import { ownsAbility } from "../helpers/actor-utils.mjs";
 
 /**
  * The player character. Adds level/progression, professions, talents, conditions, exhaustion,
@@ -65,6 +66,30 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       secondary: professionField(0)
     });
 
+    // Character identity (book Ch. I–III): the ancestral/cultural anchors shown on the Backstory tab.
+    // Heritage is bounded to the six species; Culture and the specialized Ancestry stay free text
+    // (open-ended, Culture-gated). Age/size are Heritage attributes recorded as free text.
+    const heritageKeys = Object.keys(CONFIG.SACADIA.heritages);
+    schema.identity = new fields.SchemaField({
+      culture: new fields.StringField({ required: true, blank: true }),
+      heritage: new fields.StringField({ required: true, blank: true, choices: heritageKeys }),
+      ancestry: new fields.StringField({ required: true, blank: true }),
+      age: new fields.StringField({ required: true, blank: true }),
+      size: new fields.StringField({ required: true, blank: true })
+    });
+
+    // Background prompts, taken from the book's "Creating your Background" step (p.18). Plain-text
+    // (textarea) fields for quick writing; the general narrative lives in the shared `biography`.
+    const noteField = () => new fields.StringField({ required: true, blank: true });
+    schema.background = new fields.SchemaField({
+      appearance: noteField(),
+      connections: noteField(),
+      beliefs: noteField(),
+      secrets: noteField(),
+      culturalTies: noteField(),
+      mementos: noteField()
+    });
+
     // Trait Expertise: two reroll-one-failed-d20 toggles (labeled from the primary profession).
     schema.traitExpertise = new fields.SchemaField({
       slot1: new fields.BooleanField({ initial: false }),
@@ -78,6 +103,15 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       });
       return obj;
     }, {}));
+
+    // Specialized talents (book p.146): a named specialization of a general talent with 1–3 ranks (a cultural specialty
+    // adds one more). Rolled as the general talent with 1X advantage per rank. Also what prerequisites like Handcopy[2]
+    // and Religion: Astrology[3] check against.
+    schema.specialties = new fields.ArrayField(new fields.SchemaField({
+      name: new fields.StringField({ required: true, blank: true }),
+      talent: new fields.StringField({ required: true, blank: true }),
+      rank: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 6 }),
+    }));
 
     // (Leveled conditions live on the shared base actor.)
 
@@ -94,8 +128,19 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       sentinel: new fields.SchemaField({
         favored: new fields.ArrayField(new fields.StringField({
           required: true, blank: false, choices: Object.keys(CONFIG.SACADIA.creatureTypes),
-        }))
-      })
+        })),
+        // Bigger Stones — a permanent per-ability weapon-type choice (takeable twice → count 0–2 per
+        // ranged family). Each point adds one damage die-size to attacks with that weapon.
+        biggerStones: new fields.SchemaField({
+          bow: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 2 }),
+          crossbow: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 2 }),
+          sling: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 2 }),
+        }),
+      }),
+      // Hulinari Warrior: the subtype that shapes your beast form (Pack / Brute / Swarm).
+      hulinari: new fields.SchemaField({
+        form: new fields.StringField({ required: true, blank: true, choices: Object.keys(CONFIG.SACADIA.hulinariForms) }),
+      }),
     });
 
     return schema;
@@ -116,13 +161,35 @@ export default class SacadiaCharacter extends SacadiaActorBase {
    * stay at max 0. Value is only clamped *down* to max — refilling to max is a rest action, not derived.
    */
   _preparePools() {
-    const owns = (id) => id && this.parent?.items?.some(
-      (i) => i.type === 'ability' && (i.flags?.sacadia?.catalogId ?? i.id) === id);
+    const owns = (id) => ownsAbility(this.parent, id);
     for (const [pool, { grant, scale }] of Object.entries(CONFIG.SACADIA.poolGrants)) {
       const cp = this.classPools?.[pool];
       if (!cp || !owns(grant)) continue;
       cp.max = owns(scale) ? this.proficiency * 2 : this.proficiency;
-      if (cp.value > cp.max) cp.value = cp.max;
+    }
+    // Poolmonger: "Choose one Action Pool … Increase the number of points you have by 1" (per instance).
+    for (const { id, value } of this._picks?.().pool ?? []) {
+      const cp = this.classPools?.[value];
+      if (id === 'poolmonger' && cp && cp.max > 0) cp.max += 1;
+    }
+    // Legendary Masteries that enlarge a pool by two (Aristeia → Glory, Trick → Trickshot, Vision → Prescient).
+    for (const [id, pool] of [['legendary_aristeia', 'glory'], ['legendary_trick', 'trickshot'], ['legendary_vision', 'prescient']]) {
+      const cp = this.classPools?.[pool];
+      if (cp && cp.max > 0 && owns(id)) cp.max += 2;
+    }
+    // Flat per-ability additions (the Magus's "Gain 3 Spell Slots" features — each owned instance counts).
+    for (const [pool, table] of Object.entries(CONFIG.SACADIA.poolBonuses ?? {})) {
+      const cp = this.classPools?.[pool];
+      if (!cp) continue;
+      for (const i of this.parent?.items ?? []) {
+        const add = i.type === 'ability' ? table[i.flags?.sacadia?.catalogId] : 0;
+        if (add) cp.max += add;
+      }
+    }
+    // Clamp down only after every bonus is in (a refill to the enlarged max must survive re-prep).
+    for (const [pool, { grant }] of Object.entries(CONFIG.SACADIA.poolGrants)) {
+      const cp = this.classPools?.[pool];
+      if (cp && (owns(grant) || cp.max > 0) && cp.value > cp.max) cp.value = cp.max;
     }
   }
 
@@ -145,6 +212,16 @@ export default class SacadiaCharacter extends SacadiaActorBase {
     const n = super._modifierNumbers();
     n.proficiency = proficiencyForLevel(this.level);
     n.level = n.lvl = this.level;
+    // Each profession's own level (`@professionLevel.magus`) — prestige features scale with it.
+    for (const slot of ['primary', 'secondary']) {
+      const p = this.professions?.[slot];
+      if (p?.key) n[`professionLevel.${p.key}`] = p.level ?? 0;
+    }
+    // Bigger Stones die-size counts per ranged weapon family → `@biggerStones.<type>`.
+    const bs = this.professionResources?.sentinel?.biggerStones ?? {};
+    n['biggerStones.bow'] = bs.bow ?? 0;
+    n['biggerStones.crossbow'] = bs.crossbow ?? 0;
+    n['biggerStones.sling'] = bs.sling ?? 0;
     return n;
   }
 
@@ -162,14 +239,21 @@ export default class SacadiaCharacter extends SacadiaActorBase {
     // Lore Limit (the Lore Points max) from Level + Fate; value stays player-editable/spendable.
     this.lorePoints.max = loreLimit(level, this.stats.fate?.value ?? 0);
 
-    // Suggested maxes (hints only — the real maxes stay player-editable).
+    // Max Health: the standard (non-rolling) value — each profession track's HP/level × its level —
+    // plus the manual `bonus`. Derived, so setting Oracle 7 gives 49 automatically; `value` clamps to it.
     const { primary, secondary } = this.professions;
     const hp = CONFIG.SACADIA.professionHpPerLevel;
-    this.health.suggestedMax = suggestedMaxHealth([
+    this.health.standardMax = suggestedMaxHealth([
       { hpPerLevel: hp[primary.key], level: primary.level },
       { hpPerLevel: hp[secondary.key], level: secondary.level }
     ]);
-    this.healthPools.suggestedMax = suggestedMaxHealthPools(level, this.stats.power?.value ?? 0);
+    // `bonuses.healthMax` carries owned `health.max` modifiers (Living Wall's +2/level), folded in
+    // during super.prepareDerivedData()'s `_prepareModifiers` — so it's populated by the time we get here.
+    this.health.max = Math.max(0, this.health.standardMax + (this.health.bonus ?? 0) + (this.bonuses?.healthMax ?? 0));
+    if (this.health.value > this.health.max) this.health.value = this.health.max;
+    // Healthy Soul (General): "Increase the number of HP pools you receive by 1."
+    const healthySoul = this.parent?.items?.some((i) => i.flags?.sacadia?.catalogId === 'healthy_soul') ? 1 : 0;
+    this.healthPools.suggestedMax = suggestedMaxHealthPools(level, this.stats.power?.value ?? 0) + healthySoul;
   }
 
   /**
@@ -189,11 +273,14 @@ export default class SacadiaCharacter extends SacadiaActorBase {
   _prepareCheckDc() {
     const courage = this.stats.courage?.value ?? 0;
     this.checkDc = {};
+    // Flat Check-DC bonus (Check Please's +1), folded from `checkDc`-target modifiers during
+    // _prepareModifiers (which ran in super.prepareDerivedData(), so it's populated by now).
+    const dcBonus = this.bonuses?.checkDc ?? 0;
     for (const slot of ["primary", "secondary"]) {
       const key = this.professions[slot].key;
       const statKey = CONFIG.SACADIA.professionCheckDcStat[key];
       this.checkDc[slot] = (key && statKey)
-        ? checkDc({ professionStat: this.stats[statKey]?.value ?? 0, proficiency: this.proficiency, courage })
+        ? checkDc({ professionStat: this.stats[statKey]?.value ?? 0, proficiency: this.proficiency, courage }) + dcBonus
         : null;
     }
   }

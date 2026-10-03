@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Lucky Break, Fate 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "god_given_luck",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5d993ca12c6b"
     }
   }
 }

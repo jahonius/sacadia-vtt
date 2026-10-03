@@ -29,12 +29,25 @@
       "prerequisite": "Harm"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_harm"
+      },
+      "special": {
+        "marginStep": {
+          "margin": 5,
+          "steps": 1
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_backpress"
+      "catalogId": "thug_backpress",
+      "buildHash": "58999b3b1df7"
     }
   }
 }

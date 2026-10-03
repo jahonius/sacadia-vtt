@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": "Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "onConsume": {
+          "turnFlags": {
+            "ignoreConditions": true
+          }
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "glory_of_storms",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "a454ee4f67a7"
     }
   }
 }

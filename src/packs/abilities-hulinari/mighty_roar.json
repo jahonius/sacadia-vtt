@@ -39,18 +39,26 @@
         },
         "save": {
           "trait": "courage",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "fatigue",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mighty_roar",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "21059a0134ed"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_spreaderstep"
+      "catalogId": "bd_spreaderstep",
+      "buildHash": "9b8bc6e49b67"
     }
   }
 }

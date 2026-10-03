@@ -1,0 +1,45 @@
+{
+  "_id": "bc548ef5034671fd",
+  "_key": "!items!bc548ef5034671fd",
+  "name": "Checkered Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In response to taking damage, expend a reaction and reduce that damage by 1D8 to a minimum of 1 damage. Increase the dice type of Shield to 1D10 at Level 5, and 2D6 at level 11.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[2] · Research: Magical Identification[1]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_checkered_shield",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magical Identification[1]",
+      "buildHash": "7d078594834c"
+    }
+  }
+}

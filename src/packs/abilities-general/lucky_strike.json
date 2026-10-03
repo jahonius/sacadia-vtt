@@ -29,12 +29,20 @@
       "prerequisite": "Fate 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "lucky_strike"
+      "catalogId": "lucky_strike",
+      "buildHash": "71bbd5153d15"
     }
   }
 }

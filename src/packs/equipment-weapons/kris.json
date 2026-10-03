@@ -11,6 +11,9 @@
     "value": 60,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "dagger",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "kris",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "e852e8013b34"
     }
   }
 }

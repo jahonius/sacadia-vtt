@@ -1,0 +1,51 @@
+{
+  "_id": "b1c2666861f6187e",
+  "_key": "!items!b1c2666861f6187e",
+  "name": "Focused Bite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage of Birdbite by 1 Dice Type for every Focus Action you are actively maintaining.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Birdbite, Wiles 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Focused Bite",
+        "target": "damage",
+        "mode": "step",
+        "scope": "birdbite",
+        "value": "@combat.focusMaintained",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "focused_bite",
+      "transcribed": true,
+      "buildHash": "b76ecb9613c8"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "_id": "1c47323a7c166e17",
+  "_key": "!items!1c47323a7c166e17",
+  "name": "Toxin to Tonic",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one allied target within 5ft with at least one level of one of the Weak Adversarial Conditions below, and choose one such condition they possess. Expend Divine Touch Points equal to the level of that condition they possess. For as long as you maintain Focus and they have levels of that condition, the effect of that condition changes according to the below: Nausea: For each level of Nausea they possess, increase their to-hit by 1. Paralysis: Limbs affected by Paralysis do not exhaust Delirium: For each level of Delirium the target possesses, they gain 1 DR Slowed: For each level of Slowed the target possesses, increase their move speed by 5ft Sting: For each level of Sting the target possesses, increase the damage they deal by 1</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "divine",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition becomes a tonic?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Toxin to Tonic",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.tonic.<choice>",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_toxin_to_tonic",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "f1f37728895e"
+    }
+  }
+}

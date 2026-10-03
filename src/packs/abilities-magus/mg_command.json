@@ -1,0 +1,94 @@
+{
+  "_id": "279f679a8cf9b6fd",
+  "_key": "!items!279f679a8cf9b6fd",
+  "name": "Command",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a spell slot and choose one target within 30ft of you. They make a Courage Check against your Check DC or expend a reaction to take a below action you choose: Drop: Target creature becomes prone Attack: Target makes a basic attack with an equipped weapon against a target you choose within range Approach: Target moves as far as it can up to its move speed towards you Flee: Target moves as far as it can up to its move speed away from you</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Finesse[2] · Research: Speaker[2], Religious Rites[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "self:choice:mg_command:drop"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Command",
+      "options": [
+        {
+          "value": "drop",
+          "label": "Drop (Prone)"
+        },
+        {
+          "value": "attack",
+          "label": "Attack a target you choose"
+        },
+        {
+          "value": "approach",
+          "label": "Approach you"
+        },
+        {
+          "value": "flee",
+          "label": "Flee from you"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_command",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Speaker[2], Religious Rites[2]",
+      "buildHash": "10f07de0307c"
+    }
+  }
+}

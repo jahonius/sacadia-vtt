@@ -29,12 +29,22 @@
       "prerequisite": "Gutwrenching Strike, Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Gutwrenching Twist",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@finesse",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_gutwrenching_twist"
+      "catalogId": "thug_gutwrenching_twist",
+      "buildHash": "596d7446a54a"
     }
   }
 }

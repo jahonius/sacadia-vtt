@@ -29,12 +29,28 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Ground Wrestle",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "inflict:pinned"
+          },
+          {
+            "atom": "target:condition:prone"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_ground_wrestle"
+      "catalogId": "thug_ground_wrestle",
+      "buildHash": "105a8c7c3f93"
     }
   }
 }

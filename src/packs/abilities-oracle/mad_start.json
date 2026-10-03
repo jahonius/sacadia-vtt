@@ -39,7 +39,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mad_start"
+      "catalogId": "mad_start",
+      "buildHash": "32cb6732432e"
     }
   }
 }

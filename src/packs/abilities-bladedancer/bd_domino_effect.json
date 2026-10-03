@@ -28,13 +28,35 @@
       "subpath": "trickster",
       "prerequisite": "Tripping Blade, Finesse 5"
     },
-    "activities": [],
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
     "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_domino_effect"
+      "catalogId": "bd_domino_effect",
+      "buildHash": "3f75f603071f"
     }
   }
 }

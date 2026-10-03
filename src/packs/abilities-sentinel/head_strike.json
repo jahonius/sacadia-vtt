@@ -29,12 +29,41 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "effects": [
+        {
+          "label": "Head Strike",
+          "target": "damageDice",
+          "value": "(ceil(@proficiency/2))d8",
+          "predicate": [
+            {
+              "atom": "!self:ability:head_off"
+            }
+          ]
+        },
+        {
+          "label": "Head Strike",
+          "target": "damageDice",
+          "value": "(@proficiency)d8",
+          "predicate": [
+            {
+              "atom": "self:ability:head_off"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "head_strike"
+      "catalogId": "head_strike",
+      "buildHash": "a59c211c0313"
     }
   }
 }

@@ -28,32 +28,30 @@
       "subpath": "tangler",
       "prerequisite": ""
     },
-    "activities": [
-      {
-        "type": "damage",
-        "label": "",
-        "attack": {
-          "category": "",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "",
-          "dc": null
-        },
-        "damage": [
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "basic_kick"
+      },
+      "special": {
+        "saveDamage": [
           {
-            "count": "1",
-            "denomination": 10,
-            "formula": "",
-            "trait": "power",
-            "type": ""
+            "level": 1,
+            "formula": "1d10 + @power"
+          },
+          {
+            "level": 5,
+            "formula": "2d6 + @power"
+          },
+          {
+            "level": 11,
+            "formula": "2d8 + @power"
           }
-        ],
-        "inflict": []
+        ]
       }
-    ],
-    "modifiers": []
+    }
   },
   "effects": [],
   "flags": {
@@ -68,7 +66,8 @@
           "level": 11,
           "ladderIndex": 6
         }
-      ]
+      ],
+      "buildHash": "16097793780a"
     }
   }
 }

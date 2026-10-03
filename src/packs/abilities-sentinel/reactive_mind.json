@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reactive_mind"
+      "catalogId": "reactive_mind",
+      "buildHash": "45868fcd310d"
     }
   }
 }

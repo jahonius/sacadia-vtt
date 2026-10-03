@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "pincushion"
+      "catalogId": "pincushion",
+      "buildHash": "1a6126444316"
     }
   }
 }

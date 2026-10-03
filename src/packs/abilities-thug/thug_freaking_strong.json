@@ -29,12 +29,26 @@
       "prerequisite": "Focused Rage, Power 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Freaking Strong",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:raging"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_freaking_strong"
+      "catalogId": "thug_freaking_strong",
+      "buildHash": "75cb52c0a9f0"
     }
   }
 }

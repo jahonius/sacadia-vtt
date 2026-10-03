@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>For as long as you maintain Focus on Multiplicity, whenever you deal damage to a new unique target enemy, increase the damage you deal in all attacks by 1 (to a maximum of your Proficiency) for as long as you maintain Focus. [Adds a Temporary Modifier below, off by default - toggle it on and bump its value per unique target hit.]</p>",
+    "description": "<p>For as long as you maintain Focus on Multiplicity, whenever you deal damage to a new unique target enemy, increase the damage you deal in all attacks by 1 (to a maximum of your Proficiency) for as long as you maintain Focus.</p>",
     "tag": "focus",
     "costs": {
       "ap": 1,
@@ -31,12 +31,26 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Multiplicity",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "min(@combat.focusTargets.bd_multiplicity, @proficiency)",
+        "predicate": [
+          {
+            "atom": "self:used:bd_multiplicity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_multiplicity"
+      "catalogId": "bd_multiplicity",
+      "buildHash": "e21d09f1fd5c"
     }
   }
 }

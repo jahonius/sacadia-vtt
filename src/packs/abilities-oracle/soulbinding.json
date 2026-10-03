@@ -41,13 +41,18 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "half"
         },
         "damage": [],
         "inflict": []
       }
     ],
     "modifiers": [],
+    "mark": {
+      "key": "soulbound",
+      "exclusive": true
+    },
     "madness": {
       "prereq": 3
     }
@@ -55,7 +60,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "soulbinding"
+      "catalogId": "soulbinding",
+      "buildHash": "48c70647f4ae"
     }
   }
 }

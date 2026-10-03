@@ -59,7 +59,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_hot_coal"
+      "catalogId": "blessing_of_hot_coal",
+      "buildHash": "f3c7b154547a"
     }
   }
 }

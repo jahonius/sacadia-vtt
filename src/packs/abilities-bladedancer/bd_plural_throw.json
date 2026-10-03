@@ -55,7 +55,15 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "multiAttack": {
+      "count": 2,
+      "targeting": "split",
+      "upgrade": {
+        "ability": "bd_triple_throw",
+        "count": 3
+      }
+    }
   },
   "effects": [],
   "flags": {
@@ -70,7 +78,8 @@
           "level": 11,
           "ladderIndex": 4
         }
-      ]
+      ],
+      "buildHash": "7b3e079e2841"
     }
   }
 }

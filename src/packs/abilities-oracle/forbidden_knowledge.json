@@ -55,12 +55,17 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "multiAttack": {
+      "targeting": "each",
+      "requiresAbility": "forbidden_web"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "forbidden_knowledge"
+      "catalogId": "forbidden_knowledge",
+      "buildHash": "24f8e9807cc2"
     }
   }
 }

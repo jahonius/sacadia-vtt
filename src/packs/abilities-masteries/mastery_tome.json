@@ -34,7 +34,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_tome",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "cc4a345f039a"
     }
   }
 }

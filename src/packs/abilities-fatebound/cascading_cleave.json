@@ -28,13 +28,22 @@
       "subpath": "",
       "prerequisite": "Slicemaster"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "cascading_cleave",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "006dddbf476b"
     }
   }
 }

@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "labyrinth_gaze"
+      "catalogId": "labyrinth_gaze",
+      "buildHash": "01689aa683ad"
     }
   }
 }

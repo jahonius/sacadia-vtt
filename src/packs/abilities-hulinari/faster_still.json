@@ -28,13 +28,26 @@
       "subpath": "",
       "prerequisite": "Bulk Muscle, Finesse 6"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Faster Still",
+        "target": "speed",
+        "value": "10",
+        "predicate": [
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "faster_still",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8fe0069b2f5c"
     }
   }
 }

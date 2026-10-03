@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "divine_messages"
+      "catalogId": "divine_messages",
+      "buildHash": "58915d9dd710"
     }
   }
 }

@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": []
@@ -52,7 +53,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "disrupt_focus"
+      "catalogId": "disrupt_focus",
+      "buildHash": "f9b9e1b80aaa"
     }
   }
 }

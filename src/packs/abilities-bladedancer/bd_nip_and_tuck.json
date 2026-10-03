@@ -29,12 +29,20 @@
       "prerequisite": "Artery Strike, Finesse 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 2,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_nip_and_tuck"
+      "catalogId": "bd_nip_and_tuck",
+      "buildHash": "87b2f40d4ca8"
     }
   }
 }

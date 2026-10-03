@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "courage",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": []
@@ -52,7 +53,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "agro"
+      "catalogId": "agro",
+      "buildHash": "800192c9063f"
     }
   }
 }

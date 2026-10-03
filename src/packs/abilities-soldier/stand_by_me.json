@@ -31,12 +31,37 @@
       "prerequisite": "Courage 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Stand By Me",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.trait",
+          "mode": 2,
+          "value": "ceil(@courage/2)"
+        },
+        {
+          "key": "system.bonuses.damage.all",
+          "mode": 2,
+          "value": "ceil(@courage/2)",
+          "predicate": [
+            {
+              "atom": "self:ability:standing_strike"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "stand_by_me"
+      "catalogId": "stand_by_me",
+      "buildHash": "351f728e3682"
     }
   }
 }

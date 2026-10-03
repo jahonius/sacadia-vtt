@@ -58,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_harmful_shadow"
+      "catalogId": "thug_harmful_shadow",
+      "buildHash": "4e8bf2c715b1"
     }
   }
 }

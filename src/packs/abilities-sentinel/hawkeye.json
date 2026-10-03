@@ -29,12 +29,29 @@
       "prerequisite": "Bowman, Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Hawkeye",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "ceil(@proficiency/2)*@combat.newTargets",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:bow"
+          },
+          {
+            "atom": "target:new"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "hawkeye"
+      "catalogId": "hawkeye",
+      "buildHash": "65df3fb50bc8"
     }
   }
 }

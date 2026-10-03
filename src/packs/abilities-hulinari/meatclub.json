@@ -39,18 +39,26 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "meatclub",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "70afbd970bc6"
     }
   }
 }

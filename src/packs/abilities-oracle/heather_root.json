@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "heather_root"
+      "catalogId": "heather_root",
+      "buildHash": "bc2e3cde48d2"
     }
   }
 }

@@ -1,0 +1,67 @@
+{
+  "_id": "aa7faf0e1b6fd7f2",
+  "_key": "!items!aa7faf0e1b6fd7f2",
+  "name": "Greater Enfeeblement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Enfeeblement when you use it and expend AP to maintain Focus, you may expend additional AP. For every additional AP you expend, reduce the damage dice of the target’s weapon by an additional dice type. Expend the same number of AP in a consistent Focus action every turn until you end Focus (i.e., you cannot alter the amount of AP you expend on Focus each turn).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[5], Enfeeblement · Research: Necromantic Lore[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "mg_enfeeblement"
+      },
+      "special": {
+        "prompt": {
+          "label": "Additional AP",
+          "max": "6"
+        },
+        "onConsume": {
+          "ap": "@spent"
+        },
+        "grantExtra": [
+          {
+            "key": "system.bonuses.dieStep",
+            "mode": 2,
+            "value": "0 - @spent"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_enfeeblement",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Necromantic Lore[3]",
+      "buildHash": "d745886b61aa"
+    }
+  }
+}

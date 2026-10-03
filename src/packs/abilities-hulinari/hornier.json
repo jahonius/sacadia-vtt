@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Power 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hornier",
+        "target": "damage",
+        "mode": "step",
+        "scope": "headbutt",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hornier",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "40c5eb1b2697"
     }
   }
 }

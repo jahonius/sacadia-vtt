@@ -29,12 +29,23 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "aidResist": {
+      "levels": "1",
+      "maxTargets": "1",
+      "autoWith": "",
+      "autoIfSteadied": true,
+      "advantageWith": "",
+      "spendMadness": false,
+      "mentalOnly": true,
+      "funnel": false
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "vision_of_moss"
+      "catalogId": "vision_of_moss",
+      "buildHash": "327224498ba4"
     }
   }
 }

@@ -28,13 +28,30 @@
       "subpath": "",
       "prerequisite": "Body Slam, Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "body_slam"
+      },
+      "special": {
+        "prompt": {
+          "label": "Shockwave (extra AP)",
+          "max": "ceil(@proficiency/2)"
+        },
+        "onConsume": {
+          "ap": "@spent"
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shockwave",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "27bef0a56790"
     }
   }
 }

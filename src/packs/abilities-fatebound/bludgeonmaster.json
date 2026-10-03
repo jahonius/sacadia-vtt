@@ -39,18 +39,33 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bludgeonmaster",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8863ae1a08c6"
     }
   }
 }

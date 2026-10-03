@@ -29,12 +29,20 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_rapidstrike"
+      "catalogId": "thug_rapidstrike",
+      "buildHash": "44b246a61287"
     }
   }
 }

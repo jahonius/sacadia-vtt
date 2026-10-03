@@ -28,13 +28,61 @@
       "subpath": "tangler",
       "prerequisite": "Power 2"
     },
-    "activities": [],
-    "modifiers": []
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@target.pinned",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Chokehold (Steadied)",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_chokehold",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:steadied"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_chokehold"
+      "catalogId": "thug_chokehold",
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 2
+        },
+        {
+          "level": 11,
+          "ladderIndex": 3
+        }
+      ],
+      "buildHash": "1385ddd5731c"
     }
   }
 }

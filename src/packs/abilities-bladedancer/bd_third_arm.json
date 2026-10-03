@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_third_arm"
+      "catalogId": "bd_third_arm",
+      "buildHash": "53349bfbb50c"
     }
   }
 }

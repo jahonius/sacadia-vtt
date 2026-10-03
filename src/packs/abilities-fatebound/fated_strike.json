@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Fated Strike",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@fate",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "fated_strike",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "1dc8799a4fce"
     }
   }
 }

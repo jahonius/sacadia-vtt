@@ -1,0 +1,148 @@
+{
+  "_id": "755182e061a90c6f",
+  "_key": "!items!755182e061a90c6f",
+  "name": "Spring’s Surge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend X Divine Touch Points (where X is any number up to half your Proficiency), and choose a target within 5ft of you with an Adversarial Condition. That target makes Fate Checks against X additional levels of that Condition.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "divine",
+        "amount": 0,
+        "variable": true,
+        "max": "ceil(@proficiency/2)"
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "@spent",
+            "stacks": true
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "pinned",
+          "label": "Pinned"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "corroded",
+          "label": "Corroded"
+        },
+        {
+          "value": "debilitated",
+          "label": "Debilitated"
+        },
+        {
+          "value": "pulled",
+          "label": "Pulled"
+        },
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "silenced",
+          "label": "Silenced"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "fumbled",
+          "label": "Fumbled"
+        },
+        {
+          "value": "rended",
+          "label": "Rended"
+        },
+        {
+          "value": "madness",
+          "label": "Madness"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_springs_surge",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "ab184f00a1ab"
+    }
+  }
+}

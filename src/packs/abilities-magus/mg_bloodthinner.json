@@ -1,0 +1,45 @@
+{
+  "_id": "638399e8efaf3100",
+  "_key": "!items!638399e8efaf3100",
+  "name": "Bloodthinner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dice of Hemorrhage you give a target by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Bloodsight, Fate[2] · Research: You are an Oracle who has gone insane previously"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_bloodthinner",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "You are an Oracle who has gone insane previously",
+      "buildHash": "d27dc27cd2ca"
+    }
+  }
+}

@@ -39,10 +39,33 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "half"
         },
-        "damage": [],
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 8,
+            "formula": "",
+            "trait": "fate",
+            "type": ""
+          }
+        ],
         "inflict": []
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Blaze of Glory (level 11)",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blaze_of_glory",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:level>=11"
+          }
+        ]
       }
     ]
   },
@@ -50,7 +73,14 @@
   "flags": {
     "sacadia": {
       "catalogId": "blaze_of_glory",
-      "transcribed": true
+      "transcribed": true,
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 4
+        }
+      ],
+      "buildHash": "e4e5238214d8"
     }
   }
 }

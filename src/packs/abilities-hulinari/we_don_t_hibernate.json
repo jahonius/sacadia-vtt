@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Enduring Animal, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "we_don_t_hibernate",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6f3580d8c248"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "patlas_touch"
+      "catalogId": "patlas_touch",
+      "buildHash": "528a3148207f"
     }
   }
 }

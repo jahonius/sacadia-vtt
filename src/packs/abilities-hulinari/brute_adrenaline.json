@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Toughhide, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Brute Adrenaline",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@courage/2)",
+        "predicate": [
+          {
+            "atom": "self:used:brute_adrenaline"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "brute_adrenaline",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e825f73f7277"
     }
   }
 }

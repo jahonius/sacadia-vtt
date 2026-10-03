@@ -1,0 +1,43 @@
+{
+  "_id": "fe4a7e777425c1d2",
+  "_key": "!items!fe4a7e777425c1d2",
+  "name": "Witch's Promise",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you choose to play a Witch, choose one Witch's Promise, and take associated abilities and restrictions.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_witchs_promise",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "bd3c1618a285"
+    }
+  }
+}

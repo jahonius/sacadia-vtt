@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_glidestep"
+      "catalogId": "bd_glidestep",
+      "buildHash": "10c47049cbb2"
     }
   }
 }

@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Fate 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Elemental Rage",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blaze_of_glory",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "elemental_rage",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "be960fe72cb4"
     }
   }
 }

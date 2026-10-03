@@ -32,6 +32,11 @@
     },
     "activities": [],
     "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "revealWithin": "5*@madness"
+    },
     "madness": {
       "prereq": 1
     }
@@ -39,7 +44,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "open_the_third_eye"
+      "catalogId": "open_the_third_eye",
+      "buildHash": "3bb113eba766"
     }
   }
 }

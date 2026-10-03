@@ -44,7 +44,13 @@
           "dc": null
         },
         "damage": [],
-        "inflict": []
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "rended",
+            "amount": "@target.pinned"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_render"
+      "catalogId": "thug_render",
+      "buildHash": "ae8938b388cb"
     }
   }
 }

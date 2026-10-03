@@ -31,12 +31,20 @@
       "prerequisite": "I Know That Guy, Wiles 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "understand_the_enemy"
+      "catalogId": "understand_the_enemy",
+      "buildHash": "2292cb951f7f"
     }
   }
 }

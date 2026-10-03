@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "overwhelm"
+      "catalogId": "overwhelm",
+      "buildHash": "d891defa427c"
     }
   }
 }

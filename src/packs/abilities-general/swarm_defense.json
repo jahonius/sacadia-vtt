@@ -29,12 +29,28 @@
       "prerequisite": "Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Swarm Defense",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "self:surrounded"
+          },
+          {
+            "atom": "attack:melee"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "swarm_defense"
+      "catalogId": "swarm_defense",
+      "buildHash": "1fd626e49579"
     }
   }
 }

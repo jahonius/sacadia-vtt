@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Medium Armor Training</em></p>",
     "equipped": false,
     "category": "medium",
+    "material": "fur",
     "defenses": {
       "ad": 1,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 0,
       "dr": 1
     },
-    "maxStat": 14
+    "maxStat": 14,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shoddy_fur_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "0e3367980c2d"
     }
   }
 }

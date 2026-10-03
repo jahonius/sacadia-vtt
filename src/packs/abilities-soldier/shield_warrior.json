@@ -29,12 +29,26 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Shield Warrior",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shield_warrior"
+      "catalogId": "shield_warrior",
+      "buildHash": "5715b76c16d5"
     }
   }
 }

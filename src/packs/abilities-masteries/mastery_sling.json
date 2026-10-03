@@ -19,13 +19,27 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Sling Mastery",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:sling"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_sling",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "6b824f1f80e5"
     }
   }
 }

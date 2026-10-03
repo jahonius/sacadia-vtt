@@ -3,7 +3,7 @@
   "_key": "!items!03d7e237dd1b484b",
   "name": "Boltshot",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/boltshot_icon.png",
   "system": {
     "description": "<p>For every 1X advantage you have on a consistent attack using a crossbow wherein you expend at least 2 AP to make a consistent attack, add X to damage dealt on a successful to-hit, where X is half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -29,12 +29,164 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Boltshot",
+        "target": "damage",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "ceil(@proficiency/2)*@advantageStacks",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "!self:ability:boltshot_pro"
+          },
+          {
+            "atom": "!self:ability:pullback"
+          }
+        ]
+      },
+      {
+        "label": "Pullback",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "(ceil(@proficiency/2)*@advantageStacks)d4",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "!self:ability:boltshot_pro"
+          },
+          {
+            "atom": "self:ability:pullback"
+          },
+          {
+            "atom": "!self:ability:greatpull"
+          }
+        ]
+      },
+      {
+        "label": "Greatpull",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "(ceil(@proficiency/2)*@advantageStacks)d6",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "!self:ability:boltshot_pro"
+          },
+          {
+            "atom": "self:ability:greatpull"
+          }
+        ]
+      },
+      {
+        "label": "Boltshot",
+        "target": "damage",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "@proficiency*@advantageStacks",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "self:ability:boltshot_pro"
+          },
+          {
+            "atom": "!self:ability:pullback"
+          }
+        ]
+      },
+      {
+        "label": "Pullback",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "(@proficiency*@advantageStacks)d4",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "self:ability:boltshot_pro"
+          },
+          {
+            "atom": "self:ability:pullback"
+          },
+          {
+            "atom": "!self:ability:greatpull"
+          }
+        ]
+      },
+      {
+        "label": "Greatpull",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "(@proficiency*@advantageStacks)d6",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          },
+          {
+            "atom": "self:attack:has-advantage"
+          },
+          {
+            "atom": "self:attack:ap:2plus"
+          },
+          {
+            "atom": "self:ability:boltshot_pro"
+          },
+          {
+            "atom": "self:ability:greatpull"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "boltshot"
+      "catalogId": "boltshot",
+      "buildHash": "a58331781b78"
     }
   }
 }

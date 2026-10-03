@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "legendary_reactionary"
+      "catalogId": "legendary_reactionary",
+      "buildHash": "77844dd8aa68"
     }
   }
 }

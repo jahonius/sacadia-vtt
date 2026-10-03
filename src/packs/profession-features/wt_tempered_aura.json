@@ -1,0 +1,43 @@
+{
+  "_id": "797f82bf064511a2",
+  "_key": "!items!797f82bf064511a2",
+  "name": "Tempered Aura",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>(Prerequisite: Promise of Justice). In a 5Xft aura around you (where X is half your Proficiency, rounded up), all creatures are immune to Panic and Taunt. If they have Panic or Taunt, they lose all levels when they enter the aura.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Level Feature",
+      "prerequisite": "Witch Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_tempered_aura",
+      "feature": true,
+      "level": 5,
+      "buildHash": "bf0ad4b561b9"
+    }
+  }
+}

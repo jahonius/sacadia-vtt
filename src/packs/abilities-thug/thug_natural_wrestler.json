@@ -41,18 +41,32 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "pinned",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_natural_wrestler"
+      "catalogId": "thug_natural_wrestler",
+      "buildHash": "5ba810191918"
     }
   }
 }

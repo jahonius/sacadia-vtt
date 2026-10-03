@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Surrounded by Me, Courage 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "surrounded_by_friends",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6aa8ed0a0609"
     }
   }
 }

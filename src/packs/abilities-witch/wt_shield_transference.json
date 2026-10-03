@@ -1,0 +1,425 @@
+{
+  "_id": "ce8d471309eb6259",
+  "_key": "!items!ce8d471309eb6259",
+  "name": "Shield Transference",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose an ally within 5ft of you when you initiate this. When you do, choose one type of Defense they possess: MD, TD, or PD. Reduce that Defense by half your Fate, rounded up for as long as you maintain Focus (the chosen defense can drop below the target’s AD through this effect). Choose a different Defense from: MD, TD, or PD. Increase that Defense by half your Fate, rounded up. Every turn you maintain Focus on Shield Transference, you can only renew Focus when you are within 5ft of that ally.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": "Fate[3]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true,
+            "resaveOnRenew": true
+          }
+        },
+        "damage": [],
+        "inflict": [],
+        "predicate": [
+          {
+            "atom": "target:hostile"
+          },
+          {
+            "atom": "self:ability:wt_foe_transference"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Lower one defense, raise another",
+      "options": [
+        {
+          "value": "pd-md",
+          "label": "Lower PD, raise MD"
+        },
+        {
+          "value": "pd-td",
+          "label": "Lower PD, raise TD"
+        },
+        {
+          "value": "md-pd",
+          "label": "Lower MD, raise PD"
+        },
+        {
+          "value": "md-td",
+          "label": "Lower MD, raise TD"
+        },
+        {
+          "value": "td-pd",
+          "label": "Lower TD, raise PD"
+        },
+        {
+          "value": "td-md",
+          "label": "Lower TD, raise MD"
+        }
+      ]
+    },
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Shield Transference",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-md"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-md"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-md"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-md"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-td"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-td"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-td"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:pd-td"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-pd"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-pd"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-td"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-td"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-td"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:md-td"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-pd"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-pd"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-md"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-md"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - (@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-md"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "@fate - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_shield_transference:td-md"
+            },
+            {
+              "atom": "self:ability:wt_greater_transference"
+            },
+            {
+              "atom": "!target:hostile"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_shield_transference",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "710677579a82"
+    }
+  }
+}

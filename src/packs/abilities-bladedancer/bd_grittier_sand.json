@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_grittier_sand"
+      "catalogId": "bd_grittier_sand",
+      "buildHash": "1f93aa1576e8"
     }
   }
 }

@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -60,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "revulsion_of_pox"
+      "catalogId": "revulsion_of_pox",
+      "buildHash": "49d1ae9e0035"
     }
   }
 }

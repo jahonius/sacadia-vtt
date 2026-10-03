@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "ambiproficient"
+      "catalogId": "ambiproficient",
+      "buildHash": "b0846e789f62"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_the_extra_bite"
+      "catalogId": "thug_the_extra_bite",
+      "buildHash": "b90d5e1e0ff4"
     }
   }
 }

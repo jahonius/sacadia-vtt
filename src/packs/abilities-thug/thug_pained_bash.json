@@ -37,7 +37,7 @@
         "attack": {
           "category": "melee",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
@@ -52,7 +52,8 @@
             "type": ""
           }
         ],
-        "inflict": []
+        "inflict": [],
+        "selfCostOnHit": "@proficiency"
       }
     ],
     "modifiers": []
@@ -60,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_pained_bash"
+      "catalogId": "thug_pained_bash",
+      "buildHash": "367b5eec4f61"
     }
   }
 }

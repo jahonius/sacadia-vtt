@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "critical_strike",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6051983c8dbd"
     }
   }
 }

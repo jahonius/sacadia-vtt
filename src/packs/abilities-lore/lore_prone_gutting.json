@@ -1,0 +1,49 @@
+{
+  "_id": "9ce39e82bf3a58d3",
+  "_key": "!items!9ce39e82bf3a58d3",
+  "name": "Prone Gutting",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a Lore Point against a Prone target within 5ft of you. If you do, exhaust a random limb on that target for the remainder of combat.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Warrior",
+      "prerequisite": "Brute Hulinari · p.175"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "exhaustRandomCombat": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_prone_gutting",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "c2b343aa19a9"
+    }
+  }
+}

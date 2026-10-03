@@ -29,12 +29,29 @@
       "prerequisite": "Reverse Pankration, Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_natural_wrestler"
+      },
+      "special": {
+        "requires": [
+          "target:hits>=4"
+        ],
+        "perLevelDamage": "1d6",
+        "perLevelScale": [
+          11
+        ],
+        "perLevelStepWith": "thug_the_extra_bite"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_biting_pankration"
+      "catalogId": "thug_biting_pankration",
+      "buildHash": "bc5a849526c0"
     }
   }
 }

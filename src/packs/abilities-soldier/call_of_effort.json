@@ -29,12 +29,28 @@
       "prerequisite": "Call of Power"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "call_of_power"
+      },
+      "special": {
+        "grantExtra": [
+          {
+            "key": "system.bonuses.damagePerAp",
+            "mode": 2,
+            "value": "1"
+          }
+        ]
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_effort"
+      "catalogId": "call_of_effort",
+      "buildHash": "b11b18fb1e02"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!99d84acb42622d8d",
   "name": "Bowling Bolt",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/bowling_bolt_icon.png",
   "system": {
     "description": "<p>If you have at least 6X advantage in a consistent crossbow attack and you hit, the target is knocked Prone.</p>",
     "tag": "passive",
@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bowling_bolt"
+      "catalogId": "bowling_bolt",
+      "buildHash": "278f0d4794ea"
     }
   }
 }

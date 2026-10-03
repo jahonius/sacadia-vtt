@@ -29,12 +29,25 @@
       "prerequisite": "Stepping Strike"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "stepping_strike"
+      },
+      "inflict": [
+        {
+          "condition": "rended",
+          "amount": "1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thrustforth"
+      "catalogId": "thrustforth",
+      "buildHash": "8de7a974f10f"
     }
   }
 }

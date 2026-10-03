@@ -1,0 +1,78 @@
+{
+  "_id": "41f49945c50cd482",
+  "_key": "!items!41f49945c50cd482",
+  "name": "Finger of Death",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Touch one target within 5ft and expend a Spell Slot. They make a Fate Check against your Check DC or take 2XD10 damage, where X is your Proficiency (no damage on a successful save). If this effect causes them to drop to 0HP, they die. You may use this once per combat.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[5] · Research: Sacrifice, Necromantic Lore[3]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [
+          {
+            "count": "2*@proficiency",
+            "denomination": 10,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "combat",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_finger_of_death",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Sacrifice, Necromantic Lore[3]",
+      "buildHash": "faa5b61fd381"
+    }
+  }
+}

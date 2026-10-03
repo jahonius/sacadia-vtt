@@ -32,6 +32,65 @@
     },
     "activities": [],
     "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfDamage": "@proficiency"
+    },
+    "zone": {
+      "shape": "circle",
+      "size": "5*@madness",
+      "anchor": "point",
+      "radiusPerMadness": true,
+      "casterTurnDamage": "@proficiency",
+      "difficult": [
+        {
+          "atom": "self:ability:pooled_ink"
+        },
+        {
+          "atom": "self:condition:madness>=3"
+        }
+      ],
+      "effect": {
+        "affects": "all",
+        "insideStatus": "shadowed",
+        "onEnter": false,
+        "check": {
+          "requires": [
+            {
+              "atom": "self:ability:shrieking_abyss"
+            }
+          ],
+          "affects": "enemies",
+          "trait": "fate",
+          "damageTiers": [
+            {
+              "level": 1,
+              "formula": "(@madness)d2"
+            },
+            {
+              "level": 5,
+              "formula": "(@madness)d4"
+            },
+            {
+              "level": 11,
+              "formula": "(@madness)d6"
+            }
+          ]
+        },
+        "exitCheck": {
+          "requires": [
+            {
+              "atom": "self:ability:swirling_ink"
+            },
+            {
+              "atom": "self:condition:madness>=3"
+            }
+          ],
+          "trait": "wiles"
+        }
+      }
+    },
     "madness": {
       "insaneOnly": true,
       "prereq": 1,
@@ -41,7 +100,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "stygian_abyss"
+      "catalogId": "stygian_abyss",
+      "buildHash": "8b7d58159cbb"
     }
   }
 }

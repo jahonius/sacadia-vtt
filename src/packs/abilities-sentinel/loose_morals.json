@@ -29,12 +29,29 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Loose Morals",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:condition:frenzy"
+          },
+          {
+            "atom": "self:attack:weapon:crossbow"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "loose_morals"
+      "catalogId": "loose_morals",
+      "buildHash": "4c433018ec11"
     }
   }
 }

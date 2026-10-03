@@ -29,12 +29,41 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Targeted Strike",
+          "target": "advantage.toHit",
+          "mode": "add",
+          "value": "-1"
+        },
+        {
+          "label": "Targeted Strike",
+          "target": "damage",
+          "mode": "step",
+          "value": "2"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "targeted_strike"
+      "catalogId": "targeted_strike",
+      "buildHash": "4d10723a68a7"
     }
   }
 }

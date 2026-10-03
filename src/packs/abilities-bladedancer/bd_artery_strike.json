@@ -41,23 +41,50 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
           {
             "condition": "hemorrhage",
             "amount": "@proficiency"
+          },
+          {
+            "condition": "hemorrhage",
+            "amount": "1",
+            "restFlag": "jaggedBlade",
+            "predicate": [
+              {
+                "atom": "self:wielding:named:bd_jagged_blade"
+              }
+            ]
           }
         ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": [
+        {
+          "ability": "bd_nip_and_tuck",
+          "max": 2,
+          "maxFormula": "",
+          "requires": [],
+          "requiresLabel": ""
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_artery_strike"
+      "catalogId": "bd_artery_strike",
+      "buildHash": "c1a5b7c27632"
     }
   }
 }

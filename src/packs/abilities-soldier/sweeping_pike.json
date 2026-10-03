@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sweeping_pike"
+      "catalogId": "sweeping_pike",
+      "buildHash": "a57c1b5f8da4"
     }
   }
 }

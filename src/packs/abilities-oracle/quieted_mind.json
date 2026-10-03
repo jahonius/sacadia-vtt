@@ -32,6 +32,22 @@
     },
     "activities": [],
     "modifiers": [],
+    "onUse": {
+      "self": [
+        {
+          "condition": "*mental",
+          "amount": "-6"
+        }
+      ],
+      "target": []
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
     "madness": {
       "insaneOnly": true,
       "spend": "M"
@@ -40,7 +56,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "quieted_mind"
+      "catalogId": "quieted_mind",
+      "buildHash": "898e7b59e3fc"
     }
   }
 }

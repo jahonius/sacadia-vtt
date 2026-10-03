@@ -1,0 +1,74 @@
+{
+  "_id": "113d19b86888b7db",
+  "_key": "!items!113d19b86888b7db",
+  "name": "Forbid Hallowing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 30ft when you initiate this and expend a Spell Slot. They make a Fate Check against your Check DC. If they fail, for as long as you maintain Focus, that target cannot enter the Hallowfell. This prevents teleporting, invisibility, Shadowstep, or any other magic ability that requires an enemy to briefly transport their body to the Hallowfell.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[3] · Research: Astrology[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Forbid Hallowing",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_forbid_hallowing",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Astrology[2]",
+      "buildHash": "30fb38bd6093"
+    }
+  }
+}

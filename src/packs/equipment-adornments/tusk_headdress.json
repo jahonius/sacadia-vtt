@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "tusk_headdress",
       "kind": "adornment",
-      "armorPrereq": "Fur Set"
+      "armorPrereq": "Fur Set",
+      "buildHash": "fea9b6d6494c"
     }
   }
 }

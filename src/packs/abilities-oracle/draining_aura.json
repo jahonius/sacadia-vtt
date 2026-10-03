@@ -30,24 +30,26 @@
       "subpath": "bloodsage",
       "prerequisite": ""
     },
-    "activities": [
-      {
-        "type": "save",
-        "label": "",
-        "attack": {
-          "category": "",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "courage",
-          "dc": null
-        },
-        "damage": [],
-        "inflict": []
-      }
-    ],
+    "activities": [],
     "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*@madness",
+      "anchor": "point",
+      "radiusPerMadness": true,
+      "effect": {
+        "affects": "enemies",
+        "check": {
+          "trait": "courage",
+          "inflict": [
+            {
+              "condition": "fatigue",
+              "level": 1
+            }
+          ]
+        }
+      }
+    },
     "madness": {
       "insaneOnly": true,
       "prereq": 1,
@@ -57,7 +59,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "draining_aura"
+      "catalogId": "draining_aura",
+      "buildHash": "72ccbbe3ef16"
     }
   }
 }

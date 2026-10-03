@@ -28,13 +28,30 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Stot",
+      "duration": {
+        "type": "consumed",
+        "on": "attack"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "-1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "stot",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "471243b5f000"
     }
   }
 }

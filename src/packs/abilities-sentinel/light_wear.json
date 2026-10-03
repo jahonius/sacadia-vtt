@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "light_wear"
+      "catalogId": "light_wear",
+      "buildHash": "d2992e66482b"
     }
   }
 }

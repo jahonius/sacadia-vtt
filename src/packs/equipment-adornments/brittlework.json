@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "brittlework",
       "kind": "adornment",
-      "armorPrereq": "Wrought Style"
+      "armorPrereq": "Wrought Style",
+      "buildHash": "5dc0e5703972"
     }
   }
 }

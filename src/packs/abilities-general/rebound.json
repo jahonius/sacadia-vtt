@@ -29,12 +29,30 @@
       "prerequisite": "Throwing Hand"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "once": true,
+      "special": {
+        "extraAttacks": "1",
+        "extraAttackAdvantage": -1
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "rebound"
+      "catalogId": "rebound",
+      "buildHash": "8c9ed0f8c1a7"
     }
   }
 }

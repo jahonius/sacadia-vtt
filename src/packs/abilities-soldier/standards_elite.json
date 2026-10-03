@@ -29,12 +29,42 @@
       "prerequisite": "Standard Bearer"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "choice": {
+      "prompt": "Remove a level of",
+      "options": [
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "@choice",
+          "amount": "-1"
+        }
+      ]
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "standards_elite"
+      "catalogId": "standards_elite",
+      "buildHash": "38b7c3784f92"
     }
   }
 }

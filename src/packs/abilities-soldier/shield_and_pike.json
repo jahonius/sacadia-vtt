@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shield_and_pike"
+      "catalogId": "shield_and_pike",
+      "buildHash": "fb8e979f6f39"
     }
   }
 }

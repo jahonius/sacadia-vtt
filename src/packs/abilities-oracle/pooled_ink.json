@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "pooled_ink"
+      "catalogId": "pooled_ink",
+      "buildHash": "271297e17a84"
     }
   }
 }

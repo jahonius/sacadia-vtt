@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "trickshot"
+      "catalogId": "trickshot",
+      "buildHash": "8d6a5051d9e0"
     }
   }
 }

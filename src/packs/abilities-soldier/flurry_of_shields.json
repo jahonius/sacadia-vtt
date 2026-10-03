@@ -29,12 +29,29 @@
       "prerequisite": "Power 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Flurry of Shields",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "floor(@combat.shieldAttacks/2)",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "!self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "flurry_of_shields"
+      "catalogId": "flurry_of_shields",
+      "buildHash": "68c929f17a97"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "afraid_of_your_touch"
+      "catalogId": "afraid_of_your_touch",
+      "buildHash": "3bce50824949"
     }
   }
 }

@@ -28,13 +28,30 @@
       "subpath": "",
       "prerequisite": "Skittish, Courage 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Confused Dance",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "-1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "confused_dance",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "1a89dbe6abc9"
     }
   }
 }

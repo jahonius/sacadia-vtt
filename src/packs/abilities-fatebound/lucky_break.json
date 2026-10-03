@@ -39,18 +39,77 @@
         },
         "save": {
           "trait": "fate",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d6",
+            "predicate": [
+              {
+                "atom": "!self:ability:divine_fates"
+              },
+              {
+                "atom": "!self:ability:god_given_luck"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d8",
+            "predicate": [
+              {
+                "atom": "self:ability:divine_fates"
+              },
+              {
+                "atom": "!self:ability:god_given_luck"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d8",
+            "predicate": [
+              {
+                "atom": "!self:ability:divine_fates"
+              },
+              {
+                "atom": "self:ability:god_given_luck"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d10",
+            "predicate": [
+              {
+                "atom": "self:ability:divine_fates"
+              },
+              {
+                "atom": "self:ability:god_given_luck"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "lucky_break",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "c953ae7cffad"
     }
   }
 }

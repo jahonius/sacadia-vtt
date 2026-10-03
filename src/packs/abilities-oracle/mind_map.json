@@ -37,7 +37,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mind_map"
+      "catalogId": "mind_map",
+      "buildHash": "8262b1fa1b30"
     }
   }
 }

@@ -29,12 +29,26 @@
       "prerequisite": "Multiplicity, Courage 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Boss Energy",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2) * max(0, 2 - @combat.enemies) * min(1, @combat.enemies)",
+        "predicate": [
+          {
+            "atom": "self:used:bd_multiplicity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_boss_energy"
+      "catalogId": "bd_boss_energy",
+      "buildHash": "8597085f4b12"
     }
   }
 }

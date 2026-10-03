@@ -28,13 +28,46 @@
       "subpath": "",
       "prerequisite": "Targeted Foe, Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Tighten Focus",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          }
+        ]
+      },
+      {
+        "label": "Tighten Focus",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "tighten_focus",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4d9b7e963d6e"
     }
   }
 }

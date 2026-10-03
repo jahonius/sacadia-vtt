@@ -95,6 +95,12 @@
         }
       ]
     },
+    "choiceRedirect": {
+      "requiresAbility": "shared_blessing",
+      "key": "system.bonuses.defense.<choice>",
+      "value": "ceil(@madness/2)",
+      "label": "Shared Blessing"
+    },
     "madness": {
       "prereq": 1,
       "spend": "1d3-1"
@@ -103,7 +109,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_the_iron_wall"
+      "catalogId": "blessing_of_the_iron_wall",
+      "buildHash": "7c708a256630"
     }
   }
 }

@@ -56,7 +56,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "focused_enemy"
+      "catalogId": "focused_enemy",
+      "buildHash": "b3ef8ea6f838"
     }
   }
 }

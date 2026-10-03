@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "shimmering_polish",
       "kind": "adornment",
-      "armorPrereq": "Iron Set"
+      "armorPrereq": "Iron Set",
+      "buildHash": "796e6b88dfa4"
     }
   }
 }

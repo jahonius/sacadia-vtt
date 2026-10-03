@@ -11,6 +11,9 @@
     "value": 5000,
     "equipped": false,
     "traits": "",
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "sword",
     "weaponDamage": {
       "count": "2",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "greensword",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "84dc232ed89e"
     }
   }
 }

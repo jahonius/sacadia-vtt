@@ -1,9 +1,71 @@
 <section class="tab {{tabs.biography.cssClass}}" data-group="primary" data-tab="biography">
-  {{#if editable}}
-  <prose-mirror name="system.biography" value="{{system.biography}}" button="true" toggled="true">
-    {{{enrichedBiography}}}
-  </prose-mirror>
+
+  {{!-- One rich-text prompt block. Inline partial so the six background sections stay DRY. --}}
+  {{#*inline "bioField"}}
+  <div class="bio-section">
+    <div class="bio-head">
+      <label class="bio-label">{{label}}</label>
+      {{#if hint}}<span class="bio-hint">{{hint}}</span>{{/if}}
+    </div>
+    {{!-- Drag the bottom edge to resize; the height persists per user/actor (see #restoreBioSizes). --}}
+    <textarea class="bio-input" name="{{name}}" data-bio-field="{{name}}"
+              {{#unless editable}}readonly{{/unless}}>{{value}}</textarea>
+  </div>
+  {{/inline}}
+
+  {{#if isCharacter}}
+  {{!-- Identity band: the ancestral/cultural anchors (book Ch. I–III). Profession lives in the header. --}}
+  <div class="identity-band">
+    <label class="id-field wide">
+      <span>{{localize 'SACADIA.Identity.Culture'}}</span>
+      <input type="text" name="system.identity.culture" value="{{system.identity.culture}}" placeholder="—"/>
+    </label>
+    <label class="id-field">
+      <span>{{localize 'SACADIA.Identity.Heritage'}}</span>
+      <select name="system.identity.heritage">
+        {{selectOptions config.heritages selected=system.identity.heritage localize=true blank=""}}
+      </select>
+    </label>
+    <label class="id-field wide">
+      <span>{{localize 'SACADIA.Identity.Ancestry'}}</span>
+      <input type="text" name="system.identity.ancestry" value="{{system.identity.ancestry}}" placeholder="—"/>
+    </label>
+    <label class="id-field">
+      <span>{{localize 'SACADIA.Identity.Age'}}</span>
+      <input type="text" name="system.identity.age" value="{{system.identity.age}}" placeholder="—"/>
+    </label>
+    <label class="id-field">
+      <span>{{localize 'SACADIA.Identity.Size'}}</span>
+      <input type="text" name="system.identity.size" value="{{system.identity.size}}" placeholder="—"/>
+    </label>
+  </div>
+
+  {{!-- Guided background prompts, straight from the book's "Creating your Background" step (p.18). --}}
+  <div class="bio-sections">
+    {{> bioField editable=editable name="system.background.appearance" value=system.background.appearance
+        label=(localize 'SACADIA.Background.Appearance') hint=(localize 'SACADIA.Background.AppearanceHint')}}
+    {{> bioField editable=editable name="system.background.connections" value=system.background.connections
+        label=(localize 'SACADIA.Background.Connections') hint=(localize 'SACADIA.Background.ConnectionsHint')}}
+    {{> bioField editable=editable name="system.background.beliefs" value=system.background.beliefs
+        label=(localize 'SACADIA.Background.Beliefs') hint=(localize 'SACADIA.Background.BeliefsHint')}}
+    {{> bioField editable=editable name="system.background.secrets" value=system.background.secrets
+        label=(localize 'SACADIA.Background.Secrets') hint=(localize 'SACADIA.Background.SecretsHint')}}
+    {{> bioField editable=editable name="system.background.culturalTies" value=system.background.culturalTies
+        label=(localize 'SACADIA.Background.CulturalTies') hint=(localize 'SACADIA.Background.CulturalTiesHint')}}
+  </div>
+
+  {{!-- The overarching narrative (shared `biography` field) + carried mementos. --}}
+  <div class="bio-sections">
+    {{> bioField editable=editable name="system.biography" value=system.biography
+        label=(localize 'SACADIA.Background.Story') hint=(localize 'SACADIA.Background.StoryHint')}}
+    {{> bioField editable=editable name="system.background.mementos" value=system.background.mementos
+        label=(localize 'SACADIA.Background.Mementos') hint=(localize 'SACADIA.Background.MementosHint')}}
+  </div>
+
   {{else}}
-  <div class="prose">{{{enrichedBiography}}}</div>
+  {{!-- NPCs keep a single freeform notes field. --}}
+  {{> bioField editable=editable name="system.biography" value=system.biography
+      label=(localize 'SACADIA.Tab.Biography')}}
   {{/if}}
+
 </section>

@@ -29,12 +29,38 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Courageous Command",
+      "duration": {
+        "type": "consumed",
+        "on": "attack"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.toHit.all",
+          "mode": 2,
+          "value": "@courage"
+        },
+        {
+          "key": "system.bonuses.toHit.all",
+          "mode": 2,
+          "value": "ceil(@power/2)",
+          "predicate": [
+            {
+              "atom": "self:steadied"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "courageous_command"
+      "catalogId": "courageous_command",
+      "buildHash": "19762131c765"
     }
   }
 }

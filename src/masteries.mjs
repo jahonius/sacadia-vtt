@@ -4,9 +4,9 @@
  * builder (`build-packs.mjs`) turns each into a passive `ability` Item in the Masteries compendium.
  *
  * Their bonuses are almost all *conditional* (a weapon family, a situation), so they ship as
- * descriptive passives — auto-applying a global Active Effect would over-apply. The one clean case
- * is Tome Mastery, which reuses the `modifiesDamage` die-step mechanization to boost Forbidden
- * Knowledge automatically.
+ * descriptive passives — auto-applying a global Active Effect would over-apply. The one clean case is
+ * Tome Mastery, whose die-step boost to Forbidden Knowledge is authored as a unified modifier in
+ * src/modifiers.mjs (MODIFIER_OVERRIDES.mastery_tome), keyed by this mastery's id.
  */
 export const MASTERIES = [
   // Bladedancer
@@ -31,7 +31,7 @@ export const MASTERIES = [
   { id: 'mastery_paw_and_wing', profession: 'hulinari_warrior', name: 'Mastery of Paw and Wing',
     description: "Increase your movement speed by 5ft (and Fly speed if applicable)." },
   { id: 'mastery_feather_and_hide', profession: 'hulinari_warrior', name: 'Mastery of Feather and Hide',
-    description: "Increase your HP by 1 for every two levels, and increase the size of your HP pools by the same amount." },
+    description: "Increase your HP by 1 per level, and increase the size of your HP pools by the same amount." },
 
   // Oracle
   { id: 'mastery_mind', profession: 'oracle', name: 'Mastery of the Mind',
@@ -39,8 +39,7 @@ export const MASTERIES = [
   { id: 'mastery_temperament', profession: 'oracle', name: 'Mastery of Temperament',
     description: "Gain one additional Slightly Cracked roll each quick rest." },
   { id: 'mastery_tome', profession: 'oracle', name: 'Tome Mastery',
-    description: "When you cast 'Forbidden Knowledge', increase the damage dice dealt by one dice type (e.g., XD8 becomes XD10).",
-    modifiesDamage: [{ target: 'forbidden_knowledge', ladderSteps: 1 }] },
+    description: "When you cast 'Forbidden Knowledge', increase the damage dice dealt by one dice type (e.g., XD8 becomes XD10)." },
 
   // Sentinel
   { id: 'mastery_crossbow', profession: 'sentinel', name: 'Crossbow Mastery',

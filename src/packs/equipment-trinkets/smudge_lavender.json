@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "smudge_lavender",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "bb19228aed6f"
     }
   }
 }

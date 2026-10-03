@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "brace_and_maneuver"
+      "catalogId": "brace_and_maneuver",
+      "buildHash": "7532a4cb4570"
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "_id": "a327ce0e39cb8bfe",
+  "_key": "!items!a327ce0e39cb8bfe",
+  "name": "Cursed Contract",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you have no lore points, you immediately gain a Lore Point (and can spend it immediately on another Lore Point ability). Additionally, gain a Bane T oken when you use this.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Ancestry",
+      "prerequisite": "Withered Human Ancestry · p.64"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "",
+        "ap": "",
+        "lore": "1"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_cursed_contract",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "467ebefe1db5"
+    }
+  }
+}

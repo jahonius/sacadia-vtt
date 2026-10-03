@@ -1,0 +1,86 @@
+{
+  "_id": "cc4bc7163ba53ea6",
+  "_key": "!items!cc4bc7163ba53ea6",
+  "name": "Bonebreaker",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have a target within 5ft of you pinned by Natural Wrestler, you may expend a lore point with an action. Choose one limb (an arm or a leg) which a target cannot use because that limb is pinned through Natural Wrestler. Deal XD10 damage to that target, where X is your Proficiency, then exhaust that limb until all levels of Pin ends.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Thug",
+      "prerequisite": "Thug, Level 13 · p.177"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@proficiency",
+            "denomination": 10,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which pinned limb?",
+      "options": [
+        {
+          "value": "oneArm",
+          "label": "An arm"
+        },
+        {
+          "value": "leg",
+          "label": "A leg"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [],
+      "exhaust": "@choice"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_bonebreaker",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "f324cc154bae"
+    }
+  }
+}

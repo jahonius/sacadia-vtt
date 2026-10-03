@@ -28,13 +28,63 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Targeted Foe",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@fate/2)",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          },
+          {
+            "atom": "!self:ability:tighten_focus"
+          }
+        ]
+      },
+      {
+        "label": "Targeted Foe",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@fate/2)",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          },
+          {
+            "atom": "!self:ability:tighten_focus"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "key": "targeted-foe",
+      "exclusive": true
+    },
+    "usage": {
+      "per": "combat",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "targeted_foe",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "46120b85a490"
     }
   }
 }

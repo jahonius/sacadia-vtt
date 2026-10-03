@@ -1,0 +1,69 @@
+{
+  "_id": "f393eaa17c2da3b9",
+  "_key": "!items!f393eaa17c2da3b9",
+  "name": "Inspire Greatness",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a lore point to rally yourself or an ally, removing all conditions from the chosen target except those caused by the environment.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Soldier",
+      "prerequisite": "Soldier · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "*adversarial",
+          "amount": "-6"
+        },
+        {
+          "condition": "prone",
+          "amount": "-1"
+        },
+        {
+          "condition": "blinded",
+          "amount": "-1"
+        },
+        {
+          "condition": "dragged",
+          "amount": "-1"
+        },
+        {
+          "condition": "surprised",
+          "amount": "-1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_inspire_greatness",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "d676deda65a6"
+    }
+  }
+}

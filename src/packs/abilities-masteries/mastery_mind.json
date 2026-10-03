@@ -25,7 +25,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_mind",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "c9a4a4bfe1d4"
     }
   }
 }

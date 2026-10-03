@@ -11,6 +11,9 @@
     "value": 500,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "bow",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "divine_bow",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "f908d0cf0e7b"
     }
   }
 }

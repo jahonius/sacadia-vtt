@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_weapon_tail"
+      "catalogId": "bd_weapon_tail",
+      "buildHash": "1689215e96f0"
     }
   }
 }

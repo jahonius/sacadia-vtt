@@ -13,9 +13,9 @@
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
+        "key": "savage",
         "amount": 0,
-        "variable": false,
+        "variable": true,
         "max": ""
       }
     },
@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Body Slam, Power 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "body_slam"
+      },
+      "effects": [
+        {
+          "label": "Enormity",
+          "target": "saveAdvantage",
+          "value": "-1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "enormity",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "2d773fcfee5f"
     }
   }
 }

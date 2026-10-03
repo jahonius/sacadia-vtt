@@ -1,0 +1,44 @@
+{
+  "_id": "89d1cdaa860dd2af",
+  "_key": "!items!89d1cdaa860dd2af",
+  "name": "Summon Beasts",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a lore point to summon animals to your defense. The GM determines what animals are available nearby who come to aid. For the duration of Focus, you can command them to do simple things such as ‘attack’ and ‘defend’. When you initiate this ability, you summon 1 CR of beasts. At level 5, you summon 2 CR worth of beasts. At level 11, you summon 4 CR worth of beasts. You may expense additional lore points to extend how many beasts you summon. If you do so, you need only one Focus action for all points expended this way.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Heritage",
+      "prerequisite": "p.173"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_summon_beasts",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "b3413954793d"
+    }
+  }
+}

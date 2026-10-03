@@ -50,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_evasive_strike"
+      "catalogId": "bd_evasive_strike",
+      "buildHash": "c3b1dd9b9fd8"
     }
   }
 }

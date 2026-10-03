@@ -38,7 +38,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "black_rebuke"
+      "catalogId": "black_rebuke",
+      "buildHash": "bbf8a9391be3"
     }
   }
 }

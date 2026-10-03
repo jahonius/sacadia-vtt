@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -60,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sheermind"
+      "catalogId": "sheermind",
+      "buildHash": "41d9c3ba347a"
     }
   }
 }

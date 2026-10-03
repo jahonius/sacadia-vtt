@@ -28,13 +28,26 @@
       "subpath": "",
       "prerequisite": "Finesse 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Need for Speed",
+        "target": "speed",
+        "value": "10",
+        "predicate": [
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "need_for_speed",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6e1a271cf336"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!90452677b7f4192a",
   "name": "Covering Fire",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/covering_fire_icon.png",
   "system": {
     "description": "<p>If you successfully hit at least three targets within 10ft of your allies with a bow attack on your turn, those allies have half cover until the start of your next turn.</p>",
     "tag": "passive",
@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "covering_fire"
+      "catalogId": "covering_fire",
+      "buildHash": "fd2394d609d4"
     }
   }
 }

@@ -5,16 +5,16 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>For as long as you maintain Focus on Bird Shield, reduce all damage the target of Hovering Foe takes by X, where X is equal to your Proficiency. This ability ends if you drop Focus on Hovering Foe.</p>",
+    "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus on Birdshield, all allies within a space covered by Clouded Ally gain X DR, where X is your Proficiency.</p>",
     "tag": "focus",
     "costs": {
       "ap": 1,
-      "csp": 5,
+      "csp": 6,
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
-        "amount": 0,
+        "key": "trickster",
+        "amount": 1,
         "variable": false,
         "max": ""
       }
@@ -26,15 +26,17 @@
     "meta": {
       "profession": "hulinari_warrior",
       "subpath": "",
-      "prerequisite": "Hovering Foe, Courage 3"
+      "prerequisite": "Clouded Ally"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "birdshield",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "32fc05654f24"
     }
   }
 }

@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Surrounded Brute, Courage 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Cornered Courage",
+        "target": "damage",
+        "mode": "add",
+        "scope": "sweeping_claws",
+        "value": "ceil(@courage/2)",
+        "predicate": [
+          {
+            "atom": "self:surrounded"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "cornered_courage",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "95499fe47815"
     }
   }
 }

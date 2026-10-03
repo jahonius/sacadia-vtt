@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -60,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "curse_of_the_bound_tongue"
+      "catalogId": "curse_of_the_bound_tongue",
+      "buildHash": "eabe035944a9"
     }
   }
 }

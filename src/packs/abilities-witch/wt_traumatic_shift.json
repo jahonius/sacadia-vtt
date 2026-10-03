@@ -1,0 +1,52 @@
+{
+  "_id": "bc9ff0e42d8b56d8",
+  "_key": "!items!bc9ff0e42d8b56d8",
+  "name": "Traumatic Shift",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Transmute Trauma, the second target gets 1X Disadvantage on Trait Checks against the effect.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[5], Transmute Trauma"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Traumatic Shift",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "scope": "wt_transmute_trauma",
+        "value": "-1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_traumatic_shift",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "fb948a2846df"
+    }
+  }
+}

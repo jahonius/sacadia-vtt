@@ -1,5 +1,16 @@
 import { prepareActiveEffectCategories } from '../helpers/effects.mjs';
-import { stepDie, resolveLimbSlots, effectiveApCost, resolveModifierValue, evaluatePredicate } from '../helpers/derivation.mjs';
+import { blackcloudDisadvantage, witchCheckAura } from '../helpers/auras.mjs';
+import { openManual } from '../helpers/manual.mjs';
+import { resolveModifierValue, checkPrerequisites } from '../helpers/derivation.mjs';
+import { planPool, scorePool, checkContext, foldCheckModifiers } from '../helpers/check-pool.mjs';
+import { staleItems, refreshItems } from '../helpers/refresh.mjs';
+import { rebuildWeaponAttacks } from '../helpers/weapon-attacks.mjs';
+import { resetActionEconomy } from '../rules/turn.mjs';
+import { shortRest, longRest } from '../rules/rest.mjs';
+import { AbilityUse } from '../rules/ability-use.mjs';
+import { promptCheckSpends } from '../helpers/conditions.mjs';
+import { gearId, ownsAbility, confirmWarn } from '../helpers/actor-utils.mjs';
+import { REND_KEYS } from '../helpers/rend.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -21,6 +32,11 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   #tokenPos = new Map();
 
+  /** This actor's ability pipeline (rules/ability-use.mjs), with the sheet's live token positions. */
+  get #use() {
+    return new AbilityUse(this.actor, { tokenPos: this.#tokenPos });
+  }
+
   /** Ability cards whose description drawer is open (item ids). Survives re-renders, not reopens. */
   #expandedAbilities = new Set();
 
@@ -28,12 +44,19 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   static DEFAULT_OPTIONS = {
     classes: ['sacadia', 'actor'],
     position: { width: 720, height: 760 },
-    window: { resizable: true },
+    window: {
+      resizable: true,
+      // The in-system User Manual, one click from any sheet.
+      controls: [{ icon: 'fa-solid fa-book', label: 'SACADIA.Manual.Open', action: 'openManual' }],
+    },
     form: { submitOnChange: true },
     actions: {
+      openManual: () => openManual(),
+      refreshItems: SacadiaActorSheet.#onRefreshItems,
       changeTab: SacadiaActorSheet.#onChangeTab,
       roll: SacadiaActorSheet.#onRoll,
       useAbility: SacadiaActorSheet.#onUseAbility,
+      toggleBoost: SacadiaActorSheet.#onToggleBoost,
       toggleExpand: SacadiaActorSheet.#onToggleExpand,
       logBasicAction: SacadiaActorSheet.#onLogBasicAction,
       undoAction: SacadiaActorSheet.#onUndoAction,
@@ -41,7 +64,13 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       shortRest: SacadiaActorSheet.#onShortRest,
       longRest: SacadiaActorSheet.#onLongRest,
       toggleEquip: SacadiaActorSheet.#onToggleEquip,
+      toggleStorage: SacadiaActorSheet.#onToggleStorage,
+      addSpecialty: SacadiaActorSheet.#onAddSpecialty,
+      removeSpecialty: SacadiaActorSheet.#onRemoveSpecialty,
+      toggleSignature: SacadiaActorSheet.#onToggleSignature,
       conditionStep: SacadiaActorSheet.#onConditionStep,
+      resistCondition: SacadiaActorSheet.#onResistCondition,
+      pasteStatBlock: SacadiaActorSheet.#onPasteStatBlock,
       createDoc: SacadiaActorSheet.#onCreateDoc,
       viewDoc: SacadiaActorSheet.#onViewDoc,
       deleteDoc: SacadiaActorSheet.#onDeleteDoc,
@@ -92,7 +121,11 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const context = await super._prepareContext(options);
     const actor = this.actor;
 
+    // Owned items with a newer compendium version (helpers/refresh.mjs): a notice offers to refresh them.
+    const stale = this.isEditable ? await staleItems(actor) : [];
     Object.assign(context, {
+      staleItems: stale,
+      staleList: stale.map((i) => i.name).join(', '),
       actor,
       system: actor.system,
       flags: actor.flags,
@@ -110,35 +143,58 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.abilityGroups = await this.#prepareAbilityGroups();
     context.conditionGroups = this.#prepareConditionGroups();
     context.combatStrip = this.#prepareCombatStrip();
+    // Armed-boost tray: the boosts currently toggled on, ready for the next matching action to consume.
+    const armed = new Set(actor.system.armedBoosts ?? []);
+    context.armedBoosts = actor.items
+      .filter((i) => i.type === 'ability' && armed.has(i.flags?.sacadia?.catalogId))
+      .map((i) => ({ id: i.id, name: i.name }));
 
     // Header vitals: HP meter fill, AP pips, and the Madness track (with its insanity threshold).
     const hp = actor.system.health ?? {};
     context.hpPct = hp.max > 0 ? Math.round(Math.min(100, Math.max(0, (hp.value / hp.max) * 100))) : 0;
     if (context.isCharacter) {
+      // Max-HP provenance: standard per-level value + manual bonus = derived max.
+      const bonus = hp.bonus ?? 0;
+      context.hpTip = [
+        `<strong>${game.i18n.localize('SACADIA.Resource.MaxHealth')}</strong>`,
+        `${game.i18n.localize('SACADIA.Resource.HealthStandard')} ${hp.standardMax ?? 0}`,
+        `${game.i18n.localize('SACADIA.Resource.HealthAdjust')} ${bonus >= 0 ? '+' : ''}${bonus}`,
+        `<strong>${game.i18n.localize('SACADIA.Defense.TipTotal')} ${hp.max ?? 0}</strong>`,
+      ].join('<br>');
       const ap = actor.system.ap ?? {};
       context.apPips = ap.max > 0 && ap.max <= 8
         ? Array.from({ length: ap.max }, (_, i) => ({ on: i < ap.value })) : null;
       context.apText = `${ap.value}/${ap.max}`;
+      // Reaction economy pips (book p.237). Shown as filled/empty dots like AP; a mid-round grant can
+      // push value past max, so size the track to the larger of the two.
+      const rx = actor.system.reaction ?? {};
+      const rxSlots = Math.max(rx.max ?? 1, rx.value ?? 0);
+      context.reactionPips = rxSlots > 0 && rxSlots <= 8
+        ? Array.from({ length: rxSlots }, (_, i) => ({ on: i < (rx.value ?? 0) })) : null;
+      context.reactionText = `${rx.value ?? 0}/${rx.max ?? 1}`;
       const madVal = actor.system.conditions?.madness?.value ?? 0;
       context.insane = actor.statuses?.has?.('insane') ?? false;
       // The track earns header space when it's in play: any current Madness, Insane, or an Oracle.
       context.showMadness = madVal > 0 || context.insane
         || ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'oracle');
       context.madnessPips = Array.from({ length: 6 }, (_, i) => ({ on: i < madVal, threshold: i === 5 }));
+      context.defTooltips = this.#prepareDefenseTooltips();
     }
     if (context.isCharacter) {
       context.talentGroups = this.#prepareTalentGroups();
+      context.talentChoices = Object.fromEntries(Object.entries(CONFIG.SACADIA.talents).map(([k, t]) => [k, t.label]));
+      context.traitExpertise = this.#prepareTraitExpertise();
       context.inventory = this.#prepareInventory();
       context.classPools = this.#prepareClassPools();
       // Sentinel's Favored Enemy selector: shown when the character has the Sentinel profession.
       context.isSentinel = ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'sentinel');
+      context.isHulinari = ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'hulinari_warrior');
+      context.crackedRolls = actor.system.professionResources?.oracle?.cracked ?? [];
+      // Bigger Stones per-weapon die-size picker: shown only when the character owns the ability.
+      context.ownsBiggerStones = ownsAbility(actor, 'bigger_stones');
     }
 
-    // Enriched biography.
-    context.enrichedBiography = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-      actor.system.biography,
-      { secrets: actor.isOwner, rollData: actor.getRollData(), relativeTo: actor }
-    );
+    // (Backstory tab uses plain textareas bound directly to the raw fields — no enrichment needed.)
 
     // Active effects.
     context.effects = prepareActiveEffectCategories(actor.allApplicableEffects());
@@ -194,6 +250,27 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   /**
+   * The Trait Expertise slots (Stats tab): each is a reroll-one-failed-d20 toggle tied to a specific
+   * trait drawn from the *primary* profession (CONFIG.professionTraitExpertise) — Oracle → Wiles/Fate,
+   * etc. Most professions grant two; Hulinari Warrior grants one. Empty when no primary profession is
+   * set (there are no traits to name), so the template shows a hint instead of anonymous checkboxes.
+   * @returns {Array<{slot: string, name: string, statLabel: string, on: boolean}>}
+   */
+  #prepareTraitExpertise() {
+    const primary = this.actor.system.professions?.primary?.key;
+    const traits = CONFIG.SACADIA.professionTraitExpertise[primary] ?? [];
+    return traits.map((statKey, i) => {
+      const slot = `slot${i + 1}`;
+      return {
+        slot,
+        name: `system.traitExpertise.${slot}`,
+        statLabel: CONFIG.SACADIA.stats[statKey] ?? statKey,
+        on: this.actor.system.traitExpertise?.[slot] ?? false,
+      };
+    });
+  }
+
+  /**
    * Group the actor's embedded `ability` Items into the four Abilities-tab sub-lists by tag.
    * @returns {Record<string, {label: string, items: Item[]}>}
    */
@@ -203,12 +280,16 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       passive: { label: 'SACADIA.AbilityGroup.Passive', items: [] },
       reactionsBoosts: { label: 'SACADIA.AbilityGroup.ReactionsBoosts', items: [] },
       lore: { label: 'SACADIA.AbilityGroup.Lore', items: [] },
+      // The book's basic actions & reactions (Kick, Block, the Opportunity Attacks …), auto-granted to
+      // every character — kept in their own list so they don't crowd the profession abilities.
+      basic: { label: 'SACADIA.AbilityGroup.Basic', items: [] },
     };
     for (const item of this.actor.items) {
       if (item.type !== 'ability') continue;
       const tag = item.system.tag;
       const vm = await this.#abilityViewModel(item);
-      if (['action', 'focus', 'ceremony'].includes(tag)) groups.active.items.push(vm);
+      if (item.flags?.sacadia?.basic) groups.basic.items.push(vm);
+      else if (['action', 'focus', 'ceremony'].includes(tag)) groups.active.items.push(vm);
       else if (tag === 'passive') groups.passive.items.push(vm);
       else if (['reaction', 'boost'].includes(tag)) groups.reactionsBoosts.items.push(vm);
       else if (tag === 'lore') groups.lore.items.push(vm);
@@ -228,7 +309,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (mad.insaneOnly) madBadges.push('P:I');
     if (mad.prereq != null && mad.prereq > 0) madBadges.push(`P:M${mad.prereq}`);
     if (mad.gain) madBadges.push(`M +${mad.gain}`);
-    if (mad.spend) madBadges.push(`M −${mad.spend}`);
+    if (mad.spend) madBadges.push(`M −${mad.spend === 'T' ? 'X' : mad.spend}`);
     const range = sys.range ?? {};
     const rangeText = range.value
       ? `${range.value} ${game.i18n.localize('SACADIA.Range.Feet')}`
@@ -240,27 +321,68 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         ? `${game.i18n.localize('SACADIA.Activity.Attack')} vs ${game.i18n.localize(`SACADIA.Defense.${atk.attack.defense.toUpperCase()}`)}`
         : game.i18n.localize('SACADIA.Activity.Attack'))
       : '';
-    const weapon = atk ? this.#resolveWeapon(item) : null;
+    const weapon = atk ? this.#use.resolveWeapon(item) : null;
     const pool = sys.costs?.pool ?? {};
     const poolText = pool.key && (pool.amount > 0 || pool.variable)
       ? `${pool.amount > 0 ? pool.amount : 'X'} ${game.i18n.localize(CONFIG.SACADIA.pools[pool.key] ?? '')}`
       : '';
     const expanded = this.#expandedAbilities.has(item.id);
+    // Boost abilities are *armed* (toggled), not rolled: clicking arms/disarms them (see #onUseAbility).
+    const isBoost = !!sys.boost?.appliesTo?.kind;
+    const armed = isBoost && (this.actor.system.armedBoosts ?? []).includes(item.flags?.sacadia?.catalogId);
     return {
       id: item.id, img: item.img, name: item.name,
       tagLabel: CONFIG.SACADIA.abilityTags[sys.tag] ?? '',
       apCost: sys.isActive ? (sys.costs?.ap ?? 1) : 0,
       cspCost: sys.costs?.csp ?? 0,
       poolText, madBadges, rangeText,
+      loreText: (sys.costs?.lore ?? 0) > 0 ? game.i18n.format('SACADIA.Lore.Cost', { n: sys.costs.lore }) : '',
       rangeValue: range.value ?? null,
       attackText, hasSave: sys.hasSave,
       weaponName: weapon?.name ?? '',
+      isBoost, armed,
+      pick: SacadiaActorSheet.#pickViewModel(item),
+      rollTip: this.#abilityRollTip(item, weapon),
       expanded,
       enrichedDescription: expanded
         ? await foundry.applications.ux.TextEditor.implementation.enrichHTML(sys.description ?? '',
           { secrets: this.actor.isOwner, rollData: this.actor.getRollData(), relativeTo: item })
         : '',
     };
+  }
+
+  /**
+   * The permanent-pick select for an ability card (see item-ability `pick`): the choice list for its
+   * kind (weapon types / conditions / pools / limbs), narrowed by `options`, and the stored value.
+   * @returns {{choices: Record<string,string>, value: string}|null}
+   */
+  static #pickViewModel(item) {
+    const pick = item.system.pick;
+    if (!pick?.kind) return null;
+    const S = CONFIG.SACADIA;
+    // A specific creature (The Vengeance): the creatures on the current scene, plus the one already chosen
+    // (kept by name when it's not on this scene).
+    if (pick.kind === 'creature') {
+      const choices = { '': game.i18n.localize('SACADIA.Pick.Choose') };
+      const cur = item.getFlag('sacadia', 'pickValue') ?? '';
+      if (cur) choices[cur] = item.getFlag('sacadia', 'pickLabel') || cur;
+      for (const t of canvas?.tokens?.placeables ?? []) {
+        if (t.actor && t.actor.id !== item.actor?.id) choices[t.actor.id] = t.actor.name;
+      }
+      return { choices, value: cur };
+    }
+    const source = {
+      weaponType: S.weaponTypes,
+      condition: Object.fromEntries(Object.entries(S.conditions).map(([k, c]) => [k, c.label])),
+      pool: S.pools,
+      limb: S.limbs,
+      defense: { pd: 'SACADIA.Defense.PD', md: 'SACADIA.Defense.MD', td: 'SACADIA.Defense.TD' },
+      element: Object.fromEntries(S.elements.map((k) => [k, S.damageTypes[k].label])),
+    }[pick.kind] ?? {};
+    const keys = pick.options?.length ? pick.options.filter((k) => k in source) : Object.keys(source);
+    const choices = { '': game.i18n.localize('SACADIA.Pick.Choose') };
+    for (const k of keys) choices[k] = game.i18n.localize(source[k]);
+    return { choices, value: item.getFlag('sacadia', 'pickValue') ?? '' };
   }
 
   /** Toggle an ability card's description drawer open/closed. */
@@ -319,6 +441,59 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     };
   }
 
+  /**
+   * Per-defense provenance tooltips (HTML for `data-tooltip-html`): the same derivation
+   * `_prepareDefenses` runs — 11 base + governing stat + each equipped armor piece + each Active
+   * Effect touching the sink — itemized, so "why is this number that" is answered before the roll.
+   * Character sheets only (NPC defenses are hand-authored stat blocks).
+   */
+  #prepareDefenseTooltips() {
+    const sys = this.actor.system;
+    const esc = (s) => foundry.utils.escapeHTML(String(s));
+    // Tightest Max Stat cap among equipped armor (mirrors _armorContribution).
+    const armorItems = this.actor.items.filter((i) => i.type === 'armor' && i.system.equipped);
+    let maxStat = null;
+    for (const a of armorItems) {
+      if (a.system.maxStat != null) maxStat = maxStat == null ? a.system.maxStat : Math.min(maxStat, a.system.maxStat);
+    }
+    // Active-Effect contributions to the defense sinks, labeled by their effect.
+    const effectLines = {};
+    for (const e of this.actor.appliedEffects ?? []) {
+      if (e.disabled) continue;
+      for (const c of e.changes ?? []) {
+        const m = /^system\.bonuses\.defense\.(\w+)$/.exec(c.key ?? '');
+        if (!m) continue;
+        (effectLines[m[1]] ??= []).push({ label: e.name, value: Number(c.value) || 0 });
+      }
+    }
+    const fmt = (v) => `${v >= 0 ? '+' : ''}${v}`;
+    const row = (k, v) => `<div class="tip-row"><span class="tip-k">${esc(k)}</span><span class="tip-v">${esc(v)}</span></div>`;
+    const tips = {};
+    for (const [def, entry] of Object.entries(sys.defenses ?? {})) {
+      const rows = [`<div class="tip-title">${esc(entry.label)}</div>`];
+      if (def !== 'dr') {
+        rows.push(row(game.i18n.localize('SACADIA.Defense.TipBase'), 11));
+        const statKey = entry.statKey;
+        const raw = sys.stats?.[statKey]?.value ?? 0;
+        if (statKey) rows.push(row(game.i18n.localize(CONFIG.SACADIA.stats[statKey] ?? statKey), fmt(raw)));
+      }
+      for (const a of armorItems) {
+        const v = a.system.defenses?.[def] ?? 0;
+        if (v) rows.push(row(a.name, fmt(v)));
+      }
+      for (const el of effectLines[def] ?? []) rows.push(row(el.label, fmt(el.value)));
+      if (entry.cappedStat && maxStat != null) {
+        rows.push(`<div class="tip-note">${esc(game.i18n.format('SACADIA.Defense.TipCapped', { cap: maxStat }))}</div>`);
+      }
+      if (entry.supersededByAd) {
+        rows.push(`<div class="tip-note">${esc(game.i18n.localize('SACADIA.Defense.TipSuperseded'))}</div>`);
+      }
+      rows.push(`<div class="tip-row total"><span class="tip-k">${esc(game.i18n.localize('SACADIA.Defense.TipTotal'))}</span><span class="tip-v">${esc(entry.value)}</span></div>`);
+      tips[def] = `<div class="sac-tip">${rows.join('')}</div>`;
+    }
+    return tips;
+  }
+
   /** Group the leveled conditions by CONFIG group for the Stats-tab tracker. */
   #prepareConditionGroups() {
     const groups = {};
@@ -326,15 +501,42 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       groups[gk] = { label: glabel, conditions: [] };
     }
     for (const [key, cfg] of Object.entries(CONFIG.SACADIA.conditions)) {
+      const value = this.actor.system.conditions?.[key]?.value ?? 0;
       groups[cfg.group]?.conditions.push({
         key,
         label: cfg.label,
         rules: cfg.rules,
-        auto: (cfg.effects?.length ?? 0) > 0,
-        value: this.actor.system.conditions?.[key]?.value ?? 0,
+        value,
+        tooltip: this.#conditionTooltip(cfg, value),
       });
     }
     return groups;
+  }
+
+  /**
+   * A condition's hover tooltip (HTML): name + one-line rule, plus — for conditions whose effect
+   * changes in *kind* by level (Pinned/Slowed/Panic/Taunt, transcribed from the book's per-level
+   * tables pp.259–262 into SACADIA.ConditionLevel) — the level-by-level breakdown, with the actor's
+   * current level marked. Linear "X per level" conditions keep just the rule line.
+   */
+  #conditionTooltip(cfg, value) {
+    const esc = (s) => foundry.utils.escapeHTML(String(s));
+    const rows = [
+      `<div class="tip-title">${esc(game.i18n.localize(cfg.label))}</div>`,
+      `<div class="tip-rule">${esc(game.i18n.localize(cfg.rules))}</div>`,
+    ];
+    const ruleKey = (cfg.rules ?? '').split('.').pop();
+    if (ruleKey && game.i18n.has(`SACADIA.ConditionLevel.${ruleKey}.1`)) {
+      // Effects cap at 6 even when more levels are stacked (book p.259).
+      const current = Math.min(value, 6);
+      for (let lv = 1; lv <= 6; lv++) {
+        const k = `SACADIA.ConditionLevel.${ruleKey}.${lv}`;
+        if (!game.i18n.has(k)) continue;
+        const txt = `${lv}${lv === 6 ? '+' : ''} — ${esc(game.i18n.localize(k))}`;
+        rows.push(`<div class="tip-level${lv === current ? ' on' : ''}">${lv === current ? '▸ ' : ''}${txt}</div>`);
+      }
+    }
+    return `<div class="sac-tip">${rows.join('')}</div>`;
   }
 
   /** The signature pools to show, drawn from the character's set profession(s). */
@@ -356,9 +558,43 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   #prepareInventory() {
     const armor = [];
     const gear = [];
+    // One-line weapon summary for any item carrying the weapon facet (weapons; shields' Bash):
+    // "Crossbow · 1d4 Piercing vs TD · 120 ft · 2H".
+    const weaponSummary = (sys) => {
+      if (!sys.weaponType) return '';
+      const parts = [game.i18n.localize(CONFIG.SACADIA.weaponTypes[sys.weaponType] ?? sys.weaponType)];
+      const wd = sys.weaponDamage ?? {};
+      if (wd.denomination) {
+        let dmg = `${String(wd.count ?? '1').trim() || '1'}d${wd.denomination}`;
+        if (sys.damageType) dmg += ` ${sys.damageType}`;
+        if (sys.defense) dmg += ` vs ${game.i18n.localize(`SACADIA.Defense.${sys.defense.toUpperCase()}`)}`;
+        parts.push(dmg);
+      }
+      if (sys.range?.value) parts.push(`${sys.range.value} ${game.i18n.localize('SACADIA.Range.Feet')}`);
+      if ((sys.hands ?? 1) >= 2) parts.push('2H');
+      return parts.join(' · ');
+    };
     for (const item of this.actor.items) {
-      if (item.type === 'armor') armor.push(item);
-      else if (item.type === 'gear') gear.push(item);
+      const vm = {
+        id: item.id, img: item.img, name: item.name, system: item.system,
+        weaponSummary: weaponSummary(item.system),
+        // Signature (Named / Divine) weapon designation: an instance-scoped flag a Bladedancer or
+        // Fatebound sets on a weapon so their named/divine buffs apply to it. Shown as a star toggle.
+        isWeapon: !!item.system.weaponType && item.system.weaponType !== 'shield',
+        isSignature: !!item.flags?.sacadia?.signature,
+      };
+      vm.broken = !!item.flags?.sacadia?.broken;
+      if (item.type === 'armor') {
+        vm.categoryLabel = item.system.category
+          ? game.i18n.localize(CONFIG.SACADIA.armorCategories[item.system.category] ?? '') : '';
+        // Rend on this piece ("PD −2 · TD −1"), or Broken once every point is gone.
+        const r = item.system.rend ?? {};
+        const parts = REND_KEYS.filter((k) => (r[k] ?? 0) > 0).map((k) => `${k.toUpperCase()} −${r[k]}`);
+        const full = REND_KEYS.some((k) => (item.system.defenses?.[k] ?? 0) > 0)
+          && REND_KEYS.every((k) => (r[k] ?? 0) >= (item.system.defenses?.[k] ?? 0));
+        vm.rendText = full ? game.i18n.localize('SACADIA.Rend.Broken') : (parts.length ? `${game.i18n.localize('SACADIA.Rend.Rended')} ${parts.join(' · ')}` : '');
+        armor.push(vm);
+      } else if (item.type === 'gear') gear.push(vm);
     }
     return { armor, gear };
   }
@@ -368,7 +604,58 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   /** Toggle an armor item's equipped state (re-derives defenses). */
   static async #onToggleEquip(event, target) {
     const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
-    if (item) await item.update({ 'system.equipped': !item.system.equipped });
+    if (!item) return;
+    // Stored (SIS) items can't be reached in combat (book p.181); out of combat, equipping one readies it.
+    if (!item.system.equipped && item.system.storage === 'sis') {
+      if (game.combat?.started && !(await confirmWarn(item.name, game.i18n.format('SACADIA.Inventory.StoredInCombat', { name: item.name })))) return;
+      return item.update({ 'system.equipped': true, 'system.storage': 'ris' });
+    }
+    await item.update({ 'system.equipped': !item.system.equipped });
+  }
+
+  /**
+   * Form rows for the specialized talents arrive as `system.specialties.<i>.<field>` (an object keyed by index); rebuild
+   * the array so the ArrayField gets a list. @override
+   */
+  _prepareSubmitData(event, form, formData, updateData) {
+    const data = super._prepareSubmitData(event, form, formData, updateData);
+    const sp = data?.system?.specialties;
+    if (sp && !Array.isArray(sp)) {
+      data.system.specialties = Object.keys(sp).sort((a, b) => Number(a) - Number(b))
+        .map((k) => ({ name: sp[k].name ?? '', talent: sp[k].talent ?? '', rank: Number(sp[k].rank ?? 1) }));
+    }
+    return data;
+  }
+
+  /** Add / remove a specialized talent row. */
+  static async #onAddSpecialty() {
+    await this.actor.update({ 'system.specialties': [...(this.actor.system.specialties ?? []), { name: '', talent: '', rank: 1 }] });
+  }
+  static async #onRemoveSpecialty(event, target) {
+    const idx = Number(target.closest('[data-index]')?.dataset.index);
+    const list = [...(this.actor.system.specialties ?? [])];
+    list.splice(idx, 1);
+    await this.actor.update({ 'system.specialties': list });
+  }
+
+  /** Move an item between a Readied (RIS) and a Stored (SIS) slot — swaps are a rest's business (warn in combat). */
+  static async #onToggleStorage(event, target) {
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (!item) return;
+    if (game.combat?.started && !(await confirmWarn(item.name, game.i18n.localize('SACADIA.Inventory.SwapInCombat')))) return;
+    const toSis = item.system.storage !== 'sis';
+    await item.update({ 'system.storage': toSis ? 'sis' : 'ris', ...(toSis ? { 'system.equipped': false } : {}) });
+  }
+
+  /**
+   * Toggle a weapon's Signature (Named / Divine) designation (`flags.sacadia.signature`). When the
+   * attack's bound weapon carries it, `#useAbility` emits `self:attack:named` / `self:attack:divine`,
+   * so the Bladedancer's Sharp Weapon and the Fatebound's Humongous/Ridiculous Size/Slamstrike apply to
+   * that specific weapon instance. No Proficiency cap is enforced here (a documented simplification).
+   */
+  static async #onToggleSignature(event, target) {
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (item) await item.setFlag('sacadia', 'signature', !item.flags?.sacadia?.signature);
   }
 
   /** Switch the active tab. Explicit so it works regardless of framework auto-binding. */
@@ -376,11 +663,22 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     this.changeTab(target.dataset.tab, target.dataset.group);
   }
 
-  /**
-   * Enforce the CSP budget when an `ability` is dropped from outside this actor (drop-time check,
-   * per PLANNING). Sorting an already-owned ability is unaffected. @override
-   */
   async _onDropItem(event, item) {
+    // Prerequisites (warn-but-allow): "Power 3, Bloodsight", "Handcopy[2]", "Bladedancer, Level 9" …
+    if (this.actor.type === 'character' && item.type === 'ability' && item.parent !== this.actor && item.system.meta?.prerequisite) {
+      const { unmet } = checkPrerequisites(item.system.meta.prerequisite, await this.#use.prerequisiteContext());
+      if (unmet.length) ui.notifications.warn(game.i18n.format('SACADIA.Prereq.Unmet', { name: item.name, list: unmet.join(', ') }));
+    }
+    // A Magus Tome ability (warn-but-allow): it needs an attuned Tome of its kind that has it recorded.
+    if (item.type === 'ability' && item.parent !== this.actor && item.flags?.sacadia?.prestige === 'magus') {
+      const tomeKey = item.flags.sacadia.tome;
+      if (tomeKey && tomeKey !== 'tome') {
+        const tomes = this.actor.items.filter((i) => CONFIG.SACADIA.magusTomes.includes(i.flags?.sacadia?.catalogId));
+        const recorded = tomes.some((t) => (t.flags?.sacadia?.researched ?? []).includes(item.flags.sacadia.catalogId));
+        if (!tomes.length) ui.notifications.warn(game.i18n.format('SACADIA.Prestige.NoTome', { name: item.name }));
+        else if (!recorded) ui.notifications.warn(game.i18n.format('SACADIA.Prestige.NotResearched', { name: item.name }));
+      }
+    }
     if (this.actor.type === 'character' && item.type === 'ability' && item.parent !== this.actor) {
       const cost = item.system.costs?.csp ?? 0;
       const current = this.actor.system.csp?.current ?? 0;
@@ -408,38 +706,64 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const actor = this.actor;
 
     if (rollType === 'stat') {
-      const level = await SacadiaActorSheet.#promptAdvantage(game.i18n.localize(CONFIG.SACADIA.stats[key]));
+      const level = await AbilityUse.promptAdvantage(game.i18n.localize(CONFIG.SACADIA.stats[key]));
       if (level === null) return;
-      const die = this.#d20FromLevel(level, 'trait'); // stat rolls are Trait Checks
-      return this.#sendRoll(`${die} + @${key} + @proficiency`, game.i18n.localize(CONFIG.SACADIA.stats[key]));
+      const spend = await promptCheckSpends(actor, { ...(actor.system._rollOptions?.() ?? {}), [`self:checking:trait:${key}`]: true });
+      const die = this.#use.d20FromLevel(level + spend.adv, 'trait'); // stat rolls are Trait Checks
+      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
+      const sb = spend.bonus ? ` + ${spend.bonus}` : '';
+      await this.#sendRoll(`${die} + @${key} + @proficiency${tb}${sb}${await this.#spendFumble()}`, game.i18n.localize(CONFIG.SACADIA.stats[key]));
+      return this.#use.consumeRollGrants();
     }
 
     if (rollType === 'talent') {
       const talent = CONFIG.SACADIA.talents[key];
       const proficient = actor.system.talents?.[key]?.proficient ?? false;
-      const level = await SacadiaActorSheet.#promptAdvantage(game.i18n.localize(talent.label));
+      const level = await AbilityUse.promptAdvantage(game.i18n.localize(talent.label));
       if (level === null) return;
-      // Proficient is a straight d20; non-proficient is inherently 1 disadvantage (book p.146/225),
-      // folded in on top of the chosen level and the actor's advantage/disadvantage sinks.
-      const die = this.#d20FromLevel(level + (proficient ? 0 : -1), 'trait');
-      return this.#sendRoll(`${die} + @${talent.stat} + @proficiency`, game.i18n.localize(talent.label));
+      // Proficient is a straight d20 + Proficiency; without the talent it's 1X disadvantage "and also do not add
+      // proficiency" (book p.146), on top of the chosen level and the actor's advantage/disadvantage sinks.
+      const die = this.#use.d20FromLevel(level + (proficient ? 0 : -1), 'trait');
+      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
+      // Informative Scroll (trinket), named for its talent — "Informative Scroll (History)": "+1 to all checks made with
+      // that Talent" while it's in a readied slot.
+      const label = game.i18n.localize(talent.label).toLowerCase();
+      const scroll = actor.items.some((i) => i.type !== 'ability' && gearId(i).startsWith('informative_scroll') && i.system?.storage !== 'sis'
+        && (i.name.match(/\(([^)]+)\)/)?.[1] ?? '').toLowerCase() === label) ? ' + 1' : '';
+      await this.#sendRoll(`${die} + @${talent.stat}${proficient ? ' + @proficiency' : ''}${tb}${scroll}${await this.#spendFumble()}`, game.i18n.localize(talent.label));
+      return this.#use.consumeRollGrants();
+    }
+
+    // A specialized talent: "make a general talent roll, but gain 1X advantage per level of specialization" (p.146).
+    if (rollType === 'specialty') {
+      const sp = actor.system.specialties?.[Number(key)];
+      const talent = CONFIG.SACADIA.talents[sp?.talent];
+      if (!sp || !talent) return ui.notifications.warn(game.i18n.localize('SACADIA.Talent.SpecialtyNoTalent'));
+      const label = `${game.i18n.localize(talent.label)}: ${sp.name}`;
+      if (!(actor.system.talents?.[sp.talent]?.proficient)) ui.notifications.warn(game.i18n.format('SACADIA.Talent.SpecialtyNeedsGeneral', { name: label }));
+      const level = await AbilityUse.promptAdvantage(label);
+      if (level === null) return;
+      const die = this.#use.d20FromLevel(level + (sp.rank ?? 0), 'trait');
+      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
+      await this.#sendRoll(`${die} + @${talent.stat} + @proficiency${tb}${await this.#spendFumble()}`, label);
+      return this.#use.consumeRollGrants();
     }
   }
 
-  /** Net-advantage d20 term: `1d20` at 0, else `(1+|net|)d20kh1/kl1` (positive = advantage). */
-  static #d20FromNet(net) {
-    if (net === 0) return '1d20';
-    return `${1 + Math.abs(net)}d20${net > 0 ? 'kh1' : 'kl1'}`;
-  }
-
   /**
-   * Combine the player's chosen advantage level with the actor's advantage/disadvantage sinks
-   * (conditions, effects) for a roll type. Any magnitude stacks: net > 0 keeps-highest, < 0 lowest.
+   * Consume this actor's one-shot "next roll" grants (Help: +1 advantage on the ally's next d20). Called
+   * right after a d20 roll reads the advantage sinks — attacks, Trait/talent checks, and resist rolls —
+   * so the bonus applies exactly once. Owner-side: the roller controls their own actor.
    */
-  #d20FromLevel(level, rollType) {
-    const adv = this.actor.system.advantage?.[rollType] ?? 0;
-    const dis = this.actor.system.disadvantage?.[rollType] ?? 0;
-    return SacadiaActorSheet.#d20FromNet((level ?? 0) + adv - dis);
+  /**
+   * Fumbled (book p.257): the very next d20 roll is reduced by the Fumble count, then Fumble is spent.
+   * Returns the formula suffix (` - N`) for this roll and clears the condition, or '' when not Fumbled.
+   */
+  async #spendFumble() {
+    const n = this.actor.system.conditions?.fumbled?.value ?? 0;
+    if (n <= 0) return '';
+    await this.actor.update({ 'system.conditions.fumbled.value': 0 });
+    return ` - ${n}`;
   }
 
   /**
@@ -450,7 +774,43 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   static async #onUseAbility(event, target) {
     event.preventDefault();
     const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
-    if (item) return this.#useAbility(item);
+    if (!item) return;
+    // A boost isn't rolled — clicking it arms/disarms it for the next matching action.
+    if (item.system.boost?.appliesTo?.kind) return this.#toggleBoost(item);
+    return this.#use.useAbility(item);
+  }
+
+  /** Arm/disarm a boost ability (toggle its catalogId in `system.armedBoosts`). */
+  static async #onToggleBoost(event, target) {
+    event.preventDefault();
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (item) return this.#toggleBoost(item);
+  }
+
+  /** Toggle a boost's armed state. */
+  async #toggleBoost(item) {
+    const cid = item.flags?.sacadia?.catalogId;
+    if (!cid) return;
+    const armed = new Set(this.actor.system.armedBoosts ?? []);
+    if (armed.has(cid)) armed.delete(cid);
+    else {
+      // A `once`-per-turn boost can't be re-armed after it's been consumed this turn.
+      if (item.system.boost?.once && (this.actor.system.boostsUsed ?? []).includes(cid)) {
+        return ui.notifications.warn(game.i18n.format('SACADIA.Boost.AlreadyUsed', { name: item.name }));
+      }
+      armed.add(cid);
+    }
+    await this.actor.update({ 'system.armedBoosts': Array.from(armed) });
+  }
+
+  /**
+   * Public entry point to activate an ability from outside the sheet — e.g. a hotbar macro. Runs the
+   * full flow (AP/limb costs, advantage prompt, attack + damage rolls, the rich chat card) and does
+   * NOT require the sheet to be open. Prompts surface as their own dialogs.
+   * @param {Item} item  An `ability` Item owned by this sheet's actor.
+   */
+  async useAbility(item) {
+    return this.#use.useAbility(item);
   }
 
   /* -------------------------------------------- */
@@ -458,106 +818,38 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   /* -------------------------------------------- */
 
   /**
-   * Spend one action's AP + limbs against the turn economy (book pp.236–237): resolve which
-   * exhaustion slots the limbs occupy, add +1 AP if an already-exhausted limb is reused (silently —
-   * that's the rule, not an error), warn-but-allow when the cost exceeds remaining AP, then deduct
-   * AP, mark the newly-exhausted slots, and push a log entry so it can be undone.
-   * @param {{label: string, ap: number, limbs: string[]}} action
-   * @returns {Promise<boolean>} true if the action was logged, false if the player cancelled.
+   * Refresh this actor's out-of-date items from the compendium, after a confirmation naming them. What's the player's
+   * (equipped, stored, quantity, rend, picks, named weapons …) is kept; edits made to the items themselves are replaced.
    */
-  async #spendAction({ label, ap, limbs, key = '', choice = '', focusKey = '' }) {
-    const sys = this.actor.system;
-    const { newlyExhausted, reused } = resolveLimbSlots(limbs, sys.exhaustion ?? {});
-    const cost = effectiveApCost(ap, reused);
-    const current = sys.ap?.value ?? 0;
-
-    if (cost > current) {
-      const ok = await foundry.applications.api.DialogV2.confirm({
-        window: { title: game.i18n.localize('SACADIA.Economy.OverspendTitle') },
-        content: `<p>${game.i18n.format('SACADIA.Economy.OverspendWarn', { label, cost, current })}</p>`,
-        rejectClose: false,
-      });
-      if (!ok) return false;
-    }
-
-    // Deduct only what AP is actually available; record that (`spent`) alongside the nominal `cost`
-    // so undo refunds exactly what left the pool, not what the action nominally cost.
-    const spent = Math.min(cost, current);
-    const log = sys.actionLog.map((e) => ({ label: e.label, key: e.key, choice: e.choice, ap: e.ap, spent: e.spent, exhausted: [...e.exhausted] }));
-    log.push({ label, key, choice, ap: cost, spent, exhausted: newlyExhausted });
-    const update = { 'system.ap.value': current - spent, 'system.actionLog': log };
-    for (const slot of newlyExhausted) update[`system.exhaustion.${slot}`] = true;
-    // Focus-maintenance streak: on the *first* use of this Focus ability this turn (its key not yet in
-    // the log), bump its round count. Turn-start (resetActionEconomy) drops streaks not maintained.
-    if (focusKey && !sys.actionLog.some((e) => e.key === focusKey)) {
-      const fr = foundry.utils.deepClone(sys.combatState?.focusRounds ?? {});
-      fr[focusKey] = (fr[focusKey] ?? 0) + 1;
-      update['system.combatState.focusRounds'] = fr;
-    }
-    await this.actor.update(update);
-    return true;
+  static async #onRefreshItems() {
+    const stale = await staleItems(this.actor);
+    if (!stale.length) return this.render();
+    const list = stale.map((i) => `<li>${foundry.utils.escapeHTML(i.name)}</li>`).join('');
+    const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize('SACADIA.Refresh.Title') }, rejectClose: false,
+      content: `<p>${game.i18n.localize('SACADIA.Refresh.Confirm')}</p><ul class="refresh-list">${list}</ul>` });
+    if (!ok) return;
+    const n = await refreshItems(this.actor, { items: stale, rebuildWeapon: rebuildWeaponAttacks });
+    ui.notifications.info(game.i18n.format('SACADIA.Refresh.Done', { name: this.actor.name, n }));
   }
 
   /**
-   * Spend a signature-pool cost (Arrangement/Glory/…). Warn-but-allow when the pool is short (the
-   * value floors at 0), matching the AP overspend posture. NPCs have no class pools — skip.
-   * @returns {Promise<boolean>} true to proceed, false if the player cancelled.
+   * Spend the actor's per-round reaction (book p.237) when a reaction-tag ability is used. Warn-but-
+   * allow when none remain — same posture as AP overspend — so a GM ruling a bonus reaction isn't
+   * blocked by the tracker. Floors at 0.
+   * @returns {Promise<boolean>} true to proceed, false if the player cancelled the no-reaction warning.
    */
-  async #spendPool(label, { key, amount, variable = false, max = '' }) {
-    if (this.actor.type !== 'character') return true;
-    const pool = this.actor.system.classPools?.[key];
-    if (!pool) return true;
-    const poolLabel = game.i18n.localize(CONFIG.SACADIA.pools[key] ?? key);
-    // Variable cost ("expend X / any number of …"): prompt for the amount, bounded by the ability's
-    // own limit (`max`, e.g. @proficiency) when it has one; the pool value is a soft cap (overspend
-    // still warns, matching AP). A blank/0 pick is a no-op spend.
-    if (variable) {
-      const cap = max ? resolveModifierValue(max, this.actor.system._modifierNumbers?.() ?? {}) : null;
-      const chosen = await SacadiaActorSheet.#promptPoolAmount(poolLabel, pool.value, cap);
-      if (chosen === null) return false; // cancelled
-      amount = cap != null ? Math.min(chosen, cap) : chosen;
-    }
-    if (amount <= 0) return true;
-    if (amount > pool.value) {
-      const ok = await foundry.applications.api.DialogV2.confirm({
-        window: { title: game.i18n.localize('SACADIA.Economy.OverspendTitle') },
-        content: `<p>${game.i18n.format('SACADIA.Pool.Insufficient', { label, amount, pool: poolLabel, current: pool.value })}</p>`,
-        rejectClose: false,
-      });
-      if (!ok) return false;
-    }
-    await this.actor.update({ [`system.classPools.${key}.value`]: Math.max(0, pool.value - amount) });
+  async #spendReaction(label) {
+    if (!(await this.#use.reactionOk(label))) return false;
+    await this.#use.payReaction();
     return true;
-  }
-
-  /**
-   * Prompt for a variable pool spend. Returns the chosen count (≥0), or null if dismissed.
-   * @param {string} poolLabel  Localized pool name.
-   * @param {number} available  Current pool value (shown as a hint; overspend is allowed with a warning).
-   * @param {number|null} cap   The ability's rule limit on the spend, or null for unbounded.
-   */
-  static async #promptPoolAmount(poolLabel, available, cap) {
-    const read = (event, button, dialog) =>
-      Math.max(0, Math.round(Number(dialog.element.querySelector('[name="amt"]')?.value) || 0));
-    const prompt = cap != null
-      ? game.i18n.format('SACADIA.Pool.HowManyMax', { pool: poolLabel, max: cap })
-      : game.i18n.format('SACADIA.Pool.HowMany', { pool: poolLabel });
-    return foundry.applications.api.DialogV2.wait({
-      window: { title: poolLabel },
-      content: `<div class="adv-prompt">
-        <label>${prompt}</label>
-        <input type="number" name="amt" value="1" min="0"${cap != null ? ` max="${cap}"` : ''} step="1"/>
-        <p class="hint">${game.i18n.format('SACADIA.Pool.Available', { current: available })}</p>
-      </div>`,
-      buttons: [{ action: 'spend', label: game.i18n.localize('SACADIA.Pool.Spend'), default: true, callback: read }],
-      rejectClose: false,
-    });
   }
 
   /** Log a basic action (Move/Steady/Attack/…) from the tracker's preset palette. */
   static async #onLogBasicAction(event, target) {
     const preset = CONFIG.SACADIA.basicActions[target.dataset.basic];
-    if (preset) await this.#spendAction({ label: game.i18n.localize(preset.label), ap: preset.ap, limbs: preset.limbs });
+    // Keyed `basic:<id>` so a turn's basic actions are countable / gateable (`self:used:basic:fiveFootAdjust`,
+    // `@combat.basic.fiveFootAdjust` — Glidestep, Whisperglide).
+    if (preset) await this.#use.spendAction({ label: game.i18n.localize(preset.label), ap: preset.ap, limbs: preset.limbs, key: `basic:${target.dataset.basic}` });
   }
 
   /**
@@ -581,9 +873,18 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await this.actor.update(update);
   }
 
-  /** Reset the turn economy manually: AP back to Max, all limbs un-exhausted, log cleared. */
+  /** Reset the turn economy manually: AP back to Max, all limbs un-exhausted, log cleared (rules/turn.mjs). */
   static async #onResetTurn() {
-    await SacadiaActorSheet.resetActionEconomy(this.actor);
+    await resetActionEconomy(this.actor);
+  }
+
+  /** Quick/Short Rest and Long/Nightly Rest (rules/rest.mjs). */
+  static async #onShortRest() {
+    await shortRest(this.actor);
+  }
+
+  static async #onLongRest() {
+    await longRest(this.actor);
   }
 
   /* -------------------------------------------- */
@@ -591,800 +892,95 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   /* -------------------------------------------- */
 
   /**
-   * Common rest effects (both rest types): recover ability pools to max, remove most leveled
-   * conditions, and reduce armor Rend by 1 (Rend isn't fully cleared on a Quick Rest).
-   * @returns {object} an update payload to merge
+   * Roll-preview tooltip (HTML for `data-tooltip-html`) for an ability's Use button: the to-hit and
+   * damage formulas exactly as the chat card will roll them — `@refs` and formula counts folded to
+   * concrete numbers (so `ceil(@proficiency/2)d8` reads `1d8`), the target defense, any standing
+   * advantage/disadvantage, and the self-scoped conditional modifiers that ride along. Self-only:
+   * target-contextual modifiers need a target, so they surface on the card at roll time, not here.
+   * @returns {string} tooltip HTML, or '' when the ability makes no roll.
    */
-  static #restRecovery(actor) {
-    const update = {};
-    for (const key of Object.keys(CONFIG.SACADIA.pools)) {
-      const p = actor.system.classPools?.[key];
-      if (p) update[`system.classPools.${key}.value`] = p.max;
-    }
-    for (const key of Object.keys(CONFIG.SACADIA.conditions)) {
-      if (key === 'rended' || CONFIG.SACADIA.enduringConditions.includes(key)) continue;
-      if ((actor.system.conditions?.[key]?.value ?? 0) > 0) update[`system.conditions.${key}.value`] = 0;
-    }
-    return update;
-  }
+  #abilityRollTip(item, weapon) {
+    const sys = item.system;
+    const activities = sys.activities ?? [];
+    if (!activities.some((a) => ['attack', 'save', 'damage'].includes(a.type))) return '';
 
-  /** Quick/Short Rest: pool + condition recovery, Rend −1, and optional HP-pool healing. */
-  static async #onShortRest() {
-    const actor = this.actor;
-    const update = SacadiaActorSheet.#restRecovery(actor);
-    const rend = actor.system.conditions?.rended?.value ?? 0;
-    if (rend > 0) update['system.conditions.rended.value'] = rend - 1;
-    await actor.update(update);
-    await SacadiaActorSheet.#promptHealPools(actor);
-    SacadiaActorSheet.#restMessage(actor, 'SACADIA.Rest.ShortDone');
-  }
-
-  /** Long/Nightly Rest: full HP + HP-pool + Lore refill, all Rend cleared, plus the common recovery. */
-  static async #onLongRest() {
-    const actor = this.actor;
-    const update = SacadiaActorSheet.#restRecovery(actor);
-    update['system.health.value'] = actor.system.health.max;
-    update['system.healthPools.value'] = actor.system.healthPools.max;
-    update['system.lorePoints.value'] = actor.system.lorePoints.max;
-    update['system.conditions.rended.value'] = 0;
-    await actor.update(update);
-    SacadiaActorSheet.#restMessage(actor, 'SACADIA.Rest.LongDone');
-  }
-
-  /**
-   * Spend HP pools to heal: each pool recovers HP equal to the primary profession's HP/level, capped
-   * at Max HP (book p.235). Prompts for how many of the available pools to spend.
-   */
-  static async #promptHealPools(actor) {
-    const available = actor.system.healthPools?.value ?? 0;
-    if (available <= 0) return;
-    const profKey = actor.system.professions?.primary?.key;
-    const perPool = CONFIG.SACADIA.professionHpPerLevel[profKey] ?? 0;
-    const spend = await foundry.applications.api.DialogV2.wait({
-      window: { title: game.i18n.localize('SACADIA.Rest.HealTitle') },
-      content: `<div class="adv-prompt">
-        <label>${game.i18n.format('SACADIA.Rest.HealPrompt', { per: perPool, available })}</label>
-        <input type="number" name="pools" value="${available}" min="0" max="${available}"/>
-      </div>`,
-      buttons: [
-        { action: 'skip', label: game.i18n.localize('SACADIA.Rest.HealSkip'), callback: () => 0 },
-        { action: 'heal', label: game.i18n.localize('SACADIA.Rest.HealDo'), default: true,
-          callback: (e, b, d) => Math.round(Number(d.element.querySelector('[name="pools"]')?.value) || 0) },
-      ],
-      rejectClose: false,
-    });
-    const n = Math.min(Math.max(0, spend ?? 0), available);
-    if (!n) return;
-    const healed = Math.min(n * perPool, (actor.system.health.max ?? 0) - (actor.system.health.value ?? 0));
-    await actor.update({
-      'system.healthPools.value': available - n,
-      'system.health.value': (actor.system.health.value ?? 0) + Math.max(0, healed),
-    });
-  }
-
-  static #restMessage(actor, key) {
-    ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor }),
-      content: `<div class="sacadia"><b>${actor.name}</b> — ${game.i18n.localize(key)}</div>`,
-    });
-  }
-
-  /**
-   * Refresh a character's turn economy (start-of-turn or manual reset): AP to Max, every limb slot
-   * cleared, and the action log emptied. Static so the combat hook can call it too.
-   * @param {Actor} actor
-   */
-  static async resetActionEconomy(actor) {
-    const update = { 'system.ap.value': actor.system.ap?.max ?? 0, 'system.actionLog': [] };
-    for (const slot of Object.keys(CONFIG.SACADIA.exhaustionSlots)) update[`system.exhaustion.${slot}`] = false;
-    // Reset the per-turn auto-counters (see docs/conditional-modifiers.md). The consecutive-hit
-    // streak is per *turn* ("made consecutively on your turn"), so it clears at turn start too — it's
-    // additionally broken mid-turn by a miss (in resolveAttack).
-    update['system.combatState.attacksThisTurn'] = 0;
-    update['system.combatState.movedFeet'] = 0;
-    update['system.combatState.tookDamage'] = false;
-    update['system.combatState.consecutiveHits'] = 0;
-    // Focus-maintenance streaks: a Focus ability keeps its round count only if it was used on the turn
-    // that just ended (its key is still in the not-yet-cleared log); otherwise the streak is broken and
-    // drops to 0. The count itself grows on use in #spendAction.
-    const usedLastTurn = new Set((actor.system.actionLog ?? []).map((e) => e.key).filter(Boolean));
-    const focusRounds = {};
-    for (const [cid, r] of Object.entries(actor.system.combatState?.focusRounds ?? {})) {
-      if (usedLastTurn.has(cid)) focusRounds[cid] = r;
-    }
-    update['system.combatState.focusRounds'] = focusRounds;
-    // Focus anchors (ally-grant lifecycle, see docs): an anchor whose ability wasn't maintained last
-    // turn is torn down — the reap sweep (updateCombat) then deletes its dependent ally grants, and we
-    // clear that ability's marks too so "stop maintaining → mark + buff both end" holds. Anchor uses
-    // the same `usedLastTurn` maintenance signal as the streaks above.
-    const staleAnchors = actor.effects.filter((e) => {
-      const a = e.flags?.sacadia?.anchor;
-      return a && !usedLastTurn.has(a.ability);
-    });
-    if (staleAnchors.length) {
-      const marks = foundry.utils.deepClone(actor.system.marks ?? {});
-      for (const e of staleAnchors) {
-        const item = actor.items.find((i) => (i.flags?.sacadia?.catalogId ?? i.id) === e.flags.sacadia.anchor.ability);
-        const markKey = item?.system?.mark?.key;
-        if (markKey) delete marks[markKey];
-      }
-      update['system.marks'] = marks;
-      await actor.deleteEmbeddedDocuments('ActiveEffect', staleAnchors.map((e) => e.id));
-    }
-    await actor.update(update);
-  }
-
-  /**
-   * Resolve an ability's activities into one chat card. Attack activities roll to-hit
-   * (`d20 + proficiency + trait`, with a single advantage prompt shared across the ability); save
-   * activities embed a "Roll Save" button vs the user's Check DC; damage is structured per part.
-   * Global bonuses come from the actor's `system.bonuses` sink (0 until Phase 5 AE populate it).
-   */
-  async #useAbility(item) {
-    // Oracle Madness gates (book p120): P:I (insane-only), P:MX (min Madness), and the insane-time
-    // lockout of non-P:I Madness abilities. Checked before any cost is paid so a blocked ability spends
-    // nothing. Focus-maintenance re-uses don't re-roll the Madness change (it's an initiate-only cost),
-    // so capture whether this is the initiation before #spendAction bumps the focus streak.
-    const mcat = item.flags?.sacadia?.catalogId ?? item.id;
-    const madInitiating = item.system.tag !== 'focus'
-      || (this.actor.system.combatState?.focusRounds?.[mcat] ?? 0) === 0;
-    if (!(await this.#checkMadnessPrereq(item))) return;
-
-    // Weapon binding: an attack ability draws its base dice + type gating from the character's bound
-    // weapon (flags.sacadia.weapon, auto-resolving to the first equipped/owned weapon). If that weapon
-    // isn't equipped, offer to draw it — a 1-AP action — before committing. Declining aborts here, so
-    // nothing (not even the ability's own AP) is spent. Resolved before #spendAction for that reason.
-    const weapon = this.#resolveWeapon(item);
-    if (weapon && !weapon.system.equipped) {
-      const draw = await foundry.applications.api.DialogV2.confirm({
-        window: { title: game.i18n.localize('SACADIA.Weapon.DrawTitle') },
-        content: `<p>${game.i18n.format('SACADIA.Weapon.DrawPrompt', { weapon: weapon.name })}</p>`,
-      });
-      if (!draw) return; // declined → keep the current (unarmed / other) stance; abort the attack
-      const drew = await this.#spendAction({
-        label: game.i18n.format('SACADIA.Weapon.DrawAction', { weapon: weapon.name }),
-        ap: 1, limbs: [], key: '',
-      });
-      if (!drew) return;
-      await weapon.update({ 'system.equipped': true });
-    }
-
-    // Active abilities (Action/Focus/Ceremony) pay the AP/limb economy — same rules for PCs and
-    // NPCs (p.237); if the user cancels the over-AP warning, abort before posting the card.
-    // Passives/Reactions/Lore are free (p.236).
-    if (item.system.isActive) {
-      // Per-use choice (e.g. Blessing of the Iron Wall's PD/MD/TD) — prompt before spending so it's
-      // recorded in the action log and surfaces as `self:choice:<key>:<value>` this turn.
-      let choice = '';
-      if (item.system.choice?.options?.length) {
-        choice = await SacadiaActorSheet.#promptChoice(item.name, item.system.choice);
-        if (choice === null) return; // cancelled
-      }
-      const spent = await this.#spendAction({
-        label: item.name,
-        ap: item.system.costs?.ap ?? 1,
-        limbs: item.system.costs?.limbs ?? [],
-        key: item.flags?.sacadia?.catalogId ?? item.id, // for the `self:used:<key>` roll option
-        choice,
-        // Focus abilities feed the maintenance-streak counter (`@combat.focusRounds.<id>`); the key
-        // matches the `self:used:*` / mark key so ramps and marks reference the same id.
-        focusKey: item.system.tag === 'focus' ? (item.flags?.sacadia?.catalogId ?? item.id) : '',
-      });
-      if (!spent) return;
-    }
-
-    // Signature-pool cost (e.g. 1 Arrangement point) — any tag can carry one; warn-but-allow if short.
-    const poolCost = item.system.costs?.pool;
-    if (poolCost?.key && (poolCost.amount > 0 || poolCost.variable) && !(await this.#spendPool(item.name, poolCost))) return;
-
-    // Out-of-range check (warn-but-allow): numeric range + a targeted token whose distance exceeds it.
-    const range = item.system.range;
-    if (range?.value != null) {
-      const dist = this.#targetDistance();
-      if (dist != null && dist > range.value) {
-        ui.notifications.warn(game.i18n.format('SACADIA.Range.OutOfRange',
-          { name: item.name, dist: Math.round(dist), range: range.value }));
-      }
-    }
-
-    // Sinewy Sanity (book p123): while maintained, an ability's Madness change is rolled BEFORE its
-    // effect instead of after — so a gain feeds this cast's Madness-scaling dice (Gibbering, Mad
-    // Chanting, …) and a spend drains it first. "Maintained" = its focus action was re-spent this turn
-    // (in the action log). Applying it here, before rollData, updates the actor's derived Madness so the
-    // rolls below see the new value. The end-of-action call is then skipped (`sinewyEarly`).
-    const md = item.system.madness;
-    const sinewyEarly = madInitiating && (md?.gain || md?.spend)
-      && this.actor.system.actionLog?.some((e) => e.key === 'sinewy_sanity');
-    if (sinewyEarly) await this.#applyMadnessChange(item, true);
-
-    const rollData = this.actor.getRollData();
+    const numbers = this.actor.system._modifierNumbers?.() ?? {};
     const bonuses = this.actor.system.bonuses ?? {};
-    const numbers = this.actor.system._modifierNumbers?.() ?? {}; // flat map for @ref / dice resolution
-    const activities = item.system.activities ?? [];
-    const rolls = [];
-    const cardActivities = [];
-
-    // Phase 8/9 mechanization: extra die-steps this ability gets from owned `modifiesDamage`
-    // passives, plus its own `selfScaling` (level-based base-die growth). Both flow into damage.
     const catalogId = item.flags?.sacadia?.catalogId;
     const damageOpts = {
       extraSteps: this.actor.system.abilityDamageSteps?.[catalogId] ?? 0,
       selfScaling: item.flags?.sacadia?.selfScaling ?? null,
+      numbers,
     };
-    // Per-ability flat sinks (from qualifying scoped conditional modifiers) — applied only to this
-    // ability's rolls, on top of the global bucket bonuses.
     const abilityToHit = this.actor.system.abilityToHit?.[catalogId] ?? 0;
     const abilityDamage = this.actor.system.abilityDamage?.[catalogId] ?? 0;
+    const adv = (this.actor.system.advantage?.toHit ?? 0) - (this.actor.system.disadvantage?.toHit ?? 0);
 
-    // Roll-time target context (Layer A): options describing the targeted token, merged with the
-    // actor's own roll options. Target-contextual modifiers are evaluated here per activity.
-    const fullOptions = { ...(this.actor.system._rollOptions?.() ?? {}), ...this.#targetOptions() };
-    // Bind this attack's weapon type precisely (it's equipped by now), so gating like Bigger Stones
-    // resolves off the weapon actually in hand rather than merely "some weapon is equipped".
-    if (weapon?.system.weaponType) fullOptions[`self:wielding:${weapon.system.weaponType}`] = true;
-    const targetNotes = []; // target-contextual modifier receipts, deduped for the card
-
-    let advLevel = 0;
-    if (activities.some((a) => a.type === 'attack')) {
-      advLevel = await SacadiaActorSheet.#promptAdvantage(item.name);
-      if (advLevel === null) return; // dismissed
-    }
-
-    // First attack activity with a known target defense feeds GM-side hit resolution (Phase 10).
-    let attackReq = null;
+    const esc = (s) => foundry.utils.escapeHTML(String(s));
+    // Resolve @refs to their numeric value for display, leaving dice untouched.
+    const disp = (f) => esc(String(f).replace(/@([\w.]+)/g, (_, r) => String(Number(numbers[r] ?? 0))));
+    const rows = [];
 
     for (const act of activities) {
-      const entry = { type: act.type, label: act.label };
-
       const category = act.type === 'attack' ? act.attack.category : '';
-      // Target-contextual modifiers for this activity (gated on the targeted token's state).
-      const tmod = this.#targetModifiers(fullOptions, numbers, category, catalogId);
-      targetNotes.push(...tmod.notes);
-      // Flat to-hit/damage bonuses that apply to this activity: the `all` bucket, the category
-      // bucket (melee/ranged/magic), this ability's own scoped bonus, and target-contextual flats.
-      const flatToHit = (bonuses.toHit?.all ?? 0) + (category ? (bonuses.toHit?.[category] ?? 0) : 0) + abilityToHit + tmod.toHit;
-      const flatDamage = (bonuses.damage?.all ?? 0) + (category ? (bonuses.damage?.[category] ?? 0) : 0) + abilityDamage + tmod.damage;
-      // Dice-valued conditional damage (Consecutive Threat): global `all` + category buckets + this
-      // ability's scoped dice + target-contextual dice. Each is a formula appended (counter-scaled).
+      const flatToHit = (bonuses.toHit?.all ?? 0) + (category ? (bonuses.toHit?.[category] ?? 0) : 0) + abilityToHit;
+      const flatDamage = (bonuses.damage?.all ?? 0) + (category ? (bonuses.damage?.[category] ?? 0) : 0) + abilityDamage;
       const dd = this.actor.system.damageDiceBonus ?? {};
       const diceBonus = [
         ...(dd.all ?? []), ...(category ? (dd[category] ?? []) : []),
-        ...(this.actor.system.abilityDamageDice?.[catalogId] ?? []), ...tmod.dice,
-      ].map((d) => ({ label: d.label, formula: SacadiaActorSheet.#resolveDiceLabel(d.formula, numbers) }));
+        ...(this.actor.system.abilityDamageDice?.[catalogId] ?? []),
+      ].map((d) => ({ label: d.label, formula: AbilityUse.resolveDiceLabel(d.formula, numbers) }));
 
       if (act.type === 'attack') {
-        const die = this.#d20FromLevel(advLevel + tmod.advToHit, 'toHit'); // + target-gated advantage
         const traitKey = act.attack.effectiveTrait;
-        let f = `${die} + @proficiency`;
+        let f = AbilityUse.proficientIn(this.actor, act.attack.category) ? 'd20 + @proficiency' : 'd20';
         if (traitKey) f += ` + @${traitKey}`;
         if (flatToHit) f += ` + ${flatToHit}`;
-        const toHit = await new Roll(f, rollData).evaluate();
-        rolls.push(toHit);
-        entry.toHit = await toHit.render();
-        entry.traitLabel = traitKey ? game.i18n.localize(CONFIG.SACADIA.stats[traitKey]) : null;
-        entry.defenseLabel = act.attack.defense
-          ? game.i18n.localize(`SACADIA.Defense.${act.attack.defense.toUpperCase()}`) : null;
-        if (!attackReq && act.attack.defense) {
-          attackReq = { defenseKey: act.attack.defense, toHitTotal: toHit.total, damage: 0, inflict: await this.#rollInflict(act, rollData) };
-        }
+        const vs = act.attack.defense
+          ? ` <small>${esc(game.i18n.localize('SACADIA.Card.Vs'))} ${esc(game.i18n.localize(`SACADIA.Defense.${act.attack.defense.toUpperCase()}`))}</small>` : '';
+        rows.push(`<div class="tip-row"><span class="tip-k">${esc(game.i18n.localize('SACADIA.Card.ToHit'))}${vs}</span><span class="tip-v">${disp(f)}</span></div>`);
       }
 
       if (act.type === 'save') {
-        const traitKey = act.save.trait;
-        // Pre-compute inflicted-condition levels now (they scale off the *user's* stats); the target
-        // applies them to itself on a failed save (see onSaveRoll).
-        const inflict = await this.#rollInflict(act, rollData);
-        entry.save = {
-          dc: act.save.dc ?? this.actor.system.checkDc?.primary ?? 10,
-          traitKey,
-          traitLabel: traitKey ? game.i18n.localize(CONFIG.SACADIA.stats[traitKey]) : '',
-          inflictData: inflict.length ? JSON.stringify(inflict) : '',
-        };
+        const dc = act.save.dc ?? this.actor.system.checkDc?.primary ?? 10;
+        const trait = act.save.trait ? ` <small>${esc(game.i18n.localize(CONFIG.SACADIA.stats[act.save.trait]))}</small>` : '';
+        rows.push(`<div class="tip-row"><span class="tip-k">${esc(game.i18n.localize('SACADIA.Activity.Save'))}${trait}</span><span class="tip-v">${esc(game.i18n.localize('SACADIA.Defense.CheckDC'))} ${esc(dc)}</span></div>`);
       }
 
       if (['attack', 'save', 'damage'].includes(act.type)) {
-        // A weapon attack whose ability defines no base dice of its own rolls the weapon's base dice.
         const weaponPart = (weapon && act.type === 'attack' && weapon.system.weaponDamage?.denomination)
           ? weapon.system.weaponDamage : null;
-        const dmg = await this.#rollDamage(act, rollData, bonuses,
-          { ...damageOpts, extraSteps: damageOpts.extraSteps + tmod.dieStep, flatDamage, diceBonus, weaponPart });
-        if (dmg) {
-          rolls.push(dmg);
-          entry.damage = await dmg.render();
-          if (attackReq && act.type === 'attack' && !attackReq.damage) attackReq.damage = dmg.total;
+        const formula = this.#use.buildDamageFormula(act, bonuses, { ...damageOpts, flatDamage, diceBonus, weaponPart });
+        if (formula != null) {
+          rows.push(`<div class="tip-row"><span class="tip-k">${esc(game.i18n.localize('SACADIA.Card.Damage'))}</span><span class="tip-v">${disp(formula)}</span></div>`);
         }
       }
-
-      cardActivities.push(entry);
     }
 
-    // If this ability makes an attack and the user has targeted tokens, attach a resolution request
-    // for the GM client to compute hit/miss against the hidden defense (see the createChatMessage
-    // hook). Nothing secret goes here — just the roller's own numbers + the targeted defense key.
-    let attackFlag = null;
-    if (attackReq) {
-      const targetUuids = Array.from(game.user.targets ?? [])
-        .map((t) => t.document?.uuid).filter(Boolean);
-      if (targetUuids.length) {
-        attackFlag = { ...attackReq, attackerUuid: this.actor.uuid, targetUuids };
-      }
+    if (!rows.length) return '';
+
+    // Standing advantage/disadvantage (the prompt at roll time adds to this).
+    if (adv) {
+      const kind = game.i18n.localize(adv > 0 ? 'SACADIA.Roll.AdvShort' : 'SACADIA.Roll.DisadvShort');
+      rows.push(`<div class="tip-warn">${esc(Math.abs(adv))}× ${esc(kind)}</div>`);
     }
 
-    // Layer B: if this ability marks a target, record the current target token(s) under the mark key
-    // on *our own* actor. Exclusive (default) overwrites the prior set — the "moving mark"; otherwise
-    // union with what's there. Written to our own actor, so no GM routing is needed.
-    await this.#applyMark(item);
-
-    // Variable resource spend feeding a grant's magnitude (e.g. Blessing of Hot Coal — spend Madness
-    // to add die-steps). Prompt + deduct now; the chosen amount flows into the grant as `@spent`.
-    // Returns undefined when the ability has no spend block, null if the player cancelled the prompt.
-    const spent = await this.#spendGrantResource(item);
-    if (spent === null) return; // cancelled the spend prompt
-
-    // Ally grant (see docs — "granted effects"): build a request the GM client applies (anchor on us +
-    // effects on the targets). Values are resolved against our numbers now, so the buff is a fixed
-    // number on the ally that scaled off the caster at cast time.
-    const grantFlag = this.#buildGrant(item, spent == null ? numbers : { ...numbers, spent });
-
-    // Tier-1 disclosure: itemize the conditional modifiers that qualified and affect this card's
-    // rolls (global or scoped to this ability), split into to-hit vs damage receipts.
-    const isToHit = (t) => t === 'toHit' || t === 'advantage.toHit' || t === 'advantage.trait';
-    const isDamage = (t) => ['damage', 'damageDice', 'dieStep'].includes(t);
-    const fmt = (m) => {
-      if (m.mode === 'dice') return `+${SacadiaActorSheet.#resolveDiceLabel(m.value, numbers)} · ${m.label}`;
-      if (m.target === 'advantage.toHit' || m.target === 'advantage.trait') {
-        const kind = game.i18n.localize(m.value >= 0 ? 'SACADIA.Roll.AdvShort' : 'SACADIA.Roll.DisadvShort');
-        return `${Math.abs(m.value)}× ${kind} · ${m.label}`;
-      }
-      const sign = m.value >= 0 ? '+' : '';
-      const step = m.mode === 'step' ? ` ${game.i18n.localize('SACADIA.Roll.Step')}` : '';
-      return `${sign}${m.value}${step} · ${m.label}`;
-    };
+    // Self-scoped conditional modifiers that qualify right now (provenance for the numbers above).
     const applicable = (this.actor.system.activeModifiers ?? [])
-      .filter((m) => ['all', 'melee', 'ranged', 'magic'].includes(m.scope) || m.scope === catalogId);
-    // Merge the derived (actor-state) modifiers with the target-contextual ones, deduped (a modifier
-    // may qualify on several activities of this ability).
-    const seen = new Set();
-    const dedupedTarget = targetNotes.filter((n) => {
-      const k = `${n.label}|${n.target}|${n.value}`;
-      return seen.has(k) ? false : seen.add(k);
-    });
-    // Ally-grant receipts: buffs an ally placed on *us* (Blessing of Iron/Hot Coal, …) feed raw
-    // `bonuses.*` sinks, so they're invisible to the conditional-modifier listing above even though
-    // they move this card's dice/bonuses. Surface the attack-relevant ones as labeled lines — but
-    // only when this card actually attacks/deals damage, so a defense grant (Dreams/Shield) that
-    // doesn't touch an attack never shows spuriously.
-    const hasAttack = activities.some((a) => a.type === 'attack');
-    const hasDamageOut = activities.some((a) => a.type === 'attack' || a.type === 'damage');
-    const grantReceipts = [];
-    for (const eff of this.actor.effects) {
-      if (!eff.flags?.sacadia?.grantedBy || eff.disabled) continue;
-      for (const c of eff.changes ?? []) {
-        const value = Number(c.value);
-        if (!Number.isFinite(value) || !value) continue;
-        if (hasDamageOut && c.key === 'system.bonuses.dieStep') grantReceipts.push({ target: 'dieStep', mode: 'step', value, label: eff.name });
-        else if (hasDamageOut && c.key.startsWith('system.bonuses.damage')) grantReceipts.push({ target: 'damage', mode: 'add', value, label: eff.name });
-        else if (hasAttack && c.key.startsWith('system.bonuses.toHit')) grantReceipts.push({ target: 'toHit', mode: 'add', value, label: eff.name });
-      }
+      .filter((m) => ['all', 'melee', 'ranged', 'magic'].includes(m.scope) || m.scope === catalogId)
+      .filter((m) => ['toHit', 'damage', 'damageDice', 'dieStep', 'advantage.toHit'].includes(m.target));
+    if (applicable.length) {
+      const fmt = (m) => {
+        if (m.mode === 'dice') return `+${AbilityUse.resolveDiceLabel(m.value, numbers)} · ${m.label}`;
+        const v = resolveModifierValue(m.value, numbers);
+        const step = m.mode === 'step' ? ` ${game.i18n.localize('SACADIA.Roll.Step')}` : '';
+        return `${v >= 0 ? '+' : ''}${v}${step} · ${m.label}`;
+      };
+      rows.push(`<div class="tip-mods"><span class="tip-mods-label">${esc(game.i18n.localize('SACADIA.Roll.Modifiers'))}</span>${
+        applicable.map((m) => `<span class="tip-mod">${esc(fmt(m))}</span>`).join('')}</div>`);
     }
-    const allMods = [...applicable, ...dedupedTarget, ...grantReceipts];
-    const toHitMods = allMods.filter((m) => isToHit(m.target)).map(fmt);
-    const damageMods = allMods.filter((m) => isDamage(m.target)).map(fmt);
 
-    const content = await foundry.applications.handlebars.renderTemplate(
-      'systems/sacadia/templates/chat/ability-card.hbs',
-      {
-        item,
-        tagLabel: game.i18n.localize(CONFIG.SACADIA.abilityTags[item.system.tag]),
-        cspCost: item.system.costs?.csp,
-        limbs: (item.system.costs?.limbs ?? []).map((l) => game.i18n.localize(CONFIG.SACADIA.limbs[l])),
-        activities: cardActivities,
-        rangeLabel: SacadiaActorSheet.#rangeLabel(item.system.range),
-        toHitMods,
-        damageMods,
-        description: await foundry.applications.ux.TextEditor.implementation.enrichHTML(
-          item.system.description ?? '', { relativeTo: item, rollData }
-        ),
-      }
-    );
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content,
-      rolls,
-      rollMode: game.settings.get('core', 'rollMode'),
-      flags: (attackFlag || grantFlag)
-        ? { sacadia: { ...(attackFlag ? { attack: attackFlag } : {}), ...(grantFlag ? { grant: grantFlag } : {}) } }
-        : {},
-    });
-
-    // Madness change happens at the end of the action (book p120); crossing 6/0 latches Insanity via the
-    // updateActor hook. Focus maintenance doesn't re-roll it (initiate-only). Skipped when Sinewy Sanity
-    // already applied it *before* the effect (above).
-    if (!sinewyEarly) await this.#applyMadnessChange(item, madInitiating);
-  }
-
-  /**
-   * Enforce an ability's Madness use-gates (book p120). Warn-but-allow (a confirm, matching the AP/pool
-   * overspend posture) so a GM can override, but abort on cancel. Returns true to proceed.
-   */
-  async #checkMadnessPrereq(item) {
-    const md = item.system.madness;
-    if (!md || this.actor.type !== 'character') return true;
-    const madness = this.actor.system.conditions?.madness?.value ?? 0;
-    const insane = this.actor.statuses?.has('insane');
-    const problems = [];
-    if (md.insaneOnly && !insane) problems.push(game.i18n.localize('SACADIA.Madness.NeedInsane'));
-    if (md.prereq != null && madness < md.prereq) {
-      problems.push(game.i18n.format('SACADIA.Madness.NeedMadness', { n: md.prereq, current: madness }));
-    }
-    // While insane you may only use P:I abilities among those that touch Madness (prereq/gain/spend).
-    if (insane && !md.insaneOnly && (md.prereq != null || md.gain || md.spend)) {
-      problems.push(game.i18n.localize('SACADIA.Madness.LockedWhileInsane'));
-    }
-    if (!problems.length) return true;
-    return foundry.applications.api.DialogV2.confirm({
-      window: { title: game.i18n.localize('SACADIA.Madness.PrereqTitle') },
-      content: `<p>${game.i18n.format('SACADIA.Madness.PrereqIntro', { name: item.name })}</p><ul>${problems.map((p) => `<li>${p}</li>`).join('')}</ul>`,
-      rejectClose: false,
-    });
-  }
-
-  /**
-   * Apply an ability's `M+X` gain / `M-X` spend at end of action, clamped 0–6 (which latches Insanity via
-   * the updateActor hook). Amount formulas: `M` = all current Madness; `N` = a player-chosen amount
-   * (prompted); otherwise a dice/number roll. Posts the roll so the change is auditable. Skipped for
-   * focus maintenance (initiate-only) and NPCs.
-   */
-  async #applyMadnessChange(item, initiating) {
-    const md = item.system.madness;
-    if (!md || this.actor.type !== 'character' || !initiating) return;
-    const cur = this.actor.system.conditions?.madness?.value ?? 0;
-    let delta = 0;
-    const rolls = [];
-    if (md.gain && md.gain !== 'N') { // gain 'N' is trigger-driven (Shared Mind), not on cast
-      const r = await this.#rollMadnessAmount(md.gain, cur);
-      delta += r.amount; if (r.roll) rolls.push(r.roll);
-    }
-    // Abilities that spend Madness via a grant's own `spend` block (Blessing of Hot Coal) already
-    // deducted it there and used the amount as `@spent` — don't deduct a second time here.
-    const grantHandledSpend = item.system.grant?.spend?.resource === 'madness';
-    if (md.spend && !grantHandledSpend) {
-      const r = await this.#rollMadnessAmount(md.spend, cur);
-      delta -= r.amount; if (r.roll) rolls.push(r.roll);
-    }
-    if (!delta) return;
-    const next = Math.max(0, Math.min(6, cur + delta));
-    if (next !== cur) await this.actor.update({ 'system.conditions.madness.value': next });
-    const label = game.i18n.localize('SACADIA.Condition.Madness');
-    const sign = delta >= 0 ? '+' : '−';
-    await ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${label}</strong> ${sign}${Math.abs(delta)} → ${next}</p>`,
-      rolls,
-      rollMode: game.settings.get('core', 'rollMode'),
-    });
-  }
-
-  /**
-   * Resolve one Madness amount formula. `M` → all current Madness; `N` → prompt (capped at current);
-   * a dice/number formula → an evaluated Roll. Returns the integer amount and any Roll made (for display).
-   * @returns {Promise<{amount: number, roll: Roll|null}>}
-   */
-  async #rollMadnessAmount(formula, current) {
-    if (formula === 'M') return { amount: current, roll: null };
-    if (formula === 'N') {
-      const chosen = await SacadiaActorSheet.#promptResourceSpend(game.i18n.localize('SACADIA.Condition.Madness'), current, current);
-      return { amount: chosen === null ? 0 : Math.min(Math.max(0, chosen), current), roll: null };
-    }
-    const roll = await new Roll(String(formula)).evaluate();
-    return { amount: Math.max(0, roll.total), roll };
-  }
-
-  /**
-   * Evaluate the leveled conditions an activity inflicts (amount formulas → integer levels) for the
-   * GM to apply from the resolution whisper.
-   * @returns {Promise<Array<{condition: string, level: number, label: string}>>}
-   */
-  async #rollInflict(activity, rollData) {
-    const out = [];
-    for (const inf of activity.inflict ?? []) {
-      if (!inf.condition) continue;
-      const roll = await new Roll(String(inf.amount || '1'), rollData).evaluate();
-      const level = Math.max(0, Math.floor(roll.total));
-      const cfg = CONFIG.SACADIA.conditions[inf.condition] ?? CONFIG.SACADIA.simpleConditions[inf.condition];
-      if (level > 0) out.push({ condition: inf.condition, level, label: game.i18n.localize(cfg?.label ?? inf.condition) });
-    }
-    return out;
-  }
-
-  /**
-   * Resolve which of the character's weapons an attack ability uses. Returns the weapon Item, or null
-   * for non-attack abilities / characters with no weapons. Binding is `flags.sacadia.weapon` (set via
-   * the ability sheet's Weapon dropdown); when unset it auto-resolves to the first *equipped* weapon,
-   * else the first owned — the "defaults to the first found" behaviour.
-   */
-  #resolveWeapon(item) {
-    if (!item.system.activities?.some((a) => a.type === 'attack')) return null;
-    // A "weapon" is any gear or shield (armor) carrying a weaponType.
-    const weapons = this.actor.items.filter((i) => ['gear', 'armor'].includes(i.type) && i.system.weaponType);
-    if (!weapons.length) return null;
-    const boundId = item.flags?.sacadia?.weapon;
-    if (boundId) return this.actor.items.get(boundId) ?? weapons[0]; // fall back if the bound weapon is gone
-    // Auto: prefer an equipped non-shield weapon (a generic attack shouldn't default to a Shield Bash),
-    // then any equipped weapon, then the first owned.
-    return weapons.find((w) => w.system.equipped && w.system.weaponType !== 'shield')
-      ?? weapons.find((w) => w.system.equipped) ?? weapons[0];
-  }
-
-  /**
-   * Build and evaluate one combined damage Roll for an activity's parts (each part adds its own
-   * trait, per p.218), plus the global damage bonus. Returns null when there's nothing to roll.
-   */
-  async #rollDamage(activity, rollData, bonuses, opts = {}) {
-    const { extraSteps = 0, selfScaling = null, flatDamage = 0, diceBonus = [], weaponPart = null } = opts;
-    const ladder = CONFIG.SACADIA.diceLadder;
-    // Global die-step sink (AE buffs) + this ability's own modifiesDamage-driven steps.
-    const dieStep = (bonuses.dieStep ?? 0) + extraSteps;
-    const level = this.actor.system.level ?? 0;
-    const terms = [];
-    // Weapon base dice are prepended only when the ability contributes none itself (a "make an attack"
-    // ability). An ability with its own dice (a spell/special strike) keeps them and ignores the weapon.
-    const parts = activity.damage;
-    const useWeapon = weaponPart && !parts.some((p) => p.formula?.trim() || p.denomination);
-    for (const part of (useWeapon ? [weaponPart, ...parts] : parts)) {
-      let dice;
-      if (part.formula?.trim()) {
-        dice = part.formula.trim(); // freeform override isn't die-stepped
-      } else if (part.denomination) {
-        // selfScaling grows the base die at level thresholds (highest reached wins) before stepping.
-        let denomination = part.denomination;
-        if (selfScaling?.length) {
-          const reached = selfScaling.filter((s) => level >= s.level).sort((a, b) => b.level - a.level)[0];
-          if (reached) denomination = ladder[reached.ladderIndex]?.die ?? denomination;
-        }
-        // Apply die-step buffs to the structured (count)d(denomination) at roll time.
-        const s = dieStep > 0
-          ? stepDie(part.count, denomination, dieStep, ladder)
-          : { count: part.count, denomination };
-        const count = String(s.count ?? '1').trim() || '1';
-        dice = `(${count})d${s.denomination}`;
-      } else {
-        continue;
-      }
-      terms.push(part.trait ? `${dice} + @${part.trait}` : dice);
-    }
-    if (!terms.length && !diceBonus.length) return null;
-    let formula = terms.join(' + ') || '0';
-    // Dice-valued conditional damage bonuses (formulas, counter-scaled at roll time).
-    for (const d of diceBonus) formula += ` + ${d.formula}`;
-    // Flat damage bonus (all + category + this ability's scoped bonus), pre-summed by the caller.
-    if (flatDamage) formula += ` + ${flatDamage}`;
-    return new Roll(formula, rollData).evaluate();
-  }
-
-  /**
-   * Resolve a dice-bonus formula's variable count to a concrete `NdM` for card display — e.g.
-   * `(min(@combat.consecutiveHits, @proficiency))d4` → `2d4` — so the receipt shows the actual dice,
-   * not the raw formula. Resolves the count expression (parenthesized, or a bare `@ref`) via the
-   * modifier-value arithmetic; leaves the die faces and anything else untouched.
-   */
-  static #resolveDiceLabel(formula, numbers) {
-    return String(formula)
-      .replace(/\(([^()]*(?:\([^()]*\)[^()]*)*)\)d(\d+)/g, (_m, expr, faces) => `${resolveModifierValue(expr, numbers)}d${faces}`)
-      .replace(/(@[\w.]+)d(\d+)/g, (_m, ref, faces) => `${resolveModifierValue(ref, numbers)}d${faces}`);
-  }
-
-  /**
-   * Build the ally-grant request for an ability (or null). Focus-maintained grants only (first build).
-   * Resolves each change's `value` against the caster's numbers now, so the AE placed on the ally is a
-   * fixed number that scaled off the caster at cast time. The GM client applies it (see applyGrant).
-   * @param {Item} item
-   * @param {Record<string,number>} numbers  The caster's `_modifierNumbers()` map.
-   * @returns {object|null}
-   */
-  #buildGrant(item, numbers) {
-    const g = item.system.grant;
-    const type = g?.duration?.type;
-    if (!g?.scope || (type !== 'focus' && type !== 'consumed')) return null;
-    const targets = Array.from(game.user.targets ?? []).map((t) => t.document?.uuid).filter(Boolean);
-    if (!targets.length) return null;
-    const changes = (g.changes ?? [])
-      .filter((c) => c.key)
-      .map((c) => ({ key: c.key, mode: c.mode ?? 2, value: String(resolveModifierValue(c.value, numbers)) }));
-    if (!changes.length) return null;
-    return {
-      casterUuid: this.actor.uuid,
-      ability: item.flags?.sacadia?.catalogId ?? item.id,
-      label: g.label || item.name,
-      targets, changes,
-      duration: { type, on: g.duration.on || '' },
-    };
-  }
-
-  /**
-   * Prompt for and deduct a grant's variable resource spend (e.g. Blessing of Hot Coal — reduce your
-   * Madness by up to M). Only fires when the grant will actually land (declares a scope and has a
-   * target); the chosen amount becomes `@spent` in the grant's change formulas. The resource is a
-   * leveled condition (`system.conditions.<key>.value`); overspend is impossible (cap == available).
-   * @param {Item} item
-   * @returns {Promise<number|null|undefined>} amount spent, null if cancelled, undefined if no spend.
-   */
-  async #spendGrantResource(item) {
-    const g = item.system.grant;
-    const spend = g?.spend;
-    if (!spend?.resource || !g.scope) return undefined;
-    if (!(game.user.targets?.size)) return undefined; // nothing to grant to — don't burn the resource
-    const cond = this.actor.system.conditions?.[spend.resource];
-    if (!cond) return undefined;
-    const numbers = this.actor.system._modifierNumbers?.() ?? {};
-    const cap = spend.max ? resolveModifierValue(spend.max, numbers) : null;
-    const label = game.i18n.localize(CONFIG.SACADIA.conditions[spend.resource]?.label ?? spend.resource);
-    const chosen = await SacadiaActorSheet.#promptResourceSpend(label, cond.value, cap);
-    if (chosen === null) return null; // cancelled
-    const amount = cap != null ? Math.min(chosen, cap) : chosen;
-    if (amount > 0) {
-      await this.actor.update({ [`system.conditions.${spend.resource}.value`]: Math.max(0, cond.value - amount) });
-    }
-    return amount;
-  }
-
-  /**
-   * Prompt for a variable resource spend (a leveled condition like Madness). Returns the chosen count
-   * (≥0), or null if dismissed. Mirrors #promptPoolAmount but frames the ask as reducing a condition.
-   * @param {string} label     Localized resource name.
-   * @param {number} available Current value (shown as a hint).
-   * @param {number|null} cap  The ability's rule limit on the spend, or null for unbounded.
-   */
-  static async #promptResourceSpend(label, available, cap) {
-    const read = (event, button, dialog) =>
-      Math.max(0, Math.round(Number(dialog.element.querySelector('[name="amt"]')?.value) || 0));
-    const prompt = cap != null
-      ? game.i18n.format('SACADIA.Spend.HowManyMax', { resource: label, max: cap })
-      : game.i18n.format('SACADIA.Spend.HowMany', { resource: label });
-    return foundry.applications.api.DialogV2.wait({
-      window: { title: label },
-      content: `<div class="adv-prompt">
-        <label>${prompt}</label>
-        <input type="number" name="amt" value="0" min="0"${cap != null ? ` max="${cap}"` : ''} step="1"/>
-        <p class="hint">${game.i18n.format('SACADIA.Spend.Available', { resource: label, current: available })}</p>
-      </div>`,
-      buttons: [{ action: 'spend', label: game.i18n.localize('SACADIA.Spend.Confirm'), default: true, callback: read }],
-      rejectClose: false,
-    });
-  }
-
-  /**
-   * Layer B: record the current target token(s) under the ability's mark key on this actor. Does
-   * nothing if the ability declares no `mark.key` or nothing is targeted. Exclusive marks (default)
-   * replace the key's prior set so re-marking *moves* the mark; non-exclusive marks union in.
-   * @param {Item} item  The ability being used.
-   */
-  async #applyMark(item) {
-    const key = item.system.mark?.key;
-    if (!key) return;
-    const uuids = Array.from(game.user.targets ?? []).map((t) => t.document?.uuid).filter(Boolean);
-    if (!uuids.length) return;
-    const marks = foundry.utils.deepClone(this.actor.system.marks ?? {});
-    const prev = marks[key] ?? [];
-    marks[key] = item.system.mark.exclusive ? uuids
-      : Array.from(new Set([...prev, ...uuids]));
-    const update = { 'system.marks': marks };
-    // If an exclusive mark *moves* to a different target set, this is a fresh focus on a new foe —
-    // restart the maintenance ramp at round 1 (overriding the +1 #spendAction just applied), so a
-    // per-round bonus (Fight Reflex) doesn't carry the prior target's accrued rounds onto the new one.
-    const cid = item.flags?.sacadia?.catalogId ?? item.id;
-    const moved = item.system.mark.exclusive && !SacadiaActorSheet.#sameSet(prev, uuids);
-    if (moved && this.actor.system.combatState?.focusRounds?.[cid] != null) {
-      const fr = foundry.utils.deepClone(this.actor.system.combatState.focusRounds);
-      fr[cid] = 1;
-      update['system.combatState.focusRounds'] = fr;
-    }
-    await this.actor.update(update);
-  }
-
-  /** True when two uuid lists hold the same set (order-independent). */
-  static #sameSet(a, b) {
-    if (a.length !== b.length) return false;
-    const s = new Set(a);
-    return b.every((x) => s.has(x));
-  }
-
-  /**
-   * Roll-time target context (Layer A): the currently-targeted token's conditions/statuses as
-   * `target:condition:<key>` roll options — leveled conditions carry their value, simple/status
-   * conditions (surprised, prone, …) are `true`. Empty when nothing is targeted.
-   */
-  #targetOptions() {
-    const token = Array.from(game.user.targets ?? [])[0];
-    const actor = token?.actor;
-    if (!actor) return {};
-    const o = {};
-    for (const [key, cond] of Object.entries(actor.system.conditions ?? {})) {
-      if (cond.value > 0) o[`target:condition:${key}`] = cond.value;
-    }
-    for (const status of actor.statuses ?? []) o[`target:condition:${status}`] = true;
-    // Creature type (Sentinel's Favored Enemy): `target:type:<t>`, plus `target:favored` when the type is
-    // in *our* favored list. Character targets have no creature type; only NPC stat blocks carry one.
-    const cType = actor.system.creatureType;
-    if (cType) {
-      o[`target:type:${cType}`] = true;
-      if ((this.actor.system.professionResources?.sentinel?.favored ?? []).includes(cType)) o['target:favored'] = true;
-    }
-    // Adjacency: `target:adjacent` when the target is within 5ft (one square) — the simplest positional
-    // gate (Too Close!, etc.), measured from the same grid distance the range markers use.
-    const dist = this.#targetDistance();
-    if (dist != null && dist <= 5) o['target:adjacent'] = true;
-    // Layer B: `target:mark:<key>` when this target token carries one of *our* marks (marks store
-    // token uuids; a mark set from a previous scene/combat simply never matches a current target).
-    const uuid = token.document?.uuid;
-    for (const [key, uuids] of Object.entries(this.actor.system.marks ?? {})) {
-      if (Array.isArray(uuids) && uuids.includes(uuid)) o[`target:mark:${key}`] = true;
-    }
-    return o;
-  }
-
-  /**
-   * Evaluate the actor's **target-contextual** modifiers (those with a `target:*` atom, excluded
-   * from the derived-data fold) against the full roll options, and return their contribution to this
-   * activity's roll — flat to-hit/damage, die-steps, dice bonuses, target-gated advantage, plus card
-   * receipts. Scope honors global buckets (all/category) or a specific catalogId.
-   */
-  #targetModifiers(options, numbers, category, catalogId) {
-    const out = { toHit: 0, damage: 0, dieStep: 0, advToHit: 0, dice: [], notes: [] };
-    const GLOBAL = ['all', 'melee', 'ranged', 'magic'];
-    for (const item of this.actor.items) {
-      if (item.type !== 'ability') continue;
-      for (const mod of item.system?.modifiers ?? []) {
-        const atoms = (mod.predicate ?? []).map((p) => p?.atom ?? p).filter(Boolean);
-        if (!atoms.some((a) => a.replace(/^!/, '').startsWith('target:'))) continue;
-        if (!evaluatePredicate(atoms, options)) continue;
-        const scope = mod.scope || 'all';
-        const scopeOk = GLOBAL.includes(scope) ? (scope === 'all' || scope === category) : (scope === catalogId);
-        if (!scopeOk) continue;
-        const label = mod.label || item.name;
-        if (mod.target === 'damageDice') {
-          out.dice.push({ label, formula: mod.value });
-          out.notes.push({ target: 'damageDice', mode: 'dice', value: mod.value, label });
-          continue;
-        }
-        const v = resolveModifierValue(mod.value, numbers);
-        if (!v) continue;
-        if (mod.target === 'toHit') out.toHit += v;
-        else if (mod.target === 'damage') { if (mod.mode === 'step') out.dieStep += v; else out.damage += v; }
-        else if (mod.target === 'dieStep') out.dieStep += v;
-        else if (mod.target === 'advantage.toHit') out.advToHit += v;
-        else continue; // non-offense targets don't apply to an outgoing attack roll
-        out.notes.push({ target: mod.target, mode: mod.mode, value: v, label });
-      }
-    }
-    return out;
-  }
-
-  /** Format an ability's range for the card: a numeric distance shows "N ft"; else the type label. */
-  static #rangeLabel(range) {
-    if (range?.value != null) return `${range.value} ${game.i18n.localize('SACADIA.Range.Feet')}`;
-    if (range?.type) return game.i18n.localize(CONFIG.SACADIA.rangeTypes[range.type] ?? range.type);
-    return '';
-  }
-
-  /**
-   * Grid distance (in scene units, i.e. feet) from the actor's token to the first targeted token, or
-   * null if the geometry isn't available (no token, no target, no canvas). Used for the range check.
-   */
-  #targetDistance() {
-    const attacker = this.actor.getActiveTokens?.()?.[0];
-    const target = Array.from(game.user.targets ?? [])[0];
-    if (!attacker || !target || !canvas?.grid) return null;
-    // Prefer the cached move position over the (v14-laggy) document coords — see #tokenPos. Falls back
-    // to the document for tokens that haven't moved since the sheet opened.
-    const gs = canvas.grid.size;
-    const center = (t) => {
-      const p = this.#tokenPos.get(t.id);
-      const x = (p?.x ?? t.document.x) + (t.document.width * gs) / 2;
-      const y = (p?.y ?? t.document.y) + (t.document.height * gs) / 2;
-      return { x, y };
-    };
-    return canvas.grid.measurePath([center(attacker), center(target)])?.distance ?? null;
+    return `<div class="sac-tip sac-rolltip"><div class="tip-title">${esc(game.i18n.localize('SACADIA.Card.Preview'))}</div>${rows.join('')}</div>`;
   }
 
   /**
@@ -1393,7 +989,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   #refreshRangeMarkers() {
     if (!this.element) return;
-    const dist = this.#targetDistance();
+    const dist = this.#use.targetDistance();
     for (const row of this.element.querySelectorAll('.ability-row[data-range]')) {
       const marker = row.querySelector('.out-of-range');
       if (!marker) continue;
@@ -1403,10 +999,48 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     }
   }
 
+  /**
+   * Restore/persist each Backstory prompt box's height, and (attempt to) make it vertically
+   * resizable. Height is a per-user UI preference (never a document write, so a non-owner viewer can
+   * size their own view), keyed by actor + field in localStorage; saved only on `pointerup` — real
+   * user intent — so a programmatic restore or a hidden-tab (zero-height) layout never clobbers it.
+   *
+   * KNOWN ISSUE (see docs/KNOWN-ISSUES.md): the resize grip doesn't work in play despite the inline
+   * `important` below (which should beat Foundry core's `textarea { resize: none }` and its cascade
+   * layering). Left in place — persistence is ready for when the grip is fixed. Boxes scroll
+   * internally meanwhile, so long entries stay usable.
+   */
+  #restoreBioSizes() {
+    if (!this.element) return;
+    for (const el of this.element.querySelectorAll('.bio-input[data-bio-field]')) {
+      el.style.setProperty('resize', 'vertical', 'important');
+      const key = `sacadia.bioH.${this.actor.id}.${el.dataset.bioField}`;
+      const saved = Number(localStorage.getItem(key));
+      if (saved >= 40) el.style.height = `${saved}px`;
+      el.addEventListener('pointerup', () => {
+        const h = Math.round(el.getBoundingClientRect().height);
+        if (h >= 40) localStorage.setItem(key, String(h));
+      });
+    }
+  }
+
   /** @override — refresh range markers each render, and (once) hook target/token changes to keep them live. */
   _onRender(context, options) {
     super._onRender(context, options);
+    // Permanent-pick selects write straight to the owned ability's flag (not the actor form).
+    for (const sel of this.element.querySelectorAll('select.ability-pick')) {
+      sel.addEventListener('change', async (ev) => {
+        ev.stopPropagation();
+        const item = this.actor.items.get(ev.currentTarget.closest('[data-item-id]')?.dataset.itemId);
+        if (item) {
+          await item.setFlag('sacadia', 'pickValue', ev.currentTarget.value);
+          // A creature pick keeps the name for display when that creature isn't on the scene.
+          if (item.system.pick?.kind === 'creature') await item.setFlag('sacadia', 'pickLabel', game.actors.get(ev.currentTarget.value)?.name ?? ev.currentTarget.selectedOptions?.[0]?.text ?? '');
+        }
+      });
+    }
     this.#refreshRangeMarkers();
+    this.#restoreBioSizes();
     if (!this.#rangeHooks) {
       this.#rangeHooks = [
         ['targetToken', Hooks.on('targetToken', () => this.#refreshRangeMarkers())],
@@ -1431,72 +1065,21 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   /** Post a roll to chat using the actor's roll data. */
   async #sendRoll(formula, flavor) {
     const roll = new Roll(formula, this.actor.getRollData());
-    await roll.toMessage({
-      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      flavor,
-      rollMode: game.settings.get('core', 'rollMode'),
-    });
+    await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), flavor }); // applies the chat's visibility mode
     return roll;
   }
 
-  /**
-   * Ask the player for a signed Advantage level (book p.217, "NX Advantage" = N extra d20s kept
-   * best; negative = Disadvantage). Quick buttons cover ±1; the number field takes any magnitude.
-   * @param {string} label
-   * @returns {Promise<number|null>} the advantage level (+adv / −dis / 0 normal), or null if dismissed
-   */
-  static async #promptAdvantage(label) {
-    const readLevel = (event, button, dialog) =>
-      Math.round(Number(dialog.element.querySelector('[name="level"]')?.value) || 0);
-    const customLabel = game.i18n.localize('SACADIA.Roll.AdvantageUse');
-    return foundry.applications.api.DialogV2.wait({
-      window: { title: game.i18n.format('SACADIA.Roll.AdvantagePrompt', { label }) },
-      content: `<div class="adv-prompt">
-        <label>${game.i18n.localize('SACADIA.Roll.AdvantageLevel')}</label>
-        <div class="adv-custom-row">
-          <input type="number" name="level" value="0" step="1"/>
-          <button type="button" class="adv-roll-custom"><i class="fa-solid fa-dice-d20"></i> ${customLabel}</button>
-        </div>
-        <p class="hint">${game.i18n.localize('SACADIA.Roll.AdvantageHint')}</p>
-      </div>`,
+  static async #pickBoost(boosts) {
+    const id = await foundry.applications.api.DialogV2.wait({
+      window: { title: game.i18n.localize('SACADIA.Boost.PickTitle') },
+      content: `<p>${game.i18n.localize('SACADIA.Boost.PickHint')}</p>`,
       buttons: [
-        { action: 'dis', label: game.i18n.localize('SACADIA.Roll.Disadvantage'), icon: 'fa-solid fa-angles-down', callback: () => -1 },
-        { action: 'normal', label: game.i18n.localize('SACADIA.Roll.Normal'), icon: 'fa-solid fa-minus', callback: () => 0 },
-        { action: 'adv', label: game.i18n.localize('SACADIA.Roll.Advantage'), icon: 'fa-solid fa-angles-up', callback: () => 1 },
-        // The custom "Roll" action stays a real footer button (so Enter submits it and it reads the
-        // field), but it's hidden and proxied by the in-row button beside the input — see render.
-        { action: 'custom', label: customLabel, icon: 'fa-solid fa-dice-d20', default: true, callback: readLevel },
+        ...boosts.map((b) => ({ action: b.id, label: b.name, callback: () => b.id })),
+        { action: 'none', label: game.i18n.localize('SACADIA.Boost.None'), callback: () => 'none' },
       ],
-      render: (event, dialog) => {
-        const root = dialog.element;
-        const customBtn = root.querySelector('button[data-action="custom"]');
-        if (customBtn) customBtn.hidden = true;
-        root.querySelector('.adv-roll-custom')?.addEventListener('click', (e) => {
-          e.preventDefault();
-          customBtn?.click();
-        });
-        const input = root.querySelector('[name="level"]');
-        input?.focus();
-        input?.select();
-      },
       rejectClose: false,
     });
-  }
-
-  /**
-   * Prompt the player to pick one of an ability's per-use `choice.options` (e.g. Blessing of the
-   * Iron Wall's PD/MD/TD). Each option is a button returning its `value`.
-   * @param {string} label   The ability name (for the dialog title).
-   * @param {{prompt: string, options: Array<{value: string, label: string}>}} choice
-   * @returns {Promise<string|null>} the chosen value, or null if dismissed.
-   */
-  static async #promptChoice(label, choice) {
-    return foundry.applications.api.DialogV2.wait({
-      window: { title: label },
-      content: choice.prompt ? `<p>${choice.prompt}</p>` : '',
-      buttons: choice.options.map((o) => ({ action: o.value, label: o.label || o.value, callback: () => o.value })),
-      rejectClose: false,
-    });
+    return id && id !== 'none' ? boosts.find((b) => b.id === id) ?? null : null;
   }
 
   /**
@@ -1507,10 +1090,326 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   static async #onConditionStep(event, target) {
     const { key, dir } = target.dataset;
-    const max = CONFIG.SACADIA.conditionMax;
+    // Madness is its own 0–6 track; other conditions keep levels past 6 (effects still cap at 6, p.258).
+    const max = key === 'madness' ? 6 : CONFIG.SACADIA.conditionStoreMax;
     const current = this.actor.system.conditions?.[key]?.value ?? 0;
     const next = Math.clamp(current + (dir === 'up' ? 1 : -1), 0, max);
     await this.actor.update({ [`system.conditions.${key}.value`]: next });
+  }
+
+  /**
+   * Roll a condition-resistance check (book p258, "Giving an Adversarial Condition") — distinct from
+   * a normal single Make-Trait-Check, which stays untouched. The attacker declares a level; the
+   * defender rolls one Trait Check per level and takes one level of the condition for every check that
+   * FAILS the attacker's Check DC.
+   *
+   * The player never enters the DC (they don't know a monster's). Instead the dice pool is rolled
+   * here and posted as a card carrying a `flags.sacadia.resist` request; the GM client resolves it
+   * (see resolveResist): if the player **targeted the source** creature, its hidden Check DC decides
+   * each die and the levels auto-apply; with **no target**, the dice are whispered to the GM to
+   * assign failures manually.
+   *
+   * Advantage handling (house rule): net advantage rolls that many *extra* dice and keeps the highest
+   * N (worst dice drop → fewer fails); net disadvantage becomes that many *automatic* failures (the
+   * rest are rolled normally). The actor's own `trait` advantage/disadvantage sinks (Frenzy, Panic, …)
+   * fold into the net before that split.
+   * @this {SacadiaActorSheet}
+   */
+  static async #onResistCondition(event, target) {
+    event.preventDefault();
+    const loc = (k) => game.i18n.localize(k);
+    // The condition is fixed by which name was clicked in the tracker (data-key). Fall back to the
+    // first condition only if invoked without one (defensive — every tracker row supplies a key).
+    const condition = target?.dataset?.key ?? Object.keys(CONFIG.SACADIA.conditions)[0];
+    const condLabel = loc(CONFIG.SACADIA.conditions[condition]?.label ?? condition);
+    const statOpts = Object.entries(CONFIG.SACADIA.stats)
+      .map(([k, l]) => `<option value="${k}">${loc(l)}</option>`).join('');
+    const held = this.actor.system.conditions?.[condition]?.value ?? 0;
+
+    // The source of the condition = the currently-targeted token (its hidden Check DC is used). Note
+    // it up front so the dialog can tell the player which resolution path they're on.
+    const srcToken = Array.from(game.user.targets ?? [])[0];
+    const srcName = srcToken?.document?.name ?? srcToken?.name ?? null;
+    const dcNote = srcName
+      ? game.i18n.format('SACADIA.Resist.SourceNote', { name: srcName })
+      : loc('SACADIA.Resist.NoSourceNote');
+
+    // Two uses of the same per-level pool (book p.218/238/258):
+    //  - Make Trait Check (the action): 1 check (+1 per extra AP, a "consistent" roll); every success
+    //    removes one level of a condition you already have.
+    //  - Incoming levels: one check per level someone attempts to give you; every failure is a level taken
+    //    (for GM-called checks — ability saves roll this automatically from the card).
+    const form = await foundry.applications.api.DialogV2.wait({
+      window: { title: game.i18n.format('SACADIA.Resist.TitleFor', { condition: condLabel }) },
+      content: `<div class="resist-prompt">
+        <div class="rp-row"><label>${loc('SACADIA.Resist.Mode')}</label><select name="mode">
+          <option value="reduce"${held > 0 ? ' selected' : ''}>${loc('SACADIA.Resist.ModeReduce')}</option>
+          <option value="incoming"${held > 0 ? '' : ' selected'}>${loc('SACADIA.Resist.ModeIncoming')}</option></select></div>
+        <div class="rp-row"><label>${loc('SACADIA.Resist.Trait')}</label><select name="trait">${statOpts}</select></div>
+        <div class="rp-row"><label>${loc('SACADIA.Resist.Levels')}</label><input type="number" name="levels" value="1" min="1"/></div>
+        <div class="rp-row"><label>${loc('SACADIA.Resist.ExtraAp')}</label><input type="number" name="extra" value="0" min="0"/></div>
+        <div class="rp-row"><label>${loc('SACADIA.Resist.Advantage')}</label><input type="number" name="adv" value="0" step="1"/></div>
+        <p class="source-note">${dcNote}</p>
+        <p class="hint">${loc('SACADIA.Resist.Hint')}</p>
+      </div>`,
+      buttons: [{
+        action: 'roll', label: loc('SACADIA.Resist.Roll'), icon: 'fa-solid fa-dice-d20', default: true,
+        callback: (e, b, dialog) => {
+          const el = dialog.element;
+          const num = (n, d) => { const v = Number(el.querySelector(`[name="${n}"]`)?.value); return Number.isFinite(v) ? v : d; };
+          return {
+            condition,
+            mode: el.querySelector('[name="mode"]')?.value === 'reduce' ? 'reduce' : 'incoming',
+            trait: el.querySelector('[name="trait"]')?.value,
+            levels: Math.max(1, Math.round(num('levels', 1))),
+            extra: Math.max(0, Math.round(num('extra', 0))),
+            adv: Math.round(num('adv', 0)),
+          };
+        },
+      }],
+      rejectClose: false,
+    });
+    if (!form) return;
+    const reduce = form.mode === 'reduce';
+
+    // Make Trait Check is an action: 1 AP, plus any extra AP spent to roll it consistently.
+    if (reduce) {
+      const spent = await this.#use.spendAction({ label: loc('SACADIA.BasicAction.MakeTraitCheck'), ap: 1 + form.extra, limbs: [], key: 'makeTraitCheck' });
+      if (!spent) return;
+    }
+    // Bolers Ban: a Make Trait Check against the picked (Drain Tolerant) condition doesn't roll — it simply
+    // removes one level.
+    if (reduce && (this.actor.system._picks?.().condition ?? []).some((pk) => pk.id === 'bolers_ban' && pk.value === form.condition)) {
+      const next = Math.max(0, held - 1);
+      await this.actor.update({ [`system.conditions.${form.condition}.value`]: next });
+      return AbilityUse.postCard({
+        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+        content: `<div class="sacadia resist-card"><div class="rc-head"><i class="fa-solid fa-hand-fist"></i> ${game.i18n.format('SACADIA.Resist.CardTitleReduce', { condition: condLabel })}</div>`
+          + `<div class="rc-sub">${game.i18n.format('SACADIA.Resist.BolersBan', { condition: condLabel, value: next })}</div></div>`,
+      });
+    }
+    const L = reduce ? 1 + form.extra : form.levels;
+
+    // The checker's own modifiers for *this* check (see helpers/check-pool.mjs): `self:checking:*` for any
+    // check against the condition, `self:resisting:*` for the Make Trait Check action, `self:saving:*` for
+    // incoming levels — plus Aware Foe's "a condition given to you by a targeted foe".
+    const grp = CONFIG.SACADIA.conditions[form.condition]?.group ?? '';
+    const selfOpts = this.actor.system._rollOptions?.() ?? {};
+    const ctxOpts = { ...selfOpts, ...checkContext(form.condition, grp, reduce ? 'resist' : 'save', this.actor.system._picks?.().condition ?? []),
+      [`self:checking:trait:${form.trait}`]: true };
+    const srcUuid = srcToken?.document?.uuid;
+    if (srcUuid && (this.actor.system.marks?.['targeted-foe'] ?? []).includes(srcUuid)) ctxOpts['self:resisting:from:targeted-foe'] = true;
+    const items = this.actor.items.filter((i) => i.type === 'ability').map((i) => ({ name: i.name, modifiers: i.system.modifiers, id: i.flags?.sacadia?.catalogId, pickValue: i.system.pick?.kind ? (i.flags?.sacadia?.pickValue ?? '') : undefined }));
+    const own = foldCheckModifiers(items, ctxOpts, this.actor.system._modifierNumbers?.() ?? {});
+    const spend = await promptCheckSpends(this.actor, ctxOpts);
+    const proneDis = selfOpts['self:prone'] && /physical/i.test(grp) ? 1 : 0;
+
+    const rollData = this.actor.getRollData();
+    const mod = (Number(rollData[form.trait]) || 0) + (Number(rollData.proficiency) || 0) + (Number(rollData.traitBonus) || 0) + own.bonus + spend.bonus;
+    const cloudDis = blackcloudDisadvantage(this.actor, grp);
+    const witchAura = witchCheckAura(this.actor);
+    const net = form.adv + own.adv + spend.adv - proneDis - cloudDis + witchAura + (this.actor.system.advantage?.trait ?? 0) - (this.actor.system.disadvantage?.trait ?? 0);
+    const { poolCount, autoFail } = planPool(L, net);
+    const fumble = this.actor.system.conditions?.fumbled?.value ?? 0;
+
+    let roll = null;
+    let raws = [];
+    if (poolCount > 0) {
+      roll = await new Roll(`${poolCount}d20`).evaluate();
+      raws = roll.dice[0].results.map((r) => r.result);
+    }
+    await this.#use.consumeRollGrants();
+    if (fumble > 0) await this.actor.update({ 'system.conditions.fumbled.value': 0 });
+    // Totals that count (the kept dice) — the GM compares them to the hidden DC; pass/fail isn't decided here.
+    const guided = this.actor.system.bonuses?.traitBonusOne ?? 0;
+    const sc = scorePool(raws, { levels: L, net, mod, fumble, bonusOne: (spend.bonusOne ?? 0) + guided });
+    if (guided) await this.#use.consumeRollGrants();
+    const keptTotals = sc.keptTotals;
+
+    // --- chat card (dice shown; the outcome slot is filled GM-side) ---
+    const traitLabel = loc(CONFIG.SACADIA.stats[form.trait]);
+    const netNote = net > 0 ? ` · +${net} ${loc('SACADIA.Roll.Advantage')}`
+      : net < 0 ? ` · ${-net} ${loc('SACADIA.Roll.Disadvantage')}` : '';
+    const notes = [...own.notes, ...spend.notes, ...(proneDis ? [loc('SACADIA.Simple.Prone')] : []), ...(cloudDis ? ['Blackcloud'] : []), ...(fumble ? [`${loc('SACADIA.Condition.Fumbled')} −${fumble}`] : [])];
+    const content = AbilityUse.checkCardHtml({ icon: 'fa-solid fa-hand-fist', entries: sc.entries, autoFail, notes,
+      title: game.i18n.format(reduce ? 'SACADIA.Resist.CardTitleReduce' : 'SACADIA.Resist.CardTitle', { condition: condLabel }),
+      sub: `${traitLabel} ${loc('SACADIA.Resist.Check')} · ${L} ${loc(reduce ? 'SACADIA.Resist.ChecksShort' : 'SACADIA.Resist.LevelsShort')}${netNote}`,
+      mods: sc.entries.map((e, i) => mod - (i === 0 ? fumble : 0)), dropLabel: true });
+
+    await AbilityUse.postCard({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content,
+      rolls: roll ? [roll] : [],
+      sound: CONFIG.sounds.dice,
+      flags: { sacadia: { resist: {
+        resisterUuid: this.actor.uuid,
+        sourceUuid: srcUuid ?? null,
+        condition: form.condition,
+        mode: form.mode,
+        keptTotals,
+        autoFail,
+      } } },
+    });
+  }
+
+  /* -------------------------------------------- */
+  /*  NPC quick-build                             */
+  /* -------------------------------------------- */
+
+  /**
+   * Paste-a-stat-block importer (NPC only): a GM pastes a monster's stats + ability list, and this
+   * fills the NPC's defenses / HP / AP / Check DC / CR and creates a simple `ability` Item per listed
+   * entry — instead of hand-building each on a blank sheet. Freeform-tolerant (see #parseStatBlock).
+   * @this {SacadiaActorSheet}
+   */
+  static async #onPasteStatBlock(event, target) {
+    event.preventDefault();
+    const loc = (k) => game.i18n.localize(k);
+    // The full format reference lives in its own template (also in docs/STATBLOCK-FORMAT.md); shown
+    // collapsed under the paste box so it's always at hand without cluttering.
+    const help = await foundry.applications.handlebars.renderTemplate(
+      'systems/sacadia/templates/actor/parts/statblock-help.hbs', {});
+    const text = await foundry.applications.api.DialogV2.wait({
+      window: { title: loc('SACADIA.StatBlock.Title') },
+      content: `<div class="statblock-prompt">
+        <p class="hint">${loc('SACADIA.StatBlock.Hint')}</p>
+        <textarea name="block" rows="14" placeholder="${loc('SACADIA.StatBlock.Placeholder')}"></textarea>
+        ${help}
+      </div>`,
+      buttons: [
+        { action: 'import', label: loc('SACADIA.StatBlock.Import'), icon: 'fa-solid fa-file-import', default: true,
+          callback: (e, b, dialog) => dialog.element.querySelector('[name="block"]')?.value ?? '' },
+      ],
+      render: (e, dialog) => {
+        const root = dialog.element;
+        const ta = root.querySelector('[name="block"]');
+        // "Insert example" drops the reference block into the paste box to edit.
+        root.querySelector('.sbh-use-example')?.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          if (ta) { ta.value = root.querySelector('.sbh-example')?.textContent ?? ''; ta.focus(); }
+        });
+      },
+      rejectClose: false,
+    });
+    if (!text || !text.trim()) return;
+
+    const { name, update, abilities } = SacadiaActorSheet.#parseStatBlock(text);
+    if (name) update.name = name;
+    // Nothing recognized (e.g. the wrong text was pasted) — guide, don't silently "import 0".
+    if (!Object.keys(update).length && !abilities.length) {
+      return ui.notifications.warn(game.i18n.localize('SACADIA.StatBlock.Nothing'));
+    }
+    if (Object.keys(update).length) await this.actor.update(update);
+    let attacks = 0;
+    if (abilities.length) {
+      await this.actor.createEmbeddedDocuments('Item', abilities.map((a) => {
+        // An ability whose effect names an attack (`attack vs <DEF>` + `NdM`) gets a real, rollable
+        // attack activity; everything else stays prose (saves are adjudicated by the GM asking for a
+        // Resist roll). The full text is kept as the description either way.
+        const activity = SacadiaActorSheet.#parseAttack(a.desc);
+        if (activity) attacks++;
+        return {
+          name: a.name, type: 'ability',
+          system: {
+            description: a.desc, tag: 'action', costs: { ap: a.ap },
+            ...(activity ? { activities: [activity] } : {}),
+          },
+        };
+      }));
+    }
+    ui.notifications.info(game.i18n.format('SACADIA.StatBlock.Done', {
+      fields: Object.keys(update).length, abilities: abilities.length, attacks,
+    }));
+  }
+
+  /**
+   * Parse a pasted stat block into an actor update + a list of abilities. Deliberately forgiving:
+   *   - Header stats are matched anywhere by keyword (`HP 34`, `AD 13 PD 12 …`, `Check DC 13`, `CR 2`),
+   *     in any order/casing, with optional `:`/`=`. An optional `Name: …` line renames the actor.
+   *   - After an `Abilities:` / `Actions:` line, each entry is `Name (NAP): effect text` (bullet and
+   *     AP optional; AP defaults to 1). Wrapped lines without their own name/AP append to the prior
+   *     entry's description.
+   * @param {string} text
+   * @returns {{name: string|null, update: object, abilities: Array<{name:string, ap:number, desc:string}>}}
+   */
+  static #parseStatBlock(text) {
+    const headerLines = [], abilityLines = [];
+    let inAbilities = false;
+    for (const raw of text.split(/\r?\n/)) {
+      if (/^\s*(abilities|actions|traits|features)\s*:?\s*$/i.test(raw)) { inAbilities = true; continue; }
+      (inAbilities ? abilityLines : headerLines).push(raw);
+    }
+    const header = headerLines.join('\n');
+    const num = (re) => { const m = header.match(re); return m ? Number(m[1]) : null; };
+
+    const update = {};
+    const hp = num(/\b(?:hp|health)\b\s*[:=]?\s*(\d+)/i);
+    const ap = num(/\bap\b\s*[:=]?\s*(\d+)/i);
+    const dc = num(/\b(?:check\s*dc|dc)\b\s*[:=]?\s*(\d+)/i);
+    const cr = num(/\bcr\b\s*[:=]?\s*(\d+)/i);
+    if (hp != null) { update['system.health.max'] = hp; update['system.health.value'] = hp; }
+    if (ap != null) { update['system.ap.max'] = ap; update['system.ap.value'] = ap; }
+    for (const def of ['ad', 'pd', 'td', 'md', 'dr']) {
+      const v = num(new RegExp(`\\b${def}\\b\\s*[:=]?\\s*(\\d+)`, 'i'));
+      if (v != null) update[`system.defenses.${def}`] = v;
+    }
+    if (dc != null) update['system.checkDc'] = dc;
+    if (cr != null) update['system.cr'] = cr;
+    const nameM = header.match(/^\s*name\s*[:\-]\s*(.+)$/im);
+
+    // Abilities: bulleted / named / AP-tagged lines start a new entry; bare lines continue the prior.
+    const abilities = [];
+    let current = null;
+    for (const raw of abilityLines) {
+      const line = raw.trim();
+      if (!line) continue;
+      const bulleted = /^[-*•]/.test(line);
+      const hasAp = /\(\s*\d+\s*ap\s*\)/i.test(line);
+      const named = /^[^:]{1,40}:\s/.test(line);
+      if (!current || bulleted || hasAp || named) {
+        let body = line.replace(/^[-*•]\s*/, '');
+        let apCost = 1;
+        const apM = body.match(/\(\s*(\d+)\s*ap\s*\)/i);
+        if (apM) { apCost = Number(apM[1]); body = body.replace(apM[0], ' '); }
+        const colon = body.indexOf(':');
+        const abName = (colon >= 0 ? body.slice(0, colon) : body).replace(/\s+/g, ' ').trim();
+        const desc = colon >= 0 ? body.slice(colon + 1).trim() : '';
+        current = { name: abName || game.i18n.localize('TYPES.Item.ability'), ap: apCost, desc };
+        abilities.push(current);
+      } else {
+        current.desc = current.desc ? `${current.desc} ${line}` : line;
+      }
+    }
+
+    return { name: nameM ? nameM[1].trim() : null, update, abilities };
+  }
+
+  /**
+   * Detect a structured attack in an ability's effect text and build an attack activity, or return
+   * null (leave it as prose). Recognized shape — order-tolerant within the text:
+   *   [melee|ranged|magic] attack vs <AD|PD|TD|MD>, <count>d<size>[+<flat>] [<damage type>]
+   * e.g. "melee attack vs PD, 1d10 slashing" or "ranged attack vs PD, 2d6+2 piercing". The to-hit
+   * trait comes from the category (melee→power, ranged→finesse, magic→wiles); category defaults to
+   * melee. Requires both a target defense and a `NdM` to fire.
+   * @param {string} text
+   * @returns {object|null} an `activities[]` entry, or null.
+   */
+  static #parseAttack(text) {
+    if (!/\b(?:atk|attack)\b/i.test(text)) return null;
+    const defM = text.match(/\bvs\.?\s*(ad|pd|td|md)\b/i);
+    const diceM = text.match(/(\d+)\s*d\s*(\d+)/i);
+    if (!defM || !diceM) return null;
+    const category = (text.match(/\b(melee|ranged|magic)\b/i)?.[1] ?? 'melee').toLowerCase();
+    const defense = defM[1].toLowerCase();
+    const trait = CONFIG.SACADIA.attackCategories[category]?.trait ?? 'power';
+    const flatM = text.match(/\d+\s*d\s*\d+\s*\+\s*(\d+)/i);
+    // Damage type = the word right after the dice (or after +flat), unless it's filler.
+    const typeM = text.match(/\d+\s*d\s*\d+(?:\s*\+\s*\d+)?[\s,]+([a-z][a-z-]*)/i);
+    const stop = new Set(['damage', 'on', 'to', 'and', 'the', 'a', 'hit', 'vs', 'against']);
+    const type = typeM && !stop.has(typeM[1].toLowerCase()) ? typeM[1].toLowerCase() : '';
+    const damage = [{ count: diceM[1], denomination: Number(diceM[2]), formula: '', trait: '', type }];
+    if (flatM) damage.push({ count: '', denomination: null, formula: flatM[1], trait: '', type });
+    return { type: 'attack', label: '', attack: { category, trait, defense }, damage };
   }
 
   /* -------------------------------------------- */

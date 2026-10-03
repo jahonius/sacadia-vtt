@@ -1,0 +1,44 @@
+{
+  "_id": "2b95b672dbd509fe",
+  "_key": "!items!2b95b672dbd509fe",
+  "name": "Mastery of the Pack",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>The first time each turn you move within 5ft of an enemy in Pack Form, deal damage to them equal to your Finesse.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_pack",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "41f0ba85d08d"
+    }
+  }
+}

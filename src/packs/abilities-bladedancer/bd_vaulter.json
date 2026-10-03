@@ -29,12 +29,21 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move",
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_vaulter"
+      "catalogId": "bd_vaulter",
+      "buildHash": "eb6405d08180"
     }
   }
 }

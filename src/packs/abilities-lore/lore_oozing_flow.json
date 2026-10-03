@@ -1,0 +1,44 @@
+{
+  "_id": "eb5182c4e8a86e35",
+  "_key": "!items!eb5182c4e8a86e35",
+  "name": "Oozing Flow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You can squeeze through extraordinarily tight spaces with ease out of combat. In combat, you can splash apart and reform. You can expend a lore point to prevent all damage from any single source that would be dealt to you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Ancestry",
+      "prerequisite": "Heavily Warped · p.54"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_oozing_flow",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "df7f069f4f49"
+    }
+  }
+}

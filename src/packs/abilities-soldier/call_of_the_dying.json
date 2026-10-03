@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_the_dying"
+      "catalogId": "call_of_the_dying",
+      "buildHash": "08764565b4be"
     }
   }
 }

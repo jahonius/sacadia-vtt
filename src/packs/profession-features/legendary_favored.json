@@ -1,0 +1,65 @@
+{
+  "_id": "8a3255dcb530be0d",
+  "_key": "!items!8a3255dcb530be0d",
+  "name": "Favored Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Choose an additional favored enemy (and style, if applicable). Choose one favored enemy type, and add half your Wiles to your to-hit and damage against that favored enemy type. Do this even if you use 'Skilled Warrior' against this Favored Enemy.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Favored Mastery",
+        "target": "toHit",
+        "value": "floor(@wiles/2)",
+        "predicate": [
+          {
+            "atom": "target:favored"
+          }
+        ]
+      },
+      {
+        "label": "Favored Mastery",
+        "target": "damage",
+        "value": "floor(@wiles/2)",
+        "predicate": [
+          {
+            "atom": "target:favored"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_favored",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "caf645496520"
+    }
+  }
+}

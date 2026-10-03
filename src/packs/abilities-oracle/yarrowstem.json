@@ -32,6 +32,13 @@
     },
     "activities": [],
     "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
     "madness": {
       "insaneOnly": true
     }
@@ -39,7 +46,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "yarrowstem"
+      "catalogId": "yarrowstem",
+      "buildHash": "20a72a7b65f8"
     }
   }
 }

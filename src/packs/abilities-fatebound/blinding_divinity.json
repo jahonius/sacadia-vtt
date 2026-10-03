@@ -39,18 +39,26 @@
         },
         "save": {
           "trait": "fate",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "blinded",
+            "amount": "1"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "blinding_divinity",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4df537d6d0a6"
     }
   }
 }

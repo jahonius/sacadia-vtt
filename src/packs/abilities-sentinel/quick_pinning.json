@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "quick_pinning"
+      "catalogId": "quick_pinning",
+      "buildHash": "7df517001649"
     }
   }
 }

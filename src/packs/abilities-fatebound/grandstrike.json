@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Wild Strike, Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "grandstrike",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5fb71b8af505"
     }
   }
 }

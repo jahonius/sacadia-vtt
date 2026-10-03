@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "cunning_of_crows",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "c6dbf4ebd442"
     }
   }
 }

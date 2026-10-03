@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Treacherous Throw, Courage 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "slickthrow",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "40b3b6c56abc"
     }
   }
 }

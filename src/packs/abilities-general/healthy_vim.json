@@ -29,12 +29,22 @@
       "prerequisite": "Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Healthy Vim",
+        "target": "health.max",
+        "mode": "add",
+        "scope": "all",
+        "value": "2*@level",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "healthy_vim"
+      "catalogId": "healthy_vim",
+      "buildHash": "7cf88c9b293b"
     }
   }
 }

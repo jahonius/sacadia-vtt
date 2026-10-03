@@ -29,12 +29,25 @@
       "prerequisite": "Power 5, Starter"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Tough Starter",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "inflict:pinned"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_tough_starter"
+      "catalogId": "thug_tough_starter",
+      "buildHash": "abed734bb191"
     }
   }
 }

@@ -14,8 +14,8 @@
       "limbs": [],
       "pool": {
         "key": "herd",
-        "amount": 1,
-        "variable": false,
+        "amount": 0,
+        "variable": true,
         "max": ""
       }
     },
@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": "Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "save"
+      },
+      "effects": [
+        {
+          "label": "Hoofslam",
+          "target": "saveAdvantage",
+          "value": "-1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hoofslam",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "74cb7e404b43"
     }
   }
 }

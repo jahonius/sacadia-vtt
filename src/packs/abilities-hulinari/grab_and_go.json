@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "grab_and_go",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "246d81d56d38"
     }
   }
 }

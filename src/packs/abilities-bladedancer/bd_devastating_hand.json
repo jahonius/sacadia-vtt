@@ -29,12 +29,26 @@
       "prerequisite": "Courage 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Devastating Hand",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:bd_harmful_hand"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_devastating_hand"
+      "catalogId": "bd_devastating_hand",
+      "buildHash": "012d3ac69a61"
     }
   }
 }

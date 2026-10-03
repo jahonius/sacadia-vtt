@@ -47,12 +47,20 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "directed_assault"
+      "catalogId": "directed_assault",
+      "buildHash": "bdd28236f7f3"
     }
   }
 }

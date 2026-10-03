@@ -1,0 +1,45 @@
+{
+  "_id": "84069af0e254008c",
+  "_key": "!items!84069af0e254008c",
+  "name": "Greater Slivers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dice of Mind Sliver by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Mind Sliver, Wiles[4] · Research: Intuition[2]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_slivers",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Intuition[2]",
+      "buildHash": "6b5e016a0c71"
+    }
+  }
+}

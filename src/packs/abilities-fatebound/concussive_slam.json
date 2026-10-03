@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": "Bludgeonmaster, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "bludgeonmaster"
+      },
+      "inflict": [
+        {
+          "condition": "rended",
+          "amount": "1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "concussive_slam",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "1222bab55ea3"
     }
   }
 }

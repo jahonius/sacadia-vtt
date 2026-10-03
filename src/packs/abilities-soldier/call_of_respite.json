@@ -31,12 +31,23 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "aidResist": {
+      "levels": "1",
+      "maxTargets": "ceil(@proficiency/2)",
+      "autoWith": "final_calm",
+      "autoIfSteadied": false,
+      "advantageWith": "relaxed_call",
+      "spendMadness": false,
+      "mentalOnly": false,
+      "funnel": false
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_respite"
+      "catalogId": "call_of_respite",
+      "buildHash": "5ad457141543"
     }
   }
 }

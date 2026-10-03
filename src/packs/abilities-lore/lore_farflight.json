@@ -1,0 +1,44 @@
+{
+  "_id": "3556d872c32f5b1d",
+  "_key": "!items!3556d872c32f5b1d",
+  "name": "Farflight",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a lore point to take dramatic flight. Move anywhere within 60ft. Ignore difficult terrain, height changes up to 30ft, and do not provoke attacks of opportunity. Anywhere along this path, you may pick up and carry a target anywhere along this distance (though move at half speed if you carry a creature). If they are not willing, they make a Finesse Check against the effect. If they succeed, you may choose a second target along your path.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Curiot",
+      "prerequisite": "Flying Curiot Ancestry · p.171"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_farflight",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "2f710218b533"
+    }
+  }
+}

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sidekick"
+      "catalogId": "sidekick",
+      "buildHash": "fda0ec3766ab"
     }
   }
 }

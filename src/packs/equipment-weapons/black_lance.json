@@ -11,6 +11,9 @@
     "value": 300,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "spear",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "black_lance",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "52b6b5c39a4a"
     }
   }
 }

@@ -29,12 +29,38 @@
       "prerequisite": "Courage 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Trained Tactics",
+      "duration": {
+        "type": "consumed",
+        "on": "attack"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.toHit.all",
+          "mode": 2,
+          "value": "-ceil(@courage/2)"
+        },
+        {
+          "key": "system.bonuses.toHit.all",
+          "mode": 2,
+          "value": "-floor(@courage/2)",
+          "predicate": [
+            {
+              "atom": "self:steadied"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "trained_tactics"
+      "catalogId": "trained_tactics",
+      "buildHash": "9c4cbf873913"
     }
   }
 }

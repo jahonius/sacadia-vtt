@@ -1,0 +1,49 @@
+{
+  "_id": "3ef101f0d2cd3ba0",
+  "_key": "!items!3ef101f0d2cd3ba0",
+  "name": "Deathlock",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target to whom you have given Wrestle Pin and expend a lore point. Their Pin becomes enduring (does not reduce by one level at the end of their turn).</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Thug",
+      "prerequisite": "Thug, Level 9 · p.177"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "enduring": "pinned"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_deathlock",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "ad4d7334ba47"
+    }
+  }
+}

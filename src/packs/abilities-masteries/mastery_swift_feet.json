@@ -25,7 +25,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_swift_feet",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "6f29072e0d09"
     }
   }
 }

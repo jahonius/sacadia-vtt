@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Courage 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "confidence",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "9873fdaf7bb5"
     }
   }
 }

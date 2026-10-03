@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "embossed_patch",
       "kind": "adornment",
-      "armorPrereq": "Leather Set"
+      "armorPrereq": "Leather Set",
+      "buildHash": "44caea7af6d2"
     }
   }
 }

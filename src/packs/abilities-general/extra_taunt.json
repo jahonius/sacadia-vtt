@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "extra_taunt"
+      "catalogId": "extra_taunt",
+      "buildHash": "eee495db70f5"
     }
   }
 }

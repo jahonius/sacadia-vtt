@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "piercing_gaze"
+      "catalogId": "piercing_gaze",
+      "buildHash": "b0c276dc8621"
     }
   }
 }

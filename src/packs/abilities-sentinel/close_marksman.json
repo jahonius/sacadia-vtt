@@ -3,7 +3,7 @@
   "_key": "!items!29c5e01014f6a724",
   "name": "Close Marksman",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/close_marksman_icon.png",
   "system": {
     "description": "<p>When you make a ranged attack and there is an enemy within 5 feet of you who attempts an attack of opportunity against you, they get 1X disadvantage.</p>",
     "tag": "passive",
@@ -29,12 +29,25 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Close Marksman",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:opportunity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "close_marksman"
+      "catalogId": "close_marksman",
+      "buildHash": "f341a65f90a2"
     }
   }
 }

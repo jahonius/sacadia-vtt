@@ -10,7 +10,10 @@
     "weight": 0,
     "value": 25,
     "equipped": false,
-    "traits": "",
+    "traits": "versatile",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "axe",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "hand_axe",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "0b5cf1d512e2"
     }
   }
 }

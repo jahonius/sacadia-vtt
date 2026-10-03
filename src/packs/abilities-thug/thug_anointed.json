@@ -29,12 +29,25 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Anointed",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:pinned"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_anointed"
+      "catalogId": "thug_anointed",
+      "buildHash": "5a0d334ec394"
     }
   }
 }

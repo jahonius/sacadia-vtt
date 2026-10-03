@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "punching_slide"
+      "catalogId": "punching_slide",
+      "buildHash": "8dcf2aeb118b"
     }
   }
 }

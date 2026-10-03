@@ -29,12 +29,24 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Cornered Cat",
+        "target": "advantage.toHit",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:cornered"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "cornered_cat"
+      "catalogId": "cornered_cat",
+      "buildHash": "bfdd2bac98a8"
     }
   }
 }

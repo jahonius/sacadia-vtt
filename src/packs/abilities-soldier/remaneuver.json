@@ -29,12 +29,20 @@
       "prerequisite": "Courage 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "remaneuver"
+      "catalogId": "remaneuver",
+      "buildHash": "3658347b285c"
     }
   }
 }

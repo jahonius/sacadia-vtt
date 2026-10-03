@@ -30,6 +30,15 @@
     },
     "activities": [],
     "modifiers": [],
+    "reactionTrigger": "move",
+    "onUse": {
+      "target": [
+        {
+          "condition": "slowed",
+          "amount": "1"
+        }
+      ]
+    },
     "madness": {
       "prereq": 4,
       "spend": "1d3-1"
@@ -38,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "that_sluggish_feeling"
+      "catalogId": "that_sluggish_feeling",
+      "buildHash": "e0f31f5de859"
     }
   }
 }

@@ -29,12 +29,27 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "onUse": {
+      "self": [
+        {
+          "condition": "sting",
+          "amount": "ceil(@proficiency/2)"
+        }
+      ],
+      "target": [
+        {
+          "condition": "sting",
+          "amount": "ceil(@proficiency/2)"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "predator_and_prey"
+      "catalogId": "predator_and_prey",
+      "buildHash": "2d2c8c77df5e"
     }
   }
 }

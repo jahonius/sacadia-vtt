@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Wild Strike, Finesse 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "third_arm",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8ac1b1170473"
     }
   }
 }

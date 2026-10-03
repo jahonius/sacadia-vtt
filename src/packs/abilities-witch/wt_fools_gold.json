@@ -1,0 +1,61 @@
+{
+  "_id": "f95e9aa81e02661c",
+  "_key": "!items!f95e9aa81e02661c",
+  "name": "Fool’s Gold",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to a Surprised target within 5ft of you taking damage that wound end the Surprise Effect, they make a Fate Check against your Check DC. If they fail, they do not remove the Surprised Condition.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Finesse[3]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_fools_gold",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "8556924cb119"
+    }
+  }
+}

@@ -29,12 +29,26 @@
       "prerequisite": "Gliding Strike, Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Whisperglide",
+          "target": "damage",
+          "mode": "step",
+          "value": "min(@combat.basic.fiveFootAdjust, @proficiency)"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_whisperglide"
+      "catalogId": "bd_whisperglide",
+      "buildHash": "2a50d2ba5513"
     }
   }
 }

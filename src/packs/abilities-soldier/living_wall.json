@@ -29,12 +29,22 @@
       "prerequisite": "Courage 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Living Wall",
+        "target": "health.max",
+        "mode": "add",
+        "scope": "all",
+        "value": "2*@level",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "living_wall"
+      "catalogId": "living_wall",
+      "buildHash": "28f46b4c657d"
     }
   }
 }

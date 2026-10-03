@@ -39,7 +39,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -50,12 +51,14 @@
         ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "flashfire"
+      "catalogId": "flashfire",
+      "buildHash": "577e914b1cc2"
     }
   }
 }

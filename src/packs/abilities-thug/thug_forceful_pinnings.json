@@ -41,10 +41,20 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "dragged",
+            "amount": "1"
+          },
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +62,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_forceful_pinnings"
+      "catalogId": "thug_forceful_pinnings",
+      "buildHash": "b10f78989214"
     }
   }
 }

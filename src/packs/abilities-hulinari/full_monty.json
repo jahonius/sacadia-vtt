@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Surrounded Brute, Courage 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "full_monty",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5ba62519c956"
     }
   }
 }

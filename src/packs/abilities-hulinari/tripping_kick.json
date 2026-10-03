@@ -28,13 +28,27 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "basic_kick"
+      },
+      "inflict": [
+        {
+          "condition": "prone",
+          "amount": "1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "tripping_kick",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "b0b496a6e70e"
     }
   }
 }

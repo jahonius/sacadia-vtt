@@ -1,0 +1,102 @@
+// Sacadia tooltip skin. Foundry renders `data-tooltip-html` content inside a `#tooltip` element
+// appended to <body>, OUTSIDE the `.sacadia` sheet — so these live at the global root, not under the
+// sheet scope. Tokens are on :root, so the skin palette still applies.
+//
+// `.sac-tip` is the shared shell (defense provenance, condition rules, roll preview all use it).
+// `.sac-rolltip` layers the roll-preview extras (advantage note, modifier list) on top.
+.sac-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 11rem;
+  text-align: left;
+  font-family: var(--sac-font-ui);
+
+  .tip-title {
+    font-family: var(--sac-font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--sac-gold);
+    border-bottom: 1px solid var(--sac-line);
+    padding-bottom: 0.15rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .tip-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+
+    .tip-k {
+      color: var(--sac-dim);
+      white-space: nowrap;
+      small { opacity: 0.8; font-style: italic; }
+    }
+    .tip-v {
+      font-family: var(--sac-font-mono);
+      font-variant-numeric: tabular-nums;
+      color: var(--sac-text);
+      text-align: right;
+    }
+
+    // The summed line: a hairline rule above, emphasized on both sides.
+    &.total {
+      margin-top: 0.1rem;
+      padding-top: 0.15rem;
+      border-top: 1px solid var(--sac-line);
+      .tip-k { color: var(--sac-text); }
+      .tip-v { color: var(--sac-gold); font-weight: 700; }
+    }
+  }
+
+  // Informational aside (e.g. a Max-Stat cap) — muted, not alarming.
+  .tip-note {
+    color: var(--sac-dim);
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+
+  // A single rule/description line (conditions with a static effect).
+  .tip-rule {
+    color: var(--sac-text);
+    font-size: 0.85rem;
+  }
+
+  // Per-level breakdown rows (conditions whose effect changes by level); the active level is marked.
+  .tip-level {
+    color: var(--sac-dim);
+    font-size: 0.82rem;
+    &.on { color: var(--sac-gold-hi); font-weight: 700; }
+  }
+}
+
+.sac-rolltip {
+  // Advantage / disadvantage baked into the roll — semantic, so it reads as a warning.
+  .tip-warn {
+    color: var(--sac-blood);
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+
+  .tip-mods {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    margin-top: 0.15rem;
+    padding-top: 0.15rem;
+    border-top: 1px dashed var(--sac-line);
+
+    .tip-mods-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--sac-dim);
+    }
+    .tip-mod {
+      font-size: 0.82rem;
+      color: var(--sac-gold-hi);
+    }
+  }
+}

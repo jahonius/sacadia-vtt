@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "get_down",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6fa3048baaa9"
     }
   }
 }

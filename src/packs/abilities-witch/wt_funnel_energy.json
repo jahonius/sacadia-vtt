@@ -1,0 +1,53 @@
+{
+  "_id": "51dc3b62d8dff00b",
+  "_key": "!items!51dc3b62d8dff00b",
+  "name": "Funnel Energy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose two different targets within 5ft of you (you cannot choose yourself). The first target must have Fatigue. Make X Fate Checks against the first target's Check DC, where X is the first target's level of Fatigue. For every successful Trait Check, remove one level of Fatigue from that target, and give the other target 1 additional AP to use on their next turn. This does not work on Battle Fatigue.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "aidResist": {
+      "levels": "fatigue",
+      "maxTargets": "2",
+      "autoWith": "",
+      "autoIfSteadied": false,
+      "advantageWith": "",
+      "spendMadness": false,
+      "mentalOnly": false,
+      "funnel": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_funnel_energy",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "7c14dcfccef0"
+    }
+  }
+}

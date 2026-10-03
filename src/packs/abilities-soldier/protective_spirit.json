@@ -29,12 +29,14 @@
       "prerequisite": "Reposition, Courage 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "protective_spirit"
+      "catalogId": "protective_spirit",
+      "buildHash": "ed2dc77f6bc3"
     }
   }
 }

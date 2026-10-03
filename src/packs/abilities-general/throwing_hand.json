@@ -29,12 +29,25 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Throwing Hand",
+        "target": "damage",
+        "mode": "step",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:trait:versatile"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "throwing_hand"
+      "catalogId": "throwing_hand",
+      "buildHash": "b251f1dc4b47"
     }
   }
 }

@@ -1,0 +1,62 @@
+{
+  "_id": "5e8892766baa9299",
+  "_key": "!items!5e8892766baa9299",
+  "name": "Divine Volley",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>While wielding a bow, expend one lore point along with an attack made with that bow. Make a ranged attack against a number of enemies up to X within an X by X square, where X is your Proficiency (measured in tiles). The furthest point of that square must be within your bow range. Deal damage as normal to any targets on a successful hit.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Sentinel",
+      "prerequisite": "Sentinel, Level 13 · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        },
+        "requires": [
+          {
+            "atom": "self:attack:weapon:bow"
+          }
+        ],
+        "extraAttacks": "@proficiency - 1"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_divine_volley",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "6b140444be57"
+    }
+  }
+}

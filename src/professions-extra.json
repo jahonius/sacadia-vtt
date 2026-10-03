@@ -124,7 +124,7 @@
    "tag": "passive",
    "cspCost": 5,
    "prerequisite": "Bladius, Finesse 5",
-   "description": "Increase the radius of Blade Aura from 10ft to 15ft. The Fatebound A cool mist hovers over a lake. A lost child, called to this place, peers at their still reflection. They do not see themselves, but a kingly presence – a divine god – smirking back at them. The god beckons for them to reach into the lake, and in so doing the child pulls a spear from the water, longer than they are tall, glittering in gold. It radiates power, and they immediately know that they are the son of a god. The Fatebound are the children of gods or else simple folk tricked by Fae into pacts. Wielding a divine weapon granted by their patron, they are tested by fate–and twist it to their will. The blessed Achilles, Kaguya-Hime, the Pandova brothers, and Cu Chulainn are all Fatebound, as is Thor under tribulation. All of these characters share the blessing and curse of fate, and wield holy weapons or powers which grant them power–and pose danger to themselves. Party Role DPS + AoE, Crit-Fishing, Fate Manipulation Aspect... Fated StrikeP: Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon. Gain training in use of this weapon if you do not already have it. When you make an attack using your divine weapon, add your Fate score to damage dealt (in addition to Power or Finesse). You may switch your Divine Weapon during any long rest. A weapon that loses its divinity turns to dust. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit. Check Expertise: Power and Fate Checks Check DC: 9 + Fate + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Imbued Weapons, Light Armor, Medium Armor Hit Points per Level: 9 or roll 2D8 All Fatebound [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Elemental WeaponPB: Your divine weapon does elemental damage (choose one when you take this ability: Earth, Air, Fire, Water, Rot, Salt) instead of normal damage. Elemental damage overcomes physical weapon resistances. Additionally, you may summon and dismiss your divine weapon with a Boost to any action, even if physically separated. The divine weapon does not take up space in your readied item slots (RIS). [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessL: You may use this on any action before or after rolling. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose from one of the following options. Heavy Weapons MasteryP: Gain +1 to attack and damage rolls you make with your divine weapon if you wield a heavy weapon as your divine weapon. Armor MasteryP: You may gain the benefit of one extra visible item while wearing armor that would obscure it (to a max of 3). Critical MasteryP: Once per Quick Rest when you roll a natural 1 on a D20 die, you may treat it as a natural 20. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Boon of the Gods: Your divine weapon is imbued with the aura of your divine patron. Once per quick rest, you may increase the damage dice of an attack by two dice types as a Boost to an attack. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose from one of the following options. Fumble MasteryP: Whenever you give Fumble, increase the dice type of Fumble given by two dice types. Boost MasteryP: Increase the damage of any attack you make against a single target by half your Proficiency (rounded up) when you apply three Boosts to an attack. Aristeia MasteryP: Increase your number of Glory points by two. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] DemigodP: Increase your Power or Fate (choose one) by one additional point, to a maximum of 7."
+   "description": "Increase the radius of Blade Aura from 10ft to 15ft."
   },
   {
    "name": "Cascading Cleave",
@@ -510,9 +510,7 @@
    "cspCost": 6,
    "prerequisite": "",
    "description": "The number of Glory points you get per quick rest is equal to twice your Proficiency Score."
-  }
- ],
- "hulinari_warrior": [
+  },
   {
    "name": "Boosted Attack",
    "tag": "passive",
@@ -595,8 +593,59 @@
    "tag": "boost",
    "cspCost": 4,
    "prerequisite": "Power 3",
-   "description": "As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency). [3] Greater Elemental Weapon: (Prerequisite: Fate 4). Choose the Boon that matches the elemental damage type dealt by your divine weapon: Vampiric WeaponA: (Prerequisite: Rot Elemental Weapon). Once per quick rest you attempt to steal the life of a target. Choose one target. They make a Fate Check. If they fail, reduce their HP by XD6 and gain temporary HP equal to half the damage dealt (where X is half your Proficiency, rounded up). Crystaline WeaponF: (Prerequisite: Salt Elemental Weapon). Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright. Scorching WeaponF: (Prerequisite: Fire Elemental Weapon). As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest. Spring WeaponR: (Prerequisite: Water Elemental Weapon). Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP. Breezy WeaponB: (Prerequisite: Air Elemental Weapon). Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction. Stone WeaponR: (Prerequisite: Earth Elemental Weapon). Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action. The Hulinari Warrior T he low rumble of an approaching stampede, the roar of a massive bear crushing against the trees, or the fluttering of a thousand butterfly wings. The Hulinari is the force of a species of animal brought fully to battle, and they reflect that animal in their ferocity as well as their natural inclination for savage combat. The Hulinari is at its best in combat against multiple enemies. Reveling in the odds, Hulinari often see their purpose to take down the human world–and what better way to do that than slashing them to pieces five at a time? Party Role Area of Effect Damage, Area Control, Target Debuffing. Aspect... Hulinari SubtypeP: (Prerequisite: Hulinari Heritage). You may only play a Hulinari Warrior if you have the Hulinari Heritage Ancestry and a Hulinari Heritage. When you select your Hulinari Ancestry, you can only take combat abilities from that Hulinari Warrior Ancestry. Antlers, Claws, and TalonsP: When you make an unarmed attack in Beast form, change the damage dice from 1D4 to 1D8. Basic Combat ProwessP: Gain ten combat skill points to spend immediately. Beginning Attributes Proficient Attacks: Melee to-hit Check Expertise: Courage Checks Check DC: 9 + Courage + Proficiency + Courage/3 (round down) Weapon and Armor Training: Basic Weapons, Light and Medium Armor. Hit Points per Level: 9 or roll 2D8 All Hulinari Warriors [Level 1] ProficiencyP: Set your Proficiency to 1 [Level 1] APP: Set your AP to 2 [Level 1] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 1. [Level 2] ProficiencyP: Increase your Proficiency to 2 [Level 2] APP: Increase your AP to 3 [Level 3] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 2. [Level 3] Bestial RespectF: Choose one beast within 30ft of you (with CR less than or equal to half your Proficiency, rounded up) to roll a Fate Check. If they fail, they become your ally until you break Focus. Once per turn they may use a action to roll a Fate check against this effect, ending Bestial Respect on a success. Once a creature succeeds against Bestial Respect, they may not be affected by it again until after a quick rest. [Level 4] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. Also, gain the following ability: Rousing SuccessB: you may use this Boost on any action you choose before or after rolling without expending a Boost to that action. If you do, expend one lore point. You critically succeed at that action. [Level 5] ProficiencyP: Increase your Proficiency to 3 [Level 5] Mastery: Choose one of the following: Mastery of Tooth and ClawP: Gain +1 to unarmed melee attacks and damage. Mastery of Paw and WingP: Increase your movement speed by 5ft (and Fly speed if applicable). Mastery of Feather and HideP: Increase your HP by 1 for every two levels, and increase the size of your HP pools by the same amount. [Level 6] APP: Increase your AP to 4 [Level 6] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 3. [Level 7] Bestial RapidityP: When you change forms, it only exhausts . When you do, lose all levels of Pin. [Level 8] ProficiencyP: Increase your Proficiency to 4 [Level 9] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 4. [Level 9] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 10] APP: Increase your AP to 5 [Level 11] ProficiencyP: Increase your Proficiency to 5 [Level 11] Legendary Mastery: Choose one of the following: Mastery of the PackP: The first time each turn you move within 5ft of an enemy in Pack Form, deal damage to them equal to your Finesse. Mastery of the BruteP: Increase the dice type of melee attacks made with your claws by one dice type when in Brute form. Mastery of the SwarmP: Your flock constantly swarms around you. Gain damage resistance equal to half your Proficiency (rounded up) against all physical damage when in Swarm Form. [Level 12] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 5. [Level 13] Lore IncreaseP: Gain one Lore Increase [L] to spend on Lore abilities. [Level 14] ProficiencyP: Increase your Proficiency to 6 [Level 14] APP: Increase your AP to 6 [Level 15] Trait PointsP: You gain 3 Trait Points to distribute between Power, Finesse, Courage, Wiles, and Fate. You must distribute these trait points now, and you may not set any single Trait Score to a number above 6. [Level 15] Mostly HumanB: You may change between a human and beast form as a Boost to another action. Form of The Pack You may only take the below abilities if you have the Pack Hulinari Heritage."
+   "description": "As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency)."
   },
+  {
+   "name": "Greater Elemental Weapon",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Fate 4",
+   "description": "Choose the Boon that matches the elemental damage type dealt by your divine weapon: Vampiric Weapon (Rot), Crystaline Weapon (Salt), Scorching Weapon (Fire), Spring Weapon (Water), Breezy Weapon (Air), or Stone Weapon (Earth). Add the chosen Boon from this compendium."
+  },
+  {
+   "name": "Vampiric Weapon",
+   "tag": "action",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Rot Elemental Weapon",
+   "description": "Once per quick rest you attempt to steal the life of a target. Choose one target. They make a Fate Check. If they fail, reduce their HP by XD6 and gain temporary HP equal to half the damage dealt (where X is half your Proficiency, rounded up)."
+  },
+  {
+   "name": "Crystaline Weapon",
+   "tag": "focus",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Salt Elemental Weapon",
+   "description": "Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright."
+  },
+  {
+   "name": "Scorching Weapon",
+   "tag": "focus",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Fire Elemental Weapon",
+   "description": "As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest."
+  },
+  {
+   "name": "Spring Weapon",
+   "tag": "reaction",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Water Elemental Weapon",
+   "description": "Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP."
+  },
+  {
+   "name": "Breezy Weapon",
+   "tag": "boost",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Air Elemental Weapon",
+   "description": "Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction."
+  },
+  {
+   "name": "Stone Weapon",
+   "tag": "reaction",
+   "cspCost": 0,
+   "prerequisite": "Greater Elemental Weapon, Earth Elemental Weapon",
+   "description": "Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action."
+  }
+ ],
+ "hulinari_warrior": [
   {
    "name": "Headbutt",
    "tag": "action",
@@ -1165,137 +1214,221 @@
    "description": "The number of Savage Points you get per quick rest is equal to twice your Proficiency Score. Form of the Swarm You may only take the below abilities if you have the Swarm Hulinari Heritage."
   },
   {
-   "name": "Hovering Foe",
+   "name": "Clouded Foe",
    "tag": "focus",
-   "cspCost": 4,
+   "cspCost": 6,
    "prerequisite": "",
-   "description": "When in Swarm Form, select a single target within 5ft of you.They may make a Finesse Check against your Check DC. If they fail, reduce your Move speed to 0 and move onto that target’s square for as long as you maintain Focus. When they move, you move with them. For as long as you maintain Focus on Hovering Foe and share a square with that target, they are treated as surrounded provided they are your enemy. This has no default effect on allies. Your Focus ends if you move away from them, or if they successfully use a Make Trait Check action to make a Finesse Check against your Check DC."
-  },
-  {
-   "name": "Swarm Confusion",
-   "tag": "action",
-   "cspCost": 3,
-   "prerequisite": "Hovering Foe",
-   "description": "As an action while you are focusing on Hovering Foe, that target gets 1X Disadvantage on all Trait Checks made against you until the start of your next turn."
-  },
-  {
-   "name": "Disarming Bites",
-   "tag": "reaction",
-   "cspCost": 3,
-   "prerequisite": "Hovering Foe",
-   "description": "When you use ‘Hovering Foe’ on a target, you may use a reaction to give that target 1x Disadvantage or 1x Advantage on any Trait check."
-  },
-  {
-   "name": "Armor Nics",
-   "tag": "reaction",
-   "cspCost": 3,
-   "prerequisite": "Hovering Foe",
-   "description": "When you use ‘Hovering Foe’ on a target, you may use a reaction to reduce or increase their Mental and Physical Defense by your Finesse score against a single attack. You may declare this ability after the attack roll is made."
+   "description": "When you are in Swarm Form and initiate focus on Clouded Foe, increase the size of your token to X tiles, where X is your Proficiency. One of those tiles must be the tile you are in, and all must be adjacent to at least one other tile (no diagonals). You may select tiles occupied by creatures. For as long as you maintain Focus on Clouded Foe, when you take the Move action, all tiles move together, cannot separate, and trigger reaction attacks together. If one part of your token would forcibly separate from the others, your Focus immediately ends. When you end Focus on Clouded Foe, choose one tile occupied by Clouded Foe to be your new location. For as long as you maintain Focus on Clouded Foe, enemies in a tile occupied by Clouded Foe are considered Surrounded."
   },
   {
    "name": "Maneuver Cloud",
    "tag": "action",
    "cspCost": 4,
-   "prerequisite": "Hovering Foe",
-   "description": "When you use ‘Hovering Foe’, you may use an action to move yourself and the target of ‘Hovering Foe’ up to 10ft in any direction. They may make a Finesse Check against the effect."
+   "prerequisite": "Clouded Foe",
+   "description": "When you use Clouded Foe, you may use an action to attempt to move a target from one part of your Swarm to another provided their movement through the Cloud would not pass through a square occupied by another creature. They make a Finesse Check against this. This move triggers reaction attacks."
   },
   {
-   "name": "Birdshield",
+   "name": "Delirious Flock",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Clouded Foe",
+   "description": "All enemies within Clouded Foe make Wiles Checks against Delirium equal to half your Proficiency, rounded up."
+  },
+  {
+   "name": "Armor Nics",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Clouded Foe",
+   "description": "When you use 'Clouded Foe' on a target, you may use a reaction to reduce or increase their MD, PD, TD, or DR by your Finesse score against a single attack. You may declare this ability after the attack roll is made."
+  },
+  {
+   "name": "Sharp Cloud",
    "tag": "focus",
-   "cspCost": 5,
-   "prerequisite": "Hovering Foe, Courage 3",
-   "description": "For as long as you maintain Focus on Bird Shield, reduce all damage the target of Hovering Foe takes by X, where X is equal to your Proficiency. This ability ends if you drop Focus on Hovering Foe."
+   "cspCost": 4,
+   "prerequisite": "Clouded Foe, Finesse 2",
+   "description": "For as long as you maintain Focus on Sharp Cloud, enemies starting their turn in Clouded Foe or attempting to move through it must make a Power Check or take XD10 damage, where X is your Finesse Score."
   },
   {
    "name": "Birdbite",
-   "tag": "focus",
-   "cspCost": 5,
-   "prerequisite": "Hovering Foe, Courage 3",
-   "description": "For as long as you maintain Focus on Birdbite, the target of your Hovering Foe effect takes XD10 damage at the start of their turn, where X is equal to half your Proficiency (rounded up). There is no Trait Check against this effect. If an enemy successfully uses Make Trait Check against Hovering Foe while you also have Focus on Birdbite, you drop Focus on Birdbite instead."
-  },
-  {
-   "name": "Sharpbeak",
    "tag": "action",
-   "cspCost": 3,
-   "prerequisite": "Birdbite, Courage 5",
-   "description": "When you are Focusing on Birdbite, you may make a melee attack against the target’s PD. If you succeed, do not deal damage. Instead, increase the damage of Birdbite by two dice types at the start of their next turn."
-  },
-  {
-   "name": "Speedy Cloud",
-   "tag": "reaction",
    "cspCost": 4,
-   "prerequisite": "",
-   "description": "(Preqreuisite: Hovering Foe, Finesse 3). When you use Hovering Foe on a target, you may use a reaction in response to them taking the Move action. If you do, you may reduce or increase their Move speed by X, where X is 5 times your Finesse Score. They may make a Finesse Check against this effect."
+   "prerequisite": "Clouded Foe, Courage 3",
+   "description": "Make an unarmed attack against all enemy targets inside your Swarm. Roll to-hit and damage separately against each. If a larger creature occupies multiple Clouded Foe tiles, you may make a separate attack against each occupied square."
   },
   {
-   "name": "Picking at Armor",
-   "tag": "focus",
-   "cspCost": 4,
-   "prerequisite": "Hovering Foe, Wiles 3",
-   "description": "For as long as you maintain Focus on Picking at Armor, the target of Hovering Foe is rended 1 at the start of each of their turns. If an enemy successfully uses Make Trait Check against Hovering Foe while you also have Focus on Picking at Armor, you drop Focus on Picking at Armor instead."
-  },
-  {
-   "name": "Pick Harder",
-   "tag": "action",
-   "cspCost": 3,
-   "prerequisite": "Picking ar Armor, Wiles 4",
-   "description": "When you are Focusing on Picking at Armor, you may make a single attack against that target’s MD. If you successfully hit, rend their armor by 1."
-  },
-  {
-   "name": "Lend a Wing",
-   "tag": "reaction",
-   "cspCost": 3,
-   "prerequisite": "Hovering Foe, Courage 4",
-   "description": "As a Reaction when you are maintaining Focus on Hovering Foe and the target of Hovering Foe is attacked, you may take all the damage instead."
-  },
-  {
-   "name": "Blackcloud",
-   "tag": "focus",
-   "cspCost": 3,
-   "prerequisite": "",
-   "description": "All enemies within 15ft of you get 1X Disadvantage on any mental Trait Check as long as you maintain Focus."
-  },
-  {
-   "name": "Drowning Cloud",
+   "name": "Focused Bite",
    "tag": "passive",
    "cspCost": 3,
-   "prerequisite": "Blackcloud, Wiles 3",
-   "description": "Increase the radius of Blackcloud to 20ft."
+   "prerequisite": "Birdbite, Wiles 3",
+   "description": "Increase the damage of Birdbite by 1 Dice Type for every Focus Action you are actively maintaining."
   },
   {
-   "name": "Cry of Delirium",
+   "name": "Razorbite",
+   "tag": "boost",
+   "cspCost": 6,
+   "prerequisite": "Birdbite",
+   "description": "As a Boost to Birdbite, instead of making attacks against all enemy targets, make a single Unarmed attack against one target in Clouded Foe. Increase the damage dice of this attack X times, where X is your Proficiency."
+  },
+  {
+   "name": "Clouded Ally",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "When you are in Swarm Form and initiate Focus on Clouded Ally, increase the size of your token to X tiles, where X is your Proficiency. One of those tiles must be the tile you are in, and all must be adjacent to at least one other tile (no diagonals). You may select tiles occupied by creatures. For as long as you maintain Focus on Clouded Ally, when you take the Move action, all tiles move together, cannot separate, and trigger reaction attacks together. If one part of your token would forcibly separate from the others, your Focus immediately ends. When you end Focus on Clouded Ally, choose one tile occupied by Clouded Ally to be your new location. For as long as you maintain Focus on Clouded Ally, allies in a tile occupied by your Clouded Ally are treated as under Partial Cover."
+  },
+  {
+   "name": "Clouded Walk",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "Clouded Ally",
+   "description": "When you use Clouded Ally, as a reaction to an ally entering your Cloud, you may move them to somewhere else within the Cloud provided they do not move through other creatures in the Cloud. Their movement can still trigger reaction attacks."
+  },
+  {
+   "name": "Guiding Wingbeats",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Clouded Ally",
+   "description": "For as long as you maintain Focus, increase the To-Hit of all allies within the Cloud by +X, where X is half your Proficiency, rounded up."
+  },
+  {
+   "name": "Wingthrust",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Guiding Wingbeats, Courage 3",
+   "description": "When you use Guiding Wingbeats, additionally increase damage they deal on a successful to-hit by +X."
+  },
+  {
+   "name": "Sacrificial Wing",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Clouded Ally, Courage 3",
+   "description": "As a Reaction when you are maintaining Focus on Clouded Ally and a target of Clouded Ally is attacked, you may take all the damage instead."
+  },
+  {
+   "name": "Thundercloud",
    "tag": "action",
    "cspCost": 4,
-   "prerequisite": "Blackcloud",
-   "description": "Attempt to give all enemies within the radius of Blackcloud 1 level of Delirium (Wiles Check negates)."
+   "prerequisite": "Clouded Ally, Finesse 4",
+   "description": "As a body action, rearrange the positions of all willing allies inside tiles occupied by Clouded Ally."
+  },
+  {
+   "name": "Grey Cloud",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Clouded Foe or Clouded Ally, Courage 3",
+   "description": "Increase the tiles Clouded Foe and Clouded Ally occupy by 1."
+  },
+  {
+   "name": "Stormcloud",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Grey Cloud, Courage 6",
+   "description": "Increase the tiles Clouded Foe and Clouded Ally occupy by 2."
+  },
+  {
+   "name": "Rolling Fog",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Clouded Foe or Clouded Ally",
+   "description": "As a Boost to initiating Clouded Foe or Clouded Ally, choose one target within 5ft of you. If you do, put all tiles of Clouded Foe on or as close as possible to that target. For as long as you maintain Focus on Clouded Foe or Clouded Ally, set your own Move Speed to 0. Each time the target would move outside your Swarm, you may expend a reaction to move with the target. Focus on Clouded Foe or Clouded Ally ends if they successfully leave the Cloud."
   },
   {
    "name": "Deafening Caw",
    "tag": "action",
    "cspCost": 3,
    "prerequisite": "",
-   "description": "When in Swarm Form, you may use an action to attempt to give all enemies within 30ft of you 1D4 fumble. Increase this Fumble to 1D6 at level 5, and 1D8 at level 11. They make Fate Checks against this effect."
+   "description": "When in Swarm Form, attempt to give all enemies within 10ft of you 1D4 Fumble. Increase this Fumble to 1D6 at level 5, and 1D8 at level 11. They make Fate Checks against this effect."
   },
   {
-   "name": "Clawing Talons",
+   "name": "Delirius Flying",
    "tag": "action",
-   "cspCost": 3,
+   "cspCost": 4,
    "prerequisite": "",
-   "description": "Choose one target within 5ft of you. Make a melee attack against MD. If you hit, deal 2D6+Wiles Piercing Damage."
+   "description": "Attempt to give one target within 5ft of you X levels of Delirium, where X is your Proficiency (Wiles Check negates)."
   },
   {
-   "name": "Focused Claw",
-   "tag": "passive",
+   "name": "Explosive Swarm",
+   "tag": "boost",
    "cspCost": 3,
-   "prerequisite": "Clawing Talons, Wiles 3",
-   "description": "Increase the damage dice of Clawing Talons by 1 dice type for each Focus action you have maintained or initiated successfully on this turn."
+   "prerequisite": "Finesse 2",
+   "description": "As a Boost to a move action when an enemy attempts a reaction attack against you, you burst into a cloud of birds for a moment. They do not get to make a reaction attack against you."
   },
   {
-   "name": "Hyperfocused",
+   "name": "Mimicked Caw",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "Wiles 3",
+   "description": "Choose a target within 30ft of you who is using the Focus action. They make a Wiles Check against your Check DC, losing Focus on their ability with a failed Check DC."
+  },
+  {
+   "name": "Absolute Mimicry",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Wiles 4",
+   "description": "Choose a target within 30ft and give one of the following one-word commands to them. They make a Wiles Check against your Check DC or use their next action to follow the command. Once a target makes a trait check against this effect, you cannot use it against them again until a quick rest has ended. Stop: The target loses 1 AP on their next turn and does not get a reaction between now and the start of their turn. Flee: The target uses their first action to move 30ft away from the nearest enemy target, provoking a reaction attack as they do. Attack: The target uses their first turn to attack the nearest enemy. This effect cannot make them attack an ally. If there are no targets within range, they treat this like Stop. Drop: The target falls Prone as a reaction. They may stand up on their turn."
+  },
+  {
+   "name": "Trickster Tactics",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "description": "When you take this ability, you get a number of Trickster Points equal to your Proficiency Score that you may only use while in Swarm Form. You get all Trickster Points back after a quick rest. When you take this ability, you may spend skill points to learn Trickster Tactics. Whenever you may spend skill points, you may add to the list of Trickster Tactics you know."
+  },
+  {
+   "name": "Blackcloud",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Clouded Foe",
+   "description": "Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. All enemies inside Clouded Foe get 1X Disadvantage to all Trait Checks for as long as you maintain Focus on Blackcloud."
+  },
+  {
+   "name": "Dark Cloud",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Clouded Foe, Finesse 4",
+   "description": "Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus, creatures cannot see through tiles occupied by your Swarm. If a creature is inside the Cloud, they treat the area as Dim."
+  },
+  {
+   "name": "Dark Steps",
    "tag": "passive",
    "cspCost": 3,
-   "prerequisite": "Focused Claw, Wiles 5",
-   "description": "Increase the damage dice of Clawing Talons by 1 additional dice type for each Focus action you have maintained or initiated successfully on this turn."
+   "prerequisite": "Dark Cloud",
+   "description": "Creatures attempting to move through the Dark Cloud treat the space as Difficult Terrain."
+  },
+  {
+   "name": "Birdshield",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Clouded Ally",
+   "description": "Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus on Birdshield, all allies within a space covered by Clouded Ally gain X DR, where X is your Proficiency."
+  },
+  {
+   "name": "Beak & Blade",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Clouded Ally, Finesse 4",
+   "description": "Expend X Trickster Points when you initiate this ability (to a maximum of half your Proficiency rounded up), and expend one additional Trickster Point each turn you maintain Focus. Choose one ally within Clouded Ally when you Initiate this. For as long as that ally remains within Clouded Ally, increase the damage dice of all melee attacks they deal by X dice types."
+  },
+  {
+   "name": "Cloudsurge",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Clouded Foe or Clouded Ally",
+   "description": "Expend X Trickster Points as a Boost to initiating Clouded Foe or Clouded Ally (to a maximum of half your Proficiency rounded up). Increase the tiles Clouded Foe and Clouded Ally occupy by X."
+  },
+  {
+   "name": "Swarm Effects",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Clouded Foe or Clouded Ally, Finesse 3",
+   "description": "Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. While maintaining Focus on Clouded Foe or Clouded Ally, if you additionally Focus on Swarm Effects, attacks targeting a single target cannot deal more than 5X damage to you after applying any DR you have, where X is your Proficiency. If an attack would deal more damage than this to you, it ends your Focus on Swarm Effects."
+  },
+  {
+   "name": "Murder Management",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "description": "The number of Trickster Points you get per quick rest is equal to twice your Proficiency Score."
   }
  ]
 }

@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "stamped_feathers",
       "kind": "adornment",
-      "armorPrereq": "Platted Style"
+      "armorPrereq": "Platted Style",
+      "buildHash": "9cad46d82f46"
     }
   }
 }

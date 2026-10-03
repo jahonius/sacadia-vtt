@@ -28,13 +28,35 @@
       "subpath": "",
       "prerequisite": "Lucky Break"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "lucky_break"
+      },
+      "once": true,
+      "special": {
+        "pendingPerFail": {
+          "toHit": 1,
+          "damageWith": "sapping_strike"
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "sapped_fates",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "ffe573c49561"
     }
   }
 }

@@ -57,7 +57,10 @@ a { color: var(--sac-text); }
 }
 
 // --- Pixel art: keep generated icons crisp when scaled ---
-.ability-img, .inv-img, .profile-img, .px { image-rendering: pixelated; }
+// Ability/inventory/portrait art is high-res (1024px) shown small, so it downscales smoothly (the
+// browser default) — `pixelated` (nearest-neighbor) would alias it. `.px` stays for assets that are
+// genuinely low-res and meant to render blocky.
+.px { image-rendering: pixelated; }
 
 // --- Scrollbars ---
 ::-webkit-scrollbar { width: 7px; }
@@ -95,6 +98,7 @@ a { color: var(--sac-text); }
   &.tag { border-color: var(--sac-olive); color: var(--sac-olive); }       // ability tag
   &.ap { border-color: var(--sac-gold-lo); color: var(--sac-gold); }       // AP cost
   &.mad { border-color: #6e181b; color: var(--sac-blood); }                // madness gain/spend/prereq
+  &.warn { border-color: var(--sac-blood-deep); color: var(--sac-blood); }  // rended / broken / overburdened
   &.pool { background: var(--sac-gold-lo); border-color: var(--sac-gold-lo); color: #14100a; }
   &.live { border-color: var(--sac-olive); color: var(--sac-olive); }      // predicate satisfied now
   &.live::before { content: "\25CF"; font-size: 0.55rem; }

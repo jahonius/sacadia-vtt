@@ -31,12 +31,30 @@
       "prerequisite": "Courage 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Guard Them",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.ignoreSurrounded",
+          "mode": 2,
+          "value": "1"
+        }
+      ],
+      "onEnd": {
+        "casterFatigue": 1
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "guard_them"
+      "catalogId": "guard_them",
+      "buildHash": "d258d7c07ac4"
     }
   }
 }

@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Light Armor Training, Prof[6]</em></p>",
     "equipped": false,
     "category": "light",
+    "material": "cloth",
     "defenses": {
       "ad": 2,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 12,
       "dr": 0
     },
-    "maxStat": 32
+    "maxStat": 32,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "legendary_cloth_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "08d7ce21b444"
     }
   }
 }

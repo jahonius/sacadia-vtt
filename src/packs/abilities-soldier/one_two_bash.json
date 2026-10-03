@@ -29,12 +29,44 @@
       "prerequisite": "Power 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "One-Two Bash",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@combat.shieldHits",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "!self:attack:weapon:shield"
+          }
+        ]
+      },
+      {
+        "label": "One-Two Bash",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@combat.shieldHits",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "!self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "one_two_bash"
+      "catalogId": "one_two_bash",
+      "buildHash": "b331596876f6"
     }
   }
 }

@@ -30,6 +30,15 @@
     },
     "activities": [],
     "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "madnessBeforeSpend": true,
+        "madnessAfterSpend": "1d3-1"
+      }
+    },
     "madness": {
       "prereq": 1,
       "gain": "1d3-1"
@@ -38,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blood_for_god"
+      "catalogId": "blood_for_god",
+      "buildHash": "fa38971a59b8"
     }
   }
 }

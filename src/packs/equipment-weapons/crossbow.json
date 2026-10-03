@@ -11,6 +11,9 @@
     "value": 60,
     "equipped": false,
     "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "crossbow",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "crossbow",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "a06c6b3d49d7"
     }
   }
 }

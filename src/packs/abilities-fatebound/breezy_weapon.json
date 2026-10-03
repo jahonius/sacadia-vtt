@@ -1,0 +1,49 @@
+{
+  "_id": "d1af477356312c2a",
+  "_key": "!items!d1af477356312c2a",
+  "name": "Breezy Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Air Elemental Weapon"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "breezy_weapon",
+      "transcribed": true,
+      "buildHash": "94ccc22fd773"
+    }
+  }
+}

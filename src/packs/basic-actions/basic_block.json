@@ -1,0 +1,33 @@
+{
+  "_id": "54b3acaa698f05c7",
+  "_key": "!items!54b3acaa698f05c7",
+  "name": "Block",
+  "type": "ability",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p>You may use a reaction when you have Steadied to reduce a melee physical attack made against you by 1D4. Increase the die roll made this way to 1D6 at Level 5, and 1D8 at Level 11.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_block",
+      "basic": true,
+      "postRoll": "block",
+      "buildHash": "f7d106cd24b2"
+    }
+  }
+}

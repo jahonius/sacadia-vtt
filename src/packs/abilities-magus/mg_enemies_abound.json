@@ -1,0 +1,75 @@
+{
+  "_id": "7fb9250a8be7fb93",
+  "_key": "!items!7fb9250a8be7fb93",
+  "name": "Enemies Abound",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy target within 30ft. That target makes a Wiles Check against your Check DC. If they fail, they treat all allies as enemies. Whenever the affected target chooses another creature as a target for its abilities, it must choose at random from among all creatures it can see within range of the ability it is using. If an enemy provokes a reaction attack from the affected creature, the creature must make that attack if it is able to. The affected target makes a Wiles Check against this effect every time you renew Focus. It also makes a Wiles Check against this effect if it takes damage of any kind. When it passes the Check, the effect ends.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Wiles[3], Courage[3] · Research: Speaker[3]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true,
+            "resaveOnRenew": true
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Enemies Abound",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_enemies_abound",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Speaker[3]",
+      "buildHash": "979b58f9ec9d"
+    }
+  }
+}

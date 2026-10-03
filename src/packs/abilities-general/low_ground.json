@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "low_ground"
+      "catalogId": "low_ground",
+      "buildHash": "9b0452479929"
     }
   }
 }

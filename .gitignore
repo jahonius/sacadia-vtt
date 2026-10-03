@@ -17,9 +17,20 @@ build/
 roll20sheet/
 
 ApplicationV2 Conversion Guide _ Foundry VTT Community Wiki.html
-SacadiasArtOfWar_v1.0.pdf
 
-*.md
+# The rulebook PDFs (reference only) and private notes. README.md, CHANGELOG.md and the User Manual's
+# src/manual/*.md are tracked.
+*.pdf
+docs/
+PLANNING.md
+
+# Release builds (tools/release.mjs)
+dist/
+
+# Never commit keys
+secrets/
+*.pem
+*.key
 
 .claude/
 # Local Python venv (PDF extraction tooling)

@@ -29,12 +29,26 @@
       "prerequisite": "Power 5, Thickskin"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Legendary Resistance",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "@proficiency",
+        "predicate": [
+          {
+            "atom": "self:used:thug_thickskin"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_legendary_resistance"
+      "catalogId": "thug_legendary_resistance",
+      "buildHash": "e4d51dc7c9fc"
     }
   }
 }

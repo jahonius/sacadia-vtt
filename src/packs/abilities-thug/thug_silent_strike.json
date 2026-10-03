@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_silent_strike"
+      "catalogId": "thug_silent_strike",
+      "buildHash": "4d759db6424a"
     }
   }
 }

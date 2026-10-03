@@ -29,12 +29,28 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Call of the Raised Shield",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_the_raised_shield"
+      "catalogId": "call_of_the_raised_shield",
+      "buildHash": "309600f7e1d2"
     }
   }
 }

@@ -32,6 +32,28 @@
     },
     "activities": [],
     "modifiers": [],
+    "choice": {
+      "prompt": "Which condition becomes Enduring?",
+      "options": [
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [],
+      "enduring": "@choice"
+    },
     "madness": {
       "insaneOnly": true,
       "prereq": 5,
@@ -41,7 +63,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "balanced_scale"
+      "catalogId": "balanced_scale",
+      "buildHash": "63216e626252"
     }
   }
 }

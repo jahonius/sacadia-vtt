@@ -39,7 +39,8 @@
         },
         "save": {
           "trait": "fate",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -49,13 +50,15 @@
           }
         ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "compelling_gaze",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "913d2db3964c"
     }
   }
 }

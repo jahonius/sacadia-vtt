@@ -37,14 +37,21 @@
         "attack": {
           "category": "ranged",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
           "dc": null
         },
         "damage": [],
-        "inflict": []
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "fatigue",
+            "amount": "@proficiency",
+            "saveNegate": "power"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +59,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "low_slingblow"
+      "catalogId": "low_slingblow",
+      "buildHash": "65575ac4cdea"
     }
   }
 }

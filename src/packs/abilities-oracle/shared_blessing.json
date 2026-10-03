@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shared_blessing"
+      "catalogId": "shared_blessing",
+      "buildHash": "c6e83c83a57a"
     }
   }
 }

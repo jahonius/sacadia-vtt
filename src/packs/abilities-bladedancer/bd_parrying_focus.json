@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_parrying_focus"
+      "catalogId": "bd_parrying_focus",
+      "buildHash": "ee4c93597f79"
     }
   }
 }

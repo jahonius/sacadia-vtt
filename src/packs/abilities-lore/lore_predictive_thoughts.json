@@ -1,0 +1,44 @@
+{
+  "_id": "171eb4d26590c2da",
+  "_key": "!items!171eb4d26590c2da",
+  "name": "Predictive Thoughts",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one lore point. You see what will happen next. The GM tells you everything they intend to do for the next turn with each enemy on the combat map, and respond to limited questions from you as to how their actions will change in response to what you do.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Oracle",
+      "prerequisite": "Oracle · p.175"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_predictive_thoughts",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "3697472557ae"
+    }
+  }
+}

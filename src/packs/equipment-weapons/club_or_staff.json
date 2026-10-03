@@ -11,6 +11,9 @@
     "value": 10,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "bludgeon",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "club_or_staff",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "92d56a8f8dd5"
     }
   }
 }

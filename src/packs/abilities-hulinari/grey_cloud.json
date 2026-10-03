@@ -1,0 +1,42 @@
+{
+  "_id": "b3098b3839c409d1",
+  "_key": "!items!b3098b3839c409d1",
+  "name": "Grey Cloud",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the tiles Clouded Foe and Clouded Ally occupy by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Foe or Clouded Ally, Courage 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "grey_cloud",
+      "transcribed": true,
+      "buildHash": "cfa1ba6df7c6"
+    }
+  }
+}

@@ -32,6 +32,9 @@
     },
     "activities": [],
     "modifiers": [],
+    "mark": {
+      "key": "leech"
+    },
     "madness": {
       "insaneOnly": true,
       "spend": "1"
@@ -40,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "a_boiled_leech"
+      "catalogId": "a_boiled_leech",
+      "buildHash": "944ead9bd0e2"
     }
   }
 }

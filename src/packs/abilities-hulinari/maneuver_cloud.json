@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>When you use ‘Hovering Foe’, you may use an action to move yourself and the target of ‘Hovering Foe’ up to 10ft in any direction. They may make a Finesse Check against the effect.</p>",
+    "description": "<p>When you use Clouded Foe, you may use an action to attempt to move a target from one part of your Swarm to another provided their movement through the Cloud would not pass through a square occupied by another creature. They make a Finesse Check against this. This move triggers reaction attacks.</p>",
     "tag": "action",
     "costs": {
       "ap": 1,
@@ -26,7 +26,7 @@
     "meta": {
       "profession": "hulinari_warrior",
       "subpath": "",
-      "prerequisite": "Hovering Foe"
+      "prerequisite": "Clouded Foe"
     },
     "activities": [
       {
@@ -44,13 +44,15 @@
         "damage": [],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "maneuver_cloud",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "1f0a219b97b0"
     }
   }
 }

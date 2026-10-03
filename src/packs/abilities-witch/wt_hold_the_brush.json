@@ -1,0 +1,65 @@
+{
+  "_id": "3948ff1740d4fe76",
+  "_key": "!items!3948ff1740d4fe76",
+  "name": "Hold the Brush",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft of you who has initiated a Focus action. For as long as you maintain Focus on Hold the Brush, they do not expend AP to maintain Focus. Instead, you expend AP to maintain Focus on that action. You must expend additional AP (in addition to Hold the Brush) on the Focus action you select (e.g., if an allied soldier is maintaining Focus on Stand By Me, you may expend one Focus action on Hold the Brush, plus an additional Focus action with 2 AP due to limb exhaustion to maintain Stand By Me. For as long as you do this, your ally does not need to expend actions to maintain Stand By Me). Every turn you maintain Focus on Hold the Brush, you can only renew Focus on this ability when you are within 5ft of that target.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Hold the Brush",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.heldFocus",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    },
+    "extraAp": {
+      "max": "6",
+      "label": "AP for the held Focus action",
+      "selfDamagePerAp": ""
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_hold_the_brush",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "9e57441dfbca"
+    }
+  }
+}

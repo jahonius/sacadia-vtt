@@ -29,12 +29,26 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Gutwrenching Strike",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "ceil(@finesse/2)",
+        "predicate": [
+          {
+            "atom": "!self:ability:thug_gutwrenching_twist"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_gutwrenching_strike"
+      "catalogId": "thug_gutwrenching_strike",
+      "buildHash": "c29c719fc650"
     }
   }
 }

@@ -54,7 +54,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_iron"
+      "catalogId": "blessing_of_iron",
+      "buildHash": "8bcf9507f510"
     }
   }
 }

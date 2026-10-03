@@ -11,6 +11,9 @@
     "value": 20,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "sword",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "short_sword",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "a863bc2f6305"
     }
   }
 }

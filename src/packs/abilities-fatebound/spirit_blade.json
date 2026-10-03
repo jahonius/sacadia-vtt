@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Fate 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "spirit_blade",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "91767e36721b"
     }
   }
 }

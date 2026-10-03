@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Light Armor Training, Prof[5]</em></p>",
     "equipped": false,
     "category": "light",
+    "material": "cloth",
     "defenses": {
       "ad": 2,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 11,
       "dr": 0
     },
-    "maxStat": 30
+    "maxStat": 30,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "masterwork_cloth_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "7f2c21e22c22"
     }
   }
 }

@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Light Armor Training</em></p>",
     "equipped": false,
     "category": "light",
+    "material": "cloth",
     "defenses": {
       "ad": 0,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 7,
       "dr": 0
     },
-    "maxStat": 20
+    "maxStat": 20,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shoddy_cloth_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "3f91241b4e6f"
     }
   }
 }

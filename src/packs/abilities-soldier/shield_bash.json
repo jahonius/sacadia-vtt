@@ -29,12 +29,26 @@
       "prerequisite": "Power 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Shield Bash",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "shield_bash"
+      "catalogId": "shield_bash",
+      "buildHash": "98903999df54"
     }
   }
 }

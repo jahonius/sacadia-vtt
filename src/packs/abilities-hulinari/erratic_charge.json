@@ -28,13 +28,30 @@
       "subpath": "",
       "prerequisite": "Charge the Line, Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Erratic Charge",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:opportunity"
+          },
+          {
+            "atom": "self:used:charge_the_line"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "erratic_charge",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "b898f1478a20"
     }
   }
 }

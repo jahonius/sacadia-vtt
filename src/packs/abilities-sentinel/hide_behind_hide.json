@@ -30,29 +30,25 @@
       "subpath": "predator",
       "prerequisite": ""
     },
-    "activities": [
-      {
-        "type": "attack",
-        "label": "",
-        "attack": {
-          "category": "ranged",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "",
-          "dc": null
-        },
-        "damage": [],
-        "inflict": []
-      }
-    ],
-    "modifiers": []
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:combat:first-round"
+        }
+      ],
+      "requiresLabel": "your first turn in combat",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "hide_behind_hide"
+      "catalogId": "hide_behind_hide",
+      "buildHash": "fd5b57d28586"
     }
   }
 }

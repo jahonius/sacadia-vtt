@@ -1,0 +1,64 @@
+{
+  "_id": "0912048daa1ac3b0",
+  "_key": "!items!0912048daa1ac3b0",
+  "name": "Skilled Warrior",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn, you may add your Wiles Score to any ranged to-hit you roll. You may not add Wiles to a ranged attack if another effect already adds your Wiles to an attack, and must decide to use this before you roll to-hit.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Skilled Warrior",
+          "target": "toHit",
+          "value": "@wiles"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sen_skilled_warrior",
+      "feature": true,
+      "level": 3,
+      "buildHash": "403f69b48259"
+    }
+  }
+}

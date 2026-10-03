@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "God-Given Luck, Fate 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "divine_fates",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "dfe78c3e217f"
     }
   }
 }

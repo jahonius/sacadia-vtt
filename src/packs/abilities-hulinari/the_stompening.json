@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Flattened Earth, Courage 6"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "The Stompening",
+        "target": "damage",
+        "mode": "step",
+        "scope": "charge_the_line",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "the_stompening",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "0b88df450422"
     }
   }
 }

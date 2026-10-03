@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_surprise_disruption"
+      "catalogId": "bd_surprise_disruption",
+      "buildHash": "d093e78aaec4"
     }
   }
 }

@@ -5,36 +5,38 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>All enemies within 15ft of you get 1X Disadvantage on any mental Trait Check as long as you maintain Focus.</p>",
+    "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. All enemies inside Clouded Foe get 1X Disadvantage to all Trait Checks for as long as you maintain Focus on Blackcloud.</p>",
     "tag": "focus",
     "costs": {
       "ap": 1,
-      "csp": 3,
+      "csp": 5,
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
-        "amount": 0,
+        "key": "trickster",
+        "amount": 1,
         "variable": false,
         "max": ""
       }
     },
     "range": {
-      "value": 15,
-      "type": "ranged"
+      "value": null,
+      "type": ""
     },
     "meta": {
       "profession": "hulinari_warrior",
       "subpath": "",
-      "prerequisite": ""
+      "prerequisite": "Clouded Foe"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "blackcloud",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "f602c12687cf"
     }
   }
 }

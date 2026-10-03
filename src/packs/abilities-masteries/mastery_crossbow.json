@@ -25,7 +25,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_crossbow",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "446dc663e39b"
     }
   }
 }

@@ -19,13 +19,26 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Defensive Mastery",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:checking:panic"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_defensive",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "76b5895c8cef"
     }
   }
 }

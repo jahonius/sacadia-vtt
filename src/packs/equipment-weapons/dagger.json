@@ -10,7 +10,10 @@
     "weight": 0,
     "value": 5,
     "equipped": false,
-    "traits": "",
+    "traits": "versatile",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "dagger",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "dagger",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "c76c557ab8a4"
     }
   }
 }

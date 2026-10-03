@@ -3,7 +3,7 @@
   "_key": "!items!ac73eecd9db9c355",
   "name": "Aim Calibration",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/aim_calibration_icon.png",
   "system": {
     "description": "<p>For each subsequent missed attack you make with a bow on your turn, add half your Wiles (rounded up) to your next To-Hit.</p>",
     "tag": "passive",
@@ -29,12 +29,26 @@
       "prerequisite": "Bowman, Wiles 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Aim Calibration",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "ceil(@wiles/2)*@combat.missedAttacks",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:bow"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "aim_calibration"
+      "catalogId": "aim_calibration",
+      "buildHash": "6a94d3e8d79e"
     }
   }
 }

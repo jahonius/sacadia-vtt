@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Hidebite, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Grand Hidebite",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "grand_hidebite",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e3b86aff6da5"
     }
   }
 }

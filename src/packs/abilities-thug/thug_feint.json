@@ -41,10 +41,16 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "surprised",
+            "amount": "1"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_feint"
+      "catalogId": "thug_feint",
+      "buildHash": "442fec8b18ea"
     }
   }
 }

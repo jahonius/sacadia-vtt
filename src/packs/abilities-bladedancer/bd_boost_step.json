@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_boost_step"
+      "catalogId": "bd_boost_step",
+      "buildHash": "30d72a0827f7"
     }
   }
 }

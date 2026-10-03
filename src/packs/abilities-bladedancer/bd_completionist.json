@@ -29,12 +29,26 @@
       "prerequisite": "Multiplicity"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Completionist",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "min(1, @combat.enemies) * min(1, max(0, @combat.focusTargets.bd_multiplicity - @combat.enemies + 1))",
+        "predicate": [
+          {
+            "atom": "self:used:bd_multiplicity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_completionist"
+      "catalogId": "bd_completionist",
+      "buildHash": "5d84a7c88f80"
     }
   }
 }

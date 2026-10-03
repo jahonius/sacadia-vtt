@@ -29,12 +29,39 @@
       "prerequisite": "Power 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Big Guns Expert",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:big_guns_expert"
+          },
+          {
+            "atom": "self:attack:hands:2"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "sword",
+        "axe",
+        "spear",
+        "bludgeon",
+        "other"
+      ],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "big_guns_expert"
+      "catalogId": "big_guns_expert",
+      "buildHash": "6eb4ffc10747"
     }
   }
 }

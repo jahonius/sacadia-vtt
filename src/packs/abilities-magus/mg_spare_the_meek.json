@@ -1,0 +1,49 @@
+{
+  "_id": "fd4d19859ac4abef",
+  "_key": "!items!fd4d19859ac4abef",
+  "name": "Spare the Meek",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft of you who is dying. They do not gain Battle Fatigue at the start of their next turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "setFlag": "spareTheMeek"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_spare_the_meek",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "buildHash": "f302bf73e8d0"
+    }
+  }
+}

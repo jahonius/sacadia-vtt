@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Blade Aura, Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Stabby Aura",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blade_aura",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "stabby_aura",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "78a7fd5db481"
     }
   }
 }

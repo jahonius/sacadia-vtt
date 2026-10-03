@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "guardian_of_the_ambush"
+      "catalogId": "guardian_of_the_ambush",
+      "buildHash": "127349a283ed"
     }
   }
 }

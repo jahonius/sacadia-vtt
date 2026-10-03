@@ -1,0 +1,65 @@
+{
+  "_id": "755131d12f82451b",
+  "_key": "!items!755131d12f82451b",
+  "name": "Long Arc",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a Boost to an attack with a divine weapon, you may expend one additional AP to make that attack against two targets. Only apply the base weapon damage dice to all targets (i.e., do not add Power or other modifiers to damage dealt). You may only use this Boost if two enemies are within range and within 5ft of one another.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "once": true,
+      "special": {
+        "requires": [
+          "self:attack:divine"
+        ],
+        "extraAttacks": "1 + @owns.solar_arc",
+        "baseOnly": true,
+        "onConsume": {
+          "ap": 1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "long_arc",
+      "transcribed": true,
+      "buildHash": "bbb44a810804"
+    }
+  }
+}

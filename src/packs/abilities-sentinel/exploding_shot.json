@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": []
@@ -52,7 +53,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "exploding_shot"
+      "catalogId": "exploding_shot",
+      "buildHash": "aa7bd473c07d"
     }
   }
 }

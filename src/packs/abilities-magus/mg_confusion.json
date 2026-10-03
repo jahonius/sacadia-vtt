@@ -1,0 +1,67 @@
+{
+  "_id": "053d7901dcbae715",
+  "_key": "!items!053d7901dcbae715",
+  "name": "Confusion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot. For as long as you maintain Focus, no other creatures within 30ft of you can initiate a new Focus action, and must make a Wiles Check against your Check DC every time you renew Focus on Confusion to maintain Focus.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[3] · Research: Cultural Lore[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "onFail": {
+              "endFocus": true
+            }
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_confusion",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Cultural Lore[2]",
+      "buildHash": "b84bbe72d962"
+    }
+  }
+}

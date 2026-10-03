@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -60,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "vision_of_hemlock"
+      "catalogId": "vision_of_hemlock",
+      "buildHash": "d8caab44cdc9"
     }
   }
 }

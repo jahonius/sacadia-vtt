@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "madder_chanting"
+      "catalogId": "madder_chanting",
+      "buildHash": "9e61bcbb568a"
     }
   }
 }

@@ -55,7 +55,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_the_shield"
+      "catalogId": "blessing_of_the_shield",
+      "buildHash": "b7d1a6d29141"
     }
   }
 }

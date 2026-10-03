@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_high_wrestle"
+      "catalogId": "thug_high_wrestle",
+      "buildHash": "80a0179a1adc"
     }
   }
 }

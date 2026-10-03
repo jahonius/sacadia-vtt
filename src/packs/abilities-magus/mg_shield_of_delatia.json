@@ -1,0 +1,45 @@
+{
+  "_id": "390a1bf62ab758d0",
+  "_key": "!items!390a1bf62ab758d0",
+  "name": "Shield of Delatia",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of Checkered Shield by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[6], Greater Shield · Research: Magical Identification[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_shield_of_delatia",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magical Identification[3]",
+      "buildHash": "812b6b53c7ab"
+    }
+  }
+}

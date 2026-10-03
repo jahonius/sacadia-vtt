@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "lodestone",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "d3d5abcfe269"
     }
   }
 }

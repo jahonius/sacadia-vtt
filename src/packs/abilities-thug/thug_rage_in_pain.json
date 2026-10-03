@@ -29,12 +29,28 @@
       "prerequisite": "Berserker Rage"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Rage in Pain",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:raging"
+          },
+          {
+            "atom": "self:checking:physical"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_rage_in_pain"
+      "catalogId": "thug_rage_in_pain",
+      "buildHash": "6040504d61ad"
     }
   }
 }

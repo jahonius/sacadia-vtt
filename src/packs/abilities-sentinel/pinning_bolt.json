@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "pinning_bolt"
+      "catalogId": "pinning_bolt",
+      "buildHash": "0d1fdb1c949f"
     }
   }
 }

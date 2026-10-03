@@ -193,6 +193,10 @@
       <label>{{localize 'SACADIA.Armor.Category'}}</label>
       <select name="system.category">{{selectOptions config.armorCategories selected=system.category localize=true blank=""}}</select>
     </div>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Armor.MaterialLabel'}}</label>
+      <select name="system.material">{{selectOptions config.armorMaterials selected=system.material localize=true blank=""}}</select>
+    </div>
     <fieldset>
       <legend>{{localize 'SACADIA.Armor.Defenses'}}</legend>
       <div class="form-row"><label>{{localize 'SACADIA.Defense.AD'}}</label><input type="number" name="system.defenses.ad" value="{{system.defenses.ad}}"/></div>
@@ -215,6 +219,10 @@
         <select name="system.weaponType">{{selectOptions config.weaponTypes selected=system.weaponType localize=true blank=""}}</select>
       </div>
       <div class="form-row">
+        <label>{{localize 'SACADIA.Armor.SizeLabel'}}</label>
+        <select name="system.shieldSize">{{selectOptions config.shieldSizes selected=system.shieldSize localize=true blank=""}}</select>
+      </div>
+      <div class="form-row">
         <label>{{localize 'SACADIA.Weapon.BashDamage'}}</label>
         <input class="count" type="text" name="system.weaponDamage.count" value="{{system.weaponDamage.count}}" title="{{localize 'SACADIA.Damage.Count'}}"/>
         <select class="denom" name="system.weaponDamage.denomination" title="{{localize 'SACADIA.Damage.Denomination'}}">{{selectOptions config.dieDenominations selected=system.weaponDamage.denomination blank=""}}</select>
@@ -234,6 +242,12 @@
         <label>{{localize 'SACADIA.Weapon.Hands'}}</label>
         <input type="number" name="system.hands" value="{{system.hands}}" min="1" max="2"/>
       </div>
+      {{#if namedChoices}}
+      <div class="form-row" title="{{localize 'SACADIA.Weapon.NamedHint'}}">
+        <label>{{localize 'SACADIA.Weapon.NamedAs'}}</label>
+        <select name="flags.sacadia.namedAs">{{selectOptions namedChoices selected=namedAs blank=""}}</select>
+      </div>
+      {{/if}}
     </fieldset>
   </div>
 
@@ -292,6 +306,12 @@
         <label>{{localize 'SACADIA.Weapon.Hands'}}</label>
         <input type="number" name="system.hands" value="{{system.hands}}" min="1" max="2"/>
       </div>
+      {{#if namedChoices}}
+      <div class="form-row" title="{{localize 'SACADIA.Weapon.NamedHint'}}">
+        <label>{{localize 'SACADIA.Weapon.NamedAs'}}</label>
+        <select name="flags.sacadia.namedAs">{{selectOptions namedChoices selected=namedAs blank=""}}</select>
+      </div>
+      {{/if}}
     </fieldset>
   </div>
 

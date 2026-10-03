@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "swirling_ink"
+      "catalogId": "swirling_ink",
+      "buildHash": "7917d624cb07"
     }
   }
 }

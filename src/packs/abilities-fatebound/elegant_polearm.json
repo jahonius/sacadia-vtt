@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Piercemaster"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "elegant_polearm",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "30aee0594667"
     }
   }
 }

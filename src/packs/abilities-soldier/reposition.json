@@ -29,12 +29,14 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "reposition"
+      "catalogId": "reposition",
+      "buildHash": "93ef0a100a7f"
     }
   }
 }

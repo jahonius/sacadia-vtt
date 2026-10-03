@@ -1,0 +1,68 @@
+{
+  "_id": "c56db4ad25181b4f",
+  "_key": "!items!c56db4ad25181b4f",
+  "name": "Wellspring",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When an ally within 5ft of you attempts to give X or more levels of an Adversarial Condition to a target, where X is any number equal to or greater than their Proficiency, you may expend a reaction. If you do, that ally attempts to give one extra level (e.g., if they have 3 Proficiency and attempt to give 3 levels of Nausea, they instead attempt to give 4).</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Wellspring",
+      "duration": {
+        "type": "consumed",
+        "on": "inflict"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.inflictPlus",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.bonuses.inflictPlusHalf",
+          "mode": 2,
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:ability:wt_greater_wellspring"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_wellspring",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "fa93586e7ebd"
+    }
+  }
+}

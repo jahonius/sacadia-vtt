@@ -32,6 +32,15 @@
     },
     "activities": [],
     "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*@madness",
+      "anchor": "point",
+      "radiusPerMadness": true,
+      "effect": {
+        "affects": "all"
+      }
+    },
     "madness": {
       "insaneOnly": true,
       "prereq": 1,
@@ -41,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "voidsphere"
+      "catalogId": "voidsphere",
+      "buildHash": "590e39d1ee90"
     }
   }
 }

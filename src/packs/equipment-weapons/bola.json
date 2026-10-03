@@ -11,6 +11,9 @@
     "value": 50,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "sling",
     "weaponDamage": {
       "count": "",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "bola",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "c6d701004d16"
     }
   }
 }

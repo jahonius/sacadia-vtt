@@ -28,13 +28,23 @@
       "subpath": "",
       "prerequisite": "Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move",
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "vaulter",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "536f4d992b2e"
     }
   }
 }

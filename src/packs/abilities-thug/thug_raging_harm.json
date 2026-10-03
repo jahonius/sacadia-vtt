@@ -29,12 +29,26 @@
       "prerequisite": "Berserker Rage"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Raging Harm",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_harm",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:raging"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_raging_harm"
+      "catalogId": "thug_raging_harm",
+      "buildHash": "5ce3343a730a"
     }
   }
 }

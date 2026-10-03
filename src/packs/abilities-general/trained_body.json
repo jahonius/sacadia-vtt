@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>You may take this ability up to two times. Every time you do, increase your PD by 1 on top of any armor you are wearing. Second instance costs 2 CSP. (Auto-managed +1 PD tempbuff. If taken twice, manually set tempbuff value to 2.)</p>",
+    "description": "<p>You may take this ability up to two times. Every time you do, increase your PD by 1 on top of any armor you are wearing. Second instance costs 2 CSP.</p>",
     "tag": "passive",
     "costs": {
       "ap": 0,
@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "trained_body"
+      "catalogId": "trained_body",
+      "buildHash": "834ec56ddd7d"
     }
   }
 }

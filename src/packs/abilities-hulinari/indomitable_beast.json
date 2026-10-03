@@ -28,13 +28,31 @@
       "subpath": "",
       "prerequisite": "Bite Attack"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "killTrigger": {
+      "tempHp": [
+        {
+          "minLevel": 0,
+          "formula": "1d10"
+        },
+        {
+          "minLevel": 5,
+          "formula": "2d6"
+        },
+        {
+          "minLevel": 11,
+          "formula": "2d8"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "indomitable_beast",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "3edb46c43aba"
     }
   }
 }

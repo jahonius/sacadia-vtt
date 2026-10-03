@@ -29,12 +29,38 @@
       "prerequisite": "Pankration, Power 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Pankration's Champion",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "2*@target.pinned",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          }
+        ]
+      },
+      {
+        "label": "Pankration's Champion",
+        "target": "damage",
+        "mode": "add",
+        "scope": "thug_harm",
+        "value": "2*@target.pinned",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_pankrations_champion"
+      "catalogId": "thug_pankrations_champion",
+      "buildHash": "125637774a65"
     }
   }
 }

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "system": {
-    "description": "<p>When you have given a target levels of Wrestle Pin and they only have one level of Pin, increase the damage dice you deal through melee attacks by one dice type. [Adds a Damage Die Step Temporary Modifier below, off by default - toggle it on when the target has exactly one level of Pin.]</p>",
+    "description": "<p>When you have given a target levels of Wrestle Pin and they only have one level of Pin, increase the damage dice you deal through melee attacks by one dice type.</p>",
     "tag": "passive",
     "costs": {
       "ap": 0,
@@ -29,12 +29,26 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Kneejerk",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned=1"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_kneejerk"
+      "catalogId": "thug_kneejerk",
+      "buildHash": "d11e46af65ea"
     }
   }
 }

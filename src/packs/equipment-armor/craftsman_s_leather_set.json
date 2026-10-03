@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Medium Armor Training, Prof[4]</em></p>",
     "equipped": false,
     "category": "medium",
+    "material": "leather",
     "defenses": {
       "ad": 0,
       "pd": 4,
@@ -15,13 +16,17 @@
       "md": 3,
       "dr": 0
     },
-    "maxStat": 27
+    "maxStat": 27,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_leather_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "934e9f3a31fe"
     }
   }
 }

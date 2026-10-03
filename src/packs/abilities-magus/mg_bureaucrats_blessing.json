@@ -1,0 +1,60 @@
+{
+  "_id": "d33a6c544215904d",
+  "_key": "!items!d33a6c544215904d",
+  "name": "Bureaucrat’s Blessing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an allied target rolling Trait Checks against any number of conditions when you are guiding them, you may expend X Spell Slots. For every Spell Slot expended, they add your Fate to one additional roll.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Guidance · Research: Legalism[1]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Bureaucrat's Blessing",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.traitBonusCount",
+          "mode": 2,
+          "value": "@spent"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_bureaucrats_blessing",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Legalism[1]",
+      "buildHash": "e5d4d296349f"
+    }
+  }
+}

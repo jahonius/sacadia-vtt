@@ -29,12 +29,26 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Sharp Weapon",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_sharp_weapon"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_sharp_weapon"
+      "catalogId": "bd_sharp_weapon",
+      "buildHash": "ced86861fe3e"
     }
   }
 }

@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Carrying the Team"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "head_down",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "87752f65ae7e"
     }
   }
 }

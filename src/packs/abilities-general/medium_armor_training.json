@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "medium_armor_training"
+      "catalogId": "medium_armor_training",
+      "buildHash": "70efa6f42657"
     }
   }
 }

@@ -29,12 +29,26 @@
       "prerequisite": "Harm, Finesse 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Wrestling Friends",
+        "target": "damage",
+        "mode": "add",
+        "scope": "thug_harm",
+        "value": "ceil(@finesse/2) * @targetAdjacentAllies",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_wrestling_friends"
+      "catalogId": "thug_wrestling_friends",
+      "buildHash": "5c6a41646bb1"
     }
   }
 }

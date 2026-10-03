@@ -1,0 +1,1627 @@
+{
+ "magus": [
+  {
+   "id": "mg_scholarly",
+   "name": "Scholarly",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Gain the Literacy General Talent. If you have the Literacy General Talent already, gain 2 additional Talent Points to spend immediately on any Knowledge Talent.",
+   "section": "core"
+  },
+  {
+   "id": "mg_tome",
+   "name": "Tome",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one of the following Tomes when you choose to play this Profession: Blood Tome, Contract Tome, Elder Tome. If the Tome is new, research 5 abilities immediately. You must meet the prerequisites for the research of those abilities.",
+   "section": "core"
+  },
+  {
+   "id": "mg_spell_slots",
+   "name": "Spell Slots",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "When you take this ability, you get an Action Pool of Spell Slot points equal to your Proficiency Score. You get all Spell Slots back after a quick rest. When you take this ability, you may spend skill points to learn Spells (after researching them). Whenever you may spend skill points, you may add to the list of Spells you know.",
+   "section": "core"
+  },
+  {
+   "id": "mg_blood_tome",
+   "name": "Blood Tome",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Rarity Legendary[1], Element Rot, Prerequisites: Literary General Talent, Heibrim in Empire. Item Slots 1, Attunement Yes, Relic Yes. A dark-papered scroll wrapped around a rod made of bone. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Connection to Blood: You are immune to Hemorrhage if you are attuned to this tome.",
+   "section": "tome"
+  },
+  {
+   "id": "mg_contract_tome",
+   "name": "Contract Tome",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Rarity Legendary[1], Element Salt, Prerequisites: Literary General Talent, Myrghos in Empire. Item Slots 1, Attunement Yes, Relic Yes. A meticulous white scroll, bound around a golden scroll rod. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Lawful Protection: Gain +1 to your MD, TD, or PD when you are attuned to this scroll (choose one when you take this ability).",
+   "section": "tome"
+  },
+  {
+   "id": "mg_elder_tome",
+   "name": "Elder Tome",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Rarity Legendary[1], Element Earth, Prerequisites: Literary General Talent, Shau in Empire. Item Slots 1, Attunement Yes, Relic Yes. An ancient and tattered scroll, bound in a tarnished bronze rod. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Lawful Protection: Gain +1 to your Check DC when you take this tome, provided you remain attuned to the Tome.",
+   "section": "tome"
+  },
+  {
+   "id": "mg_siphon_soul",
+   "name": "Siphon Soul",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Expend X Spell Slots and attempt to give a target 2X Fatigue (X maxes at half your Proficiency, rounded up). The target makes Courage Checks against this effect. For every level of Fatigue they gain from this effect, gain 1 AP that you can use before the end of your turn. You may only use this once per combat.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_hypnotic_gaze",
+   "name": "Hypnotic Gaze",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "Divination",
+   "description": "Expend a Spell Slot and choose a target within 60ft. They make Fate Checks against X levels of Frenzied, where X is half your Proficiency, rounded up.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_life_transference",
+   "name": "Life Transference",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "Sacrifice",
+   "description": "Choose 1 ally within 5ft and expend a Spell Slot. Roll XD6, where X is up to half your Proficiency, rounded up. Lose that HP. Give your ally T emp HP equal to twice the HP you lost.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_greater_transference",
+   "name": "Greater Transference",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Life Transference",
+   "research": "",
+   "description": "Increase the dice type of Life Transference from XD6 to XD8.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_bloodsight",
+   "name": "Bloodsight",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "Oracle with Soulbinding",
+   "description": "Expend X Spell Slots (X is a number up to your Proficiency) and choose a target within 60ft. That target makes Fate Checks against X levels of Hemorrhage. For each level of Hemorrhage they take, gain 1 Spell Slot back.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_bloodthinner",
+   "name": "Bloodthinner",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Bloodsight, Fate[2]",
+   "research": "You are an Oracle who has gone insane previously",
+   "description": "Increase the damage dice of Hemorrhage you give a target by one dice type.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_vampiric_siphon",
+   "name": "Vampiric Siphon",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Bloodsight",
+   "research": "Demon Lore[3]",
+   "description": "Touch an enemy target with Hemorrhage from Bloodsight, and expend a Spell Slot. Roll Hemorrhage damage according to the number of levels they have. Gain X temporary HP, where X is half the damage rolled from Hemorrhage. Then, reduce their Hemorrhage by one.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_vampiric_command",
+   "name": "Vampiric Command",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "Fate[3], Bloodsight",
+   "research": "Demon Lore[3]",
+   "description": "As a reaction to an enemy taking damage from Hemorrhage due to Bloodsight, expend 1 Spell Slot. Remove all levels of Hemorrhage that target possesses, and decide the first X AP that they expense on their turn (where X is the levels of Hemorrhage removed).",
+   "section": "blood"
+  },
+  {
+   "id": "mg_unfurling",
+   "name": "Unfurling",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Fate[2]",
+   "research": "Handcopy[1]",
+   "description": "Gain 3 Spell Slots.",
+   "section": "any"
+  },
+  {
+   "id": "mg_greater_unfurling",
+   "name": "Greater Unfurling",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Fate[4]",
+   "research": "Handcopy[2]",
+   "description": "Gain 3 Spell Slots.",
+   "section": "any"
+  },
+  {
+   "id": "mg_masterful_unfurling",
+   "name": "Masterful Unfurling",
+   "tag": "passive",
+   "cspCost": 2,
+   "prerequisite": "Fate[6]",
+   "research": "Handcopy[3]",
+   "description": "Gain 3 Spell Slots.",
+   "section": "any"
+  },
+  {
+   "id": "mg_spare_the_meek",
+   "name": "Spare the Meek",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally within 5ft of you who is dying. They do not gain Battle Fatigue at the start of their next turn.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_blood_doping",
+   "name": "Blood Doping",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Spare the Meek",
+   "research": "Medic[2]",
+   "description": "As a Boost to Spare the Meek, expend a Spell Slot. Increase the damage dice of their first attack on their next turn by two dice types.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_chill_touch",
+   "name": "Chill Touch",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Make a Melee attack vs. MD against a target within 5ft. If you hit, that target takes 1D10+Wiles Damage. Increase damage dealt this way to 2D6 at Level 5, and 2D8 at Level 11.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_spirit_sap",
+   "name": "Spirit Sap",
+   "tag": "boost",
+   "cspCost": 2,
+   "prerequisite": "Chill Touch, Fate[2]",
+   "research": "Astrology[2]",
+   "description": "Expend a Spell Slot as a Boost to Chill Touch. Remove all temporary HP they possess. Damage from Chill Touch is applied after the removal of their temporary HP.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_icy_veil",
+   "name": "Icy Veil",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Chill Touch, Wiles[2]",
+   "research": "Necromantic Lore[2]",
+   "description": "Expend a Spell Slot as a Boost to Chill Touch when you are dying. Increase the dice type of Chill Touch by 2 for every level of Battle Fatigue you possess.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_blood_for_bane",
+   "name": "Blood for Bane",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Necromantic Lore[3]",
+   "description": "As a Boost to an action that would use a Spell Slot, take 1D10 damage. If you take 6+ damage, do not expend a Spell Slot. Increase the damage you deal to yourself this way to 2D6 at level 6, and 2D8 at level 11.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_greater_enfeeblement",
+   "name": "Greater Enfeeblement",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Wiles[5], Enfeeblement",
+   "research": "Necromantic Lore[3]",
+   "description": "As a Boost to Enfeeblement when you use it and expend AP to maintain Focus, you may expend additional AP. For every additional AP you expend, reduce the damage dice of the target’s weapon by an additional dice type. Expend the same number of AP in a consistent Focus action every turn until you end Focus (i.e., you cannot alter the amount of AP you expend on Focus each turn).",
+   "section": "blood"
+  },
+  {
+   "id": "mg_animate_dead",
+   "name": "Animate Dead",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Wiles[3]",
+   "research": "Necromantic Lore[3]",
+   "description": "Choose the corpses of up to X creatures when you initiate this ability, where X is half your Proficiency Score (rounded up). Expend X Spell Slots. The corpses of these targets rise as CR2 Shambling Shades. Their turn is placed in the turn tracker immediately after you. Each turn after the turn you summon the Shades, when you renew Focus you give the Shades a simple command, which they follow on their turn. When your Focus ends, they all die, and they cannot be animated again.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_vampiric_thrall",
+   "name": "Vampiric Thrall",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Animate Dead, Bloodsight, Wiles[4]",
+   "research": "",
+   "description": "When you animate the dead, you may select one target you have killed with Bloodsight in the last round of combat (if you do this, do not select any other targets). That target rises as a CR5 Greater Vampiric Thrall. Treat Hemorrhage given by your Vampiric Thrall as Hemorrhage given by you through Bloodsight.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_greater_dead",
+   "name": "Greater Dead",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Wiles[5], Animate Dead",
+   "research": "Reincarnation",
+   "description": "When you animate dead, they become Dancing Shades (CR3) instead of Shambling Shades (CR2).",
+   "section": "blood"
+  },
+  {
+   "id": "mg_finger_of_death",
+   "name": "Finger of Death",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Wiles[5]",
+   "research": "Sacrifice, Necromantic Lore[3]",
+   "description": "Touch one target within 5ft and expend a Spell Slot. They make a Fate Check against your Check DC or take 2XD10 damage, where X is your Proficiency (no damage on a successful save). If this effect causes them to drop to 0HP, they die. You may use this once per combat.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_ennervation",
+   "name": "Ennervation",
+   "tag": "action",
+   "cspCost": 5,
+   "prerequisite": "Fate[5]",
+   "research": "Bloodthinner, Vampiric Command, and Vampiric Siphon are already in your Tome",
+   "description": "Touch one target within 5ft and expend a Spell Slot. They make a Fate Check. If they fail, Roll XD8, where X is your Proficiency. They take that damage. Gain half the damage dealt (rounded up) as temporary HP.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_command",
+   "name": "Command",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Finesse[2]",
+   "research": "Speaker[2], Religious Rites[2]",
+   "description": "Expend a spell slot and choose one target within 30ft of you. They make a Courage Check against your Check DC or expend a reaction to take a below action you choose: Drop: Target creature becomes prone Attack: Target makes a basic attack with an equipped weapon against a target you choose within range Approach: Target moves as far as it can up to its move speed towards you Flee: Target moves as far as it can up to its move speed away from you",
+   "section": "blood"
+  },
+  {
+   "id": "mg_clotsnipe",
+   "name": "Clotsnipe",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Wiles[2]",
+   "research": "Religious Rites[1]",
+   "description": "Expend a Spell Slot. Make a ranged attack vs. TD in a 30ft line emanating from you. It targets all creatures in that line, terminating when it hits a wall or barrier. The attack deals 1D10+Wiles damage to any target it hits. For every additional AP you expend beyond the first in this attack (to a limit of your Proficiency), increase the dice type of the attack by one dice type, and the range by 10ft. When you make this attack, lose 1D4 HP per AP expended.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_torus_touch",
+   "name": "Torus’ Touch",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Wiles[4]",
+   "research": "Religious Rites[2]",
+   "description": "Increase the dice type of Clotsnipe by 1 dice type.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_bloodstep",
+   "name": "Bloodstep",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Fate[2]",
+   "research": "Demon Lore[2]",
+   "description": "Expend one Spell Slot when you initiate Bloodstep. Every turn that you maintain Focus on Blood Step, you may expense 1D10 HP to leave a spot of blood on the ground. Mark it on the map. As a Boost to a move action when you are on a point marked with blood, you may move to another point marked by your blood on the map. You may not take other creatures with you when you do this.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_partial_revivify",
+   "name": "Partial Revivify",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Fate[3]",
+   "research": "Medic[2]",
+   "description": "Choose one ally within 5ft of you with the Dying Condition. Expend a Spell Slot. For as long as you maintain Focus on that target, they ignore the effects of their Enduring Fatigue accumulated from Dying until they drop unconscious. When they do, this effect ends.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_enfeeblement",
+   "name": "Enfeeblement",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Wiles[3]",
+   "research": "Social Rites[2]",
+   "description": "Choose one target within 5ft of you. Expend a Spell Slot and choose one weapon or attack they wield (e.g., a Bite attack, a Sword, their Unarmed Attack). For as long as you maintain Focus on that target, reduce the damage dice of that weapon by one dice type.",
+   "section": "blood"
+  },
+  {
+   "id": "mg_guidance",
+   "name": "Guidance",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one target within 30ft when you initiate this. For as long as you maintain Focus, the first time they have to make a Trait Check, they add your Fate Score to one die rolled (i.e., if they make Trait Checks against 4 levels of Hemorrhage, they add your Fate to only one of the D20s they roll against the effect - though they can freely choose which one). Then, end Guidance.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_bureaucrats_blessing",
+   "name": "Bureaucrat’s Blessing",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Guidance",
+   "research": "Legalism[1]",
+   "description": "As a reaction to an allied target rolling Trait Checks against any number of conditions when you are guiding them, you may expend X Spell Slots. For every Spell Slot expended, they add your Fate to one additional roll.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_magic_missive",
+   "name": "Magic Missive",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Cultural Lore[1]",
+   "description": "Choose up to X targets within 60ft of you, where X is half your Proficiency, rounded up. Each target takes 1D4+Wiles mental damage. You may choose the same target for all Missives.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_missives",
+   "name": "Greater Missives",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Magic Missive",
+   "research": "",
+   "description": "Increase the base damage dice of Magic Missives to 1D6.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_checkered_shield",
+   "name": "Checkered Shield",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Wiles[2]",
+   "research": "Magical Identification[1]",
+   "description": "In response to taking damage, expend a reaction and reduce that damage by 1D8 to a minimum of 1 damage. Increase the dice type of Shield to 1D10 at Level 5, and 2D6 at level 11.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_shield",
+   "name": "Greater Shield",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wiles[4], Checkered Shield",
+   "research": "Magical Identification[2]",
+   "description": "Increase the dice type of Checkered Shield by 1 dice type.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_shield_of_delatia",
+   "name": "Shield of Delatia",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Wiles[6], Greater Shield",
+   "research": "Magical Identification[3]",
+   "description": "Increase the dice type of Checkered Shield by 1 dice type.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_surge_of_bad_luck",
+   "name": "Surge of Bad Luck",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "Astrology[1]",
+   "description": "Choose one target within 30ft of you and expend a Spell Slot. Attempt to give them X levels of Jinxed (Fate Check negates), where X is your Proficiency.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_luckless_hold",
+   "name": "Luckless Hold",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Surge of Bad Luck",
+   "research": "Astrology[2]",
+   "description": "As a Boost to Surge of Bad Luck, expend one additional Spell Slot. The Jinxed you give that target are treated as Enduring.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_lesser_restore",
+   "name": "Lesser Restore",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "",
+   "research": "Magic Identification[1]",
+   "description": "Expend 1 Spell Slot. Touch one target within 5ft of you and remove X levels of a Lesser Mental Condition that they possess (Delirium, Jinxed, Slowed, Sting), where X is half your Proficiency, rounded up.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_restore",
+   "name": "Greater Restore",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Lesser Restore",
+   "research": "Magic Identification[3]",
+   "description": "When you use Lesser Restore, you may remove X levels of any Greater Mental Condition (Fatigue, Frenzy, Panic, Taunt) or the Surprised Condition.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_torq_of_thorns",
+   "name": "Torq of Thorns",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "You are a Fatebound with the Targeted Foe ability",
+   "description": "In response to an attack made by an ally within 30ft of you that is some number on the die away from a critical hit, you may expend any number of Spell Slots. For each Spell Slot expended, increase the critical range of your ally by one (e.g., if an ally rolls a nat18, and they only critically hit on a 20, you may expend two spell slots to make the attack critically hit).",
+   "section": "contract"
+  },
+  {
+   "id": "mg_law_of_alliance",
+   "name": "Law of Alliance",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "Cultural Lore[3]",
+   "description": "Expend a Spell Slot and choose one allied target within 5ft of you. If they agree, damage dealt to either of you is split between both of you until your Focus ends (if damage is an odd number, you always take the extra point of damage). You may only end Focus on Law of Alliance on your turn.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_alliance",
+   "name": "Greater Alliance",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Law of Alliance",
+   "research": "Street Smart",
+   "description": "When you use Law of Alliance, choose up to three allied targets within 5ft of you. For as long as you maintain Focus, damage dealt to any of the three targets (or you) is shared across all four of you. Indivisible damage amounts are always given to you.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_armor_of_itthoa",
+   "name": "Armor of Itthoa",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Thaumaturgy[2]",
+   "description": "Expend a Spell Slot. Gain XD6 temporary HP, where X is half your Proficiency (rounded up). If you drop Focus, lose all Temporary HP immediately. Whenever a target deals damage to you and that damage reduces your Temporary HP, the target takes damage equal to the Temporary HP you lose.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_absorb_attack",
+   "name": "Absorb Attack",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Courage[2]",
+   "research": "Thaumaturgy[2]",
+   "description": "As a reaction to taking damage from an elemental or mental attack, expend a Spell Slot and reduce the damage by XD4, where X is your Proficiency. Until the end of your next turn, the first time you make an attack that would deal damage, add this damage to damage you deal if you hit.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_absorption",
+   "name": "Greater Absorption",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Absorb Attack, Courage[3]",
+   "research": "Thaumaturgy[3]",
+   "description": "When you reduce damage through Absorb Attack, instead reduce the damage by XD6.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_pact_of_the_earth",
+   "name": "Pact of the Earth",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Courage[2]",
+   "research": "History[1]",
+   "description": "Expend a Spell Slot. For as long as you maintain Focus, all ground within 30ft of you is considered Difficult Terrain for all creatures. You cannot willingly move for as long as you maintain Focus. You may only end Focus on Pact of the Earth on your turn.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_law_of_exchange",
+   "name": "Law of Exchange",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Wiles[2]",
+   "research": "Legalism[3]",
+   "description": "Expend a Spell Slot and choose two targets on the same team in combat who are both within 30ft of you. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. All attacks made against you have Advantage for as long as you maintain Focus on this. You may only end Focus on Law of Exchange on your turn.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_lawful_sanctuary",
+   "name": "Lawful Sanctuary",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Wiles[2]",
+   "research": "Legalism[3], History[2]",
+   "description": "Choose one target within 5ft of you when you initiate this ability and expend a Spell Slot. Until you end Focus, any time a target attempts an attack that specifically attacks that target, they must make a Wiles Check against your Check DC. If they fail, they must choose a different target within range. If there is no other target within range, they expend the AP and exhaust limbs, but do not make the attack.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_counterspell",
+   "name": "Counterspell",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Wiles[2]",
+   "research": "Magic Detection Talent",
+   "description": "In reaction to a target who you can see and hear casting a spell or using a mental attack within 60ft of you, expend a Spell Slot and force them to make a Wiles Check. If they fail the Wiles Check against your Check DC, cancel the effects of that spell or mental attack. They still expend AP and exhaust limbs as though they used that ability.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_forbid_hallowing",
+   "name": "Forbid Hallowing",
+   "tag": "focus",
+   "cspCost": 2,
+   "prerequisite": "Wiles[3]",
+   "research": "Astrology[2]",
+   "description": "Choose one target within 30ft when you initiate this and expend a Spell Slot. They make a Fate Check against your Check DC. If they fail, for as long as you maintain Focus, that target cannot enter the Hallowfell. This prevents teleporting, invisibility, Shadowstep, or any other magic ability that requires an enemy to briefly transport their body to the Hallowfell.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_confusion",
+   "name": "Confusion",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Wiles[3]",
+   "research": "Cultural Lore[2]",
+   "description": "Expend a Spell Slot. For as long as you maintain Focus, no other creatures within 30ft of you can initiate a new Focus action, and must make a Wiles Check against your Check DC every time you renew Focus on Confusion to maintain Focus.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_distant_confusion",
+   "name": "Distant Confusion",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Confusion, Wiles[5]",
+   "research": "Cultural Lore[3]",
+   "description": "When you use Confusion, the maximum range is 60ft.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_death_ward",
+   "name": "Death Ward",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Courage[3]",
+   "research": "Astrology[3]",
+   "description": "Choose a target within 5ft of you when you initiate this, and expend a Spell Slot. The next time they would drop to 0HP or below, they drop to 1HP instead, and your Focus ends.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_greater_death_ward",
+   "name": "Greater Death Ward",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Death Ward, Courage[5]",
+   "research": "Divination Talent",
+   "description": "When you cast Death Ward, choose up to 3 targets. Focus ends when any of the 3 would drop below 0HP. If an effect would cause multiple Focus targets to drop below 0HP, they all simultaneously trigger Death Ward.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_baneful_trade",
+   "name": "Baneful Trade",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Fate[4]",
+   "research": "Transmutation[3], Lead to Gold Talent",
+   "description": "Expend a spell slot and choose one target within 5ft when you initiate this. For as long as you maintain Focus, they critically hit with their first attack each turn. Each time they do, gain 1 Curse Counter. Each time you are hit, remove one Curse Counter. The attack dealt against you critically hits. You may only initiate Focus on this when you are below half HP. You may only end Focus on Baneful Trade on your turn. All Curse Counters disappear on a Quick Rest.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_banish_to_hallow",
+   "name": "Banish to Hallow",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Wiles[5]",
+   "research": "You have Greater Death Ward, Forbid Hallowing, and Crown of Thorns in your Tome",
+   "description": "Choose one target within 5ft of you when you initiate this and expend a Spell Slot. They make a Fate Check against your Check DC. If they fail, they are banished to the Hallowfell until the start of your next turn. They disappear from the world, and cannot take any actions except the Move action. Their Move action is made at half speed (and limited to 15ft) unless they regularly enter the Hallowfell already. Once a creature has been banished to the Hallowfell, you cannot use this ability on them again until a Quick Rest has passed.",
+   "section": "contract"
+  },
+  {
+   "id": "mg_viscous_mockery",
+   "name": "Viscous Mockery",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one enemy target within 30ft of you. That target makes a Courage Check against X Fumble, where X is your Proficiency.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_silvery_barbs",
+   "name": "Silvery Barbs",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Viscous Mockery, Finesse[2]",
+   "research": "Intuition[2]",
+   "description": "As a Boost to Viscous Mockery, expend a Spell Slot and choose an ally within 5ft of the enemy target who you mock. That ally gains X to their next to-hit rolled against the enemy target, where X is the amount of Fumble the enemy takes.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_bleeding_barbs",
+   "name": "Bleeding Barbs",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Viscous Mockery, Finesse[3]",
+   "research": "Linguist[2]",
+   "description": "As a Boost to Viscous Mockery, expend a Spell Slot. The target instead makes Wiles Checks against X levels of Jinxed, where X is your Proficiency.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_runic_scars",
+   "name": "Runic Scars",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Linguist[3]",
+   "description": "Choose one enemy target within 30ft. They make a Fate Check against your Check DC. If they fail, they take XD4 damage, where X is the difference between their roll and your Check DC (i.e., if your Check DC is 20 and they roll a 16 Fate Check, they take 4D4 damage). Once a target has made a Fate Check against Runic Scars, you cannot target them again until a Quick Rest has passed.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_barbed_stare",
+   "name": "Barbed Stare",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Magic Beast Lore[1]",
+   "description": "When you initiate Focus on this effect, choose one enemy target within 30ft. That target takes 1D6 damage. Each turn you maintain Focus on this effect, deal 1D6 damage to that target. Increase the dice type of damage you deal with Barbed Stare by 1 Dice Type each turn (i.e., on your second round of Focus, deal 1D8 damage). Your Focus ends on this effect if you leave 30ft range of the target.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_greater_glaring",
+   "name": "Greater Glaring",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Barbed Stare, Courage[3]",
+   "research": "Magic Beast Lore[2]",
+   "description": "Each turn you maintain Focus on Barbed Stare, increase the damage dice by one additional dice type if you have not moved (willingly or unwillingly) since you initiated Focus on Barbed Stare. Once you move, the dice type increases by only one per turn for as long as you maintain Focus.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_heroism",
+   "name": "Heroism",
+   "tag": "focus",
+   "cspCost": 2,
+   "prerequisite": "",
+   "research": "Combat Fear",
+   "description": "Expend one Spell Slot and choose an allied target within 30ft of you. That target becomes immune to Panic. If they already have Panic, the Panic does not go away, but they automatically succeed at any Make Trait Check action to remove Panic.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_greater_heroism",
+   "name": "Greater Heroism",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Heroism, Courage[3]",
+   "research": "Intuition[2]",
+   "description": "Each turn that you maintain Focus on Heroism on an allied target, they gain 1D4 Temporary HP. The Temporary HP given each turn you renew your Focus increases to 1D6 at Level 5, and 1D8 at level 11.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_hex",
+   "name": "Hex",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Font Lore[2]",
+   "description": "Choose one enemy target within 30ft and expend one Spell Slot. That target makes Wiles Checks against X levels of Sting, where X is your Proficiency.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_attempt_hold",
+   "name": "Attempt Hold",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "Magic Identification[2]",
+   "description": "Choose one enemy target within 30ft and expend one Spell Slot. That target makes Wiles Checks against X levels of Paralyzed, where X is your Proficiency.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_crown_of_insanity",
+   "name": "Crown of Insanity",
+   "tag": "focus",
+   "cspCost": 8,
+   "prerequisite": "Fate[2]",
+   "research": "You have an Oracle in your party who has gone insane at least three times in front of you, but isn’t you",
+   "description": "Expend 1 Spell Slot, and choose an enemy target within 5ft. That target makes a Fate Check against your Check DC. If they fail, at the start of each of their turns that you maintain Focus, the target takes 2D8 damage. They then apply the effect from the Oracle Insane Table (minus the damage) that corresponds to the lower of the two dice rolled on the insane table. They may break the effect with a successful Make Trait Check action against your Check DC.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_mind_sliver",
+   "name": "Mind Sliver",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Wiles[2]",
+   "research": "Intuition[1]",
+   "description": "As a reaction to a target making a Trait Check against a mental condition, expend a Spell Slot. The target gets 1X Disadvantage on the Trait Check, and takes 1D4 mental damage for each failed Trait Check made. Increase the damage of this effect to 1D6 at Level 5, and 1D8 at Level 11.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_greater_slivers",
+   "name": "Greater Slivers",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Mind Sliver, Wiles[4]",
+   "research": "Intuition[2]",
+   "description": "Increase the damage dice of Mind Sliver by 1 dice type.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_hallowfells_whisper",
+   "name": "Hallowfell’s Whisper",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Fate[2]",
+   "research": "Astrology[2]",
+   "description": "Choose one enemy target within 30ft and expend a spell slot. That target makes a Fate check against your Check DC, losing all Reactions before the start of their next turn if they fail.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_damaging_whispers",
+   "name": "Damaging Whispers",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Hallowfell’s Whisper, Fate[4]",
+   "research": "Astrology[3]",
+   "description": "As a Boost to Hallowfell’s Whisper, if the target fails their Fate Check against Hallowfell’s Whisper, they take 2D6 damage. Increase the damage dealt this way to 2D8 at Level 5, and 2D10 at Level 11.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_bless",
+   "name": "Bless",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Fate[3]",
+   "research": "Astrology[2]",
+   "description": "Expend X Spell Slots, where X is a number up to your Proficiency. Choose X allies within 30ft of you that you can see. For as long as you maintain Focus, all those allies add your Fate to all Trait Checks and Attack Rolls that they make.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_bane",
+   "name": "Bane",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Fate[3]",
+   "research": "Dungeoneering[2]",
+   "description": "Expend X Spell Slots, where X is a number up to your Proficiency. Choose X targets within 30ft of you that you can see. Each target makes a Fate Check against your Check DC. For as long as you maintain Focus, all enemies who fail this Trait Check subtract your Fate score from all Trait Checks and Attack Rolls that they make. Each target you Bane can end this effect with a successful Make Trait Check action.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_compelled_duel",
+   "name": "Compelled Duel",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Courage[3]",
+   "research": "Dungeoneering[2]",
+   "description": "Choose one enemy target within 30ft of you. Expend a Spell Slot. That target makes Wiles Checks against X levels of Taunt, where X is half your Proficiency, rounded up.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_hallowfell_traversal",
+   "name": "Hallowfell Traversal",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Courage[3]",
+   "research": "Divination",
+   "description": "As a Boost to a Move action, expend a Spell Slot. You may walk through all other creatures as part of this Move action, and do not provoke attacks of Opportunity with this Move action. If you are Swallowed by a creature, you may walk outside of them with Hallowfell Traversal without making a Trait Check against any effects related to being swallowed.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_enemies_abound",
+   "name": "Enemies Abound",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Wiles[3], Courage[3]",
+   "research": "Speaker[3]",
+   "description": "Choose one enemy target within 30ft. That target makes a Wiles Check against your Check DC. If they fail, they treat all allies as enemies. Whenever the affected target chooses another creature as a target for its abilities, it must choose at random from among all creatures it can see within range of the ability it is using. If an enemy provokes a reaction attack from the affected creature, the creature must make that attack if it is able to. The affected target makes a Wiles Check against this effect every time you renew Focus. It also makes a Wiles Check against this effect if it takes damage of any kind. When it passes the Check, the effect ends.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_catnap",
+   "name": "Catnap",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Wiles[4]",
+   "research": "Font Lore[2], Magical Detection",
+   "description": "Expend X Spell Slots, where X is any number up to your Proficiency. Choose X enemy targets within 30ft of you that you can see. All targets make a Fate Check against your Check DC. Any target who fails falls unconscious and prone. They remain unconscious until they take any damage, or your Focus ends. At the end of each turn in which they remain unconscious, they make a Fate Check against your Check DC, ending the effect on a success. Any attack made against them while they are unconscious is treated as Surprised (but immediately wakes them up). This spell has no effect on creatures whose CR is greater than or equal to your level.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_deeper_napping",
+   "name": "Deeper Napping",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Catnap",
+   "research": "Font Lore[3]",
+   "description": "When a target has failed their initial Trait Check against Catnap, and they roll Fate Checks at the end of each turn, they roll these Fate Checks at 1X Disadvantage.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_reverse_catnap",
+   "name": "Reverse Catnap",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Wiles[4]",
+   "research": "You already have Catnap in your Tome",
+   "description": "Expend X Spell Slots, where X is any number up to your Proficiency. Choose X allies within 30ft of you that you can see. All targets recover 1 expended Action Pool point. You can use this ability at most once per turn.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_hallows_calm",
+   "name": "Hallow’s Calm",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Wiles[5]",
+   "research": "You have Damaging Whispers and Hallowfell Traversal within your Tome",
+   "description": "Expend one Spell Slot. You gain an Aura of 5ft. All creatures within this aura gain 1X Disadvantage to attacks made within this radius. Additionally, any Oracles who start their turn within this aura lose 1 Madness at the start of each turn. The radius of this aura increases by 5ft every turn that you expend a Focus action on it, to a max of 5Xft, where X is your Proficiency.",
+   "section": "elder"
+  },
+  {
+   "id": "mg_hallows_gale",
+   "name": "Hallow’s Gale",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Wiles[5]",
+   "research": "You have Crown of Insanity and Hallowfell Traversal in your Tome",
+   "description": "Expend one Spell Slot. You gain an Aura of 5ft. All creatures within this aura gain 1X Advantage to attacks made within this radius. Additionally, any Oracles who start their turn within this aura gain 1 Madness at the start of each turn. The radius of this aura increases by 5ft every turn that you expend a Focus action on it, to a max of 5Xft, where X is your Proficiency.",
+   "section": "elder"
+  }
+ ],
+ "witch": [
+  {
+   "id": "wt_witchs_promise",
+   "name": "Witch's Promise",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "When you choose to play a Witch, choose one Witch's Promise, and take associated abilities and restrictions.",
+   "section": "core"
+  },
+  {
+   "id": "wt_witchs_finger",
+   "name": "Witch's Finger",
+   "tag": "action",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Touch a target within 5ft of you and choose one adversarial condition they possess from the following: Nausea, Pinned, Paralysis, Delirium, Jinxed, Slowed, Sting. They make a Fate Check against your Check DC. If they fail, they gain one level (to a maximum of your Proficiency).",
+   "section": "core"
+  },
+  {
+   "id": "wt_divine_touch_slots",
+   "name": "Divine Touch Slots",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "When you take this, gain an Action Pool of Divine Touch points equal to your Proficiency Score. You get all Divine Touch points back after a quick rest. When you take this ability, you may spend skill points to learn Divine Touches. Whenever you may spend skill points, you may add to the list of Divine Touches you know.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_promise_of_nonviolence",
+   "name": "Promise of Nonviolence",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Lose access to all Witch abilities if you intentionally directly cause any creature to lose HP (i.e., make an attack against them, or give them Hemorrhage yourself). To recover your abilities, you must take the Atone action within your Divine Site. The Pact of Nonviolence is not the same as pacifism: assisting allies in harming an enemy is acceptable.",
+   "section": "promise"
+  },
+  {
+   "id": "wt_hallowed_touch",
+   "name": "Hallowed Touch",
+   "tag": "reaction",
+   "cspCost": 0,
+   "prerequisite": "Promise of Nonviolence",
+   "research": "",
+   "description": "When an ally within 5ft of you attempts to give temporary HP, you may expend a Reaction to add one die to the amount rolled (e.g., if they would roll 3D4, they instead roll 4D4).",
+   "section": "promise"
+  },
+  {
+   "id": "wt_promise_of_vengeance",
+   "name": "Promise of Vengeance",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one target when you make this Promise. Your actions are a personal mission to enact vengeance against that creature for a wrong. Work with your GM to outline that wrong. When you achieve your mission of vengeance against that target, lose all Witch powers until you Atone and seek a new target of vengeance (or take a new Promise). Additionally, lose your Witch powers if you do not take any action towards fulfilling your Vengeance between any two consecutive long rests.",
+   "section": "promise"
+  },
+  {
+   "id": "wt_baneful_scratch",
+   "name": "Baneful Scratch",
+   "tag": "action",
+   "cspCost": 0,
+   "prerequisite": "Promise of Vengeance",
+   "research": "",
+   "description": "Choose one target within 5ft of you. They make a Finesse Check against your Check DC or take XD4 damage, where X is the number of unique conditions they possess (i.e., if a target has 3 Fumble, 2 Nausea, and is Surrounded, they roll against 3D4).",
+   "section": "promise"
+  },
+  {
+   "id": "wt_promise_of_justice",
+   "name": "Promise of Justice",
+   "tag": "passive",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Lose access to all Witch abilities if you intentionally break the law of a culture you enter, whether that culture is friend or foe. Likewise, if you enter a new culture, you must seek out the laws of that land to make sure you do not break them. If you do break the laws of any land, you must take the Atone action within your Divine Site to recover the use of Witch abilities.",
+   "section": "promise"
+  },
+  {
+   "id": "wt_tweak_the_heart",
+   "name": "Tweak the Heart",
+   "tag": "reaction",
+   "cspCost": 0,
+   "prerequisite": "Promise of Justice",
+   "research": "",
+   "description": "In reaction to an ally within 5ft of you attempting to give a target a condition, you may expend a reaction to increase their Check DC by 1 for that effect.",
+   "section": "promise"
+  },
+  {
+   "id": "wt_atone",
+   "name": "Atone",
+   "tag": "ceremony",
+   "cspCost": 0,
+   "prerequisite": "",
+   "research": "",
+   "description": "Take a Long Rest Action in your Divine Site. Recover the use of Witch abilities at the end of this Long Rest action. If your Witch's Promise has fully ended (e.g., if you have completed your Pact of Vengeance), you may use the Atone action to choose a new Promise.",
+   "section": "promise"
+  },
+  {
+   "id": "wt_twisted_pin",
+   "name": "Twisted Pin",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Finesse[2]",
+   "research": "",
+   "description": "Choose one allied Thug. The damage they deal through Harm is increased by one dice types for as long as you maintain Focus.",
+   "section": "general"
+  },
+  {
+   "id": "wt_greater_twistings",
+   "name": "Greater Twistings",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Twisted Pin, Finesse[4]",
+   "research": "",
+   "description": "When you use Twisted Pin, increase the damage dice of Harm by one additional dice type.",
+   "section": "general"
+  },
+  {
+   "id": "wt_dancerwind",
+   "name": "Dancerwind",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Finesse[2]",
+   "research": "",
+   "description": "Choose one target within 5ft of you. On their next turn, their Move Speed is increased by 5ft, and they can 5ft adjust into difficult terrain.",
+   "section": "general"
+  },
+  {
+   "id": "wt_dancers_gale",
+   "name": "Dancer’s Gale",
+   "tag": "boost",
+   "cspCost": 3,
+   "prerequisite": "Dancerwind, Finesse[4]",
+   "research": "",
+   "description": "As a Boost to Dancerwind, you may expend additional AP. For every extra AP you expend, increase the move speed of the target by an additional 5ft.",
+   "section": "general"
+  },
+  {
+   "id": "wt_eye_for_damage",
+   "name": "Eye for Damage",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Finesse[3]",
+   "research": "",
+   "description": "Choose one ally within 5ft of you when you initiate this Focus. For as long as you maintain Focus, for each level of Specialized Lore they know about a target that would give them one fact about that target’s monster card, they deal 1D4 extra damage with each attack. Increase damage dealt this way to 1D6 at level 5, and 1D8 at level 11. Every turn you maintain Focus on Eye for Damage, you can only renew Focus when you are within 5ft of that ally.",
+   "section": "general"
+  },
+  {
+   "id": "wt_shield_transference",
+   "name": "Shield Transference",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "Fate[3]",
+   "research": "",
+   "description": "Choose an ally within 5ft of you when you initiate this. When you do, choose one type of Defense they possess: MD, TD, or PD. Reduce that Defense by half your Fate, rounded up for as long as you maintain Focus (the chosen defense can drop below the target’s AD through this effect). Choose a different Defense from: MD, TD, or PD. Increase that Defense by half your Fate, rounded up. Every turn you maintain Focus on Shield Transference, you can only renew Focus when you are within 5ft of that ally.",
+   "section": "general"
+  },
+  {
+   "id": "wt_foe_transference",
+   "name": "Foe Transference",
+   "tag": "passive",
+   "cspCost": 7,
+   "prerequisite": "Shield Transference",
+   "research": "",
+   "description": "You may target an enemy with Shield Transference. If you use this on an enemy, they may make a Finesse Check against your Check DC to prevent the effect when you initiate and each round you renew the effect.",
+   "section": "general"
+  },
+  {
+   "id": "wt_greater_transference",
+   "name": "Greater Transference",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Shield Transference, Fate[5]",
+   "research": "",
+   "description": "When you use Shield Transference on an ally, you transfer both types of defense by your Fate, rather than half your Fate.",
+   "section": "general"
+  },
+  {
+   "id": "wt_self_heal",
+   "name": "Self-Heal",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "Fate[4]",
+   "research": "",
+   "description": "Choose one ally within 5ft of you when you initiate this. For as long as you maintain Focus, any ability they would use or effect they trigger that deals damage to themselves gives them temporary HP instead. This affects Insane Oracle abilities and self-inflicted abilities like Thug’s Pained Bash, but does not trigger when caused by conditions they may have been given, or effects caused by an enemy. Every turn you maintain Focus on Self Heal, you can only renew Focus when you are within 5ft of that ally.",
+   "section": "general"
+  },
+  {
+   "id": "wt_razorleaf",
+   "name": "Razorleaf",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally within 5ft of you when you initiate this, and further choose one weapon type they wield. For as long as you maintain Focus on Razorleaf, increase the damage dice of all attacks they make with that weapon type by two dice types. Every turn you maintain Focus on Razorleaf, you can only renew Focus when you are within 5ft of that ally. You may not use Razorleaf more than once on a single target simultaneously and cannot choose yourself.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_grasses_of_kish",
+   "name": "Grasses of Kish",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Razorleaf, Finesse[3]",
+   "research": "",
+   "description": "When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_lodestone_shards",
+   "name": "Lodestone Shards",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Grasses of Kish, Finesse[5]",
+   "research": "",
+   "description": "When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_needlepine",
+   "name": "Needlepine",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one enemy within 5ft of you when you initiate this, and further choose one weapon type they wield. For as long as you maintain Focus on Needlepine, decrease the damage dice of all attacks they make with that weapon type by two dice types. Every turn you maintain Focus on Needlepine, you can only renew Focus when you are within 5ft of that target. You may not use Needlepine more than once on a single target simultaneously.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_heart_of_pine",
+   "name": "Heart of Pine",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Needlepine, Finesse[3]",
+   "research": "",
+   "description": "When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_pigsqueak_tuber",
+   "name": "Pigsqueak Tuber",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Heart of Pine, Finesse[5]",
+   "research": "",
+   "description": "When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_field_of_flowers",
+   "name": "Field of Flowers",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally within 5ft of you. Until the start of your next turn, all reaction attacks made against them are made at 1X Disadvantage.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_hold_the_brush",
+   "name": "Hold the Brush",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally within 5ft of you who has initiated a Focus action. For as long as you maintain Focus on Hold the Brush, they do not expend AP to maintain Focus. Instead, you expend AP to maintain Focus on that action. You must expend additional AP (in addition to Hold the Brush) on the Focus action you select (e.g., if an allied soldier is maintaining Focus on Stand By Me, you may expend one Focus action on Hold the Brush, plus an additional Focus action with 2 AP due to limb exhaustion to maintain Stand By Me. For as long as you do this, your ally does not need to expend actions to maintain Stand By Me). Every turn you maintain Focus on Hold the Brush, you can only renew Focus on this ability when you are within 5ft of that target.",
+   "section": "wellspring"
+  },
+  {
+   "id": "wt_fourleaf_touch",
+   "name": "Fourleaf Touch",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally within 5ft when you initiate this. For as long as you maintain Focus, increase their Check DC by half your Fate Score, rounded up. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_sevenleaf",
+   "name": "Sevenleaf",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Fourleaf Touch",
+   "research": "",
+   "description": "When you use Fourleaf Touch on an ally, increase your ally’s Check DC by your Fate Score instead of half your Fate Score.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_threeleaf_touch",
+   "name": "Threeleaf Touch",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Fourleaf Touch, Promise of Vengeance",
+   "research": "",
+   "description": "You may use Fourleaf Touch on an enemy. If you do, reduce their Check DC by half your Fate Score, rounded up, instead of increasing it. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_poured_mold",
+   "name": "Poured Mold",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "",
+   "description": "When you take this ability, choose one greater adversarial condition from the following: Corroded, Debilitated, Pulled, Hemorrhage, Frenzy, Panic, Taunt. When you initiate this ability, choose one enemy target within 5ft. For as long as you maintain Focus, your chosen condition is treated as Stacking up to your Proficiency. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target. Once you initiate Focus on Poured Mold, if you drop Focus, they lose all levels of that condition.You may take this ability up to three times. Every time you do, choose a different condition from the list above. Any target you focus on treats all conditions for which you have Poured Mold as a Stacking with a single Focus.",
+   "section": "balancer",
+   "note": "[6|3]: 6 CSP the first time, 3 for each additional instance (up to three)."
+  },
+  {
+   "id": "wt_wellspring",
+   "name": "Wellspring",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "When an ally within 5ft of you attempts to give X or more levels of an Adversarial Condition to a target, where X is any number equal to or greater than their Proficiency, you may expend a reaction. If you do, that ally attempts to give one extra level (e.g., if they have 3 Proficiency and attempt to give 3 levels of Nausea, they instead attempt to give 4).",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_greater_wellspring",
+   "name": "Greater Wellspring",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "Fate[5], Wellspring, Promise of Justice",
+   "research": "",
+   "description": "When you use Wellspring on an ally, they give one extra level whenever they attempt to give conditions equal to half their Proficiency, rounded up, or more (e.g., if they have 4 Proficiency and attempt to give 2 levels of Corrosion, they instead attempt to give 3).",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_healthy_hands",
+   "name": "Healthy Hands",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "Promise of Nonviolence",
+   "research": "",
+   "description": "Touch an ally within 5ft of you. Convert all temporary HP they possess to health permanent health. You may use this only once per quick rest.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_healing_heart",
+   "name": "Healing Heart",
+   "tag": "boost",
+   "cspCost": 4,
+   "prerequisite": "Finesse[3], Healthy Hands",
+   "research": "",
+   "description": "As a Boost to Healthy Hands, all allies within 30ft of you benefit from the effect all at once.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_twisting_touch",
+   "name": "Twisting Touch",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Promise of Vengeance",
+   "research": "",
+   "description": "Increase the damage dice of Baneful Scratch by one dice type.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_greater_twist",
+   "name": "Greater Twist",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Fate[3], Twisting Touch",
+   "research": "",
+   "description": "When you use Twisting Touch, count each level of adversarial conditions as separate.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_balanced_fare",
+   "name": "Balanced Fare",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Promise of Justice",
+   "research": "",
+   "description": "In response to an ally within 5ft of you attempting to hit a target and missing, you may deal XD6 damage to them, where X is the amount by which they missed. They then hit. You cannot use this to turn a natural 1 into a hit. They must agree to take this damage before you roll the dice, and before the attack hits.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_reduced_fare",
+   "name": "Reduced Fare",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Fate[3], Balanced Fare",
+   "research": "",
+   "description": "When you use Balanced Fare, the target only takes XD4 damage. If you have Harmed Fare, this applies to damage you would deal to yourself as well.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_harmed_fare",
+   "name": "Harmed Fare",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Fate[3], Balanced Fare",
+   "research": "",
+   "description": "You may use Balanced Fare on an enemy target within 5ft who would hit on their attack against you or an ally. If you do, take XD6 damage, where X is equal to the difference between their to-hit rolled and the Defense they target. Then, the enemy target misses. You cannot use this to prevent a natural 20 from critically hitting.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_olive_branch",
+   "name": "Olive Branch",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Fate[2]",
+   "research": "",
+   "description": "Choose one target within 5ft of you. They make X Fate Checks against your Check DC, where X is half your Proficiency (rounded up). For each failed Check DC, deal 1D6 damage to them. An allied target can willingly choose to fail all Fate Checks against this effect. If you have the Promise of Nonviolence, you cannot choose an enemy as your target (without breaking your Promise). Then, choose a second target within 5ft of you. They gain HP equal to the damage dealt to the first target (to a maximum of their max. HP). You can choose yourself as either target.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_oldgrove",
+   "name": "Oldgrove",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Olive Branch, Promise of Nonviolence, Fate[4]",
+   "research": "",
+   "description": "Increase the Dice Type of Olive Branch from XD6 to XD8.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_blossom",
+   "name": "Blossom",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "Fate[3]",
+   "research": "",
+   "description": "As a reaction to an ally using an ability within 5ft of you, expend a reaction. That ally does not exhaust a limb through that ability use.",
+   "section": "balancer"
+  },
+  {
+   "id": "wt_clumsy_touch",
+   "name": "Clumsy Touch",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one enemy target within 5ft of you who has levels of Fumbled. For each level of Fumble they possess (up to your Proficiency), they make a Finesse Check against your Check DC (they do not apply their Fumbled to these Checks). For each failed Finesse Check made, they gain 1 Jinxed, and lose 1 Fumbled.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_cheststep",
+   "name": "Cheststep",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "As a reaction to a creature within 5ft of you attempting to stand up from being Prone, you may force them to make a Power Check against your Check DC. If they fail, they remain Prone.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_bleeding_bane",
+   "name": "Bleeding Bane",
+   "tag": "focus",
+   "cspCost": 3,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one ally. The damage dice caused by Hemorrhage they give is increased by one dice type for as long as you retain Focus.Every turn you maintain Focus on Bleeding Bane, you can only renew Focus on this ability when you are within 5ft of that target. If you drop Focus, any Hemmorhage they have given already reverts to doing normal damage (i.e., the effect does not linger beyond your Focus).",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_greater_bleed",
+   "name": "Greater Bleed",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Bleeding Bane, Finesse[3]",
+   "research": "",
+   "description": "Increase the Dice Type of Hemorrhage by one additional dice type when you use Bleeding Bane.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_cicada_killer",
+   "name": "Cicada Killer",
+   "tag": "focus",
+   "cspCost": 2,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one target with levels of Paralyzed within 5ft of you when you initiate this ability. Each turn they reduce their Paralyzed levels, they don’t lose levels randomly. Instead, you determine which limb is freed from the condition effects.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_pin_the_tail",
+   "name": "Pin the Tail",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose an enemy target with 2 Pin within 30ft of you. On their next turn, you choose which arm the target must treat as Pinned.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_corrosive_burns",
+   "name": "Corrosive Burns",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Finesse[2]",
+   "research": "",
+   "description": "Choose a target within 5ft of you with levels of Hemorrhage. For every level of Hemorrhage they possess, they make a Fate Check against one level of Corrosion against your Check DC. Whether they succeed or fail, they then lose all levels of Hemorrhage.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_vomiting_touch",
+   "name": "Vomiting Touch",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Finesse[2]",
+   "research": "",
+   "description": "Choose a target within 5ft of you with levels of Nausea. For every level of Nausea they possess, they make a Fate Check against one level of Deblitated against your Check DC. Whether they succeed or fail, they then lose all levels of Nausea.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_delirious_vulnerabilities",
+   "name": "Delirious Vulnerabilities",
+   "tag": "action",
+   "cspCost": 2,
+   "prerequisite": "Fate[2]",
+   "research": "",
+   "description": "Touch a target within 5ft of you with any levels of Delirium. That Delirium no longer reduces their AD, MD, TD, and PD. Instead, it reduces their Damage Resistance to a minimum of zero.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_funnel_energy",
+   "name": "Funnel Energy",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Fate[3]",
+   "research": "",
+   "description": "Choose two different targets within 5ft of you (you cannot choose yourself). The first target must have Fatigue. Make X Fate Checks against the first target's Check DC, where X is the first target's level of Fatigue. For every successful Trait Check, remove one level of Fatigue from that target, and give the other target 1 additional AP to use on their next turn. This does not work on Battle Fatigue.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_given_energy",
+   "name": "Given Energy",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Funnel Energy, Fate[5]",
+   "research": "",
+   "description": "You can choose yourself as one of the targets of Funnel Energy.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_fools_gold",
+   "name": "Fool’s Gold",
+   "tag": "reaction",
+   "cspCost": 6,
+   "prerequisite": "Finesse[3]",
+   "research": "",
+   "description": "As a reaction to a Surprised target within 5ft of you taking damage that wound end the Surprise Effect, they make a Fate Check against your Check DC. If they fail, they do not remove the Surprised Condition.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_give_of_thyself",
+   "name": "Give of Thyself",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Fate[3], Promise of Nonviolence",
+   "research": "",
+   "description": "Choose one willing allied target with levels of an Adversarial Condition within 5ft of you. They immediately make X Trait Checks against levels of the Condition, where X is a number up to half your Proficiency, rounded up. You may choose for them to make more Trait Checks than they have levels of the Condition. They remove a level of the Condition for each successful trait check made. For each Trait Check they fail, you gain 1 Fatigue.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_greater_giving",
+   "name": "Greater Giving",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Fate[5], Give of Thyself",
+   "research": "",
+   "description": "When you use Give of Thyself, you may choose any number up to your Proficiency in levels of the condition.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_banebalm",
+   "name": "Banebalm",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Fate[3], Promise of Vengeance",
+   "research": "",
+   "description": "Choose one target within 5ft of you. Attempt to give them levels of Sting up to your Proficiency (Finesse Check negates).",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_waspnest",
+   "name": "Waspnest",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Fate[5], Banebalm",
+   "research": "",
+   "description": "Choose one enemy target when you initiate this. They make a Fate Check against your Check DC. If they fail, for as long as you maintain Focus on Waspnest, Sting increases the damage they take by 2 per level, instead of 1. They may make Trait Checks against this effect with a Make Trait Check action.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_transmute_trauma",
+   "name": "Transmute Trauma",
+   "tag": "action",
+   "cspCost": 6,
+   "prerequisite": "Fate[3], Promise of Justice",
+   "research": "",
+   "description": "Choose two targets within 5ft of you. The first target must have levels of an Adversarial Condition, and the second does not. Choose one adversarial condition that the first target has, and then select some number of levels of that condition up to X, where X is half your Proficiency, rounded up. The second target must make Fate Checks against X levels of that condition. For each level of the condition they take, the first target loses one level of the condition, and you gain 1 level of Fatigue.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_traumatic_shift",
+   "name": "Traumatic Shift",
+   "tag": "passive",
+   "cspCost": 4,
+   "prerequisite": "Fate[5], Transmute Trauma",
+   "research": "",
+   "description": "When you use Transmute Trauma, the second target gets 1X Disadvantage on Trait Checks against the effect.",
+   "section": "conditionmaker"
+  },
+  {
+   "id": "wt_toxin_to_tonic",
+   "name": "Toxin to Tonic",
+   "tag": "focus",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose one allied target within 5ft with at least one level of one of the Weak Adversarial Conditions below, and choose one such condition they possess. Expend Divine Touch Points equal to the level of that condition they possess. For as long as you maintain Focus and they have levels of that condition, the effect of that condition changes according to the below: Nausea: For each level of Nausea they possess, increase their to-hit by 1. Paralysis: Limbs affected by Paralysis do not exhaust Delirium: For each level of Delirium the target possesses, they gain 1 DR Slowed: For each level of Slowed the target possesses, increase their move speed by 5ft Sting: For each level of Sting the target possesses, increase the damage they deal by 1",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_nettle",
+   "name": "Nettle",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "",
+   "description": "Choose a target within 5ft of you who you can see with at least 1 level of an adversarial condition, and expend X Divine Touch Points. For every Divine Touch Point spent, convert up to 2 levels of that adversarial condition to Sting, Jinxed, Delirium, or Nausea (choose one when you use this). They must be able to take the condition chosen.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_bloomgift",
+   "name": "Bloomgift",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "Promise of Nonviolence",
+   "research": "",
+   "description": "Choose an ally within 5ft and expend a Divine Touch Point. Expend AP (in addition to the AP to use Bloomgift) up to half your Proficiency, rounded up. For each AP you expend, that ally gains one reaction before the start of their next turn.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_heretics_bane",
+   "name": "Heretic’s Bane",
+   "tag": "reaction",
+   "cspCost": 4,
+   "prerequisite": "Promise of Vengeance",
+   "research": "",
+   "description": "As a Reaction to an enemy within 5ft of you attempting a Make Trait Check action against levels of an adversarial condition, expend a Divine Touch Point. If they fail the Make Trait Check action, they take XD10 damage, where X is the number of levels of that condition they possess.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_wild_rebuke",
+   "name": "Wild Rebuke",
+   "tag": "reaction",
+   "cspCost": 3,
+   "prerequisite": "Promise of Justice",
+   "research": "",
+   "description": "As a reaction to an enemy within 30ft of you attempting to give an ally levels of an adversarial condition, declare the use of Wild Rebuke. For every successful Trait Check your ally makes against the effect, you may expend one Divine Touch point, and the enemy takes one level of that condition. There is no Trait Check against this effect.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_springs_surge",
+   "name": "Spring’s Surge",
+   "tag": "action",
+   "cspCost": 4,
+   "prerequisite": "",
+   "research": "",
+   "description": "Expend X Divine Touch Points (where X is any number up to half your Proficiency), and choose a target within 5ft of you with an Adversarial Condition. That target makes Fate Checks against X additional levels of that Condition.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_soris_surge",
+   "name": "Sori’s Surge",
+   "tag": "passive",
+   "cspCost": 3,
+   "prerequisite": "Fate[2]",
+   "research": "",
+   "description": "You may use Spring’s Surge on Madness for an ally. They can willingly choose to take the Madness you attempt to give them.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_touch_the_flame",
+   "name": "Touch the Flame",
+   "tag": "action",
+   "cspCost": 3,
+   "prerequisite": "Finesse[2]",
+   "research": "",
+   "description": "Expend a Divine Touch point and touch a target within 5ft of you who has levels of Hemorrhage.They take Hemorrhage damage immediately for their level of Hemorrhage. Then, remove one level of Hemorrhage that they possess.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_into_fire",
+   "name": "Into Fire",
+   "tag": "passive",
+   "cspCost": 5,
+   "prerequisite": "Fate[3], Touch the Flame",
+   "research": "",
+   "description": "You may use Touch the Flame as a consistent action. For each AP you expend beyond the first, trigger the next level of Hemorrhage that target possesses (i.e., if you expend 2 AP against a target with 3 Hemorrhage, they take damage from 3 levels of Hemorrhage, then damage from 2 levels of Hemorrhage, and reduce their overall Hemorrhage count to 1 after triggering both levels).",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_allied_spirit_blade",
+   "name": "Allied Spirit Blade",
+   "tag": "focus",
+   "cspCost": 5,
+   "prerequisite": "Fate[3]",
+   "research": "",
+   "description": "Expend one Divine Touch point and choose the weapon held by an ally within 5ft of you (you may choose a fist or bite attack of an ally as well, but it must be a specified fist or attack type of that ally). For as long as you maintain Focus, that weapon glows 5ft dimly with a spiritual energy. It attacks AD (the lowest armor score among MD, TD, PD) instead of other armor types. Additionally, the weapon can strike incorporeal targets. Every turn you maintain Focus on Allied Spirit Blade, you can only renew Focus on this ability when you are within 5ft of that allied target’s weapon.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_winter_frost",
+   "name": "Winter Frost",
+   "tag": "focus",
+   "cspCost": 4,
+   "prerequisite": "Fate[4]",
+   "research": "",
+   "description": "Choose an enemy within 5ft of you, as well as one Adversarial Condition of which they possess at least one level. Expend a Divine Touch Point. That target’s condition becomes Enduring for as long as you maintain Focus. Every turn you maintain Focus on Winter Frost, you can only renew Focus on this ability when you are within 5ft of that target. You must expend one Divine Touch Point each turn when you renew Focus.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_twist_my_words",
+   "name": "Twist my Words",
+   "tag": "reaction",
+   "cspCost": 6,
+   "prerequisite": "Fate[5]",
+   "research": "",
+   "description": "As a reaction to an ally within 5ft of you using an ability that would target an enemy, you may expend a Divine Touch point to allow them to target an ally instead.",
+   "section": "calming_hands"
+  },
+  {
+   "id": "wt_a_full_well",
+   "name": "A Full Well",
+   "tag": "passive",
+   "cspCost": 6,
+   "prerequisite": "",
+   "research": "",
+   "description": "The number of Divine Touch points you get per quick rest is equal to twice your Proficiency Score.",
+   "section": "calming_hands"
+  }
+ ]
+}

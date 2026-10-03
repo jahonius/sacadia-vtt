@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Power 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hidebite",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hidebite",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "d9917da94a1c"
     }
   }
 }

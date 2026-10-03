@@ -1,0 +1,153 @@
+{
+  "_id": "698414963a31d238",
+  "_key": "!items!698414963a31d238",
+  "name": "Give of Thyself",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one willing allied target with levels of an Adversarial Condition within 5ft of you. They immediately make X Trait Checks against levels of the Condition, where X is a number up to half your Proficiency, rounded up. You may choose for them to make more Trait Checks than they have levels of the Condition. They remove a level of the Condition for each successful trait check made. For each Trait Check they fail, you gain 1 Fatigue.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[3], Promise of Nonviolence"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "mode": "reduce",
+            "checks": "@spent",
+            "casterGain": {
+              "condition": "fatigue"
+            }
+          }
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "pinned",
+          "label": "Pinned"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "corroded",
+          "label": "Corroded"
+        },
+        {
+          "value": "debilitated",
+          "label": "Debilitated"
+        },
+        {
+          "value": "pulled",
+          "label": "Pulled"
+        },
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "silenced",
+          "label": "Silenced"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "fumbled",
+          "label": "Fumbled"
+        },
+        {
+          "value": "rended",
+          "label": "Rended"
+        }
+      ]
+    },
+    "amountPrompt": {
+      "label": "Trait Checks to make",
+      "max": "ceil(@proficiency/2) + @owns.wt_greater_giving*(@proficiency - ceil(@proficiency/2))"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_give_of_thyself",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "f56c3ac7e73e"
+    }
+  }
+}

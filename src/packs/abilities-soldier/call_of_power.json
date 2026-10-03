@@ -44,12 +44,27 @@
           }
         ]
       }
-    ]
+    ],
+    "grant": {
+      "scope": "allies",
+      "label": "Call of Power",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.damage.all",
+          "mode": 2,
+          "value": "ceil(@proficiency/2)"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_of_power"
+      "catalogId": "call_of_power",
+      "buildHash": "669661b9edc6"
     }
   }
 }

@@ -29,12 +29,22 @@
       "prerequisite": "Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "special": {
+        "extraAttacks": "floor(@spent/2)"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "freefire"
+      "catalogId": "freefire",
+      "buildHash": "4b61e67a63bf"
     }
   }
 }

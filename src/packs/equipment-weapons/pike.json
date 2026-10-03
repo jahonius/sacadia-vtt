@@ -11,6 +11,9 @@
     "value": 30,
     "equipped": false,
     "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "spear",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "pike",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "51d18a29d473"
     }
   }
 }

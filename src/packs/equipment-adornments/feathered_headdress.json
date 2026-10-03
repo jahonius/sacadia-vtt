@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "feathered_headdress",
       "kind": "adornment",
-      "armorPrereq": "Feathered Style"
+      "armorPrereq": "Feathered Style",
+      "buildHash": "88804bbdd266"
     }
   }
 }

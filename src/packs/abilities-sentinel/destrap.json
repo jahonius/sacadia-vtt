@@ -37,14 +37,20 @@
         "attack": {
           "category": "ranged",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
           "dc": null
         },
         "damage": [],
-        "inflict": []
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "rended",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "destrap"
+      "catalogId": "destrap",
+      "buildHash": "163b7060abc6"
     }
   }
 }

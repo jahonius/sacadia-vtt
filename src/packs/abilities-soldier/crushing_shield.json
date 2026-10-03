@@ -39,18 +39,21 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "crushing_shield"
+      "catalogId": "crushing_shield",
+      "buildHash": "83e62053f9d7"
     }
   }
 }

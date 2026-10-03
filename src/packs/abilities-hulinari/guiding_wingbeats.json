@@ -1,0 +1,42 @@
+{
+  "_id": "cbc1f23a407e448b",
+  "_key": "!items!cbc1f23a407e448b",
+  "name": "Guiding Wingbeats",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For as long as you maintain Focus, increase the To-Hit of all allies within the Cloud by +X, where X is half your Proficiency, rounded up.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Ally"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "guiding_wingbeats",
+      "transcribed": true,
+      "buildHash": "87e2dc216efd"
+    }
+  }
+}

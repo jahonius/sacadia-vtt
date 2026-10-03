@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Heavy Armor Training, Prof[4]</em></p>",
     "equipped": false,
     "category": "heavy",
+    "material": "iron",
     "defenses": {
       "ad": 0,
       "pd": 10,
@@ -15,13 +16,17 @@
       "md": 0,
       "dr": 0
     },
-    "maxStat": 27
+    "maxStat": 27,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_iron_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "84fb58bd4799"
     }
   }
 }

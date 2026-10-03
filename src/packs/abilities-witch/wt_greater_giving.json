@@ -1,0 +1,43 @@
+{
+  "_id": "78d0d252ed84e459",
+  "_key": "!items!78d0d252ed84e459",
+  "name": "Greater Giving",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Give of Thyself, you may choose any number up to your Proficiency in levels of the condition.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[5], Give of Thyself"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_greater_giving",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "1fd3aa9f0cad"
+    }
+  }
+}

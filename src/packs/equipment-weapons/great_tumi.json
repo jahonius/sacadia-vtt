@@ -11,6 +11,9 @@
     "value": 200,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "sword",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "great_tumi",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "110afb4c085d"
     }
   }
 }

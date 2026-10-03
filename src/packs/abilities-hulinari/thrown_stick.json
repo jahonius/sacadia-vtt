@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Meatclub"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "thrown_stick",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "79a9e17b1f42"
     }
   }
 }

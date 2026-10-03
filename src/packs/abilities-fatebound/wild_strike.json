@@ -44,13 +44,37 @@
         "damage": [],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Wild Strike",
+      "requires": "wild_throws",
+      "options": [
+        {
+          "value": "melee",
+          "label": "Melee"
+        },
+        {
+          "value": "thrown",
+          "label": "Thrown (Versatile throws)"
+        }
+      ]
+    },
+    "multiAttack": {
+      "count": 2,
+      "targeting": "split",
+      "upgrade": {
+        "ability": "third_arm",
+        "count": 3
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "wild_strike",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e143b1f4315a"
     }
   }
 }

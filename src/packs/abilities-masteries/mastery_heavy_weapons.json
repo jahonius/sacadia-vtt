@@ -50,7 +50,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_heavy_weapons",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "c3c6706766af"
     }
   }
 }

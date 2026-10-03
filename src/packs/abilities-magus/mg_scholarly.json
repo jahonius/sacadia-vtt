@@ -1,0 +1,43 @@
+{
+  "_id": "09299e74db53fc06",
+  "_key": "!items!09299e74db53fc06",
+  "name": "Scholarly",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain the Literacy General Talent. If you have the Literacy General Talent already, gain 2 additional Talent Points to spend immediately on any Knowledge Talent.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_scholarly",
+      "transcribed": true,
+      "prestige": "magus",
+      "buildHash": "5ebbc094344e"
+    }
+  }
+}

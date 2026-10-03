@@ -30,13 +30,40 @@
       "subpath": "frontline",
       "prerequisite": "Power 4"
     },
-    "activities": [],
-    "modifiers": []
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "ranged",
+          "trait": "",
+          "defense": ""
+        }
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Spear Throw",
+        "target": "damage",
+        "mode": "step",
+        "scope": "spear_throw",
+        "value": "2",
+        "predicate": []
+      }
+    ],
+    "usage": {
+      "per": "combat",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "spear_throw"
+      "catalogId": "spear_throw",
+      "buildHash": "4dff9ef4bec6"
     }
   }
 }

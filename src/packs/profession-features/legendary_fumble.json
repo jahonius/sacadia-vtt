@@ -1,0 +1,44 @@
+{
+  "_id": "03a1b613581d6b51",
+  "_key": "!items!03a1b613581d6b51",
+  "name": "Fumble Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Whenever you give Fumble, increase the dice type of Fumble given by two dice types.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_fumble",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "65e25d284ab4"
+    }
+  }
+}

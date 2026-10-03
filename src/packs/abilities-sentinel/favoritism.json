@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "favoritism"
+      "catalogId": "favoritism",
+      "buildHash": "49698ec0c3dd"
     }
   }
 }

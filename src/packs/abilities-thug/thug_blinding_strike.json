@@ -41,10 +41,16 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "blinded",
+            "amount": "1"
+          }
+        ]
       }
     ],
     "modifiers": []
@@ -52,7 +58,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_blinding_strike"
+      "catalogId": "thug_blinding_strike",
+      "buildHash": "4e785f360ced"
     }
   }
 }

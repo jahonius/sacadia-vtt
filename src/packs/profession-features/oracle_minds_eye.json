@@ -1,0 +1,50 @@
+{
+  "_id": "5dd61d676d0a5bbb",
+  "_key": "!items!5dd61d676d0a5bbb",
+  "name": "Mind’s Eye",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your Check DC by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 15"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mind’s Eye",
+        "target": "checkDc",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "oracle_minds_eye",
+      "feature": true,
+      "level": 15,
+      "buildHash": "85b5da4023b0"
+    }
+  }
+}

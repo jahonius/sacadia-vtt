@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_maneuvered_step"
+      "catalogId": "bd_maneuvered_step",
+      "buildHash": "b1eee51cc77d"
     }
   }
 }

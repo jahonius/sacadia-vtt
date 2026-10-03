@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_bleeding_dance"
+      "catalogId": "bd_bleeding_dance",
+      "buildHash": "08127080eef2"
     }
   }
 }

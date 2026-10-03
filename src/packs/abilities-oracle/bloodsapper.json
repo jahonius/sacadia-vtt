@@ -30,6 +30,25 @@
     },
     "activities": [],
     "modifiers": [],
+    "choice": {
+      "prompt": "Exhaust which limb?",
+      "options": [
+        {
+          "value": "oneArm",
+          "label": "One Arm"
+        },
+        {
+          "value": "leg",
+          "label": "Leg"
+        }
+      ]
+    },
+    "reactionTrigger": "move",
+    "onUse": {
+      "self": [],
+      "target": [],
+      "exhaust": "@choice"
+    },
     "madness": {
       "prereq": 4,
       "spend": "1d3-1"
@@ -38,7 +57,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodsapper"
+      "catalogId": "bloodsapper",
+      "buildHash": "39d99d492db7"
     }
   }
 }

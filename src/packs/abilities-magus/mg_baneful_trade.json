@@ -1,0 +1,73 @@
+{
+  "_id": "dc671f5c27911004",
+  "_key": "!items!dc671f5c27911004",
+  "name": "Baneful Trade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a spell slot and choose one target within 5ft when you initiate this. For as long as you maintain Focus, they critically hit with their first attack each turn. Each time they do, gain 1 Curse Counter. Each time you are hit, remove one Curse Counter. The attack dealt against you critically hits. You may only initiate Focus on this when you are below half HP. You may only end Focus on Baneful Trade on your turn. All Curse Counters disappear on a Quick Rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Fate[4] · Research: Transmutation[3], Lead to Gold Talent"
+    },
+    "activities": [],
+    "modifiers": [],
+    "focus": {
+      "endOnOwnTurn": true
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Baneful Trade",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.forceCritFirst",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    },
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:hp-below-half"
+        }
+      ],
+      "requiresLabel": "below half HP",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_baneful_trade",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Transmutation[3], Lead to Gold Talent",
+      "buildHash": "51b02f75d56f"
+    }
+  }
+}

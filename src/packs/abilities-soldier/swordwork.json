@@ -29,12 +29,37 @@
       "prerequisite": "Sword and Shield"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Swordwork",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:swordwork"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "dagger",
+        "sword",
+        "axe",
+        "bludgeon",
+        "unarmed",
+        "other"
+      ],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "swordwork"
+      "catalogId": "swordwork",
+      "buildHash": "f46c16fd55a4"
     }
   }
 }

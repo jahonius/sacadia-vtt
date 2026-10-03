@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sinewy_sanity"
+      "catalogId": "sinewy_sanity",
+      "buildHash": "3abbe713271e"
     }
   }
 }

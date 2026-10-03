@@ -6,7 +6,7 @@
   "img": "icons/svg/book.svg",
   "system": {
     "description": "<p>Expend one Trickshot point and choose an X by X square within your ranged weapon range (where X is a number of tiles equal to half your Proficiency rounded up). Every creature within this space gets 1X disadvantage on all attacks they make while inside the space, and the terrain is treated as difficult terrain.</p>",
-    "tag": "action",
+    "tag": "focus",
     "costs": {
       "ap": 1,
       "csp": 5,
@@ -31,12 +31,23 @@
       "prerequisite": "Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "zone": {
+      "shape": "square",
+      "size": "5*ceil(@proficiency/2)",
+      "anchor": "point",
+      "difficult": true,
+      "effect": {
+        "affects": "all",
+        "attackDisadvantage": true
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "suppressing_fire"
+      "catalogId": "suppressing_fire",
+      "buildHash": "aa1544e25593"
     }
   }
 }

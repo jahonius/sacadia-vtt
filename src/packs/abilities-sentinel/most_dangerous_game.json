@@ -59,7 +59,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "most_dangerous_game"
+      "catalogId": "most_dangerous_game",
+      "buildHash": "bf1eef73229b"
     }
   }
 }

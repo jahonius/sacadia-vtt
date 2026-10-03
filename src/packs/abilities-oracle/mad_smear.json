@@ -30,6 +30,29 @@
     },
     "activities": [],
     "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Mad Smear",
+          "target": "toHit",
+          "value": "@madness"
+        },
+        {
+          "label": "Mad Smear",
+          "target": "damage",
+          "value": "@madness"
+        }
+      ],
+      "special": {
+        "onConsume": {
+          "madness": "1d3-1",
+          "selfDamage": "@madness"
+        }
+      }
+    },
     "madness": {
       "prereq": 4,
       "gain": "1d3-1"
@@ -38,7 +61,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mad_smear"
+      "catalogId": "mad_smear",
+      "buildHash": "9e7a5ce56e73"
     }
   }
 }

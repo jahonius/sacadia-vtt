@@ -39,18 +39,22 @@
         },
         "save": {
           "trait": "power",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [],
+        "weaponDamageWith": "stab_back"
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "pushback"
+      "catalogId": "pushback",
+      "buildHash": "e659b9b44120"
     }
   }
 }

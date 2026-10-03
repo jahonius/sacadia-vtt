@@ -29,12 +29,26 @@
       "prerequisite": "Protectorate"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Propped Up",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "@adjacentAllies",
+        "predicate": [
+          {
+            "atom": "self:used:protectorate"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "propped_up"
+      "catalogId": "propped_up",
+      "buildHash": "448867b80198"
     }
   }
 }

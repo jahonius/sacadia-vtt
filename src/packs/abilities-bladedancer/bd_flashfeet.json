@@ -29,12 +29,20 @@
       "prerequisite": "Rapidfeet, Finesse 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Flashfeet",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_flashfeet"
+      "catalogId": "bd_flashfeet",
+      "buildHash": "af8064890cf5"
     }
   }
 }

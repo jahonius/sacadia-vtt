@@ -11,6 +11,9 @@
     "value": 60,
     "equipped": false,
     "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "axe",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "war_axe",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "2fae76c18bb7"
     }
   }
 }

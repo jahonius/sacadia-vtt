@@ -28,13 +28,31 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Skittish",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:from:mark:skittish"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "key": "skittish",
+      "exclusive": true
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "skittish",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8d2774039ca5"
     }
   }
 }

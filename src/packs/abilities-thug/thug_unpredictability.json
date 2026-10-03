@@ -29,12 +29,42 @@
       "prerequisite": "Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "special": {
+        "requires": [
+          "target:condition:surprised"
+        ],
+        "extraSave": {
+          "trait": "wiles",
+          "inflict": [
+            {
+              "condition": "surprised",
+              "amount": "1",
+              "stacks": true
+            }
+          ]
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_unpredictability"
+      "catalogId": "thug_unpredictability",
+      "buildHash": "61db4fd64dc2"
     }
   }
 }

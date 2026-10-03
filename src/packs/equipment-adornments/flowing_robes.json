@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "flowing_robes",
       "kind": "adornment",
-      "armorPrereq": "Cloth Set"
+      "armorPrereq": "Cloth Set",
+      "buildHash": "6a781d66127f"
     }
   }
 }

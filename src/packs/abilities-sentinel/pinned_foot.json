@@ -39,7 +39,8 @@
         },
         "save": {
           "trait": "finesse",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
@@ -55,7 +56,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "pinned_foot"
+      "catalogId": "pinned_foot",
+      "buildHash": "9d805fe1ca28"
     }
   }
 }

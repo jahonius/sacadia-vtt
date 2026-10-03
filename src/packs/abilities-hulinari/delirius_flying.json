@@ -1,0 +1,63 @@
+{
+  "_id": "217b803ea7a4cfb9",
+  "_key": "!items!217b803ea7a4cfb9",
+  "name": "Delirius Flying",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Attempt to give one target within 5ft of you X levels of Delirium, where X is your Proficiency (Wiles Check negates).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "delirium",
+            "amount": "@proficiency"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "delirius_flying",
+      "transcribed": true,
+      "buildHash": "c81f527d7879"
+    }
+  }
+}

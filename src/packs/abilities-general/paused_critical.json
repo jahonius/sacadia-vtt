@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "paused_critical"
+      "catalogId": "paused_critical",
+      "buildHash": "6f465969d60c"
     }
   }
 }

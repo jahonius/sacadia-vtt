@@ -28,13 +28,47 @@
       "subpath": "aggressor",
       "prerequisite": "Berserker Rage"
     },
-    "activities": [],
-    "modifiers": []
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "panic",
+            "amount": "min(@target.hits, ceil(@proficiency/2))"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:raging"
+        }
+      ],
+      "requiresLabel": "raging",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_frightening_berserker"
+      "catalogId": "thug_frightening_berserker",
+      "buildHash": "1eab1463d625"
     }
   }
 }

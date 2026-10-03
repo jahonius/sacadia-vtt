@@ -1,0 +1,43 @@
+{
+  "_id": "16b66814116c2357",
+  "_key": "!items!16b66814116c2357",
+  "name": "Greater Bleed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the Dice Type of Hemorrhage by one additional dice type when you use Bleeding Bane.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Bleeding Bane, Finesse[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_greater_bleed",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "84fb93270871"
+    }
+  }
+}

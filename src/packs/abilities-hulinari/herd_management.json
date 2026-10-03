@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "herd_management",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "b36018ee0233"
     }
   }
 }

@@ -29,12 +29,20 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_drunken_fisticuff"
+      "catalogId": "thug_drunken_fisticuff",
+      "buildHash": "b28415dabb33"
     }
   }
 }

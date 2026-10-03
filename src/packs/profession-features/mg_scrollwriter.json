@@ -1,0 +1,43 @@
+{
+  "_id": "b1ce2feef2bca9ef",
+  "_key": "!items!b1ce2feef2bca9ef",
+  "name": "Scrollwriter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 3 Spell Slots.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Level Feature",
+      "prerequisite": "Magus Level 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_scrollwriter",
+      "feature": true,
+      "level": 3,
+      "buildHash": "99531984783e"
+    }
+  }
+}

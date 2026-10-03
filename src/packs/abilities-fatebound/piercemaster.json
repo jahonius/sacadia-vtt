@@ -44,13 +44,22 @@
         "damage": [],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "piercemaster",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "d6ca1900129e"
     }
   }
 }

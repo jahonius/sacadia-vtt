@@ -1,6 +1,6 @@
 <div class="sacadia ability-card">
   <header class="card-header">
-    <img src="{{item.img}}" width="36" height="36"/>
+    <img src="{{item.img}}" width="72" height="72"/>
     <h3>{{item.name}}</h3>
   </header>
 
@@ -16,29 +16,61 @@
     {{#if act.label}}<div class="activity-label">{{act.label}}</div>{{/if}}
 
     {{#if act.toHit}}
-    <div class="card-roll to-hit">
+    <div class="card-roll to-hit{{#if act.crit}} is-crit{{/if}}">
       <h4>{{localize 'SACADIA.Card.ToHit'}}{{#if act.defenseLabel}} <small>{{localize 'SACADIA.Card.Vs'}} {{act.defenseLabel}}</small>{{/if}}{{#if act.traitLabel}} <small>({{act.traitLabel}})</small>{{/if}}</h4>
+      {{#if act.crit}}<div class="crit-banner"><i class="fa-solid fa-burst"></i> {{localize 'SACADIA.Card.Critical'}}</div>{{/if}}
+      {{#if act.pendNotes.length}}<div class="pend-note"><i class="fa-solid fa-forward"></i> {{#each act.pendNotes}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</div>{{/if}}
+      {{#if act.missRecovery}}<div class="pend-note"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Triggered.MissRecovery'}}</div>{{/if}}
       {{{act.toHit}}}
     </div>
     {{/if}}
 
     {{#if act.save}}
     <div class="card-save">
-      <button type="button" data-action="rollSave" data-trait="{{act.save.traitKey}}" data-dc="{{act.save.dc}}" data-inflict="{{act.save.inflictData}}">
+      <button type="button" data-action="rollSave" data-trait="{{act.save.traitKey}}" data-dc="{{act.save.dc}}" data-inflict="{{act.save.inflictData}}"
+        data-adv="{{act.save.adv}}" data-damage="{{act.save.damage}}" data-onsuccess="{{act.save.onSuccess}}" data-drain="{{act.save.drain}}"
+        data-casterpc="{{act.save.casterPc}}" data-caster="{{act.save.caster}}" data-ability="{{act.save.ability}}"
+        data-perlevel="{{act.save.perLevel}}" data-pending="{{act.save.pending}}" data-margin="{{act.save.margin}}" data-altdamage="{{act.save.altDamage}}" data-momentum="{{act.save.momentum}}" data-ext="{{act.save.ext}}" data-dtype="{{act.save.dtype}}">
         <i class="fa-solid fa-shield-halved"></i>
-        {{localize 'SACADIA.Card.RollSave'}} ({{localize 'SACADIA.Defense.CheckDC'}} {{act.save.dc}}{{#if act.save.traitLabel}} · {{act.save.traitLabel}}{{/if}})
+        {{localize 'SACADIA.Card.RollSave'}} ({{localize 'SACADIA.Defense.CheckDC'}} {{act.save.dc}}{{#if act.save.traitLabel}} · {{act.save.traitLabel}}{{/if}}{{#if act.save.advLabel}} · {{act.save.advLabel}}{{/if}})
       </button>
     </div>
     {{/if}}
 
     {{#if act.damage}}
     <div class="card-roll damage">
-      <h4>{{localize 'SACADIA.Card.Damage'}}</h4>
+      <h4>{{localize 'SACADIA.Card.Damage'}}{{#if act.damageTypeLabel}} <span class="dmg-type">({{act.damageTypeLabel}})</span>{{/if}}</h4>
       {{{act.damage}}}
+    </div>
+    {{/if}}
+
+    {{#if act.critChoices.length}}
+    <div class="crit-chooser">
+      <div class="crit-chooser-head"><i class="fa-solid fa-burst"></i> {{localize 'SACADIA.Card.CritChoose'}} {{act.critBudget}}</div>
+      <ul>
+        {{#each act.critChoices}}
+        <li class="crit-choice kind-{{kind}}">{{label}}{{#if text}} <small>— {{text}}</small>{{/if}}</li>
+        {{/each}}
+      </ul>
+      {{#if act.critSelf.length}}
+      <div class="crit-self">
+        {{#each act.critSelf}}
+        <button type="button" data-action="critSelf" data-attacker="{{../../attackerUuid}}" data-effect="{{effect}}" data-amount="{{amount}}" data-dice="{{dice}}" data-label="{{label}}">{{label}}</button>
+        {{/each}}
+      </div>
+      {{/if}}
     </div>
     {{/if}}
   </div>
   {{/each}}
+
+  {{#if tempHpGrant}}
+  <div class="card-temphp"><i class="fa-solid fa-heart-circle-plus"></i> {{localize 'SACADIA.Card.TempHpGrant'}} <small>({{tempHpGrant}})</small></div>
+  {{/if}}
+
+  {{#if onUseNotes.length}}
+  <div class="card-onuse"><i class="fa-solid fa-bolt"></i> {{#each onUseNotes}}<span class="onuse-note">{{this}}</span>{{/each}}</div>
+  {{/if}}
 
   {{#if toHitMods.length}}
   <div class="card-modifiers">

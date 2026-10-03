@@ -1,0 +1,59 @@
+{
+  "_id": "82b59b96c771b361",
+  "_key": "!items!82b59b96c771b361",
+  "name": "No Bars Hold",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point while you use Natural Wrestler. Attempt to give your Proficiency in Wrestle Pin instead of half your Proficiency rounded up.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Thug",
+      "prerequisite": "Thug · p.177"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_natural_wrestler"
+      },
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        },
+        "inflictBonus": {
+          "pinned": 6
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_no_bars_hold",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "80d6532de82e"
+    }
+  }
+}

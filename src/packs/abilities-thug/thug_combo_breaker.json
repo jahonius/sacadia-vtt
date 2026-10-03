@@ -29,12 +29,20 @@
       "prerequisite": "Chained Advance, Power 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_combo_breaker"
+      "catalogId": "thug_combo_breaker",
+      "buildHash": "c0fa7adfc02b"
     }
   }
 }

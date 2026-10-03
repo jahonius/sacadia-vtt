@@ -29,12 +29,30 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Harmful Hand",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:bd_harmful_hand"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_harmful_hand"
+      "catalogId": "bd_harmful_hand",
+      "buildHash": "fbd563afa117"
     }
   }
 }

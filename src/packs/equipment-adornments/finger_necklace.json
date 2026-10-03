@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "finger_necklace",
       "kind": "adornment",
-      "armorPrereq": "Divine Style"
+      "armorPrereq": "Divine Style",
+      "buildHash": "8d0686d7ae63"
     }
   }
 }

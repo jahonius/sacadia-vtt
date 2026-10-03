@@ -29,12 +29,22 @@
       "prerequisite": "Harm"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_harm"
+      },
+      "special": {
+        "storeMomentum": true
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_stored_momentum"
+      "catalogId": "thug_stored_momentum",
+      "buildHash": "a831e49dde78"
     }
   }
 }

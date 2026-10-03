@@ -28,13 +28,38 @@
       "subpath": "wrestler",
       "prerequisite": "Finesse 3, Harm"
     },
-    "activities": [],
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@target.pinned",
+            "denomination": 10,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
     "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_gut_punch"
+      "catalogId": "thug_gut_punch",
+      "buildHash": "4bfc0ed0fa7f"
     }
   }
 }

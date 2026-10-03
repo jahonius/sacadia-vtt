@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "forbidden_web"
+      "catalogId": "forbidden_web",
+      "buildHash": "5c91ad2fdafa"
     }
   }
 }

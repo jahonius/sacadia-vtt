@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "momentum_charm",
       "kind": "adornment",
-      "armorPrereq": "Padded Style"
+      "armorPrereq": "Padded Style",
+      "buildHash": "7b6e1e0dd305"
     }
   }
 }

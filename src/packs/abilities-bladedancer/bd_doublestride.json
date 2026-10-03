@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_doublestride"
+      "catalogId": "bd_doublestride",
+      "buildHash": "ed560f088731"
     }
   }
 }

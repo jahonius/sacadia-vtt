@@ -37,22 +37,59 @@
         "attack": {
           "category": "ranged",
           "trait": "",
-          "defense": ""
+          "defense": "pd"
         },
         "save": {
           "trait": "",
           "dc": null
         },
         "damage": [],
-        "inflict": []
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "fatigue",
+            "amount": "ceil(@proficiency/2)",
+            "saveNegate": "finesse",
+            "predicate": [
+              {
+                "atom": "!self:choice:slinger:stun"
+              }
+            ]
+          },
+          {
+            "condition": "fatigue",
+            "amount": "@proficiency",
+            "saveNegate": "finesse",
+            "predicate": [
+              {
+                "atom": "self:choice:slinger:stun"
+              }
+            ]
+          }
+        ]
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "choice": {
+      "prompt": "Slinger",
+      "requires": "slingstunner",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "stun",
+          "label": "Slingstunner (once per quick rest)"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "slinger"
+      "catalogId": "slinger",
+      "buildHash": "29cc2cfbadde"
     }
   }
 }

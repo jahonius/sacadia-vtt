@@ -28,13 +28,53 @@
       "subpath": "",
       "prerequisite": "Courage 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Surrounded by Me",
+          "target": "damage",
+          "mode": "add",
+          "value": "ceil(@proficiency/2)*@adjacentEnemies",
+          "predicate": [
+            {
+              "atom": "!self:ability:surrounded_by_friends"
+            }
+          ]
+        },
+        {
+          "label": "Surrounded by Me",
+          "target": "damage",
+          "mode": "add",
+          "value": "ceil(@proficiency/2)*@adjacentCreatures",
+          "predicate": [
+            {
+              "atom": "self:ability:surrounded_by_friends"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "surrounded_by_me",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "15390a087e61"
     }
   }
 }

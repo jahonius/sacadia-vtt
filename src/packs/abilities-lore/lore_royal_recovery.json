@@ -1,0 +1,53 @@
+{
+  "_id": "1bb05e5a22ab03de",
+  "_key": "!items!1bb05e5a22ab03de",
+  "name": "Royal Recovery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point to recover half your full AP (rounded up). Do not recover limb exhaustion through this Lore use.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "General",
+      "prerequisite": "p.170"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "",
+        "ap": "ceil(@apMax/2)",
+        "lore": ""
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_royal_recovery",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "3ed00a0b0494"
+    }
+  }
+}

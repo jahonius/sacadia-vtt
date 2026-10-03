@@ -28,13 +28,91 @@
       "subpath": "",
       "prerequisite": "Pack Mule"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Carrying the Team",
+      "options": [
+        {
+          "value": "boost",
+          "label": "Rider's attack at advantage"
+        },
+        {
+          "value": "shield",
+          "label": "Attack against the rider at disadvantage"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Carrying the Team",
+      "duration": {
+        "type": "consumed",
+        "on": "roll|attacked"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:choice:carrying_the_team:boost"
+            },
+            {
+              "atom": "!self:ability:steed_and_rider"
+            }
+          ]
+        },
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "2",
+          "predicate": [
+            {
+              "atom": "self:choice:carrying_the_team:boost"
+            },
+            {
+              "atom": "self:ability:steed_and_rider"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.incomingAdvantage",
+          "mode": 2,
+          "value": "-1",
+          "predicate": [
+            {
+              "atom": "self:choice:carrying_the_team:shield"
+            }
+          ]
+        }
+      ]
+    },
+    "onUse": {
+      "self": [
+        {
+          "condition": "fatigue",
+          "amount": "1",
+          "predicate": [
+            {
+              "atom": "self:ability:steed_and_rider"
+            },
+            {
+              "atom": "self:choice:carrying_the_team:boost"
+            }
+          ]
+        }
+      ],
+      "target": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "carrying_the_team",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "d5091179280d"
     }
   }
 }

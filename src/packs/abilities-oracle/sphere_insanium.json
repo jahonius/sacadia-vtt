@@ -30,24 +30,15 @@
       "subpath": "bloodsage",
       "prerequisite": "Wiles 3"
     },
-    "activities": [
-      {
-        "type": "save",
-        "label": "",
-        "attack": {
-          "category": "",
-          "trait": "",
-          "defense": ""
-        },
-        "save": {
-          "trait": "wiles",
-          "dc": null
-        },
-        "damage": [],
-        "inflict": []
-      }
-    ],
+    "activities": [],
     "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
     "madness": {
       "insaneOnly": true,
       "spend": "1"
@@ -56,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sphere_insanium"
+      "catalogId": "sphere_insanium",
+      "buildHash": "56da8c380cc4"
     }
   }
 }

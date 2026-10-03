@@ -29,12 +29,29 @@
       "prerequisite": "Courage 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "tempHp": {
+      "formula": "1d4",
+      "target": "allies",
+      "scaleLevels": [
+        5,
+        11
+      ]
+    },
+    "reactionTrigger": "move",
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "come_and_heal"
+      "catalogId": "come_and_heal",
+      "buildHash": "0be05011cece"
     }
   }
 }

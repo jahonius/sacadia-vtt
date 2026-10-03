@@ -29,12 +29,59 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "The Vengeance",
+        "target": "damage",
+        "mode": "step",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_the_vengeance"
+          },
+          {
+            "atom": "!target:pick:bd_the_vengeance"
+          }
+        ]
+      },
+      {
+        "label": "The Vengeance",
+        "target": "damage",
+        "mode": "step",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_the_vengeance"
+          },
+          {
+            "atom": "target:pick:bd_the_vengeance"
+          }
+        ]
+      },
+      {
+        "label": "The Vengeance",
+        "target": "advantage.toHit",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_the_vengeance"
+          },
+          {
+            "atom": "target:pick:bd_the_vengeance"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [],
+      "kind": "creature"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_the_vengeance"
+      "catalogId": "bd_the_vengeance",
+      "buildHash": "c92f29b19821"
     }
   }
 }

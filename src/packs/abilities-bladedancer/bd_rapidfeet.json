@@ -29,12 +29,20 @@
       "prerequisite": "Fleetfeet, Finesse 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Rapidfeet",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_rapidfeet"
+      "catalogId": "bd_rapidfeet",
+      "buildHash": "0e3991b6c438"
     }
   }
 }

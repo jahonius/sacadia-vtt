@@ -65,7 +65,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "withered_seed"
+      "catalogId": "withered_seed",
+      "buildHash": "561836a695a3"
     }
   }
 }

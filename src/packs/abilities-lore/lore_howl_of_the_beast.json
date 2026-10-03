@@ -1,0 +1,70 @@
+{
+  "_id": "cb6a1888c0878816",
+  "_key": "!items!cb6a1888c0878816",
+  "name": "Howl of the Beast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point when in animal form. The skies open up, and lightning shocks down. Choose a number of points within 120 feet of you equal to your Courage score. All enemies within 10 feet of those points must make a Finesse Check or take XD8 points of damage, where X is your Proficiency Score.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 120,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Heritage",
+      "prerequisite": "Level 13 · p.173"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [
+          {
+            "count": "@proficiency",
+            "denomination": 8,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_howl_of_the_beast",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "ec406c54cbbd"
+    }
+  }
+}

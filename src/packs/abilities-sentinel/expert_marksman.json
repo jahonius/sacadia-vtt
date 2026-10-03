@@ -29,12 +29,29 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Expert Marksman",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:cover:half"
+          },
+          {
+            "atom": "!target:cover:full"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "expert_marksman"
+      "catalogId": "expert_marksman",
+      "buildHash": "237b931c4f33"
     }
   }
 }

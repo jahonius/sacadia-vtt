@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sticking_your_neck_out"
+      "catalogId": "sticking_your_neck_out",
+      "buildHash": "d209607a2ed4"
     }
   }
 }

@@ -25,7 +25,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "mastery_hemorrhage",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "df4de5cb5da0"
     }
   }
 }

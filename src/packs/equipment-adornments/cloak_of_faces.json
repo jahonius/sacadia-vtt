@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "cloak_of_faces",
       "kind": "adornment",
-      "armorPrereq": "Cloaked Style"
+      "armorPrereq": "Cloaked Style",
+      "buildHash": "8f0bd5bb3779"
     }
   }
 }

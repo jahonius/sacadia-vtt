@@ -39,18 +39,27 @@
         },
         "save": {
           "trait": "fate",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d8"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "fumbling_wander",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "feeb465b7154"
     }
   }
 }

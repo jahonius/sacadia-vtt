@@ -1,0 +1,59 @@
+{
+  "_id": "0259e62272efc111",
+  "_key": "!items!0259e62272efc111",
+  "name": "Toxic Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Until the end of your turn, all Hemorrhage you give stacks with other levels a target might have from any source.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Ancestry",
+      "prerequisite": "Toadclan Curiot Ancestry · p.54"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Toxic Touch",
+      "duration": {
+        "type": "consumed",
+        "on": "turnEnd"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.stacksGiven.hemorrhage",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_toxic_touch",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "97427bd84ca7"
+    }
+  }
+}

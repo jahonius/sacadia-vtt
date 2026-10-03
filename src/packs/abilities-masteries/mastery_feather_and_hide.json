@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/upgrade.svg",
   "system": {
-    "description": "<p>Increase your HP by 1 for every two levels, and increase the size of your HP pools by the same amount.</p>",
+    "description": "<p>Increase your HP by 1 per level, and increase the size of your HP pools by the same amount.</p>",
     "tag": "passive",
     "costs": {
       "ap": 0,
@@ -19,13 +19,23 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Mastery of Feather and Hide",
+        "target": "health.max",
+        "mode": "add",
+        "scope": "all",
+        "value": "@level",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_feather_and_hide",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "cc0ff8a52388"
     }
   }
 }

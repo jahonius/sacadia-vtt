@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Lucky Break"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "longing_fates",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "72cea38d949b"
     }
   }
 }

@@ -29,12 +29,29 @@
       "prerequisite": "I'm Not Supposed to Be Here, Finesse 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Unrelenting Accident",
+        "target": "damage",
+        "mode": "step",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:reaction"
+          },
+          {
+            "atom": "self:surrounded"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "unrelenting_accident"
+      "catalogId": "unrelenting_accident",
+      "buildHash": "6c9c1a5eae70"
     }
   }
 }

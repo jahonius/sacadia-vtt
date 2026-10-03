@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "voice_of_the_leader"
+      "catalogId": "voice_of_the_leader",
+      "buildHash": "c13a7540d398"
     }
   }
 }

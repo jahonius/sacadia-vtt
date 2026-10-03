@@ -29,12 +29,25 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "inflict": [
+        {
+          "condition": "fumbled",
+          "amount": "@proficiency"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "fumbling_strike"
+      "catalogId": "fumbling_strike",
+      "buildHash": "493f9d0ba5e7"
     }
   }
 }

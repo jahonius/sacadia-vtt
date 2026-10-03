@@ -8,6 +8,7 @@
     "description": "<p><em>Prerequisite: Medium Armor Training, Prof[4]</em></p>",
     "equipped": false,
     "category": "medium",
+    "material": "fur",
     "defenses": {
       "ad": 2,
       "pd": 0,
@@ -15,13 +16,17 @@
       "md": 0,
       "dr": 7
     },
-    "maxStat": 21
+    "maxStat": 21,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_fur_set",
-      "kind": "armor"
+      "kind": "armor",
+      "buildHash": "ad9e74e8a5b7"
     }
   }
 }

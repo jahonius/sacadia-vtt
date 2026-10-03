@@ -31,12 +31,48 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "fumbled",
+          "amount": "1d4",
+          "predicate": [
+            {
+              "atom": "self:level<5"
+            }
+          ]
+        },
+        {
+          "condition": "fumbled",
+          "amount": "1d6",
+          "predicate": [
+            {
+              "atom": "self:level>=5"
+            },
+            {
+              "atom": "self:level<11"
+            }
+          ]
+        },
+        {
+          "condition": "fumbled",
+          "amount": "1d8",
+          "predicate": [
+            {
+              "atom": "self:level>=11"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_surprising_dance"
+      "catalogId": "bd_surprising_dance",
+      "buildHash": "2834950fcebf"
     }
   }
 }

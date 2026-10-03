@@ -7,9 +7,33 @@ import { SacadiaItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { SACADIA } from './helpers/config.mjs';
-import { effectiveDefenseValue, damageAfterDr } from './helpers/derivation.mjs';
+import { rendPreUpdate, rendPostUpdate } from './helpers/rend.mjs';
+import { isWeaponItem, isVersatile, grantWeaponAttack, removeWeaponAttack } from './helpers/weapon-attacks.mjs';
+import { staleItems } from './helpers/refresh.mjs';
+import { deleteKey, replaceWith } from './helpers/update-ops.mjs';
+import { syncFocus } from './helpers/focus.mjs';
+import { prestigePreUpdate, prestigePostUpdate, temperedAuraSweep, onAnchorEnded } from './helpers/prestige.mjs';
+import { deathThreshold } from './helpers/derivation.mjs';
+import { ManualLauncher } from './helpers/manual.mjs';
+import { defineZoneBehavior, configureZones, resizeMadnessZones, zonesOf, deleteZone, carryZones } from './helpers/zones.mjs';
+import { revealHidden } from './helpers/conditions.mjs';
+import { ownsAbility } from './helpers/actor-utils.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
+// In-Foundry tests: registered only when the Quench module is active.
+import './tests/quench.mjs';
+// GM-side rules (module/rules/): the hooks below call into them.
+import { applyBladeAuraTurnStart, turnAutomation, woadFacepaint } from './rules/turn.mjs';
+import { createItemMacro, rollItemMacro } from './rules/macros.mjs';
+import { drawConditionLevels, reflectStatusToSchema, syncConditionEffects } from './rules/token-display.mjs';
+import { endInsane, goInsane, onMindMap } from './rules/madness.mjs';
+import { hasGmRequest, pendingRequests, reportError, resolveRequests } from './rules/requests.mjs';
+import { onApplyCondition, onApplyHp, onCallOfTheDying, onCritSelf, onMarkDead } from './rules/card-actions.mjs';
+import { onPostRoll } from './rules/reactions.mjs';
+import { onSaveRoll, zoneDamage, zoneSaveCard } from './rules/saves.mjs';
+import { reapOrphanGrants, removeSacadiaEffects } from './rules/grants.mjs';
+import { reconcileBasicGrants, reconcileProfessionGrants, refreshWorldItems, refreshableActors } from './rules/world.mjs';
+import { whisperReactions } from './rules/attack.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -47,6 +71,35 @@ Hooks.once('init', function () {
     default: 'default',
   });
 
+  // Condition stacking (book p.258): "no creature may attempt to give a condition to any creature which
+  // already has that condition … unless otherwise noted." `book` enforces that (a held condition isn't
+  // re-attempted; abilities that explicitly stack are exempt); `additive` adds the new levels on top.
+  // The in-system User Manual (compendium), openable from Game Settings.
+  game.settings.registerMenu('sacadia', 'userManual', {
+    name: 'SACADIA.Manual.Menu',
+    label: 'SACADIA.Manual.Open',
+    hint: 'SACADIA.Manual.Hint',
+    icon: 'fa-solid fa-book',
+    type: ManualLauncher,
+    restricted: false,
+  });
+
+  // When GM-request tracking began (helpers: resolveRequests / pendingRequests): only cards after it can be pending.
+  game.settings.register('sacadia', 'requestsSince', { scope: 'world', config: false, type: Number, default: 0 });
+
+  game.settings.register('sacadia', 'conditionStacking', {
+    name: 'SACADIA.Settings.ConditionStacking.Name',
+    hint: 'SACADIA.Settings.ConditionStacking.Hint',
+    scope: 'world',
+    config: true,
+    type: String,
+    choices: {
+      book: 'SACADIA.Settings.ConditionStacking.Book',
+      additive: 'SACADIA.Settings.ConditionStacking.Additive',
+    },
+    default: 'book',
+  });
+
   /**
    * Initiative is a Courage *or* Finesse Check — the player picks whichever is best (book p.233).
    * `max(@courage, @finesse)` captures "use whichever is best for you" automatically, plus
@@ -56,6 +109,13 @@ Hooks.once('init', function () {
   CONFIG.Combat.initiative = {
     formula: '1d20 + max(@courage, @finesse) + @proficiency',
     decimals: 2,
+  };
+  // Woad Facepaint (trinket): "Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it."
+  CONFIG.Combatant.documentClass = class SacadiaCombatant extends CONFIG.Combatant.documentClass {
+    _getInitiativeFormula() {
+      const f = super._getInitiativeFormula();
+      return woadFacepaint(this.actor) ? f.replace(/^1d20/, '2d20kh') : f;
+    }
   };
 
   // Define custom Document and DataModel classes
@@ -74,19 +134,35 @@ Hooks.once('init', function () {
     armor: models.SacadiaArmor,
     gear: models.SacadiaGear
   }
+  // Placed zones (Stygian Abyss, Suppressing Fire, Focal Point …) — a Region behavior subtype.
+  CONFIG.RegionBehavior.dataModels.zone = defineZoneBehavior();
+  CONFIG.RegionBehavior.typeIcons ??= {};
+  CONFIG.RegionBehavior.typeIcons.zone = 'fa-solid fa-circle-radiation';
+  configureZones({ saveCard: zoneSaveCard, zoneDamage: zoneDamage });
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
   // if the transfer property on the Active Effect is true.
   CONFIG.ActiveEffect.legacyTransferral = false;
 
-  // Register the simple (binary) conditions as token status effects (icons + AE changes). The
-  // leveled conditions are the actor's intrinsic 0–6 tracker, not toggles. Merge by id rather than
-  // concat: some ids (prone, unconscious) already exist in core, and CONFIG.statusEffects is
-  // proxied by id — a duplicate id throws "can't report property … more than once". Ours wins.
+  // Register every condition (and Cover) as a token status effect so it shows on the token and in the
+  // token-HUD palette. Merge by id rather than concat: some ids (prone, unconscious) already exist in
+  // core, and CONFIG.statusEffects is proxied by id — a duplicate id throws "can't report property …
+  // more than once". Ours wins.
   const byId = new Map(CONFIG.statusEffects.map((s) => [s.id, s]));
+  // Simple (binary) conditions carry AE `changes` (e.g. Prone → disadvantage).
   for (const [id, c] of Object.entries(SACADIA.simpleConditions)) {
     byId.set(id, { id, name: c.label, img: c.img, changes: c.changes ?? [] });
+  }
+  // Leveled conditions: status icon only (no `changes` — the automation runs off the 0–6 schema
+  // tracker). The icon reflects presence; the level lives in the effect name + the sheet tracker.
+  for (const [id, c] of Object.entries(SACADIA.conditions)) {
+    byId.set(id, { id, name: c.label, img: c.img });
+  }
+  // Cover states (half/full) as togglable statuses (`none` is the absence of the status).
+  for (const [key, c] of Object.entries(SACADIA.coverStates)) {
+    if (key === 'none') continue;
+    byId.set(`cover-${key}`, { id: `cover-${key}`, name: c.label, img: c.img });
   }
   CONFIG.statusEffects = Array.from(byId.values());
 
@@ -122,8 +198,15 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 /* -------------------------------------------- */
 
 Hooks.once('ready', function () {
-  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on('hotbarDrop', (bar, data, slot) => createItemMacro(data, slot));
+  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to.
+  // Return `false` SYNCHRONOUSLY for Item drops so Foundry skips its default document-sheet macro —
+  // `createItemMacro` is async (returns a Promise, which is truthy), so returning it directly would
+  // let core's default run and clobber our slot. Fire the async macro build in the background.
+  Hooks.on('hotbarDrop', (bar, data, slot) => {
+    if (data.type !== 'Item') return; // let core handle non-item drops (macros, tables, …)
+    createItemMacro(data, slot);
+    return false;
+  });
 });
 
 /* -------------------------------------------- */
@@ -134,38 +217,43 @@ Hooks.once('ready', function () {
 // start-of-turn condition damage (Hemorrhage) to the new active combatant; (3) reduces the
 // just-ended combatant's leveled conditions by 1 (book p.259). Foundry tracks durations/turns but
 // performs none of this on its own.
-Hooks.on('updateCombat', async (combat, changed) => {
-  if (game.users.activeGM !== game.user) return; // only one client mutates
-  if (!('round' in changed) && !('turn' in changed)) return;
+Hooks.on('updateCombat', (combat, changed) => turnAutomation(combat, changed).catch((e) => reportError('turn automation', e)));
 
-  // (1) expire timed-out temporary effects across the encounter
-  for (const combatant of combat.combatants) {
-    const actor = combatant.actor;
-    if (!actor) continue;
-    const expired = actor.effects.filter((e) => {
-      const remaining = e.duration?.remaining;
-      return e.isTemporary && typeof remaining === 'number' && remaining <= 0;
-    });
-    if (expired.length) await actor.deleteEmbeddedDocuments('ActiveEffect', expired.map((e) => e.id));
+// Woad Facepaint (trinket): its initiative bonus (the Combatant class set up at init) uses it up once initiative is rolled.
+Hooks.on('updateCombatant', async (combatant, changes, options, userId) => {
+  if (userId !== game.user.id || !('initiative' in changes) || changes.initiative == null) return;
+  const woad = woadFacepaint(combatant.actor);
+  if (!woad) return;
+  if ((woad.system.quantity ?? 1) > 1) await woad.update({ 'system.quantity': woad.system.quantity - 1 });
+  else await woad.delete();
+});
+
+/* -------------------------------------------- */
+/*  Death & Dying (book p.230)                   */
+/* -------------------------------------------- */
+
+// Health drives two states (book p.230): Wounded while below 0, and death at −½ max HP. Kept in sync
+// GM-side whenever Health changes.
+Hooks.on('updateActor', async (actor, changes, options) => {
+  if (game.users.activeGM !== game.user) return;
+  if (!foundry.utils.hasProperty(changes, 'system.health.value')) return;
+  const hp = actor.system.health?.value ?? 0;
+  // Death Mastery (Thug Legendary): "The first time you would be reduced to 0 HP when you are raging, roll
+  // XD4 and add it to your HP, where X is your Power." Once per combat (reset with the fight's uses).
+  if (hp <= 0 && (options?.sacadiaPrevHp ?? 0) > 0 && actor.statuses?.has('raging') && ownsAbility(actor, 'legendary_death')
+    && !actor.getFlag('sacadia', 'uses')?.combat?.legendary_death) {
+    const r = await new Roll(`${Math.max(1, actor.system.stats?.power?.value ?? 1)}d4`).evaluate();
+    await actor.update({ 'system.health.value': hp + r.total, 'flags.sacadia.uses.combat.legendary_death': 1 });
+    await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: game.i18n.format('SACADIA.Dying.DeathMastery', { n: r.total }) });
+    return;
   }
-
-  // (2) start-of-turn: refresh the new combatant's action economy (AP to max, limbs cleared, log
-  // emptied), apply start-of-turn condition damage (Hemorrhage), then — if Insane — roll the Insane
-  // table (after the AP reset, so its ±AP entries land on top of the fresh economy).
-  if (combat.combatant?.actor) {
-    const actor = combat.combatant.actor;
-    await SacadiaActorSheet.resetActionEconomy(actor);
-    await applyTurnStartConditions(actor);
-    if (actor.statuses?.has('insane')) await rollInsaneTable(actor);
+  const wounded = hp < 0;
+  if (wounded !== !!actor.statuses?.has('wounded')) await actor.toggleStatusEffect('wounded', { active: wounded });
+  const threshold = deathThreshold(actor.system.health?.max ?? 0);
+  if (hp <= threshold && (actor.system.health?.max ?? 0) > 0 && !actor.statuses?.has('dead')) {
+    await actor.toggleStatusEffect('dead', { active: true, overlay: true });
+    await ChatMessage.create({ content: `<div class="sacadia gm-note">${game.i18n.format('SACADIA.Dying.Dead', { name: actor.name, hp, threshold })}</div>` });
   }
-
-  // (3) end-of-turn condition reduction for the combatant whose turn just ended
-  const prevId = combat.previous?.combatantId;
-  const prev = prevId ? combat.combatants.get(prevId) : null;
-  if (prev?.actor) await reduceConditions(prev.actor);
-
-  // (4) backstop: reap any ally grant whose anchor is gone (the anchor-delete cascade is primary).
-  await reapOrphanGrants();
 });
 
 // When an encounter ends, clear every combatant's target marks (Layer B) — a mark is a combat focus,
@@ -173,9 +261,22 @@ Hooks.on('updateCombat', async (combat, changed) => {
 // stale focus doesn't linger into the next fight. GM-side (the authority that can update all actors).
 Hooks.on('deleteCombat', async (combat) => {
   if (game.users.activeGM !== game.user) return;
+  // Zones are combat constructs — clear them with the fight.
+  for (const r of zonesOf()) await deleteZone(r);
   for (const combatant of combat.combatants) {
     const actor = combatant.actor;
-    if (actor && Object.keys(actor.system.marks ?? {}).length) await actor.update({ 'system.marks': {} });
+    if (!actor) continue;
+    const upd = {};
+    if (Object.keys(actor.system.marks ?? {}).length) upd['system.marks'] = replaceWith({});
+    // Temp HP goes away when combat ends (book p.223).
+    if ((actor.system.health?.temp ?? 0) > 0) upd['system.health.temp'] = 0;
+    // Unspent pending-attack buffs don't carry between fights.
+    if ((actor.system.pendingAttack ?? []).length) upd['system.pendingAttack'] = [];
+    // "Once per combat" uses reset when the fight ends.
+    if (actor.getFlag('sacadia', 'uses')?.combat) upd['flags.sacadia.uses.combat'] = deleteKey();
+    // Limbs exhausted for the rest of the combat (Prone Gutting) recover.
+    if (actor.getFlag('sacadia', 'combatExhausted')) upd['flags.sacadia.combatExhausted'] = deleteKey();
+    if (Object.keys(upd).length) await actor.update(upd);
   }
   // Ally grants are combat buffs — tear down every anchor + granted effect in the scene (deleting the
   // anchor cascades the grant reap via deleteActiveEffect; we also sweep any strays directly).
@@ -186,76 +287,13 @@ Hooks.on('deleteCombat', async (combat) => {
 /*  Ally grants (granted effects, GM-side)      */
 /* -------------------------------------------- */
 
-// Apply an ally-grant request (from a card flag): place a `grantedBy`-tagged Active Effect on each
-// target. Focus grants also anchor to a caster-side effect (reaped when it dies); consumed grants have
-// no anchor and persist until their trigger fires (see consumeGrants) or combat ends. GM-side.
-async function applyGrant({ casterUuid, ability, label, targets, changes, duration }) {
-  const casterDoc = await fromUuid(casterUuid);
-  const caster = casterDoc?.actor ?? casterDoc;
-  if (!caster) return;
-  const focus = duration?.type === 'focus';
-  if (focus) {
-    // Ensure a single anchor for this (caster, ability) — the authority for "still maintaining".
-    const anchor = caster.effects.find((e) => e.flags?.sacadia?.anchor?.ability === ability);
-    if (!anchor) {
-      await caster.createEmbeddedDocuments('ActiveEffect', [{
-        name: game.i18n.format('SACADIA.Grant.Anchor', { label }),
-        img: 'icons/svg/aura.svg', changes: [],
-        flags: { sacadia: { anchor: { ability } } },
-      }]);
-    }
-  }
-  // Focus grants are anchor-reaped; consumed grants are trigger-reaped (`on` = 'attack'/'damage-taken').
-  const grantedBy = focus
-    ? { casterUuid, ability, kind: 'focus' }
-    : { casterUuid, ability, kind: 'consumed', on: duration?.on || '' };
-  for (const uuid of targets) {
-    const doc = await fromUuid(uuid);
-    const target = doc?.actor ?? doc;
-    if (!target) continue;
-    // Replace any prior grant from this caster+ability (no stacking on re-cast).
-    const stale = target.effects.filter((e) => {
-      const gb = e.flags?.sacadia?.grantedBy;
-      return gb && gb.casterUuid === casterUuid && gb.ability === ability;
-    }).map((e) => e.id);
-    if (stale.length) await target.deleteEmbeddedDocuments('ActiveEffect', stale);
-    await target.createEmbeddedDocuments('ActiveEffect', [{
-      name: label, img: 'icons/svg/aura.svg',
-      changes: changes.map((c) => ({ key: c.key, mode: c.mode, value: c.value })),
-      ...(focus ? { duration: { rounds: 1 } } : {}), // focus: lease backstop; consumed: lives until its trigger
-      flags: { sacadia: { grantedBy } },
-    }]);
-  }
-}
-
-/** Delete an actor's consumed grants whose trigger matches `on` ('attack' / 'damage-taken'). GM-side. */
-async function consumeGrants(actor, on) {
-  if (!actor) return;
-  const ids = actor.effects.filter((e) => {
-    const gb = e.flags?.sacadia?.grantedBy;
-    return gb && gb.kind === 'consumed' && gb.on === on;
-  }).map((e) => e.id);
-  if (ids.length) await actor.deleteEmbeddedDocuments('ActiveEffect', ids);
-}
-
-/** Delete every embedded effect matching `pred` across the scene's tokens (GM-side). */
-async function removeSacadiaEffects(pred) {
-  const seen = new Set();
-  for (const t of canvas.tokens?.placeables ?? []) {
-    const actor = t.actor;
-    if (!actor || seen.has(actor.id)) continue;
-    seen.add(actor.id);
-    const ids = actor.effects.filter(pred).map((e) => e.id);
-    if (ids.length) await actor.deleteEmbeddedDocuments('ActiveEffect', ids);
-  }
-}
-
 // Primary cascade: when a Focus anchor is deleted (turn-start teardown, manual removal, or the caster
 // being deleted), reap every ally grant that hung off it. Ties grant lifetime directly to the anchor.
 Hooks.on('deleteActiveEffect', (effect) => {
   if (game.users.activeGM !== game.user) return;
   const anchor = effect.flags?.sacadia?.anchor;
   if (!anchor) return;
+  onAnchorEnded(effect); // the Focus's end effects on its recipients
   const casterUuid = effect.parent?.uuid;
   if (casterUuid) removeSacadiaEffects((e) => {
     const gb = e.flags?.sacadia?.grantedBy;
@@ -263,50 +301,30 @@ Hooks.on('deleteActiveEffect', (effect) => {
   });
 });
 
-// Backstop sweep: delete any grant whose anchor no longer exists anywhere (covers a caster token being
-// removed without a per-effect delete hook). Runs on turn advance and token deletion.
-async function reapOrphanGrants() {
-  if (game.users.activeGM !== game.user) return;
-  const live = new Set();
-  for (const t of canvas.tokens?.placeables ?? []) {
-    for (const e of t.actor?.effects ?? []) {
-      const a = e.flags?.sacadia?.anchor;
-      if (a) live.add(`${t.actor.uuid}|${a.ability}`);
-    }
-  }
-  await removeSacadiaEffects((e) => {
-    const gb = e.flags?.sacadia?.grantedBy;
-    // Only anchor-backed (focus) grants are reaped here; consumed grants have no anchor and are
-    // removed by their trigger (consumeGrants) or at combat end.
-    return gb && gb.kind === 'focus' && !live.has(`${gb.casterUuid}|${gb.ability}`);
-  });
-}
 Hooks.on('deleteToken', () => reapOrphanGrants());
-
-/** Roll each `turnDamage` condition (e.g. Hemorrhage `Nd10`) and apply it to the actor's Health. */
-async function applyTurnStartConditions(actor) {
-  let total = 0;
-  const flavors = [];
-  for (const [key, cfg] of Object.entries(CONFIG.SACADIA.conditions)) {
-    const level = Math.min(actor.system.conditions?.[key]?.value ?? 0, CONFIG.SACADIA.conditionMax);
-    const dmg = cfg.effects?.find((e) => e.type === 'turnDamage');
-    if (!level || !dmg) continue;
-    const roll = await new Roll(`${level}${dmg.perLevelDice.replace(/^\d+/, '')}`).evaluate();
-    total += roll.total;
-    flavors.push(`${game.i18n.localize(cfg.label)} ${roll.formula} = ${roll.total}`);
-  }
-  if (total > 0) {
-    await actor.update({ 'system.health.value': Math.max(0, actor.system.health.value - total) });
-    ChatMessage.create({
-      speaker: ChatMessage.getSpeaker({ actor }),
-      content: `<div class="sacadia"><b>${game.i18n.localize('SACADIA.Condition.TurnDamage')}:</b> ${total} (${flavors.join(', ')})</div>`,
-    });
-  }
-}
 
 // Track token movement into the `moved-feet` auto-counter (see docs/conditional-modifiers.md) while a
 // combat is running. `preUpdateToken` still sees the *old* coordinates on the document, so we measure
 // the path from there to the incoming position. One GM client mutates, to avoid double-counting.
+// Swarm clouds move with their token (Clouded Foe: "all tiles move together"). The mover's client records where the
+// token was; the GM's client shifts every cloud carried by it by the same amount once the move lands.
+Hooks.on('preUpdateToken', (tokenDoc, changes, options) => {
+  if ('x' in changes || 'y' in changes) options.sacadiaFrom = { x: tokenDoc.x, y: tokenDoc.y };
+});
+Hooks.on('updateToken', async (tokenDoc, changes, options) => {
+  if (game.users.activeGM !== game.user || !options.sacadiaFrom) return;
+  const dx = (changes.x ?? tokenDoc.x) - options.sacadiaFrom.x;
+  const dy = (changes.y ?? tokenDoc.y) - options.sacadiaFrom.y;
+  await carryZones(tokenDoc, dx, dy);
+  await temperedAuraSweep(); // Tempered Aura: Panic and Taunt drop on entering it
+  // Blade Aura: a creature walking into one mid-combat checks then, not only at its turn start.
+  if (game.combat?.started) {
+    if (tokenDoc.actor) await applyBladeAuraTurnStart(tokenDoc.actor, { entering: true });
+    // …and the aura's owner moving onto creatures counts as them entering it.
+    for (const t of canvas?.tokens?.placeables ?? []) if (t.actor && t.document !== tokenDoc && t.actor !== tokenDoc.actor) await applyBladeAuraTurnStart(t.actor, { entering: true });
+  }
+});
+
 Hooks.on('preUpdateToken', (tokenDoc, changes) => {
   if (game.users.activeGM !== game.user) return;
   if (!game.combat?.started) return;
@@ -327,22 +345,54 @@ Hooks.on('preUpdateToken', (tokenDoc, changes) => {
         .filter((i) => i.type === 'ability' && i.system?.focus?.breaksOnMove)
         .map((i) => i.flags?.sacadia?.catalogId ?? i.id));
       const kept = Object.fromEntries(Object.entries(fr).filter(([cid]) => !breakers.has(cid)));
-      if (Object.keys(kept).length !== Object.keys(fr).length) update['system.combatState.focusRounds'] = kept;
+      if (Object.keys(kept).length !== Object.keys(fr).length) update['system.combatState.focusRounds'] = replaceWith(kept);
+      // Moving at all, willingly or not, ends a running Focus's stillness (Greater Glaring's extra dice type a round).
+      const still = actor.getFlag('sacadia', 'stillFocus') ?? {};
+      for (const [cid, n] of Object.entries(fr)) if (n > 0 && still[cid] && !still[cid].moved) update[`flags.sacadia.stillFocus.${cid}.moved`] = true;
     }
     actor.update(update);
   }
 });
 
-/** Reduce every leveled (non-enduring) condition on the actor by 1 (end-of-turn, book p.259). */
-async function reduceConditions(actor) {
-  const update = {};
-  for (const key of Object.keys(CONFIG.SACADIA.conditions)) {
-    if (CONFIG.SACADIA.enduringConditions.includes(key)) continue;
-    const value = actor.system.conditions?.[key]?.value ?? 0;
-    if (value > 0) update[`system.conditions.${key}.value`] = value - 1;
+/* -------------------------------------------- */
+/*  Condition / cover token visibility           */
+/* -------------------------------------------- */
+
+// Keep the token icons in step with the tracker: re-sync whenever a condition level or cover changes,
+// then repaint the level badges (a level step, e.g. 2→3, changes no icon so the canvas won't refresh
+// on its own).
+Hooks.on('updateActor', async (actor, changed) => {
+  const s = changed.system;
+  if (!s || (s.conditions === undefined && s.cover === undefined)) return;
+  await syncConditionEffects(actor);
+  for (const token of actor.getActiveTokens?.() ?? []) {
+    if (token.drawEffects) await token.drawEffects(); // rebuild icon sprites to the current set
+    drawConditionLevels(token, true);
   }
-  if (Object.keys(update).length) await actor.update(update);
-}
+});
+
+// Backward path: a status toggled straight from the token HUD writes back to the schema so the
+// tracker (and its automation) stay consistent. Guarded so it never fights the forward sync — which
+// only toggles when schema and status already disagree — so no ping-pong loop.
+Hooks.on('createActiveEffect', (effect) => reflectStatusToSchema(effect, true));
+Hooks.on('deleteActiveEffect', (effect) => reflectStatusToSchema(effect, false));
+
+// Backfill icons (and purge stale mirrors) for actors whose levels/cover predate this projection —
+// world actors plus any token actors placed on the canvas (unlinked ones aren't in game.actors).
+Hooks.once('ready', async () => {
+  if (game.users.activeGM !== game.user) return;
+  const actors = new Set(game.actors);
+  for (const t of canvas.tokens?.placeables ?? []) if (t.actor) actors.add(t.actor);
+  for (const actor of actors) await syncConditionEffects(actor);
+});
+
+// Paint the condition level as a number over its token status icon. Core has no native status
+// counter, so we overlay text on the canvas — the same approach systems like dnd5e use for
+// exhaustion. We deep-search the effects container for the icon sprites and match each to a condition
+// by its texture path (v13's `actor.temporaryEffects` is empty for statuses, so draw-order pairing
+// fails). All guarded: any failure just logs and leaves the icons intact.
+Hooks.on('drawToken', (token) => drawConditionLevels(token, true));
+Hooks.on('refreshToken', (token) => drawConditionLevels(token, false));
 
 /* -------------------------------------------- */
 /*  Oracle Insanity latch (book p120)            */
@@ -358,84 +408,11 @@ Hooks.on('updateActor', async (actor, changed) => {
   if (game.users.activeGM !== game.user) return;
   const m = foundry.utils.getProperty(changed, 'system.conditions.madness.value');
   if (m === undefined) return;
+  await resizeMadnessZones(actor);
   const insane = actor.statuses?.has('insane');
   if (m >= 6 && !insane) await goInsane(actor);
   else if (m <= 0 && insane) await endInsane(actor);
 });
-
-/** Enter Insanity: set the status and end every maintained ability (Madness abilities + Focus, p120). */
-async function goInsane(actor) {
-  await actor.toggleStatusEffect('insane', { active: true });
-  await endAllFocus(actor);
-}
-
-/** Leave Insanity: clear the status, end Focus / P:I abilities, and gain Fatigue = ceil(Proficiency/2). */
-async function endInsane(actor) {
-  await actor.toggleStatusEffect('insane', { active: false });
-  await endAllFocus(actor);
-  const prof = actor.getRollData?.()?.proficiency ?? 0;
-  const fatigue = Math.ceil(prof / 2);
-  if (fatigue > 0) {
-    const cur = actor.system.conditions?.fatigue?.value ?? 0;
-    await actor.update({ 'system.conditions.fatigue.value': Math.min(6, cur + fatigue) });
-  }
-}
-
-// Start-of-turn Insane-table roll (book p120): while Insane, roll 1D8 and lose that many HP, then follow
-// the entry's effect (a Boost on the first action). HP loss is softened by Heather Root (−ceil(Prof/2))
-// or negated on a 7/8 by Writhing Block; rolls 2 & 8 also tweak AP. The narrative effects (attack the
-// nearest, adv/disadv on the first attack, etc.) are surfaced on the card for the player to enact.
-async function rollInsaneTable(actor) {
-  const roll = await new Roll('1d8').evaluate();
-  const n = roll.total;
-  const owns = (id) => actor.items.some((i) => (i.flags?.sacadia?.catalogId ?? i.id) === id);
-  let hpLoss = n;
-  let mitigation = '';
-  if ((n === 7 || n === 8) && owns('writhing_block')) {
-    hpLoss = 0;
-    mitigation = game.i18n.localize('SACADIA.Insane.WrithingBlock');
-  } else if (owns('heather_root')) {
-    const resist = Math.ceil((actor.getRollData?.()?.proficiency ?? 0) / 2);
-    if (resist > 0) {
-      hpLoss = Math.max(0, hpLoss - resist);
-      mitigation = game.i18n.format('SACADIA.Insane.HeatherRoot', { resist });
-    }
-  }
-  const update = {};
-  if (hpLoss > 0) update['system.health.value'] = Math.max(0, (actor.system.health?.value ?? 0) - hpLoss);
-  // Roll 8 grants +1 AP this turn (on top of the just-reset economy). Roll 2's "−1 AP if unable to
-  // attack" is player-adjudicated (you may be able to), so it's surfaced as text, not auto-deducted.
-  if (n === 8) update['system.ap.value'] = (actor.system.ap?.value ?? 0) + 1;
-  if (Object.keys(update).length) await actor.update(update);
-
-  const hpLine = hpLoss > 0
-    ? game.i18n.format('SACADIA.Insane.HpLoss', { hp: hpLoss })
-    : game.i18n.localize('SACADIA.Insane.NoLoss');
-  const parts = [
-    `<p><strong>${game.i18n.localize('SACADIA.Insane.Effect' + n)}</strong></p>`,
-    `<p>${hpLine}${mitigation ? ` <em>(${mitigation})</em>` : ''}</p>`,
-    n === 8 ? `<p>${game.i18n.localize('SACADIA.Insane.ApGained')}</p>` : '',
-    `<p class="hint">${game.i18n.localize('SACADIA.Insane.Boost')}</p>`,
-  ].join('');
-  await ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    flavor: `<strong>${game.i18n.localize('SACADIA.Insane.Title')}</strong>`,
-    content: `<div class="sacadia insane-roll">${parts}</div>`,
-    rolls: [roll],
-    rollMode: game.settings.get('core', 'rollMode'),
-  });
-}
-
-/** Tear down every Focus this actor maintains: delete focus anchors (cascades the grant reap via
- *  deleteActiveEffect), and clear the actor-local marks + focus-round counters they drove. */
-async function endAllFocus(actor) {
-  const update = {};
-  if (Object.keys(actor.system.marks ?? {}).length) update['system.marks'] = {};
-  if (Object.keys(actor.system.combatState?.focusRounds ?? {}).length) update['system.combatState.focusRounds'] = {};
-  if (Object.keys(update).length) await actor.update(update);
-  const anchors = actor.effects.filter((e) => e.flags?.sacadia?.anchor);
-  if (anchors.length) await actor.deleteEmbeddedDocuments('ActiveEffect', anchors.map((e) => e.id));
-}
 
 /* -------------------------------------------- */
 /*  Profession default abilities                 */
@@ -452,105 +429,80 @@ Hooks.on('updateActor', async (actor, changes, options, userId) => {
   await reconcileProfessionGrants(actor);
 });
 
-/** Map a profession key to its compendium pack (only Hulinari's key/pack names differ). */
-function professionPack(key) {
-  return game.packs.get(`sacadia.abilities-${key === 'hulinari_warrior' ? 'hulinari' : key}`);
-}
-
-/**
- * Add the current professions' baseline ("starting" subpath) abilities that aren't already owned, and
- * remove previously auto-granted ones no longer matching a set profession. Auto-grants are tagged
- * `flags.sacadia.professionGrant` so a player's own (bought) abilities are never touched; an ability the
- * player already has (bought or granted) is never duplicated. Reads the pack live, so completing a
- * profession's `starting` set in the source + rebuilding automatically flows through here.
- */
-async function reconcileProfessionGrants(actor) {
-  const keys = ['primary', 'secondary'].map((s) => actor.system.professions?.[s]?.key).filter(Boolean);
-  const desired = new Map(); // catalogId -> source ability document
-  for (const key of new Set(keys)) {
-    const pack = professionPack(key);
-    if (!pack) continue;
-    for (const doc of await pack.getDocuments()) {
-      if (/starting/i.test(doc.system?.meta?.subpath ?? '')) desired.set(doc.flags?.sacadia?.catalogId ?? doc.id, doc);
+// Surprise "goes away … if they take damage" (book p.258): whichever client lowers a Surprised creature's
+// Health also clears the status (it has permission — it just updated the actor).
+// Prestige HP-loss rules that rewrite the update (Death Ward, Law of Alliance) and the checks after it (Catnap wakes).
+Hooks.on('preUpdateActor', (actor, changes, options) => prestigePreUpdate(actor, changes, options));
+// Rend lands on armor pieces (and comes back off on a rest); Corroded turns into Hemorrhage when nothing's left to rend.
+Hooks.on('preUpdateActor', (actor, changes, options) => rendPreUpdate(actor, changes, options));
+Hooks.on('updateActor', (actor, changes, options, userId) => rendPostUpdate(actor, options, userId));
+Hooks.on('updateActor', (actor, changes, options) => {
+  prestigePostUpdate(actor, options);
+  // Tempered Aura initiated: creatures already inside lose Panic and Taunt.
+  if (foundry.utils.hasProperty(changes, 'system.combatState.focusRounds.wt_tempered_aura')) temperedAuraSweep();
+});
+Hooks.on('preUpdateActor', (actor, changes, options) => {
+  // Yarrowstem: "After casting this, if you would drop to 0 madness on your turn or at its end, instead gain
+  // madness equal to half your Proficiency (rounded up)." Armed on cast (flag), spent on the first save.
+  const mad = foundry.utils.getProperty(changes, 'system.conditions.madness.value');
+  if (mad != null && mad <= 0 && (actor.system.conditions?.madness?.value ?? 0) > 0 && actor.getFlag('sacadia', 'yarrowstem')) {
+    foundry.utils.setProperty(changes, 'system.conditions.madness.value', Math.ceil((actor.system.proficiency ?? 0) / 2));
+    foundry.utils.setProperty(changes, 'flags.sacadia.yarrowstem', deleteKey());
+  }
+  // A condition dropping to 0 forgets its source and per-instance Enduring (a later application starts fresh).
+  for (const key of Object.keys(CONFIG.SACADIA.conditions)) {
+    const v = foundry.utils.getProperty(changes, `system.conditions.${key}.value`);
+    if (v === 0 && (actor.system.conditions?.[key]?.value ?? 0) > 0) {
+      foundry.utils.setProperty(changes, `system.conditions.${key}.enduring`, false);
+      foundry.utils.setProperty(changes, `system.conditions.${key}.source`, replaceWith({}));
     }
   }
-  const owned = new Set(actor.items.map((i) => i.flags?.sacadia?.catalogId).filter(Boolean));
-  const stale = actor.items
-    .filter((i) => i.getFlag('sacadia', 'professionGrant') && !desired.has(i.flags?.sacadia?.catalogId))
-    .map((i) => i.id);
-  const additions = [];
-  for (const [cid, doc] of desired) {
-    if (owned.has(cid)) continue;
-    const data = doc.toObject();
-    delete data._id;
-    foundry.utils.setProperty(data, 'flags.sacadia.professionGrant', true);
-    additions.push(data);
-  }
-  if (stale.length) await actor.deleteEmbeddedDocuments('Item', stale);
-  if (additions.length) await actor.createEmbeddedDocuments('Item', additions);
-}
+  const hp = foundry.utils.getProperty(changes, 'system.health.value');
+  if (hp != null) options.sacadiaPrevHp = actor.system.health?.value ?? 0;
+  if (hp != null && hp < (actor.system.health?.value ?? 0) && actor.statuses?.has('surprised')) options.sacadiaEndSurprise = true;
+  // Taking damage reveals a Hidden creature.
+  if (hp != null && hp < (actor.system.health?.value ?? 0) && actor.statuses?.has('hidden')) options.sacadiaReveal = true;
+});
+Hooks.on('updateActor', async (actor, changes, options, userId) => {
+  if (userId !== game.user.id) return;
+  if (options.sacadiaEndSurprise) await actor.toggleStatusEffect('surprised', { active: false });
+  if (options.sacadiaReveal) await revealHidden(actor);
+});
+
+// Every character gets the book's basic actions and reactions (Kick, Rend Armor, Help, Block, Dodge, Grab,
+// and the four Opportunity Attacks — pp.237–240) as real, rollable abilities. Granted on creation and
+// back-filled once for existing characters (GM, on ready). Idempotent by catalogId; tagged
+// `flags.sacadia.basicGrant` so a player can still delete one they never use.
+Hooks.on('createActor', async (actor, options, userId) => {
+  if (userId !== game.user.id || actor.type !== 'character') return;
+  await reconcileBasicGrants(actor);
+});
+
+Hooks.once('ready', async () => {
+  if (game.users.activeGM !== game.user) return;
+  for (const actor of game.actors.filter((a) => a.type === 'character')) await reconcileBasicGrants(actor);
+  // Owned items the compendium has since changed (helpers/refresh.mjs): tell the GM once, with where to refresh them.
+  let n = 0;
+  for (const actor of refreshableActors()) if ((await staleItems(actor)).length) n += 1;
+  if (n) ui.notifications.info(game.i18n.format('SACADIA.Refresh.ReadyNotice', { n }), { permanent: true });
+});
+
+Hooks.on('renderActorDirectory', (app, html) => {
+  if (!game.user.isGM) return;
+  const root = html instanceof HTMLElement ? html : html?.[0];
+  const actions = root?.querySelector('.header-actions');
+  if (!actions || actions.querySelector('.sacadia-refresh')) return;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'sacadia-refresh';
+  button.innerHTML = `<i class="fa-solid fa-rotate"></i> ${game.i18n.localize('SACADIA.Refresh.WorldButton')}`;
+  button.addEventListener('click', () => refreshWorldItems());
+  actions.append(button);
+});
 
 /* -------------------------------------------- */
 /*  Weapon → default attack ability              */
 /* -------------------------------------------- */
-
-// Adding a weapon (gear with a `weaponType`) to a character gives it a companion attack ability — bound
-// to the weapon, category/defense/range copied from it, damage parts left empty so it rolls the weapon's
-// base dice live via the cast-time binding. Tagged `flags.sacadia.weaponAttack = <weaponId>` so it's
-// removed when the weapon is deleted (or its weaponType cleared). Generate-once: the player may freely
-// edit the generated ability afterwards; only creation/removal is automated. Runs on the acting client.
-function isWeaponItem(item) {
-  return (item?.type === 'gear' || item?.type === 'armor') && !!item.system?.weaponType
-    && item.parent?.documentName === 'Actor' && item.parent.type === 'character';
-}
-
-/**
- * The attack category (→ to-hit/damage trait) follows the book's rule, not the weapon family: Wiles for
- * magical weapons (those targeting MD), Finesse for physical ranged, Power for melee (p.218). So a thrown
- * dagger (vs TD, ranged) is Finesse and an imbued blade (vs MD) is Wiles regardless of reach.
- */
-function weaponAttackCategory(weapon) {
-  if (weapon.system.defense === 'md') return 'magic';
-  if (weapon.system.range?.type === 'ranged') return 'ranged';
-  return 'melee';
-}
-
-/** Build the companion attack-ability document for a weapon (or a shield's Bash). */
-function buildWeaponAttack(weapon) {
-  const category = weaponAttackCategory(weapon);
-  const range = weapon.system.range ?? {};
-  const nameKey = weapon.system.weaponType === 'shield' ? 'SACADIA.Weapon.BashName' : 'SACADIA.Weapon.AttackName';
-  return {
-    name: game.i18n.format(nameKey, { weapon: weapon.name }),
-    type: 'ability',
-    img: weapon.img,
-    system: {
-      tag: 'action',
-      costs: { ap: 1, limbs: weapon.system.hands >= 2 ? ['twoArm'] : ['oneArm'] },
-      range: { type: range.type || (category === 'ranged' ? 'ranged' : 'melee'), value: range.value ?? null },
-      activities: [{
-        type: 'attack',
-        attack: { category, defense: weapon.system.defense || 'pd' },
-        damage: [], // empty → pulls the weapon's base dice at cast time (see actor-sheet #resolveWeapon)
-      }],
-    },
-    // `weapon` binds the attack; `weaponAttack` marks it auto-generated (for cleanup).
-    flags: { sacadia: { weapon: weapon.id, weaponAttack: weapon.id } },
-  };
-}
-
-/** Create the companion attack for a weapon unless one already exists. */
-async function grantWeaponAttack(weapon) {
-  const actor = weapon.parent;
-  if (actor.items.some((i) => i.getFlag('sacadia', 'weaponAttack') === weapon.id)) return;
-  await actor.createEmbeddedDocuments('Item', [buildWeaponAttack(weapon)]);
-}
-
-/** Remove any companion attacks bound to a weapon id. */
-async function removeWeaponAttack(actor, weaponId) {
-  const stale = actor.items.filter((i) => i.getFlag('sacadia', 'weaponAttack') === weaponId).map((i) => i.id);
-  if (stale.length) await actor.deleteEmbeddedDocuments('Item', stale);
-}
 
 Hooks.on('createItem', async (item, options, userId) => {
   if (userId !== game.user.id || !isWeaponItem(item)) return;
@@ -559,10 +511,23 @@ Hooks.on('createItem', async (item, options, userId) => {
 
 Hooks.on('updateItem', async (item, changes, options, userId) => {
   if (userId !== game.user.id || !['gear', 'armor'].includes(item.type) || item.parent?.type !== 'character') return;
-  if (!foundry.utils.hasProperty(changes, 'system.weaponType')) return;
-  // weaponType newly set → grant; cleared → remove the companion.
-  if (item.system.weaponType) await grantWeaponAttack(item);
-  else await removeWeaponAttack(item.parent, item.id);
+  if (options.sacadiaRefresh) return; // a compendium refresh rebuilds the generated attacks itself
+  // Named Weapons: at most Proficiency named weapons at a time (warn-but-allow).
+  if (foundry.utils.hasProperty(changes, 'flags.sacadia.namedAs') && item.flags?.sacadia?.namedAs) {
+    const n = item.parent.items.filter((w) => w.flags?.sacadia?.namedAs).length;
+    const max = item.parent.system.proficiency ?? 0;
+    if (n > max) ui.notifications.warn(game.i18n.format('SACADIA.Weapon.NamedLimit', { n, max }));
+  }
+  const typeChanged = foundry.utils.hasProperty(changes, 'system.weaponType');
+  const traitsChanged = foundry.utils.hasProperty(changes, 'system.traits');
+  if (!typeChanged && !traitsChanged) return;
+  // weaponType newly set → grant; cleared → remove the companions. Gaining / losing Versatile adds / removes the throw.
+  if (!item.system.weaponType) return removeWeaponAttack(item.parent, item.id);
+  if (traitsChanged && !isVersatile(item)) {
+    const throws = item.parent.items.filter((i) => i.getFlag('sacadia', 'weaponAttack') === item.id && i.getFlag('sacadia', 'thrown')).map((i) => i.id);
+    if (throws.length) await item.parent.deleteEmbeddedDocuments('Item', throws);
+  }
+  await grantWeaponAttack(item);
 });
 
 Hooks.on('deleteItem', async (item, options, userId) => {
@@ -571,160 +536,70 @@ Hooks.on('deleteItem', async (item, options, userId) => {
 });
 
 /* -------------------------------------------- */
-/*  Attack resolution & information model        */
+/*  GM requests                                  */
 /* -------------------------------------------- */
 
-// An attack card carries a `flags.sacadia.attack` resolution request. Resolution runs GM-side only
-// (the player may not even have the NPC's defenses on their client), so exactly one client — the
-// active GM — computes hit/miss against the *hidden* defense and applies damage. The hit/miss result
-// is injected back into the *same* card (which already shows the to-hit + damage dice); the target's
-// defense, DR, applied amount, and remaining Health stay in a separate GM-only whisper.
+// A card carrying GM requests (an attack to resolve, a grant to place …) is applied by exactly one client, the active
+// GM's (rules/requests.mjs resolveRequests).
 Hooks.on('createChatMessage', (message) => {
-  const s = message.flags?.sacadia;
-  if (!s?.attack && !s?.grant) return;
-  if (game.users.activeGM !== game.user) return; // one authority resolves + mutates
-  if (s.attack) resolveAttack(message, s.attack);
-  if (s.grant) applyGrant(s.grant);
+  if (game.users.activeGM !== game.user || !hasGmRequest(message.flags?.sacadia)) return; // one authority resolves + mutates
+  resolveRequests(message);
 });
 
-/** Resolve a PC/NPC attack against each targeted token, redacting all secret target data. */
-async function resolveAttack(message, req) {
-  const mode = game.settings.get('sacadia', 'combatResolutionMode');
-  const attacker = await fromUuid(req.attackerUuid);
-  const pcOffense = attacker?.type === 'character';
-  // Auto-apply: PC offense in default/fullAuto, or fullAuto in either direction. NPC→PC is never
-  // auto-applied outside fullAuto — the GM decides (the fudging seam).
-  const autoApply = mode === 'fullAuto' || (mode === 'default' && pcOffense);
-  const gm = ChatMessage.getWhisperRecipients('GM').map((u) => u.id);
+// Focus lifetime (helpers/focus.mjs): when an actor's Focus counters change, tear down what hung off any Focus that ended
+// (its anchor and the grants it gave, its mark, its zone and cloud layers) — whichever path ended it.
+Hooks.on('updateActor', (actor, changes) => {
+  if (game.users.activeGM !== game.user || !foundry.utils.hasProperty(changes, 'system.combatState.focusRounds')) return;
+  syncFocus(actor).catch((e) => reportError('focus sync', e));
+});
 
-  const resultRows = []; // player-visible hit/miss, injected into the card (no secret numbers)
-  const gmLines = [];    // GM-only comparison + DR + resulting HP
-  let anyHit = false;    // for the attacker's consecutive-hit / attacks-this-turn counters
+Hooks.once('ready', async () => {
+  if (game.users.activeGM !== game.user) return;
+  if (!game.settings.get('sacadia', 'requestsSince')) await game.settings.set('sacadia', 'requestsSince', Date.now());
+  const pending = pendingRequests();
+  if (!pending.length) return;
+  const list = pending.map((m) => `<li>${foundry.utils.escapeHTML(m.speaker?.alias ?? m.author?.name ?? '')}: ${foundry.utils.escapeHTML(
+    (m.flavor || m.content || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60))}</li>`).join('');
+  const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize('SACADIA.Requests.PendingTitle') }, rejectClose: false,
+    content: `<p>${game.i18n.format('SACADIA.Requests.Pending', { n: pending.length })}</p><ul class="refresh-list">${list}</ul>` });
+  if (!ok) return;
+  for (const m of pending) await resolveRequests(m);
+});
 
-  for (const uuid of req.targetUuids) {
-    const doc = await fromUuid(uuid);
-    const target = doc?.actor ?? doc; // TokenDocument → its actor
-    const defenses = target?.system?.defenses;
-    if (!defenses) continue;
+/** The player side: a card that needs the GM, posted with no GM connected, says so (at most every 30 seconds). */
+let noGmWarned = 0;
+Hooks.on('preCreateChatMessage', (message) => {
+  if (game.users.activeGM || !hasGmRequest(message.flags?.sacadia)) return;
+  if (Date.now() - noGmWarned < 30000) return;
+  noGmWarned = Date.now();
+  ui.notifications.warn(game.i18n.localize('SACADIA.Requests.NoGm'));
+});
 
-    const eff = effectiveDefenseValue(defenses[req.defenseKey]?.value, defenses.ad?.value);
-    const hit = req.toHitTotal >= eff;
-    if (hit) anyHit = true;
-    const outcome = game.i18n.localize(hit ? 'SACADIA.Card.Hit' : 'SACADIA.Card.Miss');
-
-    resultRows.push(`<div class="resolution-row"><span class="target">${target.name}</span><b class="${hit ? 'hit' : 'miss'}">${outcome}</b></div>`);
-    let gmLine = `${target.name}: ${req.toHitTotal} vs ${req.defenseKey.toUpperCase()} ${eff} → ${outcome}`;
-
-    if (hit && req.damage) {
-      const dr = defenses.dr?.value ?? 0;
-      const applied = damageAfterDr(req.damage, dr);
-      const hpBefore = target.system.health?.value ?? 0;
-      const hpDr = Math.max(0, hpBefore - applied);      // damage soaked by DR
-      const hpFull = Math.max(0, hpBefore - req.damage); // DR bypassed
-      // Auto-apply defaults to the DR outcome; the GM can flip to full or undo via the buttons. DR
-      // being dodged by certain attacks is a GM call (not auto-detected), hence the manual control.
-      if (autoApply && hpDr < hpBefore) {
-        await target.update({ 'system.health.value': hpDr, 'system.combatState.tookDamage': true });
-      }
-      // Offer to mark an NPC Dead only when the damage is actually lethal (full outcome hits 0).
-      const canMarkDead = hpFull <= 0 && target.type === 'npc';
-      gmLine += ` · dmg ${req.damage}${dr ? `, DR ${dr}` : ''}`
-        + hpControls(uuid, { applied, raw: req.damage, hpDr, hpFull, hpBefore, autoApply, canMarkDead });
-      // Consume any "reduce your next incoming damage" grant on this target (Blessing of the Shield) —
-      // its DR already fed the `dr` read above, so it applied to this hit; now it's spent.
-      await consumeGrants(target, 'damage-taken');
-    }
-
-    // Inflicted conditions — same GM-controlled apply structure as damage: on a hit, the GM clicks
-    // to give the leveled condition (absolute set from the snapshotted current level, so idempotent).
-    if (hit) {
-      for (const inf of req.inflict ?? []) {
-        const before = target.system.conditions?.[inf.condition]?.value ?? 0;
-        const after = Math.min(CONFIG.SACADIA.conditionMax, before + inf.level);
-        gmLine += conditionControl(uuid, inf, before, after);
-      }
-    }
-    gmLines.push(gmLine);
+// Movement-triggered reaction auto-prompt. When a token finishes a move during combat, surface the
+// window to nearby actors that own a `move`-triggered reaction (classified at build) and still have a
+// reaction this round — the movement half of the reactions subsystem (Forbidden Trap, Bloodsapper, That
+// Sluggish Feeling, Come and Heal, Vaulter, Reposition…). One GM client posts, to avoid duplicates. A
+// broad 30ft range (the largest common reaction range) bounds the search; the player judges whether their
+// specific reaction's range/direction actually applies, consistent with the attack-prompt philosophy.
+Hooks.on('updateToken', (tokenDoc, changes) => {
+  if (game.users.activeGM !== game.user) return;
+  if (!game.combat?.started) return;
+  if (!('x' in changes) && !('y' in changes)) return;
+  const mover = tokenDoc.object;
+  if (!mover?.actor) return;
+  const gs = canvas.grid?.size ?? 100;
+  const center = (doc) => ({ x: doc.x + (doc.width * gs) / 2, y: doc.y + (doc.height * gs) / 2 });
+  const moverCenter = center(tokenDoc);
+  for (const t of canvas.tokens?.placeables ?? []) {
+    if (!t?.actor || t.id === mover.id) continue;
+    if ((t.actor.system.reaction?.value ?? 0) < 1) continue;
+    const reactions = t.actor.items.filter((i) => i.type === 'ability' && i.system?.tag === 'reaction' && i.system?.reactionTrigger === 'move');
+    if (!reactions.length) continue;
+    const d = canvas.grid?.measurePath?.([center(t.document), moverCenter])?.distance;
+    if (d == null || d > 30) continue;
+    whisperReactions(t.actor, reactions, game.i18n.format('SACADIA.Reaction.MovePrompt', { mover: tokenDoc.name }));
   }
-
-  // Advance the attacker's auto-counters (see docs/conditional-modifiers.md): every resolved attack
-  // increments attacks-this-turn; a hit extends the consecutive-hit streak, a whiff breaks it. One
-  // update per attack action (not per target), GM-side (the authority that resolved it).
-  if (attacker) {
-    const cs = attacker.system.combatState ?? {};
-    await attacker.update({
-      'system.combatState.attacksThisTurn': (cs.attacksThisTurn ?? 0) + 1,
-      'system.combatState.consecutiveHits': anyHit ? (cs.consecutiveHits ?? 0) + 1 : 0,
-    });
-    // Consume any "on your next attack" grant on the attacker — its bonus already fed the rolled
-    // damage in the attacker's own card; now it's spent.
-    await consumeGrants(attacker, 'attack');
-  }
-
-  // Inject the hit/miss result into the original card, replacing its empty resolution slot, so it
-  // sits with the to-hit + damage dice as one card (falls back to appending for older cards).
-  if (resultRows.length) {
-    const marker = '<div class="card-resolution" data-resolution></div>';
-    const filled = `<div class="card-resolution">${resultRows.join('')}</div>`;
-    let content = message.content.includes(marker)
-      ? message.content.replace(marker, filled)
-      : message.content + filled;
-    // Full miss (a target was resolved but none were hit): strip the damage roll and its receipts
-    // from the card — the dice landed on nothing, so don't advertise damage that was never dealt.
-    if (!anyHit) content = stripDamage(content);
-    await message.update({ content });
-  }
-  if (gmLines.length) {
-    await ChatMessage.create({ whisper: gm, content: `<div class="sacadia gm-note">${gmLines.join('<br>')}</div>` });
-  }
-}
-
-/**
- * Remove the damage roll blocks and their modifier receipts from a rendered ability card, returning
- * the trimmed HTML. Used on a full miss so the card doesn't show damage it never dealt. DOM-parsed
- * (not regex) because a rendered Roll contains nested divs a naive pattern would truncate.
- * @param {string} content  The card's HTML.
- * @returns {string} content with `.card-roll.damage` and `.card-modifiers.damage-mods` removed.
- */
-function stripDamage(content) {
-  const div = document.createElement('div');
-  div.innerHTML = content;
-  for (const el of div.querySelectorAll('.card-roll.damage, .card-modifiers.damage-mods')) el.remove();
-  return div.innerHTML;
-}
-
-/**
- * GM-only HP controls for a resolved hit: three buttons that *set* the target's Health to an
- * absolute value (snapshotted from the pre-damage HP, so clicking is idempotent and switching
- * between them is safe) — soak DR, ignore DR (for attacks that bypass it), or undo. The DR outcome
- * is flagged `applied` when auto-apply already used it.
- * @returns {string} HTML
- */
-function hpControls(targetUuid, { applied, raw, hpDr, hpFull, hpBefore, autoApply, canMarkDead }) {
-  const t = (k) => game.i18n.localize(`SACADIA.Card.${k}`);
-  const btn = (hp, label, cls = '') =>
-    `<button type="button" data-action="applyHp" data-target="${targetUuid}" data-hp="${hp}" class="${cls}">${label}</button>`;
-  return '<div class="hp-controls">'
-    + btn(hpDr, `${t('ApplyDr')} ${applied} → ${hpDr}`, autoApply ? 'applied' : '')
-    + btn(hpFull, `${t('ApplyNoDr')} ${raw} → ${hpFull}`)
-    + btn(hpBefore, `${t('Undo')} → ${hpBefore}`, 'undo')
-    + (canMarkDead ? `<button type="button" data-action="markDead" data-target="${targetUuid}" class="mark-dead">${t('MarkDead')}</button>` : '')
-    + '</div>';
-}
-
-/**
- * GM-only apply/undo buttons for an inflicted condition: set the target's condition level to an
- * absolute snapshotted value (idempotent), or undo back to the prior level.
- * @returns {string} HTML
- */
-function conditionControl(targetUuid, inf, before, after) {
-  const btn = (val, label, cls = '') =>
-    `<button type="button" data-action="applyCondition" data-target="${targetUuid}" data-condition="${inf.condition}" data-value="${val}" class="${cls}">${label}</button>`;
-  return `<div class="cond-controls"><span class="cond-name">${inf.label} +${inf.level}</span>`
-    + btn(after, `→ ${after}`, 'apply')
-    + btn(before, `${game.i18n.localize('SACADIA.Card.Undo')} → ${before}`, 'undo')
-    + '</div>';
-}
+});
 
 /* -------------------------------------------- */
 /*  Chat card interactions                      */
@@ -732,8 +607,22 @@ function conditionControl(targetUuid, inf, before, after) {
 
 // Bind chat-card buttons: "Roll Save" (any clicker) and the GM-only apply controls.
 Hooks.on('renderChatMessageHTML', (message, html) => {
+  // A card the GM's client never applied (posted while no GM was connected): an Apply button, for the GM.
+  // (Not on a card just posted: the active GM's client is claiming it.)
+  if (game.user.isGM && hasGmRequest(message.flags?.sacadia) && !message.flags.sacadia.handled
+    && (message.timestamp ?? 0) >= (game.settings.get('sacadia', 'requestsSince') || Infinity) && Date.now() - (message.timestamp ?? 0) > 10000) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sacadia-apply-request';
+    btn.innerHTML = `<i class="fa-solid fa-play"></i> ${game.i18n.localize('SACADIA.Requests.Apply')}`;
+    btn.addEventListener('click', () => resolveRequests(message));
+    (html.querySelector('.message-content') ?? html).append(btn);
+  }
   for (const btn of html.querySelectorAll('[data-action="rollSave"]')) {
     btn.addEventListener('click', onSaveRoll);
+  }
+  for (const btn of html.querySelectorAll('[data-action="mindMap"]')) {
+    btn.addEventListener('click', onMindMap);
   }
   for (const btn of html.querySelectorAll('[data-action="applyHp"]')) {
     btn.addEventListener('click', onApplyHp);
@@ -744,149 +633,13 @@ Hooks.on('renderChatMessageHTML', (message, html) => {
   for (const btn of html.querySelectorAll('[data-action="applyCondition"]')) {
     btn.addEventListener('click', onApplyCondition);
   }
+  for (const btn of html.querySelectorAll('[data-action="critSelf"]')) {
+    btn.addEventListener('click', onCritSelf);
+  }
+  for (const btn of html.querySelectorAll('[data-action="postRoll"]')) {
+    btn.addEventListener('click', onPostRoll);
+  }
+  for (const btn of html.querySelectorAll('[data-action="callOfTheDying"]')) {
+    btn.addEventListener('click', onCallOfTheDying);
+  }
 });
-
-/** Set a target's leveled-condition value to the button's absolute value (GM only). */
-async function onApplyCondition(event) {
-  event.preventDefault();
-  if (!game.user.isGM) return;
-  const { target: uuid, condition, value } = event.currentTarget.dataset;
-  const doc = await fromUuid(uuid);
-  const actor = doc?.actor ?? doc;
-  if (actor) await actor.update({ [`system.conditions.${condition}.value`]: Number(value) });
-}
-
-/** Set a target's Health to the button's absolute value (GM only; buttons live in GM whispers). */
-async function onApplyHp(event) {
-  event.preventDefault();
-  if (!game.user.isGM) return;
-  const { target: uuid, hp } = event.currentTarget.dataset;
-  const doc = await fromUuid(uuid);
-  const actor = doc?.actor ?? doc;
-  if (!actor) return;
-  const update = { 'system.health.value': Number(hp) };
-  // Flag the took-damage auto-counter when this actually lowers Health (drives `self:combat:took-damage`).
-  if (Number(hp) < (actor.system.health?.value ?? 0)) update['system.combatState.tookDamage'] = true;
-  await actor.update(update);
-}
-
-/** Apply the core "Dead" status (defeated skull overlay) to the target NPC (GM only). */
-async function onMarkDead(event) {
-  event.preventDefault();
-  if (!game.user.isGM) return;
-  const doc = await fromUuid(event.currentTarget.dataset.target);
-  const actor = doc?.actor ?? doc;
-  if (actor) await actor.toggleStatusEffect('dead', { active: true, overlay: true });
-}
-
-/**
- * Resolve an ability save: roll `1d20 + @trait` for the clicker's actor and report vs the DC.
- * @param {PointerEvent} event
- */
-async function onSaveRoll(event) {
-  event.preventDefault();
-  const { trait, dc, inflict } = event.currentTarget.dataset;
-  const dcNum = Number(dc);
-  const actor = canvas.tokens?.controlled[0]?.actor ?? game.user.character;
-  if (!actor) return ui.notifications.warn(game.i18n.localize('SACADIA.Card.NoSaveActor'));
-
-  const roll = await new Roll(`1d20${trait ? ` + @${trait}` : ''}`, actor.getRollData()).evaluate();
-  const success = roll.total >= dcNum;
-  const traitLabel = trait ? game.i18n.localize(CONFIG.SACADIA.stats[trait]) : '';
-  const outcome = game.i18n.localize(success ? 'SACADIA.Card.SaveSuccess' : 'SACADIA.Card.SaveFailure');
-
-  // On a failed save, apply the pre-computed inflicted conditions to the saver (they control this
-  // actor, so the update is authorized). Levels stack additively, clamped to the condition max.
-  let inflictNote = '';
-  if (!success && inflict) {
-    const update = {};
-    const labels = [];
-    for (const inf of JSON.parse(inflict)) {
-      // Simple conditions (Prone, Surprised, …) are token statuses, not leveled — toggle the status
-      // rather than setting a `conditions.<key>.value` that doesn't exist.
-      if (inf.condition in CONFIG.SACADIA.simpleConditions) {
-        await actor.toggleStatusEffect(inf.condition, { active: true });
-        labels.push(inf.label);
-      } else {
-        const cur = actor.system.conditions?.[inf.condition]?.value ?? 0;
-        const next = Math.min(CONFIG.SACADIA.conditionMax, cur + inf.level);
-        update[`system.conditions.${inf.condition}.value`] = next;
-        labels.push(`${inf.label} ${next}`);
-      }
-    }
-    if (Object.keys(update).length) await actor.update(update);
-    if (labels.length) inflictNote = ` · ${labels.join(', ')}`;
-  }
-
-  await roll.toMessage({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    flavor: `${game.i18n.localize('SACADIA.Card.RollSave')}${traitLabel ? ` (${traitLabel})` : ''} — ${outcome}${inflictNote}`,
-    rollMode: game.settings.get('core', 'rollMode'),
-  });
-}
-
-/* -------------------------------------------- */
-/*  Hotbar Macros                               */
-/* -------------------------------------------- */
-
-/**
- * Create a Macro from an Item drop.
- * Get an existing item macro if one exists, otherwise create a new one.
- * @param {Object} data     The dropped data
- * @param {number} slot     The hotbar slot to use
- * @returns {Promise}
- */
-async function createItemMacro(data, slot) {
-  // First, determine if this is a valid owned item.
-  if (data.type !== 'Item') return;
-  if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
-    return ui.notifications.warn(
-      'You can only create macro buttons for owned Items'
-    );
-  }
-  // If it is, retrieve it based on the uuid.
-  const item = await Item.fromDropData(data);
-
-  // Create the macro command using the uuid.
-  const command = `game.sacadia.rollItemMacro("${data.uuid}");`;
-  let macro = game.macros.find(
-    (m) => m.name === item.name && m.command === command
-  );
-  if (!macro) {
-    macro = await Macro.create({
-      name: item.name,
-      type: 'script',
-      img: item.img,
-      command: command,
-      flags: { 'sacadia.itemMacro': true },
-    });
-  }
-  game.user.assignHotbarMacro(macro, slot);
-  return false;
-}
-
-/**
- * Create a Macro from an Item drop.
- * Get an existing item macro if one exists, otherwise create a new one.
- * @param {string} itemUuid
- */
-function rollItemMacro(itemUuid) {
-  // Reconstruct the drop data so that we can load the item.
-  const dropData = {
-    type: 'Item',
-    uuid: itemUuid,
-  };
-  // Load the item from the uuid.
-  Item.fromDropData(dropData).then((item) => {
-    // Determine if the item loaded and if it's an owned item.
-    if (!item || !item.parent) {
-      const itemName = item?.name ?? itemUuid;
-      return ui.notifications.warn(
-        `Could not find item ${itemName}. You may need to delete and recreate this macro.`
-      );
-    }
-
-    // Trigger the item roll
-    item.roll();
-  });
-}

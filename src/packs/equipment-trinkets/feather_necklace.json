@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "feather_necklace",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "310a6ed2ff1d"
     }
   }
 }

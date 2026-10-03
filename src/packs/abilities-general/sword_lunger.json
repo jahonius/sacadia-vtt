@@ -45,12 +45,20 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "sword_lunger"
+      "catalogId": "sword_lunger",
+      "buildHash": "4768d5cb3b60"
     }
   }
 }

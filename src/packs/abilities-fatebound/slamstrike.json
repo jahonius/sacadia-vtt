@@ -28,13 +28,34 @@
       "subpath": "",
       "prerequisite": "Bludgeonmaster, Power 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Slamstrike",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:divine"
+          },
+          {
+            "atom": "self:attack:weapon:bludgeon"
+          },
+          {
+            "atom": "target:condition:prone"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "slamstrike",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "d6ac70fd7509"
     }
   }
 }

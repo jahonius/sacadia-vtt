@@ -29,12 +29,40 @@
       "prerequisite": "Courage 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "choice": {
+      "prompt": "Hold which condition?",
+      "options": [
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [],
+      "holdDecay": [
+        "@choice"
+      ]
+    },
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "cornered_animal"
+      "catalogId": "cornered_animal",
+      "buildHash": "16745ff46bb4"
     }
   }
 }

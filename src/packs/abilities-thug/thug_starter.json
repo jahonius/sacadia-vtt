@@ -29,12 +29,24 @@
       "prerequisite": "Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_natural_wrestler"
+      },
+      "special": {
+        "inflictBonus": {
+          "pinned": 1
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_starter"
+      "catalogId": "thug_starter",
+      "buildHash": "87b1ae690251"
     }
   }
 }

@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Shockwave, Power 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "thunderwave",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "fc5e997b3ca9"
     }
   }
 }

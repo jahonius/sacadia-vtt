@@ -1,0 +1,42 @@
+{
+  "_id": "9c1faede0f189b8e",
+  "_key": "!items!9c1faede0f189b8e",
+  "name": "Boosted Crit",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack made with a divine weapon, you may apply an extra critical effect if you critically hit.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Boosted Attack"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boosted_crit",
+      "transcribed": true,
+      "buildHash": "7c72d10236c1"
+    }
+  }
+}

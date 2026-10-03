@@ -28,13 +28,29 @@
       "subpath": "",
       "prerequisite": "Hindkick, Finesse 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "basic_kick"
+      },
+      "special": {
+        "saveDamage": [
+          {
+            "level": 1,
+            "formula": "(@finesse)d6"
+          }
+        ]
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "ribcrack",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "e4bf2a56afe1"
     }
   }
 }

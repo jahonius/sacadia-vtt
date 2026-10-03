@@ -47,12 +47,20 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "stepping_strike"
+      "catalogId": "stepping_strike",
+      "buildHash": "609c6a636a9c"
     }
   }
 }

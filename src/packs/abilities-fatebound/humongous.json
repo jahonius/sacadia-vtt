@@ -28,13 +28,31 @@
       "subpath": "",
       "prerequisite": "Heavy Weaponry, Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Humongous",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:divine"
+          },
+          {
+            "atom": "self:attack:hands:2"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "humongous",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5c89d81b9b55"
     }
   }
 }

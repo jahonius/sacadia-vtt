@@ -1,0 +1,57 @@
+{
+  "_id": "eeace2979cb69c9f",
+  "_key": "!items!eeace2979cb69c9f",
+  "name": "Reverse Catnap",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend X Spell Slots, where X is any number up to your Proficiency. Choose X allies within 30ft of you that you can see. All targets recover 1 expended Action Pool point. You can use this ability at most once per turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 0,
+        "variable": true,
+        "max": "@proficiency"
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Wiles[4] · Research: You already have Catnap in your Tome"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "poolRefund": "1"
+    },
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_reverse_catnap",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "You already have Catnap in your Tome",
+      "buildHash": "5d14334c426a"
+    }
+  }
+}

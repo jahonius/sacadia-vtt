@@ -32,6 +32,11 @@
     },
     "activities": [],
     "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfDamage": "@fate"
+    },
     "madness": {
       "insaneOnly": true
     }
@@ -39,7 +44,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodlet"
+      "catalogId": "bloodlet",
+      "buildHash": "2bea74516d60"
     }
   }
 }

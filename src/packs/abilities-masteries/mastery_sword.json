@@ -19,13 +19,39 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Sword Mastery",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:sword"
+          }
+        ]
+      },
+      {
+        "label": "Sword Mastery",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:sword"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_sword",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "a1342f15f47b"
     }
   }
 }

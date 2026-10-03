@@ -15,7 +15,8 @@
     "sacadia": {
       "catalogId": "moonstone_earrings",
       "kind": "adornment",
-      "armorPrereq": "Lucky Style"
+      "armorPrereq": "Lucky Style",
+      "buildHash": "c5104653d180"
     }
   }
 }

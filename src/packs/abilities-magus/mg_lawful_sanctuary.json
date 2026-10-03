@@ -1,0 +1,54 @@
+{
+  "_id": "699fdbe9ea3725c8",
+  "_key": "!items!699fdbe9ea3725c8",
+  "name": "Lawful Sanctuary",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you when you initiate this ability and expend a Spell Slot. Until you end Focus, any time a target attempts an attack that specifically attacks that target, they must make a Wiles Check against your Check DC. If they fail, they must choose a different target within range. If there is no other target within range, they expend the AP and exhaust limbs, but do not make the attack.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[2] · Research: Legalism[3], History[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Lawful Sanctuary",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_lawful_sanctuary",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Legalism[3], History[2]",
+      "buildHash": "1c554538a53f"
+    }
+  }
+}

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_anger_management"
+      "catalogId": "thug_anger_management",
+      "buildHash": "4fd20034147d"
     }
   }
 }

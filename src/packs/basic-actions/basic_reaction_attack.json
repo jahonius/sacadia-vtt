@@ -1,0 +1,50 @@
+{
+  "_id": "34f6495adee529d4",
+  "_key": "!items!34f6495adee529d4",
+  "name": "Reaction Attack",
+  "type": "ability",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p>Medium weapons. Make a single melee attack against a target seeking to move out of your melee weapon reach. If you are Steadied and then use this reaction while Steadied, treat this attack as a critical hit. Reaction attacks cannot be used against an enemy making a ranged attack within 5ft of you - only Don't Leave can be used on a target who makes such an attack within range.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_reaction_attack",
+      "basic": true,
+      "opportunity": true,
+      "steadiedCrit": true,
+      "buildHash": "e56c9a5ea534"
+    }
+  }
+}

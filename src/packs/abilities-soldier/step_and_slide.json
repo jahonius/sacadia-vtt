@@ -29,12 +29,38 @@
       "prerequisite": "Stepping Strike, Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "stepping_strike"
+      },
+      "effects": [
+        {
+          "label": "Step and Slide",
+          "target": "damage",
+          "mode": "step",
+          "value": "1"
+        },
+        {
+          "label": "Punching Slide",
+          "target": "damage",
+          "mode": "step",
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:ability:punching_slide"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "step_and_slide"
+      "catalogId": "step_and_slide",
+      "buildHash": "0587585e312d"
     }
   }
 }

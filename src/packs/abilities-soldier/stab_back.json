@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "stab_back"
+      "catalogId": "stab_back",
+      "buildHash": "729c0ae25c4d"
     }
   }
 }

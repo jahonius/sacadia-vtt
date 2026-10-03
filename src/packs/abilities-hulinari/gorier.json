@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Gorier",
+        "target": "damage",
+        "mode": "step",
+        "scope": "headbutt",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "gorier",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "05cfb4742a4e"
     }
   }
 }

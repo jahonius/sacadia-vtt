@@ -45,12 +45,14 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "preliminary_blows"
+      "catalogId": "preliminary_blows",
+      "buildHash": "cc12e588393d"
     }
   }
 }

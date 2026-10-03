@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_vengeful_tactics"
+      "catalogId": "bd_vengeful_tactics",
+      "buildHash": "8e8ff10a2209"
     }
   }
 }

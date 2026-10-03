@@ -1,0 +1,58 @@
+{
+  "_id": "94503c67748689a5",
+  "_key": "!items!94503c67748689a5",
+  "name": "Mastery of the Swarm",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Your flock constantly swarms around you. Gain damage resistance equal to half your Proficiency (rounded up) against all physical damage when in Swarm Form.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Swarm",
+        "target": "incomingDr",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:form:swarm"
+          },
+          {
+            "atom": "attack:physical"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_swarm",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "0d903f0fd1d1"
+    }
+  }
+}

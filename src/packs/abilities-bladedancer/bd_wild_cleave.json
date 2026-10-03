@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_wild_cleave"
+      "catalogId": "bd_wild_cleave",
+      "buildHash": "8ce076dcc82e"
     }
   }
 }

@@ -29,12 +29,32 @@
       "prerequisite": "Harm"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_harm"
+      },
+      "effects": [
+        {
+          "label": "Tangled Harm",
+          "target": "damage",
+          "mode": "step",
+          "value": "2"
+        }
+      ],
+      "special": {
+        "targetDelta": {
+          "pinned": -1
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_tangled_harm"
+      "catalogId": "thug_tangled_harm",
+      "buildHash": "e210c13d05d9"
     }
   }
 }

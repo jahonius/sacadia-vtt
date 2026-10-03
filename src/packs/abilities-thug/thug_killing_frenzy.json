@@ -29,12 +29,16 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "killTrigger": {
+      "condition": "surprised"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_killing_frenzy"
+      "catalogId": "thug_killing_frenzy",
+      "buildHash": "255e0d3b44cd"
     }
   }
 }

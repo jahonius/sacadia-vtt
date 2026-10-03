@@ -1,0 +1,43 @@
+{
+  "_id": "5eb174731307db20",
+  "_key": "!items!5eb174731307db20",
+  "name": "Witch's Control",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use Witch's Finger on every adversarial condition.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Level Feature",
+      "prerequisite": "Witch Level 15"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_witchs_control",
+      "feature": true,
+      "level": 15,
+      "buildHash": "b357c19d8036"
+    }
+  }
+}

@@ -29,12 +29,21 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "pd",
+        "td",
+        "md"
+      ],
+      "kind": "defense"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "clever_rend"
+      "catalogId": "clever_rend",
+      "buildHash": "faa375bfcec6"
     }
   }
 }

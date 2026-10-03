@@ -11,6 +11,9 @@
     "value": 50,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "bow",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "shortbow",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "aad60c692389"
     }
   }
 }

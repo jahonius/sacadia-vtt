@@ -29,12 +29,25 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Kato Champion",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:prone"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_kato_champion"
+      "catalogId": "thug_kato_champion",
+      "buildHash": "dede5a97d024"
     }
   }
 }

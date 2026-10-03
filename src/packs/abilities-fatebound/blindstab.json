@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Stabby Aura, Finesse 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Blindstab",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blade_aura",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "blindstab",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "20818791e32c"
     }
   }
 }

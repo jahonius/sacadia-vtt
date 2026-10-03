@@ -1,0 +1,45 @@
+{
+  "_id": "e6958e58090d9715",
+  "_key": "!items!e6958e58090d9715",
+  "name": "Greater Dead",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you animate dead, they become Dancing Shades (CR3) instead of Shambling Shades (CR2).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[5], Animate Dead · Research: Reincarnation"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_dead",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Reincarnation",
+      "buildHash": "0b4d91bc3428"
+    }
+  }
+}

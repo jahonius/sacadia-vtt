@@ -28,13 +28,20 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "cover": "half"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "protective_instinct",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "95347b5fcb92"
     }
   }
 }

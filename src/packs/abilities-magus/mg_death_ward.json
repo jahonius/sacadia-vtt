@@ -1,0 +1,54 @@
+{
+  "_id": "9b6dd6aa1105fbb8",
+  "_key": "!items!9b6dd6aa1105fbb8",
+  "name": "Death Ward",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose a target within 5ft of you when you initiate this, and expend a Spell Slot. The next time they would drop to 0HP or below, they drop to 1HP instead, and your Focus ends.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Courage[3] · Research: Astrology[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Death Ward",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_death_ward",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Astrology[3]",
+      "buildHash": "e10632634d05"
+    }
+  }
+}

@@ -55,7 +55,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodied_urn"
+      "catalogId": "bloodied_urn",
+      "buildHash": "e09845f3ca28"
     }
   }
 }

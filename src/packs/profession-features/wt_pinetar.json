@@ -1,0 +1,72 @@
+{
+  "_id": "739ece54479798e7",
+  "_key": "!items!739ece54479798e7",
+  "name": "Pinetar",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy target within 5ft of you. They make Finesse Checks against your Check DC or lose one AP to use on their next turn. You can only use this once per turn. This does not count as Fatigue, and stacks with it.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Level Feature",
+      "prerequisite": "Witch Level 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "onFail": {
+              "apDebt": 1
+            }
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_pinetar",
+      "feature": true,
+      "level": 3,
+      "buildHash": "1bf134be0d11"
+    }
+  }
+}

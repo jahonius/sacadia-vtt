@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mistletoe"
+      "catalogId": "mistletoe",
+      "buildHash": "e03cb792c61b"
     }
   }
 }

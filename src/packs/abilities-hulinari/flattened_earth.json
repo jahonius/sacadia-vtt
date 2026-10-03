@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Hoofstomp, Courage 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "flattened_earth",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "0b4c52ac21f6"
     }
   }
 }

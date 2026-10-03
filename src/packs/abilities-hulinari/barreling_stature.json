@@ -13,8 +13,8 @@
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
-        "amount": 0,
+        "key": "savage",
+        "amount": 1,
         "variable": false,
         "max": ""
       }
@@ -28,13 +28,23 @@
       "subpath": "",
       "prerequisite": "Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "targetAs": "prone"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "barreling_stature",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "a6588f6477bd"
     }
   }
 }

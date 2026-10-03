@@ -32,6 +32,16 @@
     },
     "activities": [],
     "modifiers": [],
+    "aidResist": {
+      "levels": "@spent",
+      "maxTargets": "1",
+      "autoWith": "",
+      "autoIfSteadied": false,
+      "advantageWith": "",
+      "spendMadness": true,
+      "mentalOnly": false,
+      "funnel": false
+    },
     "madness": {
       "prereq": 1,
       "spend": "N"
@@ -40,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_the_burning_incense"
+      "catalogId": "blessing_of_the_burning_incense",
+      "buildHash": "4838eaa59a82"
     }
   }
 }

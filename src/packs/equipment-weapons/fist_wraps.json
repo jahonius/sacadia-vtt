@@ -11,6 +11,9 @@
     "value": 2,
     "equipped": false,
     "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "unarmed",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "fist_wraps",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "17dfe4039b31"
     }
   }
 }

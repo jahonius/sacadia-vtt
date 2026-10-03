@@ -1,0 +1,84 @@
+{
+  "_id": "447b862af0e29789",
+  "_key": "!items!447b862af0e29789",
+  "name": "Clotsnipe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot. Make a ranged attack vs. TD in a 30ft line emanating from you. It targets all creatures in that line, terminating when it hits a wall or barrier. The attack deals 1D10+Wiles damage to any target it hits. For every additional AP you expend beyond the first in this attack (to a limit of your Proficiency), increase the dice type of the attack by one dice type, and the range by 10ft. When you make this attack, lose 1D4 HP per AP expended.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[2] · Research: Religious Rites[1]"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "wiles",
+          "defense": "td"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 10,
+            "formula": "",
+            "trait": "wiles",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "multiAttack": {
+      "count": 0,
+      "targeting": "each",
+      "requiresAbility": "",
+      "upgrade": {
+        "ability": "",
+        "count": 0
+      }
+    },
+    "extraAp": {
+      "max": "@proficiency",
+      "label": "Additional AP (one dice type and 10ft each)",
+      "selfDamagePerAp": "1d4",
+      "stepPerAp": 1
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_clotsnipe",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Religious Rites[1]",
+      "buildHash": "1afa5bfb01d8"
+    }
+  }
+}

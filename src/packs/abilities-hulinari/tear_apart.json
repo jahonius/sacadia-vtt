@@ -28,13 +28,26 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "special": {
+        "onKill": {
+          "adjacentSurprised": true,
+          "panicWith": "tearing_fright"
+        }
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "tear_apart",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "58c29fe93d5b"
     }
   }
 }

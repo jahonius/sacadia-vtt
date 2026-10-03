@@ -1,0 +1,54 @@
+{
+  "_id": "a7ec81d3d988471f",
+  "_key": "!items!a7ec81d3d988471f",
+  "name": "Bleeding Barbs",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Viscous Mockery, expend a Spell Slot. The target instead makes Wiles Checks against X levels of Jinxed, where X is your Proficiency.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Viscous Mockery, Finesse[3] · Research: Linguist[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "mg_viscous_mockery"
+      },
+      "special": {
+        "saveTrait": "wiles"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_bleeding_barbs",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Linguist[2]",
+      "buildHash": "40b7fc956e2a"
+    }
+  }
+}

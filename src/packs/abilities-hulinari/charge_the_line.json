@@ -30,27 +30,48 @@
     },
     "activities": [
       {
-        "type": "attack",
+        "type": "save",
         "label": "",
         "attack": {
-          "category": "melee",
+          "category": "",
           "trait": "",
           "defense": ""
         },
         "save": {
-          "trait": "",
-          "dc": null
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
         },
-        "damage": [],
-        "inflict": []
+        "damage": [
+          {
+            "count": "@owns.hoofstomp * max(ceil(@proficiency/2), @owns.flattened_earth * @proficiency)",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "self:ability:momentum"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "charge_the_line",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "726f180f88ba"
     }
   }
 }

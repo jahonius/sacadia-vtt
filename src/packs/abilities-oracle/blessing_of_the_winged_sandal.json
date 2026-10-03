@@ -30,6 +30,7 @@
     },
     "activities": [],
     "modifiers": [],
+    "reactionTrigger": "move",
     "madness": {
       "prereq": 1,
       "spend": "1d3-1"
@@ -38,7 +39,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_the_winged_sandal"
+      "catalogId": "blessing_of_the_winged_sandal",
+      "buildHash": "58901cae6cd9"
     }
   }
 }

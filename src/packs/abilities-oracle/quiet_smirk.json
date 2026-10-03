@@ -29,12 +29,21 @@
       "prerequisite": "Fate 2"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "madnessRoll": "min"
+      }
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "quiet_smirk"
+      "catalogId": "quiet_smirk",
+      "buildHash": "f5d785e77933"
     }
   }
 }

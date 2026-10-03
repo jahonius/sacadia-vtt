@@ -28,13 +28,57 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "A Deeper Rend",
+        "target": "damage",
+        "mode": "step",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:deeper-rend:oneArm"
+          },
+          {
+            "atom": "self:attack:limb:oneArm"
+          }
+        ]
+      },
+      {
+        "label": "A Deeper Rend",
+        "target": "damage",
+        "mode": "step",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:deeper-rend:leg"
+          },
+          {
+            "atom": "self:attack:limb:leg"
+          }
+        ]
+      }
+    ],
+    "choice": {
+      "prompt": "Which limb?",
+      "options": [
+        {
+          "value": "oneArm",
+          "label": "One Arm"
+        },
+        {
+          "value": "leg",
+          "label": "Leg"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "a_deeper_rend",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "5a4f3edb7816"
     }
   }
 }

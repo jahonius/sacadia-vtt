@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "greater_healing"
+      "catalogId": "greater_healing",
+      "buildHash": "137d5bae9d8d"
     }
   }
 }

@@ -19,13 +19,27 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Bow Mastery",
+        "target": "damage",
+        "mode": "step",
+        "scope": "ranged",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:bow"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_bow",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "ce721e19c329"
     }
   }
 }

@@ -31,12 +31,22 @@
       "prerequisite": "Power 3"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "*adversarial",
+          "amount": "-1"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "call_to_overcome"
+      "catalogId": "call_to_overcome",
+      "buildHash": "fe7024f5ae5c"
     }
   }
 }

@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "woad_facepaint",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "66e3e15e8899"
     }
   }
 }

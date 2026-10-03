@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Larger Than Life, Power 3"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "displace",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "853c911df9f2"
     }
   }
 }

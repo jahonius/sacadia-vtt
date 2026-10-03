@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_longstride"
+      "catalogId": "bd_longstride",
+      "buildHash": "80bbcf88b712"
     }
   }
 }

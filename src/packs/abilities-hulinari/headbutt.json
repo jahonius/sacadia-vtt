@@ -41,16 +41,40 @@
           "trait": "",
           "dc": null
         },
-        "damage": [],
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 8,
+            "formula": "",
+            "trait": "finesse",
+            "type": ""
+          }
+        ],
         "inflict": []
       }
-    ]
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Headbutt",
+      "requires": "skullcharge",
+      "options": [
+        {
+          "value": "plain",
+          "label": "No charge"
+        },
+        {
+          "value": "charge",
+          "label": "Charged 20ft+ in a straight line"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "headbutt",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6d7aec9454f2"
     }
   }
 }

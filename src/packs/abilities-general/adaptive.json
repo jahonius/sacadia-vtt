@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "adaptive"
+      "catalogId": "adaptive",
+      "buildHash": "f728b2f4ff08"
     }
   }
 }

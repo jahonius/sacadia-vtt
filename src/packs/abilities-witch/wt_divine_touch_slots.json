@@ -1,0 +1,43 @@
+{
+  "_id": "831da6726e5b6a64",
+  "_key": "!items!831da6726e5b6a64",
+  "name": "Divine Touch Slots",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take this, gain an Action Pool of Divine Touch points equal to your Proficiency Score. You get all Divine Touch points back after a quick rest. When you take this ability, you may spend skill points to learn Divine Touches. Whenever you may spend skill points, you may add to the list of Divine Touches you know.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_divine_touch_slots",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "025a7be71c19"
+    }
+  }
+}

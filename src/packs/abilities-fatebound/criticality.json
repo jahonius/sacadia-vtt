@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": "Fate 2"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Criticality",
+        "target": "critThreshold",
+        "mode": "add",
+        "scope": "all",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "!self:ability:divine_criticality"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "criticality",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "1d4d3c2ee2bc"
     }
   }
 }

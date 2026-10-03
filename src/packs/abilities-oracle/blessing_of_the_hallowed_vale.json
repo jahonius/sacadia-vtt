@@ -32,6 +32,15 @@
     },
     "activities": [],
     "modifiers": [],
+    "tempHp": {
+      "formula": "(@spent)d4",
+      "target": "allies",
+      "scaleLevels": [
+        5,
+        11
+      ],
+      "spendMadness": true
+    },
     "madness": {
       "prereq": 5,
       "spend": "N"
@@ -40,7 +49,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blessing_of_the_hallowed_vale"
+      "catalogId": "blessing_of_the_hallowed_vale",
+      "buildHash": "fe930e8fce72"
     }
   }
 }

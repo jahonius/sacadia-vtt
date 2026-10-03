@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Bite Attack"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Necrotic Bite",
+        "target": "damageDice",
+        "mode": "add",
+        "scope": "bite",
+        "value": "(ceil(@proficiency/2))d6",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "necrotic_bite",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "95dc24b1f51a"
     }
   }
 }

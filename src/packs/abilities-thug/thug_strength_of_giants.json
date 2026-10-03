@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_strength_of_giants"
+      "catalogId": "thug_strength_of_giants",
+      "buildHash": "081cce9af31e"
     }
   }
 }

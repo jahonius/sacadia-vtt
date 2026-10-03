@@ -30,6 +30,22 @@
     },
     "activities": [],
     "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "once": true,
+      "special": {
+        "madnessSpendInstead": true
+      }
+    },
     "madness": {
       "insaneOnly": true
     }
@@ -37,7 +53,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bleeding_eyes_bloodsage"
+      "catalogId": "bleeding_eyes_bloodsage",
+      "buildHash": "83ff43807830"
     }
   }
 }

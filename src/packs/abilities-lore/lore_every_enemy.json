@@ -1,0 +1,70 @@
+{
+  "_id": "db926d8b6d583ed5",
+  "_key": "!items!db926d8b6d583ed5",
+  "name": "Every Enemy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Lore Point. Every enemy within 60ft of you makes a Finesse Check against your Check DC. On a failed check, they take X piercing damage (where X is half your Proficiency rounded up, times the number of enemies within 60ft of you). Treat Swarm enemies as a single entity for this effect.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Bladedancer",
+      "prerequisite": "Bladedancer, Level 9 · p.174"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [
+          {
+            "count": "",
+            "denomination": null,
+            "formula": "ceil(@proficiency/2) * @targetCount",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_every_enemy",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "7a4c016522fa"
+    }
+  }
+}

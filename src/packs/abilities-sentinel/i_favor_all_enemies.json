@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "i_favor_all_enemies"
+      "catalogId": "i_favor_all_enemies",
+      "buildHash": "e301093daa62"
     }
   }
 }

@@ -29,12 +29,41 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Drain Tolerant",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:picked:drain_tolerant"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "corroded",
+        "debilitated",
+        "delirium",
+        "hemorrhage",
+        "jinxed",
+        "nausea",
+        "pinned",
+        "paralysis",
+        "pulled",
+        "slowed",
+        "sting"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "drain_tolerant"
+      "catalogId": "drain_tolerant",
+      "buildHash": "e5ec2284c609"
     }
   }
 }

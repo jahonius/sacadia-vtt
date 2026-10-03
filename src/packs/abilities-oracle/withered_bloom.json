@@ -50,7 +50,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "withered_bloom"
+      "catalogId": "withered_bloom",
+      "buildHash": "8b3c07373059"
     }
   }
 }

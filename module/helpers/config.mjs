@@ -66,6 +66,9 @@ SACADIA.pools = {
   herd: 'SACADIA.Pool.Herd',
   call: 'SACADIA.Pool.Call',
   trick: 'SACADIA.Pool.Trick',
+  trickster: 'SACADIA.Pool.Trickster', // Hulinari Swarm (v1.2 Trickster Tactics)
+  spell: 'SACADIA.Pool.Spell',         // Magus Spell Slots (prestige)
+  divine: 'SACADIA.Pool.Divine',       // Witch Divine Touch (prestige)
 };
 
 /** Which pool(s) each profession uses — surfaced on the sheet when that profession is set. */
@@ -74,9 +77,11 @@ SACADIA.professionPools = {
   fatebound: ['glory'],
   oracle: ['prescient'],
   sentinel: ['trickshot'],
-  hulinari_warrior: ['savage', 'herd'],
+  hulinari_warrior: ['savage', 'herd', 'trickster'],
   soldier: ['call'],
   thug: ['trick'],
+  magus: ['spell'],
+  witch: ['divine'],
 };
 
 /**
@@ -89,6 +94,16 @@ SACADIA.professionPools = {
  * picks favored types from these (Humanoid isn't a favored option but is a valid target type, used by
  * Most Dangerous Game). Drives `target:type:<t>` / `target:favored` roll options.
  */
+/**
+ * Creature sizes (book p.225), smallest first. The difference between two creatures' sizes gives the bigger one 1X
+ * advantage per step against Physical Effects (Dragged, Prone, being Kicked, adversarial physical conditions) the
+ * smaller tries to give it, and the smaller the same disadvantage (capped at 3).
+ */
+SACADIA.sizes = {
+  minuscule: 'SACADIA.Size.Minuscule', tiny: 'SACADIA.Size.Tiny', small: 'SACADIA.Size.Small', medium: 'SACADIA.Size.Medium',
+  large: 'SACADIA.Size.Large', huge: 'SACADIA.Size.Huge', gigantic: 'SACADIA.Size.Gigantic', colossal: 'SACADIA.Size.Colossal',
+};
+
 SACADIA.creatureTypes = {
   beast: 'SACADIA.Creature.Beast',
   greatBeast: 'SACADIA.Creature.GreatBeast',
@@ -110,6 +125,18 @@ SACADIA.poolGrants = {
   herd: { grant: 'get_down', scale: 'herd_management' },
   call: { grant: 'call_to_action', scale: 'voice_of_the_leader' },
   trick: { grant: 'thug_wrestling_trick', scale: 'thug_wrestling_expert' },
+  trickster: { grant: 'trickster_tactics', scale: 'murder_management' },
+  spell: { grant: 'mg_spell_slots' },
+  divine: { grant: 'wt_divine_touch_slots', scale: 'wt_a_full_well' },
+};
+
+/**
+ * Flat additions to a pool's max, per owned ability (each instance counts). The Magus's "Gain 3 Spell Slots"
+ * features: Scrollwriter (Magus L3), the three Unfurlings, Mastery of the Tome, and the Legendary Mastery of the Mind.
+ * @type {Record<string, Record<string, number>>} pool → {catalogId: amount}
+ */
+SACADIA.poolBonuses = {
+  spell: { mg_scrollwriter: 3, mg_unfurling: 3, mg_greater_unfurling: 3, mg_masterful_unfurling: 3, mg_mastery_of_the_tome: 3, mg_legendary_mind_slots: 3 },
 };
 
 /* -------------------------------------------- */
@@ -128,10 +155,48 @@ SACADIA.professions = {
   sentinel: 'SACADIA.Profession.Sentinel',
   soldier: 'SACADIA.Profession.Soldier',
   thug: 'SACADIA.Profession.Thug',
+  // Prestige (Advanced) Professions — SAoW_PrestigeClasses addendum. Unlocked by campaign events (an empire holding
+  // Tianqi / Myrgha / Shaugi; a Divine Site) that the GM grants. The Fontcaster's pages aren't in the addendum yet.
+  magus: 'SACADIA.Profession.Magus',
+  witch: 'SACADIA.Profession.Witch',
 };
 
 /**
- * Stat that feeds each profession's Check DC (`9 + stat + proficiency + floor(courage/3)`).
+ * Proficient Attacks per profession (book p.6 and each profession's Beginning Attributes): the to-hit categories it
+ * adds Proficiency to. A multiclass character is trained in the union. The Witch has none.
+ * @type {Record<string, string[]>}
+ */
+SACADIA.professionProficientAttacks = {
+  bladedancer: ['melee'],
+  fatebound: ['melee'],
+  hulinari_warrior: ['melee'],
+  oracle: ['ranged'],
+  sentinel: ['ranged'],
+  soldier: ['melee'],
+  thug: ['melee'],
+  magus: ['melee', 'ranged'],
+  witch: [],
+};
+
+/** Prestige professions: their features follow the *profession* level, not the character's absolute level. */
+SACADIA.prestigeProfessions = ['magus', 'witch'];
+
+/**
+ * The six Heritages — a character's ancestral makeup / species (book Chapter III, pp.80–92). The
+ * specialized Ancestry within a Heritage stays free text (open-ended and Culture-gated).
+ * @type {Record<string, string>} heritage key -> i18n label path
+ */
+SACADIA.heritages = {
+  human: 'SACADIA.Heritage.Human',
+  curiot: 'SACADIA.Heritage.Curiot',
+  daemonai: 'SACADIA.Heritage.Daemonai',
+  fixerfolk: 'SACADIA.Heritage.Fixerfolk',
+  fontborne: 'SACADIA.Heritage.Fontborne',
+  hulinari: 'SACADIA.Heritage.Hulinari',
+};
+
+/**
+ * Stat that feeds each profession's Check DC (`9 + stat + proficiency + floor(courage/2)`, v1.2).
  * @type {Record<string, string>} profession key -> stat key
  */
 SACADIA.professionCheckDcStat = {
@@ -142,6 +207,8 @@ SACADIA.professionCheckDcStat = {
   sentinel: 'finesse',
   soldier: 'courage',
   thug: 'power',
+  magus: 'wiles',
+  witch: 'finesse',
 };
 
 /**
@@ -157,6 +224,8 @@ SACADIA.professionTraitExpertise = {
   sentinel: ['finesse', 'wiles'],
   soldier: ['courage', 'power'],
   thug: ['power', 'finesse'],
+  magus: ['wiles', 'courage'],
+  witch: ['fate', 'finesse'],
 };
 
 /**
@@ -172,6 +241,8 @@ SACADIA.professionHpPerLevel = {
   sentinel: 7,
   soldier: 11,
   thug: 11,
+  magus: 7,
+  witch: 7,
 };
 
 /* -------------------------------------------- */
@@ -236,8 +307,28 @@ SACADIA.talents = {
 /*  Conditions                                  */
 /* -------------------------------------------- */
 
+/**
+ * Cover states (book p239/p254). A player-controlled positional property (no map geometry): a
+ * Covered creature imposes 1× Disadvantage on attacks against it; a Fully Covered one can't be hit
+ * by ranged/spells. `rank` orders them (0/1/2) and feeds the `self:cover` roll-option number; ~a
+ * dozen abilities gate on holding at least Half Cover (`self:cover:half`).
+ * @type {Record<string, {label:string, rank:number, img:string}>}
+ */
+SACADIA.coverStates = {
+  none: { label: 'SACADIA.Cover.None', rank: 0, img: 'icons/svg/cancel.svg' },
+  half: { label: 'SACADIA.Cover.Half', rank: 1, img: 'icons/svg/shield.svg' },
+  full: { label: 'SACADIA.Cover.Full', rank: 2, img: 'icons/svg/statue.svg' },
+};
+
 /** Max effective level of a leveled condition (book p.259: effects cap at 6). */
 SACADIA.conditionMax = 6;
+/**
+ * Max *stored* level. "There is no technical maximum to the number of levels of a condition that may be given
+ * … If a target receives 7 or more levels … they still act as though they have six levels … until their
+ * condition count falls below 6" (p.258). So levels are kept past 6 (effects read `conditionMax`); this is only
+ * a sanity ceiling for the tracker.
+ */
+SACADIA.conditionStoreMax = 20;
 
 /** Display groups for the leveled conditions (book pp.259–262). */
 SACADIA.conditionGroups = {
@@ -336,8 +427,20 @@ SACADIA.rangeTypes = {
 SACADIA.weaponTraits = [
   'heavy', 'light', 'one-handed', 'two-handed', 'melee', 'ranged', 'thrown', 'finesse',
   'sword', 'axe', 'bow', 'crossbow', 'dagger', 'spear', 'mace', 'hammer', 'staff', 'whip',
-  'flail', 'polearm', 'shield', 'divine',
+  'flail', 'polearm', 'shield', 'divine', 'versatile',
 ];
+
+/**
+ * Bladedancer Named Weapon abilities (book: "Name one versatile weapon you own"). A Versatile weapon's sheet
+ * offers these (the ones its owner has) as its name; the named weapon then emits
+ * `self:attack:named-by:<id>` when it's the weapon an attack uses, and `self:wielding:named:<id>` while
+ * equipped. At most Proficiency names at a time (Named Weapons).
+ */
+/** The Witch's Promises (using one toggles it broken / kept) and the Magus Tomes (using one opens its research record). */
+SACADIA.witchPromises = ['wt_promise_of_nonviolence', 'wt_promise_of_vengeance', 'wt_promise_of_justice'];
+SACADIA.magusTomes = ['mg_blood_tome', 'mg_contract_tome', 'mg_elder_tome'];
+
+SACADIA.namedWeaponAbilities = ['bd_sharp_weapon', 'bd_exploding_weapon', 'bd_jagged_blade', 'bd_the_vengeance', 'bd_tricky_boy', 'bd_weapon_tail'];
 
 /**
  * Simple (binary) conditions (book p.257–258): on/off, no levels. Registered as token status
@@ -355,6 +458,39 @@ SACADIA.simpleConditions = {
   // Insanity (Oracle) — a state you're in or not, GM-tracked on the token; distinct from the leveled
   // Madness tracker. Predicates read it as `self:insane` (see docs/conditional-modifiers.md).
   insane: { label: 'SACADIA.Simple.Insane', img: 'icons/svg/terror.svg', changes: [] },
+  // Steadied (Soldier) — a braced stance you're in or not, GM/player-toggled on the token. Many
+  // Soldier abilities read it (`self:steadied`) to upgrade their effect ("If you have Steadied …").
+  steadied: { label: 'SACADIA.Simple.Steadied', img: 'icons/svg/upgrade.svg', changes: [] },
+  // Raging (Thug) — a berserk state entered via Berserker Rage, toggled on the token. The rage cluster
+  // reads it (`self:raging`) to switch on damage die-steps (Focused Rage, Freaking Strong, Raging Harm)
+  // and gate other rage-only effects. Duration (X rounds) and the extra melee attack stay manual.
+  raging: { label: 'SACADIA.Simple.Raging', img: 'icons/svg/blood.svg', changes: [] },
+  // Beast Form (Hulinari Warrior) — in your beast shape or not, toggled on the token. With the character's
+  // Hulinari subtype (Pack / Brute / Swarm) it surfaces `self:form:beast` + `self:form:<subtype>`, which the
+  // "When in Brute Form …" abilities gate on.
+  beastForm: { label: 'SACADIA.Simple.BeastForm', img: 'icons/svg/regen.svg', changes: [] },
+  // Wounded (book p.230) — below 0 HP. Kept in sync with Health automatically; drives Battle Fatigue.
+  wounded: { label: 'SACADIA.Simple.Wounded', img: 'icons/svg/blood.svg', changes: [] },
+  // Environmental conditions (book p.254–255), GM-toggled from the map: Cornered — all attacks against it
+  // at 1× advantage; Obscured (also Dim / Bright light) — +3 AD, PD, MD, TD; Shadowed — attacks against it
+  // at 1× disadvantage; Height — its attacks at 1× advantage. The attack-side effects are read at roll time
+  // (#situationalAdvantage); Obscured's defenses ride its AE changes.
+  cornered: { label: 'SACADIA.Simple.Cornered', img: 'icons/svg/net.svg', changes: [] },
+  obscured: { label: 'SACADIA.Simple.Obscured', img: 'icons/svg/mystery-man.svg',
+    changes: ['ad', 'pd', 'md', 'td'].map((d) => ({ key: `system.bonuses.defense.${d}`, mode: 2, value: '3' })) },
+  shadowed: { label: 'SACADIA.Simple.Shadowed', img: 'icons/svg/eye.svg', changes: [] },
+  height: { label: 'SACADIA.Simple.Height', img: 'icons/svg/up.svg', changes: [] },
+  // Hidden — unseen: can't be directly targeted (a warning if you try). Set by a successful Sneak (the GM)
+  // or Hide Behind Hide; ends automatically when the creature attacks, forces a Trait Check on someone, or
+  // takes damage (book p.131 Hide Behind Hide; the Stealth talent p.206). Changing the environment is the GM's.
+  hidden: { label: 'SACADIA.Simple.Hidden', img: 'icons/svg/invisible.svg', changes: [] },
+};
+
+/** The Hulinari Warrior subtypes (book: "Form of the Pack / the Brute / the Swarm"). */
+SACADIA.hulinariForms = {
+  pack: 'SACADIA.HulinariForm.Pack',
+  brute: 'SACADIA.HulinariForm.Brute',
+  swarm: 'SACADIA.HulinariForm.Swarm',
 };
 
 /* -------------------------------------------- */
@@ -409,10 +545,27 @@ SACADIA.exhaustionSlots = {
  * implicit actions (moving, steadying) count against AP alongside abilities.
  * @type {Record<string, {label: string, ap: number, limbs: string[]}>}
  */
+// The Basic Actions everyone can take (book pp.237–239). AP/limb costs follow the book's action
+// superscripts: most are 1-AP Actions; the two Boosts (5-Foot Adjust, Hurdle) cost 0 AP. The
+// whole-turn/economy specials (Flee, Hold Turn, Consistent Roll) don't fit a fixed spend, so they
+// stay under `other`. Ordered by kind — movement, offense, then utility — for the palette.
 SACADIA.basicActions = {
   move: { label: 'SACADIA.BasicAction.Move', ap: 1, limbs: ['leg'] },
+  fiveFootAdjust: { label: 'SACADIA.BasicAction.FiveFootAdjust', ap: 0, limbs: ['leg'] },
+  climb: { label: 'SACADIA.BasicAction.Climb', ap: 1, limbs: ['leg'] },
+  drop: { label: 'SACADIA.BasicAction.Drop', ap: 1, limbs: ['leg'] },
+  hurdle: { label: 'SACADIA.BasicAction.Hurdle', ap: 0, limbs: ['leg'] },
+  disengage: { label: 'SACADIA.BasicAction.Disengage', ap: 1, limbs: ['leg'] },
   attack: { label: 'SACADIA.BasicAction.Attack', ap: 1, limbs: ['oneArm'] },
+  kick: { label: 'SACADIA.BasicAction.Kick', ap: 1, limbs: ['leg'] },
+  rendArmor: { label: 'SACADIA.BasicAction.RendArmor', ap: 1, limbs: ['oneArm'] },
+  switchItem: { label: 'SACADIA.BasicAction.SwitchItem', ap: 1, limbs: ['oneArm'] },
   steady: { label: 'SACADIA.BasicAction.Steady', ap: 1, limbs: [] },
+  hide: { label: 'SACADIA.BasicAction.Hide', ap: 1, limbs: [] },
+  help: { label: 'SACADIA.BasicAction.Help', ap: 1, limbs: [] },
+  makeTraitCheck: { label: 'SACADIA.BasicAction.MakeTraitCheck', ap: 1, limbs: [] },
+  focus: { label: 'SACADIA.BasicAction.Focus', ap: 1, limbs: ['focus'] },
+  holdAction: { label: 'SACADIA.BasicAction.HoldAction', ap: 1, limbs: [] },
   other: { label: 'SACADIA.BasicAction.Other', ap: 1, limbs: [] },
 };
 
@@ -423,6 +576,28 @@ SACADIA.basicActions = {
  * aspect only cares about bow/crossbow/sling/thrown; the melee spread is convenience.
  * @type {Record<string, string>}
  */
+/**
+ * Damage types (book pp.184, 222): the weapon types (Bludgeoning, Slashing, Piercing, Imbued) are physical; the six
+ * Font elements are elemental ("Elemental damage overcomes physical weapon resistances", p.110); mental damage comes
+ * from mental attacks (Magic Missive, Mind Sliver). Untyped damage (most spells) takes only general DR.
+ * @type {Record<string, {label: string, group: string}>}
+ */
+SACADIA.damageTypes = {
+  bludgeoning: { label: 'SACADIA.DamageType.Bludgeoning', group: 'physical' },
+  slashing: { label: 'SACADIA.DamageType.Slashing', group: 'physical' },
+  piercing: { label: 'SACADIA.DamageType.Piercing', group: 'physical' },
+  imbued: { label: 'SACADIA.DamageType.Imbued', group: 'physical' },
+  fire: { label: 'SACADIA.DamageType.Fire', group: 'elemental' },
+  water: { label: 'SACADIA.DamageType.Water', group: 'elemental' },
+  air: { label: 'SACADIA.DamageType.Air', group: 'elemental' },
+  earth: { label: 'SACADIA.DamageType.Earth', group: 'elemental' },
+  rot: { label: 'SACADIA.DamageType.Rot', group: 'elemental' },
+  salt: { label: 'SACADIA.DamageType.Salt', group: 'elemental' },
+  mental: { label: 'SACADIA.DamageType.Mental', group: 'mental' },
+};
+/** The Font elements (Elemental Weapon, Corrupted Iron, Corrupting Touch). */
+SACADIA.elements = ['fire', 'water', 'air', 'earth', 'rot', 'salt'];
+
 SACADIA.weaponTypes = {
   unarmed: 'SACADIA.Weapon.Unarmed',
   dagger: 'SACADIA.Weapon.Dagger',
@@ -437,6 +612,13 @@ SACADIA.weaponTypes = {
   other: 'SACADIA.Weapon.Other',
 };
 
+/** The three ranged weapon families a Sentinel's Bigger Stones can name (subset of weaponTypes). */
+SACADIA.rangedWeaponTypes = {
+  bow: 'SACADIA.Weapon.Bow',
+  crossbow: 'SACADIA.Weapon.Crossbow',
+  sling: 'SACADIA.Weapon.Sling',
+};
+
 /**
  * Armor categories (book pp.192–194). Each equipped armor advertises `self:armor:<category>`, and a
  * derived `self:armor:only-light` fires when every worn armor is light — the gate for Light Wear /
@@ -448,6 +630,11 @@ SACADIA.armorCategories = {
   medium: 'SACADIA.Armor.Medium',
   heavy: 'SACADIA.Armor.Heavy',
 };
+
+/** Armor materials (book p.190) and shield sizes (p.195) — item-armor `material` / `shieldSize`. */
+SACADIA.armorMaterials = Object.fromEntries(['feather', 'cloth', 'dye', 'leather', 'fur', 'bronze', 'iron', 'gold', 'bone', 'ink', 'wood', 'metal']
+  .map((m) => [m, `SACADIA.Armor.Material.${m}`]));
+SACADIA.shieldSizes = { buckler: 'SACADIA.Armor.Size.buckler', shield: 'SACADIA.Armor.Size.shield', tower: 'SACADIA.Armor.Size.tower' };
 
 /**
  * Attack categories and the trait each contributes to the to-hit / damage roll (book p.218):

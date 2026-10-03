@@ -55,7 +55,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "incredulous_will"
+      "catalogId": "incredulous_will",
+      "buildHash": "ddd92e04a528"
     }
   }
 }

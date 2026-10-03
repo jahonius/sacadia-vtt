@@ -19,13 +19,27 @@
       "prerequisite": "Level 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Fist Mastery",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_fist",
-      "mastery": true
+      "mastery": true,
+      "buildHash": "719b4d9aaab9"
     }
   }
 }

@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "hidden_blades"
+      "catalogId": "hidden_blades",
+      "buildHash": "104e3e34500b"
     }
   }
 }

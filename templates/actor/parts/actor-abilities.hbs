@@ -1,115 +1,94 @@
 <section class="tab {{tabs.abilities.cssClass}}" data-group="primary" data-tab="abilities">
 
   <div class="abilities-top">
-    {{#if isCharacter}}
-    <div class="csp-readout">
-      <label>{{localize 'SACADIA.Progression.Csp'}}</label>
-      <span class="csp-values">
-        <b>{{system.csp.current}}</b> / {{system.csp.max}}
-        <small>({{localize 'SACADIA.Progression.CspSpent'}}: {{system.csp.spent}})</small>
-      </span>
-    </div>
-    {{/if}}
     <a class="add-ability" data-action="createDoc" data-document-class="Item" data-type="ability">
       <i class="fa-solid fa-plus"></i> {{localize 'TYPES.Item.ability'}}
     </a>
   </div>
 
-  {{!-- Action economy: AP tally, basic-action palette, and the per-turn "Actions Used" log.
-       Shared by both actor types; a character's Max AP is derived, an NPC's is editable here. --}}
-  <div class="action-economy">
-    <div class="ap-readout" title="{{localize 'SACADIA.Economy.ApHint'}}">
-      <i class="fa-solid fa-bolt"></i>
-      <label>{{localize 'SACADIA.Economy.Ap'}}</label>
-      {{#if isCharacter}}
-      <span class="ap-values"><b>{{system.ap.value}}</b> / {{system.ap.max}}</span>
-      {{else}}
-      <span class="ap-values"><b>{{system.ap.value}}</b> / <input class="ap-max" type="number" name="system.ap.max" value="{{system.ap.max}}" min="0"/></span>
-      {{/if}}
-      <a class="reset-turn" data-action="resetTurn" title="{{localize 'SACADIA.Economy.ResetTurn'}}">
-        <i class="fa-solid fa-rotate-left"></i>
-      </a>
-    </div>
-
-    {{#if classPools.length}}
-    <div class="class-pools">
-      {{#each classPools as |pool|}}
-      <label class="class-pool" title="{{localize pool.label}}">
-        <span>{{localize pool.label}}</span>
-        <input type="number" name="system.classPools.{{pool.key}}.value" value="{{pool.value}}" min="0"/>
-        <span>/</span>
-        <input type="number" name="system.classPools.{{pool.key}}.max" value="{{pool.max}}" min="0"/>
-      </label>
-      {{/each}}
-    </div>
-    {{/if}}
-
-    {{#if isSentinel}}
-    <label class="favored-enemies" title="{{localize 'SACADIA.FavoredEnemies'}}">
-      <span>{{localize 'SACADIA.FavoredEnemies'}}</span>
-      <select name="system.professionResources.sentinel.favored" multiple>
-        {{selectOptions config.creatureTypes selected=system.professionResources.sentinel.favored localize=true}}
-      </select>
-    </label>
-    {{/if}}
-
-    <div class="basic-actions">
-      {{#each config.basicActions as |preset key|}}
-      <a class="basic-action" data-action="logBasicAction" data-basic="{{key}}">
-        {{localize preset.label}}{{#if preset.ap}} <small>{{preset.ap}}<i class="fa-solid fa-bolt"></i></small>{{/if}}
-      </a>
-      {{/each}}
-    </div>
-
-    <div class="action-log">
-      <label>{{localize 'SACADIA.Economy.ActionsUsed'}}</label>
-      <ol class="log-list">
-        {{#each system.actionLog as |entry idx|}}
-        <li class="log-entry">
-          <span class="log-label">{{entry.label}}</span>
-          <span class="log-ap">{{entry.ap}}<i class="fa-solid fa-bolt"></i></span>
-          <a data-action="undoAction" data-index="{{idx}}" title="{{localize 'SACADIA.Economy.Undo'}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
-        </li>
+  {{!-- Core combat panel: the frequently-referenced live state, grouped as one unit — AP + the
+       per-turn counters up top, then limb exhaustion beside the action log, with focus / marks /
+       grants appearing only when live. Shared by both actor types (NPC Max AP is editable). --}}
+  <div class="combat-panel">
+    <div class="cp-top">
+      <div class="ap-readout" title="{{localize 'SACADIA.Economy.ApHint'}}">
+        <i class="fa-solid fa-bolt"></i>
+        <label>{{localize 'SACADIA.Economy.Ap'}}</label>
+        {{#if isCharacter}}
+        <span class="ap-values"><b>{{system.ap.value}}</b> / {{system.ap.max}}</span>
         {{else}}
-        <li class="log-empty">{{localize 'SACADIA.Economy.NoActions'}}</li>
-        {{/each}}
-      </ol>
-    </div>
-  </div>
+        <span class="ap-values"><b>{{system.ap.value}}</b> / <input class="ap-max" type="number" name="system.ap.max" value="{{system.ap.max}}" min="0"/></span>
+        {{/if}}
+        <a class="reset-turn" data-action="resetTurn" title="{{localize 'SACADIA.Economy.ResetTurn'}}"><i class="fa-solid fa-rotate-left"></i></a>
+      </div>
 
-  {{!-- Combat live-state strip: the auto-maintained state the modifiers read, surfaced. Counters,
-       focus streaks, and marks appear only when live; exhaustion chips are always-on toggles. --}}
-  <div class="combat-strip">
-    {{#if combatStrip.hasLive}}
-    <div class="cs-group">
-      <span class="sac-label">{{localize 'SACADIA.Combat.ThisTurn'}}</span>
-      <div class="cs-counter"><span>{{localize 'SACADIA.Combat.Moved'}}</span><b>{{combatStrip.moved}} {{localize 'SACADIA.Range.Feet'}}</b></div>
-      <div class="cs-counter"><span>{{localize 'SACADIA.Combat.ConsecutiveHits'}}</span><b>&times;{{combatStrip.consecutiveHits}}</b></div>
-      <div class="cs-counter"><span>{{localize 'SACADIA.Combat.Attacks'}}</span><b>{{combatStrip.attacks}}</b></div>
-    </div>
-    {{/if}}
-
-    <div class="cs-group">
-      <span class="sac-label">{{localize 'SACADIA.Combat.Exhaustion'}}</span>
-      <div class="limb-grid">
-        {{#each combatStrip.exhaustion as |slot|}}
-        <label class="limb {{#if slot.spent}}spent{{/if}}" title="{{localize slot.label}}">
-          <input type="checkbox" name="system.exhaustion.{{slot.key}}" {{checked slot.spent}}/>
-          <span>{{localize slot.label}}</span>
-        </label>
+      {{#if classPools.length}}
+      {{!-- Class pools ride the AP line as compact resource readouts rather than claiming their own
+           band; the row wraps if a multiclass character carries several. --}}
+      <div class="cp-pools">
+        {{#each classPools as |pool|}}
+        <span class="cp-pool" title="{{localize pool.label}}">
+          <label>{{localize pool.label}}</label>
+          <input type="number" name="system.classPools.{{pool.key}}.value" value="{{pool.value}}" min="0"/>
+          <span class="sep">/</span>
+          <input type="number" name="system.classPools.{{pool.key}}.max" value="{{pool.max}}" min="0"/>
+        </span>
         {{/each}}
+      </div>
+      {{/if}}
+
+      {{!-- Player-set Cover (book p239): drives self:cover:* ability gating without map geometry. --}}
+      <label class="cp-cover" title="{{localize 'SACADIA.Cover.Hint'}}">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span class="sac-label">{{localize 'SACADIA.Cover.Label'}}</span>
+        <select name="system.cover">
+          {{selectOptions config.coverStates selected=system.cover localize=true labelAttr="label"}}
+        </select>
+      </label>
+
+      {{#if combatStrip.hasLive}}
+      <div class="cp-counters">
+        <span class="cp-counter"><label>{{localize 'SACADIA.Combat.Moved'}}</label><b>{{combatStrip.moved}} {{localize 'SACADIA.Range.Feet'}}</b></span>
+        <span class="cp-counter"><label>{{localize 'SACADIA.Combat.ConsecutiveHits'}}</label><b>&times;{{combatStrip.consecutiveHits}}</b></span>
+        <span class="cp-counter"><label>{{localize 'SACADIA.Combat.Attacks'}}</label><b>{{combatStrip.attacks}}</b></span>
+      </div>
+      {{/if}}
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-block">
+        <span class="sac-label">{{localize 'SACADIA.Combat.Exhaustion'}}</span>
+        <div class="limb-grid">
+          {{#each combatStrip.exhaustion as |slot|}}
+          <label class="limb {{#if slot.spent}}spent{{/if}}" title="{{localize slot.label}}">
+            <input type="checkbox" name="system.exhaustion.{{slot.key}}" {{checked slot.spent}}/>
+            <span>{{localize slot.label}}</span>
+          </label>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="cp-block cp-log">
+        <span class="sac-label">{{localize 'SACADIA.Economy.ActionsUsed'}}</span>
+        <ol class="log-list">
+          {{#each system.actionLog as |entry idx|}}
+          <li class="log-entry">
+            <span class="log-label">{{entry.label}}</span>
+            <span class="log-ap">{{entry.ap}}<i class="fa-solid fa-bolt"></i></span>
+            <a data-action="undoAction" data-index="{{idx}}" title="{{localize 'SACADIA.Economy.Undo'}}"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+          </li>
+          {{else}}
+          <li class="log-empty">{{localize 'SACADIA.Economy.NoActions'}}</li>
+          {{/each}}
+        </ol>
       </div>
     </div>
 
     {{#if combatStrip.hasFocus}}
-    <div class="cs-group">
+    <div class="cp-block cp-live">
       <span class="sac-label">{{localize 'SACADIA.Combat.Focus'}}</span>
       {{#each combatStrip.focus as |f|}}
-      <div class="cs-line">
-        <span class="cs-name">{{f.name}}</span>
-        <span class="sac-streak">{{#each f.bars}}<i></i>{{/each}}</span>
-        <span class="cs-detail">{{f.rounds}}</span>
-      </div>
+      <div class="cs-line"><span class="cs-name">{{f.name}}</span><span class="sac-streak">{{#each f.bars}}<i></i>{{/each}}</span><span class="cs-detail">{{f.rounds}}</span></div>
       {{/each}}
       {{#each combatStrip.marks as |m|}}
       <div class="cs-line"><span class="cs-name">{{m.key}}</span><span class="cs-detail">&rarr; {{m.names}}</span></div>
@@ -118,7 +97,7 @@
     {{/if}}
 
     {{#if combatStrip.grants.length}}
-    <div class="cs-group">
+    <div class="cp-block cp-live">
       <span class="sac-label">{{localize 'SACADIA.Combat.Grants'}}</span>
       {{#each combatStrip.grants as |g|}}
       <div class="cs-line"><span class="cs-name">{{g.name}}</span><span class="cs-detail">{{g.expiry}}</span></div>
@@ -127,31 +106,105 @@
     {{/if}}
   </div>
 
+  {{!-- Secondary combat aids, each segmented into its own box: class pools, Sentinel favored
+       enemies, and the Basic Actions palette. --}}
+  <div class="combat-aux">
+    {{#if isHulinari}}
+    <div class="aux-group hulinari-form-group" title="{{localize 'SACADIA.HulinariForm.Hint'}}">
+      <span class="sac-label">{{localize 'SACADIA.HulinariForm.Label'}}</span>
+      <select name="system.professionResources.hulinari.form">
+        {{selectOptions config.hulinariForms selected=system.professionResources.hulinari.form localize=true blank=""}}
+      </select>
+    </div>
+    {{/if}}
+    {{#if crackedRolls}}
+    <div class="aux-group cracked-group" title="{{localize 'SACADIA.Cracked.Hint'}}">
+      <span class="sac-label">{{localize 'SACADIA.Cracked.Label'}}</span>
+      <div class="cracked-rolls">{{#each crackedRolls as |v|}}<span class="cracked-die">{{v}}</span>{{/each}}</div>
+    </div>
+    {{/if}}
+    {{#if isSentinel}}
+    <div class="aux-group favored-group">
+      <span class="sac-label">{{localize 'SACADIA.FavoredEnemies'}}</span>
+      <select class="favored-enemies" name="system.professionResources.sentinel.favored" multiple>
+        {{selectOptions config.creatureTypes selected=system.professionResources.sentinel.favored localize=true}}
+      </select>
+    </div>
+    {{/if}}
+
+    {{#if ownsBiggerStones}}
+    <div class="aux-group bigger-stones-group" title="{{localize 'SACADIA.BiggerStones.Hint'}}">
+      <span class="sac-label">{{localize 'SACADIA.BiggerStones.Label'}}</span>
+      <div class="bigger-stones">
+        {{#each config.rangedWeaponTypes as |label wt|}}
+        <label class="bs-slot">{{localize label}}
+          <input type="number" min="0" max="2" step="1"
+                 name="system.professionResources.sentinel.biggerStones.{{wt}}"
+                 value="{{lookup ../system.professionResources.sentinel.biggerStones wt}}"/>
+        </label>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    <div class="aux-group basic-actions-group">
+      <span class="sac-label">{{localize 'SACADIA.Economy.BasicActions'}}</span>
+      <div class="basic-actions">
+        {{#each config.basicActions as |preset key|}}
+        <a class="basic-action" data-action="logBasicAction" data-basic="{{key}}">
+          {{localize preset.label}}{{#if preset.ap}} <small>{{preset.ap}}<i class="fa-solid fa-bolt"></i></small>{{/if}}
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  {{#if armedBoosts.length}}
+  <div class="boost-tray" title="{{localize 'SACADIA.Boost.TrayHint'}}">
+    <span class="boost-tray-label"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Boost.TrayLabel'}}</span>
+    {{#each armedBoosts as |boost|}}
+    <a class="sac-chip armed boost-chip" data-action="toggleBoost" data-item-id="{{boost.id}}"
+       title="{{localize 'SACADIA.Boost.Disarm'}}">{{boost.name}} <i class="fa-solid fa-xmark"></i></a>
+    {{/each}}
+  </div>
+  {{/if}}
+
   {{#each abilityGroups as |group key|}}
   <div class="ability-group">
     <h3>{{localize group.label}}</h3>
     <ol class="ability-list">
       {{#each group.items as |ability|}}
-      <li class="ability-card {{#if ability.expanded}}expanded{{/if}} draggable" data-item-id="{{ability.id}}">
+      <li class="ability-card {{#if ability.expanded}}expanded{{/if}} {{#if ability.armed}}armed{{/if}} draggable" data-item-id="{{ability.id}}">
         <div class="ability-row" {{#if ability.rangeValue}}data-range="{{ability.rangeValue}}"{{/if}}>
-          <img class="ability-img" src="{{ability.img}}" width="40" height="40"/>
+          {{!-- The icon is the roll button: click to use, hover shows the d20 overlay + preview
+               tooltip. `draggable=false` lets a drag fall through to the card's item-drag (for the
+               hotbar), instead of the browser dragging the anchor as a bare link. A boost isn't
+               rolled — clicking arms/disarms it (the overlay shows a bolt instead of the d20). --}}
+          <a class="ability-use" data-action="useAbility" draggable="false"
+             {{#if ability.isBoost}}title="{{localize 'SACADIA.Boost.Toggle'}}"
+             {{else if ability.rollTip}}data-tooltip-html="{{ability.rollTip}}" data-tooltip-direction="UP"{{else}}title="{{localize 'SACADIA.Ability.Use'}}"{{/if}}>
+            <img class="ability-img" src="{{ability.img}}" width="72" height="72" draggable="false"/>
+            <span class="use-overlay"><i class="fa-solid {{#if ability.isBoost}}fa-bolt{{else}}fa-dice-d20{{/if}}"></i></span>
+          </a>
           <div class="ability-main">
-            <a class="ability-name" data-action="toggleExpand">{{ability.name}}</a>
+            <a class="ability-name" data-action="toggleExpand" draggable="false">{{ability.name}}</a>
             <div class="ability-meta">
+              {{#if ability.armed}}<span class="sac-chip armed"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Boost.Armed'}}</span>{{/if}}
               {{#if ability.tagLabel}}<span class="sac-chip tag">{{localize ability.tagLabel}}</span>{{/if}}
               {{#if ability.apCost}}<span class="sac-chip ap" title="{{localize 'SACADIA.Ability.ApCost'}}">{{ability.apCost}} AP</span>{{/if}}
               {{#if ability.poolText}}<span class="sac-chip pool">{{ability.poolText}}</span>{{/if}}
+              {{#if ability.loreText}}<span class="sac-chip pool">{{ability.loreText}}</span>{{/if}}
               {{#if ability.cspCost}}<span class="sac-chip warn" title="{{localize 'SACADIA.Ability.CspCost'}}">{{ability.cspCost}} CSP</span>{{/if}}
               {{#each ability.madBadges as |badge|}}<span class="sac-chip mad">{{badge}}</span>{{/each}}
               {{#if ability.attackText}}<span class="sac-chip">{{ability.attackText}}</span>{{/if}}
               {{#if ability.hasSave}}<span class="sac-chip">{{localize 'SACADIA.Activity.Save'}}</span>{{/if}}
               {{#if ability.rangeText}}<span class="sac-chip">{{ability.rangeText}}</span>{{/if}}
               {{#if ability.weaponName}}<span class="sac-chip" title="{{localize 'SACADIA.Ability.Weapon'}}"><i class="fa-solid fa-hand-fist"></i> {{ability.weaponName}}</span>{{/if}}
+              {{#if ability.pick}}<select class="ability-pick" data-tooltip="{{localize 'SACADIA.Pick.Hint'}}">{{selectOptions ability.pick.choices selected=ability.pick.value}}</select>{{/if}}
               {{#if ability.rangeValue}}<span class="out-of-range" hidden>{{localize 'SACADIA.Range.OutOfRangeShort'}}</span>{{/if}}
             </div>
           </div>
           <div class="ability-controls">
-            <a class="use-btn" data-action="useAbility" title="{{localize 'SACADIA.Ability.Use'}}"><i class="fa-solid fa-dice-d20"></i></a>
             <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
             <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
           </div>
@@ -166,5 +219,14 @@
     </ol>
   </div>
   {{/each}}
+
+  {{!-- CSP is a progression budget, referenced far less often than the live combat state — parked
+       at the tab's foot rather than crowding the top. --}}
+  {{#if isCharacter}}
+  <div class="csp-footer">
+    <label>{{localize 'SACADIA.Progression.Csp'}}</label>
+    <span class="csp-values"><b>{{system.csp.current}}</b> / {{system.csp.max}} <small>({{localize 'SACADIA.Progression.CspSpent'}}: {{system.csp.spent}})</small></span>
+  </div>
+  {{/if}}
 
 </section>

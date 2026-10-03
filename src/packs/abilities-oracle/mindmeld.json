@@ -29,12 +29,56 @@
       "prerequisite": "Soulbinding, Fate 5"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "choice": {
+      "prompt": "Mindmeld",
+      "options": [
+        {
+          "value": "hinder",
+          "label": "Their attack at disadvantage (target them)"
+        },
+        {
+          "value": "aid",
+          "label": "An ally's check at advantage (target the ally)"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Mindmeld",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "-1",
+          "predicate": [
+            {
+              "atom": "self:choice:mindmeld:hinder"
+            }
+          ]
+        },
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:choice:mindmeld:aid"
+            }
+          ]
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mindmeld"
+      "catalogId": "mindmeld",
+      "buildHash": "230bd1d3bd4e"
     }
   }
 }

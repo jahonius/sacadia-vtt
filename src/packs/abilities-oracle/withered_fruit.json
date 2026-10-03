@@ -47,7 +47,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "withered_fruit"
+      "catalogId": "withered_fruit",
+      "buildHash": "5b3569e1c2a9"
     }
   }
 }

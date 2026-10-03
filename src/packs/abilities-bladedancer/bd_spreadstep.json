@@ -45,12 +45,36 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:combat:unique-hits>=4"
+        }
+      ],
+      "requiresLabel": "damaged 4 separate targets this turn",
+      "upgrades": [
+        {
+          "ability": "bd_spreaderstep",
+          "max": null,
+          "maxFormula": "",
+          "requires": [
+            {
+              "atom": "self:combat:unique-hits>=3"
+            }
+          ],
+          "requiresLabel": "damaged 3 separate targets this turn"
+        }
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_spreadstep"
+      "catalogId": "bd_spreadstep",
+      "buildHash": "529d634b721e"
     }
   }
 }

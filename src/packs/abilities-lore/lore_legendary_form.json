@@ -1,0 +1,59 @@
+{
+  "_id": "657497bcd17cb67d",
+  "_key": "!items!657497bcd17cb67d",
+  "name": "Legendary Form",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point with a Body action while in Brute Form. Increase your size by one type until the start of your next turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Warrior",
+      "prerequisite": "Brute Hulinari, Larger than Life, Level 9 · p.175"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Legendary Form",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.sizeStep",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_legendary_form",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "c365ae233aec"
+    }
+  }
+}

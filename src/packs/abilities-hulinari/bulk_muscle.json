@@ -28,13 +28,26 @@
       "subpath": "",
       "prerequisite": "Need for Speed, Finesse 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Bulk Muscle",
+        "target": "speed",
+        "value": "10",
+        "predicate": [
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bulk_muscle",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8c1d02fbab2b"
     }
   }
 }

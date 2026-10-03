@@ -1,0 +1,59 @@
+{
+  "_id": "a62979fedafa7646",
+  "_key": "!items!a62979fedafa7646",
+  "name": "Bloodrage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point to go into a blood rage for up to X rounds (X is your Proficiency). When in a blood rage, add Power + Fate to all damage you deal through attacks.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fixerfolk",
+      "prerequisite": "Patlar Fixerfolk Ancestry · p.172"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Bloodrage",
+      "duration": {
+        "type": "rounds",
+        "roundsFormula": "@proficiency"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.damage.all",
+          "mode": 2,
+          "value": "@power + @fate"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_bloodrage",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "5b992a337cea"
+    }
+  }
+}

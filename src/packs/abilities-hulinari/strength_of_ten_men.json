@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Sweeping Claws, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "strength_of_ten_men",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "6d8215b5861c"
     }
   }
 }

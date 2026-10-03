@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hide of Beasts",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:used:hide_of_beasts"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "hide_of_beasts",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "dc3c5204d29e"
     }
   }
 }

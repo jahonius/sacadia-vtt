@@ -29,12 +29,22 @@
       "prerequisite": "None"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Rapid Reaction",
+        "target": "reactions",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "rapid_reaction"
+      "catalogId": "rapid_reaction",
+      "buildHash": "8be5cd090370"
     }
   }
 }

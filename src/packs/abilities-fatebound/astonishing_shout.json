@@ -28,13 +28,28 @@
       "subpath": "",
       "prerequisite": ""
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [],
+    "tempHp": {
+      "formula": "ceil(@proficiency/2)*min(@adjacentAllies,ceil(@proficiency/2))",
+      "target": "self",
+      "scaleLevels": []
+    },
+    "nextAttack": {
+      "on": "use",
+      "advantage": "",
+      "toHit": "",
+      "damage": "ceil(@proficiency/2)*min(@adjacentEnemies,ceil(@proficiency/2))",
+      "targetCondition": "",
+      "label": "Astonishing Shout"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "astonishing_shout",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "50621c1eeea9"
     }
   }
 }

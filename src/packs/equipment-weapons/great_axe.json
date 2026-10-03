@@ -11,6 +11,9 @@
     "value": 200,
     "equipped": false,
     "traits": "",
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "axe",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "great_axe",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "0beccbc5acbc"
     }
   }
 }

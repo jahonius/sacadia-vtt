@@ -29,12 +29,17 @@
       "prerequisite": "Level 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "heavy_damage"
+      "catalogId": "heavy_damage",
+      "buildHash": "10b0d3fdc575"
     }
   }
 }

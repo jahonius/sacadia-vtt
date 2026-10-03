@@ -28,13 +28,31 @@
       "subpath": "",
       "prerequisite": "Skullcharge, Finesse 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Gorehorn",
+        "target": "damageDice",
+        "mode": "dice",
+        "scope": "headbutt",
+        "value": "(@proficiency)d6",
+        "predicate": [
+          {
+            "atom": "self:choice:headbutt:charge"
+          },
+          {
+            "atom": "self:ability:skullcharge"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "gorehorn",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4f905012cdf0"
     }
   }
 }

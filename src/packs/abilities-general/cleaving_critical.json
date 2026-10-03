@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "cleaving_critical"
+      "catalogId": "cleaving_critical",
+      "buildHash": "fd097be65fc1"
     }
   }
 }

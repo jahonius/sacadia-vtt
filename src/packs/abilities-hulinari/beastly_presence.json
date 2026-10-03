@@ -13,10 +13,10 @@
       "madness": 0,
       "limbs": [],
       "pool": {
-        "key": "",
+        "key": "savage",
         "amount": 0,
-        "variable": false,
-        "max": ""
+        "variable": true,
+        "max": "ceil(@proficiency/2)"
       }
     },
     "range": {
@@ -28,13 +28,57 @@
       "subpath": "",
       "prerequisite": "Courage 2"
     },
-    "activities": []
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "@spent"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Give which condition?",
+      "options": [
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        }
+      ]
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "perTarget": true,
+      "upgrades": []
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "beastly_presence",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "4d5002543689"
     }
   }
 }

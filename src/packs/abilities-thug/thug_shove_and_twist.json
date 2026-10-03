@@ -29,12 +29,26 @@
       "prerequisite": "Lightning Shove"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Shove and Twist",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_shove_and_twist"
+      "catalogId": "thug_shove_and_twist",
+      "buildHash": "d5159a9840c0"
     }
   }
 }

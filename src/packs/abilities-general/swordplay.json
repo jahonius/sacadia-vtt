@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "swordplay"
+      "catalogId": "swordplay",
+      "buildHash": "ac5948c00c2f"
     }
   }
 }

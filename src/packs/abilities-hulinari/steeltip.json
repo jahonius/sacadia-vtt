@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Courage 6"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "steeltip",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "74c30f9960ad"
     }
   }
 }

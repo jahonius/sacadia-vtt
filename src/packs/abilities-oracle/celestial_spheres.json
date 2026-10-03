@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "celestial_spheres"
+      "catalogId": "celestial_spheres",
+      "buildHash": "7d5b5232ddbc"
     }
   }
 }

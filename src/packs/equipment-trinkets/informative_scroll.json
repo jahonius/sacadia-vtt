@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "informative_scroll",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "20f54951bda1"
     }
   }
 }

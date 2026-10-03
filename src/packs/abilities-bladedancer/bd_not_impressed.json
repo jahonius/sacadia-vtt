@@ -29,12 +29,33 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Not Even Impressed",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:checking:picked:bd_not_impressed"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "paralysis",
+        "pinned",
+        "pulled"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_not_impressed"
+      "catalogId": "bd_not_impressed",
+      "buildHash": "311b7a2490a9"
     }
   }
 }

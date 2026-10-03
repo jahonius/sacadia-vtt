@@ -1,0 +1,58 @@
+{
+  "_id": "352f0ec6f4db7f41",
+  "_key": "!items!352f0ec6f4db7f41",
+  "name": "Field of Flowers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft of you. Until the start of your next turn, all reaction attacks made against them are made at 1X Disadvantage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Field of Flowers",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.incomingReactionAdvantage",
+          "mode": 2,
+          "value": "-1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_field_of_flowers",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "066f58cccf8c"
+    }
+  }
+}

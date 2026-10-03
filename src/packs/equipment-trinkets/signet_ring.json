@@ -14,7 +14,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "signet_ring",
-      "kind": "trinket"
+      "kind": "trinket",
+      "buildHash": "f18e02a1e2dd"
     }
   }
 }

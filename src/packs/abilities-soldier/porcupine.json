@@ -29,12 +29,29 @@
       "prerequisite": "Protectorate"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Porcupine",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          },
+          {
+            "atom": "self:used:protectorate"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "porcupine"
+      "catalogId": "porcupine",
+      "buildHash": "ecfe1e0c8343"
     }
   }
 }

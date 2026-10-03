@@ -29,12 +29,21 @@
       "prerequisite": "Not Impressed, Courage 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "paralysis",
+        "pinned",
+        "pulled"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_caffeinated"
+      "catalogId": "bd_caffeinated",
+      "buildHash": "f3ea917eaf43"
     }
   }
 }

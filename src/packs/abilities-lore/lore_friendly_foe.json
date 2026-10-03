@@ -1,0 +1,44 @@
+{
+  "_id": "f4727bd35f57d100",
+  "_key": "!items!f4727bd35f57d100",
+  "name": "Friendly Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use a Lore Point to turn any single enemy Beast of the same animal species as you from an enemy to an ally. They do not turn on any other allies they have, but they will treat you and your allies as friends instead of enemies. You may only use this on one creature, they must be the same animal species as you, and the effect lasts an hour. You may only use this on Beasts with a level at or below your own.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Curiot",
+      "prerequisite": "Curiot Heritage · p.171"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_friendly_foe",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "54cf2a1e273e"
+    }
+  }
+}

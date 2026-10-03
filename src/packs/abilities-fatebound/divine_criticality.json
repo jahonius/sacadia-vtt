@@ -28,13 +28,24 @@
       "subpath": "",
       "prerequisite": "Criticality, Fate 5"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Divine Criticality",
+        "target": "critThreshold",
+        "mode": "add",
+        "scope": "all",
+        "value": "-2",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "divine_criticality",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "8fe8ad7b5d20"
     }
   }
 }

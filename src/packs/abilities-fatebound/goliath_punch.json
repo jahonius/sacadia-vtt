@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Humongous"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "goliath_punch",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "684ddc5910cd"
     }
   }
 }

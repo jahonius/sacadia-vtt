@@ -29,12 +29,20 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Fleetfeet",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_fleetfeet"
+      "catalogId": "bd_fleetfeet",
+      "buildHash": "ed8134e798e1"
     }
   }
 }

@@ -29,12 +29,22 @@
       "prerequisite": "Level 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Check, Please",
+        "target": "checkDc",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "check_please"
+      "catalogId": "check_please",
+      "buildHash": "df5128297fa8"
     }
   }
 }

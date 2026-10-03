@@ -30,6 +30,14 @@
     },
     "activities": [],
     "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "madnessExtra": 1
+      }
+    },
     "madness": {
       "gain": "1"
     }
@@ -37,7 +45,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "blood_for_blood"
+      "catalogId": "blood_for_blood",
+      "buildHash": "ef31d2f12f48"
     }
   }
 }

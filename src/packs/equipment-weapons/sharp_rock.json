@@ -10,7 +10,10 @@
     "weight": 0,
     "value": 0,
     "equipped": false,
-    "traits": "",
+    "traits": "versatile",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
     "weaponType": "unarmed",
     "weaponDamage": {
       "count": "1",
@@ -29,7 +32,8 @@
   "flags": {
     "sacadia": {
       "catalogId": "sharp_rock",
-      "kind": "weapon"
+      "kind": "weapon",
+      "buildHash": "050b5c1c7749"
     }
   }
 }

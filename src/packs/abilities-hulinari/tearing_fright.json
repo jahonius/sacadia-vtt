@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Tear Apart, Power 4"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "tearing_fright",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "daede5f8ba45"
     }
   }
 }

@@ -29,16 +29,25 @@
       "prerequisite": "Bloodied Shadows"
     },
     "activities": [],
-    "modifiers": [
-      {
-        "label": "Bloodied Cruelty",
-        "target": "damage",
-        "mode": "step",
-        "scope": "forbidden_knowledge",
-        "value": "0",
-        "predicate": []
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "forbidden_knowledge"
+      },
+      "effects": [
+        {
+          "label": "Bloodied Cruelty",
+          "target": "damage",
+          "value": "@madness"
+        }
+      ],
+      "special": {
+        "requires": [
+          "self:hp-below-half"
+        ]
       }
-    ],
+    },
     "madness": {
       "prereq": 1
     }
@@ -46,7 +55,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bloodied_cruelty"
+      "catalogId": "bloodied_cruelty",
+      "buildHash": "cfd67e2c3387"
     }
   }
 }

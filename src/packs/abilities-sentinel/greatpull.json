@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "greatpull"
+      "catalogId": "greatpull",
+      "buildHash": "3a90ef22094b"
     }
   }
 }

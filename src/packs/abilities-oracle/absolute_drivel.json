@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "absolute_drivel"
+      "catalogId": "absolute_drivel",
+      "buildHash": "b03d47c15e45"
     }
   }
 }

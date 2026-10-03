@@ -39,18 +39,26 @@
         },
         "save": {
           "trait": "wiles",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
-        "inflict": []
+        "inflict": [
+          {
+            "condition": "surprised",
+            "amount": "1"
+          }
+        ]
       }
-    ]
+    ],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "flourishing_touch",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "aaa67b5cf7ce"
     }
   }
 }

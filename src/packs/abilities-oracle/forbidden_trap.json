@@ -29,12 +29,14 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "reactionTrigger": "move"
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "forbidden_trap"
+      "catalogId": "forbidden_trap",
+      "buildHash": "9fa2b05b498b"
     }
   }
 }

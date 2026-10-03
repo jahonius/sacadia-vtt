@@ -41,7 +41,8 @@
         },
         "save": {
           "trait": "fate",
-          "dc": null
+          "dc": null,
+          "onSuccess": "half"
         },
         "damage": [
           {
@@ -64,7 +65,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "mad_chanting"
+      "catalogId": "mad_chanting",
+      "buildHash": "69fe57b98731"
     }
   }
 }

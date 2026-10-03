@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "protectorate"
+      "catalogId": "protectorate",
+      "buildHash": "d292aefdb68e"
     }
   }
 }

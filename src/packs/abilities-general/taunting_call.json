@@ -41,13 +41,58 @@
         },
         "save": {
           "trait": "courage",
-          "dc": null
+          "dc": null,
+          "onSuccess": "none"
         },
         "damage": [],
         "inflict": [
           {
             "condition": "taunt",
-            "amount": "ceil(@proficiency/2)"
+            "amount": "ceil(@proficiency/2)",
+            "predicate": [
+              {
+                "atom": "!self:ability:extra_taunt"
+              },
+              {
+                "atom": "!self:ability:big_target"
+              }
+            ]
+          },
+          {
+            "condition": "taunt",
+            "amount": "ceil(@proficiency/2) + 1",
+            "predicate": [
+              {
+                "atom": "!self:ability:extra_taunt"
+              },
+              {
+                "atom": "self:ability:big_target"
+              }
+            ]
+          },
+          {
+            "condition": "taunt",
+            "amount": "@proficiency",
+            "predicate": [
+              {
+                "atom": "self:ability:extra_taunt"
+              },
+              {
+                "atom": "!self:ability:big_target"
+              }
+            ]
+          },
+          {
+            "condition": "taunt",
+            "amount": "@proficiency + 1",
+            "predicate": [
+              {
+                "atom": "self:ability:extra_taunt"
+              },
+              {
+                "atom": "self:ability:big_target"
+              }
+            ]
           }
         ]
       }
@@ -57,7 +102,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "taunting_call"
+      "catalogId": "taunting_call",
+      "buildHash": "50880a36b91b"
     }
   }
 }

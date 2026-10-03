@@ -43,7 +43,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_stabby_aura"
+      "catalogId": "bd_stabby_aura",
+      "buildHash": "a3b7ffe10a4c"
     }
   }
 }

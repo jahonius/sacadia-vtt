@@ -1,0 +1,56 @@
+{
+  "_id": "b021eae06de13b8e",
+  "_key": "!items!b021eae06de13b8e",
+  "name": "Nettle",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose a target within 5ft of you who you can see with at least 1 level of an adversarial condition, and expend X Divine Touch Points. For every Divine Touch Point spent, convert up to 2 levels of that adversarial condition to Sting, Jinxed, Delirium, or Nausea (choose one when you use this). They must be able to take the condition chosen.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "divine",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "convert": {
+        "amount": "2*@spent",
+        "to": [
+          "sting",
+          "jinxed",
+          "delirium",
+          "nausea"
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_nettle",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "77565b42ed02"
+    }
+  }
+}

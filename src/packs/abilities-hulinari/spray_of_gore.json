@@ -28,13 +28,15 @@
       "subpath": "",
       "prerequisite": "Tear Apart"
     },
-    "activities": []
+    "activities": [],
+    "modifiers": []
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "spray_of_gore",
-      "transcribed": true
+      "transcribed": true,
+      "buildHash": "efb833592eb0"
     }
   }
 }

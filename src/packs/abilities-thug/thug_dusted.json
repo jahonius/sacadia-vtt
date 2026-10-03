@@ -36,7 +36,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "thug_dusted"
+      "catalogId": "thug_dusted",
+      "buildHash": "340317fd03bc"
     }
   }
 }

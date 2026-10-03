@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "killing_zone"
+      "catalogId": "killing_zone",
+      "buildHash": "873cf3b75e56"
     }
   }
 }

@@ -29,12 +29,25 @@
       "prerequisite": "Finesse 6"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [
+      {
+        "label": "Bloodletter",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "0 - floor(@inflict.hemorrhage/3)",
+        "predicate": [
+          {
+            "atom": "inflict:hemorrhage"
+          }
+        ]
+      }
+    ]
   },
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "bd_bloodletter"
+      "catalogId": "bd_bloodletter",
+      "buildHash": "5d1f1e4c74a4"
     }
   }
 }

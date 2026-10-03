@@ -1,0 +1,89 @@
+{
+  "_id": "66c0fb45fa52841a",
+  "_key": "!items!66c0fb45fa52841a",
+  "name": "Contract Tome",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Rarity Legendary[1], Element Salt, Prerequisites: Literary General Talent, Myrghos in Empire. Item Slots 1, Attunement Yes, Relic Yes. A meticulous white scroll, bound around a golden scroll rod. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Lawful Protection: Gain +1 to your MD, TD, or PD when you are attuned to this scroll (choose one when you take this ability).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Tome",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Lawful Protection",
+        "target": "defense.pd",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:pick:mg_contract_tome:pd"
+          }
+        ]
+      },
+      {
+        "label": "Lawful Protection",
+        "target": "defense.md",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:pick:mg_contract_tome:md"
+          }
+        ]
+      },
+      {
+        "label": "Lawful Protection",
+        "target": "defense.td",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:pick:mg_contract_tome:td"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "pd",
+        "md",
+        "td"
+      ],
+      "kind": "defense"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_contract_tome",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "tome",
+      "buildHash": "888591b4ef5d"
+    }
+  }
+}

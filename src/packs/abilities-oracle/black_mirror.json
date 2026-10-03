@@ -34,7 +34,8 @@
   "effects": [],
   "flags": {
     "sacadia": {
-      "catalogId": "black_mirror"
+      "catalogId": "black_mirror",
+      "buildHash": "1113dc571da2"
     }
   }
 }
