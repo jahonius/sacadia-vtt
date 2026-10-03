@@ -1,0 +1,39 @@
+{
+  "_id": "aea209b87b10dd53",
+  "_key": "!items!aea209b87b10dd53",
+  "name": "Bone Cudgel",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[1]</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 40,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "wiles"
+    },
+    "hands": 1,
+    "defense": "md",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bone_cudgel",
+      "kind": "weapon",
+      "buildHash": "a935f513ff1d"
+    }
+  }
+}

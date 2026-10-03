@@ -1,0 +1,41 @@
+{
+  "_id": "6614c6877b1e6954",
+  "_key": "!items!6614c6877b1e6954",
+  "name": "Big Target",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you attempt to give a target Taunt, attempt to give one additional level.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Courage 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "big_target",
+      "buildHash": "f4476d410079"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "bf2b5996f66e0602",
+  "_key": "!items!bf2b5996f66e0602",
+  "name": "Crushing Blow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you critically hit a Targeted Foe, increase the dice type of your divine weapon by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Targeted Foe"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "crushing_blow",
+      "transcribed": true,
+      "buildHash": "e8cf5e7aeb70"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_id": "5c4a42405d2cd056",
+  "_key": "!items!5c4a42405d2cd056",
+  "name": "Legendary AP",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a boost to an action, you may recover a single AP.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 15"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "once": true,
+      "special": {
+        "onConsume": {
+          "ap": -1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sen_legendary_ap",
+      "feature": true,
+      "level": 15,
+      "buildHash": "af2c0c5e709f"
+    }
+  }
+}

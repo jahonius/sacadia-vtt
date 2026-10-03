@@ -1,0 +1,54 @@
+{
+  "_id": "c73f580962774aea",
+  "_key": "!items!c73f580962774aea",
+  "name": "Propped Up",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For each ally behind you while using Protectorate, increase the damage dice of all melee attacks you make by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Protectorate"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Propped Up",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "@adjacentAllies",
+        "predicate": [
+          {
+            "atom": "self:used:protectorate"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "propped_up",
+      "buildHash": "448867b80198"
+    }
+  }
+}

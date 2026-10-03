@@ -1,0 +1,41 @@
+{
+  "_id": "c4a00555533f51e6",
+  "_key": "!items!c4a00555533f51e6",
+  "name": "Evasion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you would take damage requiring a Finesse Check, take half damage (rounded up) on a failure or no damage on a success.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "evasion",
+      "buildHash": "ce7b6976f380"
+    }
+  }
+}

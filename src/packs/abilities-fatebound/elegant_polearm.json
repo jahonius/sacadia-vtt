@@ -1,0 +1,42 @@
+{
+  "_id": "9d8593ded920b4a6",
+  "_key": "!items!9d8593ded920b4a6",
+  "name": "Elegant Polearm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Wild Strike, you may use Wild Strike at 10ft range when wielding a 10ft-range piercing divine weapon.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Piercemaster"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "elegant_polearm",
+      "transcribed": true,
+      "buildHash": "30aee0594667"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_id": "2b9afb7bd56c63e9",
+  "_key": "!items!2b9afb7bd56c63e9",
+  "name": "Tweak the Heart",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In reaction to an ally within 5ft of you attempting to give a target a condition, you may expend a reaction to increase their Check DC by 1 for that effect.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": "Promise of Justice"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Tweak the Heart",
+      "duration": {
+        "type": "consumed",
+        "on": "inflict"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.checkDc",
+          "mode": 2,
+          "value": "1 + @owns.wt_mastery_of_justice"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_tweak_the_heart",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "77c150bf912e"
+    }
+  }
+}

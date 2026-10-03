@@ -1,0 +1,53 @@
+{
+  "_id": "7709859928253d0b",
+  "_key": "!items!7709859928253d0b",
+  "name": "Call of Respite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 1 Call Point and make trait checks against one level of any adversarial condition from up to X targets within 15ft of you (X is half your Proficiency, rounded up). The condition can differ for each target.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "aidResist": {
+      "levels": "1",
+      "maxTargets": "ceil(@proficiency/2)",
+      "autoWith": "final_calm",
+      "autoIfSteadied": false,
+      "advantageWith": "relaxed_call",
+      "spendMadness": false,
+      "mentalOnly": false,
+      "funnel": false
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_respite",
+      "buildHash": "5ad457141543"
+    }
+  }
+}

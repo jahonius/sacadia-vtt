@@ -1,0 +1,43 @@
+{
+  "_id": "99a230830e1da1bd",
+  "_key": "!items!99a230830e1da1bd",
+  "name": "Talented Mage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain one additional Talent Point to spend this level. You must spend this Talent point on Knowledge Talents.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Level Feature",
+      "prerequisite": "Magus Level 7"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_talented_mage",
+      "feature": true,
+      "level": 7,
+      "buildHash": "9ff6d11fa2d8"
+    }
+  }
+}

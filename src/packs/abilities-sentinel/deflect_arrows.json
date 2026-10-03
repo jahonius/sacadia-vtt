@@ -1,0 +1,65 @@
+{
+  "_id": "523ca1b5145d3b70",
+  "_key": "!items!523ca1b5145d3b70",
+  "name": "Deflect Arrows",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As long as you maintain focus, you are treated as under half cover against any ranged attack made against you. You may use this once per quick rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Quick Defense"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Deflect Arrows",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:ranged"
+          },
+          {
+            "atom": "self:used:deflect_arrows"
+          }
+        ]
+      }
+    ],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "deflect_arrows",
+      "buildHash": "423e606ead19"
+    }
+  }
+}

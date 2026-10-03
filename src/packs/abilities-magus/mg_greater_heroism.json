@@ -1,0 +1,45 @@
+{
+  "_id": "ff1268ed2fe314b0",
+  "_key": "!items!ff1268ed2fe314b0",
+  "name": "Greater Heroism",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Each turn that you maintain Focus on Heroism on an allied target, they gain 1D4 Temporary HP. The Temporary HP given each turn you renew your Focus increases to 1D6 at Level 5, and 1D8 at level 11.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Heroism, Courage[3] · Research: Intuition[2]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_heroism",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Intuition[2]",
+      "buildHash": "176b4c6e4443"
+    }
+  }
+}

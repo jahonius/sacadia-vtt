@@ -1,0 +1,41 @@
+{
+  "_id": "ace2407491036f8a",
+  "_key": "!items!ace2407491036f8a",
+  "name": "Bes Favor",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/bes_favor_icon.png",
+  "system": {
+    "description": "<p>Increase the benefit of Favored Enemy to add your Wiles Score to all damage dealt to favored enemies.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Favored Enemy, Wiles 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bes_favor",
+      "buildHash": "74167776853a"
+    }
+  }
+}

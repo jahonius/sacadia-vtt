@@ -1,0 +1,42 @@
+{
+  "_id": "7b6f451f085caa22",
+  "_key": "!items!7b6f451f085caa22",
+  "name": "Double Claw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Sweeping Claws, your attack is made against every creature within 10’ of you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Sweeping Claws, Larger than Life, Power 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "double_claw",
+      "transcribed": true,
+      "buildHash": "09d265b6c12d"
+    }
+  }
+}

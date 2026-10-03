@@ -1,0 +1,54 @@
+{
+  "_id": "099d743c79023152",
+  "_key": "!items!099d743c79023152",
+  "name": "Blood for God",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blood_for_god_icon.jpg",
+  "system": {
+    "description": "<p>As a Boost to any ability which lowers Madness, you may take damage equal to M before reducing your Madness. After the ability resolves, add 1D3-1 to your Madness.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Blood for Blood"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "madnessBeforeSpend": true,
+        "madnessAfterSpend": "1d3-1"
+      }
+    },
+    "madness": {
+      "prereq": 1,
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blood_for_god",
+      "buildHash": "fa38971a59b8"
+    }
+  }
+}

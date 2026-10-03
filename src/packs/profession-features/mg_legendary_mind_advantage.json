@@ -1,0 +1,67 @@
+{
+  "_id": "1851fffb9531d2d7",
+  "_key": "!items!1851fffb9531d2d7",
+  "name": "Mastery of the Mind (Advantage)",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain 1X Advantage to all Wiles and Fate Checks you make.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Magus Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Mind",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:checking:trait:wiles"
+          }
+        ]
+      },
+      {
+        "label": "Mastery of the Mind",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:checking:trait:fate"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_legendary_mind_advantage",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "46696ed388b8"
+    }
+  }
+}

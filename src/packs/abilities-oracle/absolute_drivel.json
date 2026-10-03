@@ -1,0 +1,41 @@
+{
+  "_id": "5e2d969ce09a28fc",
+  "_key": "!items!5e2d969ce09a28fc",
+  "name": "Absolute Drivel",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/absolute_drivel_icon.png",
+  "system": {
+    "description": "<p>When you initiate Partial Drivel, you may use it on an ally within 30ft of you instead of yourself. This ability ends if you go outside of a 30ft range of that ally.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Partial Drivel, Fate 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "absolute_drivel",
+      "buildHash": "b03d47c15e45"
+    }
+  }
+}

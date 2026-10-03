@@ -1,0 +1,54 @@
+{
+  "_id": "6a05b79dbee9ef9f",
+  "_key": "!items!6a05b79dbee9ef9f",
+  "name": "Wrestling Friends",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For each ally within 5ft of a target to whom you have given Wrestle Pin, add half your Finesse (rounded up) to damage you deal with Harm.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Harm, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Wrestling Friends",
+        "target": "damage",
+        "mode": "add",
+        "scope": "thug_harm",
+        "value": "ceil(@finesse/2) * @targetAdjacentAllies",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_wrestling_friends",
+      "buildHash": "5c6a41646bb1"
+    }
+  }
+}

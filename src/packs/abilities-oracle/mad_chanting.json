@@ -1,0 +1,72 @@
+{
+  "_id": "ca7e142a5daa840a",
+  "_key": "!items!ca7e142a5daa840a",
+  "name": "Mad Chanting",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_chanting_icon.png",
+  "system": {
+    "description": "<p>Choose one target within 15ft. They take MD4 Rot damage, where M is your Madness. Repeat this, choosing a new target within 15ft of the prior, up to X times (X is your Proficiency). Each target makes a Fate Check, taking half damage on success.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "half"
+        },
+        "damage": [
+          {
+            "count": "@madness",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": true,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mad_chanting",
+      "buildHash": "69fe57b98731"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_id": "d074177bdb7cb62d",
+  "_key": "!items!d074177bdb7cb62d",
+  "name": "Flanking Forces",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have a target surrounded, you may use a boost to gain 1X Advantage on the first melee attack made against them each turn.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Flanking Forces",
+          "target": "advantage.toHit",
+          "mode": "add",
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "target:surrounded"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_flanking_forces",
+      "buildHash": "2b5771510fdf"
+    }
+  }
+}

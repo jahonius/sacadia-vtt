@@ -1,0 +1,21 @@
+{
+  "_id": "742f5c23dd1032dc",
+  "_key": "!items!742f5c23dd1032dc",
+  "name": "Signet Ring",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>While wearing a Signet Ring you may seal any document you write; a recipient knows if it has been opened or tampered with, and that it comes from you.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "signet_ring",
+      "kind": "trinket",
+      "buildHash": "f18e02a1e2dd"
+    }
+  }
+}

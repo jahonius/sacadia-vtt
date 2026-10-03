@@ -1,0 +1,41 @@
+{
+  "_id": "4737e1f447744836",
+  "_key": "!items!4737e1f447744836",
+  "name": "Head-Off",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Head Strike Boost, add XD8 damage, where X is your Proficiency Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Head Strike, Finesse 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "head_off",
+      "buildHash": "435e4bd47459"
+    }
+  }
+}

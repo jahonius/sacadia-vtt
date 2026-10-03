@@ -1,0 +1,74 @@
+{
+  "_id": "91d75f48100d04e2",
+  "_key": "!items!91d75f48100d04e2",
+  "name": "Crown of Insanity",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 1 Spell Slot, and choose an enemy target within 5ft. That target makes a Fate Check against your Check DC. If they fail, at the start of each of their turns that you maintain Focus, the target takes 2D8 damage. They then apply the effect from the Oracle Insane Table (minus the damage) that corresponds to the lower of the two dice rolled on the insane table. They may break the effect with a successful Make Trait Check action against your Check DC.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 8,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Fate[2] · Research: You have an Oracle in your party who has gone insane at least three times in front of you, but isn’t you"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Crown of Insanity",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_crown_of_insanity",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "You have an Oracle in your party who has gone insane at least three times in front of you, but isn’t you",
+      "buildHash": "f96f91c38af8"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "1a7e61c63ef85a2a",
+  "_key": "!items!1a7e61c63ef85a2a",
+  "name": "Sharp Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Name one versatile weapon you own. Increase the dice type of that weapon by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Sharp Weapon",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_sharp_weapon"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_sharp_weapon",
+      "buildHash": "ced86861fe3e"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "1dc5ce2399b06bd5",
+  "_key": "!items!1dc5ce2399b06bd5",
+  "name": "Critical Conditions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you critically hit with your divine weapon, you may make a critical effect be to increase an adversarial condition of the following types: Delirium, Nausea, Hemorrhage, or Frenzy the target already possesses by one (to a maximum of your Proficiency).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "critical_conditions",
+      "transcribed": true,
+      "buildHash": "5320bd537c5a"
+    }
+  }
+}

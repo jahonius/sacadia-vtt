@@ -1,0 +1,72 @@
+{
+  "_id": "06474c013bef804a",
+  "_key": "!items!06474c013bef804a",
+  "name": "Pankration",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have given a target Wrestle Pin and then melee attack or Harm them, increase damage dealt by Harm and melee attacks by X, where X is the amount of Pin that target has.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Pankration",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@target.pinned",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          },
+          {
+            "atom": "!self:ability:thug_pankrations_champion"
+          }
+        ]
+      },
+      {
+        "label": "Pankration",
+        "target": "damage",
+        "mode": "add",
+        "scope": "thug_harm",
+        "value": "@target.pinned",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          },
+          {
+            "atom": "!self:ability:thug_pankrations_champion"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_pankration",
+      "buildHash": "c1a8f0d4a86f"
+    }
+  }
+}

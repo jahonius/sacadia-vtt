@@ -1,0 +1,21 @@
+{
+  "_id": "fee4d9cb1444288a",
+  "_key": "!items!fee4d9cb1444288a",
+  "name": "Feather Necklace",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>While wearing a Feather Necklace, treat all fall distances as 10ft shorter.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "feather_necklace",
+      "kind": "trinket",
+      "buildHash": "310a6ed2ff1d"
+    }
+  }
+}

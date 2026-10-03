@@ -1,0 +1,42 @@
+{
+  "_id": "d3fad64f5bce82f6",
+  "_key": "!items!d3fad64f5bce82f6",
+  "name": "Bucking Toss",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Kick on an enemy, they are pushed up to 20ft away.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Powerful Buck, Power 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bucking_toss",
+      "transcribed": true,
+      "buildHash": "795bac4f5db6"
+    }
+  }
+}

@@ -1,14 +1,100 @@
-.effects .item {
-  .effect-source,
-  .effect-duration,
-  .effect-controls {
-    text-align: center;
-    border-left: 1px solid #c9c7b8;
-    border-right: 1px solid #c9c7b8;
-    font-size: 12px;
+// Active Effects lists — the Effects tab on both the actor and item sheets. Skinned for the dark
+// ground: a gold eyebrow section header with column labels, and rows that light on hover. Disabled
+// effects mute out (and read italic) so the on/off state is legible at a glance.
+.effects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  // Section header (one per effect category): eyebrow label + column headings + create button.
+  .items-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.6rem 0 0.15rem;
+    padding: 0.25rem 0.45rem;
+    background: var(--sac-panel);
+    border: 1px solid var(--sac-line);
+    border-radius: 4px;
+    font-family: var(--sac-font-display);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    .effect-name {
+      flex: 2;
+      margin: 0;
+      font-size: 0.74rem;
+      color: var(--sac-gold);
+      text-align: left;
+    }
+    .effect-source,
+    .effect-duration {
+      flex: 1;
+      font-size: 0.6rem;
+      letter-spacing: 0.05em;
+      color: var(--sac-dim);
+    }
+    .item-controls {
+      flex: 0 0 auto;
+      a { color: var(--sac-dim); cursor: pointer; &:hover { color: var(--sac-gold-hi); } }
+    }
   }
 
-  .effect-controls {
-    border: none;
+  .item-list { list-style: none; margin: 0; padding: 0; }
+
+  // Effect row.
+  .item.effect {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.22rem 0.45rem;
+    border-bottom: 1px solid var(--sac-line);
+    &:last-child { border-bottom: none; }
+    &:hover { background: rgba(212, 165, 60, 0.05); }
+
+    .effect-name {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-width: 0;
+
+      .item-image {
+        flex: 0 0 auto;
+        border: 1px solid var(--sac-line);
+        border-radius: 3px;
+        background: var(--sac-inset);
+      }
+      h4 {
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--sac-text);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    .effect-source,
+    .effect-duration {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.72rem;
+      color: var(--sac-dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item-controls {
+      flex: 0 0 auto;
+      display: flex;
+      gap: 0.55rem;
+      a { color: var(--sac-dim); cursor: pointer; &:hover { color: var(--sac-gold-hi); } }
+    }
+
+    // Disabled effect: muted, name italic, so on/off reads at a glance.
+    &:has(.fa-toggle-off) {
+      opacity: 0.5;
+      .effect-name h4 { font-style: italic; }
+    }
   }
 }

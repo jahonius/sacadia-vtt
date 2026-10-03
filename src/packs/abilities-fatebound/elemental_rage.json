@@ -1,0 +1,51 @@
+{
+  "_id": "6ac60219893bf49e",
+  "_key": "!items!6ac60219893bf49e",
+  "name": "Elemental Rage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Blaze of Glory, increase the dice type of elemental damage dealt by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Elemental Rage",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blaze_of_glory",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "elemental_rage",
+      "transcribed": true,
+      "buildHash": "be960fe72cb4"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_id": "dcffa8b438d8ee44",
+  "_key": "!items!dcffa8b438d8ee44",
+  "name": "Call of Healing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one call point and give XD4 temporary HP (where X is half your proficiency, rounded up) to you and all allies within 15ft of you.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "tempHp": {
+      "formula": "(ceil(@proficiency/2))d4",
+      "target": "both",
+      "scaleLevels": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_healing",
+      "buildHash": "8acb9d6a5416"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "_id": "d4b367414a0e73fc",
+  "_key": "!items!d4b367414a0e73fc",
+  "name": "Dagger Threat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn when you wield two daggers, you may make two melee attacks with both daggers against the same target using one action. Deal damage as normal with each dagger.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "None"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        }
+      }
+    ],
+    "modifiers": [],
+    "multiAttack": {
+      "count": 2,
+      "targeting": "same"
+    },
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "dagger_threat",
+      "buildHash": "38197d8ea1b2"
+    }
+  }
+}

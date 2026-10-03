@@ -1,0 +1,80 @@
+{
+  "_id": "66aa5eb21dfcedb8",
+  "_key": "!items!66aa5eb21dfcedb8",
+  "name": "Spreadstep",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>At the end of your turn, if you have dealt damage to at least 4 separate targets or forced 4 separate targets to make trait checks, you may expend a reaction to make a melee attack against a new target you have not yet attacked or forced to make a trait check on your turn. Exhaust that reaction when you make this attack. You may apply boosts to this attack.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Courage 3"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:combat:unique-hits>=4"
+        }
+      ],
+      "requiresLabel": "damaged 4 separate targets this turn",
+      "upgrades": [
+        {
+          "ability": "bd_spreaderstep",
+          "max": null,
+          "maxFormula": "",
+          "requires": [
+            {
+              "atom": "self:combat:unique-hits>=3"
+            }
+          ],
+          "requiresLabel": "damaged 3 separate targets this turn"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_spreadstep",
+      "buildHash": "529d634b721e"
+    }
+  }
+}

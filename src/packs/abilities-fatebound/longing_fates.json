@@ -1,0 +1,42 @@
+{
+  "_id": "782c912c38a6b10d",
+  "_key": "!items!782c912c38a6b10d",
+  "name": "Longing Fates",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the range of Lucky Break to 30ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Lucky Break"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "longing_fates",
+      "transcribed": true,
+      "buildHash": "72cea38d949b"
+    }
+  }
+}

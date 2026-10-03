@@ -1,0 +1,32 @@
+{
+  "_id": "3e946b7316520150",
+  "_key": "!items!3e946b7316520150",
+  "name": "Mastery of Hemorrhage",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase the damage dealt through Hemorrhage you give to targets by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_hemorrhage",
+      "mastery": true,
+      "buildHash": "df4de5cb5da0"
+    }
+  }
+}

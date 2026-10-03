@@ -1,0 +1,88 @@
+{
+  "_id": "068771497e255b0a",
+  "_key": "!items!068771497e255b0a",
+  "name": "Chokehold",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have given a creature levels of Wrestle Pin and they use the Make Trait Check action against levels of Pin, if they fail that check you may expend a reaction to deal XD4 damage to them, where X is the levels of Pin they currently have. Increase the damage dice dealt this way to XD6 at level 5, and XD8 at level 11. If you are Steadied, you may increase the dice type of this damage by one type.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Power 2"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@target.pinned",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [
+      {
+        "label": "Chokehold (Steadied)",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_chokehold",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:steadied"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_chokehold",
+      "selfScaling": [
+        {
+          "level": 5,
+          "ladderIndex": 2
+        },
+        {
+          "level": 11,
+          "ladderIndex": 3
+        }
+      ],
+      "buildHash": "1385ddd5731c"
+    }
+  }
+}

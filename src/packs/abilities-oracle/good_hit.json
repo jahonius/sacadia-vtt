@@ -1,0 +1,61 @@
+{
+  "_id": "b9420f2626b92a8f",
+  "_key": "!items!b9420f2626b92a8f",
+  "name": "Good Hit",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/good_hit_icon.png",
+  "system": {
+    "description": "<p>When an ally within 30ft of you attempts to make an attack and misses, you may reduce your Madness by an amount N. For each level of Madness reduced, roll 1D4 and add it to their to-hit and damage (if they successfully hit). Declare how many Madness you expend when you use this ability. If you have Steadied, you may increase the dice type of Good Hit by 1 dice type.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "prereq": 4,
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "good_hit",
+      "buildHash": "38b8cdcb2124"
+    }
+  }
+}

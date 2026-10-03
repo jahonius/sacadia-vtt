@@ -1,0 +1,90 @@
+{
+  "_id": "77d7c6e4c4b6fbf3",
+  "_key": "!items!77d7c6e4c4b6fbf3",
+  "name": "Artery Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn while wielding a piercing or slashing weapon, attempt to give Hemorrhage equal to your Proficiency to one target within 5ft of you. Finesse check negates.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "hemorrhage",
+            "amount": "@proficiency"
+          },
+          {
+            "condition": "hemorrhage",
+            "amount": "1",
+            "restFlag": "jaggedBlade",
+            "predicate": [
+              {
+                "atom": "self:wielding:named:bd_jagged_blade"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": [
+        {
+          "ability": "bd_nip_and_tuck",
+          "max": 2,
+          "maxFormula": "",
+          "requires": [],
+          "requiresLabel": ""
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_artery_strike",
+      "buildHash": "c1a5b7c27632"
+    }
+  }
+}

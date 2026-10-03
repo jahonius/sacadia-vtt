@@ -1,0 +1,55 @@
+{
+  "_id": "d21d18467250316a",
+  "_key": "!items!d21d18467250316a",
+  "name": "Hidebite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make an attack of opportunity against a target, increase the damage dice of your attack by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hidebite",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hidebite",
+      "transcribed": true,
+      "buildHash": "d9917da94a1c"
+    }
+  }
+}

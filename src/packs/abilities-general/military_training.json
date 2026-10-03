@@ -1,0 +1,41 @@
+{
+  "_id": "565c550538a0545b",
+  "_key": "!items!565c550538a0545b",
+  "name": "Military Training",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You gain training in military weapons.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "military_training",
+      "buildHash": "d65abddc639d"
+    }
+  }
+}

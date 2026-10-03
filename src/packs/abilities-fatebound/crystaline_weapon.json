@@ -1,0 +1,60 @@
+{
+  "_id": "967782dea8a0f96e",
+  "_key": "!items!967782dea8a0f96e",
+  "name": "Crystaline Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Salt Elemental Weapon"
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*ceil(@proficiency/2)",
+      "anchor": "caster",
+      "followCaster": true,
+      "effect": {
+        "affects": "allies",
+        "includeCaster": true,
+        "insideStatus": "obscured"
+      }
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "crystaline_weapon",
+      "transcribed": true,
+      "buildHash": "f79964ed374f"
+    }
+  }
+}

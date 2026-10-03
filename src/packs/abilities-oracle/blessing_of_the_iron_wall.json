@@ -1,0 +1,116 @@
+{
+  "_id": "115f286a1defd66e",
+  "_key": "!items!115f286a1defd66e",
+  "name": "Blessing of the Iron Wall",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_iron_wall_icon.jpg",
+  "system": {
+    "description": "<p>As long as you maintain Focus, gain temporary PD, MD, or TD (choose one) equal to half your Madness (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Blessing of the Iron Wall",
+        "target": "defense.pd",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@madness/2)",
+        "predicate": [
+          {
+            "atom": "self:used:blessing_of_the_iron_wall"
+          },
+          {
+            "atom": "self:choice:blessing_of_the_iron_wall:pd"
+          }
+        ]
+      },
+      {
+        "label": "Blessing of the Iron Wall",
+        "target": "defense.md",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@madness/2)",
+        "predicate": [
+          {
+            "atom": "self:used:blessing_of_the_iron_wall"
+          },
+          {
+            "atom": "self:choice:blessing_of_the_iron_wall:md"
+          }
+        ]
+      },
+      {
+        "label": "Blessing of the Iron Wall",
+        "target": "defense.td",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@madness/2)",
+        "predicate": [
+          {
+            "atom": "self:used:blessing_of_the_iron_wall"
+          },
+          {
+            "atom": "self:choice:blessing_of_the_iron_wall:td"
+          }
+        ]
+      }
+    ],
+    "choice": {
+      "prompt": "Choose a defense to reinforce",
+      "options": [
+        {
+          "value": "pd",
+          "label": "Physical Defense"
+        },
+        {
+          "value": "md",
+          "label": "Mental Defense"
+        },
+        {
+          "value": "td",
+          "label": "Toughness Defense"
+        }
+      ]
+    },
+    "choiceRedirect": {
+      "requiresAbility": "shared_blessing",
+      "key": "system.bonuses.defense.<choice>",
+      "value": "ceil(@madness/2)",
+      "label": "Shared Blessing"
+    },
+    "madness": {
+      "prereq": 1,
+      "spend": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_the_iron_wall",
+      "buildHash": "7c708a256630"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "dab67ed515f51fdc",
+  "_key": "!items!dab67ed515f51fdc",
+  "name": "Named Weapons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may take each Named Weapon ability below once, and may only have a number of Named Weapon abilities up to your Proficiency at any given time. Each ability must correspond to a single unique weapon, and each weapon can only have one name. Whenever you take a Named Weapons ability, name one Versatile weapon you own. If it breaks for any reason, you may rename an unnamed versatile weapon during a Nightly or Long Rest to regain the ability.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_named_weapons",
+      "buildHash": "99a771e3beef"
+    }
+  }
+}

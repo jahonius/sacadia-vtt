@@ -1,0 +1,41 @@
+{
+  "_id": "fe90b5473af8bf57",
+  "_key": "!items!fe90b5473af8bf57",
+  "name": "Doublestride",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take the 5ft adjust boost, adjust your position by up to 15ft instead.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Longstride, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_doublestride",
+      "buildHash": "ed560f088731"
+    }
+  }
+}

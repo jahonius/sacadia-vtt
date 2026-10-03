@@ -1,0 +1,41 @@
+{
+  "_id": "fc7c686b4268bbcc",
+  "_key": "!items!fc7c686b4268bbcc",
+  "name": "A Helping Hold",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have given a target Wrestle Pin, you may use a reaction to increase a to-hit made by your ally against the target by the amount of Pin that target has. You may do this after the to-hit is rolled. Unless you use a Steadied reaction, reduce their Pin by 1 after doing this.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_a_helping_hold",
+      "buildHash": "aef8a360bed1"
+    }
+  }
+}

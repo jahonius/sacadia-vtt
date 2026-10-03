@@ -1,0 +1,49 @@
+{
+  "_id": "fe3a4e623a5d9b69",
+  "_key": "!items!fe3a4e623a5d9b69",
+  "name": "Clever Rend",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you rend a target with any rending effect, do not randomly determine what type of armor you rend. Instead, choose one armor type (PD, TD, or MD). You rend that first.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "combat",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "pd",
+        "td",
+        "md"
+      ],
+      "kind": "defense"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "clever_rend",
+      "buildHash": "faa375bfcec6"
+    }
+  }
+}

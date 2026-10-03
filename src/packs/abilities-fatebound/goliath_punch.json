@@ -1,0 +1,42 @@
+{
+  "_id": "cc2d1897f2b31172",
+  "_key": "!items!cc2d1897f2b31172",
+  "name": "Goliath Punch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you critically hit while wielding an extra heavy weapon, you may choose to have the critical effect be to throw the enemy up to 5X feet away, where X is half your Proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Humongous"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "goliath_punch",
+      "transcribed": true,
+      "buildHash": "684ddc5910cd"
+    }
+  }
+}

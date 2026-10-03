@@ -1,0 +1,43 @@
+{
+  "_id": "d9baff52356246a7",
+  "_key": "!items!d9baff52356246a7",
+  "name": "Mastery of Focus",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You are immune to any effect that would cause you to end Focus on a Focus action against your Will.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Level Feature",
+      "prerequisite": "Magus Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_mastery_of_focus",
+      "feature": true,
+      "level": 5,
+      "buildHash": "b3b2001bff22"
+    }
+  }
+}

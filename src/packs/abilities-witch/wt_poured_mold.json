@@ -1,0 +1,77 @@
+{
+  "_id": "3dfb6c174dae2a4e",
+  "_key": "!items!3dfb6c174dae2a4e",
+  "name": "Poured Mold",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take this ability, choose one greater adversarial condition from the following: Corroded, Debilitated, Pulled, Hemorrhage, Frenzy, Panic, Taunt. When you initiate this ability, choose one enemy target within 5ft. For as long as you maintain Focus, your chosen condition is treated as Stacking up to your Proficiency. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target. Once you initiate Focus on Poured Mold, if you drop Focus, they lose all levels of that condition.You may take this ability up to three times. Every time you do, choose a different condition from the list above. Any target you focus on treats all conditions for which you have Poured Mold as a Stacking with a single Focus.</p><p><em>[6|3]: 6 CSP the first time, 3 for each additional instance (up to three).</em></p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Poured Mold",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.stackingCap.<picks>",
+          "mode": 2,
+          "value": "@proficiency"
+        }
+      ],
+      "onEnd": {
+        "clear": [
+          "<picks>"
+        ]
+      }
+    },
+    "pick": {
+      "options": [
+        "corroded",
+        "debilitated",
+        "pulled",
+        "hemorrhage",
+        "frenzy",
+        "panic",
+        "taunt"
+      ],
+      "kind": "condition"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_poured_mold",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "4f1db2ac412a"
+    }
+  }
+}

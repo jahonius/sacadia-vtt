@@ -1,0 +1,61 @@
+{
+  "_id": "528cd7ef1f3bdf4b",
+  "_key": "!items!528cd7ef1f3bdf4b",
+  "name": "Cheststep",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to a creature within 5ft of you attempting to stand up from being Prone, you may force them to make a Power Check against your Check DC. If they fail, they remain Prone.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "power",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_cheststep",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "3245677ace5e"
+    }
+  }
+}

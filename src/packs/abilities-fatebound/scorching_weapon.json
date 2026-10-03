@@ -1,0 +1,65 @@
+{
+  "_id": "56af1220cea46889",
+  "_key": "!items!56af1220cea46889",
+  "name": "Scorching Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Fire Elemental Weapon"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "scorching_weapon",
+      "transcribed": true,
+      "buildHash": "0f017cf4001d"
+    }
+  }
+}

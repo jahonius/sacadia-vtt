@@ -1,0 +1,59 @@
+{
+  "_id": "4c7d6381fbe7eb13",
+  "_key": "!items!4c7d6381fbe7eb13",
+  "name": "Slamming Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Arrangement point. You do not need to end movement made on this Arrangement within 5ft of your starting square. Instead, move up to your move speed in a straight line to a target creature and make a melee attack against them. Gain 1x advantage to your To-Hit and increase your base damage by one dice type if you successfully hit for every 15ft of distance traveled through Slamming Strike.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ],
+      "pool": {
+        "key": "arrangement",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_slamming_strike",
+      "buildHash": "8b9121ee178e"
+    }
+  }
+}

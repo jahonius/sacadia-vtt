@@ -1,0 +1,48 @@
+{
+  "_id": "42ddf8e59d987223",
+  "_key": "!items!42ddf8e59d987223",
+  "name": "Adaptive Range",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/adaptive_range_icon.png",
+  "system": {
+    "description": "<p>You are adept at changing tactics in response to the tide of battle. Once per turn, you do not need to use an action to draw an item from a readied item slot (RIS).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "adaptive_range",
+      "buildHash": "414c3228ddf7"
+    }
+  }
+}

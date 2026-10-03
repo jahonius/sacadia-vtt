@@ -1,0 +1,41 @@
+{
+  "_id": "b947e5895e2bad3e",
+  "_key": "!items!b947e5895e2bad3e",
+  "name": "Spreaderstep",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Reduce the number of unique enemies you must have attacked on your turn to use Spreadstep from 4 to 3.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Spreadstep, Courage 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_spreaderstep",
+      "buildHash": "9b8bc6e49b67"
+    }
+  }
+}

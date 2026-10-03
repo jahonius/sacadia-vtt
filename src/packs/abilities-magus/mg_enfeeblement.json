@@ -1,0 +1,59 @@
+{
+  "_id": "27e2dcc5467544ca",
+  "_key": "!items!27e2dcc5467544ca",
+  "name": "Enfeeblement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you. Expend a Spell Slot and choose one weapon or attack they wield (e.g., a Bite attack, a Sword, their Unarmed Attack). For as long as you maintain Focus on that target, reduce the damage dice of that weapon by one dice type.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[3] · Research: Social Rites[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Enfeeblement",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.dieStep",
+          "mode": 2,
+          "value": "-1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_enfeeblement",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Social Rites[2]",
+      "buildHash": "be5a7cc670cb"
+    }
+  }
+}

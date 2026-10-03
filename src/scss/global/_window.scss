@@ -5,8 +5,8 @@
 .rollable {
   &:hover,
   &:focus {
-    color: #000;
-    text-shadow: 0 0 10px red;
+    color: var(--sac-gold-hi, #f0d078);
+    text-shadow: 0 0 8px rgba(212, 165, 60, 0.7);
     cursor: pointer;
   }
 }

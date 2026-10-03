@@ -1,0 +1,35 @@
+// Design tokens — the "pixel antiquity" skin, sampled from assets/icons/icon_template.jpg
+// (gold ring, leather field, olive corners, umber frame). Namespaced --sac-* on :root so the
+// actor sheet, item sheets, and (later, slice G) chat cards share one palette.
+//
+// Semantics, not just hues:
+//   --sac-gold-*  the accent — interactive, emphatic, "the number that matters"
+//   --sac-blood   Madness / danger / out-of-range (the system's original #911d20, lifted for
+//                 legibility on the dark ground; --sac-blood-deep keeps the original for fills)
+//   --sac-olive   "live / satisfied / ok" — predicate met, effect active
+:root {
+  // grounds
+  --sac-umber: #231a10;      // deepest ground (window content)
+  --sac-panel: #2d2315;      // raised panels, rows
+  --sac-inset: #191207;      // wells: meters, drawers, inputs
+  --sac-line: #4a3a22;       // default border
+  --sac-line-strong: #63512e; // section rules, headers
+
+  // inks
+  --sac-text: #ead9b0;       // parchment ink
+  --sac-dim: #a08c68;        // secondary text, labels
+
+  // accent + semantics
+  --sac-gold: #d4a53c;
+  --sac-gold-hi: #f0d078;
+  --sac-gold-lo: #8a6a1d;
+  --sac-olive: #8a8552;
+  --sac-blood: #c05055;
+  --sac-blood-deep: #911d20;
+
+  // type. The display face is a local old-style-serif stack for now; a shipped font file via
+  // CONFIG.fontDefinitions can replace the head of the stack later without touching components.
+  --sac-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sac-font-ui: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sac-font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+}

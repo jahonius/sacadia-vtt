@@ -1,0 +1,54 @@
+{
+  "_id": "d520d56f65399c16",
+  "_key": "!items!d520d56f65399c16",
+  "name": "Bloodletter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you attempt to give Hemorrhage to a target, they make Trait Checks against the effect at 1X disadvantage for every 3 levels of Hemorrhage you attempt to give them.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Finesse 6"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Bloodletter",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "0 - floor(@inflict.hemorrhage/3)",
+        "predicate": [
+          {
+            "atom": "inflict:hemorrhage"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bloodletter",
+      "transcribed": true,
+      "buildHash": "b24a3e5ee980"
+    }
+  }
+}

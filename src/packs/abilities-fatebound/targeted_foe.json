@@ -1,0 +1,90 @@
+{
+  "_id": "cef2089fdbb300c4",
+  "_key": "!items!cef2089fdbb300c4",
+  "name": "Targeted Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target. As long as you maintain Focus, add half your Fate (rounded up) to all to-hit and damage rolls made against that target. You may use this once per combat.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Targeted Foe",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@fate/2)",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          },
+          {
+            "atom": "!self:ability:tighten_focus"
+          }
+        ]
+      },
+      {
+        "label": "Targeted Foe",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@fate/2)",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          },
+          {
+            "atom": "!self:ability:tighten_focus"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "key": "targeted-foe",
+      "exclusive": true
+    },
+    "usage": {
+      "per": "combat",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "targeted_foe",
+      "transcribed": true,
+      "buildHash": "46120b85a490"
+    }
+  }
+}

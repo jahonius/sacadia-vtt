@@ -1,0 +1,54 @@
+{
+  "_id": "ce4a5442dc6b1478",
+  "_key": "!items!ce4a5442dc6b1478",
+  "name": "Torus’ Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of Clotsnipe by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Wiles[4] · Research: Religious Rites[2]"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Torus Touch",
+        "target": "damage",
+        "mode": "step",
+        "scope": "mg_clotsnipe",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_torus_touch",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Religious Rites[2]",
+      "buildHash": "4c4c0c545112"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "14da2c8ccdf9fc45",
+  "_key": "!items!14da2c8ccdf9fc45",
+  "name": "Flattened Earth",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dealt by Hoofstomp to XD4 damage, where X is your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hoofstomp, Courage 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "flattened_earth",
+      "transcribed": true,
+      "buildHash": "0b4c52ac21f6"
+    }
+  }
+}

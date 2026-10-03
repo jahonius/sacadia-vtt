@@ -1,0 +1,59 @@
+{
+  "_id": "b812c07d4738137a",
+  "_key": "!items!b812c07d4738137a",
+  "name": "Call of Coordination",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one call point and choose an ally within 15ft of you. You both make a melee attack simultaneously against a single target within melee weapon range of you and your ally. Both of you make this attack with 1X advantage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_coordination",
+      "buildHash": "ed93f639853e"
+    }
+  }
+}

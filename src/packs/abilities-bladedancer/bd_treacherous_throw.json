@@ -1,0 +1,86 @@
+{
+  "_id": "06bca2365ef6b2bc",
+  "_key": "!items!06bca2365ef6b2bc",
+  "name": "Treacherous Throw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Up to once per turn while wielding two versatile weapons, choose a point within 30ft of you. Every creature within 5Xft from that spot (where X is half your Proficiency, rounded up) makes a Finesse Check against your Check DC or takes 1D4 Fumble. Roll each Fumble separately. When you use this ability, remove one versatile weapon from your inventory until the end of combat.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "aoean",
+      "prerequisite": "Courage 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d4",
+            "predicate": [
+              {
+                "atom": "!self:ability:bd_slickthrow"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d6",
+            "predicate": [
+              {
+                "atom": "self:ability:bd_slickthrow"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_treacherous_throw",
+      "buildHash": "7461263aebf9"
+    }
+  }
+}

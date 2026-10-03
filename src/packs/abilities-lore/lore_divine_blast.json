@@ -1,0 +1,69 @@
+{
+  "_id": "7d455900b571b333",
+  "_key": "!items!7d455900b571b333",
+  "name": "Divine Blast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>While wielding a crossbow, expend one lore point along with an attack made with that crossbow. If you expend all of your AP in this shot, increase the dice type of your attack by 4 dice types.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Sentinel",
+      "prerequisite": "Sentinel, Level 13 · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "effects": [
+        {
+          "label": "Divine Blast",
+          "target": "damage",
+          "mode": "step",
+          "value": "4"
+        }
+      ],
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        },
+        "requires": [
+          {
+            "atom": "self:attack:weapon:crossbow"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_divine_blast",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "3f4c7772071c"
+    }
+  }
+}

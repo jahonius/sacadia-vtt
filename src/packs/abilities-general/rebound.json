@@ -1,0 +1,58 @@
+{
+  "_id": "8972f21a2fbf337e",
+  "_key": "!items!8972f21a2fbf337e",
+  "name": "Rebound",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn when you make a weapon attack with a Versatile weapon, you may use a Boost to attempt a 1x disadvantage attack against one additional target within 5ft of the first target.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "Throwing Hand"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "once": true,
+      "special": {
+        "extraAttacks": "1",
+        "extraAttackAdvantage": -1
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "rebound",
+      "buildHash": "8c9ed0f8c1a7"
+    }
+  }
+}

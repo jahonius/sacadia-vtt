@@ -1,0 +1,57 @@
+{
+  "_id": "869b6a3c4285f416",
+  "_key": "!items!869b6a3c4285f416",
+  "name": "Excuse Me",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If a target within melee range of you attempts to make a melee attack against another target, you may use your reaction to make a melee attack against them. Treat them as Surprised for this attack.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "None"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "excuse_me",
+      "buildHash": "443d012d74a4"
+    }
+  }
+}

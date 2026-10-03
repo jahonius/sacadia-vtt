@@ -1,0 +1,53 @@
+{
+  "_id": "82aef8b055c0876c",
+  "_key": "!items!82aef8b055c0876c",
+  "name": "Tear Apart",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to any attack made against a single target, if you kill that target, you rip them apart. All enemies within 5ft of you gain the Surprised Condition.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "special": {
+        "onKill": {
+          "adjacentSurprised": true,
+          "panicWith": "tearing_fright"
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tear_apart",
+      "transcribed": true,
+      "buildHash": "58c29fe93d5b"
+    }
+  }
+}

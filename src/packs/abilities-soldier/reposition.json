@@ -1,0 +1,42 @@
+{
+  "_id": "42d7059f7c01a23d",
+  "_key": "!items!42d7059f7c01a23d",
+  "name": "Reposition",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction, you may move 5ft into an unoccupied space. You may still provoke attacks of opportunity with this move unless you have Steadied, in which case you do not.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "reposition",
+      "buildHash": "93ef0a100a7f"
+    }
+  }
+}

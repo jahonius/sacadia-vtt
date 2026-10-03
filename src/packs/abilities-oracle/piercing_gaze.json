@@ -1,0 +1,41 @@
+{
+  "_id": "5be92d6fb91c93a3",
+  "_key": "!items!5be92d6fb91c93a3",
+  "name": "Piercing Gaze",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/piercing_gaze_icon.png",
+  "system": {
+    "description": "<p>Your attacks made vs. MD may penetrate the Voidsphere from either side. Other attacks do not.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Voidsphere"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "piercing_gaze",
+      "buildHash": "b0c276dc8621"
+    }
+  }
+}

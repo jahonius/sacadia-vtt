@@ -1,0 +1,39 @@
+{
+  "_id": "5943e8467a30fa00",
+  "_key": "!items!5943e8467a30fa00",
+  "name": "Fist Wraps",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "unarmed",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fist_wraps",
+      "kind": "weapon",
+      "buildHash": "17dfe4039b31"
+    }
+  }
+}

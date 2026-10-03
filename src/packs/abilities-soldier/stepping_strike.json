@@ -1,0 +1,66 @@
+{
+  "_id": "9e06f9075edc5df7",
+  "_key": "!items!9e06f9075edc5df7",
+  "name": "Stepping Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn when you are wielding a one-handed melee weapon, you may move 5ft into an empty square and simultaneously make a melee attack using that weapon against an enemy within 5ft of that new square. Treat the enemy as surprised.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "None"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stepping_strike",
+      "buildHash": "609c6a636a9c"
+    }
+  }
+}

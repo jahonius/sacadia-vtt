@@ -1,0 +1,53 @@
+{
+  "_id": "f34d65f66239d382",
+  "_key": "!items!f34d65f66239d382",
+  "name": "Tough Starter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you attempt to give a target Pin, they roll against the effect with 1X disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Power 5, Starter"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Tough Starter",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "inflict:pinned"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_tough_starter",
+      "buildHash": "abed734bb191"
+    }
+  }
+}

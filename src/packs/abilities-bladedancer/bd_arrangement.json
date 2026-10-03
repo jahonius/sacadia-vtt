@@ -1,0 +1,43 @@
+{
+  "_id": "df247635f4c7e96a",
+  "_key": "!items!df247635f4c7e96a",
+  "name": "Arrangement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take Arrangement, gain an Action Pool of Arrangement points equal to your Proficiency Score. You may spend skill points to learn various Arrangements. Whenever you may spend skill points, you may add to the list of Arrangements you know. When you use the ability, you may declare one of your known Arrangements. You get all of your Arrangement points back after a quick rest. When you use an Arrangement, you exhaust Focus in addition to any other limbs exhausted. When you use an Arrangement, you may not step on the same square twice through the use of that Arrangement. You may not split a Move action with an Arrangement. Unless otherwise noted, you must end movement made to use an Arrangement within 5ft of your starting position. You may only use an Arrangement if you wield at least one weapon.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "leg"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_arrangement",
+      "buildHash": "c18fe34780fd"
+    }
+  }
+}

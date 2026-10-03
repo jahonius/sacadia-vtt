@@ -1,0 +1,63 @@
+{
+  "_id": "6aa4c8ddef860441",
+  "_key": "!items!6aa4c8ddef860441",
+  "name": "The Hunted",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Beastly Presence, expend a Lore Point. They automatically fail all Trait Checks against the effect.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Warrior",
+      "prerequisite": "Brute Hulinari, Beastly Presence · p.175"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "beastly_presence"
+      },
+      "effects": [
+        {
+          "label": "The Hunted",
+          "target": "saveAdvantage",
+          "value": "-12"
+        }
+      ],
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_the_hunted",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "aa6be11b4ba3"
+    }
+  }
+}

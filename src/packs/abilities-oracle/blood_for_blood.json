@@ -1,0 +1,52 @@
+{
+  "_id": "4678727e60df725c",
+  "_key": "!items!4678727e60df725c",
+  "name": "Blood for Blood",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blood_for_blood_icon.jpg",
+  "system": {
+    "description": "<p>As a Boost to any ability which raises Madness, you may increase Madness by an additional 1 (to a max of 6), then take damage equal to M. You may not use this on abilities that trigger future Madness increases such as Curse of the Shared Mind.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "madnessExtra": 1
+      }
+    },
+    "madness": {
+      "gain": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blood_for_blood",
+      "buildHash": "ef31d2f12f48"
+    }
+  }
+}

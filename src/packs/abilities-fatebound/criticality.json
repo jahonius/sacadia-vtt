@@ -1,0 +1,55 @@
+{
+  "_id": "79d14791387a5586",
+  "_key": "!items!79d14791387a5586",
+  "name": "Criticality",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your attacks critically hit whenever you roll a natural 19 or 20, rather than only a 20.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Criticality",
+        "target": "critThreshold",
+        "mode": "add",
+        "scope": "all",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "!self:ability:divine_criticality"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "criticality",
+      "transcribed": true,
+      "buildHash": "1d4d3c2ee2bc"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "96c11379a55dfb38",
+  "_key": "!items!96c11379a55dfb38",
+  "name": "Longstride",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you take the 5ft adjust boost, adjust your position by up to 10ft instead.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Glidestep"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_longstride",
+      "buildHash": "80bbcf88b712"
+    }
+  }
+}

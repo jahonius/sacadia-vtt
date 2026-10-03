@@ -1,0 +1,50 @@
+{
+  "_id": "d95ba0d1f3e89c10",
+  "_key": "!items!d95ba0d1f3e89c10",
+  "name": "Freefire",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend any number of Trickshot points as a boost to a frenzied ranged attack. Make an additional frenzied ranged attack for every two Trickshot points expended this way without expending AP or further exhausting limbs.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 0,
+        "variable": true,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Finesse 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "special": {
+        "extraAttacks": "floor(@spent/2)"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "freefire",
+      "buildHash": "4b61e67a63bf"
+    }
+  }
+}

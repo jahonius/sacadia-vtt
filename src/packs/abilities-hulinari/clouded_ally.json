@@ -1,0 +1,63 @@
+{
+  "_id": "25f84c5d4c72b8ed",
+  "_key": "!items!25f84c5d4c72b8ed",
+  "name": "Clouded Ally",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are in Swarm Form and initiate Focus on Clouded Ally, increase the size of your token to X tiles, where X is your Proficiency. One of those tiles must be the tile you are in, and all must be adjacent to at least one other tile (no diagonals). You may select tiles occupied by creatures. For as long as you maintain Focus on Clouded Ally, when you take the Move action, all tiles move together, cannot separate, and trigger reaction attacks together. If one part of your token would forcibly separate from the others, your Focus immediately ends. When you end Focus on Clouded Ally, choose one tile occupied by Clouded Ally to be your new location. For as long as you maintain Focus on Clouded Ally, allies in a tile occupied by your Clouded Ally are treated as under Partial Cover.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "tiles",
+      "size": "@proficiency + @owns.grey_cloud + 2*@owns.stormcloud",
+      "anchor": "caster",
+      "carry": true,
+      "cloud": "ally",
+      "effect": {
+        "affects": "allies"
+      }
+    },
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:form:swarm"
+        }
+      ],
+      "requiresLabel": "in Swarm Form",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "clouded_ally",
+      "transcribed": true,
+      "buildHash": "c6fc3ab6bc7b"
+    }
+  }
+}

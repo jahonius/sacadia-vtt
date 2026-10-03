@@ -1,0 +1,61 @@
+{
+  "_id": "45a1c325dc64c7be",
+  "_key": "!items!45a1c325dc64c7be",
+  "name": "Pin Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>When you have Pinned an enemy through Natural Wrestler and they make a Trait Check against your Check DC, they treat your Check DC as one higher than it is.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Pin",
+        "target": "saveDc",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned"
+          },
+          {
+            "atom": "self:ability:thug_natural_wrestler"
+          }
+        ]
+      },
+      {
+        "label": "Mastery of the Pin",
+        "target": "checkDcVs",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "vs:checking:pinned"
+          },
+          {
+            "atom": "self:ability:thug_natural_wrestler"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_pin",
+      "mastery": true,
+      "buildHash": "048a7872b884"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "0a281ab22d02d373",
+  "_key": "!items!0a281ab22d02d373",
+  "name": "Yarrowstem",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/yarrowstem_icon.png",
+  "system": {
+    "description": "<p>After casting this, if you would drop to 0 madness on your turn or at its end, instead gain madness equal to half your Proficiency (rounded up). You may use this once per quick rest.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Heather Root"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "madness": {
+      "insaneOnly": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "yarrowstem",
+      "buildHash": "20a72a7b65f8"
+    }
+  }
+}

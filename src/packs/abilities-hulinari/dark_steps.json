@@ -1,0 +1,42 @@
+{
+  "_id": "acfb05b242540be3",
+  "_key": "!items!acfb05b242540be3",
+  "name": "Dark Steps",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Creatures attempting to move through the Dark Cloud treat the space as Difficult Terrain.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Dark Cloud"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "dark_steps",
+      "transcribed": true,
+      "buildHash": "c8292df0dbe1"
+    }
+  }
+}

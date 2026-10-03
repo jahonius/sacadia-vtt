@@ -1,0 +1,55 @@
+{
+  "_id": "941fff3e67473917",
+  "_key": "!items!941fff3e67473917",
+  "name": "Predator and Prey",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to a creature successfully making a melee attack against you, you may give them X Sting where X is half your Proficiency, rounded up. Immediately take the same amount of Sting.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [
+        {
+          "condition": "sting",
+          "amount": "ceil(@proficiency/2)"
+        }
+      ],
+      "target": [
+        {
+          "condition": "sting",
+          "amount": "ceil(@proficiency/2)"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "predator_and_prey",
+      "buildHash": "2d2c8c77df5e"
+    }
+  }
+}

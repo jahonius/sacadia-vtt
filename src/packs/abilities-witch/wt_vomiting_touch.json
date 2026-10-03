@@ -1,0 +1,75 @@
+{
+  "_id": "c8c5330c112a9a62",
+  "_key": "!items!c8c5330c112a9a62",
+  "name": "Vomiting Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose a target within 5ft of you with levels of Nausea. For every level of Nausea they possess, they make a Fate Check against one level of Deblitated against your Check DC. Whether they succeed or fail, they then lose all levels of Nausea.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Finesse[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "debilitated",
+            "amount": "@target.nausea"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "nausea",
+          "amount": "-6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_vomiting_touch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "eff7aff491ac"
+    }
+  }
+}

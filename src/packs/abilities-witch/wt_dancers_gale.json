@@ -1,0 +1,65 @@
+{
+  "_id": "f972d84bd7f80bc8",
+  "_key": "!items!f972d84bd7f80bc8",
+  "name": "Dancer’s Gale",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Dancerwind, you may expend additional AP. For every extra AP you expend, increase the move speed of the target by an additional 5ft.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": "Dancerwind, Finesse[4]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "wt_dancerwind"
+      },
+      "special": {
+        "prompt": {
+          "label": "Extra AP",
+          "max": "6"
+        },
+        "onConsume": {
+          "ap": "@spent"
+        },
+        "grantExtra": [
+          {
+            "key": "system.bonuses.speed",
+            "mode": 2,
+            "value": "5*@spent"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_dancers_gale",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "7fed7ccdae02"
+    }
+  }
+}

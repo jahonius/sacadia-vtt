@@ -1,0 +1,52 @@
+{
+  "_id": "c4f1197d5a73a80e",
+  "_key": "!items!c4f1197d5a73a80e",
+  "name": "I Have the High Ground",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have height advantage over targets, you are treated as having Half Cover.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "I Have the High Ground",
+        "target": "incomingAdvantage",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "self:height"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "i_have_the_high_ground",
+      "buildHash": "a7c59f05c538"
+    }
+  }
+}

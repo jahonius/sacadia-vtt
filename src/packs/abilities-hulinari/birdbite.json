@@ -1,0 +1,67 @@
+{
+  "_id": "4208a7c14fa73f21",
+  "_key": "!items!4208a7c14fa73f21",
+  "name": "Birdbite",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Make an unarmed attack against all enemy targets inside your Swarm. Roll to-hit and damage separately against each. If a larger creature occupies multiple Clouded Foe tiles, you may make a separate attack against each occupied square.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Foe, Courage 3"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": "pd"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "multiAttack": {
+      "count": 1,
+      "targeting": "each",
+      "requiresAbility": "",
+      "upgrade": {
+        "ability": "",
+        "count": 0
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "birdbite",
+      "transcribed": true,
+      "buildHash": "845b5d18515c"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "98bf299e1575aaf0",
+  "_key": "!items!98bf299e1575aaf0",
+  "name": "Falling Dance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Any enemy that cannot be moved by Maneuvering Step due to conditions, or objects or creatures blocking their path falls Prone.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": "Maneuvered Step"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_falling_dance",
+      "buildHash": "8fc26466d72e"
+    }
+  }
+}

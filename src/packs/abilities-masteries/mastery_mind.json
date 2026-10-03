@@ -1,0 +1,32 @@
+{
+  "_id": "ee80c39c33633465",
+  "_key": "!items!ee80c39c33633465",
+  "name": "Mastery of the Mind",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>When you are insane, insane-table effects cannot force you to attack an ally or treat allies as enemies.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_mind",
+      "mastery": true,
+      "buildHash": "c9a4a4bfe1d4"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "a332a17358fb97e4",
+  "_key": "!items!a332a17358fb97e4",
+  "name": "Slightly Darker Wear",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you wear only light armor, further increase your PD by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Finesse 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Slightly Darker Wear",
+        "target": "defense.pd",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:armor:only-light"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "slightly_darker_wear",
+      "buildHash": "53cad7a898c2"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "_id": "ba7921f20110bbe8",
+  "_key": "!items!ba7921f20110bbe8",
+  "name": "Skullcharge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use ‘Headbutt’ and move in a straight line at least 20ft to an enemy prior to attacking, add XD6 to your damage, where X is half your Proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Headbutt, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Skullcharge",
+        "target": "damageDice",
+        "mode": "dice",
+        "scope": "headbutt",
+        "value": "(ceil(@proficiency/2))d6",
+        "predicate": [
+          {
+            "atom": "self:choice:headbutt:charge"
+          },
+          {
+            "atom": "!self:ability:gorehorn"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "skullcharge",
+      "transcribed": true,
+      "buildHash": "9f7d1cd648b5"
+    }
+  }
+}

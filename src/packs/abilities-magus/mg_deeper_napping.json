@@ -1,0 +1,45 @@
+{
+  "_id": "a3f3a4bebf3b06ae",
+  "_key": "!items!a3f3a4bebf3b06ae",
+  "name": "Deeper Napping",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When a target has failed their initial Trait Check against Catnap, and they roll Fate Checks at the end of each turn, they roll these Fate Checks at 1X Disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Catnap · Research: Font Lore[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_deeper_napping",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Font Lore[3]",
+      "buildHash": "7bf2cc26f3d5"
+    }
+  }
+}

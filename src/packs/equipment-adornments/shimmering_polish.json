@@ -1,0 +1,22 @@
+{
+  "_id": "88f4625ab4d4a176",
+  "_key": "!items!88f4625ab4d4a176",
+  "name": "Shimmering Polish",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>When you hold a source of light, increase the radius of that light by 5ft Bright and 5ft Dim.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 30
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shimmering_polish",
+      "kind": "adornment",
+      "armorPrereq": "Iron Set",
+      "buildHash": "796e6b88dfa4"
+    }
+  }
+}

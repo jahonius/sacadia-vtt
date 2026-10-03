@@ -1,0 +1,55 @@
+{
+  "_id": "1c1263ec29ae3fda",
+  "_key": "!items!1c1263ec29ae3fda",
+  "name": "Hide of Beasts",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point. You are resistant to all damage you take by half your Proficiency (rounded up) for as long as you maintain Focus.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Hide of Beasts",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:used:hide_of_beasts"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hide_of_beasts",
+      "transcribed": true,
+      "buildHash": "dc3c5204d29e"
+    }
+  }
+}

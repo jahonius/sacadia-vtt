@@ -1,0 +1,43 @@
+{
+  "_id": "ddad1e0f3aa927ce",
+  "_key": "!items!ddad1e0f3aa927ce",
+  "name": "Semper Steady",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your first reaction each turn is always treated as Steadied.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_semper_steady",
+      "feature": true,
+      "level": 3,
+      "buildHash": "a2ccc7d9e75f"
+    }
+  }
+}

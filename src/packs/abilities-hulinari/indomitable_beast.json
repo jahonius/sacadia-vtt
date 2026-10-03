@@ -1,0 +1,58 @@
+{
+  "_id": "a25217a349a8f143",
+  "_key": "!items!a25217a349a8f143",
+  "name": "Indomitable Beast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Every time you kill a creature with a Bite attack, gain 1D10 temporary HP. Increase the dice rolled this way to 2D6 at level 5, and 2D8 at level 11.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Bite Attack"
+    },
+    "activities": [],
+    "modifiers": [],
+    "killTrigger": {
+      "tempHp": [
+        {
+          "minLevel": 0,
+          "formula": "1d10"
+        },
+        {
+          "minLevel": 5,
+          "formula": "2d6"
+        },
+        {
+          "minLevel": 11,
+          "formula": "2d8"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "indomitable_beast",
+      "transcribed": true,
+      "buildHash": "3edb46c43aba"
+    }
+  }
+}

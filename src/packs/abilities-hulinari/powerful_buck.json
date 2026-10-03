@@ -1,0 +1,42 @@
+{
+  "_id": "193a5795faa0b0f3",
+  "_key": "!items!193a5795faa0b0f3",
+  "name": "Powerful Buck",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Kick on an enemy, they are pushed 10ft away instead of 5ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hindkick, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "powerful_buck",
+      "transcribed": true,
+      "buildHash": "a4d8e0ed9454"
+    }
+  }
+}

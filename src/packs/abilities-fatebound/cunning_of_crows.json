@@ -1,0 +1,42 @@
+{
+  "_id": "7713696fbc98166d",
+  "_key": "!items!7713696fbc98166d",
+  "name": "Cunning of Crows",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Dodge action, you may add half your Fate Score (rounded up) to your Dodge roll.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunning_of_crows",
+      "transcribed": true,
+      "buildHash": "c6dbf4ebd442"
+    }
+  }
+}

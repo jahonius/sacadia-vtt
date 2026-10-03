@@ -1,0 +1,21 @@
+{
+  "_id": "5a381e83141c197d",
+  "_key": "!items!5a381e83141c197d",
+  "name": "Saltstone",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>While you have a Saltstone equipped in your RIS, gain +1 to your Check DC.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "saltstone",
+      "kind": "trinket",
+      "buildHash": "28c75432ae1e"
+    }
+  }
+}

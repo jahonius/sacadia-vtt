@@ -1,0 +1,69 @@
+{
+  "_id": "3814a79fb358dfb0",
+  "_key": "!items!3814a79fb358dfb0",
+  "name": "Targeted Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a Boost to a melee attack with a one-handed weapon, gain 1X disadvantage. If you hit, increase the base damage dice of your attack by two dice types.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Targeted Strike",
+          "target": "advantage.toHit",
+          "mode": "add",
+          "value": "-1"
+        },
+        {
+          "label": "Targeted Strike",
+          "target": "damage",
+          "mode": "step",
+          "value": "2"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "targeted_strike",
+      "buildHash": "4d10723a68a7"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_id": "55c203c62b2313fb",
+  "_key": "!items!55c203c62b2313fb",
+  "name": "Sword Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain +1 to melee to-hit and damage with weapons in the sword family. While holding your sword, you may use an action to assume a parrying stance until the start of your next turn; while in it you gain one additional reaction, usable only to make an opportunity attack.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Sword Mastery",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:sword"
+          }
+        ]
+      },
+      {
+        "label": "Sword Mastery",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:sword"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_sword",
+      "mastery": true,
+      "buildHash": "a1342f15f47b"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "bc16f01488e87195",
+  "_key": "!items!bc16f01488e87195",
+  "name": "Drag Faster",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to the Move action when you have given a target Dragged through Forceful Pinnings, move at full speed.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Forceful Pinnings, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_drag_faster",
+      "buildHash": "eb86cbb895c8"
+    }
+  }
+}

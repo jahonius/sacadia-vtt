@@ -1,0 +1,60 @@
+{
+  "_id": "ff33ed693ea65c29",
+  "_key": "!items!ff33ed693ea65c29",
+  "name": "Boosted Damage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack made with a divine weapon, increase the damage dice dealt by this weapon by one type if you hit.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Boosted Damage",
+          "target": "damage",
+          "mode": "step",
+          "value": "1"
+        }
+      ],
+      "special": {
+        "requires": [
+          "self:attack:divine"
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boosted_damage",
+      "transcribed": true,
+      "buildHash": "83f0b4c3cc1a"
+    }
+  }
+}

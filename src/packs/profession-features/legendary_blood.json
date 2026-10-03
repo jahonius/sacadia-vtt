@@ -1,0 +1,51 @@
+{
+  "_id": "252a52781ca1e51a",
+  "_key": "!items!252a52781ca1e51a",
+  "name": "Blood Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain 6 HP (permanently) now. Gain 1 damage resistance to damage you deal to yourself through effects other than rolling on the Insane Table.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Blood Mastery",
+        "target": "health.max",
+        "value": "6",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_blood",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "acd7d863d203"
+    }
+  }
+}

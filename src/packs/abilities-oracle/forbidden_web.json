@@ -1,0 +1,41 @@
+{
+  "_id": "98d442c83f8d6c63",
+  "_key": "!items!98d442c83f8d6c63",
+  "name": "Forbidden Web",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_web_icon.png",
+  "system": {
+    "description": "<p>As a Boost to Forbidden Knowledge, you may use Forbidden Knowledge against up to X targets, where X is your Proficiency. Reduce the damage dice dealt by Forbidden Knowledge by one dice type per enemy you target.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Future Visions"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "forbidden_web",
+      "buildHash": "5c91ad2fdafa"
+    }
+  }
+}

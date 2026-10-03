@@ -1,0 +1,66 @@
+{
+  "_id": "5357b73e4cef3ce2",
+  "_key": "!items!5357b73e4cef3ce2",
+  "name": "Partial Drivel",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/partial_drivel_icon.png",
+  "system": {
+    "description": "<p>Reduce your Madness by any amount when you initiate this. For as long as you maintain Focus, gain damage resistance (DR) by your Madness expended.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Partial Drivel",
+      "allyWith": "absolute_drivel",
+      "duration": {
+        "type": "focus"
+      },
+      "spend": {
+        "resource": "madness",
+        "max": "@madness"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.dr",
+          "mode": 2,
+          "value": "@spent"
+        }
+      ]
+    },
+    "madness": {
+      "prereq": 1,
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "partial_drivel",
+      "buildHash": "5b1bc4f3321d"
+    }
+  }
+}

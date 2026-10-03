@@ -1,0 +1,48 @@
+{
+  "_id": "ef8527f9202ae6c1",
+  "_key": "!items!ef8527f9202ae6c1",
+  "name": "Slingstunner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest when you make an attack using Slinger, attempt to give the target levels of Fatigue equal to your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Slinger, Finesse 6"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "slingstunner",
+      "buildHash": "d1fbc7781e96"
+    }
+  }
+}

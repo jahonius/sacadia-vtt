@@ -1,0 +1,57 @@
+{
+  "_id": "61b97c42fd3ce441",
+  "_key": "!items!61b97c42fd3ce441",
+  "name": "Bowman",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/bowman_icon.png",
+  "system": {
+    "description": "<p>For each successful ranged attack with a bow you make against a target you have not attacked yet this turn, add your Proficiency to damage dealt to new targets you have not attacked or forced to make a trait check on this turn.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Bowman",
+        "target": "damage",
+        "mode": "add",
+        "scope": "ranged",
+        "value": "@proficiency*@combat.newTargets",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:bow"
+          },
+          {
+            "atom": "target:new"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bowman",
+      "buildHash": "349a90c5b41f"
+    }
+  }
+}

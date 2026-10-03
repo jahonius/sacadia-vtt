@@ -1,0 +1,59 @@
+{
+  "_id": "46448753f8a76f85",
+  "_key": "!items!46448753f8a76f85",
+  "name": "Consumption",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a Lore Point as a Boost to any attack. For the rest of your turn, whatever damage you do, gain one fourth that much temporary HP (rounded up).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Heritage",
+      "prerequisite": "p.173"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Consumption",
+      "duration": {
+        "type": "consumed",
+        "on": "turnEnd"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.drainQuarter",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_consumption",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "6a2fc36ae401"
+    }
+  }
+}

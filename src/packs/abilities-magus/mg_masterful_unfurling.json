@@ -1,0 +1,45 @@
+{
+  "_id": "4cac9b5e9dc19296",
+  "_key": "!items!4cac9b5e9dc19296",
+  "name": "Masterful Unfurling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 3 Spell Slots.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Any Tome",
+      "prerequisite": "Fate[6] · Research: Handcopy[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_masterful_unfurling",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "any",
+      "research": "Handcopy[3]",
+      "buildHash": "fcac0a26420a"
+    }
+  }
+}

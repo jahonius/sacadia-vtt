@@ -1,0 +1,79 @@
+{
+  "_id": "888a6aa96e76ab8f",
+  "_key": "!items!888a6aa96e76ab8f",
+  "name": "Foment",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a lore point. For the next minute, every intelligent creature within 10Xft of you (X is your Proficiency) brashly acts upon feelings with no regard for impact. Creatures may make a Wiles Check against this effect (at 1X Disadvantage if they are not aware of the effect occurring). All attacks made against targets affected by Foment are made at 1X advantage. Creatures may make a Wiles Check against your Check DC as an action to end the effect.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fixerfolk",
+      "prerequisite": "Auanari Fixerfolk Ancestry · p.172"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Foment",
+      "duration": {
+        "type": "rounds",
+        "rounds": 10
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.incomingAdvantage",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_foment",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "3b0f7b1f0e6f"
+    }
+  }
+}

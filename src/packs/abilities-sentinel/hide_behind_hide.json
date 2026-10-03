@@ -1,0 +1,54 @@
+{
+  "_id": "d6cb20e90d4dcc65",
+  "_key": "!items!d6cb20e90d4dcc65",
+  "name": "Hide Behind Hide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may only use this on your first turn in combat. For as long as you maintain Focus, nothing in the combat sees you or may directly attack you. Focus immediately ends as soon as you make an attack, impose a trait check against a creature, take damage, or cause a physical change to the environment.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:combat:first-round"
+        }
+      ],
+      "requiresLabel": "your first turn in combat",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hide_behind_hide",
+      "buildHash": "fd5b57d28586"
+    }
+  }
+}

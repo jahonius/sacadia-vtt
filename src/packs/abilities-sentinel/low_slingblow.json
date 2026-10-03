@@ -1,0 +1,66 @@
+{
+  "_id": "c5788420eea51af0",
+  "_key": "!items!c5788420eea51af0",
+  "name": "Low Slingblow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may make a ranged attack with your sling. If you hit, instead of dealing damage attempt to give the target X levels of Fatigue equal to your Proficiency. Power Check negates.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "ranged",
+          "trait": "",
+          "defense": "pd"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "fatigue",
+            "amount": "@proficiency",
+            "saveNegate": "power"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "low_slingblow",
+      "buildHash": "65575ac4cdea"
+    }
+  }
+}

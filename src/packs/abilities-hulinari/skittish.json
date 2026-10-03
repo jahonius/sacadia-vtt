@@ -1,0 +1,58 @@
+{
+  "_id": "bed68aacab587b84",
+  "_key": "!items!bed68aacab587b84",
+  "name": "Skittish",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When in Pack Form, declare a target. When you do so, gain 1x advantage to all Trait Checks that enemy makes you roll.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Skittish",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:from:mark:skittish"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "key": "skittish",
+      "exclusive": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "skittish",
+      "transcribed": true,
+      "buildHash": "8d2774039ca5"
+    }
+  }
+}

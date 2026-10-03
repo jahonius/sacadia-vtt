@@ -1,0 +1,42 @@
+{
+  "_id": "cd133b96a8210390",
+  "_key": "!items!cd133b96a8210390",
+  "name": "God-given Luck",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the Fumble given to each target when using Lucky Break by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Lucky Break, Fate 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "god_given_luck",
+      "transcribed": true,
+      "buildHash": "5d993ca12c6b"
+    }
+  }
+}

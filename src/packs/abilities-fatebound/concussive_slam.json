@@ -1,0 +1,54 @@
+{
+  "_id": "3686234a1c02df37",
+  "_key": "!items!3686234a1c02df37",
+  "name": "Concussive Slam",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Bludgeonmaster, rend one armor on all targets who fail the Bludgeonmaster Check DC.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Bludgeonmaster, Power 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "bludgeonmaster"
+      },
+      "inflict": [
+        {
+          "condition": "rended",
+          "amount": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "concussive_slam",
+      "transcribed": true,
+      "buildHash": "1222bab55ea3"
+    }
+  }
+}

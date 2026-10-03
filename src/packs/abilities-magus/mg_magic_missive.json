@@ -1,0 +1,80 @@
+{
+  "_id": "2c982f08dab76a66",
+  "_key": "!items!2c982f08dab76a66",
+  "name": "Magic Missive",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose up to X targets within 60ft of you, where X is half your Proficiency, rounded up. Each target takes 1D4+Wiles mental damage. You may choose the same target for all Missives.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Research: Cultural Lore[1]"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": "md"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 4,
+            "formula": "",
+            "trait": "wiles",
+            "type": ""
+          }
+        ],
+        "inflict": [],
+        "autoHit": true
+      }
+    ],
+    "modifiers": [],
+    "multiAttack": {
+      "count": 0,
+      "countFormula": "ceil(@proficiency/2)",
+      "targeting": "split",
+      "requiresAbility": "",
+      "upgrade": {
+        "ability": "",
+        "count": 0
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_magic_missive",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Cultural Lore[1]",
+      "buildHash": "4ed4af156300"
+    }
+  }
+}

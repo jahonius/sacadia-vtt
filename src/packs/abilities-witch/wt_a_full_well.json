@@ -1,0 +1,43 @@
+{
+  "_id": "d6be47edd6d905cd",
+  "_key": "!items!d6be47edd6d905cd",
+  "name": "A Full Well",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The number of Divine Touch points you get per quick rest is equal to twice your Proficiency Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_a_full_well",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b2c30b93dad1"
+    }
+  }
+}

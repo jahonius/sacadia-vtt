@@ -1,0 +1,67 @@
+{
+  "_id": "75bb0816a207ae5c",
+  "_key": "!items!75bb0816a207ae5c",
+  "name": "Big Guns Expert",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one two-handed melee weapon you wield. Increase the damage dice of the chosen weapon by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Big Guns Expert",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:big_guns_expert"
+          },
+          {
+            "atom": "self:attack:hands:2"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [
+        "sword",
+        "axe",
+        "spear",
+        "bludgeon",
+        "other"
+      ],
+      "kind": "weaponType"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "big_guns_expert",
+      "buildHash": "6eb4ffc10747"
+    }
+  }
+}

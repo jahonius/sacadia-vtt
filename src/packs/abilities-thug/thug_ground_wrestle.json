@@ -1,0 +1,56 @@
+{
+  "_id": "3a69607fbe4f526a",
+  "_key": "!items!3a69607fbe4f526a",
+  "name": "Ground Wrestle",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you attempt to give Wrestle Pin to a target who is Prone, they make their Finesse Checks at 1X Disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Ground Wrestle",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "inflict:pinned"
+          },
+          {
+            "atom": "target:condition:prone"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_ground_wrestle",
+      "buildHash": "105a8c7c3f93"
+    }
+  }
+}

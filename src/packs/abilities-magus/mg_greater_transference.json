@@ -1,0 +1,44 @@
+{
+  "_id": "d5ce178079d97af8",
+  "_key": "!items!d5ce178079d97af8",
+  "name": "Greater Transference",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of Life Transference from XD6 to XD8.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Life Transference"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_transference",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "buildHash": "b07a0f0281b9"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "1bc6eaf079a1b6d7",
+  "_key": "!items!1bc6eaf079a1b6d7",
+  "name": "Imbued Training",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You gain training in imbued weapons.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "weapon-skills",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "imbued_training",
+      "buildHash": "ff63c6db7354"
+    }
+  }
+}

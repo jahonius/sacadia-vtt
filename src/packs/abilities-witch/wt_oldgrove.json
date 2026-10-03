@@ -1,0 +1,43 @@
+{
+  "_id": "b7a780218f559eac",
+  "_key": "!items!b7a780218f559eac",
+  "name": "Oldgrove",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the Dice Type of Olive Branch from XD6 to XD8.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Olive Branch, Promise of Nonviolence, Fate[4]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_oldgrove",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "db3f2258490e"
+    }
+  }
+}

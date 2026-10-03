@@ -1,0 +1,84 @@
+{
+  "_id": "12d205875a805772",
+  "_key": "!items!12d205875a805772",
+  "name": "Mindmeld",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mindmeld_icon.png",
+  "system": {
+    "description": "<p>You can read the surface thoughts of your soulbound target and can react accordingly. You may use a reaction to impose 1X disadvantage on any attack they make, or 1X advantage to any allied Trait Check against an ability they use.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Soulbinding, Fate 5"
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Mindmeld",
+      "options": [
+        {
+          "value": "hinder",
+          "label": "Their attack at disadvantage (target them)"
+        },
+        {
+          "value": "aid",
+          "label": "An ally's check at advantage (target the ally)"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Mindmeld",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "-1",
+          "predicate": [
+            {
+              "atom": "self:choice:mindmeld:hinder"
+            }
+          ]
+        },
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:choice:mindmeld:aid"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mindmeld",
+      "buildHash": "230bd1d3bd4e"
+    }
+  }
+}

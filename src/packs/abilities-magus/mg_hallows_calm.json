@@ -1,0 +1,45 @@
+{
+  "_id": "f87692c4d3c3439a",
+  "_key": "!items!f87692c4d3c3439a",
+  "name": "Hallow’s Calm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Spell Slot. You gain an Aura of 5ft. All creatures within this aura gain 1X Disadvantage to attacks made within this radius. Additionally, any Oracles who start their turn within this aura lose 1 Madness at the start of each turn. The radius of this aura increases by 5ft every turn that you expend a Focus action on it, to a max of 5Xft, where X is your Proficiency.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Wiles[5] · Research: You have Damaging Whispers and Hallowfell Traversal within your Tome"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_hallows_calm",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "You have Damaging Whispers and Hallowfell Traversal within your Tome",
+      "buildHash": "90334efdcfa3"
+    }
+  }
+}

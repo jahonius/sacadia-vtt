@@ -1,0 +1,44 @@
+{
+  "_id": "5851a770dd7c4858",
+  "_key": "!items!5851a770dd7c4858",
+  "name": "Vision Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase your number of prescient points by two.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_vision",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "f8657ed9fe44"
+    }
+  }
+}

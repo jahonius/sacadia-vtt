@@ -1,0 +1,52 @@
+{
+  "_id": "b2944e920c818a24",
+  "_key": "!items!b2944e920c818a24",
+  "name": "Help",
+  "type": "ability",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "description": "<p>Choose one targeted ally within 5ft of you and declare a specific action you wish to help them undertake. When your ally rolls to take that action, they roll with 1X advantage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Help",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.toHit",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_help",
+      "basic": true,
+      "buildHash": "ebf2707e8179"
+    }
+  }
+}

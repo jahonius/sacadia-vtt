@@ -1,0 +1,79 @@
+{
+  "_id": "392363a909b56808",
+  "_key": "!items!392363a909b56808",
+  "name": "Surrounded by Me",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a Boost to a or melee attack action, increase damage on that attack by half your Proficiency (rounded up) for each enemy within 5ft of you if it successfully hits. Treat Swarm enemies as a single entity for this effect.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "aoean",
+      "prerequisite": "Courage 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Surrounded by Me",
+          "target": "damage",
+          "mode": "add",
+          "value": "ceil(@proficiency/2)*@adjacentEnemies",
+          "predicate": [
+            {
+              "atom": "!self:ability:bd_surrounded_by_friends"
+            }
+          ]
+        },
+        {
+          "label": "Surrounded by Me",
+          "target": "damage",
+          "mode": "add",
+          "value": "ceil(@proficiency/2)*@adjacentCreatures",
+          "predicate": [
+            {
+              "atom": "self:ability:bd_surrounded_by_friends"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_surrounded_by_me",
+      "buildHash": "22967ee1b48b"
+    }
+  }
+}

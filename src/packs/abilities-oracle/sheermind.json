@@ -1,0 +1,68 @@
+{
+  "_id": "b8a028e99f0a5b19",
+  "_key": "!items!b8a028e99f0a5b19",
+  "name": "Sheermind",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sheermind_icon.png",
+  "system": {
+    "description": "<p>Attempt to give Delirium up to your Proficiency to one target within 60ft of you. They roll Wiles Checks against the effect.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "delirium",
+            "amount": "@proficiency"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sheermind",
+      "buildHash": "41d9c3ba347a"
+    }
+  }
+}

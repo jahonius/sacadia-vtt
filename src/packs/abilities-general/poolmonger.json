@@ -1,0 +1,45 @@
+{
+  "_id": "f30d56bf3e7120a3",
+  "_key": "!items!f30d56bf3e7120a3",
+  "name": "Poolmonger",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one Action Pool (e.g., Call Points, Arrangement Points, Trickshot Points, Prescient Points, or Trick Points). Increase the number of points you have by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "general",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "pool"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "poolmonger",
+      "buildHash": "260c5c841489"
+    }
+  }
+}

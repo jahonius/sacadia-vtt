@@ -1,0 +1,48 @@
+{
+  "_id": "55c4563b9fa6d963",
+  "_key": "!items!55c4563b9fa6d963",
+  "name": "Reverse Pankration",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For every 2 successful melee attacks you have made against a target this turn, increase your Check DC by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Reverse Pankration",
+        "target": "saveDc",
+        "mode": "add",
+        "value": "floor(@target.hits/2)"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_reverse_pankration",
+      "buildHash": "b5a495d398f6"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "6363cc7a24aace4d",
+  "_key": "!items!6363cc7a24aace4d",
+  "name": "Mastery of Paw and Wing",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase your movement speed by 5ft (and Fly speed if applicable).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of Paw and Wing",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_paw_and_wing",
+      "mastery": true,
+      "buildHash": "53506bfc4bea"
+    }
+  }
+}

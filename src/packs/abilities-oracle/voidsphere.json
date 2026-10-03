@@ -1,0 +1,57 @@
+{
+  "_id": "c14679bfd7fd00fb",
+  "_key": "!items!c14679bfd7fd00fb",
+  "name": "Voidsphere",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/voidsphere_icon.png",
+  "system": {
+    "description": "<p>You create a sphere with radius 5x your Madness in feet centered on a point you choose within 60ft. For as long as you maintain Focus, no spells may penetrate this sphere (from either direction). If your Madness changes, the radius of the aura changes. You may move the center of this sphere 10ft every turn when you expend a Focus action to maintain Focus on Voidsphere.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*@madness",
+      "anchor": "point",
+      "radiusPerMadness": true,
+      "effect": {
+        "affects": "all"
+      }
+    },
+    "madness": {
+      "insaneOnly": true,
+      "prereq": 1,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "voidsphere",
+      "buildHash": "590e39d1ee90"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "8d44bf312d83d6f5",
+  "_key": "!items!8d44bf312d83d6f5",
+  "name": "Club or Staff",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "club_or_staff",
+      "kind": "weapon",
+      "buildHash": "92d56a8f8dd5"
+    }
+  }
+}

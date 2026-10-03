@@ -1,0 +1,56 @@
+{
+  "_id": "79b09d2c0a539e8f",
+  "_key": "!items!79b09d2c0a539e8f",
+  "name": "Ribcrack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Kick on an enemy and they fail the trait check against it, you may expend a Boost to deal XD6 damage to them, where X is your Finesse.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Hindkick, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "basic_kick"
+      },
+      "special": {
+        "saveDamage": [
+          {
+            "level": 1,
+            "formula": "(@finesse)d6"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ribcrack",
+      "transcribed": true,
+      "buildHash": "e4bf2a56afe1"
+    }
+  }
+}

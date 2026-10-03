@@ -1,0 +1,42 @@
+{
+  "_id": "3afb27d74b7943b4",
+  "_key": "!items!3afb27d74b7943b4",
+  "name": "Rapidcarry",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your speed is not reduced when using Pack Mule.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Pack Mule, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "rapidcarry",
+      "transcribed": true,
+      "buildHash": "07248ee16442"
+    }
+  }
+}

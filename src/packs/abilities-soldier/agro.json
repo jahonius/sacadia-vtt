@@ -1,0 +1,60 @@
+{
+  "_id": "7aabaf1c8f2d1a10",
+  "_key": "!items!7aabaf1c8f2d1a10",
+  "name": "Agro",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy within 5ft of you. They make a Courage Check. If they fail, they move back 5X feet, where X is half your Proficiency (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "None"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "agro",
+      "buildHash": "800192c9063f"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "_id": "0165097836ba93df",
+  "_key": "!items!0165097836ba93df",
+  "name": "Greater Missives",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the base damage dice of Magic Missives to 1D6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Magic Missive"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Greater Missives",
+        "target": "damage",
+        "mode": "step",
+        "scope": "mg_magic_missive",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_missives",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "buildHash": "02bafc2d4f14"
+    }
+  }
+}

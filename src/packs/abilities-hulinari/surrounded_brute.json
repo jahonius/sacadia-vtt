@@ -1,0 +1,42 @@
+{
+  "_id": "76150facc0059dcb",
+  "_key": "!items!76150facc0059dcb",
+  "name": "Surrounded Brute",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Having the Surrounded Condition does not affect you: creatures gain no advantage on melee attacks against you for it.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "surrounded_brute",
+      "transcribed": true,
+      "buildHash": "1efba7200f87"
+    }
+  }
+}

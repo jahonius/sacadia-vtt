@@ -1,0 +1,43 @@
+{
+  "_id": "223dfa37ca49882e",
+  "_key": "!items!223dfa37ca49882e",
+  "name": "Promise of Nonviolence",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Lose access to all Witch abilities if you intentionally directly cause any creature to lose HP (i.e., make an attack against them, or give them Hemorrhage yourself). To recover your abilities, you must take the Atone action within your Divine Site. The Pact of Nonviolence is not the same as pacifism: assisting allies in harming an enemy is acceptable.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_promise_of_nonviolence",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "4b5a49dd7f2a"
+    }
+  }
+}

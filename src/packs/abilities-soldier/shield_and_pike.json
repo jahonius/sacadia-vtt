@@ -1,0 +1,41 @@
+{
+  "_id": "730a623f9ee301ca",
+  "_key": "!items!730a623f9ee301ca",
+  "name": "Shield and Pike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you wield a shield in one hand, you may wield a pike in the other. Treat it as a one-handed melee weapon when you wield it.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "Spearpoint, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shield_and_pike",
+      "buildHash": "fb8e979f6f39"
+    }
+  }
+}

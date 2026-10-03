@@ -1,0 +1,42 @@
+{
+  "_id": "6a6877e75fa4aa49",
+  "_key": "!items!6a6877e75fa4aa49",
+  "name": "Last Chance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack with a divine weapon, roll an additional 1D20. If that 1D20 would critically hit, you critically hit. You can only roll this D20 if your roll would originally hit, but not crit.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "last_chance",
+      "transcribed": true,
+      "buildHash": "60f4e51ec53c"
+    }
+  }
+}

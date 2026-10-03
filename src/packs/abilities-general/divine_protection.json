@@ -1,0 +1,52 @@
+{
+  "_id": "199f4b6b9a701041",
+  "_key": "!items!199f4b6b9a701041",
+  "name": "Divine Protection",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your TD by 1 when you wear a Cloth armor set.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Divine Protection",
+        "target": "defense.td",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:armor:cloth"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_protection",
+      "buildHash": "4f948ae8ba37"
+    }
+  }
+}

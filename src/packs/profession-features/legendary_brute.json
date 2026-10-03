@@ -1,0 +1,60 @@
+{
+  "_id": "3f59b2504128052f",
+  "_key": "!items!3f59b2504128052f",
+  "name": "Mastery of the Brute",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase the dice type of melee attacks made with your claws by one dice type when in Brute form.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Brute",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          },
+          {
+            "atom": "self:form:brute"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_brute",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "7da34b59baf0"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_id": "fce20d66f8d4be31",
+  "_key": "!items!fce20d66f8d4be31",
+  "name": "Tusk Headdress",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>When you add no AD, PD, MD, or TD from the armor you wear, gain +1 DR.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 80
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tusk_headdress",
+      "kind": "adornment",
+      "armorPrereq": "Fur Set",
+      "buildHash": "fea9b6d6494c"
+    }
+  }
+}

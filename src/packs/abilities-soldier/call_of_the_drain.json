@@ -1,0 +1,41 @@
+{
+  "_id": "acb3ae7de87fff9e",
+  "_key": "!items!acb3ae7de87fff9e",
+  "name": "Call of the Drain",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Call of the Enemy as a Boost to Imposing Figure, you may expend a number of Call Points up to your Proficiency, and choose targets to attempt to give Taunt up to your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "call",
+        "amount": 0,
+        "variable": true,
+        "max": "@proficiency"
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Call of the Enemy, Courage 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_the_drain",
+      "buildHash": "351a616819c6"
+    }
+  }
+}

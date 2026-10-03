@@ -1,0 +1,66 @@
+{
+  "_id": "b6e062bb229852e5",
+  "_key": "!items!b6e062bb229852e5",
+  "name": "Icy Veil",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot as a Boost to Chill Touch when you are dying. Increase the dice type of Chill Touch by 2 for every level of Battle Fatigue you possess.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Chill Touch, Wiles[2] · Research: Necromantic Lore[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "mg_chill_touch"
+      },
+      "effects": [
+        {
+          "label": "Icy Veil",
+          "target": "damage",
+          "mode": "step",
+          "value": "2*@battleFatigue"
+        }
+      ],
+      "special": {
+        "requires": [
+          {
+            "atom": "self:wounded"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_icy_veil",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Necromantic Lore[2]",
+      "buildHash": "584c26696de0"
+    }
+  }
+}

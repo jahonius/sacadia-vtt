@@ -1,0 +1,55 @@
+{
+  "_id": "a474c6d31df6e330",
+  "_key": "!items!a474c6d31df6e330",
+  "name": "Armor Mastery (Oracle)",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain +2 to your PD when you do not wear any physical armor.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Armor Mastery",
+        "target": "defense.pd",
+        "value": "2",
+        "predicate": [
+          {
+            "atom": "!self:armor:any"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_armor_oracle",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "faae30c344a1"
+    }
+  }
+}

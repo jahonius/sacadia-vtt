@@ -1,0 +1,66 @@
+{
+  "_id": "d7082f18c31c0a61",
+  "_key": "!items!d7082f18c31c0a61",
+  "name": "Most Dangerous Game",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you fight humanoid creatures, gain +1 to hit and damage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Wiles 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Most Dangerous Game",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:type:humanoid"
+          }
+        ]
+      },
+      {
+        "label": "Most Dangerous Game",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:type:humanoid"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "most_dangerous_game",
+      "buildHash": "bf1eef73229b"
+    }
+  }
+}

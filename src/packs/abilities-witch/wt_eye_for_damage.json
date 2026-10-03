@@ -1,0 +1,55 @@
+{
+  "_id": "63ad744c6f437fba",
+  "_key": "!items!63ad744c6f437fba",
+  "name": "Eye for Damage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft of you when you initiate this Focus. For as long as you maintain Focus, for each level of Specialized Lore they know about a target that would give them one fact about that target’s monster card, they deal 1D4 extra damage with each attack. Increase damage dealt this way to 1D6 at level 5, and 1D8 at level 11. Every turn you maintain Focus on Eye for Damage, you can only renew Focus when you are within 5ft of that ally.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": "Finesse[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Eye for Damage",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_eye_for_damage",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b6204782045f"
+    }
+  }
+}

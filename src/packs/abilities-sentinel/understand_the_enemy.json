@@ -1,0 +1,50 @@
+{
+  "_id": "4f1b1a55fcb32f50",
+  "_key": "!items!4f1b1a55fcb32f50",
+  "name": "Understand the Enemy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 60ft of you that is of a favored enemy type. As long as you maintain Focus on that target, the GM must tell you any single roll result they make for that target. If they make multiple rolls, they tell you a random one. You may use this once per quick rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "I Know That Guy, Wiles 5"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "understand_the_enemy",
+      "buildHash": "2292cb951f7f"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "4e9c6656750c7f30",
+  "_key": "!items!4e9c6656750c7f30",
+  "name": "Gut Punch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>In reaction to an ally successfully making a melee attack against a target to whom you have given Wrestle Pin and who currently has 3 or more levels of Wrestle Pin, you may expend a trick point and deal Harm damage.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trick",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Finesse 3, Harm"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "@target.pinned",
+            "denomination": 10,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_gut_punch",
+      "buildHash": "4bfc0ed0fa7f"
+    }
+  }
+}

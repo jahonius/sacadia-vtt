@@ -1,0 +1,65 @@
+{
+  "_id": "557ac12cc286146b",
+  "_key": "!items!557ac12cc286146b",
+  "name": "Destrap",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickshot point and make a ranged weapon attack against a target. If you hit, rend the target's armor by X instead of dealing damage, where X is half your Proficiency (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "twoArm"
+      ],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": "Wiles 3"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "ranged",
+          "trait": "",
+          "defense": "pd"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "rended",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "destrap",
+      "buildHash": "163b7060abc6"
+    }
+  }
+}

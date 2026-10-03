@@ -1,0 +1,51 @@
+{
+  "_id": "4419269fd8c62c9c",
+  "_key": "!items!4419269fd8c62c9c",
+  "name": "Reactive Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain one additional reaction each turn.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Reactive Mastery",
+        "target": "reactions",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_reactive",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "f0133374efd3"
+    }
+  }
+}

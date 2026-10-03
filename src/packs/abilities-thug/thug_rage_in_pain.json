@@ -1,0 +1,56 @@
+{
+  "_id": "f63e5575795173a4",
+  "_key": "!items!f63e5575795173a4",
+  "name": "Rage in Pain",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When raging, gain 1X advantage on trait checks against physical adversarial conditions until the end of rage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Berserker Rage"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Rage in Pain",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:raging"
+          },
+          {
+            "atom": "self:checking:physical"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_rage_in_pain",
+      "buildHash": "6040504d61ad"
+    }
+  }
+}

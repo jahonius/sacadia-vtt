@@ -1,0 +1,63 @@
+{
+  "_id": "50f1579163a32651",
+  "_key": "!items!50f1579163a32651",
+  "name": "Focused Enemy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>For each turn you maintain Focus (beginning with the turn you initiate this ability) on a Favored Enemy, increase all to-hits you make against the target by 1, to a maximum of your proficiency score.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Focused Enemy",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "min(@combat.focusRounds.focused_enemy, @proficiency)",
+        "predicate": [
+          {
+            "atom": "self:used:focused_enemy"
+          },
+          {
+            "atom": "target:mark:focused-enemy"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "key": "focused-enemy",
+      "exclusive": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "focused_enemy",
+      "buildHash": "b3ef8ea6f838"
+    }
+  }
+}

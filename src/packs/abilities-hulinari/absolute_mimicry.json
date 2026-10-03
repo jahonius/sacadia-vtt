@@ -1,0 +1,89 @@
+{
+  "_id": "d7e13febe712492b",
+  "_key": "!items!d7e13febe712492b",
+  "name": "Absolute Mimicry",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose a target within 30ft and give one of the following one-word commands to them. They make a Wiles Check against your Check DC or use their next action to follow the command. Once a target makes a trait check against this effect, you cannot use it against them again until a quick rest has ended. Stop: The target loses 1 AP on their next turn and does not get a reaction between now and the start of their turn. Flee: The target uses their first action to move 30ft away from the nearest enemy target, provoking a reaction attack as they do. Attack: The target uses their first turn to attack the nearest enemy. This effect cannot make them attack an ally. If there are no targets within range, they treat this like Stop. Drop: The target falls Prone as a reaction. They may stand up on their turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Wiles 4"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "self:choice:absolute_mimicry:drop"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Command",
+      "options": [
+        {
+          "value": "stop",
+          "label": "Stop"
+        },
+        {
+          "value": "flee",
+          "label": "Flee"
+        },
+        {
+          "value": "attack",
+          "label": "Attack"
+        },
+        {
+          "value": "drop",
+          "label": "Drop (Prone)"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "absolute_mimicry",
+      "transcribed": true,
+      "buildHash": "904f0e6db6b0"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "b0c5544c8db735be",
+  "_key": "!items!b0c5544c8db735be",
+  "name": "Swarm Defense",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Creatures do not get advantage to hit you when you are Surrounded.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Swarm Defense",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "self:surrounded"
+          },
+          {
+            "atom": "attack:melee"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "swarm_defense",
+      "buildHash": "1fd626e49579"
+    }
+  }
+}

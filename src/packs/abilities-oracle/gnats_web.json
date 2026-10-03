@@ -1,0 +1,41 @@
+{
+  "_id": "18b0af81209691c3",
+  "_key": "!items!18b0af81209691c3",
+  "name": "Gnat's Web",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/gnats_web_icon.png",
+  "system": {
+    "description": "<p>When you reduce the damage dealt by Forbidden Web for Forbidden Web, reduce it by one dice type for every enemy you hit, instead of every enemy you target.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Past the Web, Fate 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gnats_web",
+      "buildHash": "79560eb081cd"
+    }
+  }
+}

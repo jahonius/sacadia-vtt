@@ -1,0 +1,43 @@
+{
+  "_id": "8679d6d02717be11",
+  "_key": "!items!8679d6d02717be11",
+  "name": "Demigod",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your Power or Fate (choose one) by one additional point, to a maximum of 7.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 15"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fb_demigod",
+      "feature": true,
+      "level": 15,
+      "buildHash": "60342ba3be3f"
+    }
+  }
+}

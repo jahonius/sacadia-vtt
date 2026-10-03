@@ -1,0 +1,59 @@
+{
+  "_id": "d9ae850b16d55f43",
+  "_key": "!items!d9ae850b16d55f43",
+  "name": "Unhinge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>While insane, expend a Lore Point. Increase your Madness by X, where X is half your Proficiency, rounded up.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Oracle",
+      "prerequisite": "Oracle · p.175"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [
+        {
+          "condition": "madness",
+          "amount": "ceil(@proficiency/2)"
+        }
+      ],
+      "target": []
+    },
+    "madness": {
+      "insaneOnly": true,
+      "prereq": null,
+      "gain": "",
+      "spend": ""
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_unhinge",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "7094473dc6ef"
+    }
+  }
+}

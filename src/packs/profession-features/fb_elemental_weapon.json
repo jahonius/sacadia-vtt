@@ -1,0 +1,47 @@
+{
+  "_id": "ea7d12bbb1eb3762",
+  "_key": "!items!ea7d12bbb1eb3762",
+  "name": "Elemental Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your divine weapon does elemental damage (choose one when you take this ability: Earth, Air, Fire, Water, Rot, Salt) instead of normal damage. Elemental damage overcomes physical weapon resistances. Additionally, you may summon and dismiss your divine weapon with a Boost to any action, even if physically separated. The divine weapon does not take up space in your readied item slots (RIS).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "element"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fb_elemental_weapon",
+      "feature": true,
+      "level": 3,
+      "buildHash": "5c16abfce8f5"
+    }
+  }
+}

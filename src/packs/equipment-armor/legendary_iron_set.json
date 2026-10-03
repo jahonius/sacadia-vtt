@@ -1,0 +1,32 @@
+{
+  "_id": "55e654ea0e0c9362",
+  "_key": "!items!55e654ea0e0c9362",
+  "name": "Legendary Iron Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Heavy Armor Training, Prof[6]</em></p>",
+    "equipped": false,
+    "category": "heavy",
+    "material": "iron",
+    "defenses": {
+      "ad": 0,
+      "pd": 12,
+      "td": 4,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 31,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_iron_set",
+      "kind": "armor",
+      "buildHash": "c129919615d0"
+    }
+  }
+}

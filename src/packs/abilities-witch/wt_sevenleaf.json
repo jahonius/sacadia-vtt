@@ -1,0 +1,43 @@
+{
+  "_id": "5c5a78e3ed25aa21",
+  "_key": "!items!5c5a78e3ed25aa21",
+  "name": "Sevenleaf",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Fourleaf Touch on an ally, increase your ally’s Check DC by your Fate Score instead of half your Fate Score.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Fourleaf Touch"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_sevenleaf",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "9525c3b42d87"
+    }
+  }
+}

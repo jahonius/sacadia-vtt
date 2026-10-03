@@ -1,0 +1,44 @@
+{
+  "_id": "eca469032011a2f8",
+  "_key": "!items!eca469032011a2f8",
+  "name": "Killing Frenzy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you kill a target on your turn and make an additional attack still, treat your next target as Surprised for your first attack.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "killTrigger": {
+      "condition": "surprised"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_killing_frenzy",
+      "buildHash": "255e0d3b44cd"
+    }
+  }
+}

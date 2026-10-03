@@ -1,0 +1,42 @@
+{
+  "_id": "ce9c2198ad3da39e",
+  "_key": "!items!ce9c2198ad3da39e",
+  "name": "Nicking Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you critically hit with a melee attack using a piercing divine weapon and choose to maximize damage dealt, treat the damage dice of your weapon as one dice type higher for the purposes of maximizing that damage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Piercemaster"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "nicking_touch",
+      "transcribed": true,
+      "buildHash": "7b56bd1da743"
+    }
+  }
+}

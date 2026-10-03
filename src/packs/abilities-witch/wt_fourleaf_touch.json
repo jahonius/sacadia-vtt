@@ -1,0 +1,89 @@
+{
+  "_id": "9e3d48e65b865cd0",
+  "_key": "!items!9e3d48e65b865cd0",
+  "name": "Fourleaf Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft when you initiate this. For as long as you maintain Focus, increase their Check DC by half your Fate Score, rounded up. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Fourleaf Touch",
+      "requires": "wt_threeleaf_touch",
+      "options": [
+        {
+          "value": "ally",
+          "label": "An ally (raise their Check DC)"
+        },
+        {
+          "value": "enemy",
+          "label": "An enemy (Threeleaf Touch: lower it)"
+        }
+      ]
+    },
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Fourleaf Touch",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.checkDc",
+          "mode": 2,
+          "value": "ceil(@fate/2) + @owns.wt_sevenleaf*(@fate - ceil(@fate/2))",
+          "predicate": [
+            {
+              "atom": "!self:choice:wt_fourleaf_touch:enemy"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.checkDc",
+          "mode": 2,
+          "value": "0 - ceil(@fate/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:wt_fourleaf_touch:enemy"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_fourleaf_touch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "ae076cefe677"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "1e1904af80a35257",
+  "_key": "!items!1e1904af80a35257",
+  "name": "Why Are You Here?",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use Base Clobber when wielding a Ranged Weapon if a creature moves from 5ft away from you to further away. Do not trigger any reaction attacks through this attack.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "why_are_you_here",
+      "buildHash": "7e59c0c1d689"
+    }
+  }
+}

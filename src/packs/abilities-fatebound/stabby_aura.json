@@ -1,0 +1,51 @@
+{
+  "_id": "7414c4197b3d7b85",
+  "_key": "!items!7414c4197b3d7b85",
+  "name": "Stabby Aura",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dice dealt by Blade Aura by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Blade Aura, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Stabby Aura",
+        "target": "damage",
+        "mode": "step",
+        "scope": "blade_aura",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stabby_aura",
+      "transcribed": true,
+      "buildHash": "78a7fd5db481"
+    }
+  }
+}

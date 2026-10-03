@@ -1,0 +1,74 @@
+{
+  "_id": "bd7caea77ec67940",
+  "_key": "!items!bd7caea77ec67940",
+  "name": "Frightening Berserker",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are raging, you may use an action to attempt to give a single target within 5ft of you X levels of Panic, where X is equal to the number of successful attacks you have made this turn against that target (to a max of half your Proficiency, rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Berserker Rage"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "panic",
+            "amount": "min(@target.hits, ceil(@proficiency/2))"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "",
+      "max": 1,
+      "requires": [
+        {
+          "atom": "self:raging"
+        }
+      ],
+      "requiresLabel": "raging",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_frightening_berserker",
+      "buildHash": "1eab1463d625"
+    }
+  }
+}

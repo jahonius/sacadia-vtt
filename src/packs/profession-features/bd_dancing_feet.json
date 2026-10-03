@@ -1,0 +1,50 @@
+{
+  "_id": "c56e08461edbe2d8",
+  "_key": "!items!c56e08461edbe2d8",
+  "name": "Dancing Feet",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your Move speed by 5ft. You can freely move through any square occupied by another creature, though you cannot end your turn on this square.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 7"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Dancing Feet",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_dancing_feet",
+      "feature": true,
+      "level": 7,
+      "buildHash": "ed930d8d91d9"
+    }
+  }
+}

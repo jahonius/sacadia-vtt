@@ -1,0 +1,70 @@
+{
+  "_id": "9f3133dfa9c33c9b",
+  "_key": "!items!9f3133dfa9c33c9b",
+  "name": "Divine Sling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>While wielding a sling, expend one lore point along with an attack made with that sling. Choose a number of enemies up to X within an X by X square, where X is your Proficiency (measured in tiles). The furthest point of that square must be within your sling range. Every creature you select makes a Wiles Check against your Check DC or takes the Surprised Condition. This effect is in addition to all other effects your sling attack causes.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Sentinel",
+      "prerequisite": "Sentinel, Level 13 · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        },
+        "requires": [
+          {
+            "atom": "self:attack:weapon:sling"
+          }
+        ],
+        "extraSave": {
+          "trait": "wiles",
+          "inflict": [
+            {
+              "condition": "surprised",
+              "amount": "1"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_divine_sling",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "497ea9a3a4fa"
+    }
+  }
+}

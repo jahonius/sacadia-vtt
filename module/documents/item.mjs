@@ -60,17 +60,12 @@ export class SacadiaItem extends Item {
 
     // Initialize chat data.
     const speaker = ChatMessage.getSpeaker({ actor: this.actor });
-    const rollMode = game.settings.get('core', 'rollMode');
     const label = `[${item.type}] ${item.name}`;
 
     // If there's no roll data, send a chat message.
     if (!this.system.formula) {
-      ChatMessage.create({
-        speaker: speaker,
-        rollMode: rollMode,
-        flavor: label,
-        content: item.system.description ?? '',
-      });
+      // The chat's visibility mode (v14 `core.messageMode`) has to be applied to a plain message explicitly.
+      ChatMessage.create(ChatMessage.applyMode({ speaker, flavor: label, content: item.system.description ?? '' }));
     }
     // Otherwise, create a roll and send a chat message from it.
     else {
@@ -81,11 +76,7 @@ export class SacadiaItem extends Item {
       const roll = new Roll(rollData.formula, rollData.actor);
       // If you need to store the value first, uncomment the next line.
       // const result = await roll.evaluate();
-      roll.toMessage({
-        speaker: speaker,
-        rollMode: rollMode,
-        flavor: label,
-      });
+      roll.toMessage({ speaker, flavor: label }); // toMessage applies the chat's visibility mode itself
       return roll;
     }
   }

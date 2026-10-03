@@ -1,0 +1,64 @@
+{
+  "_id": "c48204d2ca9d4606",
+  "_key": "!items!c48204d2ca9d4606",
+  "name": "Compelling Gaze",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point to attempt to give X levels of Delirium to every enemy within 5ft of you, where X is half your Proficiency (rounded up). They make a Fate Check against this effect.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "delirium",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "compelling_gaze",
+      "transcribed": true,
+      "buildHash": "913d2db3964c"
+    }
+  }
+}

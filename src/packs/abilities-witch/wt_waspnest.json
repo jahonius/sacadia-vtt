@@ -1,0 +1,77 @@
+{
+  "_id": "7c1b57f9ed92c813",
+  "_key": "!items!7c1b57f9ed92c813",
+  "name": "Waspnest",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one enemy target when you initiate this. They make a Fate Check against your Check DC. If they fail, for as long as you maintain Focus on Waspnest, Sting increases the damage they take by 2 per level, instead of 1. They may make Trait Checks against this effect with a Make Trait Check action.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[5], Banebalm"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "grantOnFail": true
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Waspnest",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.stingExtra",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_waspnest",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b24884a4b5dd"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "ce9259a3099ee3bf",
+  "_key": "!items!ce9259a3099ee3bf",
+  "name": "Weapon Tail",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Name one versatile weapon you own. That weapon is on a rope. As a boost to throwing it, you may return it to you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_weapon_tail",
+      "buildHash": "1689215e96f0"
+    }
+  }
+}

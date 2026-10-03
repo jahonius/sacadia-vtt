@@ -1,0 +1,42 @@
+{
+  "_id": "4b3e6a9973ff2a83",
+  "_key": "!items!4b3e6a9973ff2a83",
+  "name": "Boost Stack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may apply up to three unique Boosts to attacks made with your divine weapon. Boosts taken this way cannot be the same.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Boosted Attack, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boost_stack",
+      "transcribed": true,
+      "buildHash": "735fb1c5a686"
+    }
+  }
+}

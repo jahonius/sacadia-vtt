@@ -1,0 +1,42 @@
+{
+  "_id": "6710244319a40d10",
+  "_key": "!items!6710244319a40d10",
+  "name": "Carried Sacrifice",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you are carrying an ally on your back and they would take damage from an attack, you may use your reaction to instead take that damage.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Pack Mule"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "carried_sacrifice",
+      "transcribed": true,
+      "buildHash": "75e69d332519"
+    }
+  }
+}

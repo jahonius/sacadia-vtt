@@ -1,0 +1,75 @@
+{
+  "_id": "013abaf6c87c8a0d",
+  "_key": "!items!013abaf6c87c8a0d",
+  "name": "Vampiric Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest you attempt to steal the life of a target. Choose one target. They make a Fate Check. If they fail, reduce their HP by XD6 and gain temporary HP equal to half the damage dealt (where X is half your Proficiency, rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Rot Elemental Weapon"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "drain": 0.5
+        },
+        "damage": [
+          {
+            "count": "ceil(@proficiency/2)",
+            "denomination": 6,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "vampiric_weapon",
+      "transcribed": true,
+      "buildHash": "5bf984c65397"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_id": "ae192f77623a10ea",
+  "_key": "!items!ae192f77623a10ea",
+  "name": "Mad Smear",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_smear_icon.png",
+  "system": {
+    "description": "<p>As a Boost to a single attack, increase your Madness by 1D3-1 and then take damage equal to your Madness. Increase your to-hit and damage for this attack by your Madness.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Wiles 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Mad Smear",
+          "target": "toHit",
+          "value": "@madness"
+        },
+        {
+          "label": "Mad Smear",
+          "target": "damage",
+          "value": "@madness"
+        }
+      ],
+      "special": {
+        "onConsume": {
+          "madness": "1d3-1",
+          "selfDamage": "@madness"
+        }
+      }
+    },
+    "madness": {
+      "prereq": 4,
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mad_smear",
+      "buildHash": "9e7a5ce56e73"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "0a5647fd7d2fba51",
+  "_key": "!items!0a5647fd7d2fba51",
+  "name": "Spirit Blade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point. For as long as you maintain Focus, your divine weapon glows with a spiritual energy. It attacks AD (the lowest armor score among MD, TD, PD) instead of other armor types. Additionally, your weapon can strike incorporeal targets.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spirit_blade",
+      "transcribed": true,
+      "buildHash": "91767e36721b"
+    }
+  }
+}

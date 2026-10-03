@@ -1,0 +1,75 @@
+{
+  "_id": "a5a456bcf79b3a38",
+  "_key": "!items!a5a456bcf79b3a38",
+  "name": "Corrosive Burns",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose a target within 5ft of you with levels of Hemorrhage. For every level of Hemorrhage they possess, they make a Fate Check against one level of Corrosion against your Check DC. Whether they succeed or fail, they then lose all levels of Hemorrhage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Finesse[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "corroded",
+            "amount": "@target.hemorrhage"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "hemorrhage",
+          "amount": "-6"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_corrosive_burns",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b61a459e6650"
+    }
+  }
+}

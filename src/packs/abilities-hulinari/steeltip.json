@@ -1,0 +1,42 @@
+{
+  "_id": "f760ae65f89aedab",
+  "_key": "!items!f760ae65f89aedab",
+  "name": "Steeltip",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever a creature deals damage to you through a melee attack vs. PD, deal damage back to them equal to half your Proficiency (rounded up). [0] Savage Blows: When you take this ability, you get an Action Pool of savage points equal to your Proficiency Score that you can only use in Brute Form. You get all savage points back after a quick rest. When you take this ability, you may spend skill points to learn savage blows. Whenever you may spend skill points, you may add to the list of savage blows you know:</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Courage 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "steeltip",
+      "transcribed": true,
+      "buildHash": "74c30f9960ad"
+    }
+  }
+}

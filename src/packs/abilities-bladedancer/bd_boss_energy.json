@@ -1,0 +1,54 @@
+{
+  "_id": "ca6e7a6f1c2cede5",
+  "_key": "!items!ca6e7a6f1c2cede5",
+  "name": "Boss Energy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you focus on Multiplicity and there is only one enemy, increase all damage you deal to the target by half your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Multiplicity, Courage 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Boss Energy",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2) * max(0, 2 - @combat.enemies) * min(1, @combat.enemies)",
+        "predicate": [
+          {
+            "atom": "self:used:bd_multiplicity"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_boss_energy",
+      "buildHash": "8597085f4b12"
+    }
+  }
+}

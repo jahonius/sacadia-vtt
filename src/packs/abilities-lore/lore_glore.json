@@ -1,0 +1,56 @@
+{
+  "_id": "1dc269cebc831e67",
+  "_key": "!items!1dc269cebc831e67",
+  "name": "Glore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Lore point in addition to making an attack (you may choose to expend this lore point after rolling to hit). When you expend this lore point, expend any number of additional unique Boosts to that attack.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fatebound",
+      "prerequisite": "Fatebound, Level 13 · p.174"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "special": {
+        "free": true,
+        "onConsume": {
+          "lore": 1
+        },
+        "unlimitedBoosts": true
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_glore",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "5980adb7021b"
+    }
+  }
+}

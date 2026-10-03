@@ -1,0 +1,42 @@
+{
+  "_id": "244801b27ffcd3b0",
+  "_key": "!items!244801b27ffcd3b0",
+  "name": "Bladius",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the radius of Blade Aura from 5ft to 10ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Blade Aura, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bladius",
+      "transcribed": true,
+      "buildHash": "06d6be00efc3"
+    }
+  }
+}

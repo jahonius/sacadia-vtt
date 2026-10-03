@@ -1,0 +1,43 @@
+{
+  "_id": "a0b471971a6850e1",
+  "_key": "!items!a0b471971a6850e1",
+  "name": "Pin the Tail",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose an enemy target with 2 Pin within 30ft of you. On their next turn, you choose which arm the target must treat as Pinned.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_pin_the_tail",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "030a3dd14fd4"
+    }
+  }
+}

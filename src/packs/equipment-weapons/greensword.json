@@ -1,0 +1,39 @@
+{
+  "_id": "f920bffc3c732ad3",
+  "_key": "!items!f920bffc3c732ad3",
+  "name": "Greensword",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Heavy Weapons, Fate[3]</em></p><p>Sickly Radiation: at the start of each round you wield it, take 1D6 damage and permanently reduce your Max HP by that amount.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5000,
+    "equipped": false,
+    "traits": "",
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "sword",
+    "weaponDamage": {
+      "count": "2",
+      "denomination": 10,
+      "trait": "wiles"
+    },
+    "hands": 2,
+    "defense": "md",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greensword",
+      "kind": "weapon",
+      "buildHash": "84dc232ed89e"
+    }
+  }
+}

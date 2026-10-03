@@ -1,0 +1,53 @@
+{
+  "_id": "ba27d8ad68da973f",
+  "_key": "!items!ba27d8ad68da973f",
+  "name": "Kato Champion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are Prone, you do not receive 1X disadvantage to attacks you make.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Kato Champion",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:prone"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_kato_champion",
+      "buildHash": "dede5a97d024"
+    }
+  }
+}

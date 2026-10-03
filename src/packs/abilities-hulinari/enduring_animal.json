@@ -1,0 +1,54 @@
+{
+  "_id": "1c123645cbfc3214",
+  "_key": "!items!1c123645cbfc3214",
+  "name": "Enduring Animal",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Roll all Trait Checks against Fatigue using the ‘Make Trait Check’ action at 1X advantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Enduring Animal",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:resisting:fatigue"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "enduring_animal",
+      "transcribed": true,
+      "buildHash": "4320ffe97805"
+    }
+  }
+}

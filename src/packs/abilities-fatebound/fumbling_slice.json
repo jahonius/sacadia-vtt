@@ -1,0 +1,42 @@
+{
+  "_id": "32d62815a72cf9ba",
+  "_key": "!items!32d62815a72cf9ba",
+  "name": "Fumbling Slice",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you critically hit a target, give them 1D4 Fumble in addition to other critical effects.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Slicemaster"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fumbling_slice",
+      "transcribed": true,
+      "buildHash": "1425c39bc748"
+    }
+  }
+}

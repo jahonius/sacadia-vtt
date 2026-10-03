@@ -1,0 +1,43 @@
+{
+  "_id": "276a21dfa89bcc42",
+  "_key": "!items!276a21dfa89bcc42",
+  "name": "Reduced Fare",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Balanced Fare, the target only takes XD4 damage. If you have Harmed Fare, this applies to damage you would deal to yourself as well.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Fate[3], Balanced Fare"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_reduced_fare",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "05666c706b3c"
+    }
+  }
+}

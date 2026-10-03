@@ -1,0 +1,57 @@
+{
+  "_id": "9d0f3fee2b344031",
+  "_key": "!items!9d0f3fee2b344031",
+  "name": "Erratic Charge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>All creatures who make an attack of opportunity against you when you use Charge the Line do so with 1X Disadvantage. This stacks with other sources of disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Charge the Line, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Erratic Charge",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "predicate": [
+          {
+            "atom": "attack:opportunity"
+          },
+          {
+            "atom": "self:used:charge_the_line"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "erratic_charge",
+      "transcribed": true,
+      "buildHash": "b898f1478a20"
+    }
+  }
+}

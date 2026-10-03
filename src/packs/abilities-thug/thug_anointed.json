@@ -1,0 +1,53 @@
+{
+  "_id": "e94cd58afd39ce62",
+  "_key": "!items!e94cd58afd39ce62",
+  "name": "Anointed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You get 1X advantage on checks against Pin when it is first given to you (but not on use of the 'Make Trait Check' action).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "tangler",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Anointed",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:saving:pinned"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_anointed",
+      "buildHash": "5a0d334ec394"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "907d230f5aedb8fc",
+  "_key": "!items!907d230f5aedb8fc",
+  "name": "Surprise Disruption",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you successfully take the Disruption action against a target, they become Surprised.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Disruption"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_surprise_disruption",
+      "buildHash": "d093e78aaec4"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_id": "ec3c0b72d869259e",
+  "_key": "!items!ec3c0b72d869259e",
+  "name": "Open the Third Eye",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/open_the_third_eye_icon.png",
+  "system": {
+    "description": "<p>You can discern the positions of hidden creatures. If there are creatures within 5x your Madness in feet of you, you can see them in their true form even if they are disguised, invisible, or hiding. You also learn their creature type.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "revealWithin": "5*@madness"
+    },
+    "madness": {
+      "prereq": 1
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "open_the_third_eye",
+      "buildHash": "3bb113eba766"
+    }
+  }
+}

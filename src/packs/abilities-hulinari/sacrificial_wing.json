@@ -1,0 +1,42 @@
+{
+  "_id": "94eb16b57e72919b",
+  "_key": "!items!94eb16b57e72919b",
+  "name": "Sacrificial Wing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Reaction when you are maintaining Focus on Clouded Ally and a target of Clouded Ally is attacked, you may take all the damage instead.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Ally, Courage 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sacrificial_wing",
+      "transcribed": true,
+      "buildHash": "cb99882238f6"
+    }
+  }
+}

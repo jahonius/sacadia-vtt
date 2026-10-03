@@ -1,0 +1,42 @@
+{
+  "_id": "fd16ac91b38c2022",
+  "_key": "!items!fd16ac91b38c2022",
+  "name": "Larger Than Life",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your Brute Form is a Large creature rather than Medium.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "larger_than_life",
+      "transcribed": true,
+      "buildHash": "4dc4d1cc09ed"
+    }
+  }
+}

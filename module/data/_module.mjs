@@ -5,6 +5,6 @@ export {default as SacadiaNPC} from "./actor-npc.mjs";
 
 // Export Items
 export {default as SacadiaItemBase} from "./base-item.mjs";
-export {default as SacadiaItem} from "./item-item.mjs";
-export {default as SacadiaFeature} from "./item-feature.mjs";
-export {default as SacadiaSpell} from "./item-spell.mjs";
+export {default as SacadiaAbility} from "./item-ability.mjs";
+export {default as SacadiaArmor} from "./item-armor.mjs";
+export {default as SacadiaGear} from "./item-gear.mjs";

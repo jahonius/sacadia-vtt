@@ -1,0 +1,79 @@
+{
+  "_id": "c4373c61d86be68a",
+  "_key": "!items!c4373c61d86be68a",
+  "name": "Fateful Fumble",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Lore point to give 2D6 Fumble to X targets within 60ft of you, where X is equal to your Proficiency. Fumble given this way increases to 2D8 at level 5, and 2D10 at level 11.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fatebound",
+      "prerequisite": "Fatebound · p.174"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "fumbled",
+          "amount": "2d6",
+          "predicate": [
+            {
+              "atom": "self:level<5"
+            }
+          ]
+        },
+        {
+          "condition": "fumbled",
+          "amount": "2d8",
+          "predicate": [
+            {
+              "atom": "self:level>=5"
+            },
+            {
+              "atom": "self:level<11"
+            }
+          ]
+        },
+        {
+          "condition": "fumbled",
+          "amount": "2d10",
+          "predicate": [
+            {
+              "atom": "self:level>=11"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_fateful_fumble",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "ffc0b39c5b9f"
+    }
+  }
+}

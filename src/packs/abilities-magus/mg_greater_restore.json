@@ -1,0 +1,45 @@
+{
+  "_id": "1a1bd422deadeaad",
+  "_key": "!items!1a1bd422deadeaad",
+  "name": "Greater Restore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Lesser Restore, you may remove X levels of any Greater Mental Condition (Fatigue, Frenzy, Panic, Taunt) or the Surprised Condition.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Lesser Restore · Research: Magic Identification[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_restore",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magic Identification[3]",
+      "buildHash": "21c5c1d3e6f1"
+    }
+  }
+}

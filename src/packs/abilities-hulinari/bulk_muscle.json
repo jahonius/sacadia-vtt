@@ -1,0 +1,53 @@
+{
+  "_id": "73241df445d37a6b",
+  "_key": "!items!73241df445d37a6b",
+  "name": "Bulk Muscle",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your base Move speed in Pack form by 10ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Need for Speed, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Bulk Muscle",
+        "target": "speed",
+        "value": "10",
+        "predicate": [
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bulk_muscle",
+      "transcribed": true,
+      "buildHash": "8c1d02fbab2b"
+    }
+  }
+}

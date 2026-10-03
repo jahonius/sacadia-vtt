@@ -1,0 +1,51 @@
+{
+  "_id": "4e2521a177c975d1",
+  "_key": "!items!4e2521a177c975d1",
+  "name": "Mastery of the Step",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase your Move speed by 5ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Step",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_step",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "d47863e98225"
+    }
+  }
+}

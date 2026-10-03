@@ -1,0 +1,49 @@
+{
+  "_id": "de506315cf71cb41",
+  "_key": "!items!de506315cf71cb41",
+  "name": "Cascading Cleave",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you cleave through an enemy with Slicemaster, add 1D10 damage to the next target. Increase damage dealt this way to 2D6 at level 11. [3] Hack ‘n’ SlashA: (Prerequisite: Slicemaster, Power 5). Up to once per turn, expend a number of AP up to half your Proficiency (rounded up) in a consistent attack against a single target using a slashing divine weapon. Instead of gaining advantage on to-hit, increase the damage dice by 1 dice type for each AP expended this way if you hit.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Slicemaster"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cascading_cleave",
+      "transcribed": true,
+      "buildHash": "006dddbf476b"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "816486ece9534474",
+  "_key": "!items!816486ece9534474",
+  "name": "Pike",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 30,
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "spear",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 10
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pike",
+      "kind": "weapon",
+      "buildHash": "51d18a29d473"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "0d57b565f20a601e",
+  "_key": "!items!0d57b565f20a601e",
+  "name": "Pigsqueak Tuber",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": "Heart of Pine, Finesse[5]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_pigsqueak_tuber",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "0c89d57480a4"
+    }
+  }
+}

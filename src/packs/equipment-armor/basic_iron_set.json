@@ -1,0 +1,32 @@
+{
+  "_id": "712d1ec0ecaa274f",
+  "_key": "!items!712d1ec0ecaa274f",
+  "name": "Basic Iron Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Heavy Armor Training, Prof[2]</em></p>",
+    "equipped": false,
+    "category": "heavy",
+    "material": "iron",
+    "defenses": {
+      "ad": 0,
+      "pd": 8,
+      "td": 2,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 22,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_iron_set",
+      "kind": "armor",
+      "buildHash": "71233b399a58"
+    }
+  }
+}

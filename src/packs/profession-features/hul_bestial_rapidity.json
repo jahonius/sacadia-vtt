@@ -1,0 +1,43 @@
+{
+  "_id": "22a22c3ec607b294",
+  "_key": "!items!22a22c3ec607b294",
+  "name": "Bestial Rapidity",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you change forms, it only exhausts one limb. When you do, lose all levels of Pin.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 7"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hul_bestial_rapidity",
+      "feature": true,
+      "level": 7,
+      "buildHash": "e3f4a023fd50"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "_id": "fd08d3bb5feb21c4",
+  "_key": "!items!fd08d3bb5feb21c4",
+  "name": "Spring Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Greater Elemental Weapon, Water Elemental Weapon"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "",
+        "ap": "",
+        "lore": "",
+        "reactions": "0 - @spent"
+      },
+      "apGain": "@spent"
+    },
+    "amountPrompt": {
+      "label": "Unused reactions to exhaust",
+      "max": "@reactions"
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spring_weapon",
+      "transcribed": true,
+      "buildHash": "95927688b7b0"
+    }
+  }
+}

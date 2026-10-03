@@ -1,0 +1,70 @@
+{
+  "_id": "70dfe7923e85d44d",
+  "_key": "!items!70dfe7923e85d44d",
+  "name": "Heavy Bloom",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You warp the earth within 10X feet of you to reflect your Font’s arcane power. Within 10X feet of you when you use this and for the following year, the ground is warped as difficult terrain for all creatures not Fontmade from the same Font. Additionally when you use this, all creatures within the radius of effect take elemental damage (of the type associated with your Font) equal to XD12, where X is half your Proficiency (Power Check halves).</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fontborne",
+      "prerequisite": "Heavily Corrupted Fontborne Heritage · p.172"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "power",
+          "dc": null,
+          "onSuccess": "half",
+          "ext": {}
+        },
+        "damage": [
+          {
+            "count": "ceil(@proficiency/2)",
+            "denomination": 12,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_heavy_bloom",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "5d8683d49fda"
+    }
+  }
+}

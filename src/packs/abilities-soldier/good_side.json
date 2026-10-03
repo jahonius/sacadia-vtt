@@ -1,0 +1,41 @@
+{
+  "_id": "5404b6527d784022",
+  "_key": "!items!5404b6527d784022",
+  "name": "Good Side",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the benefit of Reduced Threat from half your Courage to your Courage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Reduced Threat, Courage 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "good_side",
+      "buildHash": "e278fca2fc14"
+    }
+  }
+}

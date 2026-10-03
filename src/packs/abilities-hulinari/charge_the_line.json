@@ -1,0 +1,77 @@
+{
+  "_id": "8d530d113d857d1b",
+  "_key": "!items!8d530d113d857d1b",
+  "name": "Charge the Line",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use an action when in Pack Form to move your movement speed in a straight line. Any creature along that line (occupying a square you cross through) must make a Finesse Check or be knocked 5ft away from that line. If they succeed at the Finesse Check, Charge the Line ends and you stop 5ft in front of them. When using Charge the Line, you may not end your movement in an occupied square. Charge the Line provokes reaction attacks from creatures not in the line but within melee range. Creatures in the line may make a reaction attack, but automatically fail against Charge the Line if they do so. Additionally, they make their Reaction Attacks at 1X Disadvantage.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [
+          {
+            "count": "@owns.hoofstomp * max(ceil(@proficiency/2), @owns.flattened_earth * @proficiency)",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1",
+            "predicate": [
+              {
+                "atom": "self:ability:momentum"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "charge_the_line",
+      "transcribed": true,
+      "buildHash": "726f180f88ba"
+    }
+  }
+}

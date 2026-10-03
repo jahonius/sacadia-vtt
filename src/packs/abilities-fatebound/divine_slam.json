@@ -1,0 +1,59 @@
+{
+  "_id": "18864c3d7b3e3793",
+  "_key": "!items!18864c3d7b3e3793",
+  "name": "Divine Slam",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Glory point. All creatures within 10ft of you make a Finesse Check against your Check DC or are pushed 5X ft away from you, where X is half your Proficiency (rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "glory",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 10,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_slam",
+      "transcribed": true,
+      "buildHash": "b3084011b25f"
+    }
+  }
+}

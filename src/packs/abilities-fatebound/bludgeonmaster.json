@@ -1,0 +1,71 @@
+{
+  "_id": "31b895e3fd2cc4e6",
+  "_key": "!items!31b895e3fd2cc4e6",
+  "name": "Bludgeonmaster",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest when wielding a bludgeoning divine weapon, you may slam it into the ground. All enemies within 5ft of you make a Finesse Check or are knocked prone. [2] CrunchP : (Prerequisite: Bludgeonmaster). If you critically hit with a bludgeoning divine weapon and choose to rend, rend an extra 1 point of armor.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "prone",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bludgeonmaster",
+      "transcribed": true,
+      "buildHash": "8863ae1a08c6"
+    }
+  }
+}

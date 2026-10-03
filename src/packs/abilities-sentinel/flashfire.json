@@ -1,0 +1,64 @@
+{
+  "_id": "11bcd4f726777c07",
+  "_key": "!items!11bcd4f726777c07",
+  "name": "Flashfire",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When a target moves to within 15ft of you from further away, you may use your reaction to attempt to give them Surprise. They roll Wiles Checks against the effect.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "scout",
+      "prerequisite": "Adaptive Range, Finesse 4"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "surprised",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "flashfire",
+      "buildHash": "577e914b1cc2"
+    }
+  }
+}

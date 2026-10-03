@@ -1,0 +1,41 @@
+{
+  "_id": "a31a4376c09f3616",
+  "_key": "!items!a31a4376c09f3616",
+  "name": "Sweeping Pike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the range of Sweep to 10ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Sweep, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sweeping_pike",
+      "buildHash": "a57c1b5f8da4"
+    }
+  }
+}

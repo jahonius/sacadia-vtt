@@ -1,0 +1,72 @@
+{
+  "_id": "ec3f411c8d85bb6f",
+  "_key": "!items!ec3f411c8d85bb6f",
+  "name": "Withered Seed",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_seed_icon.png",
+  "system": {
+    "description": "<p>Apply the effects of Withered Bloom when you are insane.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Withered Bloom"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Withered Seed",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@madness/2)",
+        "predicate": [
+          {
+            "atom": "self:insane"
+          },
+          {
+            "atom": "!self:ability:withered_fruit"
+          }
+        ]
+      },
+      {
+        "label": "Withered Seed",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "@madness",
+        "predicate": [
+          {
+            "atom": "self:insane"
+          },
+          {
+            "atom": "self:ability:withered_fruit"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "withered_seed",
+      "buildHash": "561836a695a3"
+    }
+  }
+}

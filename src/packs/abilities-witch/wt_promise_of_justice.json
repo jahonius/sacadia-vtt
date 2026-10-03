@@ -1,0 +1,43 @@
+{
+  "_id": "d9fc8263793a489a",
+  "_key": "!items!d9fc8263793a489a",
+  "name": "Promise of Justice",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Lose access to all Witch abilities if you intentionally break the law of a culture you enter, whether that culture is friend or foe. Likewise, if you enter a new culture, you must seek out the laws of that land to make sure you do not break them. If you do break the laws of any land, you must take the Atone action within your Divine Site to recover the use of Witch abilities.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_promise_of_justice",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "74e63bfe9342"
+    }
+  }
+}

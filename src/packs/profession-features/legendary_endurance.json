@@ -1,0 +1,44 @@
+{
+  "_id": "3f68dc45be70cdd1",
+  "_key": "!items!3f68dc45be70cdd1",
+  "name": "Endurance Mastery",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>You are immune to being Fatigued from enemy effects. When you would be given Fatigue through Rage ending, roll Power Checks against the effect (against your own Check DC). Only take Fatigue if you fail these checks.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_endurance",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "12be5c9e7d9c"
+    }
+  }
+}

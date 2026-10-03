@@ -1,0 +1,42 @@
+{
+  "_id": "8d52bdabac788813",
+  "_key": "!items!8d52bdabac788813",
+  "name": "Protective Spirit",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use Reposition in response to an enemy moving to within 5ft of an ally who is within 5ft of you. If you do so, switch places with that ally. This move cannot provoke an attack of opportunity on your ally.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Reposition, Courage 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "protective_spirit",
+      "buildHash": "ed2dc77f6bc3"
+    }
+  }
+}

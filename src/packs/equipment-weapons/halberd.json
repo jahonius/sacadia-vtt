@@ -1,0 +1,39 @@
+{
+  "_id": "c3573b4f70e0157c",
+  "_key": "!items!c3573b4f70e0157c",
+  "name": "Halberd",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Heavy Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "equipped": false,
+    "traits": "",
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "spear",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 8,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "td",
+    "damageType": "Piercing",
+    "range": {
+      "type": "melee",
+      "value": 10
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "halberd",
+      "kind": "weapon",
+      "buildHash": "4e39f4af5a45"
+    }
+  }
+}

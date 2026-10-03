@@ -1,0 +1,60 @@
+{
+  "_id": "201a74fc5c5eb4bc",
+  "_key": "!items!201a74fc5c5eb4bc",
+  "name": "Favored Enemy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Select an enemy type when you take this: Beasts, Great Beasts, Awoken Flora, Folk Fae, Wild Fae, Fontmade, Undead, or Demons. You can use a Mind action to make a Wiles Check against their Check DC. If you pass, choose to learn their To-Hit modifier, in which traits (if any) they have Trait Expertise, or a random ability (of abilities they have used during this combat).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "sen-starting",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "wiles",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "favored_enemy",
+      "buildHash": "2f5cfc437b90"
+    }
+  }
+}

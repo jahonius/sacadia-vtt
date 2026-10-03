@@ -1,0 +1,84 @@
+{
+  "_id": "1cf63521a3c0bbdd",
+  "_key": "!items!1cf63521a3c0bbdd",
+  "name": "Law of Exchange",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot and choose two targets on the same team in combat who are both within 30ft of you. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. All attacks made against you have Advantage for as long as you maintain Focus on this. You may only end Focus on Law of Exchange on your turn.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[2] · Research: Legalism[3]"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Law of Exchange",
+        "target": "incomingAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:combat:focus-rounds:mg_law_of_exchange>=1"
+          }
+        ]
+      }
+    ],
+    "focus": {
+      "endOnOwnTurn": true
+    },
+    "grant": {
+      "scope": "allies",
+      "label": "Law of Exchange",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "perTarget": [
+        [
+          {
+            "key": "system.bonuses.incomingAdvantage",
+            "mode": 2,
+            "value": "1"
+          }
+        ],
+        [
+          {
+            "key": "system.bonuses.incomingAdvantage",
+            "mode": 2,
+            "value": "-1"
+          }
+        ]
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_law_of_exchange",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Legalism[3]",
+      "buildHash": "003b3f32c27f"
+    }
+  }
+}

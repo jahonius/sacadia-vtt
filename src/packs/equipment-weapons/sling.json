@@ -1,0 +1,39 @@
+{
+  "_id": "264271fb6065615e",
+  "_key": "!items!264271fb6065615e",
+  "name": "Sling",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 3,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "sling",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "finesse"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "ranged",
+      "value": 60
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sling",
+      "kind": "weapon",
+      "buildHash": "d741296419bd"
+    }
+  }
+}

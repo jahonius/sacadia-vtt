@@ -1,20 +1,41 @@
 {
   "SACADIA": {
     "Stat": {
-      "Power": { "long": "Power", "abbr": "PWR" },
-      "Finesse": { "long": "Finesse", "abbr": "FIN" },
-      "Wiles": { "long": "Wiles", "abbr": "WIL" },
-      "Courage": { "long": "Courage", "abbr": "COU" },
-      "Fate": { "long": "Fate", "abbr": "FAT" }
+      "Power": {
+        "long": "Power",
+        "abbr": "PWR"
+      },
+      "Finesse": {
+        "long": "Finesse",
+        "abbr": "FIN"
+      },
+      "Wiles": {
+        "long": "Wiles",
+        "abbr": "WIL"
+      },
+      "Courage": {
+        "long": "Courage",
+        "abbr": "COU"
+      },
+      "Fate": {
+        "long": "Fate",
+        "abbr": "FAT"
+      }
     },
     "Defense": {
       "AD": "All Defense",
+      "ADShort": "AD",
       "PD": "Physical Defense",
       "TD": "Toughness Defense",
       "MD": "Mental Defense",
       "DR": "Damage Reduction",
       "CheckDC": "Check DC",
-      "SupersededByAd": "Superseded by AD ({value})"
+      "CheckDCShort": "DC",
+      "SupersededByAd": "Superseded by AD ({value})",
+      "TipSuperseded": "All Defense is higher, so it applies here instead.",
+      "TipBase": "Base",
+      "TipCapped": "Stat capped by Max Stat {cap}",
+      "TipTotal": "Total"
     },
     "Profession": {
       "Bladedancer": "Bladedancer",
@@ -23,7 +44,9 @@
       "Oracle": "Oracle",
       "Sentinel": "Sentinel",
       "Soldier": "Soldier",
-      "Thug": "Thug"
+      "Thug": "Thug",
+      "Magus": "Magus",
+      "Witch": "Witch"
     },
     "TalentCategory": {
       "Crafting": "Crafting",
@@ -62,31 +85,138 @@
       "SocialGraces": "Social Graces",
       "Strategy": "Strategy",
       "Tools": "Tools",
-      "Transport": "Transport"
+      "Transport": "Transport",
+      "Specialties": "Specializations",
+      "AddSpecialty": "Add a specialized talent",
+      "SpecialtyName": "Specialization (e.g. Handcopy)",
+      "Rank": "Ranks (1X advantage each)",
+      "RollSpecialty": "Roll this specialization",
+      "RemoveSpecialty": "Remove",
+      "SpecialtyNoTalent": "Choose which general talent this specializes first.",
+      "SpecialtyNeedsGeneral": "{name}: you need the general talent to roll a specialization (book p.146)."
     },
     "Condition": {
       "Title": "Conditions",
-      "Fumbled": "Fumbled",
-      "Rended": "Rended",
-      "Madness": "Madness",
-      "Fatigue": "Fatigue",
-      "Frenzy": "Frenzy",
-      "Delirium": "Delirium",
-      "Panic": "Panic",
-      "Taunt": "Taunt",
+      "TurnDamage": "Condition damage",
       "Nausea": "Nausea",
-      "Hemorrhage": "Hemorrhage",
       "Pinned": "Pinned",
-      "Dying": "Dying"
-    },
-    "Adversarial": {
+      "Paralysis": "Paralysis",
       "Corroded": "Corroded",
       "Debilitated": "Debilitated",
       "Pulled": "Pulled",
-      "Paralysis": "Paralysis",
+      "Hemorrhage": "Hemorrhage",
+      "Delirium": "Delirium",
       "Jinxed": "Jinxed",
       "Slowed": "Slowed",
-      "Sting": "Sting"
+      "Silenced": "Silenced",
+      "Sting": "Sting",
+      "Fatigue": "Fatigue",
+      "Frenzy": "Frenzy",
+      "Panic": "Panic",
+      "Taunt": "Taunt",
+      "Fumbled": "Fumbled",
+      "Rended": "Rended",
+      "Madness": "Madness"
+    },
+    "ConditionGroup": {
+      "LesserPhysical": "Physical (Lesser)",
+      "GreaterPhysical": "Physical (Greater)",
+      "LesserMental": "Mental (Lesser)",
+      "GreaterMental": "Mental (Greater)",
+      "Special": "Special"
+    },
+    "ConditionRule": {
+      "Nausea": "−1 to your To-Hit rolls per level. [auto]",
+      "Pinned": "Cannot use leg actions or willingly-moving actions; each level past the first costs one limb from your limb economy.",
+      "Paralysis": "Gain Enduring Exhaustion on a random limb (1d6) per level.",
+      "Corroded": "Take 1 Rend at the start of your turn per level; when you can't be Rended further, remaining levels become Hemorrhage.",
+      "Debilitated": "1× Disadvantage to all To-Hit rolls per level. [auto]",
+      "Pulled": "Enduring Prone + Dragged; moved 5ft toward the source at the start of your turn per level; at most one action while Pulled.",
+      "Hemorrhage": "Take 1d10 damage at the start of your turn per level. [auto]",
+      "Delirium": "−1 to AD/PD/TD/MD per level (DR unaffected). [auto]",
+      "Jinxed": "Gain 1 Fumble at the start of your turn per level (applies to your first roll; persists to your next turn).",
+      "Slowed": "No 5ft Adjust; −5ft move speed per level; −1 reaction (−2 at 5+); leg actions exhausted at 4+.",
+      "Silenced": "Cannot speak or cast spells. Enduring — does not reduce at end of turn; clear it with a Make-Trait-Check action.",
+      "Sting": "+1 to all damage you take per level (applied after DR). [auto — full apply with damage pipeline]",
+      "Fatigue": "−1 AP per level; no reactions. [auto: AP]",
+      "Frenzy": "1× Disadvantage to every Trait Check per level. [auto]",
+      "Panic": "Cannot move toward the Source; 1× Disadvantage on Trait Checks vs the Source per level; at 4+ must spend AP fleeing.",
+      "Taunt": "1× Disadvantage on To-Hit vs anyone but the Source per level; counts the Source as adjacent; can't move away at 4+.",
+      "Fumbled": "Reduce your very next d20 by your Fumble count, then clear it; removed at end of turn.",
+      "Rended": "Randomly remove 1 AD/PD/TD/MD from a piece of your armor per level; a fully-rended piece breaks.",
+      "Madness": "Oracle affliction; at Madness 6 you become Insane."
+    },
+    "Simple": {
+      "Prone": "Prone",
+      "Blinded": "Blinded",
+      "Dragged": "Dragged",
+      "Surprised": "Surprised",
+      "Unconscious": "Unconscious",
+      "Insane": "Insane",
+      "Steadied": "Steadied",
+      "Raging": "Raging",
+      "BeastForm": "Beast Form",
+      "Wounded": "Wounded",
+      "Cornered": "Cornered",
+      "Obscured": "Obscured",
+      "Shadowed": "Shadowed",
+      "Height": "Height",
+      "Hidden": "Hidden"
+    },
+    "Cover": {
+      "Label": "Cover",
+      "Hint": "Your cover state. Covered creatures impose disadvantage on attackers; Full Cover blocks ranged/spells. Drives cover-gated abilities.",
+      "None": "No Cover",
+      "Half": "Half Cover",
+      "Full": "Full Cover",
+      "TargetCover": "Target Cover"
+    },
+    "StatBlock": {
+      "Button": "Paste Stat Block",
+      "Hint": "Paste a monster's stats and abilities to fill this NPC and create its abilities at once. Write an attack as 'melee attack vs PD, 1d10 slashing' to make it rollable; other effects stay as text.",
+      "Title": "Import Stat Block",
+      "Import": "Import",
+      "Placeholder": "Name: Bog Lurker\nHP 34  AP 4\nAD 13  PD 12  TD 11  MD 10  DR 2\nCheck DC 13  CR 2\n\nAbilities:\n- Gore (1AP): melee attack vs PD, 1d10 slashing.\n- Bog Bolt (1AP): ranged attack vs PD, 2d6+2 piercing.\n- Frighten (1AP): a target within 15ft makes a Wiles check or takes Panic 1.\n- Sink (2AP): grapple a target and pull it prone.",
+      "Done": "Imported {fields} field(s) and {abilities} abilit(y/ies) ({attacks} with a rollable attack).",
+      "Nothing": "Nothing recognized — paste a stat block (see the example), not JSON or other text.",
+      "HelpSummary": "Format & examples",
+      "UseExample": "Insert example"
+    },
+    "Resist": {
+      "Title": "Resist a Condition",
+      "TitleFor": "Resist {condition}",
+      "RollFor": "Roll resistance for this condition",
+      "Hint": "Make Trait Check: one check (+1 per extra AP); each success removes a level. Incoming: one check per level being given; each failure is a level taken. Advantage rolls extra dice (keep best); disadvantage auto-fails that many checks.",
+      "Condition": "Condition",
+      "Trait": "Trait",
+      "Levels": "Incoming Levels",
+      "LevelsShort": "level(s)",
+      "Advantage": "Advantage",
+      "Check": "Check",
+      "Roll": "Roll Resistance",
+      "Auto": "Auto-fail",
+      "Dropped": "(dropped)",
+      "CardTitle": "Resisting {condition}",
+      "SourceNote": "Resolving against {name}'s Check DC (GM-side).",
+      "NoSourceNote": "No target — the GM will assign failures from your dice.",
+      "Awaiting": "Awaiting resolution…",
+      "ManualPending": "Sent to the GM to adjudicate.",
+      "ManualHeader": "{name} resists {condition} — assign failed levels:",
+      "Takes": "Takes {n} level(s) of {condition}",
+      "Resisted": "Resisted — no levels of {condition}",
+      "Mode": "Check",
+      "ModeReduce": "Make Trait Check — remove levels (1 AP + extra)",
+      "ModeIncoming": "Resist incoming levels",
+      "ExtraAp": "Extra AP (consistent roll)",
+      "CardTitleReduce": "Make Trait Check: {condition}",
+      "ChecksShort": "check(s)",
+      "Removes": "Removes {n} level(s) of {condition}",
+      "NoneRemoved": "No levels of {condition} removed",
+      "ManualHeaderReduce": "{name} — Make Trait Check vs {condition}: GM, compare to the DC and remove one level per success.",
+      "DustedHint": "Dusted ({name}) available → {value}",
+      "BolersBan": "Bolers Ban: no roll — {condition} reduced to {value}.",
+      "Typed": "Resistances",
+      "TypedHint": "Damage resistance by type, e.g. \"physical 2, fire 5, rot immune\". Types: bludgeoning, slashing, piercing, imbued, fire, water, air, earth, rot, salt, mental; groups: physical, elemental, mental; or all. A negative number is a vulnerability."
     },
     "AbilityTag": {
       "Action": "Action",
@@ -135,23 +265,483 @@
     },
     "Npc": {
       "Cr": "CR",
-      "Role": "Role"
+      "Role": "Role",
+      "CreatureType": "Type"
     },
     "TraitExpertise": {
       "Title": "Trait Expertise",
-      "Reroll": "Reroll"
+      "Reroll": "Reroll a failed d20",
+      "Hint": "Reroll one failed d20 on a {trait} check.",
+      "NoProfession": "Set a primary profession to unlock Trait Expertise."
+    },
+    "Heritage": {
+      "Human": "Human",
+      "Curiot": "Curiot",
+      "Daemonai": "Daemonai",
+      "Fixerfolk": "Fixerfolk",
+      "Fontborne": "Fontborne",
+      "Hulinari": "Hulinari"
+    },
+    "Identity": {
+      "Culture": "Culture",
+      "Heritage": "Heritage",
+      "Ancestry": "Ancestry",
+      "Age": "Age",
+      "Size": "Size"
+    },
+    "Background": {
+      "Appearance": "Physical Appearance",
+      "AppearanceHint": "What do you look like? What do you wear? What is unique about your appearance?",
+      "Connections": "Connections",
+      "ConnectionsHint": "Family, friends, work — who are you connected to in your home city or town?",
+      "Beliefs": "Beliefs",
+      "BeliefsHint": "A core belief. Are you religious? Do you hold to a legal or moral framework?",
+      "Secrets": "Secrets",
+      "SecretsHint": "Secrets you possess, superstitions, trauma, or dreams.",
+      "CulturalTies": "Cultural Ties",
+      "CulturalTiesHint": "Above all, what ties you deeply to your culture?",
+      "Story": "Story",
+      "StoryHint": "Your history up until this point.",
+      "Mementos": "Mementos",
+      "MementosHint": "Small narrative pieces or keepsakes you carry."
     },
     "Roll": {
       "RollStat": "Roll {label}",
       "AdvantagePrompt": "Roll {label}",
-      "Advantage": "Advantage",
-      "Normal": "Normal",
-      "Disadvantage": "Disadvantage"
+      "Advantage": "Advantage (+1)",
+      "Normal": "Normal (0)",
+      "Disadvantage": "Disadvantage (−1)",
+      "AdvantageLevel": "Custom level",
+      "AdvantageHint": "The buttons below roll the common cases in one click. For 2+ levels, type the total here — positive for Advantage, negative for Disadvantage — and click Roll. Conditions and effects stack on top automatically.",
+      "AdvantageUse": "Roll Custom",
+      "Step": "step",
+      "AdvShort": "Adv",
+      "DisadvShort": "Disadv",
+      "Modifiers": "Modifiers",
+      "CourageToHit": "Courage instead of the attack trait (weapon attack)",
+      "Untrained": "Untrained attack",
+      "NoProficiency": "no Proficiency"
     },
     "Placeholder": {
-      "Abilities": "Abilities, action pools, and temp modifiers arrive in Phase 4.",
       "Inventory": "Gear and armor arrive in Phase 5.",
-      "ItemAttributes": "Type-specific fields arrive in Phase 4."
+      "ItemAttributes": "No editable fields for this item type yet."
+    },
+    "Range": {
+      "Self": "Self",
+      "Touch": "Touch",
+      "Melee": "Melee",
+      "Ranged": "Ranged",
+      "Area": "Area",
+      "Feet": "ft",
+      "OutOfRange": "{name}: target is {dist} ft away, beyond its {range} ft range.",
+      "OutOfRangeShort": "Out of Range"
+    },
+    "Modifier": {
+      "Legend": "Conditional Modifiers",
+      "Add": "Add modifier",
+      "Delete": "Remove modifier",
+      "Label": "Label (shown on the card)",
+      "Target": "Moves",
+      "Mode": "Mode",
+      "Value": "Value",
+      "Scope": "Scope",
+      "Predicate": "Only when",
+      "AddAtom": "Add condition",
+      "AtomHint": "e.g. self:combat:consecutive-hits>=2"
+    },
+    "Ability": {
+      "Tag": "Type",
+      "Costs": "Costs",
+      "Limbs": "Limb Cost",
+      "ApCost": "AP Cost",
+      "CspCost": "CSP Cost",
+      "Madness": "Madness",
+      "Meta": "Catalog Info",
+      "Profession": "Profession",
+      "Subpath": "Sub-path",
+      "Prerequisite": "Prerequisite",
+      "Category": "Attack Category",
+      "Trait": "Attack Trait (override)",
+      "Defense": "Target Defense",
+      "Weapon": "Weapon",
+      "WeaponHint": "Which owned weapon this attack uses (base dice + type gating). Auto = first equipped.",
+      "Activities": "Activities",
+      "AddActivity": "Add activity",
+      "DeleteActivity": "Remove activity",
+      "AddDamage": "Add damage part",
+      "Inflict": "Inflicts",
+      "AddInflict": "Add inflicted condition",
+      "InflictAmount": "amount (e.g. 1 or @proficiency)",
+      "Pool": "Pool Cost",
+      "PoolAmount": "amount",
+      "Range": "Range",
+      "NoActivities": "No activities — add one to make this ability do something when used.",
+      "Use": "Use",
+      "Empty": "No abilities yet — drag from a compendium or use +.",
+      "ExtraAp": "Extra AP"
+    },
+    "Boost": {
+      "Label": "Boost",
+      "Toggle": "Arm / disarm this Boost",
+      "Armed": "Armed",
+      "Disarm": "Disarm",
+      "TrayLabel": "Armed Boosts",
+      "TrayHint": "These apply to your next matching action, then are consumed. Unused ones clear at the start of your turn.",
+      "PickTitle": "Apply which Boost?",
+      "PickHint": "Only one Boost may apply to an action. Choose which armed Boost to spend on this one.",
+      "None": "No Boost",
+      "AlreadyUsed": "{name} is once per turn and has already been used this turn.",
+      "PickMany": "Choose up to {n} Boost(s) for this action.",
+      "Apply": "Apply",
+      "SelfDamage": "takes {n} damage",
+      "PoolRefund": "{n} {pool} not spent",
+      "OnKill": "{label}: {n} adjacent enemy(ies) Surprised.",
+      "NotApplicable": "{name} doesn't apply to this action (its condition isn't met) — it stays armed.",
+      "Redirected": "Redirected to {name}",
+      "NoLore": "{name}: no Lore points left — stays armed."
+    },
+    "AbilityGroup": {
+      "Active": "Active",
+      "Passive": "Passive",
+      "ReactionsBoosts": "Reactions & Boosts",
+      "Lore": "Lore",
+      "Basic": "Basic Actions & Reactions"
+    },
+    "Economy": {
+      "Ap": "AP",
+      "ApHint": "Action Points remaining this turn. Using an ability or basic action spends AP; reusing an exhausted limb costs +1.",
+      "ResetTurn": "Reset turn (AP to max, limbs cleared)",
+      "ActionsUsed": "Actions this turn",
+      "Undo": "Undo (refund AP, un-exhaust limb)",
+      "NoActions": "Nothing used yet this turn.",
+      "OverspendTitle": "Not enough AP",
+      "OverspendWarn": "{label} costs {cost} AP but you have {current}. Use it anyway?",
+      "BasicActions": "Basic Actions",
+      "Reaction": "Reaction"
+    },
+    "Reaction": {
+      "NoneTitle": "No reaction left",
+      "NoneWarn": "You've already used your reaction this round. Use {label} anyway?",
+      "Granted": "Gained {n} reaction this round.",
+      "Prompt": "{target} was {outcome} — you may use a reaction:",
+      "MovePrompt": "{mover} moved nearby — you may use a reaction:",
+      "Banked": "{label} banked for your next attack this turn.",
+      "ProneWarn": "You're Prone — Prone creatures can't use reactions. Use {label} anyway?"
+    },
+    "OnUse": {
+      "Self": "You",
+      "Target": "Target",
+      "Exhaust": "exhaust {limb}",
+      "HoldDecay": "{condition} doesn't reduce at their turn end",
+      "Enduring": "Target: {condition} becomes Enduring"
+    },
+    "Kill": {
+      "Banked": "Kill! {label}: your next attack this turn is buffed.",
+      "TempHp": "{label} (kill)"
+    },
+    "MultiAttack": {
+      "Nth": "Attack {n}"
+    },
+    "Triggered": {
+      "MissRecovery": "Miss Recovery: recovered 1 AP"
+    },
+    "Redirect": {
+      "Prompt": "Redirect {label}'s benefit to your targeted ally? (No keeps it on yourself.)"
+    },
+    "ConditionLevel": {
+      "Pinned": {
+        "1": "Cannot use leg actions or willingly-moving actions.",
+        "2": "Cannot use legs or one arm (your choice).",
+        "3": "Cannot use legs or arms.",
+        "4": "Cannot use legs, arms, or head actions; you may not speak.",
+        "5": "Cannot use legs, arms, head, or body.",
+        "6": "Cannot take actions."
+      },
+      "Slowed": {
+        "1": "−5ft Move Speed. No 5ft Adjust. −1 reaction.",
+        "2": "−10ft Move Speed. No 5ft Adjust. −1 reaction.",
+        "3": "−15ft Move Speed. No 5ft Adjust. −1 reaction.",
+        "4": "−20ft Move Speed. No 5ft Adjust. −1 reaction. Leg actions exhausted.",
+        "5": "−25ft Move Speed. No 5ft Adjust. −2 reactions. Leg actions exhausted.",
+        "6": "−30ft Move Speed. No 5ft Adjust. −2 reactions. Leg actions exhausted."
+      },
+      "Panic": {
+        "1": "1× Disadvantage to Trait Checks and attacks vs the Source (when visible). Cannot move toward it.",
+        "2": "2× Disadvantage to Trait Checks and attacks vs the Source. Cannot move toward it.",
+        "3": "3× Disadvantage to Trait Checks and attacks vs the Source. Cannot move toward it.",
+        "4": "4× Disadvantage to Trait Checks vs the Source. Spend 1 AP running directly away.",
+        "5": "5× Disadvantage to Trait Checks vs the Source. Must spend 3 AP running directly away.",
+        "6": "6× Disadvantage to Trait Checks vs the Source. Must spend 5 AP running directly away."
+      },
+      "Taunt": {
+        "1": "1× Disadvantage on To-Hit vs anyone but the Source. Affects Surrounded.",
+        "2": "2× Disadvantage on To-Hit vs anyone but the Source. Affects Surrounded.",
+        "3": "3× Disadvantage on To-Hit vs anyone but the Source. Affects Surrounded.",
+        "4": "4× Disadvantage on To-Hit vs anyone but the Source. Cannot move away from the Source.",
+        "5": "5× Disadvantage on To-Hit vs anyone but the Source. Cannot move away from the Source.",
+        "6": "6× Disadvantage on To-Hit vs anyone but the Source. Cannot move away from the Source."
+      }
+    },
+    "Combat": {
+      "ThisTurn": "This Turn",
+      "Moved": "Moved",
+      "ConsecutiveHits": "Consecutive hits",
+      "Attacks": "Attacks",
+      "Exhaustion": "Exhaustion",
+      "Focus": "Focus & Marks",
+      "Grants": "Active Grants",
+      "Maintained": "maintained",
+      "ConsumedOn": "consumed on {trigger}"
+    },
+    "BasicAction": {
+      "Move": "Move",
+      "FiveFootAdjust": "5-Foot Adjust",
+      "Climb": "Climb",
+      "Drop": "Drop",
+      "Hurdle": "Hurdle",
+      "Disengage": "Disengage",
+      "Attack": "Attack",
+      "Kick": "Kick",
+      "RendArmor": "Rend Armor",
+      "SwitchItem": "Switch Item",
+      "Steady": "Steady",
+      "Hide": "Hide",
+      "Help": "Help",
+      "MakeTraitCheck": "Trait Check",
+      "Focus": "Focus",
+      "HoldAction": "Hold Action",
+      "Other": "Other"
+    },
+    "Activity": {
+      "Attack": "Attack",
+      "Save": "Save",
+      "Damage": "Damage",
+      "Utility": "Utility",
+      "Label": "Label (optional)",
+      "SaveTrait": "Save Trait (target rolls)",
+      "SaveDc": "Save DC",
+      "SaveDcAuto": "auto (your Check DC)"
+    },
+    "Damage": {
+      "Count": "Dice count (e.g. 1 or @madness)",
+      "Denomination": "Die",
+      "Type": "Type",
+      "FormulaOverride": "Formula override"
+    },
+    "Card": {
+      "Preview": "Roll Preview",
+      "ToHit": "To Hit",
+      "Vs": "vs",
+      "Damage": "Damage",
+      "RollSave": "Roll Save",
+      "SaveNegate": "Roll Save to Negate",
+      "SaveSuccess": "Success",
+      "SaveFailure": "Failure",
+      "NoSaveActor": "Select a token (or set an assigned character) to roll a save.",
+      "Hit": "Hit!",
+      "Miss": "Miss",
+      "Critical": "Critical Hit!",
+      "CritChoose": "Choose",
+      "ApplyDr": "DR",
+      "ApplyNoDr": "No DR",
+      "Undo": "Undo",
+      "MarkDead": "☠ Dead",
+      "Temp": "temp",
+      "TempHpGrant": "Temporary HP",
+      "TempHpTo": {
+        "self": "to you",
+        "allies": "to allies",
+        "both": "to you and allies"
+      }
+    },
+    "Crit": {
+      "ApFull": "Already at maximum AP.",
+      "NoLimb": "No exhausted limb to recover.",
+      "LimbPick": "Recover which limb?",
+      "TempHp": "Temporary HP",
+      "NextAttack": "Next attack",
+      "Banked": "Banked for your next attack this turn.",
+      "MasteryCritical": "Natural 1 — use Critical Mastery (once per quick rest) to treat it as a natural 20?"
+    },
+    "Settings": {
+      "CombatMode": {
+        "Name": "Combat resolution",
+        "Hint": "Who resolves and applies attacks. Information hiding (players never see NPC defenses/DR/Health) is always on regardless.",
+        "Default": "Auto PC offense, GM-in-the-loop for NPCs",
+        "FullAuto": "Fully automatic (both directions)",
+        "Manual": "Resolve hit/miss only — GM applies damage"
+      },
+      "ConditionStacking": {
+        "Name": "Condition stacking",
+        "Hint": "Book (p.258): a creature that already has a condition can't be given it again unless the ability says so. Additive: new levels add to the current level.",
+        "Book": "Book — no re-application",
+        "Additive": "Additive — levels stack"
+      }
+    },
+    "Csp": {
+      "Insufficient": "Not enough CSP for {name}: costs {cost}, {current} available."
+    },
+    "Pool": {
+      "Arrangement": "Arrangement",
+      "Glory": "Glory",
+      "Prescient": "Prescient",
+      "Trickshot": "Trickshot",
+      "Savage": "Savage",
+      "Herd": "Herd",
+      "Call": "Call",
+      "Trick": "Trick",
+      "Insufficient": "{label} costs {amount} {pool} but you have {current}. Use it anyway?",
+      "HowMany": "Spend how many {pool} points?",
+      "HowManyMax": "Spend how many {pool} points? (max {max})",
+      "Available": "Available: {current}",
+      "Spend": "Spend",
+      "Trickster": "Trickster",
+      "Spell": "Spell Slots",
+      "Divine": "Divine Touch",
+      "Refunded": "{name} regains {n} {pool}.",
+      "RefundWhich": "Which pool regains {n} point(s)?"
+    },
+    "Spend": {
+      "HowMany": "Reduce {resource} by how much?",
+      "HowManyMax": "Reduce {resource} by how much? (max {max})",
+      "Available": "Current {resource}: {current}",
+      "Confirm": "Spend"
+    },
+    "Creature": {
+      "Beast": "Beast",
+      "GreatBeast": "Great Beast",
+      "AwokenFlora": "Awoken Flora",
+      "FolkFae": "Folk Fae",
+      "WildFae": "Wild Fae",
+      "Fontmade": "Fontmade",
+      "Undead": "Undead",
+      "Demon": "Demon",
+      "Humanoid": "Humanoid"
+    },
+    "FavoredEnemies": "Favored Enemies",
+    "BiggerStones": {
+      "Label": "Bigger Stones",
+      "Hint": "Bigger Stones is takeable twice — set how many times you chose each ranged family (0–2). Each point adds one damage die-size to attacks with that weapon."
+    },
+    "Madness": {
+      "PrereqTitle": "Madness Requirement",
+      "PrereqIntro": "{name} doesn't meet its Madness requirements:",
+      "NeedInsane": "Requires being Insane.",
+      "NeedMadness": "Requires Madness {n} or higher (you have {current}).",
+      "LockedWhileInsane": "While Insane you may only use abilities marked P:I.",
+      "Bloodlet": "Bloodlet: Madness holds; lose {n} HP instead.",
+      "SoulbindingBreak": "Soulbinding breaks into madness — {name} makes a Wiles Check or takes the psychic damage.",
+      "Leech": "A Boiled Leech: {names} also lose {n} HP.",
+      "MindMap": "Mind Map: re-roll (1 Prescient)",
+      "MindMapPick": "First roll {first}, re-roll {second}. Keep the re-roll?",
+      "NoPrescient": "No Prescient points left.",
+      "Yarrowstem": "Yarrowstem armed: the next drop to 0 Madness becomes ½ Proficiency instead.",
+      "Incredulous": "On a hit, apply one Insane-table result to the target: {a} or {b}.",
+      "SphereInsanium": "Sphere Insanium: +2 Delirium to {names} (no check).",
+      "SphereCheck": "Sphere Insanium: Wiles Check against your own Check DC — on a failure, end the Focus."
+    },
+    "Insane": {
+      "Title": "Insane Table",
+      "Badge": "Insane",
+      "Boost": "Boost on your first action this turn.",
+      "HpLoss": "Lose {hp} HP",
+      "NoLoss": "No HP lost",
+      "HeatherRoot": "Heather Root −{resist}",
+      "WrithingBlock": "Writhing Block negates the loss",
+      "ApGained": "Gain 1 AP this turn",
+      "Effect1": "Treat all allies as enemies until the start of your next turn.",
+      "Effect2": "Use your first action this turn to attack the nearest creature. If unable, lose 1 AP.",
+      "Effect3": "Spend your first action this turn screaming. You may use a Mind action while you do this.",
+      "Effect4": "1× disadvantage on your first attack this turn. If it imposes a Trait Check, the target rolls at 1× advantage.",
+      "Effect5": "Choose a random limb (Arm/Leg/Body/Mind). You may not use that limb this turn.",
+      "Effect6": "Increase your Move Speed by 10 ft this turn.",
+      "Effect7": "1× advantage on your first attack this turn. If it imposes a Trait Check, the target rolls at 1× disadvantage.",
+      "Effect8": "Gain 1 AP to spend this turn."
+    },
+    "Grant": {
+      "Anchor": "Focus: {label}"
+    },
+    "Gear": {
+      "Quantity": "Quantity",
+      "Weight": "Weight",
+      "Value": "Value",
+      "Traits": "Weapon Traits",
+      "TraitsHint": "e.g. sword, one-handed, melee"
+    },
+    "Armor": {
+      "Defenses": "Defense Bonuses",
+      "MaxStat": "Max Stat",
+      "MaxStatNone": "no cap",
+      "Category": "Weight Class",
+      "Light": "Light",
+      "Medium": "Medium",
+      "Heavy": "Heavy",
+      "MaterialLabel": "Material",
+      "SizeLabel": "Shield Size",
+      "Material": {
+        "feather": "Feather",
+        "cloth": "Cloth",
+        "dye": "Dye",
+        "leather": "Leather",
+        "fur": "Fur",
+        "bronze": "Bronze",
+        "iron": "Iron",
+        "gold": "Gold",
+        "bone": "Bone",
+        "ink": "Ink",
+        "wood": "Wood",
+        "metal": "Metal"
+      },
+      "Size": {
+        "buckler": "Buckler",
+        "shield": "Shield",
+        "tower": "Tower Shield"
+      }
+    },
+    "Weapon": {
+      "Legend": "Weapon",
+      "ShieldLegend": "Shield / Bash",
+      "Type": "Weapon Type",
+      "BaseDamage": "Base Damage",
+      "BashDamage": "Bash Damage",
+      "TargetDefense": "Target Defense",
+      "Hands": "Hands",
+      "AttackName": "{weapon} Attack",
+      "BashName": "{weapon} Bash",
+      "Auto": "Auto (first equipped weapon)",
+      "DrawTitle": "Draw Weapon",
+      "DrawPrompt": "{weapon} isn't equipped. Draw it? (costs 1 AP)",
+      "DrawAction": "Draw {weapon}",
+      "Unarmed": "Unarmed",
+      "Dagger": "Dagger",
+      "Sword": "Sword",
+      "Axe": "Axe",
+      "Spear": "Spear",
+      "Bludgeon": "Bludgeon",
+      "Bow": "Bow",
+      "Crossbow": "Crossbow",
+      "Sling": "Sling",
+      "Shield": "Shield",
+      "Other": "Other",
+      "NamedAs": "Named as",
+      "NamedHint": "Bladedancer Named Weapons: give this Versatile weapon one of your Named Weapon abilities. Its effects apply when you attack with (or wield) this weapon.",
+      "ThrowName": "Throw {weapon}",
+      "NamedLimit": "You have {n} named weapons — Named Weapons allows up to your Proficiency ({max})."
+    },
+    "Inventory": {
+      "Armor": "Armor",
+      "Gear": "Gear",
+      "Equip": "Equip / Unequip",
+      "Empty": "Nothing here yet.",
+      "Signature": "Signature",
+      "SignatureHint": "Designate as your Named / Divine weapon — instance-scoped buffs (Sharp Weapon, Humongous, …) apply to attacks with this weapon.",
+      "StorageHint": "Readied (RIS, at hand in combat) or Stored (SIS, in your bags). Click to swap; the number is the slots it takes.",
+      "RisHint": "Readied Item Slots in use / available (5, more from abilities and items).",
+      "SisHint": "Stored Item Slots in use / provided by your bags.",
+      "Overburdened": "Overburdened: half speed",
+      "StoredInCombat": "{name} is in a Stored Item Slot, which you can’t reach in combat. Equip it anyway?",
+      "SwapInCombat": "Items move between readied and stored slots during a rest. Swap it anyway?",
+      "DrawStored": "{weapon} is in a Stored Item Slot, which you can’t reach in combat. Draw it anyway?"
     },
     "Progression": {
       "Level": "Level",
@@ -160,12 +750,32 @@
       "Csp": "Combat Skill Points",
       "CspMax": "Max CSP",
       "CspSpent": "Spent CSP",
-      "CspCurrent": "Available CSP"
+      "CspCurrent": "Available CSP",
+      "Pools": "Pools"
+    },
+    "Rest": {
+      "Short": "Short Rest",
+      "Long": "Long Rest",
+      "ShortHint": "Quick Rest: recover ability pools, clear most conditions, Rend −1, and spend HP pools to heal.",
+      "LongHint": "Long Rest: full HP, refill HP pools & Lore, recover ability pools, clear conditions & Rend.",
+      "ShortDone": "took a Short Rest.",
+      "LongDone": "took a Long Rest.",
+      "HealTitle": "Spend HP Pools",
+      "HealPrompt": "Each pool heals {per} HP. You have {available} pools. How many to spend?",
+      "HealDo": "Heal",
+      "HealSkip": "Skip"
     },
     "Resource": {
       "Health": "Health",
       "HealthPools": "Health Pools",
-      "Ap": "Action Points"
+      "Ap": "Action Points",
+      "LorePoints": "Lore",
+      "MaxHealth": "Max Health",
+      "HealthStandard": "Standard (per level)",
+      "HealthAdjust": "Adjust",
+      "HealthAdjustHint": "Heritage / rolled HP adjustment (± to the standard max)",
+      "TempHp": "Temp HP",
+      "TempHpHint": "Temporary HP — absorbs damage before real HP, doesn't stack, cleared when combat ends"
     },
     "SheetLabels": {
       "Actor": "Sacadia Actor Sheet",
@@ -177,18 +787,276 @@
       "Temporary": "Temporary Effects",
       "Passive": "Passive Effects",
       "Inactive": "Inactive Effects"
+    },
+    "PostRoll": {
+      "Confirm": "Apply",
+      "RaisePrompt": "Raise the to-hit by how much (up to {cap})?",
+      "SpendPrompt": "Spend how much {resource} (up to {max})?",
+      "Public": "{label} ({name}) vs {target} → {outcome}",
+      "Restored": "{name} restored to {hp} HP",
+      "Redirect": "{label}: {name} takes {amount} damage meant for {target}.",
+      "Reflect": "{label}: {name} turns {amount} damage back on {attacker}.",
+      "Retarget": "{label}: the attack now targets {name}.",
+      "RangeNote": "if they're out of the attack's range, it misses",
+      "Shield": "{label}: {name} reduces the damage by {amount}.",
+      "CritNow": "{n} Spell Slot(s): now a critical hit — apply the attacker’s critical effect"
+    },
+    "Situation": {
+      "Surrounded": "Surrounded target",
+      "Incoming": "Incoming attack modifier"
+    },
+    "Save": {
+      "AlreadyHas": "already has it — not given again (p.258)",
+      "Damage": "Takes {amount} damage",
+      "Immune": "immune",
+      "PendingBanked": "A failed save banked a bonus on the caster's next attack.",
+      "Drain": "Drain: caster gains {amount} temp HP",
+      "CasterGain": "The caster gains from {n} failed check(s).",
+      "OtherDelta": "Condition levels move to another creature.",
+      "OnFail": "Failed — the effect applies.",
+      "HealTo": "Heals {amount} on the second target.",
+      "EffectEnds": "Success: the effect ends.",
+      "FocusLost": "Failure: their Focus ends.",
+      "Evasion": "Evasion: half damage on a failure, none on a success."
+    },
+    "CheckSpend": {
+      "Prompt": "Use {label} on this check ({cost})?",
+      "PoolCost": "spend 1 {pool} point",
+      "RestCost": "once per quick rest"
+    },
+    "Pick": {
+      "Choose": "— choose —",
+      "Hint": "Your permanent choice for this ability (made when you take it)."
+    },
+    "HulinariForm": {
+      "Label": "Hulinari Form",
+      "Hint": "Your Hulinari subtype. Toggle Beast Form on your token when you change shape; form-gated abilities apply while in it.",
+      "Pack": "Pack",
+      "Brute": "Brute",
+      "Swarm": "Swarm"
+    },
+    "Trigger": {
+      "StepAndStop": "Step and Stop: you've damaged 3 unique enemies this turn — recover one exhausted limb.",
+      "RecoverLimb": "Recover a limb",
+      "ExhaustiveRage": "Exhaustive Rage: {name} has taken 5 hits this round — Power check or Debilitated.",
+      "Glidestep": "Glidestep: melee hit on a new target — your 5ft adjust is recovered."
+    },
+    "Usage": {
+      "Requires": "{name} applies when {req}. Use it anyway?",
+      "Exceeded": "{name} has been used {used}/{max} times {per}. Use it anyway?",
+      "Per": {
+        "turn": "this turn",
+        "rest": "since your last rest",
+        "combat": "this combat"
+      },
+      "ExceededTarget": "{name} has already been used on {targets} {per}. Use it anyway?",
+      "TooManyTargets": "{name} can target up to {max} creatures, and {n} are targeted. Use it anyway?"
+    },
+    "Aid": {
+      "NoTarget": "{name}: target the ally (or allies) you're aiding.",
+      "NothingToAid": "{name} has no condition to aid against.",
+      "Remove": "Remove a level",
+      "Removed": "{label}: {name} loses one level of {condition}.",
+      "CardTitle": "{label} for {name}: {condition}"
+    },
+    "Dying": {
+      "BattleFatigue": "{name} is Wounded: +1 Battle Fatigue ({n}).",
+      "Unconscious": "{name} falls Unconscious (no AP left).",
+      "Dead": "{name} dies ({hp} HP ≤ {threshold}).",
+      "CallOfTheDying": "Call of the Dying ({name}): prevent it",
+      "Prevented": "{label}: {name} doesn't gain Battle Fatigue this turn.",
+      "DeathMastery": "Death Mastery: +{n} HP"
+    },
+    "Speed": {
+      "Label": "Speed",
+      "Hint": "Move Speed: 30ft base, adjusted by abilities, Heavy Armor (−5), a Tower Shield (−5) and Slowed (−5/level). Movement on the map stays manual.",
+      "Fly": "Fly"
+    },
+    "Cracked": {
+      "Label": "Slightly Cracked",
+      "Hint": "Saved d3 rolls (rolled at each rest: Proficiency d3, +1 with Mastery of Temperament). Spend one with the Slightly Cracked Boost in place of a 1D3−1 Madness roll, or with Pull the Strand.",
+      "Rolled": "Slightly Cracked — saved rolls",
+      "None": "No Slightly Cracked rolls saved.",
+      "Pick": "Use which saved roll?",
+      "PickSigned": "Add or subtract which saved roll?",
+      "Used": "Slightly Cracked {n}",
+      "AnEnemy": "an enemy",
+      "Strand": "{n} to {target}'s roll (GM applies)."
+    },
+    "Aura": {
+      "BladeAura": "{name} starts its turn inside Blade Aura — Finesse Check or take the slashing damage."
+    },
+    "Named": {
+      "Explodes": "Exploding Weapon",
+      "TrickyBoy": "Tricky Boy: first attack against this enemy — Surprised",
+      "IllComeBack": "I'll Come Back: three versatile throws this turn — one extra reaction.",
+      "NoOneElse": "no one else within 5ft",
+      "NoOne": "no one within 5ft"
+    },
+    "Hidden": {
+      "Revealed": "{name} is no longer hidden.",
+      "TargetWarn": "{names} is Hidden — it can't be directly targeted unless it's been found. Continue anyway?"
+    },
+    "Zone": {
+      "Place": "Click the map to place {name} (Esc to use your target or yourself).",
+      "Check": "{name} is in {zone} — make the check.",
+      "Exit": "{name} tries to leave {zone} — Wiles Check or its move ends inside.",
+      "Damage": "{zone}: {name} takes the damage.",
+      "CasterCost": "{zone}: you take {n} damage for maintaining it.",
+      "PlaceTiles": "Click {n} more tile(s) next to the cloud for {name} (Esc to stop early).",
+      "TileAdjacent": "Pick a tile that touches the cloud (no diagonals).",
+      "SwarmEffects": "Swarm Effects: {name} takes at most {cap} from that attack — and loses Focus on Swarm Effects.",
+      "OutOfRange": "That point is {dist}ft away, beyond {name}’s {range}ft range. Place it anyway?"
+    },
+    "Manual": {
+      "Menu": "User Manual",
+      "Open": "Open the User Manual",
+      "Hint": "How to play Sacadia in Foundry: building a character, taking a turn, conditions, zones, and running the game.",
+      "Missing": "The Sacadia User Manual compendium isn't available."
+    },
+    "Prestige": {
+      "RenewTooFar": "{name} can only be renewed within {ft}ft of its target, and {who} is farther away. Renew anyway?",
+      "NoHemorrhage": "{name} has no Hemorrhage to trigger.",
+      "Burst": "{label}: {name} takes {total} Hemorrhage damage ({parts}); Hemorrhage now {level}.",
+      "BurstNote": "Triggers the target's Hemorrhage ×{n}",
+      "ReactionsNote": "Target gains {n} reaction(s) before the start of their next turn",
+      "ConvertTempNote": "Target's temp HP becomes real HP",
+      "AllianceSplit": "Law of Alliance: {loss} damage to {name} is split {n} ways.",
+      "DeathWard": "Death Ward: {name} drops to 1 HP instead, and the Focus ends.",
+      "CatnapWake": "Catnap: {name} wakes up.",
+      "CatnapCheck": "Catnap: {name} makes a Fate Check to wake (a success ends the effect).",
+      "Itthoa": "Armor of Itthoa: {name} lost {n} temp HP, so {attacker} takes {n} damage.",
+      "HallowMadness": "Hallowfell aura: {name}'s Madness {delta} → {next}.",
+      "Crown": "Crown of Insanity: {name} takes {total} damage. Insane Table effect {low}: {effect}",
+      "Tempered": "Tempered Aura: {name} loses all Panic and Taunt.",
+      "FocusEnded": "{label} ended: {name}'s effects from it are removed.",
+      "TempStripped": "Spirit Sap: {name}'s temporary HP is removed.",
+      "Spared": "Spare the Meek: {name} gains no Battle Fatigue this turn.",
+      "NothingToConvert": "The target has no adversarial condition to convert.",
+      "ConvertFrom": "Convert levels of",
+      "ConvertTo": "into",
+      "CannotTake": "{name} already has {condition}, so it can't take more (no stacking).",
+      "PromiseBrokenWarn": "Your Witch's Promise is broken: you've lost your Witch abilities until you Atone. Use this anyway?",
+      "NonviolenceWarn": "Harming {names} breaks your Promise of Nonviolence. Continue and break it?",
+      "PromiseBreak": "Mark your Witch's Promise as broken? Witch abilities will warn until you Atone.",
+      "PromiseRestore": "Your Promise is broken. Mark it as kept again (as after Atone)?",
+      "PromiseBroken": "Promise broken. Witch abilities are lost until Atone.",
+      "PromiseKept": "Promise restored.",
+      "ConfusionWarn": "{names} is maintaining Confusion nearby: you can't initiate a new Focus action. Use it anyway?",
+      "ResearchTitle": "{name}: Research",
+      "ResearchHint": "Check the abilities recorded in this Tome. Each new one takes a Long Rest Action to research (Research Breakthrough and Master of Research grant some for free). Prerequisites are marked ✓ (met) or ✗ (not met: hover to see which); recording is still allowed.",
+      "ResearchSave": "Record",
+      "Researched": "recorded {names}.",
+      "SanctuaryCheck": "Lawful Sanctuary on {name}: Wiles Check {total} vs Check DC {dc}: {result}",
+      "SanctuaryRetarget": "Failed. You must choose a different target within range. Retarget now (deselect {name}, select the new target), then Continue. Cancel if no other target is in range: the AP and limbs stay spent.",
+      "NoTome": "{name} is a Tome ability, and this character has no Magus Tome.",
+      "NotResearched": "{name} isn't recorded in this character's Tome. Research it first (use the Tome).",
+      "EndOnOwnTurn": "This Focus can only be ended on your own turn.",
+      "SharedMind": "Curse of the Shared Mind: the failed mental check succeeds; the Oracle gains {n} Madness.",
+      "ThirdEye": "Open the Third Eye: revealing hidden creatures nearby.",
+      "ThirdEyeSeen": "Open the Third Eye sees: {list}",
+      "SilveryBarbs": "Silvery Barbs: +{n} to the ally’s next to-hit."
+    },
+    "Lore": {
+      "Short": "{name} costs {n} Lore point(s) and you have {have}. Use it anyway?",
+      "GainHp": "You regain {n} HP",
+      "GainAp": "You regain {n} AP",
+      "GainLore": "You gain {n} Lore point(s)",
+      "Cost": "{n} Lore",
+      "PickElement": "Choose your Font’s element in the dropdown on this ability first.",
+      "NoIronTarget": "You have no weapon or armor to warp.",
+      "IronWhich": "Warp which item?",
+      "IronDone": "{name} now deals or resists {element}.",
+      "Moonstone": "Moonstone Earrings: the Lore point is spent.",
+      "MoonstoneSaved": "Moonstone Earrings: a 10! The Lore point isn’t spent.",
+      "GainReactions": "Reactions {n}",
+      "SaptouchedAsk": "Saptouched: spend a Lore point to turn the Pin back on its giver?",
+      "Saptouched": "Saptouched: {name} makes checks against {n} Pin instead."
+    },
+    "DamageType": {
+      "Bludgeoning": "Bludgeoning",
+      "Slashing": "Slashing",
+      "Piercing": "Piercing",
+      "Imbued": "Imbued",
+      "Fire": "Fire",
+      "Water": "Water",
+      "Air": "Air",
+      "Earth": "Earth",
+      "Rot": "Rot",
+      "Salt": "Salt",
+      "Mental": "Mental"
+    },
+    "Rend": {
+      "Corroded": "Corroded: {name} takes {n} Rend.",
+      "CorrodedToHemorrhage": "{name} can’t be rended further: {n} Corroded becomes Hemorrhage.",
+      "StampedFeathers": "{name}’s armor is fully rended: Stamped Feathers gives +10ft Move Speed.",
+      "Broken": "Broken",
+      "Rended": "Rended",
+      "Hint": "Armor points removed by Rend. A quick rest restores one; a long rest restores all."
+    },
+    "Size": {
+      "Label": "Size",
+      "Hint": "Creature size (book p.225). Against physical effects (physical conditions, Prone, Dragged, Kick) the bigger creature gets 1X advantage per size step.",
+      "Minuscule": "Minuscule",
+      "Tiny": "Tiny",
+      "Small": "Small",
+      "Medium": "Medium",
+      "Large": "Large",
+      "Huge": "Huge",
+      "Gigantic": "Gigantic",
+      "Colossal": "Colossal"
+    },
+    "Prereq": {
+      "Unmet": "{name}: prerequisite not met ({list}). Added anyway.",
+      "Met": "✓",
+      "NotMet": "✗"
+    },
+    "Rage": {
+      "FreeAttack": "Use your rage’s extra melee attack for this (no AP or limbs, and no Boost)?",
+      "Started": "Raging for {n} rounds.",
+      "Ended": "{name}’s rage ends: +{n} Fatigue.",
+      "EndedCheck": "{name}’s rage ends. Endurance Mastery: Power Checks against {n} Fatigue (your own Check DC)."
+    },
+    "Funnel": {
+      "NeedTwo": "{name}: target the two creatures (one of them with Fatigue).",
+      "NotYourself": "{name} can't target yourself without Given Energy. Use it anyway?",
+      "NoFatigue": "{name}: neither target has Fatigue.",
+      "Which": "Both have Fatigue. Whose Fatigue do you take?",
+      "CardTitle": "{label}: {from}'s Fatigue → {to}",
+      "ApNext": "{name} gains {n} AP on their next turn"
+    },
+    "Refresh": {
+      "Notice": "{n} item(s) have compendium updates.",
+      "Button": "Refresh",
+      "Title": "Refresh from the compendium",
+      "Confirm": "Refresh these items from the system compendiums? Each takes the compendium’s current rules data. Kept: equipped, stored, quantity, rend, picks, named weapons and other choices. Replaced: any edits made to the items themselves, and the generated attacks of a weapon whose stats changed.",
+      "Done": "{name}: {n} item(s) refreshed.",
+      "WorldButton": "Refresh compendium items",
+      "NothingStale": "Every item is up to date with the compendiums.",
+      "WorldDone": "{n} item(s) refreshed on {actors} actor(s).",
+      "ReadyNotice": "{n} actor(s) have items the compendiums have updated since. Use “Refresh compendium items” in the Actors tab (or the notice on each sheet) to update them."
+    },
+    "Requests": {
+      "Failed": "Part of this card couldn’t be applied ({parts}): {error}. The rest was applied; check the targets before redoing that part by hand.",
+      "PendingTitle": "Cards waiting for the GM",
+      "Pending": "{n} card(s) were posted while no GM was connected and haven’t been applied. Apply them now, in order? (You can also use the Apply button on each card.)",
+      "NoGm": "No GM is connected. This card’s effects will wait until a GM joins and applies them.",
+      "Apply": "Apply (posted while no GM was connected)",
+      "AutomationError": "Sacadia automation stopped partway ({where}): {error}. See the console (F12) for details."
     }
   },
-
   "TYPES": {
     "Actor": {
       "character": "Character",
       "npc": "NPC"
     },
     "Item": {
-      "item": "Item",
-      "feature": "Feature",
-      "spell": "Spell"
+      "ability": "Ability",
+      "armor": "Armor",
+      "gear": "Gear"
+    },
+    "RegionBehavior": {
+      "zone": "Sacadia Zone"
     }
   }
 }

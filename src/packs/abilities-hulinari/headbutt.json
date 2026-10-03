@@ -1,0 +1,80 @@
+{
+  "_id": "cb72288ef19d72da",
+  "_key": "!items!cb72288ef19d72da",
+  "name": "Headbutt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Make a melee attack vs. PD while in Pack Form, dealing 1D8+Finesse damage on a successful hit. Damage dice rolled this way increases to 1D10 at level 5, and 2D6 at level 11.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": "pd"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "1",
+            "denomination": 8,
+            "formula": "",
+            "trait": "finesse",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Headbutt",
+      "requires": "skullcharge",
+      "options": [
+        {
+          "value": "plain",
+          "label": "No charge"
+        },
+        {
+          "value": "charge",
+          "label": "Charged 20ft+ in a straight line"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "headbutt",
+      "transcribed": true,
+      "buildHash": "6d7aec9454f2"
+    }
+  }
+}

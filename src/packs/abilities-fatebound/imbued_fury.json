@@ -1,0 +1,42 @@
+{
+  "_id": "a54333101d2fdb69",
+  "_key": "!items!a54333101d2fdb69",
+  "name": "Imbued Fury",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your attacks target AD (the lowest armor score among MD, TD, PD) when made against a Targeted Foe.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Targeted Foe, Fate 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "imbued_fury",
+      "transcribed": true,
+      "buildHash": "6b7d8ff70460"
+    }
+  }
+}

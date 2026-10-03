@@ -1,0 +1,43 @@
+{
+  "_id": "df17251ef30b4e9f",
+  "_key": "!items!df17251ef30b4e9f",
+  "name": "Clouded Walk",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Clouded Ally, as a reaction to an ally entering your Cloud, you may move them to somewhere else within the Cloud provided they do not move through other creatures in the Cloud. Their movement can still trigger reaction attacks.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Ally"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "clouded_walk",
+      "transcribed": true,
+      "buildHash": "01ce2864aea5"
+    }
+  }
+}

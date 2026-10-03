@@ -1,0 +1,84 @@
+{
+  "_id": "7d17bbc54302c0cb",
+  "_key": "!items!7d17bbc54302c0cb",
+  "name": "Beastly Presence",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expense X Savage Points where X is any number up to half your Proficiency (rounded up). Attempt to give one target within 5ft of you that many levels of Panic or Taunt. You may only use this ability once per quick rest on a single target.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "savage",
+        "amount": 0,
+        "variable": true,
+        "max": "ceil(@proficiency/2)"
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Courage 2"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "courage",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "@spent"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Give which condition?",
+      "options": [
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        }
+      ]
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "perTarget": true,
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "beastly_presence",
+      "transcribed": true,
+      "buildHash": "4d5002543689"
+    }
+  }
+}

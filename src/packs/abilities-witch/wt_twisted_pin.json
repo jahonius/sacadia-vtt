@@ -1,0 +1,57 @@
+{
+  "_id": "05876e045c35abb9",
+  "_key": "!items!05876e045c35abb9",
+  "name": "Twisted Pin",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one allied Thug. The damage they deal through Harm is increased by one dice types for as long as you maintain Focus.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": "Finesse[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Twisted Pin",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.abilityDamageSteps.thug_harm",
+          "mode": 2,
+          "value": "1 + @owns.wt_greater_twistings"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_twisted_pin",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "a5a1656bc90a"
+    }
+  }
+}

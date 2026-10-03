@@ -1,0 +1,39 @@
+{
+  "_id": "1a03710e0bdfbadc",
+  "_key": "!items!1a03710e0bdfbadc",
+  "name": "Sharp Rock",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p>Versatile: may be thrown up to 40ft.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "equipped": false,
+    "traits": "versatile",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "unarmed",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sharp_rock",
+      "kind": "weapon",
+      "buildHash": "050b5c1c7749"
+    }
+  }
+}

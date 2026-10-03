@@ -1,0 +1,41 @@
+{
+  "_id": "92b4418f9eda84c1",
+  "_key": "!items!92b4418f9eda84c1",
+  "name": "Bleeding Dance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you attempt to give Hemorrhage through Bleedstep, attempt to give levels equal to half your Proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "vyuha",
+      "prerequisite": "Bleedstep, Courage 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_bleeding_dance",
+      "buildHash": "08127080eef2"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "_id": "f82035de6cc64bc5",
+  "_key": "!items!f82035de6cc64bc5",
+  "name": "Fast Reflexes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a boost to your first melee attack in a turn, you may reduce the cost of that attack by 1AP. Still exhaust any limbs you would exhaust through this attack.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 7"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "melee"
+      },
+      "once": true,
+      "special": {
+        "requires": [
+          "self:combat:attacks-this-turn=0"
+        ],
+        "onConsume": {
+          "ap": -1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_fast_reflexes",
+      "feature": true,
+      "level": 7,
+      "buildHash": "b72ab9ebbad7"
+    }
+  }
+}

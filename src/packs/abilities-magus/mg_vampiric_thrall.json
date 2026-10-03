@@ -1,0 +1,44 @@
+{
+  "_id": "13600f07bef9dc10",
+  "_key": "!items!13600f07bef9dc10",
+  "name": "Vampiric Thrall",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you animate the dead, you may select one target you have killed with Bloodsight in the last round of combat (if you do this, do not select any other targets). That target rises as a CR5 Greater Vampiric Thrall. Treat Hemorrhage given by your Vampiric Thrall as Hemorrhage given by you through Bloodsight.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Animate Dead, Bloodsight, Wiles[4]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_vampiric_thrall",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "buildHash": "b8aec3bff3c4"
+    }
+  }
+}

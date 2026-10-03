@@ -1,0 +1,43 @@
+{
+  "_id": "24a83d1cfb43b522",
+  "_key": "!items!24a83d1cfb43b522",
+  "name": "Grasses of Kish",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": "Razorleaf, Finesse[3]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_grasses_of_kish",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "8333d1482b24"
+    }
+  }
+}

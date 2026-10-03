@@ -1,0 +1,50 @@
+{
+  "_id": "6af7f2a9b1409f6a",
+  "_key": "!items!6af7f2a9b1409f6a",
+  "name": "Trained Finesse",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may take this ability up to two times. Every time you do, increase your TD by 1 on top of any armor you are wearing. Second instance costs 2 CSP.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Trained Finesse",
+        "target": "defense.td",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "trained_finesse",
+      "buildHash": "71183b83bcf3"
+    }
+  }
+}

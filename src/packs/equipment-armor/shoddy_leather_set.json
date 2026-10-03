@@ -1,0 +1,32 @@
+{
+  "_id": "494652df6550f2dd",
+  "_key": "!items!494652df6550f2dd",
+  "name": "Shoddy Leather Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Medium Armor Training</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "material": "leather",
+    "defenses": {
+      "ad": 0,
+      "pd": 1,
+      "td": 4,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 20,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shoddy_leather_set",
+      "kind": "armor",
+      "buildHash": "f95f5949d01f"
+    }
+  }
+}

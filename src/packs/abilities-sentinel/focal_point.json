@@ -1,0 +1,57 @@
+{
+  "_id": "7ab7ba04890eb378",
+  "_key": "!items!7ab7ba04890eb378",
+  "name": "Focal Point",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickshot point and choose a 10x10ft square within your ranged weapon range. When a creature enters this square or starts their turn in it, they take XD6 damage, where X is half your Proficiency (rounded up).</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "square",
+      "size": "10",
+      "anchor": "point",
+      "effect": {
+        "affects": "all",
+        "damageTiers": [
+          {
+            "level": 1,
+            "formula": "(ceil(@proficiency/2))d6"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "focal_point",
+      "buildHash": "d04b59d8a2fa"
+    }
+  }
+}

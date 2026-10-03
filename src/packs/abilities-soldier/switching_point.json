@@ -1,0 +1,42 @@
+{
+  "_id": "ed01661df7cfc417",
+  "_key": "!items!ed01661df7cfc417",
+  "name": "Switching Point",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy moving within 5ft of you or from 5ft to 10ft range, you may switch one held item with one combat-readied item.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "switching_point",
+      "buildHash": "6b5ef24b298f"
+    }
+  }
+}

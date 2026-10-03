@@ -1,0 +1,45 @@
+{
+  "_id": "d775d3253453a6fc",
+  "_key": "!items!d775d3253453a6fc",
+  "name": "Greater Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of Checkered Shield by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[4], Checkered Shield · Research: Magical Identification[2]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_shield",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magical Identification[2]",
+      "buildHash": "551ae2c149ec"
+    }
+  }
+}

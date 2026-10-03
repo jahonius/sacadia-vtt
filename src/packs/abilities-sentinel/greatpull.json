@@ -1,0 +1,41 @@
+{
+  "_id": "310d7f4beda82159",
+  "_key": "!items!310d7f4beda82159",
+  "name": "Greatpull",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dealt by Pullback from XD4 to XD6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Pullback, Finesse 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "greatpull",
+      "buildHash": "3a90ef22094b"
+    }
+  }
+}

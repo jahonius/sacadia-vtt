@@ -1,0 +1,41 @@
+{
+  "_id": "2628750ab66127df",
+  "_key": "!items!2628750ab66127df",
+  "name": "Paralytic Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you successfully hit with a critical attack, you may make a critical effect be to give one level of Paralysis to the target.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Silent Strike"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_paralytic_strike",
+      "buildHash": "8628574245af"
+    }
+  }
+}

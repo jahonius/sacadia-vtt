@@ -1,0 +1,12 @@
+{
+  "name": "sacadia-quench-runner",
+  "private": true,
+  "type": "module",
+  "description": "Runs the Sacadia system's Quench batches headless against a throwaway Foundry world.",
+  "scripts": {
+    "test": "node run.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

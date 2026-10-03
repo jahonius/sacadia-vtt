@@ -1,0 +1,54 @@
+{
+  "_id": "558224175f8932e7",
+  "_key": "!items!558224175f8932e7",
+  "name": "Extra Sharp",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dice type of your named Sharp weapon by one additional type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Sharp Weapon, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Extra Sharp",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:named-by:bd_sharp_weapon"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_extra_sharp",
+      "buildHash": "cb0de54a00d5"
+    }
+  }
+}

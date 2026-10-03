@@ -1,0 +1,57 @@
+{
+  "_id": "865b74e2c70567c2",
+  "_key": "!items!865b74e2c70567c2",
+  "name": "Law of Alliance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot and choose one allied target within 5ft of you. If they agree, damage dealt to either of you is split between both of you until your Focus ends (if damage is an odd number, you always take the extra point of damage). You may only end Focus on Law of Alliance on your turn.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Research: Cultural Lore[3]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "focus": {
+      "endOnOwnTurn": true
+    },
+    "grant": {
+      "scope": "allies",
+      "label": "Law of Alliance",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [],
+      "marker": true
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_law_of_alliance",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Cultural Lore[3]",
+      "buildHash": "5d0948cf5667"
+    }
+  }
+}

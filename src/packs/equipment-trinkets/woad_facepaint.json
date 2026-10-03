@@ -1,0 +1,21 @@
+{
+  "_id": "91012c98fc912bd6",
+  "_key": "!items!91012c98fc912bd6",
+  "name": "Woad Facepaint",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "woad_facepaint",
+      "kind": "trinket",
+      "buildHash": "66e3e15e8899"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "3bc94dedb0ef8454",
+  "_key": "!items!3bc94dedb0ef8454",
+  "name": "Heather Root",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/heather_root_icon.png",
+  "system": {
+    "description": "<p>Gain resistance to damage you deal to yourself by rolling on the Insane table equal to half your Proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "heather_root",
+      "buildHash": "bc2e3cde48d2"
+    }
+  }
+}

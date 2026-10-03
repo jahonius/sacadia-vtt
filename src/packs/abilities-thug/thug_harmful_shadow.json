@@ -1,0 +1,65 @@
+{
+  "_id": "4fa7951495e02c43",
+  "_key": "!items!4fa7951495e02c43",
+  "name": "Harmful Shadow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you critically hit an enemy, you roll additional damage equal to XD6, where X is half your Proficiency Score (rounded up). This does not count as a critical effect.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Silent Strike, Finesse 2"
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [
+          {
+            "count": "ceil(@proficiency/2)",
+            "denomination": 6,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_harmful_shadow",
+      "buildHash": "4e8bf2c715b1"
+    }
+  }
+}

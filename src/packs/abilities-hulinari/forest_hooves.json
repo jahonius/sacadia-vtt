@@ -1,0 +1,42 @@
+{
+  "_id": "d5db2cf2f0063a71",
+  "_key": "!items!d5db2cf2f0063a71",
+  "name": "Forest Hooves",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Ignore difficult terrain from any cause.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Need for Speed"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "forest_hooves",
+      "transcribed": true,
+      "buildHash": "79fecc8ce8f4"
+    }
+  }
+}

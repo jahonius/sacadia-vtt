@@ -1,0 +1,42 @@
+{
+  "_id": "c378c03488f88308",
+  "_key": "!items!c378c03488f88308",
+  "name": "Hard Turn",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Herd Point as a Boost to Charge the Line. You may enact a single turn during Charge the Line, turning up to 90 degrees to either side.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "herd",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Charge the Line"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hard_turn",
+      "transcribed": true,
+      "buildHash": "bc1b2df49b7a"
+    }
+  }
+}

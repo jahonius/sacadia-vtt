@@ -1,0 +1,41 @@
+{
+  "_id": "9d78bf3c105e5cda",
+  "_key": "!items!9d78bf3c105e5cda",
+  "name": "Call of the Dying",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one call point as a reaction when an ally within 15ft of you begins their turn while Wounded. If you do, they do not increase their Exhaustion by 1.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_the_dying",
+      "buildHash": "08764565b4be"
+    }
+  }
+}

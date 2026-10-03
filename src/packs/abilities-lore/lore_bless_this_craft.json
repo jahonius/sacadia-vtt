@@ -1,0 +1,44 @@
+{
+  "_id": "0dd4e36cc54e3dd3",
+  "_key": "!items!0dd4e36cc54e3dd3",
+  "name": "Bless This Craft",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a Lore Point while crafting an item. If you do, gain 1X Advantage to all craft ingredients you integrate into this craft. If you have additional lore points available, you may use them still on Rousing Success to create a critical success to incorporate any single crafting ingredient.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Human",
+      "prerequisite": "Human · p.170"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_bless_this_craft",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "a5698db8fe64"
+    }
+  }
+}

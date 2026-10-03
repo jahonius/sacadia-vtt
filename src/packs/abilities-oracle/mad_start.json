@@ -1,0 +1,46 @@
+{
+  "_id": "35f43d245ec4ec96",
+  "_key": "!items!35f43d245ec4ec96",
+  "name": "Mad Start",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_start_icon.png",
+  "system": {
+    "description": "<p>Expend one Prescient Point. Gain 1D6 levels of Madness.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "prescient",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Fate 6"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "gain": "1d6"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mad_start",
+      "buildHash": "32cb6732432e"
+    }
+  }
+}

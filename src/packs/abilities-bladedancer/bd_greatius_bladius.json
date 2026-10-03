@@ -1,0 +1,41 @@
+{
+  "_id": "4262951f2572b4c9",
+  "_key": "!items!4262951f2572b4c9",
+  "name": "Greatius Bladius",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the radius of Blade Aura from 10ft to 15ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "aoean",
+      "prerequisite": "Bladius, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_greatius_bladius",
+      "buildHash": "f475e49f6087"
+    }
+  }
+}

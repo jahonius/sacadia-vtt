@@ -1,0 +1,65 @@
+{
+  "_id": "797f714909dd1e4c",
+  "_key": "!items!797f714909dd1e4c",
+  "name": "Fumbling Wander",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to an enemy moving to within 5ft range of you, you may attempt to give them 1D8 Fumble. They make a Fate Check against this effect. If you are Steadied, you may give them 8 Fumble if they fail the check.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d8"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "fumbling_wander",
+      "transcribed": true,
+      "buildHash": "feeb465b7154"
+    }
+  }
+}

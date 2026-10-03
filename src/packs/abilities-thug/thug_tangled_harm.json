@@ -1,0 +1,60 @@
+{
+  "_id": "f2b4c581d8bcdf01",
+  "_key": "!items!f2b4c581d8bcdf01",
+  "name": "Tangled Harm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Harm, increase the damage dice of Harm by two types. Then, reduce the target's Pin by one.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Harm"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_harm"
+      },
+      "effects": [
+        {
+          "label": "Tangled Harm",
+          "target": "damage",
+          "mode": "step",
+          "value": "2"
+        }
+      ],
+      "special": {
+        "targetDelta": {
+          "pinned": -1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_tangled_harm",
+      "buildHash": "e210c13d05d9"
+    }
+  }
+}

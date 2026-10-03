@@ -1,0 +1,41 @@
+{
+  "_id": "bf2cd7cd825d152f",
+  "_key": "!items!bf2cd7cd825d152f",
+  "name": "Surrounded by Friends",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Count all creatures (not just enemies) when determining the modifier to apply to damage by the Surrounded by Me boost.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "aoean",
+      "prerequisite": "Surrounded by Me, Courage 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_surrounded_by_friends",
+      "buildHash": "d58480ab09bd"
+    }
+  }
+}

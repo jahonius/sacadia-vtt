@@ -1,0 +1,53 @@
+{
+  "_id": "4d6a8563022683ab",
+  "_key": "!items!4d6a8563022683ab",
+  "name": "Need for Speed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your base movement speed by 10ft in Pack Form.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Need for Speed",
+        "target": "speed",
+        "value": "10",
+        "predicate": [
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "need_for_speed",
+      "transcribed": true,
+      "buildHash": "6e1a271cf336"
+    }
+  }
+}

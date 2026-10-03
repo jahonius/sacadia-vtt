@@ -1,0 +1,66 @@
+{
+  "_id": "c3b46170cea25488",
+  "_key": "!items!c3b46170cea25488",
+  "name": "Draining Aura",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/draining_aura_icon.png",
+  "system": {
+    "description": "<p>You create a sphere with radius 5x your Madness in feet centered on a point you choose within 60ft. As long as you maintain Focus, all enemies who start their turn inside this region or enter the region on their turn make a Courage Check against one level of Fatigue. If your Madness changes, the radius of the aura changes. You may move the center of this sphere 10ft every turn when you expend a Focus action to maintain Focus on Draining Aura.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "zone": {
+      "shape": "circle",
+      "size": "5*@madness",
+      "anchor": "point",
+      "radiusPerMadness": true,
+      "effect": {
+        "affects": "enemies",
+        "check": {
+          "trait": "courage",
+          "inflict": [
+            {
+              "condition": "fatigue",
+              "level": 1
+            }
+          ]
+        }
+      }
+    },
+    "madness": {
+      "insaneOnly": true,
+      "prereq": 1,
+      "spend": "1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "draining_aura",
+      "buildHash": "72ccbbe3ef16"
+    }
+  }
+}

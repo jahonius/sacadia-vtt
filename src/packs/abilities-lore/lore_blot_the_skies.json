@@ -1,0 +1,53 @@
+{
+  "_id": "a54bdff61a01134f",
+  "_key": "!items!a54bdff61a01134f",
+  "name": "Blot the Skies",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Lore Point in Swarm Form and choose one target within 60ft of you. That target is blinded until the end of your next turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Warrior",
+      "prerequisite": "Swarm Hulinari, Level 9 · p.175"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "blinded",
+          "amount": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_blot_the_skies",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "c9e77cb0e4be"
+    }
+  }
+}

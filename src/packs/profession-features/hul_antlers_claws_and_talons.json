@@ -1,0 +1,59 @@
+{
+  "_id": "de14e859f158613f",
+  "_key": "!items!de14e859f158613f",
+  "name": "Antlers, Claws, and Talons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you make an unarmed attack in Beast form, change the damage dice from 1D4 to 1D8.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "Level Feature",
+      "prerequisite": "Level 1"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Antlers, Claws, and Talons",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "2",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          },
+          {
+            "atom": "self:form:beast"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hul_antlers_claws_and_talons",
+      "feature": true,
+      "level": 1,
+      "buildHash": "735e07923c6c"
+    }
+  }
+}

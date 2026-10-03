@@ -1,0 +1,73 @@
+{
+  "_id": "d73577da2d4fcce3",
+  "_key": "!items!d73577da2d4fcce3",
+  "name": "Tighten Focus",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Targeted Foe, add your Fate to your to-hit and damage against that target instead of half your Fate. Aristeia [0] Aristeia: When you take Aristeia, gain an Action Pool of Glory points equal to your Proficiency Score. You may spend skill points to learn various Aristeia. Whenever you may spend skill points, you may add to the list of Aristeia you know. When you use the ability, you may declare one of your known Aristeia. You get all of Glory points back after a quick rest.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Targeted Foe, Power 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Tighten Focus",
+        "target": "toHit",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          }
+        ]
+      },
+      {
+        "label": "Tighten Focus",
+        "target": "damage",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": [
+          {
+            "atom": "self:used:targeted_foe"
+          },
+          {
+            "atom": "target:mark:targeted-foe"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tighten_focus",
+      "transcribed": true,
+      "buildHash": "4d9b7e963d6e"
+    }
+  }
+}

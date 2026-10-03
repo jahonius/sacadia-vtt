@@ -1,0 +1,69 @@
+{
+  "_id": "da117a39ae34fae8",
+  "_key": "!items!da117a39ae34fae8",
+  "name": "Baneful Scratch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you. They make a Finesse Check against your Check DC or take XD4 damage, where X is the number of unique conditions they possess (i.e., if a target has 3 Fumble, 2 Nausea, and is Surrounded, they roll against 3D4).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": "Promise of Vengeance"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [
+          {
+            "count": "@target.uniqueConditions + @owns.wt_greater_twist * (@target.conditionLevels - @target.uniqueConditions)",
+            "denomination": 4,
+            "formula": "",
+            "trait": "",
+            "type": ""
+          }
+        ],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_baneful_scratch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "3f09d8b3fe99"
+    }
+  }
+}

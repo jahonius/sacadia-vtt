@@ -1,0 +1,54 @@
+{
+  "_id": "73e9680743ed2c39",
+  "_key": "!items!73e9680743ed2c39",
+  "name": "Withered Fruit",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_fruit_icon.png",
+  "system": {
+    "description": "<p>Increase the benefit of Withered Bloom from half your current Madness to your full current Madness.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": "Withered Bloom, Wiles 6"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Withered Fruit",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "@madness",
+        "predicate": [
+          {
+            "atom": "!self:insane"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "withered_fruit",
+      "buildHash": "5b3569e1c2a9"
+    }
+  }
+}

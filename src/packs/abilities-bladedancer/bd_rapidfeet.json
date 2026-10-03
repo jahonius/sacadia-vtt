@@ -1,0 +1,48 @@
+{
+  "_id": "cd26378fabdaeaeb",
+  "_key": "!items!cd26378fabdaeaeb",
+  "name": "Rapidfeet",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your base Move speed by 5ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "gongmo",
+      "prerequisite": "Fleetfeet, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Rapidfeet",
+        "target": "speed",
+        "value": "5",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_rapidfeet",
+      "buildHash": "0e3991b6c438"
+    }
+  }
+}

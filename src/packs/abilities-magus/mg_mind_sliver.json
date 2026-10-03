@@ -1,0 +1,65 @@
+{
+  "_id": "eb3bfc8750b53979",
+  "_key": "!items!eb3bfc8750b53979",
+  "name": "Mind Sliver",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a reaction to a target making a Trait Check against a mental condition, expend a Spell Slot. The target gets 1X Disadvantage on the Trait Check, and takes 1D4 mental damage for each failed Trait Check made. Increase the damage of this effect to 1D6 at Level 5, and 1D8 at Level 11.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Elder Tome",
+      "prerequisite": "Wiles[2] · Research: Intuition[1]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Mind Sliver",
+      "duration": {
+        "type": "consumed",
+        "on": "roll"
+      },
+      "changes": [
+        {
+          "key": "system.advantage.trait",
+          "mode": 2,
+          "value": "-1"
+        },
+        {
+          "key": "system.bonuses.failDamageDie",
+          "mode": 5,
+          "value": "4 + 2*min(1, floor(@level/5)) + 2*min(1, floor(@level/11)) + 2*@owns.mg_greater_slivers"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_mind_sliver",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "elder",
+      "research": "Intuition[1]",
+      "buildHash": "9d551ca21b5a"
+    }
+  }
+}

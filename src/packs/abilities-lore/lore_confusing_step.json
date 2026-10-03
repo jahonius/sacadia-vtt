@@ -1,0 +1,44 @@
+{
+  "_id": "cf73b3344d043c57",
+  "_key": "!items!cf73b3344d043c57",
+  "name": "Confusing Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Lore point to take a Move action (without exhausting your limbs or spending AP, regardless of when you use this). Every enemy within 30ft of you at the end of this Move action takes the Surrounded condition until the start of your next turn.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Bladedancer",
+      "prerequisite": "Bladedancer, Level 9 · p.174"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_confusing_step",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "977f629b10e4"
+    }
+  }
+}

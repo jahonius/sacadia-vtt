@@ -1,0 +1,21 @@
+{
+  "_id": "5e4f589f87332e8a",
+  "_key": "!items!5e4f589f87332e8a",
+  "name": "Rabbit's Paw",
+  "type": "gear",
+  "img": "icons/svg/chest.svg",
+  "system": {
+    "description": "<p>(Prerequisite: Fate 3, wearing Medium Armor.) While a Rabbit's Paw is equipped in a RIS, increase your Dodge's dice type by one dice type.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "rabbit_s_paw",
+      "kind": "trinket",
+      "buildHash": "bd8569c5b328"
+    }
+  }
+}

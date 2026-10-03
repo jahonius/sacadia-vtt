@@ -1,0 +1,43 @@
+{
+  "_id": "1473c355fa2d4b9a",
+  "_key": "!items!1473c355fa2d4b9a",
+  "name": "Protectorate",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have Focus on Protectorate and are wielding a tower shield, allies behind you are treated as under Full Cover from the direction your shield is facing. You may change the direction each turn when you expend an AP to maintain Focus on Protectorate.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Courage 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "protectorate",
+      "buildHash": "d292aefdb68e"
+    }
+  }
+}

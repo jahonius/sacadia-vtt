@@ -1,0 +1,59 @@
+{
+  "_id": "097155f216f33e47",
+  "_key": "!items!097155f216f33e47",
+  "name": "Thickskin",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As long as you maintain Focus, gain DR equal to half your Proficiency score (rounded up).</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Thickskin",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@proficiency/2)",
+        "predicate": [
+          {
+            "atom": "self:used:thug_thickskin"
+          },
+          {
+            "atom": "!self:ability:thug_legendary_resistance"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_thickskin",
+      "buildHash": "3e98900481f8"
+    }
+  }
+}

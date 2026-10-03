@@ -1,0 +1,41 @@
+{
+  "_id": "90452677b7f4192a",
+  "_key": "!items!90452677b7f4192a",
+  "name": "Covering Fire",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/covering_fire_icon.png",
+  "system": {
+    "description": "<p>If you successfully hit at least three targets within 10ft of your allies with a bow attack on your turn, those allies have half cover until the start of your next turn.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 10,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Bowman"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "covering_fire",
+      "buildHash": "fd2394d609d4"
+    }
+  }
+}

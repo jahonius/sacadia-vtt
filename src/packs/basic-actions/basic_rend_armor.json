@@ -1,0 +1,73 @@
+{
+  "_id": "3e4a8e10e4382794",
+  "_key": "!items!3e4a8e10e4382794",
+  "name": "Rend Armor",
+  "type": "ability",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "description": "<p>You make a melee attack against worn armor by making an attack against enemy armor. If successful, instead of dealing damage rend 1 armor (PD, MD, or TD - your choice).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [
+        "oneArm"
+      ]
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "melee",
+          "trait": "",
+          "defense": "pd"
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "noDamage": true,
+        "inflict": [
+          {
+            "condition": "rended",
+            "amount": "1"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Rend which armor?",
+      "options": [
+        {
+          "value": "pd",
+          "label": "PD"
+        },
+        {
+          "value": "md",
+          "label": "MD"
+        },
+        {
+          "value": "td",
+          "label": "TD"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_rend_armor",
+      "basic": true,
+      "buildHash": "24f4e70c7883"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "06d14a9d44e2de6d",
+  "_key": "!items!06d14a9d44e2de6d",
+  "name": "Vine Staff",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[2], Fate[1]</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 120,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "wiles"
+    },
+    "hands": 1,
+    "defense": "md",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "vine_staff",
+      "kind": "weapon",
+      "buildHash": "da1ec12ec96f"
+    }
+  }
+}

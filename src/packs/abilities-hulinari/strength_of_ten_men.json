@@ -1,0 +1,42 @@
+{
+  "_id": "c489c364abddb4d9",
+  "_key": "!items!c489c364abddb4d9",
+  "name": "Strength of Ten Men",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Sweeping Claws, your attack only deals damage to enemies, and does not harm allies.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Sweeping Claws, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "strength_of_ten_men",
+      "transcribed": true,
+      "buildHash": "6d8215b5861c"
+    }
+  }
+}

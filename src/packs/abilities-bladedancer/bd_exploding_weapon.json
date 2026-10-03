@@ -1,0 +1,41 @@
+{
+  "_id": "390c58259b9222e3",
+  "_key": "!items!390c58259b9222e3",
+  "name": "Exploding Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Name one versatile weapon you own. The first time per quick rest that you throw this weapon, it explodes, dealing its damage to all targets in a 5ft radius from the point you select. You must then name a new weapon to do this again.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_exploding_weapon",
+      "buildHash": "b518c685c4c4"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_id": "2f9fda67a3dc838d",
+  "_key": "!items!2f9fda67a3dc838d",
+  "name": "Hallowed Touch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When an ally within 5ft of you attempts to give temporary HP, you may expend a Reaction to add one die to the amount rolled (e.g., if they would roll 3D4, they instead roll 4D4).</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Promise",
+      "prerequisite": "Promise of Nonviolence"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "ally",
+      "label": "Hallowed Touch",
+      "duration": {
+        "type": "consumed",
+        "on": "tempHp"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.tempHpDice",
+          "mode": 2,
+          "value": "1"
+        },
+        {
+          "key": "system.bonuses.tempHpSteps",
+          "mode": 2,
+          "value": "1",
+          "predicate": [
+            {
+              "atom": "self:ability:wt_mastery_of_nonviolence"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_hallowed_touch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "bcfd0f8f4ea4"
+    }
+  }
+}

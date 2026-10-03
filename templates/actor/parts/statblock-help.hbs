@@ -1,0 +1,39 @@
+{{!-- Stat-block import format reference. Shown (collapsed) inside the Paste-Stat-Block dialog and
+     documented in docs/STATBLOCK-FORMAT.md. The syntax tokens are literals (not translated). --}}
+<details class="statblock-help">
+  <summary>{{localize 'SACADIA.StatBlock.HelpSummary'}}</summary>
+  <div class="sbh-body">
+    <p><b>Stats</b> — matched by keyword, any order/casing, one or several per line:</p>
+    <pre>Name: &lt;actor name&gt;   (optional)
+HP &lt;n&gt;   AP &lt;n&gt;
+AD &lt;n&gt;  PD &lt;n&gt;  TD &lt;n&gt;  MD &lt;n&gt;  DR &lt;n&gt;
+Check DC &lt;n&gt;   CR &lt;n&gt;</pre>
+
+    <p><b>Abilities</b> — after an <code>Abilities:</code> (or <code>Actions:</code>) line, one per
+      line. Bullet and AP are optional; AP defaults to 1. Wrapped lines continue the one above.</p>
+    <pre>- &lt;Name&gt; (&lt;n&gt;AP): &lt;effect text&gt;</pre>
+
+    <p>Write the effect as an <b>attack</b> to make it rollable (to-hit + damage); the trait comes
+      from the category (melee&rarr;Power, ranged&rarr;Finesse, magic&rarr;Wiles):</p>
+    <pre>[melee|ranged|magic] attack vs &lt;AD|PD|TD|MD&gt;, &lt;count&gt;d&lt;size&gt;[+&lt;flat&gt;] [&lt;type&gt;]</pre>
+    <p>Anything else (saves, grapples, condition-inflicts) stays as plain text for the GM to
+      adjudicate — e.g. by asking for a Resist Condition roll.</p>
+
+    <p>
+      <b>Example</b>
+      <button type="button" class="sbh-use-example">
+        <i class="fa-solid fa-arrow-up"></i> {{localize 'SACADIA.StatBlock.UseExample'}}
+      </button>
+    </p>
+    <pre class="sbh-example">Name: Bog Lurker
+HP 34  AP 4
+AD 13  PD 12  TD 11  MD 10  DR 2
+Check DC 13  CR 2
+
+Abilities:
+- Gore (1AP): melee attack vs PD, 1d10 slashing.
+- Bog Bolt (1AP): ranged attack vs PD, 2d6+2 piercing.
+- Frighten (1AP): a target within 15ft makes a Wiles check or takes Panic 1.
+- Sink (2AP): grapple a target and pull it prone.</pre>
+  </div>
+</details>

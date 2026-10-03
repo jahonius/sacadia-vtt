@@ -1,0 +1,41 @@
+{
+  "_id": "cddac80d65258a27",
+  "_key": "!items!cddac80d65258a27",
+  "name": "Jagged Blade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Name one versatile weapon you own. The first time per quick rest that you attempt to Artery Strike a target with this weapon, attempt to give them one extra level of Hemorrhage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Artery Strike"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_jagged_blade",
+      "buildHash": "332a61580791"
+    }
+  }
+}

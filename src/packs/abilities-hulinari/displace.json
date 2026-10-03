@@ -1,0 +1,42 @@
+{
+  "_id": "571fedc46fdd453e",
+  "_key": "!items!571fedc46fdd453e",
+  "name": "Displace",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may use the Displace Boost on a Move action to attempt to end that move action on a space occupied by enemies. Any enemies in a space you attempt to occupy must make a Power Check against your Check DC or are pushed 5ft away into an empty square. Enemies get 1x advantage for each ally also making this Trait Check, but also receive disadvantage from your size if relevant. If any enemies pass their Power Check, you must end your move action in the nearest square you would have moved through prior to moving onto their space.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Larger Than Life, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "displace",
+      "transcribed": true,
+      "buildHash": "853c911df9f2"
+    }
+  }
+}

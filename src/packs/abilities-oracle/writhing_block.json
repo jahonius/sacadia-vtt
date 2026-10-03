@@ -1,0 +1,41 @@
+{
+  "_id": "19f5548fcf797e31",
+  "_key": "!items!19f5548fcf797e31",
+  "name": "Writhing Block",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/writhing_block_icon.png",
+  "system": {
+    "description": "<p>You do not lose HP if you roll a 7 or 8 on the Insane table.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "druidia",
+      "prerequisite": "Fate 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "writhing_block",
+      "buildHash": "bc8a32859c40"
+    }
+  }
+}

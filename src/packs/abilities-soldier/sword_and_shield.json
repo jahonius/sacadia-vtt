@@ -1,0 +1,57 @@
+{
+  "_id": "56b730d00e86de85",
+  "_key": "!items!56b730d00e86de85",
+  "name": "Sword and Shield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you wield both a shield and a one-handed melee weapon in combat, you may add your shield's Defense to the damage dealt by your non-shield melee weapon.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Sword and Shield",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@shieldDefense",
+        "predicate": [
+          {
+            "atom": "self:wielding:shield"
+          },
+          {
+            "atom": "!self:attack:weapon:shield"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sword_and_shield",
+      "buildHash": "1dbc4a30cc1b"
+    }
+  }
+}

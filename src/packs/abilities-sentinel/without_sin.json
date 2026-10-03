@@ -1,0 +1,41 @@
+{
+  "_id": "b142089d1f7114bd",
+  "_key": "!items!b142089d1f7114bd",
+  "name": "Without Sin",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you critically hit with a sling attack that would cause a target to receive an adversarial condition, you may make the critical effect be that the target must roll against one additional level (to a maximum of your Proficiency).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": "Damaging Slingblow"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "without_sin",
+      "buildHash": "a4520ef2d081"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "898cd5a0da6cfc48",
+  "_key": "!items!898cd5a0da6cfc48",
+  "name": "Greater Unfurling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 3 Spell Slots.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Any Tome",
+      "prerequisite": "Fate[4] · Research: Handcopy[2]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_greater_unfurling",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "any",
+      "research": "Handcopy[2]",
+      "buildHash": "2eb619bca856"
+    }
+  }
+}

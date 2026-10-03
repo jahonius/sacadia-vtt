@@ -1,0 +1,42 @@
+{
+  "_id": "cd0e2b25c9833360",
+  "_key": "!items!cd0e2b25c9833360",
+  "name": "Wilder Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>The minimum base damage dice of Wild Strike is 1D4.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Wild Strike, Power 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wilder_strike",
+      "transcribed": true,
+      "buildHash": "f0678c90ec32"
+    }
+  }
+}

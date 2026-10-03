@@ -1,0 +1,57 @@
+{
+  "_id": "5bdcfb8fb9129fd3",
+  "_key": "!items!5bdcfb8fb9129fd3",
+  "name": "Porcupine",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you are Focusing on Protectorate and make an opportunity attack, increase the damage dice of your melee weapon by one additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Protectorate"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Porcupine",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          },
+          {
+            "atom": "self:used:protectorate"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "porcupine",
+      "buildHash": "ecfe1e0c8343"
+    }
+  }
+}

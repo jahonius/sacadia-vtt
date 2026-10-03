@@ -1,0 +1,69 @@
+{
+  "_id": "792f5671161473ac",
+  "_key": "!items!792f5671161473ac",
+  "name": "Olive Branch",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you. They make X Fate Checks against your Check DC, where X is half your Proficiency (rounded up). For each failed Check DC, deal 1D6 damage to them. An allied target can willingly choose to fail all Fate Checks against this effect. If you have the Promise of Nonviolence, you cannot choose an enemy as your target (without breaking your Promise). Then, choose a second target within 5ft of you. They gain HP equal to the damage dealt to the first target (to a maximum of their max. HP). You can choose yourself as either target.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Fate[2]"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "checks": "ceil(@proficiency/2)",
+            "perFailDie": 6,
+            "perFailDieWith": {
+              "ability": "wt_oldgrove",
+              "die": 8
+            },
+            "healTo": "@target2"
+          }
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_olive_branch",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "8cc38b75921c"
+    }
+  }
+}

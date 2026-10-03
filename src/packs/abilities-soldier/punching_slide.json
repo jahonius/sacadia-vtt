@@ -1,0 +1,41 @@
+{
+  "_id": "3da9773c47fc0827",
+  "_key": "!items!3da9773c47fc0827",
+  "name": "Punching Slide",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Step and Slide, increase the damage dealt by your one-handed melee weapon by one additional dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "Step and Slide, Power 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "punching_slide",
+      "buildHash": "8dcf2aeb118b"
+    }
+  }
+}

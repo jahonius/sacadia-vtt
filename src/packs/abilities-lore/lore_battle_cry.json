@@ -1,0 +1,64 @@
+{
+  "_id": "5f0fe07f7365345b",
+  "_key": "!items!5f0fe07f7365345b",
+  "name": "Battle Cry",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may expend a lore point to rally all of your allies. Until the start of your next turn, you and all of allies within 15ft of you gain X DR and add X to all Trait Checks, where X is your Proficiency.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Soldier",
+      "prerequisite": "Soldier, Level 13 · p.176"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Battle Cry",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.dr",
+          "mode": 2,
+          "value": "@proficiency"
+        },
+        {
+          "key": "system.bonuses.trait",
+          "mode": 2,
+          "value": "@proficiency"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_battle_cry",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "bf53cd2b9aac"
+    }
+  }
+}

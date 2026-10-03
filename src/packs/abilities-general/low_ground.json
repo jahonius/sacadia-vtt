@@ -1,0 +1,41 @@
+{
+  "_id": "c67ade2b97d718c2",
+  "_key": "!items!c67ade2b97d718c2",
+  "name": "Low Ground",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Creatures do not get advantage to hit you when they have height advantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "protection",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "low_ground",
+      "buildHash": "9b0452479929"
+    }
+  }
+}

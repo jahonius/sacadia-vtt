@@ -1,0 +1,51 @@
+{
+  "_id": "f2451eba7af741ce",
+  "_key": "!items!f2451eba7af741ce",
+  "name": "Base Clobber",
+  "type": "ability",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p>Ranged weapons (bow, crossbow, sling). When an enemy moves from 10ft away to 5ft away, you may use a reaction to deal your base weapon damage to them. Do not add any modifiers to this damage. If you are Steadied and then use this reaction while Steadied, treat this attack as a critical hit.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "basic",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "damage",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": [],
+        "baseDamageOnly": true
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "basic_base_clobber",
+      "basic": true,
+      "opportunity": true,
+      "steadiedCrit": true,
+      "buildHash": "fef0ab3d4726"
+    }
+  }
+}

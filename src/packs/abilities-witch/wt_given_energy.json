@@ -1,0 +1,43 @@
+{
+  "_id": "b61aaadc9c733c2f",
+  "_key": "!items!b61aaadc9c733c2f",
+  "name": "Given Energy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You can choose yourself as one of the targets of Funnel Energy.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Funnel Energy, Fate[5]"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_given_energy",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "3c7291e7353e"
+    }
+  }
+}

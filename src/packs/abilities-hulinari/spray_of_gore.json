@@ -1,0 +1,42 @@
+{
+  "_id": "b91338b73698e848",
+  "_key": "!items!b91338b73698e848",
+  "name": "Spray of Gore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Tear Apart, deal 1D6 damage to any creature you give the Surprised Condition to (apply damage before giving the target Surprised). Increase damage dice dealt this way to 1D8 at level 5, and 1D10 at level 11.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Tear Apart"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "spray_of_gore",
+      "transcribed": true,
+      "buildHash": "efb833592eb0"
+    }
+  }
+}

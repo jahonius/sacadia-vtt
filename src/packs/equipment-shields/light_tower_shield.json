@@ -1,0 +1,46 @@
+{
+  "_id": "c1b30d12e77c4acd",
+  "_key": "!items!c1b30d12e77c4acd",
+  "name": "Light Tower Shield",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Heavy Armor Training, Power 2</em></p><p>Tower Shield: −5ft Move Speed; creatures directly behind you have Full Cover.</p>",
+    "equipped": false,
+    "category": "",
+    "material": "",
+    "shieldSize": "tower",
+    "defenses": {
+      "ad": 0,
+      "pd": 0,
+      "td": 3,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "shield",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "light_tower_shield",
+      "kind": "shield",
+      "buildHash": "697d72492ba1"
+    }
+  }
+}

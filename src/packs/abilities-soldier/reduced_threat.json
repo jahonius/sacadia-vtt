@@ -1,0 +1,41 @@
+{
+  "_id": "df7baa86d0408d2d",
+  "_key": "!items!df7baa86d0408d2d",
+  "name": "Reduced Threat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Sacrifice, reduce the damage you take by half your Courage (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Sacrifice, Courage 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "reduced_threat",
+      "buildHash": "461bb72eb06b"
+    }
+  }
+}

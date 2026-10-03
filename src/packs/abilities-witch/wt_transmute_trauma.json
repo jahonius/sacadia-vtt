@@ -1,0 +1,159 @@
+{
+  "_id": "fed6d22fe3714b07",
+  "_key": "!items!fed6d22fe3714b07",
+  "name": "Transmute Trauma",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose two targets within 5ft of you. The first target must have levels of an Adversarial Condition, and the second does not. Choose one adversarial condition that the first target has, and then select some number of levels of that condition up to X, where X is half your Proficiency, rounded up. The second target must make Fate Checks against X levels of that condition. For each level of the condition they take, the first target loses one level of the condition, and you gain 1 level of Fatigue.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Conditionmaker",
+      "prerequisite": "Fate[3], Promise of Justice"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "perFail": {
+              "other": {
+                "uuid": "@target1",
+                "deltas": {
+                  "@choice": -1
+                }
+              }
+            },
+            "casterGain": {
+              "condition": "fatigue"
+            }
+          }
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "@spent"
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition moves?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "pinned",
+          "label": "Pinned"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "corroded",
+          "label": "Corroded"
+        },
+        {
+          "value": "debilitated",
+          "label": "Debilitated"
+        },
+        {
+          "value": "pulled",
+          "label": "Pulled"
+        },
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "silenced",
+          "label": "Silenced"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy"
+        },
+        {
+          "value": "panic",
+          "label": "Panic"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt"
+        },
+        {
+          "value": "fumbled",
+          "label": "Fumbled"
+        },
+        {
+          "value": "rended",
+          "label": "Rended"
+        }
+      ]
+    },
+    "amountPrompt": {
+      "label": "Levels to move",
+      "max": "ceil(@proficiency/2)"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_transmute_trauma",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "ce0875257d0b"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "2710275610c2b581",
+  "_key": "!items!2710275610c2b581",
+  "name": "Reactionary",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain one reaction to use before the start of your next turn. If you do not use this reaction, it goes away at the start of your next turn. You may not use two reactions in response to the same event.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Courage 4"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grantsReaction": 1
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "reactionary",
+      "buildHash": "7918c71f9aa6"
+    }
+  }
+}

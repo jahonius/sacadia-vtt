@@ -1,0 +1,54 @@
+{
+  "_id": "215ad83bc547a6a3",
+  "_key": "!items!215ad83bc547a6a3",
+  "name": "Raging Harm",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the dice type of Harm by one dice type when you are Raging.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Berserker Rage"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Raging Harm",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_harm",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:raging"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_raging_harm",
+      "buildHash": "5ce3343a730a"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_id": "46691c8b801e42ef",
+  "_key": "!items!46691c8b801e42ef",
+  "name": "Hypnotic Gaze",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Spell Slot and choose a target within 60ft. They make Fate Checks against X levels of Frenzied, where X is half your Proficiency, rounded up.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Blood Tome",
+      "prerequisite": "Research: Divination"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "frenzy",
+            "amount": "ceil(@proficiency/2)"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_hypnotic_gaze",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "blood",
+      "research": "Divination",
+      "buildHash": "9685f613ce72"
+    }
+  }
+}

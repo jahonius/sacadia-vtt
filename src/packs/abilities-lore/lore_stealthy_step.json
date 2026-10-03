@@ -1,0 +1,53 @@
+{
+  "_id": "2c0deef98d8bd801",
+  "_key": "!items!2c0deef98d8bd801",
+  "name": "Stealthy Step",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Lore Point to fade into the shadows and disappear at the start of your turn. No one may make an attack on you until the start of your next turn, and your movement does not provoke attacks of opportunity. Treat the first attack you make on every unique target as surprised until the start of your next turn.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Curiot",
+      "prerequisite": "Stealthy Curiot Ancestry · p.171"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [
+        {
+          "condition": "hidden",
+          "amount": "1"
+        }
+      ],
+      "target": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_stealthy_step",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "380cefde7628"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "_id": "738905adcdf8136e",
+  "_key": "!items!738905adcdf8136e",
+  "name": "Infallible",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Lore point. Until the end of your turn, any attack you attempt that would miss hits instead. If you use this and it is not your turn (as in, during a reaction attack) it applies until the end of your next turn.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "General",
+      "prerequisite": "p.170"
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "self",
+      "label": "Infallible",
+      "duration": {
+        "type": "consumed",
+        "on": "turnEnd"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.autoHit",
+          "mode": 2,
+          "value": "1"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_infallible",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "671fb47d3c6b"
+    }
+  }
+}

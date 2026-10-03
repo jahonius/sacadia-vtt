@@ -1,0 +1,146 @@
+{
+  "_id": "62e243dd00446d88",
+  "_key": "!items!62e243dd00446d88",
+  "name": "Witch's Finger",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Touch a target within 5ft of you and choose one adversarial condition they possess from the following: Nausea, Pinned, Paralysis, Delirium, Jinxed, Slowed, Sting. They make a Fate Check against your Check DC. If they fail, they gain one level (to a maximum of your Proficiency).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "",
+      "prerequisite": ""
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {
+            "capAt": "@proficiency"
+          }
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "@choice",
+            "amount": "1",
+            "stacks": true
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which condition?",
+      "options": [
+        {
+          "value": "nausea",
+          "label": "Nausea"
+        },
+        {
+          "value": "pinned",
+          "label": "Pinned"
+        },
+        {
+          "value": "paralysis",
+          "label": "Paralysis"
+        },
+        {
+          "value": "corroded",
+          "label": "Corroded (Witch's Control)"
+        },
+        {
+          "value": "debilitated",
+          "label": "Debilitated (Witch's Control)"
+        },
+        {
+          "value": "pulled",
+          "label": "Pulled (Witch's Control)"
+        },
+        {
+          "value": "hemorrhage",
+          "label": "Hemorrhage (Witch's Control)"
+        },
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "silenced",
+          "label": "Silenced (Witch's Control)"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue (Witch's Control)"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy (Witch's Control)"
+        },
+        {
+          "value": "panic",
+          "label": "Panic (Witch's Control)"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt (Witch's Control)"
+        },
+        {
+          "value": "fumbled",
+          "label": "Fumbled (Witch's Control)"
+        },
+        {
+          "value": "rended",
+          "label": "Rended (Witch's Control)"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_witchs_finger",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b6d7d5383923"
+    }
+  }
+}

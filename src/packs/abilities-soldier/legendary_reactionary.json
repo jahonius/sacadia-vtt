@@ -1,0 +1,41 @@
+{
+  "_id": "ace6371aa0a75c8c",
+  "_key": "!items!ace6371aa0a75c8c",
+  "name": "Legendary Reactionary",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you expend an action to use Reactionary, gain two reactions to use before the start of the next turn. You may not use two reactions in response to the same event.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "vanguard",
+      "prerequisite": "Reactionary, Courage 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "legendary_reactionary",
+      "buildHash": "77844dd8aa68"
+    }
+  }
+}

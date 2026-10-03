@@ -1,0 +1,39 @@
+{
+  "_id": "5af6dbc2e56d2653",
+  "_key": "!items!5af6dbc2e56d2653",
+  "name": "Longsword",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 55,
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "sword",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 8,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "pd",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "longsword",
+      "kind": "weapon",
+      "buildHash": "a22de42240e0"
+    }
+  }
+}

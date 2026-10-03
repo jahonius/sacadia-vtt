@@ -1,0 +1,41 @@
+{
+  "_id": "6bac2490c18e365c",
+  "_key": "!items!6bac2490c18e365c",
+  "name": "Improvisational",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the Block or Dodge reaction and only wield unarmed weapons, increase the benefit by 1 dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "general",
+      "prerequisite": "None"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "improvisational",
+      "buildHash": "ff19f962fc5a"
+    }
+  }
+}

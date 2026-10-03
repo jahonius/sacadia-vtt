@@ -1,0 +1,41 @@
+{
+  "_id": "09e2b0e8d9450e79",
+  "_key": "!items!09e2b0e8d9450e79",
+  "name": "Deadlier Shadow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the damage dealt by the Harmful Shadow effect to XD6, where X is your Proficiency.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Harmful Shadow, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_deadlier_shadow",
+      "buildHash": "0cf6e3b8b719"
+    }
+  }
+}

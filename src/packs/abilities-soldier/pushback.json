@@ -1,0 +1,60 @@
+{
+  "_id": "72d5a578a81036dc",
+  "_key": "!items!72d5a578a81036dc",
+  "name": "Pushback",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When an enemy moves to within 5ft of you from further away and you wield both a shield and spear, you may use a Reaction to attempt to push them 5ft back. They make a Power Check against this effect. If they fail and still have remaining movement in a Move action, reduce their remaining movement to 0 on that Move action.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "frontline",
+      "prerequisite": "Shield and Spear, Power 2"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "power",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [],
+        "weaponDamageWith": "stab_back"
+      }
+    ],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pushback",
+      "buildHash": "e659b9b44120"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_id": "94e40e80b1135194",
+  "_key": "!items!94e40e80b1135194",
+  "name": "Boler's Ban",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one condition for which you have taken Drain Tolerant. When you make a Body Check to reduce levels of that condition, you do not roll - you simply reduce levels by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "conditions",
+      "prerequisite": "Drain Tolerant"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [
+        "corroded",
+        "debilitated",
+        "delirium",
+        "hemorrhage",
+        "jinxed",
+        "nausea",
+        "pinned",
+        "paralysis",
+        "pulled",
+        "slowed",
+        "sting"
+      ],
+      "kind": "condition"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bolers_ban",
+      "buildHash": "54bf7c9643f9"
+    }
+  }
+}

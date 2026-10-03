@@ -1,0 +1,62 @@
+{
+  "_id": "53d5964dcd4a2b67",
+  "_key": "!items!53d5964dcd4a2b67",
+  "name": "Bloodied Urn",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_urn_icon.jpg",
+  "system": {
+    "description": "<p>Choose one enemy target within melee range of another enemy and within 20ft of you. That target makes a Wiles Check against your Check DC or makes a single melee attack against their ally. This attack does not exhaust their Reaction.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "mind"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 20,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Wiles 5"
+    },
+    "activities": [
+      {
+        "type": "attack",
+        "label": "",
+        "attack": {
+          "category": "magic",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "",
+          "dc": null
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "madness": {
+      "gain": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bloodied_urn",
+      "buildHash": "e09845f3ca28"
+    }
+  }
+}

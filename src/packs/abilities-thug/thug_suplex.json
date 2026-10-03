@@ -1,0 +1,57 @@
+{
+  "_id": "3371df48bec1f321",
+  "_key": "!items!3371df48bec1f321",
+  "name": "Suplex",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you have given a Prone target Wrestle Pin, increase the damage dice of Harm by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Power 3, Harm, Bully"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Suplex",
+        "target": "damage",
+        "mode": "step",
+        "scope": "thug_harm",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:condition:pinned>=1"
+          },
+          {
+            "atom": "target:condition:prone"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_suplex",
+      "buildHash": "d41b9d3f21ff"
+    }
+  }
+}

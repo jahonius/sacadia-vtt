@@ -1,0 +1,41 @@
+{
+  "_id": "be6505186aacde6a",
+  "_key": "!items!be6505186aacde6a",
+  "name": "Basic Combat Prowess",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain ten combat skill points to spend immediately. (Already reflected in your Combat Skill Points max above - this entry is here for reference only.)</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "thug-starting",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_basic_combat_prowess",
+      "buildHash": "8444b84b4ae1"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "_id": "b8cdfb5d24fe2361",
+  "_key": "!items!b8cdfb5d24fe2361",
+  "name": "Treacherous Throw",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Up to once per turn while wielding two versatile weapons, choose a point within 30ft of you. Every creature within 5Xft from that spot (where X is half your Proficiency, rounded up) makes a Finesse Check against your Check DC or takes 1D4 Fumble. Roll each Fumble separately. When you use this ability, remove one versatile weapon from your inventory until the end of combat.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Courage 3"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "finesse",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": [
+          {
+            "condition": "fumbled",
+            "amount": "1d4",
+            "predicate": [
+              {
+                "atom": "!self:ability:slickthrow"
+              }
+            ]
+          },
+          {
+            "condition": "fumbled",
+            "amount": "1d6",
+            "predicate": [
+              {
+                "atom": "self:ability:slickthrow"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "treacherous_throw",
+      "transcribed": true,
+      "buildHash": "c30ee98320a9"
+    }
+  }
+}

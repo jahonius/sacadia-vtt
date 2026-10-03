@@ -1,0 +1,95 @@
+{
+  "_id": "86d6e64cb93e7151",
+  "_key": "!items!86d6e64cb93e7151",
+  "name": "Lesser Restore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend 1 Spell Slot. Touch one target within 5ft of you and remove X levels of a Lesser Mental Condition that they possess (Delirium, Jinxed, Slowed, Sting), where X is half your Proficiency, rounded up.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Research: Magic Identification[1]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Remove levels of",
+      "options": [
+        {
+          "value": "delirium",
+          "label": "Delirium"
+        },
+        {
+          "value": "jinxed",
+          "label": "Jinxed"
+        },
+        {
+          "value": "slowed",
+          "label": "Slowed"
+        },
+        {
+          "value": "sting",
+          "label": "Sting"
+        },
+        {
+          "value": "fatigue",
+          "label": "Fatigue (Greater Restore)"
+        },
+        {
+          "value": "frenzy",
+          "label": "Frenzy (Greater Restore)"
+        },
+        {
+          "value": "panic",
+          "label": "Panic (Greater Restore)"
+        },
+        {
+          "value": "taunt",
+          "label": "Taunt (Greater Restore)"
+        },
+        {
+          "value": "surprised",
+          "label": "Surprised (Greater Restore)"
+        }
+      ]
+    },
+    "onUse": {
+      "self": [],
+      "target": [
+        {
+          "condition": "@choice",
+          "amount": "0 - ceil(@proficiency/2)"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_lesser_restore",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "Magic Identification[1]",
+      "buildHash": "c347e25f3218"
+    }
+  }
+}

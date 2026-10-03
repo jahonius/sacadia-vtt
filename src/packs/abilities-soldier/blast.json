@@ -1,0 +1,41 @@
+{
+  "_id": "6d1165c76f81e9ef",
+  "_key": "!items!6d1165c76f81e9ef",
+  "name": "Blast",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you push an enemy back at least 15 feet in a single turn through any combination of actions, they gain Surprise.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "strategist",
+      "prerequisite": "Agro"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blast",
+      "buildHash": "d29ae7f218f2"
+    }
+  }
+}

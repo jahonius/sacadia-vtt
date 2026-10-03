@@ -1,0 +1,50 @@
+{
+  "_id": "4814f5605f4a4295",
+  "_key": "!items!4814f5605f4a4295",
+  "name": "Check, Please",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase your Trait Check DC by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "conditions",
+      "prerequisite": "Level 6"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Check, Please",
+        "target": "checkDc",
+        "mode": "add",
+        "scope": "all",
+        "value": "1",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "check_please",
+      "buildHash": "df5128297fa8"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "d5cfbb79ed226284",
+  "_key": "!items!d5cfbb79ed226284",
+  "name": "Touch the Flame",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a Divine Touch point and touch a target within 5ft of you who has levels of Hemorrhage.They take Hemorrhage damage immediately for their level of Hemorrhage. Then, remove one level of Hemorrhage that they possess.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "divine",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Calming Hands",
+      "prerequisite": "Finesse[2]"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "burst": {
+        "triggers": "1 + @extraAp",
+        "drain": 0
+      }
+    },
+    "extraAp": {
+      "max": "5*@owns.wt_into_fire",
+      "label": "Additional AP (Into Fire)",
+      "selfDamagePerAp": ""
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_touch_the_flame",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "4a662f64aff1"
+    }
+  }
+}

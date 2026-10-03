@@ -1,0 +1,50 @@
+{
+  "_id": "4ad66b6f9808b03f",
+  "_key": "!items!4ad66b6f9808b03f",
+  "name": "Graceful Saving",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Add your Fate Score to all Trait Checks you make. If you make a Fate Check, add Fate twice.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "conditions",
+      "prerequisite": "Fate 3, Fateful Saves"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Graceful Saving",
+        "target": "trait",
+        "mode": "add",
+        "scope": "all",
+        "value": "@fate",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "graceful_saving",
+      "buildHash": "e318845fda0c"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "7da3efa9549e2260",
+  "_key": "!items!7da3efa9549e2260",
+  "name": "Voices that Shriek",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/voices_that_shriek_icon.png",
+  "system": {
+    "description": "<p>Expend one Prescient point as a boost to a Mind action. Do not reduce your Madness by 1 at the end of this turn.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "prescient",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "prescient",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "onConsume": {
+          "holdDecay": [
+            "madness"
+          ]
+        }
+      }
+    },
+    "madness": {
+      "prereq": 1
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "voices_that_shriek",
+      "buildHash": "26b69323e7d9"
+    }
+  }
+}

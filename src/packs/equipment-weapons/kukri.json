@@ -1,0 +1,39 @@
+{
+  "_id": "17214e9339605a67",
+  "_key": "!items!17214e9339605a67",
+  "name": "Kukri",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "dagger",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 4,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Slashing",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kukri",
+      "kind": "weapon",
+      "buildHash": "65f24a1abd83"
+    }
+  }
+}

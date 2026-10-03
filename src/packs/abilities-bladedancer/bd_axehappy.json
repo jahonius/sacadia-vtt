@@ -1,0 +1,41 @@
+{
+  "_id": "3051fad003b5bc3a",
+  "_key": "!items!3051fad003b5bc3a",
+  "name": "Axehappy",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If all of your combat-readied items are versatile weapons, equipped armor, equipped clothes, or a dagger belt, increase the number of readied item slots (RIS) you have by 3.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "trickster",
+      "prerequisite": "Finesse 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bd_axehappy",
+      "buildHash": "4d85e336dfcd"
+    }
+  }
+}

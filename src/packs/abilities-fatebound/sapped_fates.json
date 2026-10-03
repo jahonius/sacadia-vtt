@@ -1,0 +1,62 @@
+{
+  "_id": "56747727ad891737",
+  "_key": "!items!56747727ad891737",
+  "name": "Sapped Fates",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per turn as a Boost to Lucky Break, you may gain +1 to your next to-hit roll made this turn for each enemy to which you give Fumble.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Lucky Break"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "lucky_break"
+      },
+      "once": true,
+      "special": {
+        "pendingPerFail": {
+          "toHit": 1,
+          "damageWith": "sapping_strike"
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sapped_fates",
+      "transcribed": true,
+      "buildHash": "ffe573c49561"
+    }
+  }
+}

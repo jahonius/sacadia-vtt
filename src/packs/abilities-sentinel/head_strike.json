@@ -1,0 +1,69 @@
+{
+  "_id": "616ef07e2ce63c9a",
+  "_key": "!items!616ef07e2ce63c9a",
+  "name": "Head Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickshot point and apply Head Strike as a Boost to a ranged weapon attack. If you hit, deal an additional XD8 extra damage, where X is half your Proficiency Score (rounded up).</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickshot",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "ranger",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack",
+        "category": "ranged"
+      },
+      "effects": [
+        {
+          "label": "Head Strike",
+          "target": "damageDice",
+          "value": "(ceil(@proficiency/2))d8",
+          "predicate": [
+            {
+              "atom": "!self:ability:head_off"
+            }
+          ]
+        },
+        {
+          "label": "Head Strike",
+          "target": "damageDice",
+          "value": "(@proficiency)d8",
+          "predicate": [
+            {
+              "atom": "self:ability:head_off"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "head_strike",
+      "buildHash": "a59c211c0313"
+    }
+  }
+}

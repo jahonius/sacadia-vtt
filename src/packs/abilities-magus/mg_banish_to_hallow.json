@@ -1,0 +1,63 @@
+{
+  "_id": "b53fd802b845ad58",
+  "_key": "!items!b53fd802b845ad58",
+  "name": "Banish to Hallow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one target within 5ft of you when you initiate this and expend a Spell Slot. They make a Fate Check against your Check DC. If they fail, they are banished to the Hallowfell until the start of your next turn. They disappear from the world, and cannot take any actions except the Move action. Their Move action is made at half speed (and limited to 15ft) unless they regularly enter the Hallowfell already. Once a creature has been banished to the Hallowfell, you cannot use this ability on them again until a Quick Rest has passed.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "spell",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Contract Tome",
+      "prerequisite": "Wiles[5] · Research: You have Greater Death Ward, Forbid Hallowing, and Crown of Thorns in your Tome"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none",
+          "ext": {}
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_banish_to_hallow",
+      "transcribed": true,
+      "prestige": "magus",
+      "tome": "contract",
+      "research": "You have Greater Death Ward, Forbid Hallowing, and Crown of Thorns in your Tome",
+      "buildHash": "1bdb25665df5"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_id": "0c3697cc0e0b3669",
+  "_key": "!items!0c3697cc0e0b3669",
+  "name": "Embossed Patch",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>When you are surrounded, increase the damage dice of your first melee attack each turn by one dice type.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "embossed_patch",
+      "kind": "adornment",
+      "armorPrereq": "Leather Set",
+      "buildHash": "44caea7af6d2"
+    }
+  }
+}

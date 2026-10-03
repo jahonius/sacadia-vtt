@@ -1,0 +1,48 @@
+{
+  "_id": "25597ee2cc522a37",
+  "_key": "!items!25597ee2cc522a37",
+  "name": "Combo Breaker",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you roll with any amount of modifier on to-hit from using Chained Advance, if you miss an attack, once per turn you may re-roll one die of your to-hit.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "aggressor",
+      "prerequisite": "Chained Advance, Power 5"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_combo_breaker",
+      "buildHash": "c0fa7adfc02b"
+    }
+  }
+}

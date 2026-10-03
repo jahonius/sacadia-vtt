@@ -1,0 +1,44 @@
+{
+  "_id": "8e2d10b12b8e08c8",
+  "_key": "!items!8e2d10b12b8e08c8",
+  "name": "Last Stand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If you are about to die, you may spend one lore point to take one final turn immediately. After taking your additional turn, you die.</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Human",
+      "prerequisite": "Human · p.170"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_last_stand",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "96ba55c879ab"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "e793d8c292a3a84f",
+  "_key": "!items!e793d8c292a3a84f",
+  "name": "Silent Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Whenever you make a melee attack against a creature with Surprise, do so with 1X advantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Silent Strike",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "target:condition:surprised"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_silent_strike",
+      "buildHash": "4d759db6424a"
+    }
+  }
+}

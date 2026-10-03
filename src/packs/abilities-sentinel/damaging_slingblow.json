@@ -1,0 +1,41 @@
+{
+  "_id": "9e959408ed9d0328",
+  "_key": "!items!9e959408ed9d0328",
+  "name": "Damaging Slingblow",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/damaging_slingblow_icon.png",
+  "system": {
+    "description": "<p>Whenever you make a ranged attack with a sling that applies a condition (e.g., Slinger or Hobbler), also roll normal damage on that attack. Damage is dealt before conditions are applied.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "tactician",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "damaging_slingblow",
+      "buildHash": "ba2d65f668ee"
+    }
+  }
+}

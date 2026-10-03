@@ -1,0 +1,54 @@
+{
+  "_id": "0b22727075d47f5a",
+  "_key": "!items!0b22727075d47f5a",
+  "name": "Gutwrenching Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Your base damage when you make a melee attack is increased by half your Finesse (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Gutwrenching Strike",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "ceil(@finesse/2)",
+        "predicate": [
+          {
+            "atom": "!self:ability:thug_gutwrenching_twist"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_gutwrenching_strike",
+      "buildHash": "c29c719fc650"
+    }
+  }
+}

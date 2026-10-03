@@ -1,0 +1,60 @@
+{
+  "_id": "f1279d1778cffd2a",
+  "_key": "!items!f1279d1778cffd2a",
+  "name": "Damaging Weapon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an attack made with a divine weapon, increase the damage dice dealt by this weapon by one type if you hit. Treat this as a unique Boost from Boosted Damage.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Boosted Damage, Power 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "effects": [
+        {
+          "label": "Damaging Weapon",
+          "target": "damage",
+          "mode": "step",
+          "value": "1"
+        }
+      ],
+      "special": {
+        "requires": [
+          "self:attack:divine"
+        ]
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "damaging_weapon",
+      "transcribed": true,
+      "buildHash": "717fba325f85"
+    }
+  }
+}

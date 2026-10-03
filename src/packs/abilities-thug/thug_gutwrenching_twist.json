@@ -1,0 +1,50 @@
+{
+  "_id": "c4d5cc18c09d5af7",
+  "_key": "!items!c4d5cc18c09d5af7",
+  "name": "Gutwrenching Twist",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Increase the effect of Gutwrenching Strike from half your Finesse to your Finesse.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": "Gutwrenching Strike, Finesse 4"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Gutwrenching Twist",
+        "target": "damage",
+        "mode": "add",
+        "scope": "melee",
+        "value": "@finesse",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_gutwrenching_twist",
+      "buildHash": "596d7446a54a"
+    }
+  }
+}

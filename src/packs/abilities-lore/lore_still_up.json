@@ -1,0 +1,53 @@
+{
+  "_id": "4ffeb26fc6e436e1",
+  "_key": "!items!4ffeb26fc6e436e1",
+  "name": "Still Up",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>If an ability or action would cause you to drop below 0HP, you may expend a Lore Point to gain 1/3 of your Max HP (rounded up).</p>",
+    "tag": "lore",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "lore": 1,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "General",
+      "prerequisite": "p.170"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "ceil(@hpMax/3)",
+        "ap": "",
+        "lore": ""
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lore_still_up",
+      "transcribed": true,
+      "lore": true,
+      "buildHash": "a05a3a637103"
+    }
+  }
+}

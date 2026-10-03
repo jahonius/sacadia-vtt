@@ -1,0 +1,39 @@
+{
+  "_id": "dec76dbcdcbbf83c",
+  "_key": "!items!dec76dbcdcbbf83c",
+  "name": "Mace",
+  "type": "gear",
+  "img": "icons/svg/sword.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Training: Military Weapons</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 8,
+      "trait": "power"
+    },
+    "hands": 2,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mace",
+      "kind": "weapon",
+      "buildHash": "426418106baa"
+    }
+  }
+}

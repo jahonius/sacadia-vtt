@@ -1,0 +1,42 @@
+{
+  "_id": "1ee85053c06e0f72",
+  "_key": "!items!1ee85053c06e0f72",
+  "name": "Hoofstomp",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use the ‘Charge the Line’ ability, deal XD4 damage to any creature that fails their Finesse Check, where X is half your proficiency (rounded up).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Charge the Line, Courage 2"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hoofstomp",
+      "transcribed": true,
+      "buildHash": "5bf5eb41a3a0"
+    }
+  }
+}

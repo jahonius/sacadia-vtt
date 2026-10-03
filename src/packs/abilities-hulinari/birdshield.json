@@ -1,0 +1,42 @@
+{
+  "_id": "9bf57626b5e8eec7",
+  "_key": "!items!9bf57626b5e8eec7",
+  "name": "Birdshield",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus on Birdshield, all allies within a space covered by Clouded Ally gain X DR, where X is your Proficiency.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickster",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Ally"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "birdshield",
+      "transcribed": true,
+      "buildHash": "32fc05654f24"
+    }
+  }
+}

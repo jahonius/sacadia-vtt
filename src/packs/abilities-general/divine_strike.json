@@ -1,0 +1,70 @@
+{
+  "_id": "7d8cb64ddef00731",
+  "_key": "!items!7d8cb64ddef00731",
+  "name": "Divine Strike",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Once per quick rest, you may add your Fate Score to any to-hit as a Boost to that attack.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "combat",
+      "prerequisite": "Fate 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": [
+        {
+          "ability": "patlas_touch",
+          "max": null,
+          "maxFormula": "ceil(@proficiency/2)",
+          "requires": [],
+          "requiresLabel": ""
+        }
+      ]
+    },
+    "boost": {
+      "appliesTo": {
+        "kind": "attack"
+      },
+      "once": true,
+      "effects": [
+        {
+          "label": "Divine Strike",
+          "target": "toHit",
+          "mode": "add",
+          "value": "@fate"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "divine_strike",
+      "buildHash": "f6a195387a4c"
+    }
+  }
+}

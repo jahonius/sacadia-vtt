@@ -1,0 +1,41 @@
+{
+  "_id": "ff59ec80e3fa0feb",
+  "_key": "!items!ff59ec80e3fa0feb",
+  "name": "Swirling Ink",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/swirling_ink_icon.png",
+  "system": {
+    "description": "<p>When an enemy tries to leave the Stygian Abyss and you have at least 3 Madness, they must make a Wiles Check against your Check DC or end their move action inside Stygian Abyss.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "bloodsage",
+      "prerequisite": "Pooled Ink, Wiles 6"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "swirling_ink",
+      "buildHash": "7917d624cb07"
+    }
+  }
+}

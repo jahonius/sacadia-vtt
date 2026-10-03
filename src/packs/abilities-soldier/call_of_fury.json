@@ -1,0 +1,58 @@
+{
+  "_id": "0c172d678bc365c5",
+  "_key": "!items!0c172d678bc365c5",
+  "name": "Call of Fury",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one call point and choose one ally within 15ft of you, as well as a number of unspent AP up to half your maximum AP (rounded up). Expend those AP now. On your chosen ally's next turn, they receive additional AP equal to the number you expended.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "call",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "soldier",
+      "subpath": "signifier",
+      "prerequisite": "Power 2"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "selfGain": {
+        "hp": "",
+        "ap": "0 - @spent",
+        "lore": "",
+        "reactions": ""
+      },
+      "apNext": "@spent"
+    },
+    "amountPrompt": {
+      "label": "AP to give",
+      "max": "ceil(@apMax/2)"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "call_of_fury",
+      "buildHash": "2811b19677ae"
+    }
+  }
+}

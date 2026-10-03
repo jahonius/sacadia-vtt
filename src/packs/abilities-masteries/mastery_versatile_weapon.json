@@ -1,0 +1,53 @@
+{
+  "_id": "bdb8db4fdc9a90e4",
+  "_key": "!items!bdb8db4fdc9a90e4",
+  "name": "Mastery of the Versatile Weapon",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Increase To-Hit and damage by +1 on all attacks you make with a Versatile weapon.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": []
+    },
+    "meta": {
+      "profession": "bladedancer",
+      "subpath": "",
+      "prerequisite": "Level 5"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Mastery of the Versatile Weapon",
+        "target": "toHit",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:trait:versatile"
+          }
+        ]
+      },
+      {
+        "label": "Mastery of the Versatile Weapon",
+        "target": "damage",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:trait:versatile"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mastery_versatile_weapon",
+      "mastery": true,
+      "buildHash": "ee87a02b508f"
+    }
+  }
+}

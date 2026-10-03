@@ -1,0 +1,54 @@
+{
+  "_id": "972133f65ece2e7d",
+  "_key": "!items!972133f65ece2e7d",
+  "name": "Aware Foe",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 1x advantage to any ‘Make Trait Check’ action to reduce a condition given to you by a targeted foe.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "fatebound",
+      "subpath": "",
+      "prerequisite": "Targeted Foe"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Aware Foe",
+        "target": "resistAdvantage",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:resisting:from:targeted-foe"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "aware_foe",
+      "transcribed": true,
+      "buildHash": "e8ab13114081"
+    }
+  }
+}

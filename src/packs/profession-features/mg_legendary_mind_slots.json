@@ -1,0 +1,44 @@
+{
+  "_id": "2ab30568f60ac7a8",
+  "_key": "!items!2ab30568f60ac7a8",
+  "name": "Mastery of the Mind (Spell Slots)",
+  "type": "ability",
+  "img": "icons/svg/upgrade.svg",
+  "system": {
+    "description": "<p>Gain 3 Spell Slots.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "magus",
+      "subpath": "Legendary Mastery",
+      "prerequisite": "Magus Level 11"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "mg_legendary_mind_slots",
+      "feature": true,
+      "level": 11,
+      "legendary": true,
+      "buildHash": "ea8983b2a449"
+    }
+  }
+}

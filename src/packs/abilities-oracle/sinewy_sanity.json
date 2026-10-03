@@ -1,0 +1,43 @@
+{
+  "_id": "db4c4e1947de87da",
+  "_key": "!items!db4c4e1947de87da",
+  "name": "Sinewy Sanity",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sinewy_sanity_icon.png",
+  "system": {
+    "description": "<p>For as long as you maintain focus, when you use an ability that causes you to increase or decrease your madness, roll to increase or decrease your madness before that ability triggers instead of after. If this would cause you to gain 6 or more Madness, that ability still triggers before you go insane.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": "Fate 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sinewy_sanity",
+      "buildHash": "3abbe713271e"
+    }
+  }
+}

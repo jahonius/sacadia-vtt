@@ -1,0 +1,42 @@
+{
+  "_id": "395ebbe1e68dc062",
+  "_key": "!items!395ebbe1e68dc062",
+  "name": "We Don’t Hibernate",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You are immune to the Fatigue condition from any source.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Enduring Animal, Power 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "we_don_t_hibernate",
+      "transcribed": true,
+      "buildHash": "6f3580d8c248"
+    }
+  }
+}

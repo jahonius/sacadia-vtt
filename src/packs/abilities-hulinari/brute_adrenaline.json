@@ -1,0 +1,55 @@
+{
+  "_id": "2acd8fa041032408",
+  "_key": "!items!2acd8fa041032408",
+  "name": "Brute Adrenaline",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>You may shrug off hits that would otherwise hurt when in Brute Form. As long as you maintain Focus, you are resistant to all physical attacks made against you by half your Courage score (rounded up). This stacks with Toughhide.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Toughhide, Power 4"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Brute Adrenaline",
+        "target": "defense.dr",
+        "mode": "add",
+        "scope": "all",
+        "value": "ceil(@courage/2)",
+        "predicate": [
+          {
+            "atom": "self:used:brute_adrenaline"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "brute_adrenaline",
+      "transcribed": true,
+      "buildHash": "e825f73f7277"
+    }
+  }
+}

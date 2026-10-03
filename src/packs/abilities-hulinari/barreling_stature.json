@@ -1,0 +1,50 @@
+{
+  "_id": "8ed95129a83b4e32",
+  "_key": "!items!8ed95129a83b4e32",
+  "name": "Barreling Stature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to an action made against a single target, you may expense one Savage Point. Treat that target as prone for that action.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "savage",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Power 3"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "any"
+      },
+      "special": {
+        "targetAs": "prone"
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "barreling_stature",
+      "transcribed": true,
+      "buildHash": "a6588f6477bd"
+    }
+  }
+}

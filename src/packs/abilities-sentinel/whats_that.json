@@ -1,0 +1,41 @@
+{
+  "_id": "7e27c6d184beec25",
+  "_key": "!items!7e27c6d184beec25",
+  "name": "What's That?",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you use Hide Behind Hide, if you end Hide Behind Hide by making an attack against a Surrounded creature, treat them as surprised.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Hide Behind Hide, Finesse 5"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "whats_that",
+      "buildHash": "ae0a98989d54"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "e4d29a1da76638d3",
+  "_key": "!items!e4d29a1da76638d3",
+  "name": "Swarm Effects",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. While maintaining Focus on Clouded Foe or Clouded Ally, if you additionally Focus on Swarm Effects, attacks targeting a single target cannot deal more than 5X damage to you after applying any DR you have, where X is your Proficiency. If an attack would deal more damage than this to you, it ends your Focus on Swarm Effects.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "trickster",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "hulinari_warrior",
+      "subpath": "",
+      "prerequisite": "Clouded Foe or Clouded Ally, Finesse 3"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "swarm_effects",
+      "transcribed": true,
+      "buildHash": "9b626992f451"
+    }
+  }
+}

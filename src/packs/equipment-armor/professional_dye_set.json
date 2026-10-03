@@ -1,0 +1,32 @@
+{
+  "_id": "c197ff8cacb4ba1f",
+  "_key": "!items!c197ff8cacb4ba1f",
+  "name": "Professional Dye Set",
+  "type": "armor",
+  "img": "icons/svg/shield.svg",
+  "system": {
+    "description": "<p><em>Prerequisite: Light Armor Training, Prof[3]</em></p>",
+    "equipped": false,
+    "category": "light",
+    "material": "dye",
+    "defenses": {
+      "ad": 4,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 21,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "professional_dye_set",
+      "kind": "armor",
+      "buildHash": "9cd5fdc65b05"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_id": "609f1ab1c60581f6",
+  "_key": "!items!609f1ab1c60581f6",
+  "name": "Blessing of Dreams",
+  "type": "ability",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_dreams_icon.jpg",
+  "system": {
+    "description": "<p>Choose allies up to your Madness within 60ft when you initiate this. Until the spell ends, they add half your Fate score (rounded up) to their MD.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [
+        "focus"
+      ],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "oracle",
+      "subpath": "madseer",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "grant": {
+      "scope": "allies",
+      "label": "Blessing of Dreams",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.md",
+          "mode": 2,
+          "value": "ceil(@fate/2)"
+        }
+      ]
+    },
+    "madness": {
+      "prereq": 1,
+      "spend": "1d3-1"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "blessing_of_dreams",
+      "buildHash": "72a669c30b66"
+    }
+  }
+}

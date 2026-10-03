@@ -1,0 +1,53 @@
+{
+  "_id": "743d94f42a081906",
+  "_key": "!items!743d94f42a081906",
+  "name": "Backpress",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>When you attempt to Harm an enemy, you may expend a Boost such that if the target fails a Power Check against Harm by more than 5 below the Check DC, increase the dice type of Harm by one dice type.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": "Harm"
+    },
+    "activities": [],
+    "modifiers": [],
+    "boost": {
+      "appliesTo": {
+        "kind": "ability",
+        "ability": "thug_harm"
+      },
+      "special": {
+        "marginStep": {
+          "margin": 5,
+          "steps": 1
+        }
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_backpress",
+      "buildHash": "58999b3b1df7"
+    }
+  }
+}

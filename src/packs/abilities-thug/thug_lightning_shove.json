@@ -1,0 +1,60 @@
+{
+  "_id": "d7a7b263a5ae16e1",
+  "_key": "!items!d7a7b263a5ae16e1",
+  "name": "Lightning Shove",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Gain 1X Advantage on opportunity attacks of any kind. When you attempt to Kick a target, they roll their Trait Check against being moved at 1X Disadvantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "gladiator",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Lightning Shove",
+        "target": "advantage.toHit",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:opportunity"
+          }
+        ]
+      },
+      {
+        "label": "Lightning Shove",
+        "target": "saveAdvantage",
+        "mode": "add",
+        "value": "-1",
+        "scope": "basic_kick"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_lightning_shove",
+      "buildHash": "4d25c33ae17d"
+    }
+  }
+}

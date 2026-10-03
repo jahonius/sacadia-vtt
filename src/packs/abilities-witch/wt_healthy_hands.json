@@ -1,0 +1,55 @@
+{
+  "_id": "d5053f9348a620bb",
+  "_key": "!items!d5053f9348a620bb",
+  "name": "Healthy Hands",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Touch an ally within 5ft of you. Convert all temporary HP they possess to health permanent health. You may use this only once per quick rest.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Promise of Nonviolence"
+    },
+    "activities": [],
+    "modifiers": [],
+    "onUse": {
+      "self": [],
+      "target": [],
+      "convertTemp": true
+    },
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_healthy_hands",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "1d7208384091"
+    }
+  }
+}

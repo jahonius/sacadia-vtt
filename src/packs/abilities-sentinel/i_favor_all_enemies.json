@@ -1,0 +1,41 @@
+{
+  "_id": "fdc6227dfe65982b",
+  "_key": "!items!fdc6227dfe65982b",
+  "name": "I Favor All Enemies",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose an additional favored enemy and style. All abilities that apply to Favored Enemies apply to every enemy type you choose.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "sentinel",
+      "subpath": "predator",
+      "prerequisite": "Favored Style, Wiles 4"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "i_favor_all_enemies",
+      "buildHash": "e301093daa62"
+    }
+  }
+}

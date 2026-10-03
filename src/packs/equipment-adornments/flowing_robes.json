@@ -1,0 +1,22 @@
+{
+  "_id": "77e701461ff04e46",
+  "_key": "!items!77e701461ff04e46",
+  "name": "Flowing Robes",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>When you kill an enemy, gain 1 HP.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "flowing_robes",
+      "kind": "adornment",
+      "armorPrereq": "Cloth Set",
+      "buildHash": "6a781d66127f"
+    }
+  }
+}

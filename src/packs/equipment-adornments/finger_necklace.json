@@ -1,0 +1,22 @@
+{
+  "_id": "4f7b6b92683eb599",
+  "_key": "!items!4f7b6b92683eb599",
+  "name": "Finger Necklace",
+  "type": "gear",
+  "img": "icons/svg/statue.svg",
+  "system": {
+    "description": "<p>For each Battle Fatigue you have from being Wounded, gain 1 DR.</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "finger_necklace",
+      "kind": "adornment",
+      "armorPrereq": "Divine Style",
+      "buildHash": "8d0686d7ae63"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "_id": "a0479aa9c1f6b6b0",
+  "_key": "!items!a0479aa9c1f6b6b0",
+  "name": "Underpinning",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Expend a trick point. Decrease the PD or TD (choose one) of a target to whom you have given Wrestle Pin by half your Finesse Score (rounded up) until the start of your next turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [
+        "body"
+      ],
+      "pool": {
+        "key": "trick",
+        "amount": 1,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "thug",
+      "subpath": "wrestler",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Decrease which defense?",
+      "options": [
+        {
+          "value": "pd",
+          "label": "PD"
+        },
+        {
+          "value": "td",
+          "label": "TD"
+        }
+      ]
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Underpinning",
+      "duration": {
+        "type": "rounds",
+        "rounds": 1,
+        "on": ""
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "0 - ceil(@finesse/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:thug_underpinning:pd"
+            }
+          ]
+        },
+        {
+          "key": "system.bonuses.defense.td",
+          "mode": 2,
+          "value": "0 - ceil(@finesse/2)",
+          "predicate": [
+            {
+              "atom": "self:choice:thug_underpinning:td"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "thug_underpinning",
+      "buildHash": "f865993aa22b"
+    }
+  }
+}

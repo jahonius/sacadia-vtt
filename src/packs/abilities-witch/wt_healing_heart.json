@@ -1,0 +1,43 @@
+{
+  "_id": "972d14bdc45fc459",
+  "_key": "!items!972d14bdc45fc459",
+  "name": "Healing Heart",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>As a Boost to Healthy Hands, all allies within 30ft of you benefit from the effect all at once.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Balancer",
+      "prerequisite": "Finesse[3], Healthy Hands"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_healing_heart",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "b32cd90d45cc"
+    }
+  }
+}

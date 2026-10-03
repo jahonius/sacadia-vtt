@@ -1,0 +1,109 @@
+{
+  "_id": "08a3668b652825f3",
+  "_key": "!items!08a3668b652825f3",
+  "name": "Razorleaf",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "system": {
+    "description": "<p>Choose one ally within 5ft of you when you initiate this, and further choose one weapon type they wield. For as long as you maintain Focus on Razorleaf, increase the damage dice of all attacks they make with that weapon type by two dice types. Every turn you maintain Focus on Razorleaf, you can only renew Focus when you are within 5ft of that ally. You may not use Razorleaf more than once on a single target simultaneously and cannot choose yourself.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "witch",
+      "subpath": "Wellspring",
+      "prerequisite": ""
+    },
+    "activities": [],
+    "modifiers": [],
+    "choice": {
+      "prompt": "Which weapon type?",
+      "options": [
+        {
+          "value": "unarmed",
+          "label": "Unarmed"
+        },
+        {
+          "value": "dagger",
+          "label": "Dagger"
+        },
+        {
+          "value": "sword",
+          "label": "Sword"
+        },
+        {
+          "value": "axe",
+          "label": "Axe"
+        },
+        {
+          "value": "spear",
+          "label": "Spear"
+        },
+        {
+          "value": "bludgeon",
+          "label": "Bludgeon"
+        },
+        {
+          "value": "sling",
+          "label": "Sling"
+        },
+        {
+          "value": "bow",
+          "label": "Bow"
+        },
+        {
+          "value": "crossbow",
+          "label": "Crossbow"
+        },
+        {
+          "value": "shield",
+          "label": "Shield"
+        },
+        {
+          "value": "other",
+          "label": "Other"
+        }
+      ]
+    },
+    "focus": {
+      "renewWithin": 5
+    },
+    "grant": {
+      "scope": "ally",
+      "label": "Razorleaf",
+      "duration": {
+        "type": "focus"
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.weaponSteps.<choice>",
+          "mode": 2,
+          "value": "2 + @owns.wt_grasses_of_kish + @owns.wt_lodestone_shards"
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wt_razorleaf",
+      "transcribed": true,
+      "prestige": "witch",
+      "buildHash": "9effdcf0336f"
+    }
+  }
+}
