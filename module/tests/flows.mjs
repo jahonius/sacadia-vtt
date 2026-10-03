@@ -22,7 +22,7 @@ async function armWithDagger(actor) {
     { what: 'the dagger attack' });
 }
 
-function registerFlows(quench) {
+export function registerFlows(quench) {
   /* ---------------------------------------------------------------------------------------------------------- */
   quench.registerBatch('sacadia.combat', (context) => {
     const { describe, it, before, after, assert } = context;
@@ -227,7 +227,7 @@ function registerFlows(quench) {
       after(async () => { stub?.restore(); for (const t of [...game.user.targets]) t.setTarget(false, { releaseOthers: false }); await fx.cleanup(); });
 
       it('Greater Glaring: two dice types a round while you stay still since Barbed Stare began, one a round after you move', async () => {
-        const [stare] = await give(caster, 'mg_barbed_stare', 'mg_greater_glaring');
+        const stare = (await give(caster, 'mg_barbed_stare', 'mg_greater_glaring')).find((i) => i.flags?.sacadia?.catalogId === 'mg_barbed_stare');
         const combat = fx.track(await Combat.create({ scene: canvas.scene.id, active: true }));
         await combat.createEmbeddedDocuments('Combatant', [{ tokenId: tok.caster.id, sceneId: canvas.scene.id, actorId: caster.id }]);
         await combat.startCombat();
@@ -283,4 +283,3 @@ function registerFlows(quench) {
   }, { displayName: "Sacadia: the designer's rulings" });
 }
 
-Hooks.on('quenchReady', (quench) => registerFlows(quench));

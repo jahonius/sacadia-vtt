@@ -18,6 +18,7 @@
  *                 ~/FoundryVTT-Data, ~/.local/share/FoundryVTT that has Config/license.json
  *   QUENCH_DATA   the throwaway data folder; default ~/.cache/sacadia-quench
  *   QUENCH_PORT   the server port; default 30123
+ *   QUENCH_ALL_ERRORS=1  print every browser error after the run, not only the system's
  *   QUENCH_SYSTEM the system folder to test; default this repo (point it at an unpacked release zip to test what ships)
  *
  * Close any Foundry server that has this system's world loaded first: the compendium files can only be open once.
@@ -189,8 +190,9 @@ async function runBatches() {
   const stats = JSON.parse(json).stats ?? {};
   console.log(`\nQuench: ${stats.passes ?? 0} passed, ${stats.failures ?? 0} failed, ${stats.pending ?? 0} pending (${stats.duration ?? '?'} ms)`);
   // Errors from the system's own code (Foundry's headless notification glitch and the tests' deliberate failures aside).
-  const ours = errors.filter((e) => /systems\/sacadia|^404/.test(e) && !/timed out waiting|is not iterable/.test(e));
-  if (ours.length) { console.log('\nErrors from the system:'); for (const e of ours.slice(0, 20)) console.log(`  ${e.slice(0, 500)}`); }
+  // QUENCH_ALL_ERRORS=1 prints every browser error, not only the system's.
+  const ours = process.env.QUENCH_ALL_ERRORS ? errors : errors.filter((e) => /systems\/sacadia|^404/.test(e) && !/timed out waiting|is not iterable/.test(e));
+  if (ours.length) { console.log('\nErrors from the system:'); for (const e of ours.slice(0, process.env.QUENCH_ALL_ERRORS ? 200 : 20)) console.log(`  ${e.slice(0, 500)}`); }
   await browser.close();
   return (stats.failures ?? 0) > 0 || !stats.tests ? 1 : 0;
 }

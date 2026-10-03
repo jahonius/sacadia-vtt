@@ -166,7 +166,8 @@ export async function arena(fx, placements) {
   const docs = [];
   for (const [, actor, x, y, disposition] of placements) docs.push((await actor.getTokenDocument({ x, y, disposition })).toObject());
   const created = await scene.createEmbeddedDocuments('Token', docs);
-  const tok = Object.fromEntries(placements.map(([key], i) => [key, created[i]]));
+  // By actor, not position: v14 doesn't always return created documents in the order they were asked for.
+  const tok = Object.fromEntries(placements.map(([key, actor]) => [key, created.find((t) => t.actorId === actor.id)]));
   await until(() => Object.values(tok).every((t) => canvas.tokens.get(t.id)), { what: 'the tokens on the canvas' });
   return { scene, tok };
 }

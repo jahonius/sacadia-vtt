@@ -19,8 +19,8 @@ import { applyDamageTo } from '../rules/damage.mjs';
 import { onSaveRoll } from '../rules/saves.mjs';
 import { PREFIX, until, fromCatalog, stubDialogs, fixture } from './support.mjs';
 import { shortRest, longRest } from '../rules/rest.mjs';
-import './sweep.mjs';
-import './flows.mjs';
+import { registerSweeps } from './sweep.mjs';
+import { registerFlows } from './flows.mjs';
 
 function registerBatches(quench) {
   const opts = (displayName) => ({ displayName: `Sacadia: ${displayName}` });
@@ -369,7 +369,8 @@ function registerBatches(quench) {
         const docs = [];
         for (const [a, x, y, disposition] of place) docs.push((await a.getTokenDocument({ x, y, disposition })).toObject());
         const created = await scene.createEmbeddedDocuments('Token', docs);
-        for (const [k, t] of [['fighter', created[0]], ['dummy', created[1]], ['ally1', created[2]], ['ally2', created[3]]]) tok[k] = t;
+        // By actor, not position: v14 doesn't always return created documents in the order they were asked for.
+        for (const [k, a] of [['fighter', fighter], ['dummy', dummy], ['ally1', ally1], ['ally2', ally2]]) tok[k] = created.find((t) => t.actorId === a.id);
         await until(() => Object.values(tok).every((t) => canvas.tokens.get(t.id)), { what: 'the tokens on the canvas' });
         stub = stubDialogs((kind) => (kind === 'wait' ? 0 : true));
       });
@@ -458,4 +459,9 @@ function registerBatches(quench) {
   }, opts('on the canvas'));
 }
 
-Hooks.on('quenchReady', (quench) => registerBatches(quench));
+// Registration order is run order: the targeted batches first, the long sweeps (about 8 minutes) last.
+Hooks.on('quenchReady', (quench) => {
+  registerBatches(quench);
+  registerFlows(quench);
+  registerSweeps(quench);
+});

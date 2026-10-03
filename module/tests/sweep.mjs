@@ -23,7 +23,7 @@ function aimsAtAlly(sys) {
     || ['allies', 'both'].includes(sys.tempHp?.target);
 }
 
-function registerSweeps(quench) {
+export function registerSweeps(quench) {
   /* ---------------------------------------------------------------------------------------------------------- */
   quench.registerBatch('sacadia.sweep.abilities', (context) => {
     const { describe, it, before, after, assert } = context;
@@ -176,4 +176,3 @@ function registerSweeps(quench) {
   }, { displayName: 'Sacadia: sweep — every sheet' });
 }
 
-Hooks.on('quenchReady', (quench) => registerSweeps(quench));
