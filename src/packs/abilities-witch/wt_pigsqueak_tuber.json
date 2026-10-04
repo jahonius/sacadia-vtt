@@ -3,7 +3,7 @@
   "_key": "!items!0d57b565f20a601e",
   "name": "Pigsqueak Tuber",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_pigsqueak_tuber_icon.webp",
   "system": {
     "description": "<p>When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_pigsqueak_tuber",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "0c89d57480a4"
+      "buildHash": "60532b7da7c3"
     }
   }
 }

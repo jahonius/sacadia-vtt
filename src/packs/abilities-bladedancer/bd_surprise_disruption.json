@@ -3,7 +3,7 @@
   "_key": "!items!907d230f5aedb8fc",
   "name": "Surprise Disruption",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_surprise_disruption_icon.webp",
   "system": {
     "description": "<p>When you successfully take the Disruption action against a target, they become Surprised.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_surprise_disruption",
-      "buildHash": "d093e78aaec4"
+      "buildHash": "88bb79af7f70"
     }
   }
 }

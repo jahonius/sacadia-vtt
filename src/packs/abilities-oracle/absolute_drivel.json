@@ -3,7 +3,7 @@
   "_key": "!items!5e2d969ce09a28fc",
   "name": "Absolute Drivel",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/absolute_drivel_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/absolute_drivel_icon.webp",
   "system": {
     "description": "<p>When you initiate Partial Drivel, you may use it on an ally within 30ft of you instead of yourself. This ability ends if you go outside of a 30ft range of that ally.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "absolute_drivel",
-      "buildHash": "b03d47c15e45"
+      "buildHash": "8c00b60b3082"
     }
   }
 }

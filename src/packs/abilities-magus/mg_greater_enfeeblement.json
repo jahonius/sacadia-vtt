@@ -3,7 +3,7 @@
   "_key": "!items!aa7faf0e1b6fd7f2",
   "name": "Greater Enfeeblement",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_enfeeblement_icon.webp",
   "system": {
     "description": "<p>As a Boost to Enfeeblement when you use it and expend AP to maintain Focus, you may expend additional AP. For every additional AP you expend, reduce the damage dice of the target’s weapon by an additional dice type. Expend the same number of AP in a consistent Focus action every turn until you end Focus (i.e., you cannot alter the amount of AP you expend on Focus each turn).</p>",
     "tag": "boost",
@@ -61,7 +61,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Necromantic Lore[3]",
-      "buildHash": "d745886b61aa"
+      "buildHash": "aab43135ba8f"
     }
   }
 }

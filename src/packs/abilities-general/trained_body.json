@@ -3,7 +3,7 @@
   "_key": "!items!56e866110ee061ec",
   "name": "Trained Body",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/trained_body_icon.webp",
   "system": {
     "description": "<p>You may take this ability up to two times. Every time you do, increase your PD by 1 on top of any armor you are wearing. Second instance costs 2 CSP.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "trained_body",
-      "buildHash": "834ec56ddd7d"
+      "buildHash": "7bef5df996c7"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!972133f65ece2e7d",
   "name": "Aware Foe",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/aware_foe_icon.webp",
   "system": {
     "description": "<p>Gain 1x advantage to any ‘Make Trait Check’ action to reduce a condition given to you by a targeted foe.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "aware_foe",
       "transcribed": true,
-      "buildHash": "e8ab13114081"
+      "buildHash": "2392161f0fa6"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!bfdc5745f397ea0a",
   "name": "Pinning Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/pinning_strike_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy entering a 15ft range of you, you may expend one Trickshot point to attempt to give them X Pin (where X is half your proficiency, rounded up). Finesse Check negates.</p>",
     "tag": "reaction",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pinning_strike",
-      "buildHash": "4133173e5246"
+      "buildHash": "87354319d578"
     }
   }
 }

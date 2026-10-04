@@ -3,7 +3,7 @@
   "_key": "!items!1bc6eaf079a1b6d7",
   "name": "Imbued Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/imbued_training_icon.webp",
   "system": {
     "description": "<p>You gain training in imbued weapons.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "imbued_training",
-      "buildHash": "ff63c6db7354"
+      "buildHash": "7900ab17974d"
     }
   }
 }

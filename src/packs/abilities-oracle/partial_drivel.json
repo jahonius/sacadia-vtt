@@ -3,7 +3,7 @@
   "_key": "!items!5357b73e4cef3ce2",
   "name": "Partial Drivel",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/partial_drivel_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/partial_drivel_icon.webp",
   "system": {
     "description": "<p>Reduce your Madness by any amount when you initiate this. For as long as you maintain Focus, gain damage resistance (DR) by your Madness expended.</p>",
     "tag": "focus",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "partial_drivel",
-      "buildHash": "5b1bc4f3321d"
+      "buildHash": "aa73724874f9"
     }
   }
 }

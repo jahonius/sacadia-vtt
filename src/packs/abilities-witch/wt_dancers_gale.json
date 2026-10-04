@@ -3,7 +3,7 @@
   "_key": "!items!f972d84bd7f80bc8",
   "name": "Dancer’s Gale",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_dancers_gale_icon.webp",
   "system": {
     "description": "<p>As a Boost to Dancerwind, you may expend additional AP. For every extra AP you expend, increase the move speed of the target by an additional 5ft.</p>",
     "tag": "boost",
@@ -59,7 +59,7 @@
       "catalogId": "wt_dancers_gale",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "7fed7ccdae02"
+      "buildHash": "d8c5cc34be8e"
     }
   }
 }

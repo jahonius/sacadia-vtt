@@ -3,7 +3,7 @@
   "_key": "!items!c3da0e5cb3374a7c",
   "name": "Shield Wall",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_shield_wall_icon.webp",
   "system": {
     "description": "<p>While wielding a tower shield, expend one lore point. You and all allies within 5ft of you have full cover until the start of your next turn from any single direction (declare when you use this).</p>",
     "tag": "lore",
@@ -43,7 +43,7 @@
       "catalogId": "lore_shield_wall",
       "transcribed": true,
       "lore": true,
-      "buildHash": "2aa085e47be2"
+      "buildHash": "aa4e07cf4903"
     }
   }
 }

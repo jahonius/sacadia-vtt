@@ -3,7 +3,7 @@
   "_key": "!items!dd069dc8a410b186",
   "name": "Dark Cloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/dark_cloud_icon.webp",
   "system": {
     "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus, creatures cannot see through tiles occupied by your Swarm. If a creature is inside the Cloud, they treat the area as Dim.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "dark_cloud",
       "transcribed": true,
-      "buildHash": "90d465c52d93"
+      "buildHash": "b8870819655c"
     }
   }
 }

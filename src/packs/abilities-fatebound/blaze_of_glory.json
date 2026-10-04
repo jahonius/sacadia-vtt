@@ -3,7 +3,7 @@
   "_key": "!items!0d7ca43f59393951",
   "name": "Blaze of Glory",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/blaze_of_glory_icon.webp",
   "system": {
     "description": "<p>Expend 1 Glory point as your armor radiates in light. All enemies within 10ft of you make a Finesse Check against 1D8+Fate elemental damage, taking half as much on a successful check. The damage dice dealt this way increases to 1D10 at level 5, and to 2D6 at level 11. The type of elemental damage is the same as your divine weapon.</p>",
     "tag": "action",
@@ -80,7 +80,7 @@
           "ladderIndex": 4
         }
       ],
-      "buildHash": "e4e5238214d8"
+      "buildHash": "f61260ebbb37"
     }
   }
 }

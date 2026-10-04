@@ -3,7 +3,7 @@
   "_key": "!items!f705e6abf648bb31",
   "name": "Research Breakthrough",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_research_breakthrough_icon.webp",
   "system": {
     "description": "<p>Immediately research up to 3 abilities for which you meet the requirements, without expending a long rest action.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_research_breakthrough",
       "feature": true,
       "level": 5,
-      "buildHash": "b21aaaa3805a"
+      "buildHash": "9c4c4e5ed6ec"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d8ba1db1a8571c0d",
   "name": "Shield Warrior",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/shield_warrior_icon.webp",
   "system": {
     "description": "<p>Increase the base damage dice done by shields by one type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shield_warrior",
-      "buildHash": "5715b76c16d5"
+      "buildHash": "1467b85fa424"
     }
   }
 }

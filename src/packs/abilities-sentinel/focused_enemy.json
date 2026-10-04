@@ -3,7 +3,7 @@
   "_key": "!items!50f1579163a32651",
   "name": "Focused Enemy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/focused_enemy_icon.webp",
   "system": {
     "description": "<p>For each turn you maintain Focus (beginning with the turn you initiate this ability) on a Favored Enemy, increase all to-hits you make against the target by 1, to a maximum of your proficiency score.</p>",
     "tag": "focus",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "focused_enemy",
-      "buildHash": "b3ef8ea6f838"
+      "buildHash": "cecbcb99534b"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!ede8e80965a313fa",
   "name": "Ambiproficient",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/ambiproficient_icon.webp",
   "system": {
     "description": "<p>Gain proficiency in one of the following that you do not have: Melee to-hit, Ranged to-hit.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "ambiproficient",
-      "buildHash": "b0846e789f62"
+      "buildHash": "5bc1a9c89765"
     }
   }
 }

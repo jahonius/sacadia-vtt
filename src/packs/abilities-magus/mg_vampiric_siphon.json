@@ -3,7 +3,7 @@
   "_key": "!items!ce6d528d9b4328ab",
   "name": "Vampiric Siphon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_vampiric_siphon_icon.webp",
   "system": {
     "description": "<p>Touch an enemy target with Hemorrhage from Bloodsight, and expend a Spell Slot. Roll Hemorrhage damage according to the number of levels they have. Gain X temporary HP, where X is half the damage rolled from Hemorrhage. Then, reduce their Hemorrhage by one.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Demon Lore[3]",
-      "buildHash": "5108bef83b5d"
+      "buildHash": "9c64b883dca4"
     }
   }
 }

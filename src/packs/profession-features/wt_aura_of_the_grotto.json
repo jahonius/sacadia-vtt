@@ -3,7 +3,7 @@
   "_key": "!items!b13268a92cf6f18d",
   "name": "Aura of the Grotto",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/wt_aura_of_the_grotto_icon.webp",
   "system": {
     "description": "<p>(Prerequisite: Promise of Nonviolence). In a 5Xft aura around you (where X is half your Proficiency, rounded up), all allies gain 1X Advantage to Trait Checks against Adversarial Conditions given to them for as long as you maintain Focus.</p>",
     "tag": "focus",
@@ -37,7 +37,7 @@
       "catalogId": "wt_aura_of_the_grotto",
       "feature": true,
       "level": 5,
-      "buildHash": "6075032d61a0"
+      "buildHash": "10c1a1971cc2"
     }
   }
 }

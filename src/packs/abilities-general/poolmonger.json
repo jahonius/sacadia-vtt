@@ -3,7 +3,7 @@
   "_key": "!items!f30d56bf3e7120a3",
   "name": "Poolmonger",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/poolmonger_icon.webp",
   "system": {
     "description": "<p>Choose one Action Pool (e.g., Call Points, Arrangement Points, Trickshot Points, Prescient Points, or Trick Points). Increase the number of points you have by 1.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "poolmonger",
-      "buildHash": "260c5c841489"
+      "buildHash": "2135ee2a9793"
     }
   }
 }

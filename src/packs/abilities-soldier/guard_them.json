@@ -3,7 +3,7 @@
   "_key": "!items!4fde41075c89c8ec",
   "name": "Guard Them",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/guard_them_icon.webp",
   "system": {
     "description": "<p>Provided you are within 5ft of an ally who is surrounded, for as long as you maintain Focus, they ignore the effects of the Surrounded condition. If you move away from the target or they move away from you, your Focus immediately ends. When you lose Focus on Guard Them, gain one Fatigue.</p>",
     "tag": "focus",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "guard_them",
-      "buildHash": "d258d7c07ac4"
+      "buildHash": "c7f906e53f7a"
     }
   }
 }

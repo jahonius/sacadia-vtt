@@ -3,7 +3,7 @@
   "_key": "!items!135b005dc887e06b",
   "name": "Taunting Call",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/taunting_call_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. Attempt to give them Taunt equal to half your Proficiency (rounded up). They make a Courage check against this effect.</p>",
     "tag": "action",
@@ -103,7 +103,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "taunting_call",
-      "buildHash": "50880a36b91b"
+      "buildHash": "708caf60c59b"
     }
   }
 }

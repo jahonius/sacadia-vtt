@@ -3,7 +3,7 @@
   "_key": "!items!f0c5ed6b9832b328",
   "name": "Solar Arc",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/solar_arc_icon.webp",
   "system": {
     "description": "<p>When using Long Arc, you may choose to make an attack against up to three targets. Only apply the base weapon damage dice to all targets if you hit. You may only use this Boost if three targets are within 5ft of at least one other target and all targets are in range of your divine weapon.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "solar_arc",
       "transcribed": true,
-      "buildHash": "7e3c68bf73c7"
+      "buildHash": "d2dde2f09194"
     }
   }
 }

@@ -10,7 +10,7 @@
     "weight": 0,
     "value": 200,
     "equipped": false,
-    "traits": "",
+    "traits": "heavy",
     "slots": 3,
     "storage": "ris",
     "providesSis": 0,
@@ -33,7 +33,7 @@
     "sacadia": {
       "catalogId": "great_axe",
       "kind": "weapon",
-      "buildHash": "0beccbc5acbc"
+      "buildHash": "e104c9b46266"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!b2944e920c818a24",
   "name": "Help",
   "type": "ability",
-  "img": "icons/svg/combat.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_help_icon.webp",
   "system": {
     "description": "<p>Choose one targeted ally within 5ft of you and declare a specific action you wish to help them undertake. When your ally rolls to take that action, they roll with 1X advantage.</p>",
     "tag": "action",
@@ -46,7 +46,7 @@
     "sacadia": {
       "catalogId": "basic_help",
       "basic": true,
-      "buildHash": "ebf2707e8179"
+      "buildHash": "40a264640a6e"
     }
   }
 }

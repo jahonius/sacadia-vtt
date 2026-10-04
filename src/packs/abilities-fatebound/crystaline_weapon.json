@@ -3,7 +3,7 @@
   "_key": "!items!967782dea8a0f96e",
   "name": "Crystaline Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/crystaline_weapon_icon.webp",
   "system": {
     "description": "<p>Once per quick rest your weapon glows. As long as you maintain Focus, all enemies within 5Xft of you (where X is half your Proficiency, rounded up) treat the area as Bright.</p>",
     "tag": "focus",
@@ -54,7 +54,7 @@
     "sacadia": {
       "catalogId": "crystaline_weapon",
       "transcribed": true,
-      "buildHash": "f79964ed374f"
+      "buildHash": "6cce4c843392"
     }
   }
 }

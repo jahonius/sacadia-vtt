@@ -3,7 +3,7 @@
   "_key": "!items!7297b3330cb4ade1",
   "name": "Rapid Reaction",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/rapid_reaction_icon.webp",
   "system": {
     "description": "<p>Gain one additional reaction. You may not use two reactions in the same instant (e.g., you may not use both reactions to make opportunity attacks against a single enemy moving away from you).</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "rapid_reaction",
-      "buildHash": "8be5cd090370"
+      "buildHash": "d39d5a457453"
     }
   }
 }

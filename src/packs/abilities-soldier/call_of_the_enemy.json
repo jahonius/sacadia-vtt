@@ -3,7 +3,7 @@
   "_key": "!items!588d35fa2551d120",
   "name": "Call of the Enemy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_the_enemy_icon.webp",
   "system": {
     "description": "<p>As a boost to Imposing Figure, expend X call points (X up to half your Proficiency, rounded up). Attempt to give Taunt to X enemies within 5ft of you rather than specifying only one.</p>",
     "tag": "boost",
@@ -41,7 +41,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_the_enemy",
-      "buildHash": "ee93dba35d81"
+      "buildHash": "9a3537ffc3a3"
     }
   }
 }

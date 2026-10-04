@@ -3,7 +3,7 @@
   "_key": "!items!8e75f2099a5e3844",
   "name": "Tripped Up",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_tripped_up_icon.webp",
   "system": {
     "description": "<p>As an action while you are wielding your named weapon with the Weapon Tail property, attempt to give one target within your versatile weapon's range levels of Pulled equal to half your Proficiency, rounded up. The target makes Finesse Checks against this effect. You cannot use your Weapon Tail weapon for as long as this enemy has any levels of Pulled.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_tripped_up",
-      "buildHash": "806b392f5829"
+      "buildHash": "a6094ef7baab"
     }
   }
 }

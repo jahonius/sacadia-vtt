@@ -3,7 +3,7 @@
   "_key": "!items!24a83d1cfb43b522",
   "name": "Grasses of Kish",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_grasses_of_kish_icon.webp",
   "system": {
     "description": "<p>When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_grasses_of_kish",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "8333d1482b24"
+      "buildHash": "7be41071b418"
     }
   }
 }

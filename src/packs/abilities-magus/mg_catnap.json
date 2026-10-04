@@ -3,7 +3,7 @@
   "_key": "!items!fd7627f66d73efcb",
   "name": "Catnap",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_catnap_icon.webp",
   "system": {
     "description": "<p>Expend X Spell Slots, where X is any number up to your Proficiency. Choose X enemy targets within 30ft of you that you can see. All targets make a Fate Check against your Check DC. Any target who fails falls unconscious and prone. They remain unconscious until they take any damage, or your Focus ends. At the end of each turn in which they remain unconscious, they make a Fate Check against your Check DC, ending the effect on a success. Any attack made against them while they are unconscious is treated as Surprised (but immediately wakes them up). This spell has no effect on creatures whose CR is greater than or equal to your level.</p>",
     "tag": "focus",
@@ -76,7 +76,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Font Lore[2], Magical Detection",
-      "buildHash": "eb3bf4e9028b"
+      "buildHash": "c808b9826e88"
     }
   }
 }

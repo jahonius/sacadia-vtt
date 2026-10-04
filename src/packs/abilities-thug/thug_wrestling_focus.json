@@ -3,7 +3,7 @@
   "_key": "!items!3950882f59943428",
   "name": "Wrestling Focus",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_wrestling_focus_icon.webp",
   "system": {
     "description": "<p>For as long as you maintain Focus, Pin you have given through Natural Wrestler is treated as Enduring. You still reduce Pin you give through certain effects (e.g., Tangled Harm).</p>",
     "tag": "focus",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_wrestling_focus",
-      "buildHash": "29c3c6332278"
+      "buildHash": "a2b82a5853c6"
     }
   }
 }

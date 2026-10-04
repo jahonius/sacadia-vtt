@@ -3,7 +3,7 @@
   "_key": "!items!515c71f770b2b658",
   "name": "Mesmerizing Charm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_mesmerizing_charm_icon.webp",
   "system": {
     "description": "<p>Expending a Lore Point while commanding someone. They will follow any single command for the next minute (this time increases to an hour at level 6 and a day at level 11). After the time has ended, they will know you have charmed them. If they take damage, the effect ends. If you Soulbond, replace this ability with Soulbonded Touch.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_mesmerizing_charm",
       "transcribed": true,
       "lore": true,
-      "buildHash": "9994c097a52a"
+      "buildHash": "92f11e347796"
     }
   }
 }

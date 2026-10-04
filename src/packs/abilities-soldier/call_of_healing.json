@@ -3,7 +3,7 @@
   "_key": "!items!dcffa8b438d8ee44",
   "name": "Call of Healing",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_healing_icon.webp",
   "system": {
     "description": "<p>Expend one call point and give XD4 temporary HP (where X is half your proficiency, rounded up) to you and all allies within 15ft of you.</p>",
     "tag": "action",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_healing",
-      "buildHash": "8acb9d6a5416"
+      "buildHash": "c725e8fd6b41"
     }
   }
 }

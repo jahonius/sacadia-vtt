@@ -3,7 +3,7 @@
   "_key": "!items!d3fad64f5bce82f6",
   "name": "Bucking Toss",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/bucking_toss_icon.webp",
   "system": {
     "description": "<p>When you use Kick on an enemy, they are pushed up to 20ft away.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "bucking_toss",
       "transcribed": true,
-      "buildHash": "795bac4f5db6"
+      "buildHash": "39d4c9e78d30"
     }
   }
 }

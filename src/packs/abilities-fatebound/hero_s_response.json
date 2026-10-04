@@ -3,7 +3,7 @@
   "_key": "!items!e324df80d2de83c3",
   "name": "Hero’s Response",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/hero_s_response_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point as a reaction. You may take any number of additional reactions before the start of your next turn (to a maximum of your AP). Reduce your AP on your next turn by the number of additional reactions you take.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "hero_s_response",
       "transcribed": true,
-      "buildHash": "3691c5feb94e"
+      "buildHash": "02ad4118351b"
     }
   }
 }

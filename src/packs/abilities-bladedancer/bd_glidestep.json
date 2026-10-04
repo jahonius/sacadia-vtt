@@ -3,7 +3,7 @@
   "_key": "!items!01019b195e037bf0",
   "name": "Glidestep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_glidestep_icon.webp",
   "system": {
     "description": "<p>If you have used the 5ft adjust Boost on your turn and successfully make a melee attack against a new target you have not attacked or forced to make a trait check on this turn, you recover a single use of 5ft adjust.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_glidestep",
-      "buildHash": "10c47049cbb2"
+      "buildHash": "d79ba2fc3baf"
     }
   }
 }

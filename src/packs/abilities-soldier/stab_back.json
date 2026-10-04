@@ -3,7 +3,7 @@
   "_key": "!items!e60e5542ec0e2430",
   "name": "Stab Back",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/stab_back_icon.webp",
   "system": {
     "description": "<p>When you use Pushback and the target fails their Power Check, deal spear damage to the target.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "stab_back",
-      "buildHash": "729c0ae25c4d"
+      "buildHash": "4c42b2e4be70"
     }
   }
 }

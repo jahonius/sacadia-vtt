@@ -3,7 +3,7 @@
   "_key": "!items!57ebcbe1dfdc9138",
   "name": "Spider's Trap",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/spiders_trap_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/spiders_trap_icon.webp",
   "system": {
     "description": "<p>As a Boost to Forbidden Knowledge or Forbidden Web when you have no Madness, whenever you would miss on your to-hit, expend one Prescient Point and re-roll. You must continue to do this until you hit or run out of Prescient points.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "spiders_trap",
-      "buildHash": "630bcd6ad1c2"
+      "buildHash": "a0006720fc2d"
     }
   }
 }

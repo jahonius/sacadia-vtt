@@ -3,7 +3,7 @@
   "_key": "!items!7486f0f74f7f0b4b",
   "name": "Overwhelm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/overwhelm_icon.webp",
   "system": {
     "description": "<p>If you apply this as a boost and would critically hit 2 or more times, apply an additional unique critical effect on top of however many you would normally apply.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "overwhelm",
-      "buildHash": "d891defa427c"
+      "buildHash": "94dde1ef79c1"
     }
   }
 }

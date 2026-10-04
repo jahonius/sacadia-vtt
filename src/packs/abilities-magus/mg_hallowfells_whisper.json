@@ -3,7 +3,7 @@
   "_key": "!items!88be0fb00743d18b",
   "name": "Hallowfell’s Whisper",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_hallowfells_whisper_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 30ft and expend a spell slot. That target makes a Fate check against your Check DC, losing all Reactions before the start of their next turn if they fail.</p>",
     "tag": "action",
@@ -61,7 +61,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Astrology[2]",
-      "buildHash": "679276bceb6c"
+      "buildHash": "df199f9e5c76"
     }
   }
 }

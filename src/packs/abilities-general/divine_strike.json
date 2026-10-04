@@ -3,7 +3,7 @@
   "_key": "!items!7d8cb64ddef00731",
   "name": "Divine Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/divine_strike_icon.webp",
   "system": {
     "description": "<p>Once per quick rest, you may add your Fate Score to any to-hit as a Boost to that attack.</p>",
     "tag": "boost",
@@ -64,7 +64,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "divine_strike",
-      "buildHash": "f6a195387a4c"
+      "buildHash": "fac4ff1d0717"
     }
   }
 }

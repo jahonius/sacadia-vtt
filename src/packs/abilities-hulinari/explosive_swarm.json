@@ -3,7 +3,7 @@
   "_key": "!items!1f28b94706f765cd",
   "name": "Explosive Swarm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/explosive_swarm_icon.webp",
   "system": {
     "description": "<p>As a Boost to a move action when an enemy attempts a reaction attack against you, you burst into a cloud of birds for a moment. They do not get to make a reaction attack against you.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "explosive_swarm",
       "transcribed": true,
-      "buildHash": "35ecd45a3096"
+      "buildHash": "6390e884a337"
     }
   }
 }

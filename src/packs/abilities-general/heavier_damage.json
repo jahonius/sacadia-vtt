@@ -3,7 +3,7 @@
   "_key": "!items!c157c5c0e808833a",
   "name": "Heavier Damage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/heavier_damage_icon.webp",
   "system": {
     "description": "<p>When you successfully hit with the weapon type selected for 'Heavy Damage', also re-roll a 2 on base damage dice dealt by that weapon. Keep the second roll made (even if it is a 1 or a 2).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "heavier_damage",
-      "buildHash": "19e209eb07eb"
+      "buildHash": "c8cd6ca2f9c8"
     }
   }
 }

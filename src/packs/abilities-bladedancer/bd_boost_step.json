@@ -3,7 +3,7 @@
   "_key": "!items!a00491ec54310b57",
   "name": "Boost Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_boost_step_icon.webp",
   "system": {
     "description": "<p>You may expend an additional AP as a boost to any Arrangement to increase your Move speed by half (rounded up) for the duration of that Arrangement.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_boost_step",
-      "buildHash": "30d72a0827f7"
+      "buildHash": "2f979929e521"
     }
   }
 }

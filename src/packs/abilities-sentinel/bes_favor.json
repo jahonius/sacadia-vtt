@@ -3,7 +3,7 @@
   "_key": "!items!ace2407491036f8a",
   "name": "Bes Favor",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/sentinel/bes_favor_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/bes_favor_icon.webp",
   "system": {
     "description": "<p>Increase the benefit of Favored Enemy to add your Wiles Score to all damage dealt to favored enemies.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bes_favor",
-      "buildHash": "74167776853a"
+      "buildHash": "dd5ea7659e3c"
     }
   }
 }

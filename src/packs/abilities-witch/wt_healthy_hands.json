@@ -3,7 +3,7 @@
   "_key": "!items!d5053f9348a620bb",
   "name": "Healthy Hands",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_healthy_hands_icon.webp",
   "system": {
     "description": "<p>Touch an ally within 5ft of you. Convert all temporary HP they possess to health permanent health. You may use this only once per quick rest.</p>",
     "tag": "action",
@@ -49,7 +49,7 @@
       "catalogId": "wt_healthy_hands",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "1d7208384091"
+      "buildHash": "15a263e23a71"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!a54333101d2fdb69",
   "name": "Imbued Fury",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/imbued_fury_icon.webp",
   "system": {
     "description": "<p>Your attacks target AD (the lowest armor score among MD, TD, PD) when made against a Targeted Foe.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "imbued_fury",
       "transcribed": true,
-      "buildHash": "6b7d8ff70460"
+      "buildHash": "b332a8edea9a"
     }
   }
 }

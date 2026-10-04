@@ -3,7 +3,7 @@
   "_key": "!items!2afe71ffd6d084fd",
   "name": "Blood Doping",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_blood_doping_icon.webp",
   "system": {
     "description": "<p>As a Boost to Spare the Meek, expend a Spell Slot. Increase the damage dice of their first attack on their next turn by two dice types.</p>",
     "tag": "boost",
@@ -58,7 +58,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Medic[2]",
-      "buildHash": "0f31e19faeca"
+      "buildHash": "14d17ab7acae"
     }
   }
 }

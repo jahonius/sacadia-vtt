@@ -3,7 +3,7 @@
   "_key": "!items!98bf299e1575aaf0",
   "name": "Falling Dance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_falling_dance_icon.webp",
   "system": {
     "description": "<p>Any enemy that cannot be moved by Maneuvering Step due to conditions, or objects or creatures blocking their path falls Prone.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_falling_dance",
-      "buildHash": "8fc26466d72e"
+      "buildHash": "186d275cc834"
     }
   }
 }

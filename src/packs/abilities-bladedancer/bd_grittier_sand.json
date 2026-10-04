@@ -3,7 +3,7 @@
   "_key": "!items!31ef152f6a9902bd",
   "name": "Grittier Sand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_grittier_sand_icon.webp",
   "system": {
     "description": "<p>Creatures who fail their Courage Check against Sands and Wind take the Blinded condition instead of the Dim condition until the start of your next turn.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_grittier_sand",
-      "buildHash": "1f93aa1576e8"
+      "buildHash": "7f39b8ee7e1a"
     }
   }
 }

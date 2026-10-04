@@ -3,7 +3,7 @@
   "_key": "!items!326a1077c0fcfa0c",
   "name": "Group Charge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_group_charge_icon.webp",
   "system": {
     "description": "<p>When you use ‘Charge the Line’, you may expend a Lore Point. If you do, double your move speed. You may turn as much as you would like using Charge the Line. You do not provoke reaction attacks using Charge the Line this way. All creatures gain 1x additional disadvantage against Charge the Line made this way.</p>",
     "tag": "boost",
@@ -57,7 +57,7 @@
       "catalogId": "lore_group_charge",
       "transcribed": true,
       "lore": true,
-      "buildHash": "9b0ce47f11d7"
+      "buildHash": "9ac2092f630f"
     }
   }
 }

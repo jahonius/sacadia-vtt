@@ -3,7 +3,7 @@
   "_key": "!items!04563b700fbe354a",
   "name": "Vision of Moss",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/vision_of_moss_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/vision_of_moss_icon.webp",
   "system": {
     "description": "<p>As a reaction to a creature within 60ft of you giving an ally any mental adversarial condition, you may expend one Prescient Point to roll a Trait Check against one level. If you have Steadied, you may automatically succeed.</p>",
     "tag": "reaction",
@@ -45,7 +45,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "vision_of_moss",
-      "buildHash": "327224498ba4"
+      "buildHash": "987d19692762"
     }
   }
 }

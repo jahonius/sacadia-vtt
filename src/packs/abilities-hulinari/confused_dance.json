@@ -3,7 +3,7 @@
   "_key": "!items!c437918989dff0f3",
   "name": "Confused Dance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/confused_dance_icon.webp",
   "system": {
     "description": "<p>Whenever you are Skittish to a target, you may use a reaction to give that target 1x disadvantage on a Trait Check.</p>",
     "tag": "reaction",
@@ -51,7 +51,7 @@
     "sacadia": {
       "catalogId": "confused_dance",
       "transcribed": true,
-      "buildHash": "1a89dbe6abc9"
+      "buildHash": "cec5a29e803e"
     }
   }
 }

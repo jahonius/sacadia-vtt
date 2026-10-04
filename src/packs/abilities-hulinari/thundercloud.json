@@ -3,7 +3,7 @@
   "_key": "!items!a1422e1311b59d2e",
   "name": "Thundercloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/thundercloud_icon.webp",
   "system": {
     "description": "<p>As a body action, rearrange the positions of all willing allies inside tiles occupied by Clouded Ally.</p>",
     "tag": "action",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "thundercloud",
       "transcribed": true,
-      "buildHash": "2c6a3f0c4212"
+      "buildHash": "f845b9745efe"
     }
   }
 }

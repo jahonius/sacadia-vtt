@@ -3,7 +3,7 @@
   "_key": "!items!295b730b5cb030ec",
   "name": "Chained Advance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_chained_advance_icon.webp",
   "system": {
     "description": "<p>For every successful melee attack you have made consecutively on your turn against a single target, increase your to-hit on subsequent attacks by +1 (to a max of your Proficiency). The first time you would miss your attack or at the end of your turn, this effect ends.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_chained_advance",
-      "buildHash": "0283bdd0f1fd"
+      "buildHash": "1783806b14e0"
     }
   }
 }

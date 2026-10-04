@@ -3,7 +3,7 @@
   "_key": "!items!037828b0656ee344",
   "name": "Compelled Duel",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_compelled_duel_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 30ft of you. Expend a Spell Slot. That target makes Wiles Checks against X levels of Taunt, where X is half your Proficiency, rounded up.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Dungeoneering[2]",
-      "buildHash": "5ecc0dd98f60"
+      "buildHash": "5364e7fa2cd7"
     }
   }
 }

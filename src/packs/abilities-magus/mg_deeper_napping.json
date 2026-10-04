@@ -3,7 +3,7 @@
   "_key": "!items!a3f3a4bebf3b06ae",
   "name": "Deeper Napping",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_deeper_napping_icon.webp",
   "system": {
     "description": "<p>When a target has failed their initial Trait Check against Catnap, and they roll Fate Checks at the end of each turn, they roll these Fate Checks at 1X Disadvantage.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Font Lore[3]",
-      "buildHash": "7bf2cc26f3d5"
+      "buildHash": "b6774a6c4f90"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!6db82ef69668865d",
   "name": "Brace and Maneuver",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/brace_and_maneuver_icon.webp",
   "system": {
     "description": "<p>You may use Remaneuver any number of times in a single turn (still may not use multiple Remaneuver Boosts on the same action). Sting you gain through Remaneuver is Stacking.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "brace_and_maneuver",
-      "buildHash": "7532a4cb4570"
+      "buildHash": "30be857dd03c"
     }
   }
 }

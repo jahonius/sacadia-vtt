@@ -3,7 +3,7 @@
   "_key": "!items!7bd1fa018f16c1f1",
   "name": "Clumsy Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_clumsy_touch_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 5ft of you who has levels of Fumbled. For each level of Fumble they possess (up to your Proficiency), they make a Finesse Check against your Check DC (they do not apply their Fumbled to these Checks). For each failed Finesse Check made, they gain 1 Jinxed, and lose 1 Fumbled.</p>",
     "tag": "action",
@@ -64,7 +64,7 @@
       "catalogId": "wt_clumsy_touch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "7a2096c868a5"
+      "buildHash": "71a9bcaa709d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!3dfb6c174dae2a4e",
   "name": "Poured Mold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_poured_mold_icon.webp",
   "system": {
     "description": "<p>When you take this ability, choose one greater adversarial condition from the following: Corroded, Debilitated, Pulled, Hemorrhage, Frenzy, Panic, Taunt. When you initiate this ability, choose one enemy target within 5ft. For as long as you maintain Focus, your chosen condition is treated as Stacking up to your Proficiency. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target. Once you initiate Focus on Poured Mold, if you drop Focus, they lose all levels of that condition.You may take this ability up to three times. Every time you do, choose a different condition from the list above. Any target you focus on treats all conditions for which you have Poured Mold as a Stacking with a single Focus.</p><p><em>[6|3]: 6 CSP the first time, 3 for each additional instance (up to three).</em></p>",
     "tag": "focus",
@@ -71,7 +71,7 @@
       "catalogId": "wt_poured_mold",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "4f1db2ac412a"
+      "buildHash": "7b5717ebb68a"
     }
   }
 }

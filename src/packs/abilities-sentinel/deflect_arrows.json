@@ -3,7 +3,7 @@
   "_key": "!items!523ca1b5145d3b70",
   "name": "Deflect Arrows",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/deflect_arrows_icon.webp",
   "system": {
     "description": "<p>As long as you maintain focus, you are treated as under half cover against any ranged attack made against you. You may use this once per quick rest.</p>",
     "tag": "focus",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "deflect_arrows",
-      "buildHash": "423e606ead19"
+      "buildHash": "9f0b4c368ef5"
     }
   }
 }

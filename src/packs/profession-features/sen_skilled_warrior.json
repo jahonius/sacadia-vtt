@@ -3,7 +3,7 @@
   "_key": "!items!0912048daa1ac3b0",
   "name": "Skilled Warrior",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sen_skilled_warrior_icon.webp",
   "system": {
     "description": "<p>Once per turn, you may add your Wiles Score to any ranged to-hit you roll. You may not add Wiles to a ranged attack if another effect already adds your Wiles to an attack, and must decide to use this before you roll to-hit.</p>",
     "tag": "boost",
@@ -58,7 +58,7 @@
       "catalogId": "sen_skilled_warrior",
       "feature": true,
       "level": 3,
-      "buildHash": "403f69b48259"
+      "buildHash": "dec4b3808035"
     }
   }
 }

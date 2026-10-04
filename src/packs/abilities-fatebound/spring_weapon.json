@@ -3,7 +3,7 @@
   "_key": "!items!fd08d3bb5feb21c4",
   "name": "Spring Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/spring_weapon_icon.webp",
   "system": {
     "description": "<p>Once per quick rest as a Reaction to a Wounded ally beginning their turn, you may exhaust any number of unused reactions. They gain 1AP per reaction you exhaust, to a maximum of their maximum unwounded AP.</p>",
     "tag": "reaction",
@@ -58,7 +58,7 @@
     "sacadia": {
       "catalogId": "spring_weapon",
       "transcribed": true,
-      "buildHash": "95927688b7b0"
+      "buildHash": "1f5b1db30fec"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!eb03c22408d88f09",
   "name": "Grand Hidebite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/grand_hidebite_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of attacks of opportunity you make by one additional type.</p>",
     "tag": "passive",
@@ -49,7 +49,7 @@
     "sacadia": {
       "catalogId": "grand_hidebite",
       "transcribed": true,
-      "buildHash": "e3b86aff6da5"
+      "buildHash": "38f4ee0e7de4"
     }
   }
 }

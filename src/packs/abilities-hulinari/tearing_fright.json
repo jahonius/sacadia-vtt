@@ -3,7 +3,7 @@
   "_key": "!items!3cb71df7326afd33",
   "name": "Tearing Fright",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/tearing_fright_icon.webp",
   "system": {
     "description": "<p>When you use Tear Apart, choose one target within 5ft of you. In addition to Surprise, attempt to give them Panic equal to half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "tearing_fright",
       "transcribed": true,
-      "buildHash": "daede5f8ba45"
+      "buildHash": "14848c9ff088"
     }
   }
 }

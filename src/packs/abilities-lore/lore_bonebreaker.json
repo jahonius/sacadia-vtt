@@ -3,7 +3,7 @@
   "_key": "!items!cc4bc7163ba53ea6",
   "name": "Bonebreaker",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_bonebreaker_icon.webp",
   "system": {
     "description": "<p>When you have a target within 5ft of you pinned by Natural Wrestler, you may expend a lore point with an action. Choose one limb (an arm or a leg) which a target cannot use because that limb is pinned through Natural Wrestler. Deal XD10 damage to that target, where X is your Proficiency, then exhaust that limb until all levels of Pin ends.</p>",
     "tag": "lore",
@@ -80,7 +80,7 @@
       "catalogId": "lore_bonebreaker",
       "transcribed": true,
       "lore": true,
-      "buildHash": "f324cc154bae"
+      "buildHash": "0fd065e47146"
     }
   }
 }

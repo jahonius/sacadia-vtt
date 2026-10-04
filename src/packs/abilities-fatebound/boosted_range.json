@@ -3,7 +3,7 @@
   "_key": "!items!eb8d0aac2d1206aa",
   "name": "Boosted Range",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boosted_range_icon.webp",
   "system": {
     "description": "<p>As a Boost to an attack made with a divine weapon, you may make that attack at 5ft or10ft range. If you use this ability with a polearm that already has 10ft range, you may further extend the range of this attack to 15ft.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "boosted_range",
       "transcribed": true,
-      "buildHash": "e42773a85bac"
+      "buildHash": "75705a4ddf36"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!fe3a4e623a5d9b69",
   "name": "Clever Rend",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/clever_rend_icon.webp",
   "system": {
     "description": "<p>When you rend a target with any rending effect, do not randomly determine what type of armor you rend. Instead, choose one armor type (PD, TD, or MD). You rend that first.</p>",
     "tag": "passive",
@@ -43,7 +43,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "clever_rend",
-      "buildHash": "faa375bfcec6"
+      "buildHash": "e6b34f74fae1"
     }
   }
 }

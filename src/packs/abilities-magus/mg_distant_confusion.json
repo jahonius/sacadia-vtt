@@ -3,7 +3,7 @@
   "_key": "!items!7bbafb5a1c1a0044",
   "name": "Distant Confusion",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_distant_confusion_icon.webp",
   "system": {
     "description": "<p>When you use Confusion, the maximum range is 60ft.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Cultural Lore[3]",
-      "buildHash": "52de2ae7be28"
+      "buildHash": "f9a2d31f3b20"
     }
   }
 }

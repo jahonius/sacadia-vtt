@@ -3,7 +3,7 @@
   "_key": "!items!db88b6d74ebf17b9",
   "name": "Hop Over",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/hop_over_icon.webp",
   "system": {
     "description": "<p>When you use Charge the Line, you may apply a Boost to hop over a single medium-sized (or smaller) creature without interrupting the line. They count as a creature not in the line for the purposes of Charge the Line.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "hop_over",
       "transcribed": true,
-      "buildHash": "952de9ffde1d"
+      "buildHash": "2d937f32ab43"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!8c5edb61c24805d9",
   "name": "Defensive Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/defensive_step_icon.webp",
   "system": {
     "description": "<p>Whenever you are Skittish to a target and they move within 5ft of you, you may use your reaction to move up to half your movement speed away from them without provoking an attack of opportunity.</p>",
     "tag": "reaction",
@@ -37,7 +37,7 @@
     "sacadia": {
       "catalogId": "defensive_step",
       "transcribed": true,
-      "buildHash": "4e644dd9b4fd"
+      "buildHash": "90ccf814966e"
     }
   }
 }

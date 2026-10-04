@@ -3,7 +3,7 @@
   "_key": "!items!6a0e7a00f7b1258c",
   "name": "Wild Rebuke",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_wild_rebuke_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy within 30ft of you attempting to give an ally levels of an adversarial condition, declare the use of Wild Rebuke. For every successful Trait Check your ally makes against the effect, you may expend one Divine Touch point, and the enemy takes one level of that condition. There is no Trait Check against this effect.</p>",
     "tag": "reaction",
@@ -123,7 +123,7 @@
       "catalogId": "wt_wild_rebuke",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "12be1ba1d787"
+      "buildHash": "625787e42617"
     }
   }
 }

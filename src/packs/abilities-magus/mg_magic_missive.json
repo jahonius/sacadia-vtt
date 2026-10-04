@@ -3,7 +3,7 @@
   "_key": "!items!2c982f08dab76a66",
   "name": "Magic Missive",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_magic_missive_icon.webp",
   "system": {
     "description": "<p>Choose up to X targets within 60ft of you, where X is half your Proficiency, rounded up. Each target takes 1D4+Wiles mental damage. You may choose the same target for all Missives.</p>",
     "tag": "action",
@@ -74,7 +74,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Cultural Lore[1]",
-      "buildHash": "4ed4af156300"
+      "buildHash": "b7baf30b18c1"
     }
   }
 }

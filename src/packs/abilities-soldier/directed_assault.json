@@ -3,7 +3,7 @@
   "_key": "!items!56b366250fcba087",
   "name": "Directed Assault",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/directed_assault_icon.webp",
   "system": {
     "description": "<p>Once per turn as an action when you and a willing ally who has not used their reaction are benefiting from Stand By Me, you may direct that ally to make one attack, disengage, or make a move action at half speed. This exhausts that ally's reaction.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "directed_assault",
-      "buildHash": "bdd28236f7f3"
+      "buildHash": "f9b3f68be33f"
     }
   }
 }

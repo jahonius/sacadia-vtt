@@ -4,7 +4,7 @@
  * format Foundry renders without a client-side conversion step).
  *
  * The Markdown converter covers the subset the manual uses: `#`–`####` headings, paragraphs, `-` and `1.` lists
- * (one nested level, two-space indent), `|` tables, `>` quotes, `---` rules, and inline **bold**, *italic*,
+ * (one nested level, two-space indent), `|` tables, `>` quotes, `---` rules, and inline **bold**, *italic*, ![images](src),
  * `code` and [links](url). Kept deliberately small — no dependency.
  */
 import fs from 'node:fs';
@@ -17,6 +17,7 @@ export function inline(text) {
   const codes = [];
   let s = text.replace(/`([^`]+)`/g, (_, c) => { codes.push(`<code>${esc(c)}</code>`); return `\u0000${codes.length - 1}\u0000`; });
   s = esc(s)
+    .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1"/>')
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[^*])\*([^*\s][^*]*?)\*(?!\*)/g, '$1<em>$2</em>');

@@ -3,7 +3,7 @@
   "_key": "!items!34024f56ecc2156a",
   "name": "Don't Leave",
   "type": "ability",
-  "img": "icons/svg/shield.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_dont_leave_icon.webp",
   "system": {
     "description": "<p>Short weapons (daggers, fists, hand axes). If you are wielding a short weapon and an enemy attempts to move within that range or uses a ranged attack when inside your melee range, you may attempt to make a melee attack against them. If you Steady and then use this reaction while Steadied, treat this attack as a critical hit.</p>",
     "tag": "reaction",
@@ -44,7 +44,7 @@
       "basic": true,
       "opportunity": true,
       "steadiedCrit": true,
-      "buildHash": "2ecd6abaec0c"
+      "buildHash": "bd8e8718cde4"
     }
   }
 }

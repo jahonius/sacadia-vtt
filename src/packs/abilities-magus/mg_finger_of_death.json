@@ -3,7 +3,7 @@
   "_key": "!items!41f49945c50cd482",
   "name": "Finger of Death",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_finger_of_death_icon.webp",
   "system": {
     "description": "<p>Touch one target within 5ft and expend a Spell Slot. They make a Fate Check against your Check DC or take 2XD10 damage, where X is your Proficiency (no damage on a successful save). If this effect causes them to drop to 0HP, they die. You may use this once per combat.</p>",
     "tag": "action",
@@ -72,7 +72,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Sacrifice, Necromantic Lore[3]",
-      "buildHash": "faa5b61fd381"
+      "buildHash": "1f30e89a93fc"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!9ae72332ee59da96",
   "name": "Delirious Flock",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/delirious_flock_icon.webp",
   "system": {
     "description": "<p>All enemies within Clouded Foe make Wiles Checks against Delirium equal to half your Proficiency, rounded up.</p>",
     "tag": "action",
@@ -57,7 +57,7 @@
     "sacadia": {
       "catalogId": "delirious_flock",
       "transcribed": true,
-      "buildHash": "dd67fc579619"
+      "buildHash": "39bfa9e7f4fb"
     }
   }
 }

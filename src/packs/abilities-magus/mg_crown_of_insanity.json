@@ -3,7 +3,7 @@
   "_key": "!items!91d75f48100d04e2",
   "name": "Crown of Insanity",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_crown_of_insanity_icon.webp",
   "system": {
     "description": "<p>Expend 1 Spell Slot, and choose an enemy target within 5ft. That target makes a Fate Check against your Check DC. If they fail, at the start of each of their turns that you maintain Focus, the target takes 2D8 damage. They then apply the effect from the Oracle Insane Table (minus the damage) that corresponds to the lower of the two dice rolled on the insane table. They may break the effect with a successful Make Trait Check action against your Check DC.</p>",
     "tag": "focus",
@@ -68,7 +68,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "You have an Oracle in your party who has gone insane at least three times in front of you, but isn’t you",
-      "buildHash": "f96f91c38af8"
+      "buildHash": "281d12390c8c"
     }
   }
 }

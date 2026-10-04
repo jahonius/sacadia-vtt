@@ -3,7 +3,7 @@
   "_key": "!items!3cf6e239119a696c",
   "name": "Please Don't",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/please_dont_icon.webp",
   "system": {
     "description": "<p>If you successfully hit a target making an attack with Excuse Me, reduce that target's rolled to-hit by your Proficiency.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "please_dont",
-      "buildHash": "d80189ca8b4f"
+      "buildHash": "9cef5e12a1fd"
     }
   }
 }

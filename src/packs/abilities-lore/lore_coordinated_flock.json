@@ -3,7 +3,7 @@
   "_key": "!items!3efe7b696f93741f",
   "name": "Coordinated Flock",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_coordinated_flock_icon.webp",
   "system": {
     "description": "<p>As a Boost to initiating Clouded Foe, expend a Lore point to double the size of your cloud (the number of tiles it covers).</p>",
     "tag": "boost",
@@ -51,7 +51,7 @@
       "catalogId": "lore_coordinated_flock",
       "transcribed": true,
       "lore": true,
-      "buildHash": "55f07e95aece"
+      "buildHash": "24ae53e464a4"
     }
   }
 }

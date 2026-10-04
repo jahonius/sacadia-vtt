@@ -3,7 +3,7 @@
   "_key": "!items!d14793119202d9c7",
   "name": "Resilient Foe",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/resilient_foe_icon.webp",
   "system": {
     "description": "<p>You are resistant to all damage dealt by a targeted foe by your Proficiency.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "resilient_foe",
       "transcribed": true,
-      "buildHash": "db7efc4e696a"
+      "buildHash": "27040e58310a"
     }
   }
 }

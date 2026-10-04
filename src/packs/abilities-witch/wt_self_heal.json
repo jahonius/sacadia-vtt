@@ -3,7 +3,7 @@
   "_key": "!items!7aa8a015ab56137f",
   "name": "Self-Heal",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_self_heal_icon.webp",
   "system": {
     "description": "<p>Choose one ally within 5ft of you when you initiate this. For as long as you maintain Focus, any ability they would use or effect they trigger that deals damage to themselves gives them temporary HP instead. This affects Insane Oracle abilities and self-inflicted abilities like Thug’s Pained Bash, but does not trigger when caused by conditions they may have been given, or effects caused by an enemy. Every turn you maintain Focus on Self Heal, you can only renew Focus when you are within 5ft of that ally.</p>",
     "tag": "focus",
@@ -54,7 +54,7 @@
       "catalogId": "wt_self_heal",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "64d7f5b210a2"
+      "buildHash": "ed2e3fdf11ed"
     }
   }
 }

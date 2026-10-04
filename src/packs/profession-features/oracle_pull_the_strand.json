@@ -3,7 +3,7 @@
   "_key": "!items!e25bd5b0218660b6",
   "name": "Pull the Strand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/oracle_pull_the_strand_icon.webp",
   "system": {
     "description": "<p>You may expend 'Slightly Cracked' rolls to add or subtract your rolled number to a roll made by an enemy within 30ft of you.</p>",
     "tag": "reaction",
@@ -37,7 +37,7 @@
       "catalogId": "oracle_pull_the_strand",
       "feature": true,
       "level": 7,
-      "buildHash": "570e9e7589b6"
+      "buildHash": "d0712bfe3e1d"
     }
   }
 }

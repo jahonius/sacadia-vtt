@@ -3,7 +3,7 @@
   "_key": "!items!c73f580962774aea",
   "name": "Propped Up",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/propped_up_icon.webp",
   "system": {
     "description": "<p>For each ally behind you while using Protectorate, increase the damage dice of all melee attacks you make by one dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "propped_up",
-      "buildHash": "448867b80198"
+      "buildHash": "fbbc8ea135da"
     }
   }
 }

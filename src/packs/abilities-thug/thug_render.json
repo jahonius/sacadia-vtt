@@ -3,7 +3,7 @@
   "_key": "!items!f7452ddd42dbbabb",
   "name": "Render",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_render_icon.webp",
   "system": {
     "description": "<p>Expend a trick point. Make a melee attack against a target to whom you have given Wrestle Pin. If you succeed, instead of damage rend one per level of Pin they have.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_render",
-      "buildHash": "ae8938b388cb"
+      "buildHash": "616dcd70225a"
     }
   }
 }

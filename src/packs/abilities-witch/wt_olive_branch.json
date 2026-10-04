@@ -3,7 +3,7 @@
   "_key": "!items!792f5671161473ac",
   "name": "Olive Branch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_olive_branch_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. They make X Fate Checks against your Check DC, where X is half your Proficiency (rounded up). For each failed Check DC, deal 1D6 damage to them. An allied target can willingly choose to fail all Fate Checks against this effect. If you have the Promise of Nonviolence, you cannot choose an enemy as your target (without breaking your Promise). Then, choose a second target within 5ft of you. They gain HP equal to the damage dealt to the first target (to a maximum of their max. HP). You can choose yourself as either target.</p>",
     "tag": "action",
@@ -63,7 +63,7 @@
       "catalogId": "wt_olive_branch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "8cc38b75921c"
+      "buildHash": "ba9591e079d0"
     }
   }
 }

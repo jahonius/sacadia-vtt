@@ -3,7 +3,7 @@
   "_key": "!items!d93ecce1581a9a45",
   "name": "Call of Maneuvering",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_maneuvering_icon.webp",
   "system": {
     "description": "<p>Expend one call point and choose X allies within 15ft of you (X = half your Proficiency, rounded up). These allies may immediately move up to 10ft without provoking an attack of opportunity. If they have Steadied, they may expend a reaction to take a full Move action instead.</p>",
     "tag": "action",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_maneuvering",
-      "buildHash": "4edcaddea9fe"
+      "buildHash": "f5691e29872e"
     }
   }
 }

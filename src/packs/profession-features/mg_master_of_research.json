@@ -3,7 +3,7 @@
   "_key": "!items!88d48b1c9cc3afd0",
   "name": "Master of Research",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_master_of_research_icon.webp",
   "system": {
     "description": "<p>Immediately research any abilities of your subclass that you have not already researched.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_master_of_research",
       "feature": true,
       "level": 15,
-      "buildHash": "08114749a219"
+      "buildHash": "d4ea501e85f5"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!b5a84fe3b1d98fb6",
   "name": "Research Breakthrough (Legendary)",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_legendary_research_breakthrough_icon.webp",
   "system": {
     "description": "<p>Immediately research up to 5 abilities for which you meet the requirements, without expending a long rest action.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "5ca0d315ec8f"
+      "buildHash": "258fe889a560"
     }
   }
 }

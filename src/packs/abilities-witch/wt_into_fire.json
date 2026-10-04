@@ -3,7 +3,7 @@
   "_key": "!items!46707c19c65e1258",
   "name": "Into Fire",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_into_fire_icon.webp",
   "system": {
     "description": "<p>You may use Touch the Flame as a consistent action. For each AP you expend beyond the first, trigger the next level of Hemorrhage that target possesses (i.e., if you expend 2 AP against a target with 3 Hemorrhage, they take damage from 3 levels of Hemorrhage, then damage from 2 levels of Hemorrhage, and reduce their overall Hemorrhage count to 1 after triggering both levels).</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_into_fire",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "7428dac0b2e6"
+      "buildHash": "32582ccdff5f"
     }
   }
 }

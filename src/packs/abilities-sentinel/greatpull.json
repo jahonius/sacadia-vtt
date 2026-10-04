@@ -3,7 +3,7 @@
   "_key": "!items!310d7f4beda82159",
   "name": "Greatpull",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/greatpull_icon.webp",
   "system": {
     "description": "<p>Increase the damage dealt by Pullback from XD4 to XD6.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "greatpull",
-      "buildHash": "3a90ef22094b"
+      "buildHash": "3995470028af"
     }
   }
 }

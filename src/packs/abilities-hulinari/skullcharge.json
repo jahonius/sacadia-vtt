@@ -3,7 +3,7 @@
   "_key": "!items!ba7921f20110bbe8",
   "name": "Skullcharge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/skullcharge_icon.webp",
   "system": {
     "description": "<p>When you use ‘Headbutt’ and move in a straight line at least 20ft to an enemy prior to attacking, add XD6 to your damage, where X is half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "skullcharge",
       "transcribed": true,
-      "buildHash": "9f7d1cd648b5"
+      "buildHash": "701492260f0d"
     }
   }
 }

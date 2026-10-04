@@ -3,7 +3,7 @@
   "_key": "!items!d9127ccb687e5ff9",
   "name": "God’s Eye",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_gods_eye_icon.webp",
   "system": {
     "description": "<p>Expend a Lore point. Change your Madness to any number between 0 and 7 now. You may not use this ability while insane.</p>",
     "tag": "lore",
@@ -62,7 +62,7 @@
       "catalogId": "lore_gods_eye",
       "transcribed": true,
       "lore": true,
-      "buildHash": "bd311547a09b"
+      "buildHash": "df7a032b9a57"
     }
   }
 }

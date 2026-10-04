@@ -3,7 +3,7 @@
   "_key": "!items!1d273a0a88619ce4",
   "name": "Spear Throw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/spear_throw_icon.webp",
   "system": {
     "description": "<p>Once per combat, you may throw a one-handed spear (or pike if you have Shield and Pike) at a target up to 30ft away. Treat them as surprised and increase the damage dice of your weapon by two dice types. Once you roll to-hit, you may not use this weapon for the remainder of combat, but can re-equip it to your combat-readied item list when combat ends.</p>",
     "tag": "action",
@@ -63,7 +63,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "spear_throw",
-      "buildHash": "4dff9ef4bec6"
+      "buildHash": "ce0b3b244560"
     }
   }
 }

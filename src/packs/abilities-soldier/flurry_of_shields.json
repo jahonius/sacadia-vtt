@@ -3,7 +3,7 @@
   "_key": "!items!77879fa6508e4952",
   "name": "Flurry of Shields",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/flurry_of_shields_icon.webp",
   "system": {
     "description": "<p>For every two melee attacks you make using your shield, increase the damage dice of attacks made using your one-handed melee weapon held in your other hand by one type until the start of your next turn.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "flurry_of_shields",
-      "buildHash": "68c929f17a97"
+      "buildHash": "a79e31a492b4"
     }
   }
 }

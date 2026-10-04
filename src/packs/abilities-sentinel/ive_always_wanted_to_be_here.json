@@ -3,7 +3,7 @@
   "_key": "!items!de83c4f20f332781",
   "name": "I've Always Wanted to Be Here",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/ive_always_wanted_to_be_here_icon.webp",
   "system": {
     "description": "<p>When you are Surrounded and make a reaction attack on two creatures using a ranged weapon, do not make the second attack at 1X disadvantage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "ive_always_wanted_to_be_here",
-      "buildHash": "43b9766acb31"
+      "buildHash": "3c1e0a182ef4"
     }
   }
 }

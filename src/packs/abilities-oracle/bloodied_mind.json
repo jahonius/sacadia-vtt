@@ -3,7 +3,7 @@
   "_key": "!items!eca3fe4920f6196b",
   "name": "Bloodied Mind",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_mind_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_mind_icon.webp",
   "system": {
     "description": "<p>When you have less than half HP, gain 1X advantage to all Trait Checks against Mental Conditions given to you.</p>",
     "tag": "passive",
@@ -50,7 +50,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bloodied_mind",
-      "buildHash": "9209c63fffae"
+      "buildHash": "752439a6106f"
     }
   }
 }

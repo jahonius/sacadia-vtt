@@ -3,7 +3,7 @@
   "_key": "!items!2f232cf39c139ba9",
   "name": "Shield and Spear",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/shield_and_spear_icon.webp",
   "system": {
     "description": "<p>When you wield both a shield and a spear family weapon in combat, increase your PD by 1.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shield_and_spear",
-      "buildHash": "1c802d32f239"
+      "buildHash": "2093ea6cfc99"
     }
   }
 }

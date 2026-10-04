@@ -3,7 +3,7 @@
   "_key": "!items!6135de370ffb198c",
   "name": "Spearpoint",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/spearpoint_icon.webp",
   "system": {
     "description": "<p>When you use Ticket to Enter on an enemy entering your range while wielding a spear, treat them as Surprised.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "spearpoint",
-      "buildHash": "bb4aa7f7b3d3"
+      "buildHash": "f643b8e1c300"
     }
   }
 }

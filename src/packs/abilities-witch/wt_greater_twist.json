@@ -3,7 +3,7 @@
   "_key": "!items!857d396e18493f16",
   "name": "Greater Twist",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_greater_twist_icon.webp",
   "system": {
     "description": "<p>When you use Twisting Touch, count each level of adversarial conditions as separate.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_greater_twist",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "7a3ec41c8339"
+      "buildHash": "0bde6c0f9515"
     }
   }
 }

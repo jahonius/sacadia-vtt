@@ -3,7 +3,7 @@
   "_key": "!items!2004e1809ebe5d11",
   "name": "Blinding Divinity",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/blinding_divinity_icon.webp",
   "system": {
     "description": "<p>You may expend a Glory point to cause your armor to blaze with divinity. Choose one target. They make a Fate Check against your Check DC or take the Blinded Condition until the start of your next turn. Once you have used this ability on a target (whether they succeed or fail) you may not do so again until a quick rest has passed.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
     "sacadia": {
       "catalogId": "blinding_divinity",
       "transcribed": true,
-      "buildHash": "4df537d6d0a6"
+      "buildHash": "2e8214ff95f1"
     }
   }
 }

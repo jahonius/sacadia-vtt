@@ -3,7 +3,7 @@
   "_key": "!items!4a0966c03fb76af0",
   "name": "Freaking Strong",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_freaking_strong_icon.webp",
   "system": {
     "description": "<p>When you use Focused Rage, increase the damage dice of all melee attacks you make by one additional type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_freaking_strong",
-      "buildHash": "75cb52c0a9f0"
+      "buildHash": "439c5e0dad0c"
     }
   }
 }

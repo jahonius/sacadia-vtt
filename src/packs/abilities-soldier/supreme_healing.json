@@ -3,7 +3,7 @@
   "_key": "!items!1c62fd66f674358e",
   "name": "Supreme Healing",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/supreme_healing_icon.webp",
   "system": {
     "description": "<p>Increase the amount of HP given by Call of Healing from XD6 to XD8.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "supreme_healing",
-      "buildHash": "5182bc5c6550"
+      "buildHash": "9bfe18a48911"
     }
   }
 }

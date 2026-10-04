@@ -3,7 +3,7 @@
   "_key": "!items!56af1220cea46889",
   "name": "Scorching Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/scorching_weapon_icon.webp",
   "system": {
     "description": "<p>As long as you maintain Focus, whenever you make a attack and successfully hit a target, deal fire damage equal to your Power to all additional enemies within 5ft of that target. You may use this once per quick rest.</p>",
     "tag": "focus",
@@ -59,7 +59,7 @@
     "sacadia": {
       "catalogId": "scorching_weapon",
       "transcribed": true,
-      "buildHash": "0f017cf4001d"
+      "buildHash": "4fa97c23e8e5"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!cd26378fabdaeaeb",
   "name": "Rapidfeet",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_rapidfeet_icon.webp",
   "system": {
     "description": "<p>Increase your base Move speed by 5ft.</p>",
     "tag": "passive",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_rapidfeet",
-      "buildHash": "0e3991b6c438"
+      "buildHash": "2f76099f465d"
     }
   }
 }

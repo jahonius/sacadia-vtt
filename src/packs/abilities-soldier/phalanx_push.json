@@ -3,7 +3,7 @@
   "_key": "!items!187708ec8e9b1ca8",
   "name": "Phalanx Push",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/phalanx_push_icon.webp",
   "system": {
     "description": "<p>As a Boost to Sweep, choose up to X targets within 5ft of you, where X is half your Proficiency (rounded up). Any of those targets who fail their Power Check against Sweep are pushed back 5ft.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "phalanx_push",
-      "buildHash": "f2257c3d143c"
+      "buildHash": "5e529abe5e12"
     }
   }
 }

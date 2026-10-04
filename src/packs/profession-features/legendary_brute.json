@@ -3,7 +3,7 @@
   "_key": "!items!3f59b2504128052f",
   "name": "Mastery of the Brute",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_brute_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of melee attacks made with your claws by one dice type when in Brute form.</p>",
     "tag": "passive",
@@ -54,7 +54,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "7da34b59baf0"
+      "buildHash": "01c0fe301929"
     }
   }
 }

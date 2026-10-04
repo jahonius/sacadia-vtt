@@ -19,7 +19,7 @@
       "thumbnail": "systems/sacadia/assets/anvil-impact.png"
     }
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "flags": {
     "hotReload": {
       "extensions": [
@@ -60,6 +60,17 @@
       "system": "sacadia",
       "ownership": {
         "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "adventures",
+      "label": "Adventures",
+      "path": "packs/adventures",
+      "type": "Adventure",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
     },
@@ -275,6 +286,13 @@
   ],
   "packFolders": [
     {
+      "name": "Adventures",
+      "sorting": "m",
+      "packs": [
+        "adventures"
+      ]
+    },
+    {
       "name": "Abilities",
       "sorting": "m",
       "packs": [
@@ -321,7 +339,7 @@
   },
   "socket": true,
   "manifest": "https://github.com/jahonius/sacadia-vtt/releases/latest/download/system.json",
-  "download": "https://github.com/jahonius/sacadia-vtt/releases/download/v0.2.0/system.zip",
+  "download": "https://github.com/jahonius/sacadia-vtt/releases/download/v0.2.1/system.zip",
   "background": "systems/sacadia/assets/anvil-impact.png",
   "gridDistance": 5,
   "gridUnits": "ft",

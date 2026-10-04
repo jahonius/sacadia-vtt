@@ -3,7 +3,7 @@
   "_key": "!items!6d1165c76f81e9ef",
   "name": "Blast",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/blast_icon.webp",
   "system": {
     "description": "<p>If you push an enemy back at least 15 feet in a single turn through any combination of actions, they gain Surprise.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blast",
-      "buildHash": "d29ae7f218f2"
+      "buildHash": "278bce7fe3ab"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!21a627aa7eb0f0f2",
   "name": "Witch's Presence",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/wt_witchs_presence_icon.webp",
   "system": {
     "description": "<p>Choose one Weak Adversarial Condition: Nausea, Pinned, Paralysis, Delirium, Jinxed, Slowed, Sting. Your whole party (including you) is immune to this condition whenever you are present for the combat and conscious.</p>",
     "tag": "passive",
@@ -49,7 +49,7 @@
       "catalogId": "wt_witchs_presence",
       "feature": true,
       "level": 7,
-      "buildHash": "f5dbcb2b0294"
+      "buildHash": "a2d1517d5743"
     }
   }
 }

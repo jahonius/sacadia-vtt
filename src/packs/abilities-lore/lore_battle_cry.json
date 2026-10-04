@@ -3,7 +3,7 @@
   "_key": "!items!5f0fe07f7365345b",
   "name": "Battle Cry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_battle_cry_icon.webp",
   "system": {
     "description": "<p>You may expend a lore point to rally all of your allies. Until the start of your next turn, you and all of allies within 15ft of you gain X DR and add X to all Trait Checks, where X is your Proficiency.</p>",
     "tag": "lore",
@@ -58,7 +58,7 @@
       "catalogId": "lore_battle_cry",
       "transcribed": true,
       "lore": true,
-      "buildHash": "bf53cd2b9aac"
+      "buildHash": "39473c1c2392"
     }
   }
 }

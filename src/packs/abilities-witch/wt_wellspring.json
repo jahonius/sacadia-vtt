@@ -3,7 +3,7 @@
   "_key": "!items!c56db4ad25181b4f",
   "name": "Wellspring",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_wellspring_icon.webp",
   "system": {
     "description": "<p>When an ally within 5ft of you attempts to give X or more levels of an Adversarial Condition to a target, where X is any number equal to or greater than their Proficiency, you may expend a reaction. If you do, that ally attempts to give one extra level (e.g., if they have 3 Proficiency and attempt to give 3 levels of Nausea, they instead attempt to give 4).</p>",
     "tag": "reaction",
@@ -62,7 +62,7 @@
       "catalogId": "wt_wellspring",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "fa93586e7ebd"
+      "buildHash": "8fbd7379892c"
     }
   }
 }

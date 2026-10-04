@@ -3,7 +3,7 @@
   "_key": "!items!bbc29ab172f26676",
   "name": "Mindmaze",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/mindmaze_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mindmaze_icon.webp",
   "system": {
     "description": "<p>Whenever you are Insane, add half your Proficiency (rounded up) to damage you deal to any target other than yourself.</p>",
     "tag": "passive",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "mindmaze",
-      "buildHash": "9578618034fe"
+      "buildHash": "69c638734ab3"
     }
   }
 }

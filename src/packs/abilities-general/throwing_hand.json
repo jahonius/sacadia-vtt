@@ -3,7 +3,7 @@
   "_key": "!items!33eb72f38bf569fb",
   "name": "Throwing Hand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/throwing_hand_icon.webp",
   "system": {
     "description": "<p>When you use a Versatile weapon, the base damage die of that weapon is increased by one type.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "throwing_hand",
-      "buildHash": "b251f1dc4b47"
+      "buildHash": "6a21fff25e96"
     }
   }
 }

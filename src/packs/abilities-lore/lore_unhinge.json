@@ -3,7 +3,7 @@
   "_key": "!items!d9ae850b16d55f43",
   "name": "Unhinge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_unhinge_icon.webp",
   "system": {
     "description": "<p>While insane, expend a Lore Point. Increase your Madness by X, where X is half your Proficiency, rounded up.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_unhinge",
       "transcribed": true,
       "lore": true,
-      "buildHash": "7094473dc6ef"
+      "buildHash": "dee3d840b69d"
     }
   }
 }

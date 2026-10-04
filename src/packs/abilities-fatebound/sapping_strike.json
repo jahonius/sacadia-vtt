@@ -3,7 +3,7 @@
   "_key": "!items!70f2c98744e2190c",
   "name": "Sapping Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/sapping_strike_icon.webp",
   "system": {
     "description": "<p>When you use the Sapped Fates Boost, additionally increase damage you deal to a target on your next attack roll made this turn by +1 for each enemy given Fumble.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "sapping_strike",
       "transcribed": true,
-      "buildHash": "3f86fbafb624"
+      "buildHash": "48d995e50551"
     }
   }
 }

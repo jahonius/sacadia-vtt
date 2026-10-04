@@ -3,7 +3,7 @@
   "_key": "!items!58e6598b38807e13",
   "name": "Legendary Resistance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_legendary_resistance_icon.webp",
   "system": {
     "description": "<p>Increase your Thickskin damage resistance to your Proficiency score for as long as you maintain Focus.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_legendary_resistance",
-      "buildHash": "e4d51dc7c9fc"
+      "buildHash": "39525f7a568a"
     }
   }
 }

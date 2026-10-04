@@ -3,7 +3,7 @@
   "_key": "!items!4fa7951495e02c43",
   "name": "Harmful Shadow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_harmful_shadow_icon.webp",
   "system": {
     "description": "<p>Whenever you critically hit an enemy, you roll additional damage equal to XD6, where X is half your Proficiency Score (rounded up). This does not count as a critical effect.</p>",
     "tag": "passive",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_harmful_shadow",
-      "buildHash": "4e8bf2c715b1"
+      "buildHash": "73a4e195c6b6"
     }
   }
 }

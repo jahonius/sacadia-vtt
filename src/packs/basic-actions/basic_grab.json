@@ -3,7 +3,7 @@
   "_key": "!items!bd56cb8c65847162",
   "name": "Grab",
   "type": "ability",
-  "img": "icons/svg/shield.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_grab_icon.webp",
   "system": {
     "description": "<p>(Prerequisite: Heavy Armor). You may use a reaction when you have Steadied to grab an enemy who tries to move from 5ft away to further. They make a Finesse Check against your Check DC or their Move ends.</p>",
     "tag": "reaction",
@@ -42,7 +42,7 @@
     "sacadia": {
       "catalogId": "basic_grab",
       "basic": true,
-      "buildHash": "653d52e84f06"
+      "buildHash": "e559ceb3df1c"
     }
   }
 }

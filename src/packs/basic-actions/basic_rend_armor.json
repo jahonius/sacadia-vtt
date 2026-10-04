@@ -3,7 +3,7 @@
   "_key": "!items!3e4a8e10e4382794",
   "name": "Rend Armor",
   "type": "ability",
-  "img": "icons/svg/combat.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_rend_armor_icon.webp",
   "system": {
     "description": "<p>You make a melee attack against worn armor by making an attack against enemy armor. If successful, instead of dealing damage rend 1 armor (PD, MD, or TD - your choice).</p>",
     "tag": "action",
@@ -67,7 +67,7 @@
     "sacadia": {
       "catalogId": "basic_rend_armor",
       "basic": true,
-      "buildHash": "24f4e70c7883"
+      "buildHash": "eb41ddb084af"
     }
   }
 }

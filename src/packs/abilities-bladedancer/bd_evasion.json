@@ -3,7 +3,7 @@
   "_key": "!items!da687721e0754abb",
   "name": "Evasion",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_evasion_icon.webp",
   "system": {
     "description": "<p>When you make a Finesse Check against an effect that would cause you damage, you take half damage (rounded up) on a failure or no damage on a success.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_evasion",
-      "buildHash": "a548f6012eb9"
+      "buildHash": "e450df8d72c2"
     }
   }
 }

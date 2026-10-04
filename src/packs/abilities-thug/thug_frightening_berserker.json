@@ -3,7 +3,7 @@
   "_key": "!items!bd7caea77ec67940",
   "name": "Frightening Berserker",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_frightening_berserker_icon.webp",
   "system": {
     "description": "<p>When you are raging, you may use an action to attempt to give a single target within 5ft of you X levels of Panic, where X is equal to the number of successful attacks you have made this turn against that target (to a max of half your Proficiency, rounded up).</p>",
     "tag": "action",
@@ -68,7 +68,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_frightening_berserker",
-      "buildHash": "1eab1463d625"
+      "buildHash": "c37c56e2ea56"
     }
   }
 }

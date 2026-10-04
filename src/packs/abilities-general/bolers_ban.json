@@ -3,7 +3,7 @@
   "_key": "!items!94e40e80b1135194",
   "name": "Boler's Ban",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/bolers_ban_icon.webp",
   "system": {
     "description": "<p>Choose one condition for which you have taken Drain Tolerant. When you make a Body Check to reduce levels of that condition, you do not roll - you simply reduce levels by 1.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bolers_ban",
-      "buildHash": "54bf7c9643f9"
+      "buildHash": "71a764388c10"
     }
   }
 }

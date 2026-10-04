@@ -3,7 +3,7 @@
   "_key": "!items!a52cbfd8719eedda",
   "name": "Basic Combat Prowess",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_basic_combat_prowess_icon.webp",
   "system": {
     "description": "<p>Gain ten combat skill points to spend immediately. (Already reflected in your Combat Skill Points max above - this entry is here for reference only.)</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_basic_combat_prowess",
-      "buildHash": "917b1be118c8"
+      "buildHash": "3b6ab0b74440"
     }
   }
 }

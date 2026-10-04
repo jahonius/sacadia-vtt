@@ -3,7 +3,7 @@
   "_key": "!items!097155f216f33e47",
   "name": "Thickskin",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_thickskin_icon.webp",
   "system": {
     "description": "<p>As long as you maintain Focus, gain DR equal to half your Proficiency score (rounded up).</p>",
     "tag": "focus",
@@ -53,7 +53,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_thickskin",
-      "buildHash": "3e98900481f8"
+      "buildHash": "1a54b109e8d1"
     }
   }
 }

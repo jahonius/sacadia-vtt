@@ -3,7 +3,7 @@
   "_key": "!items!fd1a1792832faf32",
   "name": "Explosive Rage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_explosive_rage_icon.webp",
   "system": {
     "description": "<p>When you are raging, you may expend a lore point as a boost to an action to make all your attacks for the remainder of your turn do maximum damage if they successfully hit. Immediately end your Rage at the end of this turn.</p>",
     "tag": "lore",
@@ -69,7 +69,7 @@
       "catalogId": "lore_explosive_rage",
       "transcribed": true,
       "lore": true,
-      "buildHash": "903e2a884067"
+      "buildHash": "3182ebb4f7a9"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!836a800b30b6e448",
   "name": "Greater Twistings",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_greater_twistings_icon.webp",
   "system": {
     "description": "<p>When you use Twisted Pin, increase the damage dice of Harm by one additional dice type.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_greater_twistings",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "5989393b9007"
+      "buildHash": "2b318c88aebd"
     }
   }
 }

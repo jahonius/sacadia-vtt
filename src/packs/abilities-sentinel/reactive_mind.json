@@ -3,7 +3,7 @@
   "_key": "!items!67b7e0a4731cd91c",
   "name": "Reactive Mind",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/reactive_mind_icon.webp",
   "system": {
     "description": "<p>When making a Trait Check against mental conditions, you may use a reaction to add your Wiles to one roll (you may choose which roll to apply this to after you roll). If you have Steadied, you may choose all rolls made.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reactive_mind",
-      "buildHash": "45868fcd310d"
+      "buildHash": "f8574a1fa2ea"
     }
   }
 }

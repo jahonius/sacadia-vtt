@@ -3,7 +3,7 @@
   "_key": "!items!cc2ab48971335b53",
   "name": "Switching",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_switching_icon.webp",
   "system": {
     "description": "<p>Expend a trick point. Switch positions with one target to whom you have given Wrestle Pin. They must be the same size as you.</p>",
     "tag": "action",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_switching",
-      "buildHash": "13b258c4574b"
+      "buildHash": "7f14deb834a3"
     }
   }
 }

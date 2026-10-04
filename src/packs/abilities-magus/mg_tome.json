@@ -3,7 +3,7 @@
   "_key": "!items!58309085f8fe7eeb",
   "name": "Tome",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_tome_icon.webp",
   "system": {
     "description": "<p>Choose one of the following Tomes when you choose to play this Profession: Blood Tome, Contract Tome, Elder Tome. If the Tome is new, research 5 abilities immediately. You must meet the prerequisites for the research of those abilities.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_tome",
       "transcribed": true,
       "prestige": "magus",
-      "buildHash": "7a22a64a3eec"
+      "buildHash": "d79f4008d917"
     }
   }
 }

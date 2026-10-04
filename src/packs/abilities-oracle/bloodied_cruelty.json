@@ -3,7 +3,7 @@
   "_key": "!items!644e1117697ba1da",
   "name": "Bloodied Cruelty",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_cruelty_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_cruelty_icon.webp",
   "system": {
     "description": "<p>When you have less than half HP, add your Madness to all Forbidden Knowledge damage you deal as a Boost to that attack.</p>",
     "tag": "boost",
@@ -56,7 +56,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bloodied_cruelty",
-      "buildHash": "cfd67e2c3387"
+      "buildHash": "80d90bd3e6d4"
     }
   }
 }

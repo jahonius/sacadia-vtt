@@ -3,7 +3,7 @@
   "_key": "!items!70dfe7923e85d44d",
   "name": "Heavy Bloom",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_heavy_bloom_icon.webp",
   "system": {
     "description": "<p>You warp the earth within 10X feet of you to reflect your Font’s arcane power. Within 10X feet of you when you use this and for the following year, the ground is warped as difficult terrain for all creatures not Fontmade from the same Font. Additionally when you use this, all creatures within the radius of effect take elemental damage (of the type associated with your Font) equal to XD12, where X is half your Proficiency (Power Check halves).</p>",
     "tag": "lore",
@@ -64,7 +64,7 @@
       "catalogId": "lore_heavy_bloom",
       "transcribed": true,
       "lore": true,
-      "buildHash": "5d8683d49fda"
+      "buildHash": "0b33534c1bff"
     }
   }
 }

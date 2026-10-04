@@ -3,7 +3,7 @@
   "_key": "!items!1dc269cebc831e67",
   "name": "Glore",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_glore_icon.webp",
   "system": {
     "description": "<p>Expend a Lore point in addition to making an attack (you may choose to expend this lore point after rolling to hit). When you expend this lore point, expend any number of additional unique Boosts to that attack.</p>",
     "tag": "lore",
@@ -50,7 +50,7 @@
       "catalogId": "lore_glore",
       "transcribed": true,
       "lore": true,
-      "buildHash": "5980adb7021b"
+      "buildHash": "0d5446d2e927"
     }
   }
 }

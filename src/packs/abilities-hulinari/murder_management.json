@@ -3,7 +3,7 @@
   "_key": "!items!73b2b3d2e9f1dc4c",
   "name": "Murder Management",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/murder_management_icon.webp",
   "system": {
     "description": "<p>The number of Trickster Points you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "murder_management",
       "transcribed": true,
-      "buildHash": "d57d1c4fb242"
+      "buildHash": "16dc8db6583d"
     }
   }
 }

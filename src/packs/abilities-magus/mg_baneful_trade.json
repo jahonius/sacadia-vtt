@@ -3,7 +3,7 @@
   "_key": "!items!dc671f5c27911004",
   "name": "Baneful Trade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_baneful_trade_icon.webp",
   "system": {
     "description": "<p>Expend a spell slot and choose one target within 5ft when you initiate this. For as long as you maintain Focus, they critically hit with their first attack each turn. Each time they do, gain 1 Curse Counter. Each time you are hit, remove one Curse Counter. The attack dealt against you critically hits. You may only initiate Focus on this when you are below half HP. You may only end Focus on Baneful Trade on your turn. All Curse Counters disappear on a Quick Rest.</p>",
     "tag": "focus",
@@ -67,7 +67,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Transmutation[3], Lead to Gold Talent",
-      "buildHash": "51b02f75d56f"
+      "buildHash": "a37787ca10fc"
     }
   }
 }

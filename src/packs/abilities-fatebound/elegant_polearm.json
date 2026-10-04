@@ -3,7 +3,7 @@
   "_key": "!items!9d8593ded920b4a6",
   "name": "Elegant Polearm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/elegant_polearm_icon.webp",
   "system": {
     "description": "<p>As a Boost to Wild Strike, you may use Wild Strike at 10ft range when wielding a 10ft-range piercing divine weapon.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "elegant_polearm",
       "transcribed": true,
-      "buildHash": "30aee0594667"
+      "buildHash": "ce72c7ed291d"
     }
   }
 }

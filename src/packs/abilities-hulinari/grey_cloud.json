@@ -3,7 +3,7 @@
   "_key": "!items!b3098b3839c409d1",
   "name": "Grey Cloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/grey_cloud_icon.webp",
   "system": {
     "description": "<p>Increase the tiles Clouded Foe and Clouded Ally occupy by 1.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "grey_cloud",
       "transcribed": true,
-      "buildHash": "cfa1ba6df7c6"
+      "buildHash": "08850d83e4dc"
     }
   }
 }

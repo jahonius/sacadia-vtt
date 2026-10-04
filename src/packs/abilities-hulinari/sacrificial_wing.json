@@ -3,7 +3,7 @@
   "_key": "!items!94eb16b57e72919b",
   "name": "Sacrificial Wing",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/sacrificial_wing_icon.webp",
   "system": {
     "description": "<p>As a Reaction when you are maintaining Focus on Clouded Ally and a target of Clouded Ally is attacked, you may take all the damage instead.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "sacrificial_wing",
       "transcribed": true,
-      "buildHash": "cb99882238f6"
+      "buildHash": "4dc6e92104c7"
     }
   }
 }

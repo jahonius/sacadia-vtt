@@ -3,7 +3,7 @@
   "_key": "!items!20302d95688655a7",
   "name": "Sweeping Claws",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/sweeping_claws_icon.webp",
   "system": {
     "description": "<p>, , , When in Brute Form, you may make an unarmed melee attack using your claws against every creature within 5ft of you. Reduce damage dealt this way by one dice type.</p>",
     "tag": "action",
@@ -69,7 +69,7 @@
     "sacadia": {
       "catalogId": "sweeping_claws",
       "transcribed": true,
-      "buildHash": "7349380dffad"
+      "buildHash": "b7347f7a810b"
     }
   }
 }

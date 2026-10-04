@@ -3,7 +3,7 @@
   "_key": "!items!eee69e50bb0749e1",
   "name": "Absorb Attack",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_absorb_attack_icon.webp",
   "system": {
     "description": "<p>As a reaction to taking damage from an elemental or mental attack, expend a Spell Slot and reduce the damage by XD4, where X is your Proficiency. Until the end of your next turn, the first time you make an attack that would deal damage, add this damage to damage you deal if you hit.</p>",
     "tag": "reaction",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Thaumaturgy[2]",
-      "buildHash": "ebdf5d0ff31d"
+      "buildHash": "e9e325b8f813"
     }
   }
 }

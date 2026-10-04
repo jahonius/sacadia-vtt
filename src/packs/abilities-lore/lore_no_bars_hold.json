@@ -3,7 +3,7 @@
   "_key": "!items!82b59b96c771b361",
   "name": "No Bars Hold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_no_bars_hold_icon.webp",
   "system": {
     "description": "<p>Expend a lore point while you use Natural Wrestler. Attempt to give your Proficiency in Wrestle Pin instead of half your Proficiency rounded up.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_no_bars_hold",
       "transcribed": true,
       "lore": true,
-      "buildHash": "80d6532de82e"
+      "buildHash": "d32127076122"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!62e243dd00446d88",
   "name": "Witch's Finger",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_witchs_finger_icon.webp",
   "system": {
     "description": "<p>Touch a target within 5ft of you and choose one adversarial condition they possess from the following: Nausea, Pinned, Paralysis, Delirium, Jinxed, Slowed, Sting. They make a Fate Check against your Check DC. If they fail, they gain one level (to a maximum of your Proficiency).</p>",
     "tag": "action",
@@ -140,7 +140,7 @@
       "catalogId": "wt_witchs_finger",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "b6d7d5383923"
+      "buildHash": "95f9b377e12a"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!ca531f253361fe3c",
   "name": "Medium Armor Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/medium_armor_training_icon.webp",
   "system": {
     "description": "<p>Gain training in Medium Armor.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "medium_armor_training",
-      "buildHash": "70efa6f42657"
+      "buildHash": "f49862d4c0f7"
     }
   }
 }

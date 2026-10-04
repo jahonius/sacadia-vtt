@@ -3,7 +3,7 @@
   "_key": "!items!4814f5605f4a4295",
   "name": "Check, Please",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/check_please_icon.webp",
   "system": {
     "description": "<p>Increase your Trait Check DC by 1.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "check_please",
-      "buildHash": "df5128297fa8"
+      "buildHash": "1b191740f19c"
     }
   }
 }

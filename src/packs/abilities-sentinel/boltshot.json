@@ -3,7 +3,7 @@
   "_key": "!items!03d7e237dd1b484b",
   "name": "Boltshot",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/sentinel/boltshot_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/boltshot_icon.webp",
   "system": {
     "description": "<p>For every 1X advantage you have on a consistent attack using a crossbow wherein you expend at least 2 AP to make a consistent attack, add X to damage dealt on a successful to-hit, where X is half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -186,7 +186,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "boltshot",
-      "buildHash": "a58331781b78"
+      "buildHash": "eb50352632c3"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!9c1faede0f189b8e",
   "name": "Boosted Crit",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boosted_crit_icon.webp",
   "system": {
     "description": "<p>As a Boost to an attack made with a divine weapon, you may apply an extra critical effect if you critically hit.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "boosted_crit",
       "transcribed": true,
-      "buildHash": "7c72d10236c1"
+      "buildHash": "4e87aa86c149"
     }
   }
 }

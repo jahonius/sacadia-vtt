@@ -3,7 +3,7 @@
   "_key": "!items!ce4a5442dc6b1478",
   "name": "Torus’ Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_torus_touch_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of Clotsnipe by 1 dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Religious Rites[2]",
-      "buildHash": "4c4c0c545112"
+      "buildHash": "1abe4765b23a"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!611d8e2b4c2d8ee6",
   "name": "Dodgy Marksman",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/dodgy_marksman_icon.webp",
   "system": {
     "description": "<p>When you make a ranged attack and there is an enemy within 5ft of you, they may not use their reaction to make an attack of opportunity against you.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "dodgy_marksman",
-      "buildHash": "958590e29d81"
+      "buildHash": "6cca8829fd12"
     }
   }
 }

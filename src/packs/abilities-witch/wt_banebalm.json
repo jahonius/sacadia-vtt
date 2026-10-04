@@ -3,7 +3,7 @@
   "_key": "!items!be5f47bb9a45eb44",
   "name": "Banebalm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_banebalm_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. Attempt to give them levels of Sting up to your Proficiency (Finesse Check negates).</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
       "catalogId": "wt_banebalm",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "1772cffb2e91"
+      "buildHash": "1fa764a3b4a8"
     }
   }
 }

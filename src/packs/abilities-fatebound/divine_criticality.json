@@ -3,7 +3,7 @@
   "_key": "!items!0365fb0509db3bf3",
   "name": "Divine Criticality",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/divine_criticality_icon.webp",
   "system": {
     "description": "<p>Your attacks critically hit whenever you roll a natural 18, 19, or 20.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "divine_criticality",
       "transcribed": true,
-      "buildHash": "8fe8ad7b5d20"
+      "buildHash": "ac43d87be22f"
     }
   }
 }

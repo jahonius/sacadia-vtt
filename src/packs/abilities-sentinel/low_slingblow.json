@@ -3,7 +3,7 @@
   "_key": "!items!c5788420eea51af0",
   "name": "Low Slingblow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/low_slingblow_icon.webp",
   "system": {
     "description": "<p>You may make a ranged attack with your sling. If you hit, instead of dealing damage attempt to give the target X levels of Fatigue equal to your Proficiency. Power Check negates.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "low_slingblow",
-      "buildHash": "65575ac4cdea"
+      "buildHash": "5e78e53353dd"
     }
   }
 }

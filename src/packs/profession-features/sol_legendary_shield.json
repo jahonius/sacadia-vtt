@@ -3,7 +3,7 @@
   "_key": "!items!3da940a150ca8aea",
   "name": "Legendary Shield",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sol_legendary_shield_icon.webp",
   "system": {
     "description": "<p>Increase your PD, TD, and MD by 1. Increase the damage dice dealt by melee attacks you make while wielding a shield by one dice type.</p>",
     "tag": "passive",
@@ -68,7 +68,7 @@
       "catalogId": "sol_legendary_shield",
       "feature": true,
       "level": 15,
-      "buildHash": "f9fede45eb56"
+      "buildHash": "b90958aa04f6"
     }
   }
 }

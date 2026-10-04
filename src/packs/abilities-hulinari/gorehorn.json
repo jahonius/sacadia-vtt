@@ -3,7 +3,7 @@
   "_key": "!items!78d62787791dec39",
   "name": "Gorehorn",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/gorehorn_icon.webp",
   "system": {
     "description": "<p>When you apply Skullcharge to Headbutt, change the benefit to apply XD6 where X is equal to your Proficiency, rather than half your Proficiency.</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "gorehorn",
       "transcribed": true,
-      "buildHash": "4f905012cdf0"
+      "buildHash": "a12b5f93b297"
     }
   }
 }

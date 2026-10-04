@@ -3,7 +3,7 @@
   "_key": "!items!78ee6dec2e887f42",
   "name": "Chill Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_chill_touch_icon.webp",
   "system": {
     "description": "<p>Make a Melee attack vs. MD against a target within 5ft. If you hit, that target takes 1D10+Wiles Damage. Increase damage dealt this way to 2D6 at Level 5, and 2D8 at Level 11.</p>",
     "tag": "action",
@@ -72,7 +72,7 @@
           "ladderIndex": 6
         }
       ],
-      "buildHash": "f3b358347e62"
+      "buildHash": "947290224ac7"
     }
   }
 }

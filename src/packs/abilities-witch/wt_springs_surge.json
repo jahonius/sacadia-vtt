@@ -3,7 +3,7 @@
   "_key": "!items!755182e061a90c6f",
   "name": "Spring’s Surge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_springs_surge_icon.webp",
   "system": {
     "description": "<p>Expend X Divine Touch Points (where X is any number up to half your Proficiency), and choose a target within 5ft of you with an Adversarial Condition. That target makes Fate Checks against X additional levels of that Condition.</p>",
     "tag": "action",
@@ -142,7 +142,7 @@
       "catalogId": "wt_springs_surge",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "ab184f00a1ab"
+      "buildHash": "6aa9e8d5d32d"
     }
   }
 }

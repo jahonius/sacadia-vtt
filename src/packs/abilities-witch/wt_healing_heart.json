@@ -3,7 +3,7 @@
   "_key": "!items!972d14bdc45fc459",
   "name": "Healing Heart",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_healing_heart_icon.webp",
   "system": {
     "description": "<p>As a Boost to Healthy Hands, all allies within 30ft of you benefit from the effect all at once.</p>",
     "tag": "boost",
@@ -37,7 +37,7 @@
       "catalogId": "wt_healing_heart",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "b32cd90d45cc"
+      "buildHash": "4c56a226b99e"
     }
   }
 }

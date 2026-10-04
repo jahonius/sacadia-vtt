@@ -3,7 +3,7 @@
   "_key": "!items!a4baacd16e9bc905",
   "name": "Alarming Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_alarming_icon.webp",
   "system": {
     "description": "<p>Treat all enemies as surprised for your first turn in combat.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "4cacba4c7b79"
+      "buildHash": "499a71b4288d"
     }
   }
 }

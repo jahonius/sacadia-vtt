@@ -3,7 +3,7 @@
   "_key": "!items!4f1b1a55fcb32f50",
   "name": "Understand the Enemy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/understand_the_enemy_icon.webp",
   "system": {
     "description": "<p>Choose one target within 60ft of you that is of a favored enemy type. As long as you maintain Focus on that target, the GM must tell you any single roll result they make for that target. If they make multiple rolls, they tell you a random one. You may use this once per quick rest.</p>",
     "tag": "focus",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "understand_the_enemy",
-      "buildHash": "2292cb951f7f"
+      "buildHash": "06f5daec25e4"
     }
   }
 }

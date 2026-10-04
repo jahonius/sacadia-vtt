@@ -3,7 +3,7 @@
   "_key": "!items!cb21c90af8dda165",
   "name": "Evasive Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_evasive_strike_icon.webp",
   "system": {
     "description": "<p>When you use the Evasion ability, you may make an attack using your reaction. Treat this attack as Surprised.</p>",
     "tag": "reaction",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_evasive_strike",
-      "buildHash": "c3b1dd9b9fd8"
+      "buildHash": "4d1fb9bc2d75"
     }
   }
 }

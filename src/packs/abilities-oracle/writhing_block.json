@@ -3,7 +3,7 @@
   "_key": "!items!19f5548fcf797e31",
   "name": "Writhing Block",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/writhing_block_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/writhing_block_icon.webp",
   "system": {
     "description": "<p>You do not lose HP if you roll a 7 or 8 on the Insane table.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "writhing_block",
-      "buildHash": "bc8a32859c40"
+      "buildHash": "628e55ff798f"
     }
   }
 }

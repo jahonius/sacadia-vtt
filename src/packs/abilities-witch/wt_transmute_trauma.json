@@ -3,7 +3,7 @@
   "_key": "!items!fed6d22fe3714b07",
   "name": "Transmute Trauma",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_transmute_trauma_icon.webp",
   "system": {
     "description": "<p>Choose two targets within 5ft of you. The first target must have levels of an Adversarial Condition, and the second does not. Choose one adversarial condition that the first target has, and then select some number of levels of that condition up to X, where X is half your Proficiency, rounded up. The second target must make Fate Checks against X levels of that condition. For each level of the condition they take, the first target loses one level of the condition, and you gain 1 level of Fatigue.</p>",
     "tag": "action",
@@ -153,7 +153,7 @@
       "catalogId": "wt_transmute_trauma",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "ce0875257d0b"
+      "buildHash": "66501bb40b86"
     }
   }
 }

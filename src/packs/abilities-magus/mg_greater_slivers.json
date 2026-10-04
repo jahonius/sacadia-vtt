@@ -3,7 +3,7 @@
   "_key": "!items!84069af0e254008c",
   "name": "Greater Slivers",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_slivers_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of Mind Sliver by 1 dice type.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Intuition[2]",
-      "buildHash": "6b5e016a0c71"
+      "buildHash": "79d2e4baacb0"
     }
   }
 }

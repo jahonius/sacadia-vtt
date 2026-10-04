@@ -3,7 +3,7 @@
   "_key": "!items!ebfb5bb924f151d0",
   "name": "Final Calm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/final_calm_icon.webp",
   "system": {
     "description": "<p>When you use Call of Respite, do not roll trait checks against adversary conditions. Instead, simply remove one level of any condition.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "final_calm",
-      "buildHash": "197ea7ab4707"
+      "buildHash": "73965ea7f2d4"
     }
   }
 }

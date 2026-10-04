@@ -3,7 +3,7 @@
   "_key": "!items!115f286a1defd66e",
   "name": "Blessing of the Iron Wall",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_iron_wall_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_iron_wall_icon.webp",
   "system": {
     "description": "<p>As long as you maintain Focus, gain temporary PD, MD, or TD (choose one) equal to half your Madness (rounded up).</p>",
     "tag": "action",
@@ -110,7 +110,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blessing_of_the_iron_wall",
-      "buildHash": "7c708a256630"
+      "buildHash": "f4f6fff0d65e"
     }
   }
 }

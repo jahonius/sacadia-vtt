@@ -3,7 +3,7 @@
   "_key": "!items!5622fd186b1a347a",
   "name": "Bestial Respect",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/hul_bestial_respect_icon.webp",
   "system": {
     "description": "<p>Choose one beast within 30ft of you (with CR less than or equal to half your Proficiency, rounded up) to roll a Fate Check. If they fail, they become your ally until you break Focus. Once per turn they may use an action to roll a Fate check against this effect, ending Bestial Respect on a success. Once a creature succeeds against Bestial Respect, they may not be affected by it again until after a quick rest.</p>",
     "tag": "focus",
@@ -60,7 +60,7 @@
       "catalogId": "hul_bestial_respect",
       "feature": true,
       "level": 3,
-      "buildHash": "b4fedc52af67"
+      "buildHash": "b5c8e0d5701a"
     }
   }
 }

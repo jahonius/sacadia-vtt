@@ -3,7 +3,7 @@
   "_key": "!items!03a1b613581d6b51",
   "name": "Fumble Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_fumble_icon.webp",
   "system": {
     "description": "<p>Whenever you give Fumble, increase the dice type of Fumble given by two dice types.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "65e25d284ab4"
+      "buildHash": "996ed1a4d46f"
     }
   }
 }

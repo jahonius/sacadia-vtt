@@ -3,7 +3,7 @@
   "_key": "!items!265f1e41b7e82753",
   "name": "Spell Slots",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_spell_slots_icon.webp",
   "system": {
     "description": "<p>When you take this ability, you get an Action Pool of Spell Slot points equal to your Proficiency Score. You get all Spell Slots back after a quick rest. When you take this ability, you may spend skill points to learn Spells (after researching them). Whenever you may spend skill points, you may add to the list of Spells you know.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_spell_slots",
       "transcribed": true,
       "prestige": "magus",
-      "buildHash": "3daeebd2f0b4"
+      "buildHash": "85b16feef2c0"
     }
   }
 }

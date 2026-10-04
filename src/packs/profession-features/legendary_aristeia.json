@@ -3,7 +3,7 @@
   "_key": "!items!da16953ab567ff4b",
   "name": "Aristeia Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_aristeia_icon.webp",
   "system": {
     "description": "<p>Increase your number of Glory points by two.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "e420d5814ea9"
+      "buildHash": "1feb2b5df7a2"
     }
   }
 }

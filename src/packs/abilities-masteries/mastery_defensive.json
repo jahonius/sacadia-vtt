@@ -3,7 +3,7 @@
   "_key": "!items!110aa21617f9610a",
   "name": "Defensive Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/masteries/mastery_defensive_icon.webp",
   "system": {
     "description": "<p>Do not decrease your move speed by 5ft when you wield a tower shield. Gain 1X Advantage against Panic.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
     "sacadia": {
       "catalogId": "mastery_defensive",
       "mastery": true,
-      "buildHash": "76b5895c8cef"
+      "buildHash": "32bd2f6a18b4"
     }
   }
 }

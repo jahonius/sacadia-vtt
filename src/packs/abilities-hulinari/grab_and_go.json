@@ -3,7 +3,7 @@
   "_key": "!items!2fc4ec5ad0bc346e",
   "name": "Grab and Go",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/grab_and_go_icon.webp",
   "system": {
     "description": "<p>You may expend a Herd Point as a Boost to a Move action. As part of your movement, move through a square occupied by a willing ally, and then immediately half your move speed for the remainder of the Move action. Move your ally with you as you move, placing them in any unoccupied square within 5ft of the end of your Movement. That ally cannot provoke an attack of opportunity when you move them (though you do).</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "grab_and_go",
       "transcribed": true,
-      "buildHash": "246d81d56d38"
+      "buildHash": "39891dabe09b"
     }
   }
 }

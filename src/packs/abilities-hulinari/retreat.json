@@ -3,7 +3,7 @@
   "_key": "!items!095a6e4c61001fae",
   "name": "Retreat",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/retreat_icon.webp",
   "system": {
     "description": "<p>As a reaction to your turn ending, you may move up to half your move speed in any direction. You do provoke attacks of opportunity this way.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "retreat",
       "transcribed": true,
-      "buildHash": "8938a120ec0f"
+      "buildHash": "0b0f9ec53003"
     }
   }
 }

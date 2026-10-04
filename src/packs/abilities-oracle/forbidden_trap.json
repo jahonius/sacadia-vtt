@@ -3,7 +3,7 @@
   "_key": "!items!42b4292c2459a3a0",
   "name": "Forbidden Trap",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_trap_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_trap_icon.webp",
   "system": {
     "description": "<p>As a reaction to a creature moving to within 5ft of you from further away, you may use Forbidden Knowledge against them. If you have Steadied and you miss, you may choose to hit instead (unless you rolled a nat1 to hit).</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "forbidden_trap",
-      "buildHash": "9fa2b05b498b"
+      "buildHash": "9bfbba796bbb"
     }
   }
 }

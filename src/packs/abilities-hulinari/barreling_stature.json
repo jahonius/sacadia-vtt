@@ -3,7 +3,7 @@
   "_key": "!items!8ed95129a83b4e32",
   "name": "Barreling Stature",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/barreling_stature_icon.webp",
   "system": {
     "description": "<p>As a Boost to an action made against a single target, you may expense one Savage Point. Treat that target as prone for that action.</p>",
     "tag": "boost",
@@ -44,7 +44,7 @@
     "sacadia": {
       "catalogId": "barreling_stature",
       "transcribed": true,
-      "buildHash": "a6588f6477bd"
+      "buildHash": "219de4c0d088"
     }
   }
 }

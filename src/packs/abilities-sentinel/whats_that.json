@@ -3,7 +3,7 @@
   "_key": "!items!7e27c6d184beec25",
   "name": "What's That?",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/whats_that_icon.webp",
   "system": {
     "description": "<p>When you use Hide Behind Hide, if you end Hide Behind Hide by making an attack against a Surrounded creature, treat them as surprised.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "whats_that",
-      "buildHash": "ae0a98989d54"
+      "buildHash": "fc0c84001a8a"
     }
   }
 }

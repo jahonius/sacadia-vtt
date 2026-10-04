@@ -3,7 +3,7 @@
   "_key": "!items!b08b6ebf4cde010f",
   "name": "Divine Messages",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/divine_messages_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/divine_messages_icon.webp",
   "system": {
     "description": "<p>The number of prescient points you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "divine_messages",
-      "buildHash": "58915d9dd710"
+      "buildHash": "4d18c3b59f17"
     }
   }
 }

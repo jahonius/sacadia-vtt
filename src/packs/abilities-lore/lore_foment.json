@@ -3,7 +3,7 @@
   "_key": "!items!888a6aa96e76ab8f",
   "name": "Foment",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_foment_icon.webp",
   "system": {
     "description": "<p>Expend a lore point. For the next minute, every intelligent creature within 10Xft of you (X is your Proficiency) brashly acts upon feelings with no regard for impact. Creatures may make a Wiles Check against this effect (at 1X Disadvantage if they are not aware of the effect occurring). All attacks made against targets affected by Foment are made at 1X advantage. Creatures may make a Wiles Check against your Check DC as an action to end the effect.</p>",
     "tag": "lore",
@@ -73,7 +73,7 @@
       "catalogId": "lore_foment",
       "transcribed": true,
       "lore": true,
-      "buildHash": "3b0f7b1f0e6f"
+      "buildHash": "8e0aa6e4500e"
     }
   }
 }

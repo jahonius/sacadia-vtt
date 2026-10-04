@@ -3,7 +3,7 @@
   "_key": "!items!31b895e3fd2cc4e6",
   "name": "Bludgeonmaster",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/bludgeonmaster_icon.webp",
   "system": {
     "description": "<p>Once per quick rest when wielding a bludgeoning divine weapon, you may slam it into the ground. All enemies within 5ft of you make a Finesse Check or are knocked prone. [2] CrunchP : (Prerequisite: Bludgeonmaster). If you critically hit with a bludgeoning divine weapon and choose to rend, rend an extra 1 point of armor.</p>",
     "tag": "action",
@@ -65,7 +65,7 @@
     "sacadia": {
       "catalogId": "bludgeonmaster",
       "transcribed": true,
-      "buildHash": "8863ae1a08c6"
+      "buildHash": "bbcc7c3fce77"
     }
   }
 }

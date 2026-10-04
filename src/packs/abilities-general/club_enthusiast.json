@@ -3,7 +3,7 @@
   "_key": "!items!ad92e45c5755849c",
   "name": "Club Enthusiast",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/club_enthusiast_icon.webp",
   "system": {
     "description": "<p>You may wield a basic club using two hands instead of one. If you do so, increase the damage dice by one type.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "club_enthusiast",
-      "buildHash": "553e444d6882"
+      "buildHash": "9de333291bf2"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!c028daef18d15a73",
   "name": "Heretic’s Bane",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_heretics_bane_icon.webp",
   "system": {
     "description": "<p>As a Reaction to an enemy within 5ft of you attempting a Make Trait Check action against levels of an adversarial condition, expend a Divine Touch Point. If they fail the Make Trait Check action, they take XD10 damage, where X is the number of levels of that condition they possess.</p>",
     "tag": "reaction",
@@ -65,7 +65,7 @@
       "catalogId": "wt_heretics_bane",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "7494dd913f54"
+      "buildHash": "214f2661f31c"
     }
   }
 }

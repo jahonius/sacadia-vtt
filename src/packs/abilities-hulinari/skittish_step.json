@@ -3,7 +3,7 @@
   "_key": "!items!c4a26660740ed51f",
   "name": "Skittish Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/skittish_step_icon.webp",
   "system": {
     "description": "<p>Whenever you are Skittish to a target and they deal damage against you, reduce that damage by your Proficiency.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "skittish_step",
       "transcribed": true,
-      "buildHash": "4cbb24dd47d4"
+      "buildHash": "100cd87601a8"
     }
   }
 }

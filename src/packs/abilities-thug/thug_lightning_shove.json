@@ -3,7 +3,7 @@
   "_key": "!items!d7a7b263a5ae16e1",
   "name": "Lightning Shove",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_lightning_shove_icon.webp",
   "system": {
     "description": "<p>Gain 1X Advantage on opportunity attacks of any kind. When you attempt to Kick a target, they roll their Trait Check against being moved at 1X Disadvantage.</p>",
     "tag": "passive",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_lightning_shove",
-      "buildHash": "4d25c33ae17d"
+      "buildHash": "d52d60b825f4"
     }
   }
 }

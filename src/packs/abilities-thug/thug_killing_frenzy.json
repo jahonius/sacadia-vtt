@@ -3,7 +3,7 @@
   "_key": "!items!eca469032011a2f8",
   "name": "Killing Frenzy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_killing_frenzy_icon.webp",
   "system": {
     "description": "<p>If you kill a target on your turn and make an additional attack still, treat your next target as Surprised for your first attack.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_killing_frenzy",
-      "buildHash": "255e0d3b44cd"
+      "buildHash": "dfaa735d7dc7"
     }
   }
 }

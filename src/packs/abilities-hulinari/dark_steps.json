@@ -3,7 +3,7 @@
   "_key": "!items!acfb05b242540be3",
   "name": "Dark Steps",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/dark_steps_icon.webp",
   "system": {
     "description": "<p>Creatures attempting to move through the Dark Cloud treat the space as Difficult Terrain.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "dark_steps",
       "transcribed": true,
-      "buildHash": "c8292df0dbe1"
+      "buildHash": "9bc21d303eee"
     }
   }
 }

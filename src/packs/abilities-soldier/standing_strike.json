@@ -3,7 +3,7 @@
   "_key": "!items!5548f64d335de902",
   "name": "Standing Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/standing_strike_icon.webp",
   "system": {
     "description": "<p>Whenever you use Stand By Me, your ally adds half your Courage (rounded up) to all damage they deal through attacks provided they are within range of Stand By Me.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "standing_strike",
-      "buildHash": "18f1f33f8428"
+      "buildHash": "64cfb64795bf"
     }
   }
 }

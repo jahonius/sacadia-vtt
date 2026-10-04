@@ -3,7 +3,7 @@
   "_key": "!items!6942ef1d7c82f3b2",
   "name": "Completionist",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_completionist_icon.webp",
   "system": {
     "description": "<p>If you maintain Focus on Multiplicity and have hit every enemy target, increase the damage you deal to all targets by 1 until your Focus ends.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_completionist",
-      "buildHash": "5d84a7c88f80"
+      "buildHash": "38ad76c7ff5f"
     }
   }
 }

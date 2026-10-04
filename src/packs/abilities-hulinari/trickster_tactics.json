@@ -3,7 +3,7 @@
   "_key": "!items!a8183c2a16c7f546",
   "name": "Trickster Tactics",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/trickster_tactics_icon.webp",
   "system": {
     "description": "<p>When you take this ability, you get a number of Trickster Points equal to your Proficiency Score that you may only use while in Swarm Form. You get all Trickster Points back after a quick rest. When you take this ability, you may spend skill points to learn Trickster Tactics. Whenever you may spend skill points, you may add to the list of Trickster Tactics you know.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "trickster_tactics",
       "transcribed": true,
-      "buildHash": "6618752744d9"
+      "buildHash": "8dff1dc21b7e"
     }
   }
 }

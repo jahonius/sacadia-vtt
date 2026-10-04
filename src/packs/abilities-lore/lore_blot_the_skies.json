@@ -3,7 +3,7 @@
   "_key": "!items!a54bdff61a01134f",
   "name": "Blot the Skies",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_blot_the_skies_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point in Swarm Form and choose one target within 60ft of you. That target is blinded until the end of your next turn.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
       "catalogId": "lore_blot_the_skies",
       "transcribed": true,
       "lore": true,
-      "buildHash": "c9e77cb0e4be"
+      "buildHash": "c1c55beff59c"
     }
   }
 }

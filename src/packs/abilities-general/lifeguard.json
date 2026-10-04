@@ -3,7 +3,7 @@
   "_key": "!items!306c588641e92b32",
   "name": "Lifeguard",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/lifeguard_icon.webp",
   "system": {
     "description": "<p>Whenever you roll dice to provide temporary hitpoints to yourself or allies, increase the dice type of hitpoints given by one dice type (e.g., 1D8 becomes 1D10, or XD6 becomes XD8, where X is half your Proficiency rounded up).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "lifeguard",
-      "buildHash": "4bafe8bd1923"
+      "buildHash": "f92c8364f6a3"
     }
   }
 }

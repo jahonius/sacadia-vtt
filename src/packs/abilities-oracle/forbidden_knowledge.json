@@ -3,7 +3,7 @@
   "_key": "!items!7ec73cba1dfac0d8",
   "name": "Forbidden Knowledge",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_knowledge_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/forbidden_knowledge_icon.webp",
   "system": {
     "description": "<p>Make a ranged attack vs. MD against one enemy within 60ft of you that you can see. If you succeed, do XD8+Fate mental damage where X is half your Proficiency score (rounded up).</p>",
     "tag": "action",
@@ -65,7 +65,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "forbidden_knowledge",
-      "buildHash": "24f8e9807cc2"
+      "buildHash": "32f8eb3d998f"
     }
   }
 }

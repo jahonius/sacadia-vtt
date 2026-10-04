@@ -3,7 +3,7 @@
   "_key": "!items!3556d872c32f5b1d",
   "name": "Farflight",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_farflight_icon.webp",
   "system": {
     "description": "<p>You may expend a lore point to take dramatic flight. Move anywhere within 60ft. Ignore difficult terrain, height changes up to 30ft, and do not provoke attacks of opportunity. Anywhere along this path, you may pick up and carry a target anywhere along this distance (though move at half speed if you carry a creature). If they are not willing, they make a Finesse Check against the effect. If they succeed, you may choose a second target along your path.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_farflight",
       "transcribed": true,
       "lore": true,
-      "buildHash": "2f710218b533"
+      "buildHash": "608f0a1de87b"
     }
   }
 }

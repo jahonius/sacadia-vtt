@@ -3,7 +3,7 @@
   "_key": "!items!09e2b0e8d9450e79",
   "name": "Deadlier Shadow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_deadlier_shadow_icon.webp",
   "system": {
     "description": "<p>Increase the damage dealt by the Harmful Shadow effect to XD6, where X is your Proficiency.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_deadlier_shadow",
-      "buildHash": "0cf6e3b8b719"
+      "buildHash": "ccb4592fe1f0"
     }
   }
 }

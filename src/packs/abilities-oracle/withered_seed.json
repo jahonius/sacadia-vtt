@@ -3,7 +3,7 @@
   "_key": "!items!ec3f411c8d85bb6f",
   "name": "Withered Seed",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_seed_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_seed_icon.webp",
   "system": {
     "description": "<p>Apply the effects of Withered Bloom when you are insane.</p>",
     "tag": "passive",
@@ -66,7 +66,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "withered_seed",
-      "buildHash": "561836a695a3"
+      "buildHash": "9c44bf9548fe"
     }
   }
 }

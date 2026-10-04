@@ -3,7 +3,7 @@
   "_key": "!items!c37321e77ad6d3d1",
   "name": "Cloudsurge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/cloudsurge_icon.webp",
   "system": {
     "description": "<p>Expend X Trickster Points as a Boost to initiating Clouded Foe or Clouded Ally (to a maximum of half your Proficiency rounded up). Increase the tiles Clouded Foe and Clouded Ally occupy by X.</p>",
     "tag": "boost",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "cloudsurge",
       "transcribed": true,
-      "buildHash": "36334de6b841"
+      "buildHash": "29d538eb3909"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!8d530d113d857d1b",
   "name": "Charge the Line",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/charge_the_line_icon.webp",
   "system": {
     "description": "<p>You may use an action when in Pack Form to move your movement speed in a straight line. Any creature along that line (occupying a square you cross through) must make a Finesse Check or be knocked 5ft away from that line. If they succeed at the Finesse Check, Charge the Line ends and you stop 5ft in front of them. When using Charge the Line, you may not end your movement in an occupied square. Charge the Line provokes reaction attacks from creatures not in the line but within melee range. Creatures in the line may make a reaction attack, but automatically fail against Charge the Line if they do so. Additionally, they make their Reaction Attacks at 1X Disadvantage.</p>",
     "tag": "action",
@@ -71,7 +71,7 @@
     "sacadia": {
       "catalogId": "charge_the_line",
       "transcribed": true,
-      "buildHash": "726f180f88ba"
+      "buildHash": "69f8b96296b7"
     }
   }
 }

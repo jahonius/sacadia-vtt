@@ -3,7 +3,7 @@
   "_key": "!items!3a19199d763dc90f",
   "name": "Call of Power",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_power_icon.webp",
   "system": {
     "description": "<p>Expend two call points when you initiate Call of Power. You and all allies who can hear you within 15ft add half your Proficiency (rounded up) to all damage dealt from any effect until your Focus ends.</p>",
     "tag": "focus",
@@ -64,7 +64,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_power",
-      "buildHash": "669661b9edc6"
+      "buildHash": "6d6045cfaafc"
     }
   }
 }

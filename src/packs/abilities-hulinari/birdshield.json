@@ -3,7 +3,7 @@
   "_key": "!items!9bf57626b5e8eec7",
   "name": "Birdshield",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/birdshield_icon.webp",
   "system": {
     "description": "<p>Expend one Trickster Point when you initiate this ability, and each turn you maintain Focus. For as long as you maintain Focus on Birdshield, all allies within a space covered by Clouded Ally gain X DR, where X is your Proficiency.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "birdshield",
       "transcribed": true,
-      "buildHash": "32fc05654f24"
+      "buildHash": "b37caa64b167"
     }
   }
 }

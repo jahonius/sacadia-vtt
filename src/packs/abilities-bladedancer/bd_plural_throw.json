@@ -3,7 +3,7 @@
   "_key": "!items!7f0d55a0d7cee370",
   "name": "Plural Throw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_plural_throw_icon.webp",
   "system": {
     "description": "<p>Make a ranged attack with a Versatile weapon against two targets within 5ft of each other (roll to-hit separately for each). Deal 1D6+Finesse damage to any target you hit. Damage dice dealt this way increases to 1D8 at level 5 and 1D10 at level 11. When you make this throw, remove your versatile weapon from your inventory until the end of combat.</p>",
     "tag": "action",
@@ -79,7 +79,7 @@
           "ladderIndex": 4
         }
       ],
-      "buildHash": "7b3e079e2841"
+      "buildHash": "7bea53fcaccf"
     }
   }
 }

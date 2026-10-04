@@ -3,7 +3,7 @@
   "_key": "!items!06e8dfe022ed2ec6",
   "name": "Tauntingly Defended",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/tauntingly_defended_icon.webp",
   "system": {
     "description": "<p>Whenever you critically hit an enemy, you may make a critical effect to give them one level of Taunt if they do not already have one.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "tauntingly_defended",
-      "buildHash": "e37c05d49c15"
+      "buildHash": "5eb66b5b2664"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!c48204d2ca9d4606",
   "name": "Compelling Gaze",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/compelling_gaze_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point to attempt to give X levels of Delirium to every enemy within 5ft of you, where X is half your Proficiency (rounded up). They make a Fate Check against this effect.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
     "sacadia": {
       "catalogId": "compelling_gaze",
       "transcribed": true,
-      "buildHash": "913d2db3964c"
+      "buildHash": "ecd20541c686"
     }
   }
 }

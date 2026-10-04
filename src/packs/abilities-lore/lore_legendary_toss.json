@@ -3,7 +3,7 @@
   "_key": "!items!094157af3ae0bf1d",
   "name": "Legendary Toss",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_legendary_toss_icon.webp",
   "system": {
     "description": "<p>You may expend a lore point to toss an enemy that is within one size of you (e.g., Small, Medium, or Large if you are a Medium Creature). You throw the enemy a number of tiles equal to your Finesse + Power score (+2 if they are a size smaller than you, -1 if they are a size larger than you). They take thrown damage when they land. As they are tossed, they can provoke attacks of opportunity from allies whose melee range the target leaves.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_legendary_toss",
       "transcribed": true,
       "lore": true,
-      "buildHash": "b311d4dd2272"
+      "buildHash": "06930deae070"
     }
   }
 }

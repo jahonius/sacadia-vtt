@@ -3,7 +3,7 @@
   "_key": "!items!b84a3453f95d478c",
   "name": "Greater Alliance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_alliance_icon.webp",
   "system": {
     "description": "<p>When you use Law of Alliance, choose up to three allied targets within 5ft of you. For as long as you maintain Focus, damage dealt to any of the three targets (or you) is shared across all four of you. Indivisible damage amounts are always given to you.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Street Smart",
-      "buildHash": "c30005793376"
+      "buildHash": "31033aa6101d"
     }
   }
 }

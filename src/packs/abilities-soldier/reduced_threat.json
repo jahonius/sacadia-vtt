@@ -3,7 +3,7 @@
   "_key": "!items!df7baa86d0408d2d",
   "name": "Reduced Threat",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/reduced_threat_icon.webp",
   "system": {
     "description": "<p>When you use Sacrifice, reduce the damage you take by half your Courage (rounded up).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reduced_threat",
-      "buildHash": "461bb72eb06b"
+      "buildHash": "9f6e1c642a38"
     }
   }
 }

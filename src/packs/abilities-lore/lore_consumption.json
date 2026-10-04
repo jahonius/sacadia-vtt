@@ -3,7 +3,7 @@
   "_key": "!items!46448753f8a76f85",
   "name": "Consumption",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_consumption_icon.webp",
   "system": {
     "description": "<p>You may expend a Lore Point as a Boost to any attack. For the rest of your turn, whatever damage you do, gain one fourth that much temporary HP (rounded up).</p>",
     "tag": "boost",
@@ -53,7 +53,7 @@
       "catalogId": "lore_consumption",
       "transcribed": true,
       "lore": true,
-      "buildHash": "6a2fc36ae401"
+      "buildHash": "ca23c815806f"
     }
   }
 }

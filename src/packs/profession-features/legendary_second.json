@@ -3,7 +3,7 @@
   "_key": "!items!fd7beae0fbcfaa91",
   "name": "Second Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_second_icon.webp",
   "system": {
     "description": "<p>Take both of the Level 5 Soldier Mastery abilities that you did not take at Level 5.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "1b23de834749"
+      "buildHash": "2bcba4bac12e"
     }
   }
 }

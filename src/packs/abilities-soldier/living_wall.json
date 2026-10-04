@@ -3,7 +3,7 @@
   "_key": "!items!b432d9b658e252a5",
   "name": "Living Wall",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/living_wall_icon.webp",
   "system": {
     "description": "<p>Raise your HP by 2/level you have now. Whenever you level, increase your HP by another 2 points.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "living_wall",
-      "buildHash": "28f46b4c657d"
+      "buildHash": "55646dcd48e9"
     }
   }
 }

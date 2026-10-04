@@ -3,7 +3,7 @@
   "_key": "!items!89125ef58388a626",
   "name": "Bite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/bite_icon.webp",
   "system": {
     "description": "<p>When you are in Brute Form, you may make an unarmed melee attack with . Your Bite deals 1D10+Power damage on a successful hit.The damage dice dealt this way increases to 2D6 at level 5 and 2D8 at level 11.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
     "sacadia": {
       "catalogId": "bite",
       "transcribed": true,
-      "buildHash": "94b743a605fa"
+      "buildHash": "542c005b4fb2"
     }
   }
 }

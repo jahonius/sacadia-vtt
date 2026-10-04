@@ -3,7 +3,7 @@
   "_key": "!items!3ef101f0d2cd3ba0",
   "name": "Deathlock",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_deathlock_icon.webp",
   "system": {
     "description": "<p>Choose one target to whom you have given Wrestle Pin and expend a lore point. Their Pin becomes enduring (does not reduce by one level at the end of their turn).</p>",
     "tag": "lore",
@@ -43,7 +43,7 @@
       "catalogId": "lore_deathlock",
       "transcribed": true,
       "lore": true,
-      "buildHash": "ad4d7334ba47"
+      "buildHash": "d0244fde3c45"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!225fa23f0e63090a",
   "name": "Heavy Damage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/heavy_damage_icon.webp",
   "system": {
     "description": "<p>Choose one weapon type you use (e.g., crossbows). When you successfully hit with that weapon and roll a 1 on base damage dice dealt by that weapon, you may reroll that damage die. Keep the second roll made.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "heavy_damage",
-      "buildHash": "10b0d3fdc575"
+      "buildHash": "6ebd2856fd8f"
     }
   }
 }

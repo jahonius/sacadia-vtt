@@ -3,7 +3,7 @@
   "_key": "!items!7b6f451f085caa22",
   "name": "Double Claw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/double_claw_icon.webp",
   "system": {
     "description": "<p>When you use Sweeping Claws, your attack is made against every creature within 10’ of you.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "double_claw",
       "transcribed": true,
-      "buildHash": "09d265b6c12d"
+      "buildHash": "11458bfd14ae"
     }
   }
 }

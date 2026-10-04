@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.2.1
+
+- **Ability icons:** every ability, profession feature and basic action in the compendiums has its own icon (978 in
+  all), in one pixel-art style with an identical gold frame, set in Sacadia's Bronze Age. They're 256 px WebP, so the
+  whole set is about 28 MB. Items characters already own get their new icon through the compendium refresh the system
+  offers after an update. `npm run icons`
+  generates icons (src/generate-icons.mjs; needs a Gemini API key).
+- **Adventure: The Breach.** Connor Brashar's level-5 one-shot on Chuni's Wall, converted to v1.2, in a new
+  **Adventures** compendium (import it from the compendium). It includes:
+  - the battle map as a two-level scene built on Foundry v14's Scene Levels: the Ground and the Wall Top, 40ft up. It has
+    walls and line of sight (the wall blocks the view from the ground, while the wall top sees everything), stairs and
+    jump-down spots that move tokens between the levels, a locked front gate, tokens and map pins;
+  - a night setting: blue Tianqi glyph lights along the wall, torches and lanterns, fog over the Upper Heibrim that the
+    wall holds back, a smoky haze around Wanabbul, and scrolling text when he looms out of the mist or the pit gives way;
+  - the fight staged in the Combat Tracker in the one-shot's turn order;
+  - a **Breach Chuni's Wall** macro that opens a hole as wide as the demon and cuts the wall top in two;
+  - four pregenerated Tianqi wall guards built as rules-legal level-5 characters;
+  - Wanabbul the Vast and three optional demons (with Csenorras's split swarms and the Weaverspools);
+  - player-owned ballistas and oil barrels to crew;
+  - a pit trap that springs on its own, and a wall walkway that gives defenders Height;
+  - a GM guide (with conversion notes), player handouts, and the Tianqi cultural abilities and inheritance.
+- **NPC Move Speed:** NPCs have a Speed field, and Paste Stat Block reads `Speed` / `Move`.
+- **Tests:** `QUENCH_SCREENSHOTS=<dir>` lets the in-Foundry tests save screenshots.
+- **Fixes:**
+  - The second pick of Bigger Stones now counts toward Combat Skill Points spent.
+  - Heavy weapons carry the `heavy` trait, so Heavy Weapons Mastery applies to them.
+
 ## 0.2.0
 
 The first full release, for Foundry VTT v14.

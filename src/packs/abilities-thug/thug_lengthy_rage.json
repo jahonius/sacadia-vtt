@@ -3,7 +3,7 @@
   "_key": "!items!d7aa102bc746198f",
   "name": "Lengthy Rage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_lengthy_rage_icon.webp",
   "system": {
     "description": "<p>Increase the duration of your rage by one turn.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_lengthy_rage",
-      "buildHash": "90faa3ab17d8"
+      "buildHash": "52c4a6cac8e3"
     }
   }
 }

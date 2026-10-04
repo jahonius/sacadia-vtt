@@ -3,7 +3,7 @@
   "_key": "!items!088d093a98ce2fc9",
   "name": "Greater Absorption",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_absorption_icon.webp",
   "system": {
     "description": "<p>When you reduce damage through Absorb Attack, instead reduce the damage by XD6.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Thaumaturgy[3]",
-      "buildHash": "c980d347a3ce"
+      "buildHash": "f809b2eb761b"
     }
   }
 }

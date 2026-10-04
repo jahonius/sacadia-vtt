@@ -3,7 +3,7 @@
   "_key": "!items!0ee633361efe4714",
   "name": "Poisontouch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/poisontouch_icon.webp",
   "system": {
     "description": "<p>Choose one of the following adversarial conditions: Delirium, Nausea, Frenzy, Hemorrhage, Jinxed, Slowed, or Sting. Whenever you attempt to give a target levels of that condition equal to your Proficiency, attempt to give one additional level.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "poisontouch",
-      "buildHash": "470dc57c048f"
+      "buildHash": "915741012393"
     }
   }
 }

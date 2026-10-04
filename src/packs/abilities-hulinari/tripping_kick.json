@@ -3,7 +3,7 @@
   "_key": "!items!955b47f7e2723999",
   "name": "Tripping Kick",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/tripping_kick_icon.webp",
   "system": {
     "description": "<p>(Preqreuisite: Hindkick, Finesse 3). When you use Kick on an enemy and they fail the trait check against it, you may expend a Boost to knock them Prone.</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "tripping_kick",
       "transcribed": true,
-      "buildHash": "b0b496a6e70e"
+      "buildHash": "97ac1e748373"
     }
   }
 }

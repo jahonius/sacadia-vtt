@@ -3,7 +3,7 @@
   "_key": "!items!ba27d8ad68da973f",
   "name": "Kato Champion",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_kato_champion_icon.webp",
   "system": {
     "description": "<p>When you are Prone, you do not receive 1X disadvantage to attacks you make.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_kato_champion",
-      "buildHash": "dede5a97d024"
+      "buildHash": "669b5978666c"
     }
   }
 }

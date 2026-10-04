@@ -3,7 +3,7 @@
   "_key": "!items!330ef31b9b1008a1",
   "name": "Pinned Foot",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/pinned_foot_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy entering a 15ft range of you when you have Steadied, you may attempt to give them one level of Pin. Finesse Check negates.</p>",
     "tag": "reaction",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pinned_foot",
-      "buildHash": "9d805fe1ca28"
+      "buildHash": "ced88d365fcf"
     }
   }
 }

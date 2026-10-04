@@ -3,7 +3,7 @@
   "_key": "!items!88d5a9e724268024",
   "name": "Barbed Stare",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_barbed_stare_icon.webp",
   "system": {
     "description": "<p>When you initiate Focus on this effect, choose one enemy target within 30ft. That target takes 1D6 damage. Each turn you maintain Focus on this effect, deal 1D6 damage to that target. Increase the dice type of damage you deal with Barbed Stare by 1 Dice Type each turn (i.e., on your second round of Focus, deal 1D8 damage). Your Focus ends on this effect if you leave 30ft range of the target.</p>",
     "tag": "focus",
@@ -73,7 +73,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Magic Beast Lore[1]",
-      "buildHash": "552a1c199033"
+      "buildHash": "2b296a5c96f9"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!171eb4d26590c2da",
   "name": "Predictive Thoughts",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_predictive_thoughts_icon.webp",
   "system": {
     "description": "<p>Expend one lore point. You see what will happen next. The GM tells you everything they intend to do for the next turn with each enemy on the combat map, and respond to limited questions from you as to how their actions will change in response to what you do.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_predictive_thoughts",
       "transcribed": true,
       "lore": true,
-      "buildHash": "3697472557ae"
+      "buildHash": "608e30c93ee5"
     }
   }
 }

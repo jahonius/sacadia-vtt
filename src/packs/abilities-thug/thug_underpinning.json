@@ -3,7 +3,7 @@
   "_key": "!items!a0479aa9c1f6b6b0",
   "name": "Underpinning",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_underpinning_icon.webp",
   "system": {
     "description": "<p>Expend a trick point. Decrease the PD or TD (choose one) of a target to whom you have given Wrestle Pin by half your Finesse Score (rounded up) until the start of your next turn.</p>",
     "tag": "action",
@@ -81,7 +81,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_underpinning",
-      "buildHash": "f865993aa22b"
+      "buildHash": "2ac4c06c4ce2"
     }
   }
 }

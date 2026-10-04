@@ -3,7 +3,7 @@
   "_key": "!items!d8eb8d56beb1452d",
   "name": "Bloodletter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_bloodletter_icon.webp",
   "system": {
     "description": "<p>When you attempt to give Hemorrhage to a target, they make Trait Checks against the effect at 1X disadvantage for every 3 levels of Hemorrhage you attempt to give them.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_bloodletter",
-      "buildHash": "5d1f1e4c74a4"
+      "buildHash": "516e460e9920"
     }
   }
 }

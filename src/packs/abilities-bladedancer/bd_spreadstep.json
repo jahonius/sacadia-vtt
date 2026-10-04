@@ -3,7 +3,7 @@
   "_key": "!items!66aa5eb21dfcedb8",
   "name": "Spreadstep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_spreadstep_icon.webp",
   "system": {
     "description": "<p>At the end of your turn, if you have dealt damage to at least 4 separate targets or forced 4 separate targets to make trait checks, you may expend a reaction to make a melee attack against a new target you have not yet attacked or forced to make a trait check on your turn. Exhaust that reaction when you make this attack. You may apply boosts to this attack.</p>",
     "tag": "reaction",
@@ -74,7 +74,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_spreadstep",
-      "buildHash": "529d634b721e"
+      "buildHash": "c667ac54caba"
     }
   }
 }

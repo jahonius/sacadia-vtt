@@ -3,7 +3,7 @@
   "_key": "!items!d38c2dba6cc0c9f1",
   "name": "Hex",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_hex_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 30ft and expend one Spell Slot. That target makes Wiles Checks against X levels of Sting, where X is your Proficiency.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Font Lore[2]",
-      "buildHash": "e724ddde46d6"
+      "buildHash": "cdacba676834"
     }
   }
 }

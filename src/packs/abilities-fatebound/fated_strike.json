@@ -3,7 +3,7 @@
   "_key": "!items!cc18771a8f897894",
   "name": "Fated Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/fated_strike_icon.webp",
   "system": {
     "description": "<p>Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon. Gain training in use of this weapon if you do not already have it. When you make an attack using your divine weapon, add your Fate score to damage dealt (in addition to Power or Finesse). You may switch your Divine Weapon during any long rest. A weapon that loses its divinity turns to dust.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "fated_strike",
       "transcribed": true,
-      "buildHash": "1dc8799a4fce"
+      "buildHash": "920fa7937d5d"
     }
   }
 }

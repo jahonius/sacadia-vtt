@@ -3,7 +3,7 @@
   "_key": "!items!1cf63521a3c0bbdd",
   "name": "Law of Exchange",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_law_of_exchange_icon.webp",
   "system": {
     "description": "<p>Expend a Spell Slot and choose two targets on the same team in combat who are both within 30ft of you. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. All attacks made against you have Advantage for as long as you maintain Focus on this. You may only end Focus on Law of Exchange on your turn.</p>",
     "tag": "focus",
@@ -78,7 +78,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Legalism[3]",
-      "buildHash": "003b3f32c27f"
+      "buildHash": "e3be51f935eb"
     }
   }
 }

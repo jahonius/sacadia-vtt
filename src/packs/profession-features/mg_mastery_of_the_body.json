@@ -3,7 +3,7 @@
   "_key": "!items!beeb929dbb0b1365",
   "name": "Mastery of the Body",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_mastery_of_the_body_icon.webp",
   "system": {
     "description": "<p>Gain 2 additional HP per level.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
       "catalogId": "mg_mastery_of_the_body",
       "feature": true,
       "level": 5,
-      "buildHash": "3bb05b577db9"
+      "buildHash": "caebd6c16651"
     }
   }
 }

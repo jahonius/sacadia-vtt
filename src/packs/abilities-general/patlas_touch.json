@@ -3,7 +3,7 @@
   "_key": "!items!0c1ed361c394f1dc",
   "name": "Patla's Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/patlas_touch_icon.webp",
   "system": {
     "description": "<p>You may use the 'Divine Strike' ability a number of times equal to half your proficiency per short rest.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "patlas_touch",
-      "buildHash": "528a3148207f"
+      "buildHash": "b80b69040cdd"
     }
   }
 }

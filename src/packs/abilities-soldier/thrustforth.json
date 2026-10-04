@@ -3,7 +3,7 @@
   "_key": "!items!5339bd32e90a7660",
   "name": "Thrustforth",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/thrustforth_icon.webp",
   "system": {
     "description": "<p>As a boost to Stepping Strike, rend the enemy 1 if you successfully hit with Stepping Strike.</p>",
     "tag": "boost",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thrustforth",
-      "buildHash": "8de7a974f10f"
+      "buildHash": "3e22afcb31ac"
     }
   }
 }

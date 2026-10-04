@@ -3,7 +3,7 @@
   "_key": "!items!797fbfc6cfd19784",
   "name": "Withered Bloom",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_bloom_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/withered_bloom_icon.webp",
   "system": {
     "description": "<p>Gain Damage Resistance equal to half your current Madness, rounded up, when you are not insane.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "withered_bloom",
-      "buildHash": "8b3c07373059"
+      "buildHash": "098012392fdd"
     }
   }
 }

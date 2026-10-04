@@ -3,7 +3,7 @@
   "_key": "!items!f34d65f66239d382",
   "name": "Tough Starter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_tough_starter_icon.webp",
   "system": {
     "description": "<p>Whenever you attempt to give a target Pin, they roll against the effect with 1X disadvantage.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_tough_starter",
-      "buildHash": "abed734bb191"
+      "buildHash": "e124ac08cbf1"
     }
   }
 }

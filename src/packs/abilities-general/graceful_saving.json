@@ -3,7 +3,7 @@
   "_key": "!items!4ad66b6f9808b03f",
   "name": "Graceful Saving",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/graceful_saving_icon.webp",
   "system": {
     "description": "<p>Add your Fate Score to all Trait Checks you make. If you make a Fate Check, add Fate twice.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "graceful_saving",
-      "buildHash": "e318845fda0c"
+      "buildHash": "e9548abfd837"
     }
   }
 }

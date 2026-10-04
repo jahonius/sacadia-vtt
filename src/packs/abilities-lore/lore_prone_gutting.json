@@ -3,7 +3,7 @@
   "_key": "!items!9ce39e82bf3a58d3",
   "name": "Prone Gutting",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_prone_gutting_icon.webp",
   "system": {
     "description": "<p>You may expend a Lore Point against a Prone target within 5ft of you. If you do, exhaust a random limb on that target for the remainder of combat.</p>",
     "tag": "action",
@@ -43,7 +43,7 @@
       "catalogId": "lore_prone_gutting",
       "transcribed": true,
       "lore": true,
-      "buildHash": "c2b343aa19a9"
+      "buildHash": "5d2c3112b814"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!485fd825b7299575",
   "name": "Parrying Focus",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_parrying_focus_icon.webp",
   "system": {
     "description": "<p>As long as you maintain Focus, any time a creature successfully hits you with a melee attack, you may expend a reaction to make them take damage equal to your Finesse.</p>",
     "tag": "focus",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_parrying_focus",
-      "buildHash": "ee4c93597f79"
+      "buildHash": "57676aa33d77"
     }
   }
 }

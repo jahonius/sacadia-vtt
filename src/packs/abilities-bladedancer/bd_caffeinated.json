@@ -3,7 +3,7 @@
   "_key": "!items!0ceef26e813b2c19",
   "name": "Caffeinated",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_caffeinated_icon.webp",
   "system": {
     "description": "<p>Choose one condition from Not Even Impressed. You are immune to the chosen condition.</p>",
     "tag": "passive",
@@ -43,7 +43,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_caffeinated",
-      "buildHash": "f3ea917eaf43"
+      "buildHash": "ca5c7875804b"
     }
   }
 }

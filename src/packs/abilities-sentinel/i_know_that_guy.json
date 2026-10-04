@@ -3,7 +3,7 @@
   "_key": "!items!1d14645d3d9b79fa",
   "name": "I Know That Guy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/i_know_that_guy_icon.webp",
   "system": {
     "description": "<p>When you use Favored Enemy, you may additionally learn their level, MD, PD, TD, or current HP if you succeed at your Wiles Check against them.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "i_know_that_guy",
-      "buildHash": "03372ce09b29"
+      "buildHash": "fa192567917a"
     }
   }
 }

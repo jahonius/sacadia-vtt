@@ -3,7 +3,7 @@
   "_key": "!items!3f2d4c110a2e5e06",
   "name": "Pierce the Veil",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_pierce_the_veil_icon.webp",
   "system": {
     "description": "<p>Expend a lore point. For the next minute, you may see into the Hallowfell, allowing you to see creatures’ souls, see invisible creatures, and see through walls, darkness, blindness, dim or bright lighting, or any other obscuring effects. If your madness reaches 0, this effect ends.</p>",
     "tag": "lore",
@@ -44,7 +44,7 @@
       "catalogId": "lore_pierce_the_veil",
       "transcribed": true,
       "lore": true,
-      "buildHash": "f3a3bcf1d7f8"
+      "buildHash": "06c5d0594ae7"
     }
   }
 }

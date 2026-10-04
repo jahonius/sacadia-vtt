@@ -3,7 +3,7 @@
   "_key": "!items!2bbae83e192b8c40",
   "name": "Healthy Vim",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/healthy_vim_icon.webp",
   "system": {
     "description": "<p>Increase your HP by 2/level. Whenever you level, increase your HP by 2 points. Increase the size of each HP pool by 2 whenever you take this ability.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "healthy_vim",
-      "buildHash": "7cf88c9b293b"
+      "buildHash": "b16064b615f5"
     }
   }
 }

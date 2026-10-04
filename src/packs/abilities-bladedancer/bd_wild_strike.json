@@ -3,7 +3,7 @@
   "_key": "!items!998de377891b3e6e",
   "name": "Wild Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_wild_strike_icon.webp",
   "system": {
     "description": "<p>When you hold a versatile weapon in each hand, you may make a melee attack with each weapon using a single AP. Each attack must be made against a different target. This action exhausts.</p>",
     "tag": "action",
@@ -75,7 +75,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_wild_strike",
-      "buildHash": "f8e90ca5f117"
+      "buildHash": "8f570774b0a6"
     }
   }
 }

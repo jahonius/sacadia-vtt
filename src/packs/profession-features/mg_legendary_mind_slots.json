@@ -3,7 +3,7 @@
   "_key": "!items!2ab30568f60ac7a8",
   "name": "Mastery of the Mind (Spell Slots)",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_legendary_mind_slots_icon.webp",
   "system": {
     "description": "<p>Gain 3 Spell Slots.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "ea8983b2a449"
+      "buildHash": "c76c56e835ae"
     }
   }
 }

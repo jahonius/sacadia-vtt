@@ -3,7 +3,7 @@
   "_key": "!items!3f3eb580098de570",
   "name": "Vaulter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/vaulter_icon.webp",
   "system": {
     "description": "<p>Once per turn as a reaction to a creature ending a move action within 5ft of you, you may move 10 feet in any direction. If you have Steadied, you may move 20 feet.</p>",
     "tag": "reaction",
@@ -44,7 +44,7 @@
     "sacadia": {
       "catalogId": "vaulter",
       "transcribed": true,
-      "buildHash": "536f4d992b2e"
+      "buildHash": "6cbe575b4d04"
     }
   }
 }

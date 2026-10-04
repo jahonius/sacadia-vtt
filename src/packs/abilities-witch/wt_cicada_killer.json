@@ -3,7 +3,7 @@
   "_key": "!items!7a72180112e962ec",
   "name": "Cicada Killer",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_cicada_killer_icon.webp",
   "system": {
     "description": "<p>Choose one target with levels of Paralyzed within 5ft of you when you initiate this ability. Each turn they reduce their Paralyzed levels, they don’t lose levels randomly. Instead, you determine which limb is freed from the condition effects.</p>",
     "tag": "focus",
@@ -37,7 +37,7 @@
       "catalogId": "wt_cicada_killer",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "26e6552dbb3d"
+      "buildHash": "05b72a4e230a"
     }
   }
 }

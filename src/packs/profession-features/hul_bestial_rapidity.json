@@ -3,7 +3,7 @@
   "_key": "!items!22a22c3ec607b294",
   "name": "Bestial Rapidity",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/hul_bestial_rapidity_icon.webp",
   "system": {
     "description": "<p>When you change forms, it only exhausts one limb. When you do, lose all levels of Pin.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "hul_bestial_rapidity",
       "feature": true,
       "level": 7,
-      "buildHash": "e3f4a023fd50"
+      "buildHash": "8669576578e0"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!24d981cc46031f7a",
   "name": "Shove and Twist",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_shove_and_twist_icon.webp",
   "system": {
     "description": "<p>When you make an opportunity attack, increase the damage dice you deal by 1 dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_shove_and_twist",
-      "buildHash": "d5159a9840c0"
+      "buildHash": "d7406070a53a"
     }
   }
 }

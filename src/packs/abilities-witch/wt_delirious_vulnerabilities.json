@@ -3,7 +3,7 @@
   "_key": "!items!8171f0dea02ddc80",
   "name": "Delirious Vulnerabilities",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_delirious_vulnerabilities_icon.webp",
   "system": {
     "description": "<p>Touch a target within 5ft of you with any levels of Delirium. That Delirium no longer reduces their AD, MD, TD, and PD. Instead, it reduces their Damage Resistance to a minimum of zero.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
       "catalogId": "wt_delirious_vulnerabilities",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "4ae4128d103d"
+      "buildHash": "94e1c12b7171"
     }
   }
 }

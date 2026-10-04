@@ -3,7 +3,7 @@
   "_key": "!items!04ce0c6c6af6b026",
   "name": "Ridiculous Size",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/ridiculous_size_icon.webp",
   "system": {
     "description": "<p>Increase the base damage die of your heavy Divine Weapon by one additional dice type.</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "ridiculous_size",
       "transcribed": true,
-      "buildHash": "ec2e4901612c"
+      "buildHash": "0b180cadc5f1"
     }
   }
 }

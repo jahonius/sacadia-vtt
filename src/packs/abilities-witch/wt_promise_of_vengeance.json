@@ -3,7 +3,7 @@
   "_key": "!items!990529ecdcf3809c",
   "name": "Promise of Vengeance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_promise_of_vengeance_icon.webp",
   "system": {
     "description": "<p>Choose one target when you make this Promise. Your actions are a personal mission to enact vengeance against that creature for a wrong. Work with your GM to outline that wrong. When you achieve your mission of vengeance against that target, lose all Witch powers until you Atone and seek a new target of vengeance (or take a new Promise). Additionally, lose your Witch powers if you do not take any action towards fulfilling your Vengeance between any two consecutive long rests.</p>",
     "tag": "passive",
@@ -41,7 +41,7 @@
       "catalogId": "wt_promise_of_vengeance",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "b077e25a9846"
+      "buildHash": "ad830c3bb6a3"
     }
   }
 }

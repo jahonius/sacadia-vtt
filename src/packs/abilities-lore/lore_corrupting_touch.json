@@ -3,7 +3,7 @@
   "_key": "!items!159060d137f53ff5",
   "name": "Corrupting Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_corrupting_touch_icon.webp",
   "system": {
     "description": "<p>Until the end of your turn, if you roll a Prime number on a D20 (2, 3, 5, 7, 11, or 13), treat it as a critical hit. For the duration of this effect, do not treat Nat20s rolled as Critical Hits. Also, your weapon damage changes to elemental damage (of the type of your Font’s elemental alignment) until the end of this turn.</p>",
     "tag": "lore",
@@ -62,7 +62,7 @@
       "catalogId": "lore_corrupting_touch",
       "transcribed": true,
       "lore": true,
-      "buildHash": "43b522d4d4d3"
+      "buildHash": "551420194fa5"
     }
   }
 }

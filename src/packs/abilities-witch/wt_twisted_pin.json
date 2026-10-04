@@ -3,7 +3,7 @@
   "_key": "!items!05876e045c35abb9",
   "name": "Twisted Pin",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_twisted_pin_icon.webp",
   "system": {
     "description": "<p>Choose one allied Thug. The damage they deal through Harm is increased by one dice types for as long as you maintain Focus.</p>",
     "tag": "focus",
@@ -51,7 +51,7 @@
       "catalogId": "wt_twisted_pin",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "a5a1656bc90a"
+      "buildHash": "3b692db3f176"
     }
   }
 }

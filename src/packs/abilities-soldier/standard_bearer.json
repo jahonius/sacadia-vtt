@@ -3,7 +3,7 @@
   "_key": "!items!658a07e11976b440",
   "name": "Standard Bearer",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/standard_bearer_icon.webp",
   "system": {
     "description": "<p>At the beginning of combat as a Boost to your first action, you may attempt to give Taunt levels up to your Proficiency to enemies. Choose how these points are distributed among enemies within 60ft of you. They roll Courage Checks against these effects.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "standard_bearer",
-      "buildHash": "b2915a0d8b1e"
+      "buildHash": "269a0abe26c3"
     }
   }
 }

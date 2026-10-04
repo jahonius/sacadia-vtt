@@ -3,7 +3,7 @@
   "_key": "!items!8367436b6bc5760f",
   "name": "Dancing Plan",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_dancing_plan_icon.webp",
   "system": {
     "description": "<p>When using Boost Step, you may expend an additional 2 AP (for a total of 3 AP expended as a Boost) to double Move speed for that Arrangement.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_dancing_plan",
-      "buildHash": "6ad74c07c9f3"
+      "buildHash": "b00545eadb5a"
     }
   }
 }

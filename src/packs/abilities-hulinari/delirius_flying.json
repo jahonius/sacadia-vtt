@@ -3,7 +3,7 @@
   "_key": "!items!217b803ea7a4cfb9",
   "name": "Delirius Flying",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/delirius_flying_icon.webp",
   "system": {
     "description": "<p>Attempt to give one target within 5ft of you X levels of Delirium, where X is your Proficiency (Wiles Check negates).</p>",
     "tag": "action",
@@ -57,7 +57,7 @@
     "sacadia": {
       "catalogId": "delirius_flying",
       "transcribed": true,
-      "buildHash": "c81f527d7879"
+      "buildHash": "398cce07ae9f"
     }
   }
 }

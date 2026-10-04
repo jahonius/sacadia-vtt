@@ -3,7 +3,7 @@
   "_key": "!items!e9e46ac5ef5bd9cf",
   "name": "Nip & Tuck",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_nip_and_tuck_icon.webp",
   "system": {
     "description": "<p>You may use Artery Strike twice per turn.</p>",
     "tag": "passive",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_nip_and_tuck",
-      "buildHash": "87b2f40d4ca8"
+      "buildHash": "5b474a808d2f"
     }
   }
 }

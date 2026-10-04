@@ -3,7 +3,7 @@
   "_key": "!items!6a16cf31e32398a7",
   "name": "Damaging Whispers",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_damaging_whispers_icon.webp",
   "system": {
     "description": "<p>As a Boost to Hallowfell’s Whisper, if the target fails their Fate Check against Hallowfell’s Whisper, they take 2D6 damage. Increase the damage dealt this way to 2D8 at Level 5, and 2D10 at Level 11.</p>",
     "tag": "boost",
@@ -61,7 +61,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Astrology[3]",
-      "buildHash": "be573bb35554"
+      "buildHash": "3abba607039a"
     }
   }
 }

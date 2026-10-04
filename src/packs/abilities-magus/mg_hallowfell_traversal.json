@@ -3,7 +3,7 @@
   "_key": "!items!dcfcc33ba147ad30",
   "name": "Hallowfell Traversal",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_hallowfell_traversal_icon.webp",
   "system": {
     "description": "<p>As a Boost to a Move action, expend a Spell Slot. You may walk through all other creatures as part of this Move action, and do not provoke attacks of Opportunity with this Move action. If you are Swallowed by a creature, you may walk outside of them with Hallowfell Traversal without making a Trait Check against any effects related to being swallowed.</p>",
     "tag": "boost",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Divination",
-      "buildHash": "427bc3f7e70e"
+      "buildHash": "ec099a3ab02c"
     }
   }
 }

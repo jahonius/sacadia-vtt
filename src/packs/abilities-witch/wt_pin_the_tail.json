@@ -3,7 +3,7 @@
   "_key": "!items!a0b471971a6850e1",
   "name": "Pin the Tail",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_pin_the_tail_icon.webp",
   "system": {
     "description": "<p>Choose an enemy target with 2 Pin within 30ft of you. On their next turn, you choose which arm the target must treat as Pinned.</p>",
     "tag": "action",
@@ -37,7 +37,7 @@
       "catalogId": "wt_pin_the_tail",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "030a3dd14fd4"
+      "buildHash": "601dc28c5450"
     }
   }
 }

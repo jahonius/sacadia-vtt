@@ -10,7 +10,7 @@
     "weight": 0,
     "value": 200,
     "equipped": false,
-    "traits": "",
+    "traits": "heavy",
     "slots": 3,
     "storage": "ris",
     "providesSis": 0,
@@ -33,7 +33,7 @@
     "sacadia": {
       "catalogId": "halberd",
       "kind": "weapon",
-      "buildHash": "4e39f4af5a45"
+      "buildHash": "19e18e5a1f4f"
     }
   }
 }

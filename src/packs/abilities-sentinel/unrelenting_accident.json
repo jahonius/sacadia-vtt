@@ -3,7 +3,7 @@
   "_key": "!items!b2b00152e5134167",
   "name": "Unrelenting Accident",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/unrelenting_accident_icon.webp",
   "system": {
     "description": "<p>When you make a reaction attack against a creature using a ranged weapon and are Surrounded, increase the dice type by one type.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "unrelenting_accident",
-      "buildHash": "6c9c1a5eae70"
+      "buildHash": "c6ca89729f6c"
     }
   }
 }

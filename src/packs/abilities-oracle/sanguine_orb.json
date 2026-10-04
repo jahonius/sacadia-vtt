@@ -3,7 +3,7 @@
   "_key": "!items!4128883b7a7247fa",
   "name": "Sanguine Orb",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/sanguine_orb_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sanguine_orb_icon.webp",
   "system": {
     "description": "<p>Roll XD4 damage, where X is your Proficiency. Take X damage. Choose a point within 60ft of you. All enemies within 5x your Madness in feet of that point roll a Fate Check or take that damage (successful Fate Check halves). The damage dealt this way becomes XD6 at level 5, and XD8 at level 11.</p>",
     "tag": "action",
@@ -76,7 +76,7 @@
           "ladderIndex": 3
         }
       ],
-      "buildHash": "11bbf4d65b09"
+      "buildHash": "1fe0090c55d0"
     }
   }
 }

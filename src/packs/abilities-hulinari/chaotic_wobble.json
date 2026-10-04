@@ -3,7 +3,7 @@
   "_key": "!items!57341f3c913179c1",
   "name": "Chaotic Wobble",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/chaotic_wobble_icon.webp",
   "system": {
     "description": "<p>You may expend a Herd Point as a Boost to any action. You do not provoke attacks of opportunity on that action.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "chaotic_wobble",
       "transcribed": true,
-      "buildHash": "23b22a676e61"
+      "buildHash": "cb831e98d6ba"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!0259e62272efc111",
   "name": "Toxic Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_toxic_touch_icon.webp",
   "system": {
     "description": "<p>Until the end of your turn, all Hemorrhage you give stacks with other levels a target might have from any source.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_toxic_touch",
       "transcribed": true,
       "lore": true,
-      "buildHash": "97427bd84ca7"
+      "buildHash": "34cb87e68725"
     }
   }
 }

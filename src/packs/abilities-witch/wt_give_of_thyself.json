@@ -3,7 +3,7 @@
   "_key": "!items!698414963a31d238",
   "name": "Give of Thyself",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_give_of_thyself_icon.webp",
   "system": {
     "description": "<p>Choose one willing allied target with levels of an Adversarial Condition within 5ft of you. They immediately make X Trait Checks against levels of the Condition, where X is a number up to half your Proficiency, rounded up. You may choose for them to make more Trait Checks than they have levels of the Condition. They remove a level of the Condition for each successful trait check made. For each Trait Check they fail, you gain 1 Fatigue.</p>",
     "tag": "action",
@@ -147,7 +147,7 @@
       "catalogId": "wt_give_of_thyself",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "f56c3ac7e73e"
+      "buildHash": "cd4c56836624"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!201a74fc5c5eb4bc",
   "name": "Favored Enemy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/favored_enemy_icon.webp",
   "system": {
     "description": "<p>Select an enemy type when you take this: Beasts, Great Beasts, Awoken Flora, Folk Fae, Wild Fae, Fontmade, Undead, or Demons. You can use a Mind action to make a Wiles Check against their Check DC. If you pass, choose to learn their To-Hit modifier, in which traits (if any) they have Trait Expertise, or a random ability (of abilities they have used during this combat).</p>",
     "tag": "action",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "favored_enemy",
-      "buildHash": "2f5cfc437b90"
+      "buildHash": "ec946f811657"
     }
   }
 }

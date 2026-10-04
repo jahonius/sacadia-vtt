@@ -3,7 +3,7 @@
   "_key": "!items!786cd5253c8b3231",
   "name": "Step and Stop",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_step_and_stop_icon.webp",
   "system": {
     "description": "<p>When you deal damage on your turn to at least 3 unique enemies, recover limb exhaustion on one if it is exhausted.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_step_and_stop",
-      "buildHash": "7828c59dd8e7"
+      "buildHash": "7e5112c7084c"
     }
   }
 }

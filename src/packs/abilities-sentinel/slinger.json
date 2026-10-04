@@ -3,7 +3,7 @@
   "_key": "!items!31fa02555a702d58",
   "name": "Slinger",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/slinger_icon.webp",
   "system": {
     "description": "<p>You may make a ranged attack with your sling. If you hit, instead of dealing damage attempt to give the target X Fatigue, where X is half your Proficiency (rounded up). Finesse check negates.</p>",
     "tag": "action",
@@ -89,7 +89,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "slinger",
-      "buildHash": "29cc2cfbadde"
+      "buildHash": "af7e5b60e2a3"
     }
   }
 }

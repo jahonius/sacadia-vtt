@@ -3,7 +3,7 @@
   "_key": "!items!3a1c10bb74414a6c",
   "name": "Greater Death Ward",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_death_ward_icon.webp",
   "system": {
     "description": "<p>When you cast Death Ward, choose up to 3 targets. Focus ends when any of the 3 would drop below 0HP. If an effect would cause multiple Focus targets to drop below 0HP, they all simultaneously trigger Death Ward.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Divination Talent",
-      "buildHash": "37f07ef66891"
+      "buildHash": "13e67b495491"
     }
   }
 }

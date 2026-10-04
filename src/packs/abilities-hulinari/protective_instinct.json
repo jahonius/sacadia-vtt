@@ -3,7 +3,7 @@
   "_key": "!items!4fa93d8d5eb07775",
   "name": "Protective Instinct",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/protective_instinct_icon.webp",
   "system": {
     "description": "<p>Expend a Herd point and choose a number of creatures equal to your Proficiency within 15ft of you. Each creature chosen is given the effects of half cover until the start of your next turn. You may not use this on an ally on your back through Pack Mule.</p>",
     "tag": "action",
@@ -41,7 +41,7 @@
     "sacadia": {
       "catalogId": "protective_instinct",
       "transcribed": true,
-      "buildHash": "95347b5fcb92"
+      "buildHash": "cdc27da60bc1"
     }
   }
 }

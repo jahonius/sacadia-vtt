@@ -3,7 +3,7 @@
   "_key": "!items!b71cb155432cc173",
   "name": "Mindcage",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/mindcage_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mindcage_icon.webp",
   "system": {
     "description": "<p>When you critically hit a target with an attack, you may make a critical effect to give them one level of Fatigue if they do not already have one.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "mindcage",
-      "buildHash": "0a2a29431519"
+      "buildHash": "bffa7c7764db"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!42d7059f7c01a23d",
   "name": "Reposition",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/reposition_icon.webp",
   "system": {
     "description": "<p>As a reaction, you may move 5ft into an unoccupied space. You may still provoke attacks of opportunity with this move unless you have Steadied, in which case you do not.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reposition",
-      "buildHash": "93ef0a100a7f"
+      "buildHash": "1e0e22a3b96e"
     }
   }
 }

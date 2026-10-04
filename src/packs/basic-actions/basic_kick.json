@@ -3,7 +3,7 @@
   "_key": "!items!b20816fe0b701c3e",
   "name": "Kick",
   "type": "ability",
-  "img": "icons/svg/combat.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_kick_icon.webp",
   "system": {
     "description": "<p>Choose a single target within 5ft of you. They attempt a Power Check against your Check DC or are moved 5ft away from you into a free square, if there is a free square they can enter, or is knocked prone if there is not a free square behind them.</p>",
     "tag": "action",
@@ -44,7 +44,7 @@
     "sacadia": {
       "catalogId": "basic_kick",
       "basic": true,
-      "buildHash": "7a37e36b1486"
+      "buildHash": "92380bd98b37"
     }
   }
 }

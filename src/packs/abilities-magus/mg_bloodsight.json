@@ -3,7 +3,7 @@
   "_key": "!items!4803eef324a18205",
   "name": "Bloodsight",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bloodsight_icon.webp",
   "system": {
     "description": "<p>Expend X Spell Slots (X is a number up to your Proficiency) and choose a target within 60ft. That target makes Fate Checks against X levels of Hemorrhage. For each level of Hemorrhage they take, gain 1 Spell Slot back.</p>",
     "tag": "action",
@@ -66,7 +66,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Oracle with Soulbinding",
-      "buildHash": "022fd5e7422b"
+      "buildHash": "303724e13000"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!4b92233645defbd2",
   "name": "Celestial Spheres",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/celestial_spheres_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/celestial_spheres_icon.webp",
   "system": {
     "description": "<p>When you use a Focus action to maintain Focus on Stygian Abyss, Voidsphere, or Draining Aura and move the center of that sphere, you may move it 20ft instead of 10ft.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "celestial_spheres",
-      "buildHash": "7d5b5232ddbc"
+      "buildHash": "da274709fd10"
     }
   }
 }

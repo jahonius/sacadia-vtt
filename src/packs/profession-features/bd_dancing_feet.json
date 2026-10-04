@@ -3,7 +3,7 @@
   "_key": "!items!c56e08461edbe2d8",
   "name": "Dancing Feet",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/bd_dancing_feet_icon.webp",
   "system": {
     "description": "<p>Increase your Move speed by 5ft. You can freely move through any square occupied by another creature, though you cannot end your turn on this square.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
       "catalogId": "bd_dancing_feet",
       "feature": true,
       "level": 7,
-      "buildHash": "ed930d8d91d9"
+      "buildHash": "7b1dcfe8cfcb"
     }
   }
 }

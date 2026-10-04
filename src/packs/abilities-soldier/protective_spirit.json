@@ -3,7 +3,7 @@
   "_key": "!items!8d52bdabac788813",
   "name": "Protective Spirit",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/protective_spirit_icon.webp",
   "system": {
     "description": "<p>You may use Reposition in response to an enemy moving to within 5ft of an ally who is within 5ft of you. If you do so, switch places with that ally. This move cannot provoke an attack of opportunity on your ally.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "protective_spirit",
-      "buildHash": "ed2dc77f6bc3"
+      "buildHash": "956bd12c25f5"
     }
   }
 }

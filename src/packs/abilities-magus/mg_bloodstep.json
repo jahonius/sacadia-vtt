@@ -3,7 +3,7 @@
   "_key": "!items!1fcc68f3c525f08e",
   "name": "Bloodstep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bloodstep_icon.webp",
   "system": {
     "description": "<p>Expend one Spell Slot when you initiate Bloodstep. Every turn that you maintain Focus on Blood Step, you may expense 1D10 HP to leave a spot of blood on the ground. Mark it on the map. As a Boost to a move action when you are on a point marked with blood, you may move to another point marked by your blood on the map. You may not take other creatures with you when you do this.</p>",
     "tag": "focus",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Demon Lore[2]",
-      "buildHash": "f8e3ed36649a"
+      "buildHash": "16fa35344084"
     }
   }
 }

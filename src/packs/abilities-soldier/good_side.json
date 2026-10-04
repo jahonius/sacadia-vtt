@@ -3,7 +3,7 @@
   "_key": "!items!5404b6527d784022",
   "name": "Good Side",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/good_side_icon.webp",
   "system": {
     "description": "<p>Increase the benefit of Reduced Threat from half your Courage to your Courage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "good_side",
-      "buildHash": "e278fca2fc14"
+      "buildHash": "537c49152a58"
     }
   }
 }

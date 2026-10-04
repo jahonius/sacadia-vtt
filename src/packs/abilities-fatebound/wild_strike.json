@@ -3,7 +3,7 @@
   "_key": "!items!bd7202e7d8d8acba",
   "name": "Wild Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/wild_strike_icon.webp",
   "system": {
     "description": "<p>When you hold a versatile weapon in each hand, you may make a melee attack with each weapon using a single AP. Each attack must be made against a different target. This action exhausts .</p>",
     "tag": "action",
@@ -74,7 +74,7 @@
     "sacadia": {
       "catalogId": "wild_strike",
       "transcribed": true,
-      "buildHash": "e143b1f4315a"
+      "buildHash": "ce0ee879aff6"
     }
   }
 }

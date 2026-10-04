@@ -3,7 +3,7 @@
   "_key": "!items!a474c6d31df6e330",
   "name": "Armor Mastery (Oracle)",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_armor_oracle_icon.webp",
   "system": {
     "description": "<p>Gain +2 to your PD when you do not wear any physical armor.</p>",
     "tag": "passive",
@@ -49,7 +49,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "faae30c344a1"
+      "buildHash": "1e372dc28822"
     }
   }
 }

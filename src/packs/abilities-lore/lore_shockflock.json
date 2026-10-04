@@ -3,7 +3,7 @@
   "_key": "!items!121834a32a21c570",
   "name": "Shockflock",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_shockflock_icon.webp",
   "system": {
     "description": "<p>You explode in a viscious cloud. Expend a Lore Point. Every enemy within 30ft of you makes a Wiles Check against your Check DC. If they fail, they are knocked Prone and given Surprise until their turn starts or they take damage.</p>",
     "tag": "action",
@@ -65,7 +65,7 @@
       "catalogId": "lore_shockflock",
       "transcribed": true,
       "lore": true,
-      "buildHash": "e44283ed7f95"
+      "buildHash": "80f3f7fa2d5d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d5cfbb79ed226284",
   "name": "Touch the Flame",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_touch_the_flame_icon.webp",
   "system": {
     "description": "<p>Expend a Divine Touch point and touch a target within 5ft of you who has levels of Hemorrhage.They take Hemorrhage damage immediately for their level of Hemorrhage. Then, remove one level of Hemorrhage that they possess.</p>",
     "tag": "action",
@@ -50,7 +50,7 @@
       "catalogId": "wt_touch_the_flame",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "4a662f64aff1"
+      "buildHash": "4c951078392f"
     }
   }
 }

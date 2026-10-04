@@ -3,7 +3,7 @@
   "_key": "!items!5a15e6e8e6ade2e5",
   "name": "Rousing Success",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/rousing_success_icon.webp",
   "system": {
     "description": "<p>You may use this on any action before or after rolling. If you do, expend one lore point. You critically succeed at that action.</p>",
     "tag": "boost",
@@ -49,7 +49,7 @@
       "catalogId": "rousing_success",
       "feature": true,
       "level": 4,
-      "buildHash": "88ea98908a87"
+      "buildHash": "f961491995a4"
     }
   }
 }

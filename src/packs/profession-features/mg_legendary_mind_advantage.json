@@ -3,7 +3,7 @@
   "_key": "!items!1851fffb9531d2d7",
   "name": "Mastery of the Mind (Advantage)",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_legendary_mind_advantage_icon.webp",
   "system": {
     "description": "<p>Gain 1X Advantage to all Wiles and Fate Checks you make.</p>",
     "tag": "passive",
@@ -61,7 +61,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "46696ed388b8"
+      "buildHash": "b86152c34522"
     }
   }
 }

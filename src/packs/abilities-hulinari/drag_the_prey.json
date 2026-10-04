@@ -3,7 +3,7 @@
   "_key": "!items!16db7cf8d1a20e0b",
   "name": "Drag the Prey",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/drag_the_prey_icon.webp",
   "system": {
     "description": "<p>Once per turn, you may attempt to drag a prone target with you as you move up to half speed (rounded up). They make a Finesse Check against the effect.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
     "sacadia": {
       "catalogId": "drag_the_prey",
       "transcribed": true,
-      "buildHash": "d436a76a9f16"
+      "buildHash": "e5572b3874e0"
     }
   }
 }

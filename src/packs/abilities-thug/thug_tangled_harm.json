@@ -3,7 +3,7 @@
   "_key": "!items!f2b4c581d8bcdf01",
   "name": "Tangled Harm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_tangled_harm_icon.webp",
   "system": {
     "description": "<p>As a Boost to Harm, increase the damage dice of Harm by two types. Then, reduce the target's Pin by one.</p>",
     "tag": "boost",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_tangled_harm",
-      "buildHash": "e210c13d05d9"
+      "buildHash": "30d9c1550b05"
     }
   }
 }

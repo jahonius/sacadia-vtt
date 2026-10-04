@@ -3,7 +3,7 @@
   "_key": "!items!7aefb3bf93c1272d",
   "name": "Gorier",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/gorier_icon.webp",
   "system": {
     "description": "<p>(Prerrequisite: Power 4). Increase the damage of Headbutt by 1 dice type.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "gorier",
       "transcribed": true,
-      "buildHash": "05cfb4742a4e"
+      "buildHash": "894e2c42c4da"
     }
   }
 }

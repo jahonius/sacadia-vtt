@@ -3,7 +3,7 @@
   "_key": "!items!ce9c2198ad3da39e",
   "name": "Nicking Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/nicking_touch_icon.webp",
   "system": {
     "description": "<p>If you critically hit with a melee attack using a piercing divine weapon and choose to maximize damage dealt, treat the damage dice of your weapon as one dice type higher for the purposes of maximizing that damage.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "nicking_touch",
       "transcribed": true,
-      "buildHash": "7b56bd1da743"
+      "buildHash": "50487baad807"
     }
   }
 }

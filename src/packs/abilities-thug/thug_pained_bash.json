@@ -3,7 +3,7 @@
   "_key": "!items!786e8b710991ed9f",
   "name": "Pained Bash",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_pained_bash_icon.webp",
   "system": {
     "description": "<p>You may make a melee attack against an enemy by bashing them with your skull. If you hit, lose X HP and deal XD4+Power damage, where X is equal to your Proficiency.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_pained_bash",
-      "buildHash": "367b5eec4f61"
+      "buildHash": "967b2ac7cd3a"
     }
   }
 }

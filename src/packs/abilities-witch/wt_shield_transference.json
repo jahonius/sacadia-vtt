@@ -3,7 +3,7 @@
   "_key": "!items!ce8d471309eb6259",
   "name": "Shield Transference",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_shield_transference_icon.webp",
   "system": {
     "description": "<p>Choose an ally within 5ft of you when you initiate this. When you do, choose one type of Defense they possess: MD, TD, or PD. Reduce that Defense by half your Fate, rounded up for as long as you maintain Focus (the chosen defense can drop below the target’s AD through this effect). Choose a different Defense from: MD, TD, or PD. Increase that Defense by half your Fate, rounded up. Every turn you maintain Focus on Shield Transference, you can only renew Focus when you are within 5ft of that ally.</p>",
     "tag": "focus",
@@ -419,7 +419,7 @@
       "catalogId": "wt_shield_transference",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "710677579a82"
+      "buildHash": "92d243f18dcd"
     }
   }
 }

@@ -21,6 +21,7 @@ import { PREFIX, until, fromCatalog, stubDialogs, fixture } from './support.mjs'
 import { shortRest, longRest } from '../rules/rest.mjs';
 import { registerSweeps } from './sweep.mjs';
 import { registerFlows } from './flows.mjs';
+import { registerAdventure, registerAdventureLook } from './adventure.mjs';
 
 function registerBatches(quench) {
   const opts = (displayName) => ({ displayName: `Sacadia: ${displayName}` });
@@ -463,5 +464,7 @@ function registerBatches(quench) {
 Hooks.on('quenchReady', (quench) => {
   registerBatches(quench);
   registerFlows(quench);
+  registerAdventure(quench);
+  registerAdventureLook(quench);
   registerSweeps(quench);
 });

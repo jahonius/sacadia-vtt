@@ -3,7 +3,7 @@
   "_key": "!items!16b66814116c2357",
   "name": "Greater Bleed",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_greater_bleed_icon.webp",
   "system": {
     "description": "<p>Increase the Dice Type of Hemorrhage by one additional dice type when you use Bleeding Bane.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_greater_bleed",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "84fb93270871"
+      "buildHash": "39c0c72c149a"
     }
   }
 }

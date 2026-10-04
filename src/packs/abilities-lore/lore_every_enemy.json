@@ -3,7 +3,7 @@
   "_key": "!items!db926d8b6d583ed5",
   "name": "Every Enemy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_every_enemy_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point. Every enemy within 60ft of you makes a Finesse Check against your Check DC. On a failed check, they take X piercing damage (where X is half your Proficiency rounded up, times the number of enemies within 60ft of you). Treat Swarm enemies as a single entity for this effect.</p>",
     "tag": "lore",
@@ -64,7 +64,7 @@
       "catalogId": "lore_every_enemy",
       "transcribed": true,
       "lore": true,
-      "buildHash": "7a4c016522fa"
+      "buildHash": "4c7b4d354d72"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!3f6eadb295ad1e8a",
   "name": "Thunderwave",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/thunderwave_icon.webp",
   "system": {
     "description": "<p>Increase the range of Body Slam to 10ft.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "thunderwave",
       "transcribed": true,
-      "buildHash": "fc5e997b3ca9"
+      "buildHash": "42c0347f0703"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!f2dddf1df175f23b",
   "name": "Weapon Defense",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/weapon_defense_icon.webp",
   "system": {
     "description": "<p>As an action while wielding a two-handed weapon, you may add an additional +2 to your PD and TD until the start of your next turn.</p>",
     "tag": "action",
@@ -68,7 +68,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "weapon_defense",
-      "buildHash": "3845fa24f3cc"
+      "buildHash": "2b10bdbc24ca"
     }
   }
 }

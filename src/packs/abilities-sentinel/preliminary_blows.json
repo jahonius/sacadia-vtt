@@ -3,7 +3,7 @@
   "_key": "!items!fd0059812c4b61cd",
   "name": "Preliminary Blows",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/preliminary_blows_icon.webp",
   "system": {
     "description": "<p>As a reaction while wielding a bow, make a ranged attack against an enemy that moves to within 15ft of you from further away.</p>",
     "tag": "reaction",
@@ -52,7 +52,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "preliminary_blows",
-      "buildHash": "cc12e588393d"
+      "buildHash": "79a9c882e831"
     }
   }
 }

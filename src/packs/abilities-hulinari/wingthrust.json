@@ -3,7 +3,7 @@
   "_key": "!items!d086e667896b9d2a",
   "name": "Wingthrust",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/wingthrust_icon.webp",
   "system": {
     "description": "<p>When you use Guiding Wingbeats, additionally increase damage they deal on a successful to-hit by +X.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "wingthrust",
       "transcribed": true,
-      "buildHash": "959fb31b2f06"
+      "buildHash": "524dce4ca244"
     }
   }
 }

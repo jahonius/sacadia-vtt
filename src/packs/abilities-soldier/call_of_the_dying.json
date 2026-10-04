@@ -3,7 +3,7 @@
   "_key": "!items!9d78bf3c105e5cda",
   "name": "Call of the Dying",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_the_dying_icon.webp",
   "system": {
     "description": "<p>Expend one call point as a reaction when an ally within 15ft of you begins their turn while Wounded. If you do, they do not increase their Exhaustion by 1.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_the_dying",
-      "buildHash": "08764565b4be"
+      "buildHash": "55fee56ff6cb"
     }
   }
 }

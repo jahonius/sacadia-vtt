@@ -3,7 +3,7 @@
   "_key": "!items!27a98eb806b0f004",
   "name": "Calculations",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_calculations_icon.webp",
   "system": {
     "description": "<p>Expend X Arrangement points (where X can be any number up to your Proficiency). Move up to your move speed. As you move, attempt to give Surprise to X targets within 5ft of you at any point of this movement. They roll Wiles Checks against the effect.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_calculations",
-      "buildHash": "806f09c53d8b"
+      "buildHash": "f85782e3a684"
     }
   }
 }

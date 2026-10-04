@@ -3,7 +3,7 @@
   "_key": "!items!cae998d19f5e519c",
   "name": "Steed and Rider",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/steed_and_rider_icon.webp",
   "system": {
     "description": "<p>When you use Carrying the Team to give an ally advantage, you may give the attack 2X advantage instead of 1X. If you do this, gain 1 Fatigue.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "steed_and_rider",
       "transcribed": true,
-      "buildHash": "c5cc886a5cfb"
+      "buildHash": "4d39477e781b"
     }
   }
 }

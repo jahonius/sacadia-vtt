@@ -3,7 +3,7 @@
   "_key": "!items!128c80be22eb18af",
   "name": "Maneuver Cloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/maneuver_cloud_icon.webp",
   "system": {
     "description": "<p>When you use Clouded Foe, you may use an action to attempt to move a target from one part of your Swarm to another provided their movement through the Cloud would not pass through a square occupied by another creature. They make a Finesse Check against this. This move triggers reaction attacks.</p>",
     "tag": "action",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "maneuver_cloud",
       "transcribed": true,
-      "buildHash": "1f0a219b97b0"
+      "buildHash": "c439a62aed3a"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!893ad41e52cbc84b",
   "name": "Adaptive",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/adaptive_icon.webp",
   "system": {
     "description": "<p>Every time you level, you may return at most two abilities or talents for skill points instead of one. You may not exchange this ability for combat skill points at any time.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "adaptive",
-      "buildHash": "f728b2f4ff08"
+      "buildHash": "46a02fb61c76"
     }
   }
 }

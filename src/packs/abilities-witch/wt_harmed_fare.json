@@ -3,7 +3,7 @@
   "_key": "!items!5ebfc104141b8eda",
   "name": "Harmed Fare",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_harmed_fare_icon.webp",
   "system": {
     "description": "<p>You may use Balanced Fare on an enemy target within 5ft who would hit on their attack against you or an ally. If you do, take XD6 damage, where X is equal to the difference between their to-hit rolled and the Defense they target. Then, the enemy target misses. You cannot use this to prevent a natural 20 from critically hitting.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_harmed_fare",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "fbf1e27d5d9b"
+      "buildHash": "43a0a8e930b5"
     }
   }
 }

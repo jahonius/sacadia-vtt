@@ -3,7 +3,7 @@
   "_key": "!items!244801b27ffcd3b0",
   "name": "Bladius",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/bladius_icon.webp",
   "system": {
     "description": "<p>Increase the radius of Blade Aura from 5ft to 10ft.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "bladius",
       "transcribed": true,
-      "buildHash": "06d6be00efc3"
+      "buildHash": "e3269d582ffe"
     }
   }
 }

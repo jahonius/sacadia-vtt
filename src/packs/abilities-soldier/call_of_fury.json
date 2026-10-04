@@ -3,7 +3,7 @@
   "_key": "!items!0c172d678bc365c5",
   "name": "Call of Fury",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_fury_icon.webp",
   "system": {
     "description": "<p>Expend one call point and choose one ally within 15ft of you, as well as a number of unspent AP up to half your maximum AP (rounded up). Expend those AP now. On your chosen ally's next turn, they receive additional AP equal to the number you expended.</p>",
     "tag": "action",
@@ -52,7 +52,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_fury",
-      "buildHash": "2811b19677ae"
+      "buildHash": "be6ac4d1e8be"
     }
   }
 }

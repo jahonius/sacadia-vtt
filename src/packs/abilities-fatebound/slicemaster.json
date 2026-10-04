@@ -3,7 +3,7 @@
   "_key": "!items!85d5b42f0b25817d",
   "name": "Slicemaster",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/slicemaster_icon.webp",
   "system": {
     "description": "<p>When you wield a slashing divine weapon and a hit with a melee attack reduces a target to 0HP, your weapon cleaves. Choose another target in range of your divine weapon. The remainder of your damage is dealt to them if the original to-hit roll would hit this new target. Continue cleaving until your remaining damage reaches zero.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "slicemaster",
       "transcribed": true,
-      "buildHash": "f212c77f566c"
+      "buildHash": "a649e2b92b6c"
     }
   }
 }

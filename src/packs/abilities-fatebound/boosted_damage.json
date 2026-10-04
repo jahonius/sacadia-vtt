@@ -3,7 +3,7 @@
   "_key": "!items!ff33ed693ea65c29",
   "name": "Boosted Damage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boosted_damage_icon.webp",
   "system": {
     "description": "<p>As a Boost to an attack made with a divine weapon, increase the damage dice dealt by this weapon by one type if you hit.</p>",
     "tag": "boost",
@@ -54,7 +54,7 @@
     "sacadia": {
       "catalogId": "boosted_damage",
       "transcribed": true,
-      "buildHash": "83f0b4c3cc1a"
+      "buildHash": "cd1db112a01b"
     }
   }
 }

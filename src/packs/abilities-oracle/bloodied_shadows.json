@@ -3,7 +3,7 @@
   "_key": "!items!e8926322fbab9e8b",
   "name": "Bloodied Shadows",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_shadows_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodied_shadows_icon.webp",
   "system": {
     "description": "<p>When you have less than half HP, increase the damage dice dealt by Forbidden Knowledge by one dice type (e.g., XD8 damage becomes XD10, or XD10 becomes 2XD6).</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bloodied_shadows",
-      "buildHash": "c146f5fa7c7c"
+      "buildHash": "1aca1a53e3a6"
     }
   }
 }

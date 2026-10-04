@@ -3,7 +3,7 @@
   "_key": "!items!7c1b57f9ed92c813",
   "name": "Waspnest",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_waspnest_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target when you initiate this. They make a Fate Check against your Check DC. If they fail, for as long as you maintain Focus on Waspnest, Sting increases the damage they take by 2 per level, instead of 1. They may make Trait Checks against this effect with a Make Trait Check action.</p>",
     "tag": "focus",
@@ -71,7 +71,7 @@
       "catalogId": "wt_waspnest",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "b24884a4b5dd"
+      "buildHash": "68edfe62d341"
     }
   }
 }

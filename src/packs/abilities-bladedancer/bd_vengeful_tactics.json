@@ -3,7 +3,7 @@
   "_key": "!items!4781f4a8806fc2d1",
   "name": "Vengeful Tactics",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_vengeful_tactics_icon.webp",
   "system": {
     "description": "<p>If an enemy successfully uses an attack of opportunity to deal damage to you on your turn, treat them as a new (separate) target even if you have already dealt damage to them or forced them to roll against a trait check this turn.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_vengeful_tactics",
-      "buildHash": "8e8ff10a2209"
+      "buildHash": "958adc803c9e"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!20c61193a890578d",
   "name": "Saptouched",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_saptouched_icon.webp",
   "system": {
     "description": "<p>You are immune to the Pin condition. If a target would attempt to give you Pin, you may expend a Lore Point to force them to make Checks against Pin equal to the number of levels they try to give you.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "catalogId": "lore_saptouched",
       "transcribed": true,
       "lore": true,
-      "buildHash": "cd5688c3d99a"
+      "buildHash": "9aa3c22edb3b"
     }
   }
 }

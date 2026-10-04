@@ -3,7 +3,7 @@
   "_key": "!items!31e4185790470ded",
   "name": "Pinning Bolt",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/pinning_bolt_icon.webp",
   "system": {
     "description": "<p>If you critically hit with a ranged attack using a crossbow, you may make the critical effect be that you give one level of Pin.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pinning_bolt",
-      "buildHash": "0d1fdb1c949f"
+      "buildHash": "93a1543e7520"
     }
   }
 }

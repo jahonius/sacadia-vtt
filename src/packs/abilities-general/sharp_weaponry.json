@@ -3,7 +3,7 @@
   "_key": "!items!7a367ab54719d33b",
   "name": "Sharp Weaponry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/sharp_weaponry_icon.webp",
   "system": {
     "description": "<p>Choose one weapon type (e.g., bows, swords) you have training in. Increase the base damage die of this weapon by one type.</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sharp_weaponry",
-      "buildHash": "0e6b874db33d"
+      "buildHash": "8bff45644a9b"
     }
   }
 }

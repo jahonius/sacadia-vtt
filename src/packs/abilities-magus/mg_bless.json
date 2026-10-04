@@ -3,7 +3,7 @@
   "_key": "!items!9913c9d4325a5f35",
   "name": "Bless",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bless_icon.webp",
   "system": {
     "description": "<p>Expend X Spell Slots, where X is a number up to your Proficiency. Choose X allies within 30ft of you that you can see. For as long as you maintain Focus, all those allies add your Fate to all Trait Checks and Attack Rolls that they make.</p>",
     "tag": "focus",
@@ -58,7 +58,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Astrology[2]",
-      "buildHash": "d0be182d7b68"
+      "buildHash": "1ceac39bdf3c"
     }
   }
 }

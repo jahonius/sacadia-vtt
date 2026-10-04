@@ -3,7 +3,7 @@
   "_key": "!items!feb91b7cd8c993c2",
   "name": "Biting Pankration",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_biting_pankration_icon.webp",
   "system": {
     "description": "<p>When you attempt to give a target Pin after making at least 4 successful melee attacks against that target in a turn, as a boost to giving them Pin you may deal 1D6 damage for each level of Pin that the target takes. Increase damage dealt this way to 1D8 per level of Pin at level 11.</p>",
     "tag": "boost",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_biting_pankration",
-      "buildHash": "bc5a849526c0"
+      "buildHash": "dc68738a80b1"
     }
   }
 }

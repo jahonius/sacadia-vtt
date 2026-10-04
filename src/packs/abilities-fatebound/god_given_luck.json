@@ -3,7 +3,7 @@
   "_key": "!items!cd133b96a8210390",
   "name": "God-given Luck",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/god_given_luck_icon.webp",
   "system": {
     "description": "<p>Increase the Fumble given to each target when using Lucky Break by one dice type.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "god_given_luck",
       "transcribed": true,
-      "buildHash": "5d993ca12c6b"
+      "buildHash": "eda05dc3b081"
     }
   }
 }

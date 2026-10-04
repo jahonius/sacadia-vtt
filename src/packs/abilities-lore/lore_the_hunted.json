@@ -3,7 +3,7 @@
   "_key": "!items!6aa4c8ddef860441",
   "name": "The Hunted",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_the_hunted_icon.webp",
   "system": {
     "description": "<p>As a Boost to Beastly Presence, expend a Lore Point. They automatically fail all Trait Checks against the effect.</p>",
     "tag": "boost",
@@ -57,7 +57,7 @@
       "catalogId": "lore_the_hunted",
       "transcribed": true,
       "lore": true,
-      "buildHash": "aa6be11b4ba3"
+      "buildHash": "6f0629cd6ec4"
     }
   }
 }

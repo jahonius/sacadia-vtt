@@ -3,7 +3,7 @@
   "_key": "!items!3dea995873ab2a7d",
   "name": "Threeleaf Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_threeleaf_touch_icon.webp",
   "system": {
     "description": "<p>You may use Fourleaf Touch on an enemy. If you do, reduce their Check DC by half your Fate Score, rounded up, instead of increasing it. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_threeleaf_touch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "5854feea1063"
+      "buildHash": "2289d4549598"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!92b4418f9eda84c1",
   "name": "Bleeding Dance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_bleeding_dance_icon.webp",
   "system": {
     "description": "<p>When you attempt to give Hemorrhage through Bleedstep, attempt to give levels equal to half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_bleeding_dance",
-      "buildHash": "08127080eef2"
+      "buildHash": "ee8f35af2842"
     }
   }
 }

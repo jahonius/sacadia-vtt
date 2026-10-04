@@ -3,7 +3,7 @@
   "_key": "!items!f16134c49bcc1370",
   "name": "Favoritism",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/favoritism_icon.webp",
   "system": {
     "description": "<p>Increase all damage you deal to your Favored Enemy type by your Wiles score.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "favoritism",
-      "buildHash": "49698ec0c3dd"
+      "buildHash": "019508ccb9ea"
     }
   }
 }

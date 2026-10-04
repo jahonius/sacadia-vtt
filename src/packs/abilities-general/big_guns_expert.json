@@ -3,7 +3,7 @@
   "_key": "!items!75bb0816a207ae5c",
   "name": "Big Guns Expert",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/big_guns_expert_icon.webp",
   "system": {
     "description": "<p>Choose one two-handed melee weapon you wield. Increase the damage dice of the chosen weapon by one type.</p>",
     "tag": "passive",
@@ -61,7 +61,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "big_guns_expert",
-      "buildHash": "6eb4ffc10747"
+      "buildHash": "b15fb60c4f97"
     }
   }
 }

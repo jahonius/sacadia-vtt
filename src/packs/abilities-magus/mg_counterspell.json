@@ -3,7 +3,7 @@
   "_key": "!items!aacd1d088f34cfa4",
   "name": "Counterspell",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_counterspell_icon.webp",
   "system": {
     "description": "<p>In reaction to a target who you can see and hear casting a spell or using a mental attack within 60ft of you, expend a Spell Slot and force them to make a Wiles Check. If they fail the Wiles Check against your Check DC, cancel the effects of that spell or mental attack. They still expend AP and exhaust limbs as though they used that ability.</p>",
     "tag": "reaction",
@@ -57,7 +57,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Magic Detection Talent",
-      "buildHash": "f92926fc7e35"
+      "buildHash": "0e383a8e32a5"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!85f570ddadbff433",
   "name": "Heart of Pine",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_heart_of_pine_icon.webp",
   "system": {
     "description": "<p>When you focus on Needlepine, decrease the dice type of the target’s weapon by an additional dice type.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_heart_of_pine",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "dcf5be9135e7"
+      "buildHash": "37e8ebafbca2"
     }
   }
 }

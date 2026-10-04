@@ -3,7 +3,7 @@
   "_key": "!items!8a9de3b710eb50e2",
   "name": "Sweep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/sweep_icon.webp",
   "system": {
     "description": "<p>All enemies within 5 feet of you roll a Power Check against your Check DC. Any enemies who fail are knocked Prone.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sweep",
-      "buildHash": "45dc4cc07310"
+      "buildHash": "f68df648a36c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!ef8527f9202ae6c1",
   "name": "Slingstunner",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/slingstunner_icon.webp",
   "system": {
     "description": "<p>Once per quick rest when you make an attack using Slinger, attempt to give the target levels of Fatigue equal to your Proficiency.</p>",
     "tag": "passive",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "slingstunner",
-      "buildHash": "d1fbc7781e96"
+      "buildHash": "858a702cc777"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!4690c8275e6e9fae",
   "name": "Bloodlet",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodlet_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodlet_icon.webp",
   "system": {
     "description": "<p>When you initiate this ability, lose HP equal to your Fate. For as long as you maintain Bloodlet, treat your Madness as enduring (i.e., do not lose a level of Madness at the end of each turn). Instead, reduce your HP by your Madness at the end of each turn.</p>",
     "tag": "focus",
@@ -45,7 +45,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bloodlet",
-      "buildHash": "2bea74516d60"
+      "buildHash": "61f59908c408"
     }
   }
 }

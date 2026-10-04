@@ -3,7 +3,7 @@
   "_key": "!items!9fd8f8fc847829c7",
   "name": "Starter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_starter_icon.webp",
   "system": {
     "description": "<p>Whenever you Pin someone using 'Natural Wrestler', you may use a Boost to attempt to give one extra level of the condition (to a maximum of your Proficiency).</p>",
     "tag": "boost",
@@ -46,7 +46,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_starter",
-      "buildHash": "87b1ae690251"
+      "buildHash": "188e98ef72a3"
     }
   }
 }

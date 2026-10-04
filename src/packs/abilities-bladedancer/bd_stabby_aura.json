@@ -3,7 +3,7 @@
   "_key": "!items!75d7308d72b1c6c8",
   "name": "Stabby Aura",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_stabby_aura_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice dealt by Blade Aura by one type.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_stabby_aura",
-      "buildHash": "a3b7ffe10a4c"
+      "buildHash": "36610eb82fe6"
     }
   }
 }

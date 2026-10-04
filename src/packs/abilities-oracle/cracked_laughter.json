@@ -3,7 +3,7 @@
   "_key": "!items!03890240c25f152d",
   "name": "Cracked Laughter",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/cracked_laughter_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/cracked_laughter_icon.webp",
   "system": {
     "description": "<p>Instead of rolling to determine the Madness you gain from a single action, you may expend one Prescient Point as a Boost to that action to gain the maximum amount.</p>",
     "tag": "boost",
@@ -43,7 +43,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "cracked_laughter",
-      "buildHash": "cf9c70931504"
+      "buildHash": "3c0f343073d1"
     }
   }
 }

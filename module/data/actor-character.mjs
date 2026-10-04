@@ -266,6 +266,12 @@ export default class SacadiaCharacter extends SacadiaActorBase {
     for (const item of this.parent?.items ?? []) {
       if (item.type === "ability") spent += item.system?.costs?.csp ?? 0;
     }
+    // Bigger Stones may be taken twice (book p.130, "[3|2]"): one item carries both picks (the per-weapon
+    // counts), so a second pick costs its CSP again.
+    const bs = this.professionResources?.sentinel?.biggerStones ?? {};
+    const picks = (bs.bow ?? 0) + (bs.crossbow ?? 0) + (bs.sling ?? 0);
+    const stones = picks > 1 ? this.parent?.items?.find((i) => i.flags?.sacadia?.catalogId === 'bigger_stones') : null;
+    if (stones) spent += (stones.system?.costs?.csp ?? 0) * (picks - 1);
     return spent;
   }
 

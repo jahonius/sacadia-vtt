@@ -3,7 +3,7 @@
   "_key": "!items!df219a1b24e3748d",
   "name": "Striking Savant",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/striking_savant_icon.webp",
   "system": {
     "description": "<p>The number of Trickshots you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "striking_savant",
-      "buildHash": "dc2000bd4137"
+      "buildHash": "dc88420ed397"
     }
   }
 }

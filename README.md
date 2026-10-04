@@ -34,6 +34,7 @@ Foundry checks the same URL for updates.
 npm install
 npm run build          # compile src/scss into css/sacadia-skin.css
 npm run build:packs    # rebuild the compendiums from src/ (close Foundry first)
+npm run icons -- --dry-run   # plan ability icons (Gemini; see src/generate-icons.mjs)
 npm test               # unit tests
 npm run test:quench    # in-Foundry tests, run headless (see tools/quench/run.mjs)
 npm run release        # publish a GitHub release (see tools/release.mjs)

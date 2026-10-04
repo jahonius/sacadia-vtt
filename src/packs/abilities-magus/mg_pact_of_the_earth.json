@@ -3,7 +3,7 @@
   "_key": "!items!d0beca8b7476f5f2",
   "name": "Pact of the Earth",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_pact_of_the_earth_icon.webp",
   "system": {
     "description": "<p>Expend a Spell Slot. For as long as you maintain Focus, all ground within 30ft of you is considered Difficult Terrain for all creatures. You cannot willingly move for as long as you maintain Focus. You may only end Focus on Pact of the Earth on your turn.</p>",
     "tag": "focus",
@@ -52,7 +52,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "History[1]",
-      "buildHash": "039ce5b1bc81"
+      "buildHash": "1a9535b050b3"
     }
   }
 }

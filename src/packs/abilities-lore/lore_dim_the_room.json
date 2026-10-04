@@ -3,7 +3,7 @@
   "_key": "!items!e031cb86de62ade2",
   "name": "Dim the Room",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_dim_the_room_icon.webp",
   "system": {
     "description": "<p>As a Lore ability when not in direct sunlight and in an enclosed room, all the lighting in the room seems to be sucked out. Until the start of your next turn, all other creatures within this room are Blinded, except you.</p>",
     "tag": "lore",
@@ -47,7 +47,7 @@
       "catalogId": "lore_dim_the_room",
       "transcribed": true,
       "lore": true,
-      "buildHash": "41d0fff8fb8c"
+      "buildHash": "1a043ca33358"
     }
   }
 }

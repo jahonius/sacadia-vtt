@@ -3,7 +3,7 @@
   "_key": "!items!f51861db3a46b03a",
   "name": "Bully",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_bully_icon.webp",
   "system": {
     "description": "<p>Choose one target within melee range to whom you have given Wrestle Pin. They make a Finesse Check against your Check DC or are knocked Prone.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_bully",
-      "buildHash": "f8cdb357584b"
+      "buildHash": "a60601beb385"
     }
   }
 }

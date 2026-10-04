@@ -3,7 +3,7 @@
   "_key": "!items!65f90818e2102e00",
   "name": "Rolling Fog",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/rolling_fog_icon.webp",
   "system": {
     "description": "<p>As a Boost to initiating Clouded Foe or Clouded Ally, choose one target within 5ft of you. If you do, put all tiles of Clouded Foe on or as close as possible to that target. For as long as you maintain Focus on Clouded Foe or Clouded Ally, set your own Move Speed to 0. Each time the target would move outside your Swarm, you may expend a reaction to move with the target. Focus on Clouded Foe or Clouded Ally ends if they successfully leave the Cloud.</p>",
     "tag": "boost",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "rolling_fog",
       "transcribed": true,
-      "buildHash": "c5822489de3c"
+      "buildHash": "cb0791498088"
     }
   }
 }

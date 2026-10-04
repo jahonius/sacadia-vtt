@@ -3,7 +3,7 @@
   "_key": "!items!3afb27d74b7943b4",
   "name": "Rapidcarry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/rapidcarry_icon.webp",
   "system": {
     "description": "<p>Your speed is not reduced when using Pack Mule.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "rapidcarry",
       "transcribed": true,
-      "buildHash": "07248ee16442"
+      "buildHash": "f4ea0bcd8f71"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d3703867a1a5f108",
   "name": "Blood for Bane",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_blood_for_bane_icon.webp",
   "system": {
     "description": "<p>As a Boost to an action that would use a Spell Slot, take 1D10 damage. If you take 6+ damage, do not expend a Spell Slot. Increase the damage you deal to yourself this way to 2D6 at level 6, and 2D8 at level 11.</p>",
     "tag": "boost",
@@ -64,7 +64,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Necromantic Lore[3]",
-      "buildHash": "59ddb7e989ab"
+      "buildHash": "95a131602fb3"
     }
   }
 }

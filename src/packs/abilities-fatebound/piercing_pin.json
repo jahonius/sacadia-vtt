@@ -3,7 +3,7 @@
   "_key": "!items!6d7c57ad8504c19c",
   "name": "Piercing Pin",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/piercing_pin_icon.webp",
   "system": {
     "description": "<p>When you use Piercemaster, you may throw your weapon through one target and into another before summoning it back to you. Make a melee attack roll against two creatures in a line. Both creatures must be within 30ft of you. If the attack would hit both creatures, deal your full damage to the first target in the line, and deal half that damage to the second target (rounded up). If the attack would only hit one target, deal full damage to that target.</p>",
     "tag": "boost",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "piercing_pin",
       "transcribed": true,
-      "buildHash": "e7513430a490"
+      "buildHash": "fe1528f1d2b0"
     }
   }
 }

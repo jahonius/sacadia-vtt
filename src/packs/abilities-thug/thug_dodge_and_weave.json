@@ -3,7 +3,7 @@
   "_key": "!items!b611c137c752befc",
   "name": "Dodge and Weave",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_dodge_and_weave_icon.webp",
   "system": {
     "description": "<p>When you use the Block reaction on an attack that would hit you, but does not due to your reaction, you may deal 1D10 + Power damage to the enemy target you Block. Increase the damage dealt this way to 2D6+Power when you reach level 11.</p>",
     "tag": "passive",
@@ -65,7 +65,7 @@
           "ladderIndex": 5
         }
       ],
-      "buildHash": "d659a3c5ad05"
+      "buildHash": "ab83ca76989e"
     }
   }
 }

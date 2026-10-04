@@ -3,7 +3,7 @@
   "_key": "!items!739ece54479798e7",
   "name": "Pinetar",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/wt_pinetar_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 5ft of you. They make Finesse Checks against your Check DC or lose one AP to use on their next turn. You can only use this once per turn. This does not count as Fatigue, and stacks with it.</p>",
     "tag": "action",
@@ -66,7 +66,7 @@
       "catalogId": "wt_pinetar",
       "feature": true,
       "level": 3,
-      "buildHash": "1bf134be0d11"
+      "buildHash": "86d95a0987a0"
     }
   }
 }

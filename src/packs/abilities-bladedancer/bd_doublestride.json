@@ -3,7 +3,7 @@
   "_key": "!items!fe90b5473af8bf57",
   "name": "Doublestride",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_doublestride_icon.webp",
   "system": {
     "description": "<p>When you take the 5ft adjust boost, adjust your position by up to 15ft instead.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_doublestride",
-      "buildHash": "ed560f088731"
+      "buildHash": "efa2270a04e9"
     }
   }
 }

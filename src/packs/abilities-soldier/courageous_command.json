@@ -3,7 +3,7 @@
   "_key": "!items!e0254e74044762bf",
   "name": "Courageous Command",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/courageous_command_icon.webp",
   "system": {
     "description": "<p>As a reaction to an ally making an attack roll within 15ft of you, you may add your Courage score to that to-hit. If you have Steadied, also add half your Power (rounded up).</p>",
     "tag": "reaction",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "courageous_command",
-      "buildHash": "19762131c765"
+      "buildHash": "e3e66b587e20"
     }
   }
 }

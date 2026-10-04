@@ -3,7 +3,7 @@
   "_key": "!items!e9280737b5ba08ca",
   "name": "Prone Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/prone_strike_icon.webp",
   "system": {
     "description": "<p>Expend one Trickshot point and choose one target within range of your ranged weapon. They roll a Finesse Check against you or are knocked Prone.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "prone_strike",
-      "buildHash": "67ea43292de1"
+      "buildHash": "9ce06a4186ac"
     }
   }
 }

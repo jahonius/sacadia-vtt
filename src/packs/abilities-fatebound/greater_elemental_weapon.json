@@ -3,7 +3,7 @@
   "_key": "!items!accf2064be9c9bd1",
   "name": "Greater Elemental Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/greater_elemental_weapon_icon.webp",
   "system": {
     "description": "<p>Choose the Boon that matches the elemental damage type dealt by your divine weapon: Vampiric Weapon (Rot), Crystaline Weapon (Salt), Scorching Weapon (Fire), Spring Weapon (Water), Breezy Weapon (Air), or Stone Weapon (Earth). Add the chosen Boon from this compendium.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "greater_elemental_weapon",
       "transcribed": true,
-      "buildHash": "caa6adcfe4ea"
+      "buildHash": "5b86e3703c77"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!c4d5cc18c09d5af7",
   "name": "Gutwrenching Twist",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_gutwrenching_twist_icon.webp",
   "system": {
     "description": "<p>Increase the effect of Gutwrenching Strike from half your Finesse to your Finesse.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_gutwrenching_twist",
-      "buildHash": "596d7446a54a"
+      "buildHash": "0254ad99aa02"
     }
   }
 }

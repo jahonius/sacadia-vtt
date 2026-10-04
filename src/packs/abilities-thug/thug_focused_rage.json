@@ -3,7 +3,7 @@
   "_key": "!items!02adf87be2880f0e",
   "name": "Focused Rage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_focused_rage_icon.webp",
   "system": {
     "description": "<p>When you are raging, you may Focus on your damaging strikes. Increase the damage dice of all melee attacks you make by one dice type.</p>",
     "tag": "focus",
@@ -50,7 +50,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_focused_rage",
-      "buildHash": "708826356ec7"
+      "buildHash": "e8460ffd4260"
     }
   }
 }

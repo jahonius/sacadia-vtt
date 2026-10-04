@@ -3,7 +3,7 @@
   "_key": "!items!dcc00d0a9c04a131",
   "name": "Favored Style",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/favored_style_icon.webp",
   "system": {
     "description": "<p>Take the option below that matches your favored enemy. Apply this effect always (not just against your Favored Enemy). Beasts: Add 50ft to the range of all ranged weapons. Great Beast: You cannot be Surrounded. Awoken Flora: Gain 1X advantage to all trait checks made against Pin. Folk Fae: Gain damage resistance equal to half your Wiles Score (rounded up). Wild Fae: When you attack an enemy who is Surprised, gain 1X advantage to your attack. Fontmade: Choose 1 element (Rot, Salt, Earth, Fire, Air, Water); gain resistance to this damage type equal to your Proficiency. Undead: You cannot be given Nausea by any means. Demon: When you are critically hit, use your reaction to turn that critical to-hit into a normal hit (or a miss if you have Steadied).</p>",
     "tag": "passive",
@@ -63,7 +63,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "favored_style",
-      "buildHash": "dd2669d067cc"
+      "buildHash": "1f25186ad26a"
     }
   }
 }

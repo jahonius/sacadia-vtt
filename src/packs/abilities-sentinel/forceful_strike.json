@@ -3,7 +3,7 @@
   "_key": "!items!e83f7c4462d1c5ce",
   "name": "Forceful Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/forceful_strike_icon.webp",
   "system": {
     "description": "<p>Expend one Trickshot point and make a ranged attack against a target. Instead of dealing damage, if you successfully hit that target, they are pushed back 10ft.</p>",
     "tag": "action",
@@ -53,7 +53,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "forceful_strike",
-      "buildHash": "2edeeed60a87"
+      "buildHash": "382262962d95"
     }
   }
 }

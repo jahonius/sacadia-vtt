@@ -3,7 +3,7 @@
   "_key": "!items!068771497e255b0a",
   "name": "Chokehold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_chokehold_icon.webp",
   "system": {
     "description": "<p>When you have given a creature levels of Wrestle Pin and they use the Make Trait Check action against levels of Pin, if they fail that check you may expend a reaction to deal XD4 damage to them, where X is the levels of Pin they currently have. Increase the damage dice dealt this way to XD6 at level 5, and XD8 at level 11. If you are Steadied, you may increase the dice type of this damage by one type.</p>",
     "tag": "reaction",
@@ -82,7 +82,7 @@
           "ladderIndex": 3
         }
       ],
-      "buildHash": "1385ddd5731c"
+      "buildHash": "55805887a72f"
     }
   }
 }

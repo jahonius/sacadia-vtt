@@ -27,6 +27,12 @@ PLANNING.md
 # Release builds (tools/release.mjs)
 dist/
 
+# Full-size icon originals (src/generate-icons.mjs keeps them here; the 256 px copies in assets/ ship)
+art/
+
+# The author's original Breach map, the source for tools/breach-assets.mjs (the built map ships in assets/adventures/)
+/bTa187jP.jpeg
+
 # Never commit keys
 secrets/
 *.pem

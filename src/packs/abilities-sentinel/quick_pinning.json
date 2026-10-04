@@ -3,7 +3,7 @@
   "_key": "!items!d2358479af25054c",
   "name": "Quick Pinning",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/quick_pinning_icon.webp",
   "system": {
     "description": "<p>You may use Pinned Foot when you have not Steadied. If you have Steadied, you may use this from 30ft away.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "quick_pinning",
-      "buildHash": "7df517001649"
+      "buildHash": "331df40ad5ff"
     }
   }
 }

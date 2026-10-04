@@ -3,7 +3,7 @@
   "_key": "!items!f87692c4d3c3439a",
   "name": "Hallow’s Calm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_hallows_calm_icon.webp",
   "system": {
     "description": "<p>Expend one Spell Slot. You gain an Aura of 5ft. All creatures within this aura gain 1X Disadvantage to attacks made within this radius. Additionally, any Oracles who start their turn within this aura lose 1 Madness at the start of each turn. The radius of this aura increases by 5ft every turn that you expend a Focus action on it, to a max of 5Xft, where X is your Proficiency.</p>",
     "tag": "focus",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "You have Damaging Whispers and Hallowfell Traversal within your Tome",
-      "buildHash": "90334efdcfa3"
+      "buildHash": "ff9827d015cf"
     }
   }
 }

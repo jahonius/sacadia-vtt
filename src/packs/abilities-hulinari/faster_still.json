@@ -3,7 +3,7 @@
   "_key": "!items!ec82eb8bae1f5530",
   "name": "Faster Still",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/faster_still_icon.webp",
   "system": {
     "description": "<p>Increase your base Move speed in Pack form by 10ft.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
     "sacadia": {
       "catalogId": "faster_still",
       "transcribed": true,
-      "buildHash": "8fe0069b2f5c"
+      "buildHash": "10f01cfff316"
     }
   }
 }

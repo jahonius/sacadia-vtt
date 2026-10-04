@@ -3,7 +3,7 @@
   "_key": "!items!8679d6d02717be11",
   "name": "Demigod",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/fb_demigod_icon.webp",
   "system": {
     "description": "<p>Increase your Power or Fate (choose one) by one additional point, to a maximum of 7.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "fb_demigod",
       "feature": true,
       "level": 15,
-      "buildHash": "60342ba3be3f"
+      "buildHash": "7db15c124085"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!6710244319a40d10",
   "name": "Carried Sacrifice",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/carried_sacrifice_icon.webp",
   "system": {
     "description": "<p>If you are carrying an ally on your back and they would take damage from an attack, you may use your reaction to instead take that damage.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "carried_sacrifice",
       "transcribed": true,
-      "buildHash": "75e69d332519"
+      "buildHash": "a11a1607ce00"
     }
   }
 }

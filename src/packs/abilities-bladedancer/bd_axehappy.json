@@ -3,7 +3,7 @@
   "_key": "!items!3051fad003b5bc3a",
   "name": "Axehappy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_axehappy_icon.webp",
   "system": {
     "description": "<p>If all of your combat-readied items are versatile weapons, equipped armor, equipped clothes, or a dagger belt, increase the number of readied item slots (RIS) you have by 3.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_axehappy",
-      "buildHash": "4d85e336dfcd"
+      "buildHash": "41eb832dc5ff"
     }
   }
 }

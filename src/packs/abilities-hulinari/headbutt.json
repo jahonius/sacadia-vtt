@@ -3,7 +3,7 @@
   "_key": "!items!cb72288ef19d72da",
   "name": "Headbutt",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/headbutt_icon.webp",
   "system": {
     "description": "<p>Make a melee attack vs. PD while in Pack Form, dealing 1D8+Finesse damage on a successful hit. Damage dice rolled this way increases to 1D10 at level 5, and 2D6 at level 11.</p>",
     "tag": "action",
@@ -74,7 +74,7 @@
     "sacadia": {
       "catalogId": "headbutt",
       "transcribed": true,
-      "buildHash": "6d7aec9454f2"
+      "buildHash": "3b6b1b1d3275"
     }
   }
 }
