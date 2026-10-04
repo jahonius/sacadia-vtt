@@ -1,6 +1,7 @@
 // Import utilities. Tokens first — everything derives from them. (The old Google-Fonts Roboto
 // import is gone: the skin uses local font stacks; a shipped display font can be registered via
 // CONFIG.fontDefinitions later without touching components.)
+@import 'utils/fonts';
 @import 'utils/tokens';
 @import 'utils/typography';
 @import 'utils/colors';

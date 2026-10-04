@@ -44,7 +44,7 @@ export async function turnAutomation(combat, changed) {
     await refreshCloudLayers(actor); // Swarm cloud layers whose Focus just lapsed drop their statuses/terrain
     for (const c of await casterZoneTurn(actor)) {
       await applySelfDamage(actor, c.damage);
-      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Zone.CasterCost', { zone: c.label, n: c.damage })}</div>` });
+      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Zone.CasterCost', { zone: c.label, n: c.damage })}</div>` });
     }
     await applyTurnStartConditions(actor);
     await corrodedTurnStart(actor); // Corroded: one level of Rend per level
@@ -67,7 +67,7 @@ export async function turnAutomation(combat, changed) {
     // one extra reaction this turn."
     if (ownsAbility(prev.actor, 'ill_come_back') && (prev.actor.getFlag('sacadia', 'turnFlags')?.versatileThrows ?? 0) >= 3) {
       await prev.actor.update({ 'system.reaction.value': (prev.actor.system.reaction?.value ?? 0) + 1 });
-      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: prev.actor }), content: `<div class="sacadia">${game.i18n.localize('SACADIA.Named.IllComeBack')}</div>` });
+      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: prev.actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.localize('SACADIA.Named.IllComeBack')}</div>` });
     }
     await sphereInsaniumCheck(prev.actor);
     await prestigeTurnEnd(prev.actor); // Catnap's end-of-turn Fate Check
@@ -108,7 +108,7 @@ export async function applyBladeAuraTurnStart(actor, { entering = false } = {}) 
       const r = await new Roll(`${die.count}d${die.denomination}`).evaluate();
       const dc = actorCheckDc(src);
       await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: src }), rolls: [r],
-        content: `<div class="sacadia">${game.i18n.format('SACADIA.Aura.BladeAura', { name: actor.name })}`
+        content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Aura.BladeAura', { name: actor.name })}`
           + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="finesse" data-dc="${dc}" data-damage="${r.total}" data-onsuccess="none"`
           + ` data-casterpc="${src.type === 'character' ? 1 : 0}" data-caster="${src.uuid}">`
           + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc} · Finesse)</button></div></div>` });
@@ -134,7 +134,7 @@ export async function applySphereInsanium(actor) {
     hit.push(t.name);
   }
   if (hit.length) await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
-    content: `<div class="sacadia">${game.i18n.format('SACADIA.Madness.SphereInsanium', { names: hit.join(', ') })}</div>` });
+    content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Madness.SphereInsanium', { names: hit.join(', ') })}</div>` });
 }
 
 /**
@@ -145,7 +145,7 @@ export async function sphereInsaniumCheck(actor) {
   if ((actor.system.combatState?.focusRounds?.sphere_insanium ?? 0) < 2 || !ownsAbility(actor, 'sphere_insanium')) return;
   const dc = actorCheckDc(actor);
   await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
-    content: `<div class="sacadia">${game.i18n.localize('SACADIA.Madness.SphereCheck')}`
+    content: `<div class="sacadia chat-card note-card">${game.i18n.localize('SACADIA.Madness.SphereCheck')}`
       + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="wiles" data-dc="${dc}">`
       + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc} · Wiles)</button></div></div>` });
 }
@@ -212,12 +212,12 @@ export async function rageTurnEnd(actor) {
     const cd = actor.system.checkDc;
     const dc = (typeof cd === 'number' ? cd : cd?.primary) ?? 10;
     const inf = foundry.utils.escapeHTML(JSON.stringify([{ condition: 'fatigue', level: n, self: true, label: game.i18n.localize('SACADIA.Condition.Fatigue') }]));
-    return ChatMessage.create({ speaker, content: `<div class="sacadia">${game.i18n.format('SACADIA.Rage.EndedCheck', { name: actor.name, n })}`
+    return ChatMessage.create({ speaker, content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rage.EndedCheck', { name: actor.name, n })}`
       + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="power" data-dc="${dc}" data-inflict="${inf}" data-caster="${actor.uuid}">`
       + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc} · ${game.i18n.localize('SACADIA.Stat.Power')})</button></div></div>` });
   }
   await applyConditionDeltas(actor, [{ condition: 'fatigue', amount: n, self: true }]);
-  await ChatMessage.create({ speaker, content: `<div class="sacadia">${game.i18n.format('SACADIA.Rage.Ended', { name: actor.name, n })}</div>` });
+  await ChatMessage.create({ speaker, content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rage.Ended', { name: actor.name, n })}</div>` });
 }
 
 /** Roll each `turnDamage` condition (e.g. Hemorrhage `Nd10`) and apply it to the actor's Health. */
@@ -239,7 +239,7 @@ export async function applyTurnStartConditions(actor) {
     await actor.update({ 'system.health.value': Math.max(0, actor.system.health.value - total) });
     ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor }),
-      content: `<div class="sacadia"><b>${game.i18n.localize('SACADIA.Condition.TurnDamage')}:</b> ${total} (${flavors.join(', ')})</div>`,
+      content: `<div class="sacadia chat-card note-card"><b>${game.i18n.localize('SACADIA.Condition.TurnDamage')}:</b> ${total} (${flavors.join(', ')})</div>`,
     });
   }
 }
@@ -256,7 +256,7 @@ export async function reduceConditions(actor) {
     const pools = poolsAfterDamage(actor.system.health?.value ?? 0, actor.system.health?.temp ?? 0, madness);
     update['system.health.value'] = pools.value;
     update['system.health.temp'] = pools.temp;
-    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Madness.Bloodlet', { n: madness })}</div>` });
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Madness.Bloodlet', { n: madness })}</div>` });
   }
   if (actor.getFlag('sacadia', 'holdDecay')) update['flags.sacadia.holdDecay'] = deleteKey();
   for (const key of Object.keys(CONFIG.SACADIA.conditions)) {

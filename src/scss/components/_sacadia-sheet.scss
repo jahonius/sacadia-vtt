@@ -43,129 +43,98 @@
   }
 }
 
-// --- Header ---
+// --- Header (actor) ---
+// Play-time readouts only: the name with a one-line build summary, the vitals, and one row of equal tiles for the
+// defenses and derived numbers. The build itself (professions, level, size, resistances) is edited on the Character
+// tab, so the tabs get the height. Values are plain text (or borderless "ghost" inputs where they're edited in play),
+// on quiet panels rather than outlined boxes.
 .sheet-header {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.8rem;
   align-items: flex-start;
+  margin-bottom: 0.15rem;
 
   .profile-img {
     flex: 0 0 auto;
+    margin: 0;
     border: 1px solid var(--sac-line-strong);
-    border-radius: 4px;
+    border-radius: 5px;
     object-fit: cover;
     cursor: pointer;
   }
 
-  .header-fields { flex: 1; min-width: 0; }
+  .header-fields { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 
   .charname {
-    width: 100%;
-    font-size: 1.4rem;
-    font-weight: bold;
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    padding: 0;
+    font-family: var(--sac-font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--sac-gold-hi);
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    &:hover { border-bottom-color: var(--sac-line); }
+    &:focus { border-bottom-color: var(--sac-gold); box-shadow: none; }
   }
 
-  .profession-row,
-  .header-stats,
-  .defenses {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: flex-end;
-    margin-top: 0.35rem;
+  .identity-line {
+    margin-top: -0.4rem;
+    font-size: 0.8rem;
+    color: var(--sac-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  // Two clusters across the header width: vitals (meter grows to absorb slack) left, derived
-  // chips right. Each cluster wraps as a unit, so narrow windows never scatter lone chips.
-  .header-stats {
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-
-    .vitals-cluster {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.1rem;
-      align-items: flex-end;
-      flex: 1 1 22rem;
-
-      .vital:first-child { flex: 1 1 10rem; .sac-meter { width: auto; } }
-    }
-    .derived-cluster {
-      display: flex;
-      gap: 0.5rem;
-      align-items: stretch;
-    }
-  }
-
-  // Defense chips share the row equally — one even line instead of a ragged wrap.
-  .defenses .defense { flex: 1 1 5.5rem; }
-
-  .field {
+  // Vitals: HP takes the row's slack; AP, reactions and Madness sit at its end.
+  .vitals { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+  .vital {
     display: flex;
     flex-direction: column;
-    font-size: 0.75rem;
-
-    > span { opacity: 0.75; }
-    select, input { min-width: 4rem; }
-    &.level-field input { width: 3.5rem; }
+    gap: 0.3rem;
+    .vital-num { font-size: 1.05rem; font-weight: bold; color: var(--sac-gold-hi); font-variant-numeric: lining-nums tabular-nums; }
   }
-
-  // Vitals: HP meter, AP pips, Madness track.
-  .header-stats .vital {
+  .hp-vital { flex: 1 1 13rem; min-width: 0; }
+  .hp-readout {
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    align-items: baseline;
+    gap: 0.3rem;
+    font-variant-numeric: lining-nums tabular-nums;
 
-    .vital-num { font-size: 1.05rem; font-weight: bold; color: var(--sac-gold-hi); font-variant-numeric: tabular-nums; }
-  }
-  // HP: an explicit editable readout ABOVE a pure-gauge bar — numbers legible off the gradient,
-  // and the current-HP field reads as an obvious input (inset well, border).
-  .hp-vital {
-    .hp-readout {
-      display: flex; align-items: center; gap: 0.3rem;
-      font-variant-numeric: tabular-nums;
-
-      .hp-cur {
-        width: 3rem; text-align: center;
-        padding: 0.05rem 0.2rem;
-        font-size: 1.05rem; font-weight: 700;
-        font-family: var(--sac-font-display);
-        color: var(--sac-gold-hi);
-        background: var(--sac-inset);
-        border: 1px solid var(--sac-line);
-        border-radius: 3px;
-      }
-      .sep { color: var(--sac-dim); }
-      .hp-max {
-        font-size: 1.05rem; font-weight: 600;
-        font-family: var(--sac-font-display);
-        color: var(--sac-gold-hi);
-        cursor: help;
-      }
-      // The adjustment: visibly a *modifier* to the derived max (Heritage / rolled HP), not a second
-      // max value — a leading ± sign, muted, set apart with a gap.
-      .hp-adj {
-        display: inline-flex; align-items: center; gap: 0.1rem;
-        margin-left: 0.5rem;
-        cursor: help;
-      }
-      .hp-adj-sign { font-size: 0.72rem; color: var(--sac-dim); }
-      // Temp-HP badge: a gold buffer pill, shown only while temp HP is present.
-      .hp-temp {
-        margin-left: 0.4rem; padding: 0.02rem 0.35rem; cursor: help;
-        font-family: var(--sac-font-ui); font-weight: bold; font-size: 0.72rem;
-        color: var(--sac-gold-hi); background: rgba(212, 165, 60, 0.16);
-        border: 1px solid var(--sac-gold); border-radius: 0.7rem;
-      }
-      .hp-bonus {
-        width: 2.1rem; text-align: center; padding: 0.02rem 0.15rem;
-        font-size: 0.72rem; color: var(--sac-dim);
-        background: var(--sac-inset); border: 1px dashed var(--sac-line); border-radius: 3px;
-        &:focus { color: var(--sac-text); border-style: solid; }
-      }
+    .sac-label { margin-right: 0.35rem; }
+    .hp-cur, .hp-max {
+      font-family: var(--sac-font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--sac-gold-hi);
     }
-    .hp-meter { width: 11rem; margin-top: 0.28rem; height: 0.55rem; }
+    // Sized to the number where the browser supports it (Chromium), a fixed width elsewhere.
+    .hp-cur, input.hp-max { width: 2.8rem; field-sizing: content; min-width: 1.6ch; }
+    .hp-cur { text-align: right; }
+    input.hp-max { text-align: left; }
+    span.hp-max { cursor: help; }
+    .sep { color: var(--sac-dim); }
+    // Temp HP: a gold pill, only while there is some.
+    .hp-temp {
+      margin-left: 0.45rem;
+      padding: 0.02rem 0.4rem;
+      align-self: center;
+      cursor: help;
+      font-family: var(--sac-font-ui);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--sac-gold-hi);
+      background: rgba(212, 165, 60, 0.16);
+      border-radius: 0.7rem;
+    }
   }
+  .hp-meter { width: auto; min-width: 0; height: 0.45rem; border: none; }
   .madness-track {
     display: flex; align-items: center; gap: 0.45rem;
     .insane-note {
@@ -174,38 +143,38 @@
     }
   }
 
-  .header-stats .derived,
-  .defenses .defense {
+  // Readouts: one row of equal tiles (five defenses, a gap, then the derived numbers).
+  .readouts { display: flex; gap: 0.3rem; }
+  .readout-gap { flex: 0 0 0.45rem; }
+  .readout {
+    flex: 1 1 0;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.15rem 0.4rem;
-    border: 1px solid var(--sac-line);
-    border-radius: 4px;
-    min-width: 3rem;
+    gap: 0.12rem;
+    padding: 0.32rem 0.2rem 0.28rem;
     background: var(--sac-panel);
+    border-radius: 4px;
 
-    label {
-      font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--sac-dim); font-weight: 600;
-    }
-    span {
-      font-size: 1.1rem; font-weight: 600;
+    .readout-value {
       font-family: var(--sac-font-display);
-      color: var(--sac-gold-hi);
-      font-variant-numeric: tabular-nums;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--sac-text);
+      font-variant-numeric: lining-nums tabular-nums;
+      white-space: nowrap;
+      small { font-family: var(--sac-font-ui); font-size: 0.66rem; font-weight: 400; color: var(--sac-dim); }
     }
-    .def-input {
-      width: 2.6rem; text-align: center; font-size: 1rem; font-weight: bold;
-      padding: 0; border: none; background: rgba(255, 255, 255, 0.04);
-    }
+    input.readout-value { width: 100%; max-width: 3rem; }
+    .readout-value input { width: 1.6rem; font: inherit; color: inherit; }
   }
-
-  // Superseded by AD: the defense's own value is moot (AD, being higher, applies), so dim it and
-  // flag the winning stat with a small gold `AD` marker. Red stays reserved for genuinely bad states.
-  .defenses .defense.superseded span { color: var(--sac-dim); }
-  .defenses .defense .ad-mark {
-    margin-left: 0.12rem;
+  // Superseded by AD: the defense's own value is moot (AD, being higher, applies), so dim it and flag the winner with
+  // a small gold `AD`. Red stays reserved for genuinely bad states.
+  .readout.superseded .readout-value { color: var(--sac-dim); }
+  .ad-mark {
+    margin-left: 0.1rem;
     font-family: var(--sac-font-ui);
     font-size: 0.5rem;
     font-weight: 700;
@@ -214,53 +183,84 @@
     vertical-align: super;
   }
 
-  // Lore is the one derived chip with an editable current value — style its input as the readout
-  // (gold display numeral) so the chip matches its neighbors instead of rendering a raw form box.
-  .header-stats .derived.lore span {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.05rem;
-
-    input {
-      width: 2rem; text-align: center; padding: 0;
-      font-size: 1.1rem; font-weight: 600;
-      font-family: var(--sac-font-display);
-      color: var(--sac-gold-hi);
-      background: transparent; border: none;
-      font-variant-numeric: tabular-nums;
-      &:focus { box-shadow: none; border-bottom: 1px solid var(--sac-gold); }
-    }
+  // NPC build fields: the GM edits these in play, so they stay in the header (compact).
+  .npc-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    .sac-field { flex: 1 1 6rem; }
+    .sac-field:first-child { flex: 2 1 8rem; } // the role: free text, the longest value
+    .sac-field.narrow { flex: 0 0 4.2rem; }
   }
+}
 
-  .charname {
-    font-family: var(--sac-font-display);
-    color: var(--sac-gold-hi);
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--sac-line);
-    border-radius: 0;
-    &:focus { border-bottom-color: var(--sac-gold); box-shadow: none; }
+// An actor's portrait runs the header's full height, so the sheet shows who it's for (item sheets keep a small image).
+&.actor .sheet-header {
+  align-items: stretch;
+  .portrait {
+    position: relative;
+    flex: 0 0 136px;
+    min-height: 136px;
+  }
+  .profile-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-position: 50% 18%;
   }
 }
 
 // --- Stats tab ---
+// Each trait is a quiet tile: its icon (the roll button, as on an ability), then the name as a label over the value.
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.4rem;
 
   .stat {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
-    padding: 0.35rem;
-    border: 1px solid var(--sac-line);
+    gap: 0.5rem;
+    padding: 0.35rem 0.4rem;
+    background: var(--sac-panel);
     border-radius: 4px;
 
-    .stat-name { font-weight: bold; }
-    a.stat-name { cursor: pointer; &:hover { text-shadow: 0 0 6px rgba(212, 165, 60, 0.8); } }
-    input { width: 3rem; text-align: center; }
+    .stat-use {
+      position: relative; flex: 0 0 auto; display: block;
+      width: 48px; height: 48px; border: 1px solid var(--sac-line); border-radius: 4px; overflow: hidden;
+      img { display: block; width: 48px; height: 48px; border: none; border-radius: 0; }
+    }
+    a.stat-use {
+      cursor: pointer; transition: border-color 0.12s ease, box-shadow 0.12s ease;
+      .use-overlay {
+        position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        background: rgba(20, 14, 6, 0.55); color: var(--sac-gold-hi); font-size: 1.2rem;
+        opacity: 0; transition: opacity 0.12s ease;
+      }
+      &:hover, &:focus-visible { border-color: var(--sac-gold); box-shadow: 0 0 6px rgba(212, 165, 60, 0.45); .use-overlay { opacity: 1; } }
+    }
+    .stat-body { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 0.05rem; }
+
+    .stat-name {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sac-dim);
+    }
+    a.stat-name { cursor: pointer; &:hover { color: var(--sac-gold-hi); text-shadow: 0 0 6px rgba(212, 165, 60, 0.6); } }
+    input {
+      width: 3rem;
+      height: auto;
+      padding: 0;
+      text-align: left;
+      font-family: var(--sac-font-display);
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--sac-text);
+    }
   }
 }
 
@@ -393,7 +393,7 @@
       .condition-value {
         min-width: 1.1rem; text-align: center;
         font-weight: 700;
-        font-variant-numeric: tabular-nums;
+        font-variant-numeric: lining-nums tabular-nums;
         color: var(--sac-dim);
       }
     }
@@ -408,14 +408,6 @@
   }
 }
 
-// Stats-tab section headers: compact ruled lines, not display headlines — vertical space is the
-// scarce resource on this tab (stats + expertise + 20 conditions + 29 talents).
-.tab[data-tab="stats"] > div > h3 {
-  font-size: 1.05rem;
-  margin: 0.65rem 0 0.35rem;
-  padding-bottom: 0.12rem;
-  border-bottom: 1px solid var(--sac-line-strong);
-}
 
 // Talents: same design language as the conditions tracker — eyebrow group headers, a uniform
 // multi-column grid, quiet rows. The trained set is the signal: proficient talents light up gold
@@ -504,12 +496,6 @@
     min-width: 0;
     &.wide { grid-column: span 2; }
 
-    > span {
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--sac-dim);
-    }
     input, select {
       width: 100%;
       padding: 0.12rem 0.3rem;
@@ -588,53 +574,66 @@
   .inv-head {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--sac-line-strong);
-    a { cursor: pointer; }
+    align-items: flex-end;
+    gap: 0.5rem;
+    a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
   }
-  .inv-list { list-style: none; margin: 0; padding: 0; }
+  .inv-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.2rem; }
   .inv-empty { opacity: 0.55; font-style: italic; font-size: 0.8rem; padding: 0.15rem 0; }
 }
 
+// One row per item: equip toggle, icon, the name over its facts, then the storage slot; edit/delete on hover.
 .inv-row {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.3rem;
-  border-radius: 3px;
+  gap: 0.5rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 4px;
 
   &:hover { background: rgba(212, 165, 60, 0.07); }
-  &.equipped { background: rgba(212, 165, 60, 0.13); }
-  .equip-toggle { cursor: pointer; color: var(--sac-dim); }
+  &.equipped { background: var(--sac-panel); }
+  .equip-toggle { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); }
   &.equipped .equip-toggle { color: var(--sac-gold); }
-  .inv-img { border: 1px solid var(--sac-line); border-radius: 3px; }
-  .inv-name { flex: 1; }
-  .armor-summary { font-size: 0.7rem; opacity: 0.75; white-space: nowrap; }
-  .inv-qty { font-size: 0.8rem; opacity: 0.8; }
-  .inv-controls { display: flex; gap: 0.35rem; a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } } }
-  .signature-toggle { color: var(--sac-dim); &.on { color: var(--sac-gold); } }
+  .inv-img { flex: 0 0 36px; width: 36px; height: 36px; border: none; border-radius: 3px; object-fit: cover; }
+  .inv-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+  .inv-title { display: flex; align-items: center; gap: 0.4rem; min-width: 0; }
+  .inv-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .inv-qty { font-size: 0.8rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums; }
+  .inv-facts {
+    display: flex; flex-wrap: wrap; gap: 0 0.6rem;
+    font-size: 0.72rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums;
+    .fact-tag { font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.64rem; color: var(--sac-olive); }
+  }
+  .inv-controls {
+    flex: 0 0 auto; display: flex; align-items: center; gap: 0.45rem;
+    a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+  }
+  // Edit / delete (and the star, until set) only on hover or keyboard focus.
+  .hover-controls { display: flex; gap: 0.45rem; opacity: 0; transition: opacity 0.12s ease; }
+  &:hover .hover-controls, &:focus-within .hover-controls { opacity: 1; }
+  .signature-toggle.on { color: var(--sac-gold); }
   .sac-chip.signature { color: var(--sac-gold-hi); border-color: var(--sac-gold-lo); i { color: var(--sac-gold); } }
-  // Readied / stored slot tag (click to swap).
-  .storage-toggle { font-size: 0.68rem; font-variant-numeric: tabular-nums; color: var(--sac-gold); white-space: nowrap;
-    &.sis { color: var(--sac-dim); } }
+  // Readied (in hand) or stored (in your bags), with the slots it takes; click to swap.
+  .storage-toggle {
+    font-size: 0.72rem; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; color: var(--sac-text);
+    i { color: var(--sac-gold); margin-right: 0.1rem; }
+    &.sis { color: var(--sac-dim); i { color: var(--sac-dim); } }
+  }
 }
 
 // --- Item slot counter (Inventory tab) ---
-.sacadia .item-slots {
-  display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-bottom: 0.5rem;
-  font-size: 0.8rem; font-variant-numeric: tabular-nums; color: var(--sac-dim);
-  &.overburdened { color: var(--sac-blood); }
-}
-
-// --- Header: size and resistances ---
-.sacadia .resistances-field, .sacadia .size-field {
-  display: flex; align-items: center; gap: 0.4rem; margin-top: 0.35rem; font-size: 0.8rem;
-  span { color: var(--sac-dim); white-space: nowrap; }
-  input { flex: 1; min-width: 0; }
+.item-slots {
+  display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; align-items: center; margin: 0.15rem 0 0.2rem;
+  font-size: 0.85rem; font-variant-numeric: lining-nums tabular-nums; color: var(--sac-dim);
+  .slot-count { display: inline-flex; align-items: baseline; gap: 0.35rem; cursor: help;
+    .slot-val { white-space: nowrap; }
+    i { color: var(--sac-gold); font-size: 0.75rem; }
+    b { color: var(--sac-text); } }
+  &.overburdened .slot-count b { color: var(--sac-blood); }
 }
 
 // --- Specialized talents (Stats tab) ---
-.sacadia .talent-group.specialties {
+.talent-group.specialties {
   h4 a { cursor: pointer; margin-left: 0.3rem; }
   .specialty { display: flex; gap: 0.3rem; align-items: center;
     input[type="text"] { flex: 1; min-width: 0; }
@@ -793,7 +792,7 @@
     margin-left: auto; // keep the live per-turn counters flushed to the right edge
     .cp-counter {
       display: inline-flex; align-items: baseline; gap: 0.3rem;
-      font-size: 0.8rem; font-variant-numeric: tabular-nums;
+      font-size: 0.8rem; font-variant-numeric: lining-nums tabular-nums;
       label { font-size: 0.58rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--sac-dim); }
       b { color: var(--sac-gold-hi); }
     }
@@ -823,7 +822,7 @@
   .log-entry {
     display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; padding: 0.05rem 0;
     .log-label { flex: 1; }
-    .log-ap { opacity: 0.8; font-variant-numeric: tabular-nums; }
+    .log-ap { opacity: 0.8; font-variant-numeric: lining-nums tabular-nums; }
     a { cursor: pointer; opacity: 0.7; &:hover { opacity: 1; } }
   }
 
@@ -859,7 +858,7 @@
     display: inline-flex; align-items: center; justify-content: center;
     min-width: 1.4rem; height: 1.4rem;
     border: 1px solid var(--sac-line); border-radius: 4px;
-    font-variant-numeric: tabular-nums; font-weight: 600;
+    font-variant-numeric: lining-nums tabular-nums; font-weight: 600;
   }
   // The palette holds many chips — always its own full-width line.
   .basic-actions-group { flex: 1 1 100%; }
@@ -932,6 +931,8 @@
     align-items: start;
   }
   .ability-empty { opacity: 0.55; font-style: italic; font-size: 0.8rem; padding: 0.15rem 0; grid-column: 1 / -1; }
+  // Under the Passive heading, every card's "Passive" chip says the same thing again.
+  &[data-group="passive"] .sac-chip.tag { display: none; }
 }
 
 .rest-controls,
@@ -958,22 +959,22 @@
 }
 .refresh-list { max-height: 14rem; overflow-y: auto; margin: 0.25rem 0 0; padding-left: 1.2rem; font-size: 0.85rem; }
 
-// Ability cards: a large pixel icon (which is the roll button), name over a chip line, expandable
-// description drawer. An expanded card spans the full grid width for comfortable reading.
+// Ability cards: the icon (the roll button, with the AP cost as a badge), the name over one chip line, and an
+// expandable description drawer. Quiet panels, no outline; an expanded card spans the full grid width for reading.
 .ability-card {
-  border: 1px solid var(--sac-line);
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 5px;
   background: var(--sac-panel);
   overflow: hidden;
 
-  &.expanded { border-color: var(--sac-line-strong); grid-column: 1 / -1; }
+  &.expanded { border-color: var(--sac-line); grid-column: 1 / -1; }
 }
 
 .ability-row {
   display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  padding: 0.5rem 0.6rem;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.45rem;
 
   &:hover { background: rgba(212, 165, 60, 0.06); }
 
@@ -982,20 +983,31 @@
     position: relative;
     flex: 0 0 auto;
     display: block;
-    width: 72px; height: 72px;
+    width: 48px; height: 48px;
     border: 1px solid var(--sac-line);
-    border-radius: 5px;
+    border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
     transition: border-color 0.12s ease, box-shadow 0.12s ease;
 
-    .ability-img { display: block; width: 72px; height: 72px; border: none; border-radius: 0; }
+    .ability-img { display: block; width: 48px; height: 48px; border: none; border-radius: 0; }
+    // The AP cost, on the icon's corner.
+    .ap-badge {
+      position: absolute; right: 0; bottom: 0; z-index: 1;
+      display: flex; align-items: center; gap: 0.05rem;
+      padding: 0 0.22rem;
+      font-size: 0.66rem; font-weight: 700; line-height: 1.35;
+      color: #14100a;
+      background: var(--sac-gold);
+      border-top-left-radius: 4px;
+      i { font-size: 0.55rem; }
+    }
     .use-overlay {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
       background: rgba(20, 14, 6, 0.55);
       color: var(--sac-gold-hi);
-      font-size: 1.6rem;
+      font-size: 1.2rem;
       opacity: 0;
       transition: opacity 0.12s ease;
     }
@@ -1006,10 +1018,10 @@
     }
   }
 
-  .ability-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.3rem; padding-top: 0.1rem; }
+  .ability-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.25rem; }
   .ability-name {
     font-family: var(--sac-font-display);
-    font-size: 1.05rem; font-weight: 600; line-height: 1.15;
+    font-size: 0.98rem; font-weight: 600; line-height: 1.15;
     cursor: pointer;
     &:hover { color: var(--sac-gold-hi); }
   }
@@ -1022,10 +1034,13 @@
   }
   &.is-out-of-range .ability-name { opacity: 0.6; }
 
+  // Edit / delete only on hover or keyboard focus: always-visible trash cans are noise and invite misclicks.
   .ability-controls {
-    display: flex; gap: 0.45rem; align-items: center; flex: 0 0 auto;
+    display: flex; gap: 0.45rem; align-items: center; flex: 0 0 auto; align-self: flex-start;
+    opacity: 0; transition: opacity 0.12s ease;
     a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
   }
+  &:hover .ability-controls, &:focus-within .ability-controls { opacity: 1; }
 }
 
 .ability-drawer {
@@ -1125,33 +1140,84 @@
   }
 }
 
-// --- Chat card (same element carries `sacadia ability-card`) ---
-// The card commits to the skin's dark-leather world regardless of the viewer's chat theme, so it
-// reads as a piece of the sheet: umber panel, gold name plate, tokenized dice wells.
-&.ability-card {
+// --- Chat cards (the root carries `sacadia chat-card` plus its kind) ---
+// Every card the system posts commits to the skin's dark-leather world regardless of the viewer's chat theme, so it
+// reads as a piece of the sheet: umber panel, gold title, the dice in inset wells. `ability-card` and `resist-card` are
+// listed for cards posted before `chat-card` existed.
+&.chat-card, &.ability-card, &.resist-card {
   background: var(--sac-umber);
   border: 1px solid var(--sac-line-strong);
   border-radius: 6px;
   padding: 0.5rem 0.6rem;
   color: var(--sac-text);
+  font-variant-numeric: lining-nums;
 
   .card-header {
     display: flex; align-items: center; gap: 0.55rem;
-    border-bottom: 1px solid var(--sac-line); padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--sac-line); padding-bottom: 0.35rem;
     img {
       width: 72px; height: 72px; flex: 0 0 auto;
       border: 1px solid var(--sac-line-strong); border-radius: 5px;
     }
+    img.card-art { width: 56px; height: 56px; } // a Trait's art on a check or save: a step below an ability's
     h3 {
-      margin: 0; border: none;
+      margin: 0; border: none; line-height: 1.1;
       font-family: var(--sac-font-display); color: var(--sac-gold-hi);
     }
   }
+  // A card without art (checks, saves, rests): the subject's glyph in a framed well, echoing the icons' gold ring.
+  .card-emblem {
+    flex: 0 0 auto; display: grid; place-items: center;
+    width: 44px; height: 44px; border-radius: 5px;
+    background: radial-gradient(circle at 50% 40%, var(--sac-panel), var(--sac-inset) 75%);
+    border: 1px solid var(--sac-gold-lo);
+    box-shadow: inset 0 0 0 2px var(--sac-inset), inset 0 0 0 3px rgba(212, 165, 60, 0.28);
+    i { font-size: 1.3rem; color: var(--sac-gold); }
+  }
+  .card-title {
+    min-width: 0; display: flex; flex-direction: column; gap: 0.1rem;
+    h3 { font-size: 1.35rem; }
+    .card-meta { margin: 0; }
+  }
   .card-meta {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.72rem;
+    display: flex; flex-wrap: wrap; gap: 0.15rem 0.5rem; font-size: 0.72rem;
     margin: 0.25rem 0; color: var(--sac-dim);
     .tag { font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sac-olive); }
   }
+  .card-roll { margin: 0.35rem 0 0.25rem; }
+  .rc-sub { font-size: 0.78rem; color: var(--sac-dim); margin: 0.3rem 0; } // a plain line under the head
+
+  // Core dice-roll partials inherit the chat theme; re-ground them for the dark card.
+  .dice-roll {
+    .dice-formula, .dice-total {
+      background: var(--sac-inset);
+      border-color: var(--sac-line-strong);
+      color: var(--sac-text);
+    }
+  }
+
+  // What the total is made of (a check's Trait, Proficiency, Fumbled …), so nobody has to decode "+ 2 + 3 − 2".
+  .card-parts {
+    display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.3rem;
+    .part {
+      padding: 0.05rem 0.4rem; border-radius: 0.25rem; font-size: 0.75rem;
+      background: rgba(212, 165, 60, 0.12); color: var(--sac-dim);
+      b { color: var(--sac-text); font-variant-numeric: lining-nums tabular-nums; }
+      &.warn { background: rgba(192, 80, 85, 0.16); b { color: var(--sac-blood); } }
+    }
+  }
+
+  // A save button on any card (a save prompt, an ability's save): gold-outlined, the full width.
+  .card-save { margin-top: 0.35rem; }
+  .card-save button {
+    width: 100%; cursor: pointer; padding: 0.25rem 0.5rem; line-height: 1.3;
+    background: var(--sac-inset); border: 1px solid var(--sac-gold-lo); border-radius: 4px;
+    color: var(--sac-gold-hi); font-weight: 600;
+    &:hover, &:focus-visible { border-color: var(--sac-gold); background: var(--sac-panel); box-shadow: none; }
+  }
+}
+
+&.ability-card {
   .card-roll { margin: 0.3rem 0; h4 { margin: 0.1rem 0; color: var(--sac-dim); border: none; font-family: var(--sac-font-ui); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; small { text-transform: none; letter-spacing: 0; } } }
   // Critical hit: a gold burst banner above the to-hit dice, plus a subtle gold frame on the roll block.
   .card-roll.to-hit.is-crit { border-radius: 0.3rem; box-shadow: 0 0 0 1px var(--sac-gold) inset; padding: 0.15rem 0.3rem; }
@@ -1186,17 +1252,7 @@
   }
   .card-activity { border-top: 1px solid var(--sac-line); padding-top: 0.25rem; margin-top: 0.25rem; }
   .activity-label { font-weight: bold; font-size: 0.85rem; color: var(--sac-gold-hi); }
-  .card-save button { width: 100%; cursor: pointer; }
   .card-desc { margin-top: 0.4rem; font-size: 0.85rem; color: var(--sac-dim); }
-
-  // Core dice-roll partials inherit the chat theme; re-ground them for the dark card.
-  .dice-roll {
-    .dice-formula, .dice-total {
-      background: var(--sac-inset);
-      border-color: var(--sac-line-strong);
-      color: var(--sac-text);
-    }
-  }
 
   // Tier-1 disclosure: the itemized conditional modifiers that shaped this card's rolls.
   .card-modifiers {
@@ -1219,41 +1275,50 @@
   }
 }
 
-// --- GM-only attack whisper (comparison + HP-apply controls) ---
+// --- GM-only whispers: the hidden comparisons, and the apply / undo controls ---
+// The cards' world, a shade darker (behind the GM's screen). Buttons are quiet wells; the one the system chose or would
+// choose (`applied`, `apply`) is gold, Undo is dim, Mark Dead is blood.
 &.gm-note {
-  font-size: 0.85rem;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 6px;
+  padding: 0.4rem 0.55rem;
+  color: var(--sac-text);
+  font-size: 0.85rem; line-height: 1.35;
+  font-variant-numeric: lining-nums;
+  b, strong { color: var(--sac-gold-hi); }
+  button {
+    cursor: pointer; font-size: 0.74rem; line-height: 1.4; padding: 0.1rem 0.45rem;
+    background: var(--sac-panel); border: 1px solid var(--sac-line-strong); border-radius: 4px; color: var(--sac-text);
+    font-variant-numeric: lining-nums tabular-nums;
+    &:hover, &:focus-visible { border-color: var(--sac-gold); box-shadow: none; }
+    &.applied, &.apply { border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: bold; }
+    &.undo { color: var(--sac-dim); }
+    &.mark-dead { border-color: var(--sac-blood-deep); color: var(--sac-blood); font-weight: bold; }
+  }
   .hp-controls {
-    display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.2rem;
-    button {
-      flex: 1; min-width: fit-content; cursor: pointer; white-space: nowrap;
-      font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.35rem;
-      &.applied { border-color: #1a7f37; font-weight: bold; } // the outcome auto-apply used
-      &.undo { flex: 0 0 auto; opacity: 0.8; }
-      &.mark-dead { flex-basis: 100%; border-color: #911d20; color: #911d20; font-weight: bold; }
-    }
+    display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.3rem;
+    button { flex: 1; min-width: fit-content; white-space: nowrap; }
+    .undo { flex: 0 0 auto; }
+    .mark-dead { flex-basis: 100%; }
   }
   .cond-controls {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.2rem;
-    .cond-name { font-size: 0.75rem; font-weight: bold; margin-right: 0.15rem; }
-    button {
-      cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem;
-      &.apply { border-color: #7a5b1e; }
-      &.undo { opacity: 0.8; }
-    }
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.3rem;
+    .cond-name { font-size: 0.72rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: var(--sac-dim); margin-right: 0.15rem; }
   }
-  // Crit chooser apply buttons (damage variants + condition picks), gold-framed to read as the crit row.
+  // Crit chooser apply buttons (damage variants + condition picks), under a gold rule to read as the crit row.
   .crit-controls {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.25rem;
-    padding-top: 0.2rem; border-top: 1px dashed var(--sac-gold);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem; margin-top: 0.3rem;
+    padding-top: 0.25rem; border-top: 1px dashed var(--sac-gold-lo);
     .crit-label { flex-basis: 100%; font-family: var(--sac-font-ui); font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: var(--sac-gold-hi); }
-    button.crit-opt { cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem; border-color: var(--sac-gold); }
+    button.crit-opt { border-color: var(--sac-gold-lo); }
   }
-  .post-roll-controls { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.25rem; }
-  button.post-roll { cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem; border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: bold; }
+  .post-roll-controls { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.3rem; }
+  button.post-roll { border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: bold; }
 }
 
 /* Save-to-negate row (Slinger et al.): the defender's own "Roll Save to Negate" button on a hit. */
-.sacadia .resolution-row.save-negate {
+.resolution-row.save-negate {
   flex-wrap: wrap; gap: 0.25rem;
   button { cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem; }
 }
@@ -1287,49 +1352,74 @@
   .research-row small { opacity: 0.75; }
 }
 
-// --- Condition-resistance chat card (root carries `sacadia resist-card`) ---
+// --- Check-pool cards: saves and condition checks (root carries `sacadia chat-card resist-card`) ---
+// One row per die (the natural roll, what was added, the total), then what it came to as a banner.
 &.resist-card {
-  background: var(--sac-umber);
-  border: 1px solid var(--sac-line-strong);
-  border-radius: 6px;
-  padding: 0.5rem 0.6rem;
-  color: var(--sac-text);
-
-  .rc-head {
+  .rc-head { // cards posted before the shared head
     display: flex; align-items: center; gap: 0.4rem;
     font-family: var(--sac-font-display); color: var(--sac-gold-hi); font-size: 1rem;
     border-bottom: 1px solid var(--sac-line); padding-bottom: 0.3rem;
     i { color: var(--sac-gold); }
   }
-  .rc-sub { font-size: 0.72rem; color: var(--sac-dim); margin: 0.3rem 0; text-transform: uppercase; letter-spacing: 0.04em; }
-  .rc-dice { list-style: none; margin: 0.2rem 0; padding: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+  .rc-section {
+    margin: 0.45rem 0 0.2rem; border: none; padding: 0;
+    font-family: var(--sac-font-ui); font-size: 0.72rem; font-weight: bold; color: var(--sac-dim);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    small { font-weight: normal; text-transform: none; letter-spacing: 0; }
+  }
+  .rc-dice { list-style: none; margin: 0.3rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.2rem; }
   .rc-die {
-    display: flex; align-items: baseline; gap: 0.4rem; font-variant-numeric: tabular-nums;
-    padding: 0.1rem 0.35rem; border-radius: 3px; background: var(--sac-inset);
-    .rc-d20 { font-family: var(--sac-font-display); color: var(--sac-gold-hi); min-width: 1.6rem; }
+    display: grid; grid-template-columns: 1.9rem 2.2rem 1fr auto; align-items: center; gap: 0.4rem;
+    padding: 0.15rem 0.45rem 0.15rem 0.2rem; border: 1px solid var(--sac-line); border-radius: 4px;
+    background: var(--sac-inset); font-variant-numeric: lining-nums tabular-nums;
+    .rc-d20 { // the natural roll, as a small die face
+      display: grid; place-items: center; height: 1.45rem; border-radius: 3px;
+      border: 1px solid var(--sac-line-strong); color: var(--sac-dim); font-size: 0.8rem;
+    }
     .rc-plus { color: var(--sac-dim); font-size: 0.8rem; }
-    .rc-total { font-weight: bold; margin-left: 0.1rem; }
-    b { margin-left: auto; }
-    &.pass b { color: #6fbf85; }
-    &.fail b { color: var(--sac-blood); }
-    &.dropped { opacity: 0.45; text-decoration: line-through; }
-    &.auto { font-style: italic; color: var(--sac-dim); }
-    &.pending { color: var(--sac-text); } // kept die, pass/fail decided GM-side
+    .rc-total { font-family: var(--sac-font-display); font-size: 1.2rem; font-weight: 700; line-height: 1.1; color: var(--sac-text); }
+    .rc-mark { justify-self: end; font-size: 0.95rem; }
+    small.rc-mark { font-size: 0.7rem; color: var(--sac-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+    &.pass { background: rgba(111, 191, 133, 0.08); border-color: rgba(111, 191, 133, 0.3); .rc-mark { color: #6fbf85; } }
+    &.fail { background: rgba(192, 80, 85, 0.09); border-color: rgba(192, 80, 85, 0.32); .rc-mark { color: var(--sac-blood); } }
+    &.dropped { opacity: 0.5; .rc-total { text-decoration: line-through; } }
+    &.auto .rc-total { font-family: var(--sac-font-ui); font-size: 0.8rem; font-weight: normal; font-style: italic; color: var(--sac-dim); }
   }
-  // Outcome slot — starts as an "awaiting" placeholder, replaced by the GM-resolved result.
+  // What the dice came to: a save's per-condition result and damage, and the GM-filled outcome slot of a check.
+  .rc-outcome, .rc-resolution > span {
+    display: block; margin-top: 0.3rem; padding: 0.2rem 0.5rem; border-radius: 4px;
+    font-size: 0.78rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;
+    background: var(--sac-panel); color: var(--sac-text);
+  }
+  .rc-outcome.fail, .rc-resolution > .took { background: rgba(192, 80, 85, 0.14); color: #e08a8e; }
+  .rc-outcome.pass, .rc-resolution > .clean { background: rgba(111, 191, 133, 0.12); color: #8fd3a2; }
+  .rc-outcome.damage i { color: var(--sac-blood); margin-right: 0.2rem; }
   .rc-resolution {
-    margin-top: 0.35rem; padding-top: 0.3rem; border-top: 1px solid var(--sac-line);
-    font-weight: bold; text-align: center; color: var(--sac-dim);
-    .took { color: var(--sac-blood); }
-    .clean { color: #6fbf85; }
-    .pending { color: var(--sac-dim); font-style: italic; font-weight: normal; }
+    margin-top: 0.35rem; font-size: 0.8rem; font-style: italic; color: var(--sac-dim); // "Awaiting resolution…"
+    > span { font-style: normal; }
+    > .pending { background: none; padding: 0; font-weight: normal; font-style: italic; text-transform: none; letter-spacing: 0; color: var(--sac-dim); }
   }
+}
+
+// --- Rest card: what the rest recovered, as label / value rows ---
+&.rest-card .rest-list {
+  display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 0.7rem; align-items: baseline;
+  margin: 0.45rem 0 0; padding: 0; list-style: none;
+  li { display: contents; }
+  .rest-label { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sac-dim); }
+  .rest-value { font-size: 0.85rem; font-variant-numeric: lining-nums tabular-nums; b { color: var(--sac-gold-hi); } }
+}
+
+// --- Note card: a one-line notice (Rend, Rage ending, a Madness change, a save prompt's text and its button) ---
+&.note-card {
+  padding: 0.4rem 0.55rem; font-size: 0.85rem; line-height: 1.35;
+  b, strong { color: var(--sac-gold-hi); }
 }
 
 // GM whisper for manual condition-resistance adjudication: the dice + a row of assign buttons.
 &.gm-note .rc-manual-dice {
   display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.25rem 0;
-  .rc-total { font-family: var(--sac-font-display); color: var(--sac-gold-hi); font-variant-numeric: tabular-nums; }
+  .rc-total { font-family: var(--sac-font-display); color: var(--sac-gold-hi); font-variant-numeric: lining-nums tabular-nums; }
 }
 
 // --- Effects list ---
@@ -1344,3 +1434,47 @@
   .item-name { flex: 1; display: flex; align-items: center; gap: 0.35rem; }
   .item-controls { display: flex; gap: 0.35rem; a { cursor: pointer; } }
 }
+
+// --- Section headings ---
+// One heading style for every tab: small tracked capitals over a hairline, not display headlines (vertical space is
+// the scarce resource on a sheet). Last in the file so it wins over the older per-tab heading rules.
+.tab > h3,
+.tab > div > h3,
+.ability-group > h3,
+.inv-head > h3 {
+  margin: 0.9rem 0 0.45rem;
+  padding: 0 0 0.25rem;
+  font-family: var(--sac-font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  border-bottom: 1px solid var(--sac-line);
+}
+.tab > h3:first-child,
+.tab > div:first-child > h3:first-child,
+.tab > .ability-group:first-of-type > h3 { margin-top: 0.25rem; }
+.inv-head > h3 { flex: 1; margin-bottom: 0; }
+
+// --- Character tab: the build ---
+.build-band {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem 0.6rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--sac-panel);
+  border-radius: 5px;
+
+  // Row 1: the two professions (each with its level) and Level; row 2: Size, the HP adjustment and Resistances.
+  .sac-field { grid-column: span 2; }
+  .sac-field.narrow { grid-column: span 1; }
+  .sac-field.hp-adjust, .sac-field.wide { grid-column: span 2; }
+  .with-level { display: flex; gap: 0.3rem; select { flex: 1; min-width: 0; } input { flex: 0 0 3rem; width: 3rem; } }
+}
+.identity-band {
+  background: var(--sac-panel);
+  border: none;
+  .id-field input, .id-field select { background: var(--sac-inset); }
+}
+

@@ -1,5 +1,38 @@
 # Changelog
 
+## 0.3.0
+
+- **Character sheet redesign.**
+  - **Header:** it now says who the sheet is for. The portrait fills the header's height, and under the name a single
+    line sums up the build (professions, level, size, resistances). Health has a bar that turns amber at half and red at
+    a quarter, beside the AP and reaction pips, and the defenses and derived numbers sit in one row of tiles.
+  - **Character tab** (was Biography): a character's build lives here now, under **Build** (professions and their
+    levels, level, size, Max HP adjustment, resistances), with **Identity** and **Background**.
+  - **Look:** one small-caps label style, values in parchment, and gold kept for what matters. Fields have no boxes until
+    you hover or type. The system ships the Alegreya typeface, so every player sees the same one.
+  - **Abilities:** denser cards. The icon (the Use button) is larger and carries the AP cost; edit and delete show on
+    hover.
+  - **Inventory:** two-line rows, the name and then what it does. A hand or a box shows whether an item is readied or
+    stored, with its slots, and the counters read Readied and Stored.
+  - **Fixes:** the Effects tabs showed `EFFECT.TabDuration`; the inventory overflowed the window at its default width;
+    talent specializations and the "Roll Save to Negate" row had lost their styling; the Trait roll tooltip read
+    "Roll {label}". The narrative size field is now **Stature**, so it isn't confused with Size.
+- **Chat cards.** Everything the system posts now matches the ability card.
+  - **Checks:** Trait, talent and specialty checks show the Trait's icon, the advantage they rolled at, the dice, and a
+    chip for each part of the total (Power +2 · Proficiency +3 · Fumbled −2).
+  - **Saves and condition checks:** one row per die (the roll, what was added, the total), marked passed or failed, and
+    the result as a banner. A save names the creature that imposed it.
+  - **Initiative**, from the sheet or the Combat Tracker, is a check card. A hidden combatant's roll stays GM-only.
+  - **Rests** list what they recovered (Health, HP pools spent, conditions cleared, Rend, pools, Lore, Slightly Cracked
+    dice). Save prompts and notices are slim dark notes. An item rolled from a hotbar macro shows as a card, and the
+    last plain rolls (critical and on-kill temp HP, Death Mastery, Mind Map, Moonstone Earrings, zone damage) are
+    titled cards.
+  - **GM-only whispers** sit on a darker panel, with the button the system chose in gold.
+- **Trait icons:** Power, Finesse, Wiles, Courage and Fate have pixel-art icons in the ability icons' style. They're on
+  the Stats tab, where clicking one rolls the check, and on check, save and initiative cards. The icon generator has a
+  `traits` group (src/generate-icons.mjs).
+- **User manual:** *Building a Character* follows the new layout.
+
 ## 0.2.2
 
 - **Initiative button:** character and NPC sheets have an **Initiative** button in the header. It rolls a Courage or

@@ -69,7 +69,7 @@ export async function hitTriggers({ attacker, subs, prevHits, hitsByTarget, newH
     if (allies.length) {
       await applyOnUseInflict({ targetUuids: allies.map((t) => t.document.uuid), inflicts: [], cover: 'half', casterUuid: attacker.uuid });
       await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: attacker }),
-        content: `<div class="sacadia">Covering Fire: ${allies.map((t) => t.name).join(', ')} — Half Cover until ${attacker.name}'s next turn.</div>` });
+        content: `<div class="sacadia chat-card note-card">Covering Fire: ${allies.map((t) => t.name).join(', ')} — Half Cover until ${attacker.name}'s next turn.</div>` });
     }
   }
   // Glidestep: after a 5ft adjust this turn, a melee hit on a new target recovers the adjust.
@@ -100,7 +100,7 @@ export async function hitTriggers({ attacker, subs, prevHits, hitsByTarget, newH
         const inflict = foundry.utils.escapeHTML(JSON.stringify([{ condition: 'debilitated', level: 1, label }]));
         await ChatMessage.create({
           speaker: ChatMessage.getSpeaker({ actor: attacker }),
-          content: `<div class="sacadia">${game.i18n.format('SACADIA.Trigger.ExhaustiveRage', { name: t.name })}`
+          content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Trigger.ExhaustiveRage', { name: t.name })}`
             + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="power" data-dc="${dc}" data-inflict="${inflict}" data-caster="${attacker.uuid}">`
             + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc})</button></div></div>`,
         });

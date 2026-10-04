@@ -4,6 +4,7 @@
 import { actorCheckDc } from './damage.mjs';
 import { applyConditionDeltas } from '../helpers/conditions.mjs';
 import { confirmWarn, ownsAbility } from '../helpers/actor-utils.mjs';
+import { postRollCard } from '../helpers/chat-cards.mjs';
 import { replaceWith } from '../helpers/update-ops.mjs';
 import { syncFocus } from '../helpers/focus.mjs';
 
@@ -30,7 +31,7 @@ export async function soulbindingBreak(actor) {
     if (!t) continue;
     const r = await new Roll(`${prof}d8`).evaluate();
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), rolls: [r],
-      content: `<div class="sacadia">${game.i18n.format('SACADIA.Madness.SoulbindingBreak', { name: t.name })}`
+      content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Madness.SoulbindingBreak', { name: t.name })}`
         + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="wiles" data-dc="${dc}" data-damage="${r.total}" data-onsuccess="none"`
         + ` data-casterpc="${actor.type === 'character' ? 1 : 0}" data-caster="${actor.uuid}">`
         + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc} · Wiles)</button></div></div>` });
@@ -129,7 +130,7 @@ export async function onMindMap(event) {
   event.currentTarget.disabled = true;
   await actor.update({ 'system.classPools.prescient.value': pv - 1 });
   const r = await new Roll('1d8').evaluate();
-  await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: 'Mind Map' });
+  await postRollCard({ actor, roll: r, icon: 'fa-solid fa-brain', title: 'Mind Map', meta: [game.i18n.format('SACADIA.Madness.MindMapFirst', { n: ds.first })] });
   const keepNew = await confirmWarn('Mind Map', game.i18n.format('SACADIA.Madness.MindMapPick', { first: ds.first, second: r.total }));
   if (!keepNew) return;
   // Undo the first result's HP loss, then run the table with the kept roll.

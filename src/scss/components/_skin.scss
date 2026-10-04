@@ -10,6 +10,8 @@
   background: var(--sac-umber);
   color: var(--sac-text);
   font-family: var(--sac-font-ui);
+  // Alegreya's default figures are old-style (descending): numbers on a sheet read better lining.
+  font-variant-numeric: lining-nums;
 }
 
 h1, h2, h3, h4 {
@@ -36,6 +38,30 @@ textarea {
   &::placeholder { color: var(--sac-dim); opacity: 0.7; }
 }
 select option { background: var(--sac-inset); color: var(--sac-text); }
+
+// Ghost input: a value edited in place that reads as text (no box), with an underline on hover and focus.
+input.ghost {
+  padding: 0;
+  text-align: center;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted transparent;
+  border-radius: 0;
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  &:hover { border-bottom-color: var(--sac-line-strong); }
+  &:focus { border-bottom: 1px solid var(--sac-gold); box-shadow: none; }
+}
+
+// A form field: one label style (.sac-label) above its control.
+.sac-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  input, select { width: 100%; }
+}
 button {
   background: var(--sac-panel);
   color: var(--sac-text);
@@ -139,13 +165,16 @@ a { color: var(--sac-text); }
     position: absolute; inset: 0 auto 0 0;
     background: linear-gradient(180deg, #e8c866, #b9872b);
   }
+  // Health below half turns amber, below a quarter red (the meter's state, not the accent).
+  &.hurt .fill { background: linear-gradient(180deg, #e39a4a, #a9601f); }
+  &.low .fill { background: linear-gradient(180deg, #d4666b, var(--sac-blood-deep)); }
   .num {
     position: absolute; inset: 0;
     display: flex; align-items: center; justify-content: center;
     font-size: 0.66rem; font-weight: 700;
     color: var(--sac-text);
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 }
 

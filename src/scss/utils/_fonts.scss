@@ -1,0 +1,11 @@
+// The display face, shipped with the system so every player sees the same type (the local stack it replaced fell back
+// to whatever serif each machine had). Alegreya, SIL Open Font License (assets/fonts/alegreya/OFL.txt); Latin subset.
+@each $weight in (400, 600, 700) {
+  @font-face {
+    font-family: "Alegreya";
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("../assets/fonts/alegreya/alegreya-latin-#{$weight}-normal.woff2") format("woff2");
+  }
+}

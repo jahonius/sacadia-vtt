@@ -11,6 +11,7 @@ import { isSurrounded } from '../helpers/geometry.mjs';
 import { matchArmedBoosts, foldBoostEffects, boostLimit } from '../helpers/boosts.mjs';
 import { critLayout, damageVariantDieStep } from '../helpers/crit-effects.mjs';
 import { planPool, scorePool } from '../helpers/check-pool.mjs';
+import { advantageText, cardHead, poolRows, postRollCard, traitEmblem } from '../helpers/chat-cards.mjs';
 import { applyConditionDeltas, revealHidden, conditionSource, applySelfDamage } from '../helpers/conditions.mjs';
 import { attackRiders } from '../helpers/attack-riders.mjs';
 import { grantsFrom } from '../helpers/prestige.mjs';
@@ -358,7 +359,7 @@ export class AbilityUse {
       }
     }
     if (notes.length) await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${b.name}</strong>: ${notes.join(' · ')}</p>` });
+      content: `<div class="sacadia chat-card note-card"><strong>${b.name}</strong>: ${notes.join(' · ')}</div>` });
   }
 
   /**
@@ -453,23 +454,14 @@ export class AbilityUse {
   }
 
   /**
-   * A condition-check card: the dice (auto-fails first, then kept and dropped) under a titled head, with an optional
-   * sub-line and notes; its outcome slot is filled GM-side (resolveResist). `mods` shows each die's modifier, `dropLabel`
-   * names the dropped dice.
+   * A condition-check card: the ability-card head (emblem, title, a tag and facts), any modifiers that applied, then the
+   * dice (auto-fails first, then kept and dropped); its outcome slot is filled GM-side (resolveResist).
    */
-  static checkCardHtml({ icon, title, sub = '', notes = [], entries, autoFail = 0, mods = null, dropLabel = false }) {
-    const loc = (k) => game.i18n.localize(k);
-    const rows = [];
-    for (let i = 0; i < autoFail; i++) rows.push(`<li class="rc-die fail auto">${loc('SACADIA.Resist.Auto')} <b>✗</b></li>`);
-    entries.forEach((e, i) => {
-      const m = mods ? `<span class="rc-plus">${mods[i] >= 0 ? '+' : ''}${mods[i]}</span>` : '';
-      rows.push(`<li class="rc-die ${e.dropped ? 'dropped' : 'pending'}"><span class="rc-d20">${e.raw}</span>${m}<span class="rc-total">${e.total}</span>`
-        + `${dropLabel && e.dropped ? ` ${loc('SACADIA.Resist.Dropped')}` : ''}</li>`);
-    });
-    return `<div class="sacadia resist-card"><div class="rc-head"><i class="${icon}"></i> ${title}</div>`
-      + (sub ? `<div class="rc-sub">${sub}</div>` : '')
-      + (notes.length ? `<div class="rc-adv-note"><i class="fa-solid fa-shield-halved"></i> ${notes.join(', ')}</div>` : '')
-      + `<ul class="rc-dice">${rows.join('')}</ul><div class="rc-resolution" data-resolution>${loc('SACADIA.Resist.Awaiting')}</div></div>`;
+  static checkCardHtml({ icon, img, title, tag = '', meta = [], notes = [], entries, autoFail = 0 }) {
+    return `<div class="sacadia chat-card resist-card">${cardHead({ icon, img, title, tag, meta })}`
+      + (notes.length ? `<div class="card-parts">${notes.map((n) => `<span class="part">${n}</span>`).join('')}</div>` : '')
+      + poolRows(entries, { autoFail })
+      + `<div class="rc-resolution" data-resolution>${game.i18n.localize('SACADIA.Resist.Awaiting')}</div></div>`;
   }
 
   /**
@@ -519,7 +511,7 @@ export class AbilityUse {
         // No roll: one level removed (GM-routed — the ally may not be ours).
         await ChatMessage.create({
           speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-          content: `<div class="sacadia">${game.i18n.format('SACADIA.Aid.Removed', { label: item.name, name: ally.name, condition: condLabel })}</div>`,
+          content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Aid.Removed', { label: item.name, name: ally.name, condition: condLabel })}</div>`,
           flags: { sacadia: { onUse: { targetUuids: [ally.token?.uuid ?? ally.uuid], inflicts: [{ condition: form.cond, amount: -1 }] } } },
         });
         continue;
@@ -530,8 +522,9 @@ export class AbilityUse {
       const { roll, sc, autoFail } = await AbilityUse.#rollPool(levels, net, mod);
       await AbilityUse.postCard({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: AbilityUse.checkCardHtml({ icon: 'fa-solid fa-hands-holding', entries: sc.entries, autoFail,
-          title: game.i18n.format('SACADIA.Aid.CardTitle', { label: item.name, name: ally.name, condition: condLabel }) }),
+        content: AbilityUse.checkCardHtml({ ...traitEmblem(form.trait, 'fa-solid fa-hands-holding'), entries: sc.entries, autoFail,
+          title: game.i18n.format('SACADIA.Aid.CardTitle', { label: item.name, name: ally.name, condition: condLabel }),
+          tag: loc('SACADIA.Check.MakeTraitCheck'), meta: [loc(CONFIG.SACADIA.stats[form.trait]), advantageText(net)] }),
         rolls: roll ? [roll] : [],
         sound: CONFIG.sounds.dice,
         flags: { sacadia: { resist: { resisterUuid: ally.token?.uuid ?? ally.uuid, sourceUuid: null, condition: form.cond, mode: 'reduce', keptTotals: sc.keptTotals, autoFail } } },
@@ -582,8 +575,9 @@ export class AbilityUse {
     const uuidOf = (a) => a.token?.uuid ?? a.uuid;
     await AbilityUse.postCard({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: AbilityUse.checkCardHtml({ icon: 'fa-solid fa-arrow-right-arrow-left', entries: sc.entries, autoFail,
-        title: fmt('CardTitle', { label: item.name, from: from.name, to: to.name }) }),
+      content: AbilityUse.checkCardHtml({ ...traitEmblem('fate', 'fa-solid fa-arrow-right-arrow-left'), entries: sc.entries, autoFail,
+        title: fmt('CardTitle', { label: item.name, from: from.name, to: to.name }),
+        tag: `${game.i18n.localize('SACADIA.Stat.Fate.long')} ${game.i18n.localize('SACADIA.Resist.Check')}`, meta: [game.i18n.format('SACADIA.Check.ChecksN', { n: levels }), advantageText(net)] }),
       rolls: roll ? [roll] : [],
       sound: CONFIG.sounds.dice,
       // Checked against the fatigued creature's own Check DC (`dcUuid`); each success also gives `funnelTo` 1 AP next turn.
@@ -1074,7 +1068,7 @@ export class AbilityUse {
       await this.actor.update({ 'system.professionResources.oracle.cracked': saved });
       const target = Array.from(game.user.targets ?? [])[0]?.name ?? game.i18n.localize('SACADIA.Cracked.AnEnemy');
       await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: `<p><strong>${item.name}</strong>: ${game.i18n.format('SACADIA.Cracked.Strand', { target, n: `${strand.sign === '-' ? '−' : '+'}${strand.value}` })}</p>` });
+        content: `<div class="sacadia chat-card note-card"><strong>${item.name}</strong>: ${game.i18n.format('SACADIA.Cracked.Strand', { target, n: `${strand.sign === '-' ? '−' : '+'}${strand.value}` })}</div>` });
     }
 
     // Aid-resist (Call of Respite, Vision of Moss, Burning Incense): checks made for targeted allies.
@@ -1108,7 +1102,8 @@ export class AbilityUse {
       if (this.actor.system._rollOptions?.()['self:gear:moonstone-earrings']) {
         const r = await new Roll('1d10').evaluate();
         refund = r.total === 10;
-        await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), flavor: game.i18n.localize(refund ? 'SACADIA.Lore.MoonstoneSaved' : 'SACADIA.Lore.Moonstone') });
+        await postRollCard({ actor: this.actor, roll: r, icon: 'fa-solid fa-moon', title: game.i18n.localize('SACADIA.Lore.MoonstoneTitle'),
+          meta: [game.i18n.localize(refund ? 'SACADIA.Lore.MoonstoneSaved' : 'SACADIA.Lore.Moonstone')] });
       }
       if (!refund) await this.actor.update({ 'system.lorePoints.value': Math.max(0, have - loreCost) });
     }
@@ -2112,7 +2107,7 @@ export class AbilityUse {
         const pool = n ? await AbilityUse.#pickPool(a, n) : null;
         if (!pool) continue;
         await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-          content: `<p>${game.i18n.format('SACADIA.Pool.Refunded', { name: a.name, n, pool: game.i18n.localize(CONFIG.SACADIA.pools[pool] ?? pool) })}</p>`,
+          content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Pool.Refunded', { name: a.name, n, pool: game.i18n.localize(CONFIG.SACADIA.pools[pool] ?? pool) })}</div>`,
           flags: { sacadia: { gainOn: { uuid: a.uuid, n, pool } } } });
       }
     }
@@ -2167,7 +2162,7 @@ export class AbilityUse {
       // Open the Third Eye: hidden creatures within reach are revealed (GM-side, from your token).
       if (onUse.revealWithin) {
         await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-          content: `<p>${game.i18n.localize('SACADIA.Prestige.ThirdEye')}</p>`,
+          content: `<div class="sacadia chat-card note-card">${game.i18n.localize('SACADIA.Prestige.ThirdEye')}</div>`,
           flags: { sacadia: { reveal: { casterUuid: this.actor.uuid, within: num(onUse.revealWithin) } } } });
       }
       if (onUse.convert?.amount && tUuids.length) {
@@ -2435,7 +2430,7 @@ export class AbilityUse {
       notes.push(game.i18n.format('SACADIA.Boost.SelfDamage', { n: dmg }));
     }
     if (!delta) {
-      if (notes.length) await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content: `<p>${notes.join(' · ')}</p>`, rolls });
+      if (notes.length) await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), content: `<div class="sacadia chat-card note-card">${notes.join(' · ')}</div>`, rolls });
       return;
     }
     if (next !== cur) await this.actor.update({ 'system.conditions.madness.value': next });
@@ -2443,7 +2438,7 @@ export class AbilityUse {
     const sign = delta >= 0 ? '+' : '−';
     await AbilityUse.postCard({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${label}</strong> ${sign}${Math.abs(delta)} → ${next}${notes.length ? ` · ${notes.join(' · ')}` : ''}</p>`,
+      content: `<div class="sacadia chat-card note-card"><strong>${label}</strong> ${sign}${Math.abs(delta)} → ${next}${notes.length ? ` · ${notes.join(' · ')}` : ''}</div>`,
       rolls,
     });
   }
@@ -2647,7 +2642,7 @@ export class AbilityUse {
     if (broken) await this.actor.unsetFlag('sacadia', 'promiseBroken');
     else await this.actor.setFlag('sacadia', 'promiseBroken', true);
     await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      content: `<p><strong>${item.name}</strong>: ${game.i18n.localize(broken ? 'SACADIA.Prestige.PromiseKept' : 'SACADIA.Prestige.PromiseBroken')}</p>` });
+      content: `<div class="sacadia chat-card note-card"><strong>${item.name}</strong>: ${game.i18n.localize(broken ? 'SACADIA.Prestige.PromiseKept' : 'SACADIA.Prestige.PromiseBroken')}</div>` });
   }
 
   /**
@@ -2683,7 +2678,7 @@ export class AbilityUse {
     if (added.length) {
       const names = added.map((id) => entries.find((e) => e.flags.sacadia.catalogId === id)?.name ?? id);
       await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: `<p><strong>${item.name}</strong>: ${game.i18n.format('SACADIA.Prestige.Researched', { names: names.join(', '), n: added.length })}</p>` });
+        content: `<div class="sacadia chat-card note-card"><strong>${item.name}</strong>: ${game.i18n.format('SACADIA.Prestige.Researched', { names: names.join(', '), n: added.length })}</div>` });
     }
   }
 
@@ -2706,8 +2701,8 @@ export class AbilityUse {
       const r = await new Roll(`1d20 + ${Number(rd.wiles) || 0} + ${Number(rd.proficiency) || 0}`).evaluate();
       const pass = r.total >= dc;
       await AbilityUse.postCard({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), rolls: [r],
-        content: `<p>${game.i18n.format('SACADIA.Prestige.SanctuaryCheck', { name: t.name, total: r.total, dc,
-          result: game.i18n.localize(pass ? 'SACADIA.Card.SaveSuccess' : 'SACADIA.Card.SaveFailure') })}</p>` });
+        content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Prestige.SanctuaryCheck', { name: t.name, total: r.total, dc,
+          result: game.i18n.localize(pass ? 'SACADIA.Card.SaveSuccess' : 'SACADIA.Card.SaveFailure') })}</div>` });
       if (pass) continue;
       const go = await confirmWarn(item.name, game.i18n.format('SACADIA.Prestige.SanctuaryRetarget', { name: t.name }));
       if (!go || Array.from(game.user.targets ?? []).includes(t)) return false;

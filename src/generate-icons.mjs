@@ -1,6 +1,7 @@
 /**
  * Generate ability icons with the Gemini image API. Covers the ability packs (abilities-*), the profession features and
- * the basic actions, reading each item's name and description from src/packs/<pack>/*.json.
+ * the basic actions, reading each item's name and description from src/packs/<pack>/*.json, and the five Traits (group
+ * `traits`, the emblems of check and save cards), whose subjects are written in TRAITS below.
  *
  * The model draws only a frameless, action-focused illustration; the gold frame from src/icon_template.jpg is laid over
  * it on export (src/icon-frame.mjs), so every frame is identical and the art snaps to the frame's pixel grid. The
@@ -20,7 +21,7 @@
  *         node src/generate-icons.mjs --export          # rebuild the framed 256 px WebPs from the originals (no API calls)
  *
  * Flags:
- *   --group=<name>       one icon group (oracle, soldier, magus, lore, profession-features, basic-actions, …); omit for
+ *   --group=<name>       one icon group (oracle, soldier, magus, lore, profession-features, basic-actions, traits, …); omit for
  *                        all. (--profession is an alias.)
  *   --only=<id,id,…>     only these catalog ids
  *   --skip=<id,id,…>     leave these catalog ids alone (with --force: keep icons you've approved)
@@ -44,7 +45,7 @@ import os from 'node:os';
 import path from 'node:path';
 import readline from 'node:readline';
 import sharp from 'sharp';
-import { ROOT, ORIGINALS_DIR, SHIPPED_DIR, ICON_SIZE, WEBP_QUALITY, hasIcons, iconGroup, iconPattern, shippedName } from './icons.mjs';
+import { ROOT, ORIGINALS_DIR, SHIPPED_DIR, ICON_SIZE, WEBP_QUALITY, hasIcons, iconGroup, iconPattern, shippedDir, shippedName } from './icons.mjs';
 import { framedIcon, innerArt, regridded } from './icon-frame.mjs';
 
 const SRC_PACKS = path.join(ROOT, 'src', 'packs');
@@ -103,6 +104,7 @@ const FANTASY = {
   masteries: 'climactic and powerful, a pinnacle of skill; radiant accents.',
   lore: 'ancestral and legendary, an old tale come alive.',
   'basic-actions': 'plain, clear and readable at a glance.',
+  traits: 'iconic and elemental: one bold emblem of a core quality, readable at a glance.',
 };
 /** Magus tomes and Witch schools (an item's meta.subpath): what their spells look like. */
 const SCHOOLS = {
@@ -126,6 +128,23 @@ const HINTS = {
   predator_and_prey: 'two scorpions striking each other with their stingers at the same instant',
   mg_clotsnipe: 'a lance of dark, clotted blood shooting in a straight line and piercing through a row of shadowy figures',
 };
+/**
+ * The five Traits, drawn as the emblems of check and save cards. They aren't compendium items, so their name, what they
+ * cover (for the prompt) and what to draw are here. Each has its own color, far from the others: ember orange, teal,
+ * violet, emerald green and night blue.
+ */
+const TRAITS = [
+  { catalogId: 'power', name: 'Power', description: 'Raw strength: melee might, breaking things, lifting, grappling.',
+    hint: 'a bronze-banded fist smashing through a slab of stone, chunks and dust bursting outward; warm bronze and ember orange' },
+  { catalogId: 'finesse', name: 'Finesse', description: 'Deftness and aim: quick hands, balance, ranged attacks, slipping past.',
+    hint: 'a hand plucking a falling feather out of the air between two fingertips, a swift motion arc behind it; teal and silver' },
+  { catalogId: 'wiles', name: 'Wiles', description: 'Cunning and spellcraft: wit, guile, perception and the power of spells.',
+    hint: 'a single glowing eye opening inside a swirl of violet smoke, its pupil a bright slit; violet and gold' },
+  { catalogId: 'courage', name: 'Courage', description: 'Nerve and willpower: standing firm, facing fear, imposing your will on others.',
+    hint: 'a roaring golden lion head, mane flared, mouth wide open, against a deep emerald-green glow; emerald green and gold, no red' },
+  { catalogId: 'fate', name: 'Fate', description: 'Luck and destiny: fortune, omens, critical moments going your way.',
+    hint: 'a bright shooting star streaking down through a deep night-blue glow, trailing a spray of sparks; pale blue, silver and white' },
+];
 const PROFESSION_LABELS = { bladedancer: 'Bladedancer', fatebound: 'Fatebound', hulinari: 'Hulinari Warrior', oracle: 'Oracle',
   sentinel: 'Sentinel', soldier: 'Soldier', thug: 'Thug', magus: 'Magus', witch: 'Witch' };
 
@@ -210,6 +229,13 @@ function collectItems(args) {
         hint: HINTS[catalogId] ?? '', exists });
     }
   }
+  if (!wantGroup || wantGroup === 'traits') {
+    const files = [...listDir(path.join(ORIGINALS_DIR, 'traits')), ...listDir(shippedDir('traits'))];
+    for (const t of TRAITS) {
+      if ((only && !only.has(t.catalogId)) || skip.has(t.catalogId)) continue;
+      out.push({ group: 'traits', ...t, fantasy: FANTASY.traits, exists: files.some((f) => iconPattern(t.catalogId).test(f)) });
+    }
+  }
   return out;
 }
 
@@ -219,7 +245,7 @@ function collectItems(args) {
  * shrinking, and with smartSubsample (WebP otherwise smears colored edges).
  */
 async function exportIcon(group, id, originalPath) {
-  const dir = path.join(SHIPPED_DIR, group);
+  const dir = shippedDir(group);
   fs.mkdirSync(dir, { recursive: true });
   const dest = path.join(dir, shippedName(id));
   const full = isArt(originalPath) ? await framedIcon(originalPath) : await regridded(originalPath);
@@ -239,7 +265,7 @@ async function exportAll(args) {
       if (!byId.has(id) || isArt(file)) byId.set(id, file);
     }
     for (const [id, file] of byId) {
-      if (!args.force && fs.existsSync(path.join(SHIPPED_DIR, group, shippedName(id)))) continue;
+      if (!args.force && fs.existsSync(path.join(shippedDir(group), shippedName(id)))) continue;
       await exportIcon(group, id, path.join(ORIGINALS_DIR, group, file));
       done += 1;
     }

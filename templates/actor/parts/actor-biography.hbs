@@ -14,33 +14,77 @@
   {{/inline}}
 
   {{#if isCharacter}}
-  {{!-- Identity band: the ancestral/cultural anchors (book Ch. I–III). Profession lives in the header. --}}
+  {{!-- Build: what's set once and changed on level-up. The header shows a one-line summary of it. --}}
+  <h3>{{localize 'SACADIA.Header.Build'}}</h3>
+  <div class="build-band">
+    <label class="sac-field profession">
+      <span class="sac-label">{{localize 'SACADIA.Header.Primary'}}</span>
+      <span class="with-level">
+        <select name="system.professions.primary.key">
+          {{selectOptions config.professions selected=system.professions.primary.key localize=true blank=""}}
+        </select>
+        <input type="number" name="system.professions.primary.level" value="{{system.professions.primary.level}}"
+               min="0" aria-label="{{localize 'SACADIA.Header.Level'}}" title="{{localize 'SACADIA.Header.Level'}}"/>
+      </span>
+    </label>
+    <label class="sac-field profession">
+      <span class="sac-label">{{localize 'SACADIA.Header.Secondary'}}</span>
+      <span class="with-level">
+        <select name="system.professions.secondary.key">
+          {{selectOptions config.professions selected=system.professions.secondary.key localize=true blank=""}}
+        </select>
+        <input type="number" name="system.professions.secondary.level" value="{{system.professions.secondary.level}}"
+               min="0" aria-label="{{localize 'SACADIA.Header.Level'}}" title="{{localize 'SACADIA.Header.Level'}}"/>
+      </span>
+    </label>
+    <label class="sac-field narrow">
+      <span class="sac-label">{{localize 'SACADIA.Header.Level'}}</span>
+      <input type="number" name="system.level" value="{{system.level}}" min="1"/>
+    </label>
+    <label class="sac-field" data-tooltip="{{localize 'SACADIA.Size.Hint'}}">
+      <span class="sac-label">{{localize 'SACADIA.Size.Label'}}</span>
+      <select name="system.size">{{selectOptions config.sizes selected=system.size localize=true}}</select>
+    </label>
+    <label class="sac-field hp-adjust" data-tooltip="{{localize 'SACADIA.Resource.HealthAdjustHint'}}">
+      <span class="sac-label">{{localize 'SACADIA.Header.MaxHpAdjust'}}</span>
+      <input type="number" name="system.health.bonus" value="{{system.health.bonus}}" placeholder="0"/>
+    </label>
+    {{!-- Typed damage resistances (book p.222): "physical 2, fire 5, rot immune" — negative is a vulnerability. --}}
+    <label class="sac-field wide" data-tooltip="{{localize 'SACADIA.Resist.TypedHint'}}">
+      <span class="sac-label">{{localize 'SACADIA.Resist.Typed'}}</span>
+      <input type="text" name="system.resistances" value="{{system.resistances}}" placeholder="{{localize 'SACADIA.Header.NoResistances'}}"/>
+    </label>
+  </div>
+
+  {{!-- Identity band: the ancestral/cultural anchors (book Ch. I–III). --}}
+  <h3>{{localize 'SACADIA.Identity.Title'}}</h3>
   <div class="identity-band">
     <label class="id-field wide">
-      <span>{{localize 'SACADIA.Identity.Culture'}}</span>
+      <span class="sac-label">{{localize 'SACADIA.Identity.Culture'}}</span>
       <input type="text" name="system.identity.culture" value="{{system.identity.culture}}" placeholder="—"/>
     </label>
     <label class="id-field">
-      <span>{{localize 'SACADIA.Identity.Heritage'}}</span>
+      <span class="sac-label">{{localize 'SACADIA.Identity.Heritage'}}</span>
       <select name="system.identity.heritage">
         {{selectOptions config.heritages selected=system.identity.heritage localize=true blank=""}}
       </select>
     </label>
     <label class="id-field wide">
-      <span>{{localize 'SACADIA.Identity.Ancestry'}}</span>
+      <span class="sac-label">{{localize 'SACADIA.Identity.Ancestry'}}</span>
       <input type="text" name="system.identity.ancestry" value="{{system.identity.ancestry}}" placeholder="—"/>
     </label>
     <label class="id-field">
-      <span>{{localize 'SACADIA.Identity.Age'}}</span>
+      <span class="sac-label">{{localize 'SACADIA.Identity.Age'}}</span>
       <input type="text" name="system.identity.age" value="{{system.identity.age}}" placeholder="—"/>
     </label>
     <label class="id-field">
-      <span>{{localize 'SACADIA.Identity.Size'}}</span>
+      <span class="sac-label">{{localize 'SACADIA.Identity.Size'}}</span>
       <input type="text" name="system.identity.size" value="{{system.identity.size}}" placeholder="—"/>
     </label>
   </div>
 
   {{!-- Guided background prompts, straight from the book's "Creating your Background" step (p.18). --}}
+  <h3>{{localize 'SACADIA.Background.Title'}}</h3>
   <div class="bio-sections">
     {{> bioField editable=editable name="system.background.appearance" value=system.background.appearance
         label=(localize 'SACADIA.Background.Appearance') hint=(localize 'SACADIA.Background.AppearanceHint')}}

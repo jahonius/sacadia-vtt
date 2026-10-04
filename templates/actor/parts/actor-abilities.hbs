@@ -170,7 +170,7 @@
   {{/if}}
 
   {{#each abilityGroups as |group key|}}
-  <div class="ability-group">
+  <div class="ability-group" data-group="{{key}}">
     <h3>{{localize group.label}}</h3>
     <ol class="ability-list">
       {{#each group.items as |ability|}}
@@ -183,7 +183,8 @@
           <a class="ability-use" data-action="useAbility" draggable="false"
              {{#if ability.isBoost}}title="{{localize 'SACADIA.Boost.Toggle'}}"
              {{else if ability.rollTip}}data-tooltip-html="{{ability.rollTip}}" data-tooltip-direction="UP"{{else}}title="{{localize 'SACADIA.Ability.Use'}}"{{/if}}>
-            <img class="ability-img" src="{{ability.img}}" width="72" height="72" draggable="false"/>
+            <img class="ability-img" src="{{ability.img}}" width="48" height="48" draggable="false"/>
+            {{#if ability.apCost}}<span class="ap-badge" title="{{localize 'SACADIA.Ability.ApCost'}}">{{ability.apCost}}<i class="fa-solid fa-bolt"></i></span>{{/if}}
             <span class="use-overlay"><i class="fa-solid {{#if ability.isBoost}}fa-bolt{{else}}fa-dice-d20{{/if}}"></i></span>
           </a>
           <div class="ability-main">
@@ -191,10 +192,8 @@
             <div class="ability-meta">
               {{#if ability.armed}}<span class="sac-chip armed"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Boost.Armed'}}</span>{{/if}}
               {{#if ability.tagLabel}}<span class="sac-chip tag">{{localize ability.tagLabel}}</span>{{/if}}
-              {{#if ability.apCost}}<span class="sac-chip ap" title="{{localize 'SACADIA.Ability.ApCost'}}">{{ability.apCost}} AP</span>{{/if}}
               {{#if ability.poolText}}<span class="sac-chip pool">{{ability.poolText}}</span>{{/if}}
               {{#if ability.loreText}}<span class="sac-chip pool">{{ability.loreText}}</span>{{/if}}
-              {{#if ability.cspCost}}<span class="sac-chip warn" title="{{localize 'SACADIA.Ability.CspCost'}}">{{ability.cspCost}} CSP</span>{{/if}}
               {{#each ability.madBadges as |badge|}}<span class="sac-chip mad">{{badge}}</span>{{/each}}
               {{#if ability.attackText}}<span class="sac-chip">{{ability.attackText}}</span>{{/if}}
               {{#if ability.hasSave}}<span class="sac-chip">{{localize 'SACADIA.Activity.Save'}}</span>{{/if}}

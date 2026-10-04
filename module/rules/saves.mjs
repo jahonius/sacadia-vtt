@@ -7,6 +7,7 @@ import { actorToken, confirmWarn, gmNote, ownsAbility } from '../helpers/actor-u
 import { applyConditionDeltas, conditionAttemptAllowed, conditionImmune, mergeInflicts, promptCheckSpends, stackingCap } from '../helpers/conditions.mjs';
 import { blackcloudDisadvantage, witchCheckAura } from '../helpers/auras.mjs';
 import { checkContext, foldCheckModifiers, planPool, scorePool } from '../helpers/check-pool.mjs';
+import { advantageText, cardHead, poolRows, postRollCard, traitEmblem } from '../helpers/chat-cards.mjs';
 import { consumeGrants } from './grants.mjs';
 import { damageAfterDr, evaluatePredicate, poolsAfterDamage, resolveModifierValue, sizeAdvantage, typedResistance } from '../helpers/derivation.mjs';
 import { deleteKey, replaceWith } from '../helpers/update-ops.mjs';
@@ -25,7 +26,7 @@ export async function zoneSaveCard({ caster, target, trait, damage, onSuccess = 
   const infAttr = inf.length ? foundry.utils.escapeHTML(JSON.stringify(inf)) : '';
   const tl = trait ? game.i18n.localize(CONFIG.SACADIA.stats[trait]) : '';
   await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: caster }), rolls,
-    content: `<div class="sacadia">${text}`
+    content: `<div class="sacadia chat-card note-card">${text}`
       + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="${trait ?? ''}" data-dc="${dc}" data-damage="${dmg}" data-onsuccess="${onSuccess}"`
       + ` data-inflict="${infAttr}" data-casterpc="${caster.type === 'character' ? 1 : 0}" data-caster="${caster.uuid}">`
       + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc}${tl ? ` · ${tl}` : ''})</button></div></div>` });
@@ -34,7 +35,7 @@ export async function zoneSaveCard({ caster, target, trait, damage, onSuccess = 
 /** A zone's automatic damage (no check — Focal Point). */
 export async function zoneDamage({ caster, target, formula, label }) {
   const r = await new Roll(String(formula), caster.getRollData()).evaluate();
-  await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor: caster }), flavor: game.i18n.format('SACADIA.Zone.Damage', { zone: label, name: target.name }) });
+  await postRollCard({ actor: caster, roll: r, icon: 'fa-solid fa-burst', title: label, tag: game.i18n.localize('SACADIA.Card.Damage'), meta: [target.name] });
   const line = await applyDamageTo(target.actor, target.uuid, r.total, caster, caster.uuid);
   await ChatMessage.create({ whisper: ChatMessage.getWhisperRecipients('GM').map((u) => u.id), content: `<div class="sacadia gm-note">${label}${line}</div>` });
 }
@@ -231,7 +232,7 @@ export async function onSaveRoll(event) {
         const sdc = (typeof cd === 'number' ? cd : cd?.primary) ?? 10;
         const back = foundry.utils.escapeHTML(JSON.stringify([{ condition: 'pinned', level: inf.level, label: inf.label }]));
         await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
-          content: `<div class="sacadia">${game.i18n.format('SACADIA.Lore.Saptouched', { name: casterActor.name, n: inf.level })}`
+          content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Lore.Saptouched', { name: casterActor.name, n: inf.level })}`
             + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="${trait}" data-dc="${sdc}" data-inflict="${back}" data-caster="${actor.uuid}">`
             + `${loc('SACADIA.Card.RollSave')} (${loc('SACADIA.Defense.CheckDC')} ${sdc})</button></div></div>` });
       }
@@ -322,19 +323,13 @@ export async function onSaveRoll(event) {
         taken = `${inf.label} ${next}`;
       }
     }
-    const dice = [];
-    for (let i = 0; i < autoFail; i++) dice.push(`<li class="rc-die fail auto">${loc('SACADIA.Resist.Auto')} <b>✗</b></li>`);
-    for (const e of sc.entries) {
-      const cls = e.dropped ? 'dropped' : (e.pass ? 'pass' : 'fail');
-      dice.push(`<li class="rc-die ${cls}"><span class="rc-d20">${e.raw}</span><span class="rc-total">${e.total}</span> ${e.dropped ? loc('SACADIA.Resist.Dropped') : (e.pass ? '✓' : '✗')}</li>`);
-    }
-    const head = cond ? `${inf.label} (${levels})` : loc('SACADIA.Card.RollSave');
-    const netNote = net ? ` · ${net > 0 ? '+' : ''}${net}× ${loc(net > 0 ? 'SACADIA.Roll.Advantage' : 'SACADIA.Roll.Disadvantage')}` : '';
-    const notes = [...own.notes, ...spend.notes, ...(proneDis ? [loc('SACADIA.Simple.Prone')] : []), ...(cloudDis ? ['Blackcloud'] : []),
-      ...(sizeAdv ? [`${loc('SACADIA.Size.Label')} ${sizeAdv > 0 ? '+' : ''}${sizeAdv}×`] : [])];
-    sections.push(`<div class="rc-sub"><b>${head}</b>${netNote}${notes.length ? ` <small>(${notes.join(', ')})</small>` : ''}</div>`
-      + `<ul class="rc-dice">${dice.join('')}</ul>`
-      + `<div class="rc-sub">${cond ? (sc.fails > 0 ? `${loc('SACADIA.Card.SaveFailure')} → ${taken}` : loc('SACADIA.Card.SaveSuccess'))
+    // One section per condition: what it is and how the dice were rolled, the dice, then what it came to.
+    const head = cond ? `${inf.label} · ${game.i18n.format('SACADIA.Check.LevelsN', { n: levels })}` : loc('SACADIA.Check.Save');
+    const notes = [advantageText(net), ...own.notes, ...spend.notes, ...(proneDis ? [loc('SACADIA.Simple.Prone')] : []), ...(cloudDis ? ['Blackcloud'] : []),
+      ...(sizeAdv ? [`${loc('SACADIA.Size.Label')} ${sizeAdv > 0 ? '+' : ''}${sizeAdv}×`] : [])].filter(Boolean);
+    sections.push(`<h4 class="rc-section">${head}${notes.length ? ` <small>${notes.join(' · ')}</small>` : ''}</h4>`
+      + poolRows(sc.entries, { autoFail })
+      + `<div class="rc-outcome ${sc.fails > 0 ? 'fail' : 'pass'}">${cond ? (sc.fails > 0 ? `${loc('SACADIA.Card.SaveFailure')} → ${taken}` : loc('SACADIA.Card.SaveSuccess'))
         : loc(sc.fails > 0 ? 'SACADIA.Card.SaveFailure' : 'SACADIA.Card.SaveSuccess')}</div>`);
   }
   if (hadFumble) update['system.conditions.fumbled.value'] = 0;
@@ -394,7 +389,7 @@ export async function onSaveRoll(event) {
       const takenAfterDr = damageAfterDr(amount, saveDr) + (actor.system.damageTaken ?? 0);
       const drPools = poolsAfterDamage(hpBefore, tempBefore, takenAfterDr);
       if (autoApply) await actor.update({ 'system.health.value': drPools.value, 'system.health.temp': drPools.temp, 'system.combatState.tookDamage': true });
-      dmgNote = `<div class="rc-sub">${game.i18n.format('SACADIA.Save.Damage', { amount })}</div>`;
+      dmgNote = `<div class="rc-outcome damage"><i class="fa-solid fa-heart-crack"></i> ${game.i18n.format('SACADIA.Save.Damage', { amount })}</div>`;
       const gm = ChatMessage.getWhisperRecipients('GM').map((u) => u.id);
       // Life drain (Vampiric Weapon, Ennervation): the caster gains temp HP = a fraction of the damage dealt.
       const drainRaw = amount * (Number(ds.drain) || 0);
@@ -411,11 +406,12 @@ export async function onSaveRoll(event) {
     }
   }
 
+  // The head names the Trait and the DC it was against (and who imposed it); the sections hold the dice.
   const traitLabel = trait ? loc(CONFIG.SACADIA.stats[trait]) : '';
-  const content = `<div class="sacadia resist-card">
-    <div class="rc-head"><i class="fa-solid fa-shield-halved"></i> ${loc('SACADIA.Card.RollSave')}${traitLabel ? ` (${traitLabel})` : ''} · ${loc('SACADIA.Defense.CheckDC')} ${dc}${hadFumble ? ` · ${loc('SACADIA.Condition.Fumbled')}` : ''}</div>
-    ${sections.join('')}${dmgNote}
-  </div>`;
+  const head = cardHead({ ...traitEmblem(trait, 'fa-solid fa-shield-halved'), title: traitLabel || loc('SACADIA.Check.Save'), tag: traitLabel ? loc('SACADIA.Check.Save') : '',
+    meta: [`${loc('SACADIA.Defense.CheckDC')} ${dc}`, casterActor ? game.i18n.format('SACADIA.Check.SaveVs', { name: casterActor.name }) : '',
+      hadFumble ? loc('SACADIA.Condition.Fumbled') : ''] });
+  const content = `<div class="sacadia chat-card resist-card save-card">${head}${sections.join('')}${dmgNote}</div>`;
   await ChatMessage.create(ChatMessage.applyMode({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls, sound: CONFIG.sounds.dice }));
 }
 

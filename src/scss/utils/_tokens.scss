@@ -10,7 +10,7 @@
 :root {
   // grounds
   --sac-umber: #231a10;      // deepest ground (window content)
-  --sac-panel: #2d2315;      // raised panels, rows
+  --sac-panel: #33281a;      // raised panels, rows (a step lighter than the ground, so panels need no outline)
   --sac-inset: #191207;      // wells: meters, drawers, inputs
   --sac-line: #4a3a22;       // default border
   --sac-line-strong: #63512e; // section rules, headers
@@ -27,9 +27,8 @@
   --sac-blood: #c05055;
   --sac-blood-deep: #911d20;
 
-  // type. The display face is a local old-style-serif stack for now; a shipped font file via
-  // CONFIG.fontDefinitions can replace the head of the stack later without touching components.
-  --sac-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  // type. The display face ships with the system (utils/_fonts.scss); the rest of the stack is a fallback.
+  --sac-font-display: "Alegreya", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sac-font-ui: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --sac-font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
 }
