@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.2
+
+- **A richer sheet header, the same height.** The nine equal tiles are now in tiers:
+  - **Defenses:** the five are one framed plate, with larger numbers, since they're what attacks roll against.
+  - **Prof, DC and Speed:** an open ledger, with no boxes and smaller numbers.
+  - **Health:** the current value is the big number, with the maximum small beside it. Faint ticks on the bar mark
+    half and a quarter, where it turns amber and red.
+  - **AP, reactions and Lore** sit above the ledger in the same columns. AP pips are bolts (like the AP badge on ability
+    icons), reactions are round pips, and Lore moved up from the tiles, since it's a resource you spend.
+  - **Madness**, when it's in play, sits at the end of the Health line: a brain glyph and six pips.
+  - The build line reads like a book's running head: "Soldier **5** ◆ Level **5** ◆ Medium", in the display face with
+    the numbers in gold.
+  - **Initiative** is the name row's one outlined button, and the rests are quiet links. The portrait has the icons'
+    bronze edge and gold ring.
+
 ## 0.3.1
 
 - **Fix:** in The Breach, the defenders on the wall top can now see past the wall to the ground below. Before, the

@@ -44,10 +44,10 @@
 }
 
 // --- Header (actor) ---
-// Play-time readouts only: the name with a one-line build summary, the vitals, and one row of equal tiles for the
-// defenses and derived numbers. The build itself (professions, level, size, resistances) is edited on the Character
-// tab, so the tabs get the height. Values are plain text (or borderless "ghost" inputs where they're edited in play),
-// on quiet panels rather than outlined boxes.
+// Play-time readouts only, in tiers rather than equal blocks: the name and a one-line build summary (set like a book's
+// running head), the vitals (current Health large, AP as bolts), then the defenses as one plate and the derived numbers
+// as an open ledger. The build itself (professions, level, size, resistances) is edited on the Character tab, so the
+// tabs get the height. Values are plain text, or borderless "ghost" inputs where they're edited in play.
 .sheet-header {
   display: flex;
   gap: 0.8rem;
@@ -83,24 +83,35 @@
     &:focus { border-bottom-color: var(--sac-gold); box-shadow: none; }
   }
 
+  // "Soldier 5 ◆ Level 5 ◆ Medium": names in the display face, their numbers in gold, the rulebook's diamond between.
   .identity-line {
-    margin-top: -0.4rem;
-    font-size: 0.8rem;
-    color: var(--sac-dim);
+    margin-top: -0.45rem;
+    font-family: var(--sac-font-display);
+    font-size: 0.95rem;
+    color: var(--sac-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    b { font-weight: 700; color: var(--sac-gold-hi); font-variant-numeric: lining-nums; }
+    .quiet { color: var(--sac-dim); }
+    .id-sep { margin: 0 0.45rem; font-size: 0.5rem; vertical-align: 0.2em; color: var(--sac-gold-lo); }
   }
 
-  // Vitals: HP takes the row's slack; AP, reactions and Madness sit at its end.
-  .vitals { display: flex; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+  // Vitals and readouts share two columns: Health (and Madness) over the defense plate, and the spendable tracks (AP,
+  // reactions, Lore) over the ledger, cell for cell.
+  .vitals, .readouts { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr); column-gap: 0.9rem; }
+  .vitals { align-items: end; }
+  .side-vitals, .ledger { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+  .side-vitals .vital { align-items: center; }
+  &.npc .vitals { grid-template-columns: minmax(0, 1fr); }
+  &.npc .readouts { grid-template-columns: minmax(0, 1fr) 4.5rem; }
   .vital {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
     .vital-num { font-size: 1.05rem; font-weight: bold; color: var(--sac-gold-hi); font-variant-numeric: lining-nums tabular-nums; }
   }
-  .hp-vital { flex: 1 1 13rem; min-width: 0; }
+  .hp-vital { min-width: 0; }
   .hp-readout {
     display: flex;
     align-items: baseline;
@@ -108,12 +119,10 @@
     font-variant-numeric: lining-nums tabular-nums;
 
     .sac-label { margin-right: 0.35rem; }
-    .hp-cur, .hp-max {
-      font-family: var(--sac-font-display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--sac-gold-hi);
-    }
+    // Current Health is the number that matters; the maximum is context.
+    .hp-cur, .hp-max { font-family: var(--sac-font-display); font-weight: 700; }
+    .hp-cur { font-size: 1.65rem; line-height: 1; color: var(--sac-gold-hi); }
+    .hp-max { font-size: 1rem; color: var(--sac-dim); }
     // Sized to the number where the browser supports it (Chromium), a fixed width elsewhere.
     .hp-cur, input.hp-max { width: 2.8rem; field-sizing: content; min-width: 1.6ch; }
     .hp-cur { text-align: right; }
@@ -123,6 +132,7 @@
     // Temp HP: a gold pill, only while there is some.
     .hp-temp {
       margin-left: 0.45rem;
+      white-space: nowrap;
       padding: 0.02rem 0.4rem;
       align-self: center;
       cursor: help;
@@ -134,18 +144,39 @@
       border-radius: 0.7rem;
     }
   }
-  .hp-meter { width: auto; min-width: 0; height: 0.45rem; border: none; }
+  // The bar turns amber at half and red at a quarter; faint ticks mark where.
+  .hp-meter {
+    position: relative; width: auto; min-width: 0; height: 0.5rem; border: none;
+    &::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(90deg, transparent calc(25% - 1px), rgba(20, 14, 6, 0.75) calc(25% - 1px), rgba(20, 14, 6, 0.75) 25%,
+        transparent 25%, transparent calc(50% - 1px), rgba(20, 14, 6, 0.75) calc(50% - 1px), rgba(20, 14, 6, 0.75) 50%, transparent 50%);
+    }
+  }
+  // AP as bolts (as on an ability's icon), reactions as round pips, so the two tracks read apart at a glance.
+  .ap-pips { gap: 0.1rem; }
+  .ap-pip { font-size: 0.95rem; line-height: 1; color: var(--sac-line-strong); }
+  .ap-pip.on { color: var(--sac-gold); filter: drop-shadow(0 0 3px rgba(212, 165, 60, 0.45)); }
+  .reaction-pips .sac-pip { border-radius: 50%; }
+  .vital.lore .vital-num {
+    display: flex; align-items: baseline;
+    input { width: 1.4rem; height: auto; padding: 0; font: inherit; color: inherit; text-align: right; }
+    small { font-size: 0.75rem; font-weight: 400; color: var(--sac-dim); }
+  }
+  // On Health's line: a brain glyph and six smaller pips (the name is in the tooltip), so it fits beside temp HP.
   .madness-track {
-    display: flex; align-items: center; gap: 0.45rem;
+    margin-left: auto; align-self: center;
+    display: flex; align-items: center; gap: 0.35rem;
+    > i { color: var(--sac-blood); font-size: 0.85rem; }
+    .sac-pips { gap: 0.18rem; }
+    .sac-pip { width: 0.72rem; height: 0.72rem; }
     .insane-note {
       font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
       color: var(--sac-blood);
     }
   }
 
-  // Readouts: one row of equal tiles (five defenses, a gap, then the derived numbers).
-  .readouts { display: flex; gap: 0.3rem; }
-  .readout-gap { flex: 0 0 0.45rem; }
+  // Readouts: the five defenses as one plate, then the derived numbers as an open ledger.
   .readout {
     flex: 1 1 0;
     min-width: 0;
@@ -169,6 +200,22 @@
     }
     input.readout-value { width: 100%; max-width: 3rem; }
     .readout-value input { width: 1.6rem; font: inherit; color: inherit; }
+  }
+  .defense-plate {
+    min-width: 0; display: flex;
+    background: var(--sac-inset);
+    border: 1px solid var(--sac-line-strong);
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 rgba(234, 217, 176, 0.05), 0 1px 0 rgba(0, 0, 0, 0.35);
+    .readout { background: none; border-radius: 0; padding: 0.26rem 0.1rem; }
+    .readout + .readout { border-left: 1px solid var(--sac-line); }
+    .readout-value { font-size: 1.3rem; }
+  }
+  .ledger {
+    min-width: 0; align-items: center;
+    .readout { background: none; padding: 0 0.2rem; }
+    .readout + .readout { border-left: 1px solid var(--sac-line); }
+    .readout-value { font-size: 1.05rem; }
   }
   // Superseded by AD: the defense's own value is moot (AD, being higher, applies), so dim it and flag the winner with
   // a small gold `AD`. Red stays reserved for genuinely bad states.
@@ -195,18 +242,28 @@
 }
 
 // An actor's portrait runs the header's full height, so the sheet shows who it's for (item sheets keep a small image).
+// It's framed like the icons: a bronze edge with a fine gold ring inside.
 &.actor .sheet-header {
   align-items: stretch;
   .portrait {
     position: relative;
     flex: 0 0 136px;
     min-height: 136px;
+    border: 1px solid var(--sac-gold-lo);
+    border-radius: 5px;
+    overflow: hidden;
+    &::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: 4px;
+      box-shadow: inset 0 0 0 2px rgba(20, 14, 6, 0.85), inset 0 0 0 3px rgba(212, 165, 60, 0.35);
+    }
   }
   .profile-img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    border: none;
+    border-radius: 0;
     object-position: 50% 18%;
   }
 }
@@ -937,8 +994,15 @@
 
 .rest-controls,
 .npc-controls {
-  display: flex; gap: 0.5rem; margin-left: auto;
+  display: flex; align-items: center; gap: 0.5rem; margin-left: auto;
   a { cursor: pointer; white-space: nowrap; font-size: 0.8rem; opacity: 0.85; &:hover { opacity: 1; } }
+}
+// The name row's main action (Initiative): the one gold-outlined chip; the rests stay quiet links.
+.rest-controls a.primary, .npc-controls a.primary {
+  padding: 0.12rem 0.6rem; border: 1px solid var(--sac-gold-lo); border-radius: 10px;
+  color: var(--sac-gold-hi); opacity: 1;
+  i { color: var(--sac-gold); }
+  &:hover { background: rgba(212, 165, 60, 0.12); border-color: var(--sac-gold); }
 }
 // The NPC quick-build gets a subtle framed chip so it reads as an action, not a label.
 .npc-controls a {

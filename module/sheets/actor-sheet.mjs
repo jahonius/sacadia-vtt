@@ -183,7 +183,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         || ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'oracle');
       context.madnessPips = Array.from({ length: 6 }, (_, i) => ({ on: i < madVal, threshold: i === 5 }));
       context.defTooltips = this.#prepareDefenseTooltips();
-      context.identityLine = this.#identityLine();
+      context.identity = this.#identityLine();
     }
     // Short defense labels for the compact header readouts (the full name is in each tile's tooltip).
     context.defShort = Object.fromEntries(['ad', 'pd', 'td', 'md', 'dr']
@@ -246,12 +246,13 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   #identityLine() {
     const sys = this.actor.system;
     const loc = (k) => (k ? game.i18n.localize(k) : '');
+    // Each part is a name, with its number (a profession's level, the character level) set in gold beside it.
     const parts = ['primary', 'secondary'].map((slot) => sys.professions?.[slot])
-      .filter((p) => p?.key).map((p) => `${loc(CONFIG.SACADIA.professions[p.key])} ${p.level ?? 0}`);
-    parts.push(game.i18n.format('SACADIA.Header.LevelN', { n: sys.level ?? 1 }));
-    if (sys.size) parts.push(loc(CONFIG.SACADIA.sizes[sys.size]));
-    if (sys.resistances?.trim()) parts.push(game.i18n.format('SACADIA.Header.Resists', { list: sys.resistances.trim() }));
-    return parts.join(' · ');
+      .filter((p) => p?.key).map((p) => ({ label: loc(CONFIG.SACADIA.professions[p.key]), n: p.level ?? 0 }));
+    parts.push({ label: loc('SACADIA.Header.Level'), n: sys.level ?? 1 });
+    if (sys.size) parts.push({ label: loc(CONFIG.SACADIA.sizes[sys.size]) });
+    if (sys.resistances?.trim()) parts.push({ label: game.i18n.format('SACADIA.Header.Resists', { list: sys.resistances.trim() }), quiet: true });
+    return parts;
   }
 
   /**
