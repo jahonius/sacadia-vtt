@@ -4,6 +4,7 @@
  */
 import { deleteKey } from '../helpers/update-ops.mjs';
 import { ownsAbility } from '../helpers/actor-utils.mjs';
+import { cardHead } from '../helpers/chat-cards.mjs';
 
 /**
  * Common rest effects (both rest types): recover ability pools to max, remove most leveled
@@ -40,27 +41,29 @@ function restRecovery(actor) {
  */
 async function rollSlightlyCracked(actor) {
   const owns = (id) => ownsAbility(actor, id);
-  if (!owns('oracle_slightly_cracked')) return;
+  if (!owns('oracle_slightly_cracked')) return null;
   const n = Math.max(0, (actor.system.proficiency ?? 0) + (owns('mastery_temperament') ? 1 : 0));
-  if (!n) return;
+  if (!n) return null;
   const r = await new Roll(`${n}d3`).evaluate();
   await actor.update({ 'system.professionResources.oracle.cracked': r.dice[0].results.map((x) => x.result) });
-  await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: game.i18n.localize('SACADIA.Cracked.Rolled') });
+  return r; // shown on the rest card
 }
 
 /** Quick/Short Rest: pool + condition recovery, Rend −1, and optional HP-pool healing. */
 export async function shortRest(actor) {
+  const before = restSnapshot(actor);
   const update = restRecovery(actor);
   const rend = actor.system.conditions?.rended?.value ?? 0;
   if (rend > 0) update['system.conditions.rended.value'] = rend - 1;
   await actor.update(update);
-  await rollSlightlyCracked(actor);
+  const cracked = await rollSlightlyCracked(actor);
   await promptHealPools(actor);
-  restMessage(actor, 'SACADIA.Rest.ShortDone');
+  await restMessage(actor, 'short', before, { cracked });
 }
 
 /** Long/Nightly Rest: full HP + HP-pool + Lore refill, all Rend cleared, plus the common recovery. */
 export async function longRest(actor) {
+  const before = restSnapshot(actor);
   const update = restRecovery(actor);
   update['system.health.value'] = actor.system.health.max;
   update['system.healthPools.value'] = actor.system.healthPools.max;
@@ -72,9 +75,10 @@ export async function longRest(actor) {
   const whole = actor.items.filter((i) => i.type === 'armor' && Object.values(i.system.rend ?? {}).some((v) => v > 0))
     .map((i) => ({ _id: i.id, 'system.rend': { ad: 0, pd: 0, td: 0, md: 0, dr: 0 } }));
   if (whole.length) await actor.updateEmbeddedDocuments('Item', whole);
-  for (const b of actor.items.filter((i) => i.getFlag('sacadia', 'broken'))) await b.unsetFlag('sacadia', 'broken');
-  await rollSlightlyCracked(actor);
-  restMessage(actor, 'SACADIA.Rest.LongDone');
+  const broken = actor.items.filter((i) => i.getFlag('sacadia', 'broken'));
+  for (const b of broken) await b.unsetFlag('sacadia', 'broken');
+  const cracked = await rollSlightlyCracked(actor);
+  await restMessage(actor, 'long', before, { cracked, repaired: whole.length + broken.length });
 }
 
 /**
@@ -112,9 +116,43 @@ async function promptHealPools(actor) {
   });
 }
 
-function restMessage(actor, key) {
-  ChatMessage.create({
-    speaker: ChatMessage.getSpeaker({ actor }),
-    content: `<div class="sacadia"><b>${actor.name}</b> — ${game.i18n.localize(key)}</div>`,
-  });
+/** What a rest can change, read before and after it so the rest card can say what came back. */
+function restSnapshot(actor) {
+  const sys = actor.system;
+  return {
+    hp: sys.health?.value ?? 0, temp: sys.health?.temp ?? 0, hpPools: sys.healthPools?.value ?? 0, lore: sys.lorePoints?.value ?? 0,
+    battleFatigue: sys.battleFatigue ?? 0,
+    conditions: Object.fromEntries(Object.keys(CONFIG.SACADIA.conditions).map((k) => [k, sys.conditions?.[k]?.value ?? 0])),
+    pools: Object.fromEntries(Object.keys(CONFIG.SACADIA.pools).filter((k) => sys.classPools?.[k]).map((k) => [k, sys.classPools[k].value ?? 0])),
+  };
+}
+
+/**
+ * The rest card: what the rest recovered (Health, HP pools spent, conditions cleared, Rend, ability pools, Lore, armor
+ * repaired), compared with the snapshot taken before it, and the Slightly Cracked dice it rolled.
+ */
+async function restMessage(actor, kind, before, { cracked = null, repaired = 0 } = {}) {
+  const loc = (k) => game.i18n.localize(k);
+  const now = restSnapshot(actor);
+  const rows = [];
+  const row = (label, value) => rows.push(`<li><span class="rest-label">${label}</span><span class="rest-value">${value}</span></li>`);
+  if (now.hp !== before.hp) row(loc('SACADIA.Rest.Health'), `${before.hp} → <b>${now.hp}</b> / ${actor.system.health?.max ?? now.hp}`);
+  if (now.hpPools < before.hpPools) row(loc('SACADIA.Rest.HpPools'), game.i18n.format('SACADIA.Rest.PoolsSpent', { n: before.hpPools - now.hpPools, left: now.hpPools }));
+  else if (now.hpPools > before.hpPools) row(loc('SACADIA.Rest.HpPools'), `${before.hpPools} → <b>${now.hpPools}</b>`);
+  const cleared = Object.keys(before.conditions).filter((k) => k !== 'rended' && now.conditions[k] < before.conditions[k])
+    .map((k) => `${loc(CONFIG.SACADIA.conditions[k].label)} ${before.conditions[k]}`);
+  if (now.battleFatigue < before.battleFatigue) cleared.push(`${loc('SACADIA.Rest.BattleFatigue')} ${before.battleFatigue}`);
+  if (now.temp < before.temp) cleared.push(`${loc('SACADIA.Rest.TempHp')} ${before.temp}`);
+  if (cleared.length) row(loc('SACADIA.Rest.Cleared'), cleared.join(', '));
+  const rend = [now.conditions.rended !== before.conditions.rended ? `${before.conditions.rended} → <b>${now.conditions.rended}</b>` : '',
+    repaired ? loc('SACADIA.Rest.RendRepaired') : ''].filter(Boolean);
+  if (rend.length) row(loc('SACADIA.Rest.Rend'), rend.join(' · '));
+  const refilled = Object.keys(now.pools).filter((k) => now.pools[k] > (before.pools[k] ?? 0)).map((k) => `${loc(CONFIG.SACADIA.pools[k])} ${now.pools[k]}`);
+  if (refilled.length) row(loc('SACADIA.Rest.Refilled'), refilled.join(', '));
+  if (now.lore > before.lore) row(loc('SACADIA.Rest.Lore'), `${before.lore} → <b>${now.lore}</b>`);
+  if (cracked) row(loc('SACADIA.Rest.Cracked'), cracked.dice[0].results.map((x) => `<b>${x.result}</b>`).join(' · '));
+  const content = `<div class="sacadia chat-card rest-card">`
+    + cardHead({ icon: kind === 'long' ? 'fa-solid fa-bed' : 'fa-solid fa-mug-hot', title: loc(kind === 'long' ? 'SACADIA.Rest.Long' : 'SACADIA.Rest.Short') })
+    + (rows.length ? `<ul class="rest-list">${rows.join('')}</ul>` : `<div class="rc-sub">${loc('SACADIA.Rest.Nothing')}</div>`) + '</div>';
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls: cracked ? [cracked] : [] });
 }

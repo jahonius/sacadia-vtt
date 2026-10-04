@@ -12,6 +12,7 @@ import { AbilityUse } from '../rules/ability-use.mjs';
 import { promptCheckSpends } from '../helpers/conditions.mjs';
 import { gearId, ownsAbility, confirmWarn } from '../helpers/actor-utils.mjs';
 import { REND_KEYS } from '../helpers/rend.mjs';
+import { advantageText, cardHead, postRollCard, signed, traitEmblem } from '../helpers/chat-cards.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -154,6 +155,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     // Header vitals: HP meter fill, AP pips, and the Madness track (with its insanity threshold).
     const hp = actor.system.health ?? {};
     context.hpPct = hp.max > 0 ? Math.round(Math.min(100, Math.max(0, (hp.value / hp.max) * 100))) : 0;
+    context.hpState = context.hpPct <= 25 ? 'low' : (context.hpPct <= 50 ? 'hurt' : '');
     if (context.isCharacter) {
       // Max-HP provenance: standard per-level value + manual bonus = derived max.
       const bonus = hp.bonus ?? 0;
@@ -181,7 +183,11 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         || ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'oracle');
       context.madnessPips = Array.from({ length: 6 }, (_, i) => ({ on: i < madVal, threshold: i === 5 }));
       context.defTooltips = this.#prepareDefenseTooltips();
+      context.identityLine = this.#identityLine();
     }
+    // Short defense labels for the compact header readouts (the full name is in each tile's tooltip).
+    context.defShort = Object.fromEntries(['ad', 'pd', 'td', 'md', 'dr']
+      .map((k) => [k, game.i18n.localize(`SACADIA.Defense.${k.toUpperCase()}Short`)]));
     if (context.isCharacter) {
       context.talentGroups = this.#prepareTalentGroups();
       context.talentChoices = Object.fromEntries(Object.entries(CONFIG.SACADIA.talents).map(([k, t]) => [k, t.label]));
@@ -223,11 +229,29 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     }
     // Guarantee the active tab is one that actually rendered (matters for the NPC subset).
     if (!tabs[this.tabGroups[group]]) this.tabGroups[group] = Object.keys(tabs)[0];
+    // A character's Biography tab also holds the build (professions, level, size, resistances): call it Character.
+    if (tabs.biography && this.actor.type === 'character') tabs.biography.label = 'SACADIA.Tab.Character';
     for (const [id, tab] of Object.entries(tabs)) {
       tab.active = id === this.tabGroups[group];
       tab.cssClass = tab.active ? 'active' : '';
     }
     return tabs;
+  }
+
+  /**
+   * The header's one-line summary of the build, edited on the Character tab: "Soldier 5 · Oracle 2 · Level 7 · Medium ·
+   * Resists fire 5".
+   * @returns {string}
+   */
+  #identityLine() {
+    const sys = this.actor.system;
+    const loc = (k) => (k ? game.i18n.localize(k) : '');
+    const parts = ['primary', 'secondary'].map((slot) => sys.professions?.[slot])
+      .filter((p) => p?.key).map((p) => `${loc(CONFIG.SACADIA.professions[p.key])} ${p.level ?? 0}`);
+    parts.push(game.i18n.format('SACADIA.Header.LevelN', { n: sys.level ?? 1 }));
+    if (sys.size) parts.push(loc(CONFIG.SACADIA.sizes[sys.size]));
+    if (sys.resistances?.trim()) parts.push(game.i18n.format('SACADIA.Header.Resists', { list: sys.resistances.trim() }));
+    return parts.join(' · ');
   }
 
   /**
@@ -586,9 +610,15 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         isSignature: !!item.flags?.sacadia?.signature,
       };
       vm.broken = !!item.flags?.sacadia?.broken;
+      vm.stored = item.system.storage === 'sis';
       if (item.type === 'armor') {
         vm.categoryLabel = item.system.category
           ? game.i18n.localize(CONFIG.SACADIA.armorCategories[item.system.category] ?? '') : '';
+        // What the piece gives, zeros left out: "PD 9 · TD 3 · Max Stat 25".
+        const d = item.system.defenses ?? {};
+        vm.armorText = ['ad', 'pd', 'td', 'md', 'dr'].filter((k) => d[k]).map((k) => `${k.toUpperCase()} ${d[k]}`)
+          .concat(item.system.maxStat != null ? [`${game.i18n.localize('SACADIA.Armor.MaxStat')} ${item.system.maxStat}`] : [])
+          .join(' · ');
         // Rend on this piece ("PD −2 · TD −1"), or Broken once every point is gone.
         const r = item.system.rend ?? {};
         const parts = REND_KEYS.filter((k) => (r[k] ?? 0) > 0).map((k) => `${k.toUpperCase()} −${r[k]}`);
@@ -706,33 +736,41 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     event.preventDefault();
     const { rollType, key } = target.dataset;
     const actor = this.actor;
+    const loc = (k) => game.i18n.localize(k);
+    const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
+    const minus = (n) => (n ? ` - ${n}` : '');
 
     if (rollType === 'stat') {
-      const level = await AbilityUse.promptAdvantage(game.i18n.localize(CONFIG.SACADIA.stats[key]));
+      const title = loc(CONFIG.SACADIA.stats[key]);
+      const level = await AbilityUse.promptAdvantage(title);
       if (level === null) return;
       const spend = await promptCheckSpends(actor, { ...(actor.system._rollOptions?.() ?? {}), [`self:checking:trait:${key}`]: true });
-      const die = this.#use.d20FromLevel(level + spend.adv, 'trait'); // stat rolls are Trait Checks
-      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
       const sb = spend.bonus ? ` + ${spend.bonus}` : '';
-      await this.#sendRoll(`${die} + @${key} + @proficiency${tb}${sb}${await this.#spendFumble()}`, game.i18n.localize(CONFIG.SACADIA.stats[key]));
+      const fumble = await this.#spendFumble();
+      // Stat rolls are Trait Checks.
+      await this.#postCheck(` + @${key} + @proficiency${tb}${sb}${minus(fumble)}`,
+        { stat: key, title, tag: loc('SACADIA.Check.Trait'), net: level + spend.adv, spend, fumble });
       return this.#use.consumeRollGrants();
     }
 
     if (rollType === 'talent') {
       const talent = CONFIG.SACADIA.talents[key];
       const proficient = actor.system.talents?.[key]?.proficient ?? false;
-      const level = await AbilityUse.promptAdvantage(game.i18n.localize(talent.label));
+      const title = loc(talent.label);
+      const level = await AbilityUse.promptAdvantage(title);
       if (level === null) return;
-      // Proficient is a straight d20 + Proficiency; without the talent it's 1X disadvantage "and also do not add
-      // proficiency" (book p.146), on top of the chosen level and the actor's advantage/disadvantage sinks.
-      const die = this.#use.d20FromLevel(level + (proficient ? 0 : -1), 'trait');
-      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
       // Informative Scroll (trinket), named for its talent — "Informative Scroll (History)": "+1 to all checks made with
       // that Talent" while it's in a readied slot.
-      const label = game.i18n.localize(talent.label).toLowerCase();
-      const scroll = actor.items.some((i) => i.type !== 'ability' && gearId(i).startsWith('informative_scroll') && i.system?.storage !== 'sis'
-        && (i.name.match(/\(([^)]+)\)/)?.[1] ?? '').toLowerCase() === label) ? ' + 1' : '';
-      await this.#sendRoll(`${die} + @${talent.stat}${proficient ? ' + @proficiency' : ''}${tb}${scroll}${await this.#spendFumble()}`, game.i18n.localize(talent.label));
+      const scroll = actor.items.find((i) => i.type !== 'ability' && gearId(i).startsWith('informative_scroll') && i.system?.storage !== 'sis'
+        && (i.name.match(/\(([^)]+)\)/)?.[1] ?? '').toLowerCase() === title.toLowerCase());
+      const fumble = await this.#spendFumble();
+      // Proficient is a straight d20 + Proficiency; without the talent it's 1X disadvantage "and also do not add
+      // proficiency" (book p.146), on top of the chosen level and the actor's advantage/disadvantage sinks.
+      await this.#postCheck(` + @${talent.stat}${proficient ? ' + @proficiency' : ''}${tb}${scroll ? ' + 1' : ''}${minus(fumble)}`, {
+        stat: talent.stat, title, tag: loc('SACADIA.Check.Talent'), net: level + (proficient ? 0 : -1), proficient, fumble,
+        meta: [loc(CONFIG.SACADIA.stats[talent.stat]), proficient ? '' : loc('SACADIA.Check.Untrained')],
+        extra: scroll ? [{ label: scroll.name, value: '+1' }] : [],
+      });
       return this.#use.consumeRollGrants();
     }
 
@@ -741,15 +779,38 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       const sp = actor.system.specialties?.[Number(key)];
       const talent = CONFIG.SACADIA.talents[sp?.talent];
       if (!sp || !talent) return ui.notifications.warn(game.i18n.localize('SACADIA.Talent.SpecialtyNoTalent'));
-      const label = `${game.i18n.localize(talent.label)}: ${sp.name}`;
+      const label = `${loc(talent.label)}: ${sp.name}`;
       if (!(actor.system.talents?.[sp.talent]?.proficient)) ui.notifications.warn(game.i18n.format('SACADIA.Talent.SpecialtyNeedsGeneral', { name: label }));
       const level = await AbilityUse.promptAdvantage(label);
       if (level === null) return;
-      const die = this.#use.d20FromLevel(level + (sp.rank ?? 0), 'trait');
-      const tb = actor.system.bonuses?.trait ? ' + @traitBonus' : '';
-      await this.#sendRoll(`${die} + @${talent.stat} + @proficiency${tb}${await this.#spendFumble()}`, label);
+      const fumble = await this.#spendFumble();
+      await this.#postCheck(` + @${talent.stat} + @proficiency${tb}${minus(fumble)}`, {
+        stat: talent.stat, title: sp.name || loc(talent.label), tag: loc('SACADIA.Check.Specialty'), net: level + (sp.rank ?? 0), fumble,
+        meta: [game.i18n.format('SACADIA.Check.SpecialtyOf', { talent: loc(talent.label), trait: loc(CONFIG.SACADIA.stats[talent.stat]) })],
+      });
       return this.#use.consumeRollGrants();
     }
+  }
+
+  /**
+   * Roll a Trait, talent or specialty check (d20 at the given advantage level, then `tail`) and post it as a check
+   * card: the Trait's emblem, the advantage it rolled at, and a labeled chip for each part of the total.
+   * @param {string} tail  the formula after the d20 (" + @power + @proficiency …")
+   */
+  async #postCheck(tail, { stat, title, tag, meta = [], net = 0, proficient = true, spend = null, fumble = 0, extra = [] }) {
+    const sys = this.actor.system;
+    const rd = this.actor.getRollData();
+    const loc = (k) => game.i18n.localize(k);
+    const parts = [{ label: loc(CONFIG.SACADIA.stats[stat]), value: signed(rd[stat]) }];
+    if (proficient) parts.push({ label: loc('SACADIA.Progression.Proficiency'), value: signed(rd.proficiency) });
+    if (rd.traitBonus) parts.push({ label: loc('SACADIA.Check.TraitBonus'), value: signed(rd.traitBonus) });
+    parts.push(...extra);
+    if (spend?.notes?.length) parts.push({ label: spend.notes.join(', '), value: spend.bonus ? signed(spend.bonus) : '' });
+    if (fumble) parts.push({ label: loc('SACADIA.Condition.Fumbled'), value: signed(-fumble), warn: true });
+    // The advantage shown is what d20FromLevel rolls: the chosen level plus the actor's own Trait sinks.
+    const shown = net + (sys.advantage?.trait ?? 0) - (sys.disadvantage?.trait ?? 0);
+    await postRollCard({ actor: this.actor, roll: new Roll(`${this.#use.d20FromLevel(net, 'trait')}${tail}`, rd),
+      ...traitEmblem(stat), title, tag, meta: [...meta, advantageText(shown)], parts });
   }
 
   /**
@@ -759,13 +820,13 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   /**
    * Fumbled (book p.257): the very next d20 roll is reduced by the Fumble count, then Fumble is spent.
-   * Returns the formula suffix (` - N`) for this roll and clears the condition, or '' when not Fumbled.
+   * Returns the amount (N) to take off this roll and clears the condition; 0 when not Fumbled.
    */
   async #spendFumble() {
     const n = this.actor.system.conditions?.fumbled?.value ?? 0;
-    if (n <= 0) return '';
+    if (n <= 0) return 0;
     await this.actor.update({ 'system.conditions.fumbled.value': 0 });
-    return ` - ${n}`;
+    return n;
   }
 
   /**
@@ -1069,13 +1130,6 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     this.#tokenPos.clear();
   }
 
-  /** Post a roll to chat using the actor's roll data. */
-  async #sendRoll(formula, flavor) {
-    const roll = new Roll(formula, this.actor.getRollData());
-    await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: this.actor }), flavor }); // applies the chat's visibility mode
-    return roll;
-  }
-
   static async #pickBoost(boosts) {
     const id = await foundry.applications.api.DialogV2.wait({
       window: { title: game.i18n.localize('SACADIA.Boost.PickTitle') },
@@ -1191,8 +1245,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       await this.actor.update({ [`system.conditions.${form.condition}.value`]: next });
       return AbilityUse.postCard({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        content: `<div class="sacadia resist-card"><div class="rc-head"><i class="fa-solid fa-hand-fist"></i> ${game.i18n.format('SACADIA.Resist.CardTitleReduce', { condition: condLabel })}</div>`
-          + `<div class="rc-sub">${game.i18n.format('SACADIA.Resist.BolersBan', { condition: condLabel, value: next })}</div></div>`,
+        content: `<div class="sacadia chat-card resist-card">${cardHead({ ...traitEmblem(form.trait), title: condLabel, tag: loc('SACADIA.Check.MakeTraitCheck') })}`
+          + `<div class="rc-resolution"><span class="clean">${game.i18n.format('SACADIA.Resist.BolersBan', { condition: condLabel, value: next })}</span></div></div>`,
       });
     }
     const L = reduce ? 1 + form.extra : form.levels;
@@ -1235,13 +1289,10 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     // --- chat card (dice shown; the outcome slot is filled GM-side) ---
     const traitLabel = loc(CONFIG.SACADIA.stats[form.trait]);
-    const netNote = net > 0 ? ` · +${net} ${loc('SACADIA.Roll.Advantage')}`
-      : net < 0 ? ` · ${-net} ${loc('SACADIA.Roll.Disadvantage')}` : '';
     const notes = [...own.notes, ...spend.notes, ...(proneDis ? [loc('SACADIA.Simple.Prone')] : []), ...(cloudDis ? ['Blackcloud'] : []), ...(fumble ? [`${loc('SACADIA.Condition.Fumbled')} −${fumble}`] : [])];
-    const content = AbilityUse.checkCardHtml({ icon: 'fa-solid fa-hand-fist', entries: sc.entries, autoFail, notes,
-      title: game.i18n.format(reduce ? 'SACADIA.Resist.CardTitleReduce' : 'SACADIA.Resist.CardTitle', { condition: condLabel }),
-      sub: `${traitLabel} ${loc('SACADIA.Resist.Check')} · ${L} ${loc(reduce ? 'SACADIA.Resist.ChecksShort' : 'SACADIA.Resist.LevelsShort')}${netNote}`,
-      mods: sc.entries.map((e, i) => mod - (i === 0 ? fumble : 0)), dropLabel: true });
+    const content = AbilityUse.checkCardHtml({ ...traitEmblem(form.trait), entries: sc.entries, autoFail, notes, title: condLabel,
+      tag: loc(reduce ? 'SACADIA.Check.MakeTraitCheck' : 'SACADIA.Check.Resisting'),
+      meta: [traitLabel, game.i18n.format(reduce ? 'SACADIA.Check.ChecksN' : 'SACADIA.Check.LevelsN', { n: L }), advantageText(net)] });
 
     await AbilityUse.postCard({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),

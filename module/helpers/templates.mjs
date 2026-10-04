@@ -22,5 +22,6 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/sacadia/templates/item/parts/item-effects.hbs',
     // Chat cards.
     'systems/sacadia/templates/chat/ability-card.hbs',
+    'systems/sacadia/templates/chat/check-card.hbs',
   ]);
 };

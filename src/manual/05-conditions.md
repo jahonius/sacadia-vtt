@@ -39,7 +39,7 @@ Adversarial conditions (Pin, Hemorrhage, Panic, Fatigue, Fumble, and so on) have
 
 ## Size and physical effects
 
-Each creature has a **Size** (header). Against a physical effect (a physical condition, Prone, Dragged, a Kick), the
+Each creature has a **Size** (a character's Character tab, an NPC's header). Against a physical effect (a physical condition, Prone, Dragged, a Kick), the
 bigger creature rolls its checks with 1X advantage per size step, and the smaller with that much disadvantage, up to
 3 (p.225). The save card shows it.
 

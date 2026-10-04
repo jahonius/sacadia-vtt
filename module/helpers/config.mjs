@@ -16,6 +16,21 @@ SACADIA.stats = {
   fate: 'SACADIA.Stat.Fate.long',
 };
 
+/**
+ * Each Trait's art on its chat cards (checks, saves, initiative): generated pixel-art icons (src/generate-icons.mjs,
+ * group `traits`): a fist through stone, a hand catching a feather, an eye in smoke, a roaring lion, a falling star.
+ */
+SACADIA.statArt = Object.fromEntries(['power', 'finesse', 'wiles', 'courage', 'fate']
+  .map((k) => [k, `systems/sacadia/assets/icons/traits/${k}_icon.webp`]));
+/** The same as glyphs, where a card has no room for art or the Trait is unknown: strength, deftness, cunning, nerve, luck. */
+SACADIA.statIcons = {
+  power: 'fa-solid fa-hand-fist',
+  finesse: 'fa-solid fa-feather-pointed',
+  wiles: 'fa-solid fa-eye',
+  courage: 'fa-solid fa-fire-flame-curved',
+  fate: 'fa-solid fa-star',
+};
+
 SACADIA.statAbbreviations = {
   power: 'SACADIA.Stat.Power.abbr',
   finesse: 'SACADIA.Stat.Finesse.abbr',

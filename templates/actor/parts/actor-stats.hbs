@@ -1,18 +1,30 @@
 <section class="tab {{tabs.stats.cssClass}}" data-group="primary" data-tab="stats">
 
-  {{!-- Core stats + rolls --}}
+  {{!-- Core stats + rolls. Each Trait's icon is the one on its check and save cards in chat; on a character it is also
+       the roll button (a d20 fades in on hover), as an ability's icon is. --}}
   <div class="stats-block">
-    <h3>{{localize 'SACADIA.Tab.Stats'}}</h3>
+    <h3>{{localize 'SACADIA.Header.Traits'}}</h3>
     <div class="stats-grid">
       {{#each system.stats as |stat key|}}
       <div class="stat">
         {{#if @root.isCharacter}}
-        <a class="stat-name rollable" data-action="roll" data-roll-type="stat" data-key="{{key}}"
-           title="{{localize 'SACADIA.Roll.RollStat'}}">{{stat.label}}</a>
+        <a class="stat-use" data-action="roll" data-roll-type="stat" data-key="{{key}}" draggable="false"
+           title="{{localize 'SACADIA.Roll.RollStat' label=stat.label}}">
+          <img src="{{lookup @root.config.statArt key}}" width="48" height="48" alt="" draggable="false"/>
+          <span class="use-overlay"><i class="fa-solid fa-dice-d20"></i></span>
+        </a>
         {{else}}
-        <span class="stat-name">{{stat.label}}</span>
+        <span class="stat-use"><img src="{{lookup @root.config.statArt key}}" width="48" height="48" alt=""/></span>
         {{/if}}
-        <input type="number" name="system.stats.{{key}}.value" value="{{stat.value}}"/>
+        <div class="stat-body">
+          {{#if @root.isCharacter}}
+          <a class="stat-name rollable" data-action="roll" data-roll-type="stat" data-key="{{key}}"
+             title="{{localize 'SACADIA.Roll.RollStat' label=stat.label}}">{{stat.label}}</a>
+          {{else}}
+          <span class="stat-name">{{stat.label}}</span>
+          {{/if}}
+          <input type="number" class="ghost" name="system.stats.{{key}}.value" value="{{stat.value}}" aria-label="{{stat.label}}"/>
+        </div>
       </div>
       {{/each}}
     </div>

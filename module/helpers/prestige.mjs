@@ -92,7 +92,7 @@ export async function hemorrhageBurst(target, { triggers = 1, drain = 0, casterU
       text += ` · ${game.i18n.format('SACADIA.Save.Drain', { amount: gain })}`;
     }
   }
-  await ChatMessage.create({ content: `<div class="sacadia">${text}</div>`, rolls });
+  await ChatMessage.create({ content: `<div class="sacadia chat-card note-card">${text}</div>`, rolls });
 }
 
 /* -------------------------------------------- */
@@ -235,7 +235,7 @@ export async function prestigeTurnStart(actor) {
       const next = Math.max(0, Math.min(6, cur + delta));
       if (next !== cur) {
         await actor.update({ 'system.conditions.madness.value': next });
-        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Prestige.HallowMadness', { name: actor.name, delta: delta > 0 ? `+${delta}` : delta, next })}</div>` });
+        await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Prestige.HallowMadness', { name: actor.name, delta: delta > 0 ? `+${delta}` : delta, next })}</div>` });
       }
     }
   }
@@ -248,7 +248,7 @@ export async function prestigeTurnStart(actor) {
     const low = Math.min(a, b);
     await actor.update({ 'system.health.value': (actor.system.health?.value ?? 0) - r.total, 'system.combatState.tookDamage': true });
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), rolls: [r],
-      content: `<div class="sacadia">${game.i18n.format('SACADIA.Prestige.Crown', { name: actor.name, total: r.total, low,
+      content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Prestige.Crown', { name: actor.name, total: r.total, low,
         effect: game.i18n.localize(`SACADIA.Insane.Effect${low}`) })}</div>` });
   }
 }
@@ -265,7 +265,7 @@ export async function prestigeTurnEnd(actor) {
     const adv = owns(caster, 'mg_deeper_napping') ? -1 : 0;
     const ext = foundry.utils.escapeHTML(JSON.stringify({ onSuccess: { endGrant: { ability: 'mg_catnap', casterUuid: caster.uuid } } }));
     await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }),
-      content: `<div class="sacadia">${game.i18n.format('SACADIA.Prestige.CatnapCheck', { name: actor.name })}`
+      content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Prestige.CatnapCheck', { name: actor.name })}`
         + `<div class="card-save"><button type="button" data-action="rollSave" data-trait="fate" data-dc="${dc}" data-adv="${adv}" data-onsuccess="none"`
         + ` data-casterpc="${caster.type === 'character' ? 1 : 0}" data-caster="${caster.uuid}" data-ext="${ext}">`
         + `${game.i18n.localize('SACADIA.Card.RollSave')} (${game.i18n.localize('SACADIA.Defense.CheckDC')} ${dc} · ${game.i18n.localize('SACADIA.Stat.Fate')})</button></div></div>` });

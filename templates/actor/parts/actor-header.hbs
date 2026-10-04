@@ -1,6 +1,10 @@
-<header class="sheet-header">
-  <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-field="img"
-       title="{{actor.name}}" height="100" width="100"/>
+<header class="sheet-header {{#if isCharacter}}pc{{else}}npc{{/if}}">
+  {{!-- The frame takes the header's height and the portrait covers it, so the picture fills the space without making
+       the header taller. --}}
+  <div class="portrait">
+    <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-field="img"
+         title="{{actor.name}}" alt="{{actor.name}}"/>
+  </div>
 
   <div class="header-fields">
     <div class="name-row">
@@ -20,6 +24,38 @@
       </div>
       {{/unless}}
     </div>
+
+    {{!-- A character's build (professions, level, size, resistances) is set on the Character tab; the header
+         only summarizes it, so play-time readouts get the room. --}}
+    {{#if isCharacter}}
+    <div class="identity-line">{{identityLine}}</div>
+    {{else}}
+    <div class="npc-row">
+      <label class="sac-field">
+        <span class="sac-label">{{localize 'SACADIA.Npc.Role'}}</span>
+        <input type="text" name="system.role" value="{{system.role}}" placeholder="—"/>
+      </label>
+      <label class="sac-field">
+        <span class="sac-label">{{localize 'SACADIA.Npc.CreatureType'}}</span>
+        <select name="system.creatureType">
+          {{selectOptions config.creatureTypes selected=system.creatureType localize=true blank=""}}
+        </select>
+      </label>
+      <label class="sac-field narrow">
+        <span class="sac-label">{{localize 'SACADIA.Npc.Cr'}}</span>
+        <input type="number" name="system.cr" value="{{system.cr}}" min="0"/>
+      </label>
+      <label class="sac-field narrow" data-tooltip="{{localize 'SACADIA.Speed.Hint'}}">
+        <span class="sac-label">{{localize 'SACADIA.Speed.Label'}}</span>
+        <input type="number" name="system.speed" value="{{system.speed.base}}" min="0" step="5"/>
+      </label>
+      <label class="sac-field size" data-tooltip="{{localize 'SACADIA.Size.Hint'}}">
+        <span class="sac-label">{{localize 'SACADIA.Size.Label'}}</span>
+        <select name="system.size">{{selectOptions config.sizes selected=system.size localize=true}}</select>
+      </label>
+    </div>
+    {{/if}}
+
     {{#if staleItems.length}}
     <div class="refresh-notice" data-tooltip="{{staleList}}">
       <i class="fa-solid fa-rotate"></i> {{localize 'SACADIA.Refresh.Notice' n=staleItems.length}}
@@ -27,153 +63,104 @@
     </div>
     {{/if}}
 
-    {{#if isCharacter}}
-    <div class="profession-row">
-      <label class="field">
-        <span>{{localize 'SACADIA.Header.Primary'}}</span>
-        <select name="system.professions.primary.key">
-          {{selectOptions config.professions selected=system.professions.primary.key localize=true blank=""}}
-        </select>
-        <input type="number" name="system.professions.primary.level" value="{{system.professions.primary.level}}"
-               min="0" title="{{localize 'SACADIA.Header.Level'}}"/>
-      </label>
-      <label class="field">
-        <span>{{localize 'SACADIA.Header.Secondary'}}</span>
-        <select name="system.professions.secondary.key">
-          {{selectOptions config.professions selected=system.professions.secondary.key localize=true blank=""}}
-        </select>
-        <input type="number" name="system.professions.secondary.level" value="{{system.professions.secondary.level}}"
-               min="0" title="{{localize 'SACADIA.Header.Level'}}"/>
-      </label>
-      <label class="field level-field">
-        <span>{{localize 'SACADIA.Header.Level'}}</span>
-        <input type="number" name="system.level" value="{{system.level}}" min="1"/>
-      </label>
-    </div>
-    {{else}}
-    <div class="profession-row">
-      <label class="field">
-        <span>{{localize 'SACADIA.Npc.Role'}}</span>
-        <input type="text" name="system.role" value="{{system.role}}" placeholder="—"/>
-      </label>
-      <label class="field">
-        <span>{{localize 'SACADIA.Npc.CreatureType'}}</span>
-        <select name="system.creatureType">
-          {{selectOptions config.creatureTypes selected=system.creatureType localize=true blank=""}}
-        </select>
-      </label>
-      <label class="field level-field">
-        <span>{{localize 'SACADIA.Npc.Cr'}}</span>
-        <input type="number" name="system.cr" value="{{system.cr}}" min="0"/>
-      </label>
-      <label class="field level-field" data-tooltip="{{localize 'SACADIA.Speed.Hint'}}">
-        <span>{{localize 'SACADIA.Speed.Label'}}</span>
-        <input type="number" name="system.speed" value="{{system.speed.base}}" min="0" step="5"/>
-      </label>
-    </div>
-    {{/if}}
-
-    {{!-- Vital + derived stat readouts: two clusters (vitals left, derived chips right) that wrap
-         as units, so a narrow window never scatters singles across a ragged row. --}}
-    <div class="header-stats">
-      <div class="vitals-cluster">
-        <div class="vital hp-vital">
-          <label class="sac-label">{{localize 'SACADIA.Resource.Health'}}</label>
-          <div class="hp-readout">
-            <input type="number" class="hp-cur" name="system.health.value" value="{{system.health.value}}" aria-label="{{localize 'SACADIA.Resource.Health'}}"/>
-            <span class="sep">/</span>
-            {{#if isCharacter}}
-            <span class="hp-max" data-tooltip-html="{{hpTip}}">{{system.health.max}}</span>
-            <span class="hp-adj" title="{{localize 'SACADIA.Resource.HealthAdjustHint'}}">
-              <span class="hp-adj-sign">±</span>
-              <input type="number" class="hp-bonus" name="system.health.bonus" value="{{system.health.bonus}}" placeholder="0"/>
-            </span>
-            {{else}}
-            <input type="number" class="hp-cur hp-maxin" name="system.health.max" value="{{system.health.max}}"/>
-            {{/if}}
-            {{#if system.health.temp}}<span class="hp-temp" data-tooltip="{{localize 'SACADIA.Resource.TempHpHint'}}">+{{system.health.temp}}</span>{{/if}}
-          </div>
-          <div class="sac-meter hp-meter" title="{{system.health.value}} / {{system.health.max}}">
-            <div class="fill" style="width: {{hpPct}}%"></div>
-          </div>
-        </div>
-
-        {{#if isCharacter}}
-        <div class="vital">
-          <label class="sac-label">{{localize 'SACADIA.Economy.Ap'}}</label>
-          {{#if apPips}}
-          <div class="sac-pips" title="{{apText}}">{{#each apPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
+    {{!-- Vitals: HP (number + bar) grows to fill the row; AP, reactions and Madness sit at its end. --}}
+    <div class="vitals">
+      <div class="vital hp-vital">
+        <div class="hp-readout">
+          <span class="sac-label">{{localize 'SACADIA.Resource.Health'}}</span>
+          <input type="number" class="hp-cur ghost" name="system.health.value" value="{{system.health.value}}" aria-label="{{localize 'SACADIA.Resource.Health'}}"/>
+          <span class="sep">/</span>
+          {{#if isCharacter}}
+          <span class="hp-max" data-tooltip-html="{{hpTip}}">{{system.health.max}}</span>
           {{else}}
-          <span class="vital-num">{{apText}}</span>
+          <input type="number" class="hp-max ghost" name="system.health.max" value="{{system.health.max}}" aria-label="{{localize 'SACADIA.Resource.MaxHealth'}}"/>
           {{/if}}
+          {{#if system.health.temp}}<span class="hp-temp" data-tooltip="{{localize 'SACADIA.Resource.TempHpHint'}}">+{{system.health.temp}} {{localize 'SACADIA.Resource.TempHp'}}</span>{{/if}}
         </div>
-
-        <div class="vital">
-          <label class="sac-label">{{localize 'SACADIA.Economy.Reaction'}}</label>
-          {{#if reactionPips}}
-          <div class="sac-pips reaction-pips" title="{{reactionText}}">{{#each reactionPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
-          {{else}}
-          <span class="vital-num">{{reactionText}}</span>
-          {{/if}}
+        <div class="sac-meter hp-meter {{hpState}}" title="{{system.health.value}} / {{system.health.max}}">
+          <div class="fill" style="width: {{hpPct}}%"></div>
         </div>
-
-        {{#if showMadness}}
-        <div class="vital">
-          <label class="sac-label">{{localize 'SACADIA.Condition.Madness'}}</label>
-          <div class="madness-track">
-            <div class="sac-pips">{{#each madnessPips as |pip|}}<span class="sac-pip mad {{#if pip.on}}on{{/if}} {{#if pip.threshold}}threshold{{/if}}"></span>{{/each}}</div>
-            {{#if insane}}<span class="insane-note">{{localize 'SACADIA.Insane.Badge'}}</span>{{/if}}
-          </div>
-        </div>
-        {{/if}}
-        {{/if}}
       </div>
 
       {{#if isCharacter}}
-      <div class="derived-cluster">
-        <div class="derived"><label>{{localize 'SACADIA.Progression.Proficiency'}}</label><span>{{system.proficiency}}</span></div>
-        <div class="derived"><label>{{localize 'SACADIA.Defense.CheckDC'}}</label><span>{{system.checkDc.primary}}</span></div>
-        <div class="derived speed" data-tooltip="{{localize 'SACADIA.Speed.Hint'}}"><label>{{localize 'SACADIA.Speed.Label'}}</label><span>{{system.speed.value}}ft{{#if system.speed.fly}} · {{localize 'SACADIA.Speed.Fly'}} {{system.speed.fly}}ft{{/if}}</span></div>
-        {{#if system.lorePoints.max}}
-        <div class="derived lore"><label>{{localize 'SACADIA.Resource.LorePoints'}}</label>
-          <span><input type="number" name="system.lorePoints.value" value="{{system.lorePoints.value}}" min="0"/>/{{system.lorePoints.max}}</span>
-        </div>
+      <div class="vital">
+        <span class="sac-label">{{localize 'SACADIA.Economy.Ap'}}</span>
+        {{#if apPips}}
+        <div class="sac-pips" title="{{apText}}">{{#each apPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
+        {{else}}
+        <span class="vital-num">{{apText}}</span>
         {{/if}}
+      </div>
+
+      <div class="vital">
+        <span class="sac-label">{{localize 'SACADIA.Economy.Reaction'}}</span>
+        {{#if reactionPips}}
+        <div class="sac-pips reaction-pips" title="{{reactionText}}">{{#each reactionPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
+        {{else}}
+        <span class="vital-num">{{reactionText}}</span>
+        {{/if}}
+      </div>
+
+      {{#if showMadness}}
+      <div class="vital">
+        <span class="sac-label">{{localize 'SACADIA.Condition.Madness'}}</span>
+        <div class="madness-track">
+          <div class="sac-pips">{{#each madnessPips as |pip|}}<span class="sac-pip mad {{#if pip.on}}on{{/if}} {{#if pip.threshold}}threshold{{/if}}"></span>{{/each}}</div>
+          {{#if insane}}<span class="insane-note">{{localize 'SACADIA.Insane.Badge'}}</span>{{/if}}
+        </div>
+      </div>
+      {{/if}}
+      {{/if}}
+    </div>
+
+    {{!-- Readouts: the five defenses, then the derived numbers, as one row of equal tiles. Characters derive
+         defenses (read-only; the tooltip shows the breakdown); NPCs are hand-authored stat blocks (editable). --}}
+    <div class="readouts">
+      {{#each system.defenses as |def key|}}
+      <div class="readout defense {{#if def.supersededByAd}}superseded{{/if}} {{#if def.cappedStat}}capped{{/if}}"
+           {{#if @root.isCharacter}}data-tooltip-html="{{lookup @root.defTooltips key}}"{{else}}data-tooltip="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}{{#if def.cappedStat}} — {{localize 'SACADIA.Armor.MaxStat'}}{{/if}}"{{/if}}>
+        <span class="sac-label">{{lookup @root.defShort key}}</span>
+        {{#if @root.isCharacter}}
+        <span class="readout-value">{{def.value}}{{#if def.cappedStat}}<sup>*</sup>{{/if}}{{#if def.supersededByAd}}<sup class="ad-mark" title="{{localize 'SACADIA.Defense.TipSuperseded'}}">{{localize 'SACADIA.Defense.ADShort'}}</sup>{{/if}}</span>
+        {{else}}
+        <input type="number" class="readout-value ghost" name="system.defenses.{{key}}" value="{{def.base}}" min="0"
+               aria-label="{{def.label}}"/>
+        {{/if}}
+      </div>
+      {{/each}}
+      <span class="readout-gap" aria-hidden="true"></span>
+      {{#if isCharacter}}
+      <div class="readout" data-tooltip="{{localize 'SACADIA.Progression.Proficiency'}}">
+        <span class="sac-label">{{localize 'SACADIA.Header.ProfShort'}}</span><span class="readout-value">{{system.proficiency}}</span>
+      </div>
+      <div class="readout" data-tooltip="{{localize 'SACADIA.Defense.CheckDC'}}">
+        <span class="sac-label">{{localize 'SACADIA.Defense.CheckDCShort'}}</span><span class="readout-value">{{system.checkDc.primary}}</span>
+      </div>
+      <div class="readout speed" data-tooltip="{{localize 'SACADIA.Speed.Hint'}}">
+        <span class="sac-label">{{localize 'SACADIA.Speed.Label'}}</span>
+        <span class="readout-value">{{system.speed.value}}<small>ft</small>{{#if system.speed.fly}}<small> · {{localize 'SACADIA.Speed.Fly'}} {{system.speed.fly}}</small>{{/if}}</span>
+      </div>
+      {{#if system.lorePoints.max}}
+      <div class="readout lore" data-tooltip="{{localize 'SACADIA.Resource.LorePoints'}}">
+        <span class="sac-label">{{localize 'SACADIA.Resource.LorePoints'}}</span>
+        <span class="readout-value"><input type="number" class="ghost" name="system.lorePoints.value" value="{{system.lorePoints.value}}" min="0"/><small>/{{system.lorePoints.max}}</small></span>
+      </div>
+      {{/if}}
+      {{else}}
+      {{!-- NPCs author a flat Check DC (targets roll against it to resist this monster's conditions / saves). --}}
+      <div class="readout check-dc" data-tooltip="{{localize 'SACADIA.Defense.CheckDC'}}">
+        <span class="sac-label">{{localize 'SACADIA.Defense.CheckDCShort'}}</span>
+        <input type="number" class="readout-value ghost" name="system.checkDc" value="{{system.checkDc}}" min="0"/>
       </div>
       {{/if}}
     </div>
 
-    {{!-- Defenses. Characters derive them (read-only); NPCs are hand-authored stat blocks (editable). --}}
-    <div class="defenses">
-      {{#each system.defenses as |def key|}}
-      <div class="defense {{#if def.supersededByAd}}superseded{{/if}} {{#if def.cappedStat}}capped{{/if}}"
-           {{#if @root.isCharacter}}data-tooltip-html="{{lookup @root.defTooltips key}}"{{else}}title="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}{{#if def.cappedStat}} — {{localize 'SACADIA.Armor.MaxStat'}}{{/if}}"{{/if}}>
-        <label>{{def.label}}</label>
-        {{#if @root.isCharacter}}
-        <span>{{def.value}}{{#if def.cappedStat}}<sup>*</sup>{{/if}}{{#if def.supersededByAd}}<sup class="ad-mark" title="{{localize 'SACADIA.Defense.TipSuperseded'}}">{{localize 'SACADIA.Defense.ADShort'}}</sup>{{/if}}</span>
-        {{else}}
-        <input type="number" class="def-input" name="system.defenses.{{key}}" value="{{def.base}}" min="0"
-               title="{{#if def.supersededByAd}}{{localize 'SACADIA.Defense.AD'}} {{/if}}{{def.value}}"/>
-        {{/if}}
-      </div>
-      {{/each}}
-      {{!-- NPCs author a flat Check DC (targets roll against it to resist this monster's
-           conditions / saves); characters derive it per profession. --}}
-      {{#unless isCharacter}}
-      <div class="defense check-dc" title="{{localize 'SACADIA.Defense.CheckDC'}}">
-        <label>{{localize 'SACADIA.Defense.CheckDCShort'}}</label>
-        <input type="number" class="def-input" name="system.checkDc" value="{{system.checkDc}}" min="0"/>
-      </div>
-      {{/unless}}
-    </div>
-    {{!-- Typed damage resistances (book p.222): "physical 2, fire 5, rot immune" — negative is a vulnerability. --}}
-    <label class="field resistances-field" data-tooltip="{{localize 'SACADIA.Resist.TypedHint'}}">
-      <span>{{localize 'SACADIA.Resist.Typed'}}</span>
-      <input type="text" name="system.resistances" value="{{system.resistances}}" placeholder="physical 2, fire 5"/>
+    {{!-- NPC typed damage resistances (book p.222); a character's are on the Character tab. --}}
+    {{#unless isCharacter}}
+    <label class="sac-field resistances-field" data-tooltip="{{localize 'SACADIA.Resist.TypedHint'}}">
+      <span class="sac-label">{{localize 'SACADIA.Resist.Typed'}}</span>
+      <input type="text" name="system.resistances" value="{{system.resistances}}" placeholder="{{localize 'SACADIA.Header.NoResistances'}}"/>
     </label>
-    <label class="field size-field" data-tooltip="{{localize 'SACADIA.Size.Hint'}}">
-      <span>{{localize 'SACADIA.Size.Label'}}</span>
-      <select name="system.size">{{selectOptions config.sizes selected=system.size localize=true}}</select>
-    </label>
+    {{/unless}}
   </div>
 </header>

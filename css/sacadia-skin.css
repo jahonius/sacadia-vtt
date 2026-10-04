@@ -1,7 +1,28 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/alegreya/alegreya-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/alegreya/alegreya-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Alegreya";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/alegreya/alegreya-latin-700-normal.woff2") format("woff2");
+}
 :root {
   --sac-umber: #231a10;
-  --sac-panel: #2d2315;
+  --sac-panel: #33281a;
   --sac-inset: #191207;
   --sac-line: #4a3a22;
   --sac-line-strong: #63512e;
@@ -13,7 +34,7 @@
   --sac-olive: #8a8552;
   --sac-blood: #c05055;
   --sac-blood-deep: #911d20;
-  --sac-font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sac-font-display: "Alegreya", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sac-font-ui: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --sac-font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
 }
@@ -325,6 +346,7 @@
   background: var(--sac-umber);
   color: var(--sac-text);
   font-family: var(--sac-font-ui);
+  font-variant-numeric: lining-nums;
 }
 .sacadia h1, .sacadia h2, .sacadia h3, .sacadia h4 {
   font-family: var(--sac-font-display);
@@ -358,6 +380,36 @@
 .sacadia select option {
   background: var(--sac-inset);
   color: var(--sac-text);
+}
+.sacadia input.ghost {
+  padding: 0;
+  text-align: center;
+  color: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted transparent;
+  border-radius: 0;
+  -moz-appearance: textfield;
+}
+.sacadia input.ghost::-webkit-inner-spin-button, .sacadia input.ghost::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.sacadia input.ghost:hover {
+  border-bottom-color: var(--sac-line-strong);
+}
+.sacadia input.ghost:focus {
+  border-bottom: 1px solid var(--sac-gold);
+  box-shadow: none;
+}
+.sacadia .sac-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.sacadia .sac-field input, .sacadia .sac-field select {
+  width: 100%;
 }
 .sacadia button {
   background: var(--sac-panel);
@@ -505,6 +557,12 @@
   inset: 0 auto 0 0;
   background: linear-gradient(180deg, #e8c866, #b9872b);
 }
+.sacadia .sac-meter.hurt .fill {
+  background: linear-gradient(180deg, #e39a4a, #a9601f);
+}
+.sacadia .sac-meter.low .fill {
+  background: linear-gradient(180deg, #d4666b, var(--sac-blood-deep));
+}
 .sacadia .sac-meter .num {
   position: absolute;
   inset: 0;
@@ -515,7 +573,7 @@
   font-weight: 700;
   color: var(--sac-text);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sacadia .sac-streak {
   display: inline-flex;
@@ -728,153 +786,125 @@
 }
 .sacadia .sheet-header {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.8rem;
   align-items: flex-start;
+  margin-bottom: 0.15rem;
 }
 .sacadia .sheet-header .profile-img {
   flex: 0 0 auto;
+  margin: 0;
   border: 1px solid var(--sac-line-strong);
-  border-radius: 4px;
+  border-radius: 5px;
   object-fit: cover;
   cursor: pointer;
 }
 .sacadia .sheet-header .header-fields {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .sacadia .sheet-header .charname {
-  width: 100%;
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-.sacadia .sheet-header .profession-row,
-.sacadia .sheet-header .header-stats,
-.sacadia .sheet-header .defenses {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  align-items: flex-end;
-  margin-top: 0.35rem;
-}
-.sacadia .sheet-header .header-stats {
-  justify-content: space-between;
-  gap: 0.5rem 1rem;
-}
-.sacadia .sheet-header .header-stats .vitals-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.1rem;
-  align-items: flex-end;
-  flex: 1 1 22rem;
-}
-.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child {
-  flex: 1 1 10rem;
-}
-.sacadia .sheet-header .header-stats .vitals-cluster .vital:first-child .sac-meter {
-  width: auto;
-}
-.sacadia .sheet-header .header-stats .derived-cluster {
-  display: flex;
-  gap: 0.5rem;
-  align-items: stretch;
-}
-.sacadia .sheet-header .defenses .defense {
-  flex: 1 1 5.5rem;
-}
-.sacadia .sheet-header .field {
-  display: flex;
-  flex-direction: column;
-  font-size: 0.75rem;
-}
-.sacadia .sheet-header .field > span {
-  opacity: 0.75;
-}
-.sacadia .sheet-header .field select, .sacadia .sheet-header .field input {
-  min-width: 4rem;
-}
-.sacadia .sheet-header .field.level-field input {
-  width: 3.5rem;
-}
-.sacadia .sheet-header .header-stats .vital {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-.sacadia .sheet-header .header-stats .vital .vital-num {
-  font-size: 1.05rem;
-  font-weight: bold;
-  color: var(--sac-gold-hi);
-  font-variant-numeric: tabular-nums;
-}
-.sacadia .sheet-header .hp-vital .hp-readout {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-variant-numeric: tabular-nums;
-}
-.sacadia .sheet-header .hp-vital .hp-readout .hp-cur {
-  width: 3rem;
-  text-align: center;
-  padding: 0.05rem 0.2rem;
-  font-size: 1.05rem;
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  padding: 0;
+  font-family: var(--sac-font-display);
+  font-size: 1.45rem;
   font-weight: 700;
-  font-family: var(--sac-font-display);
+  line-height: 1.25;
   color: var(--sac-gold-hi);
-  background: var(--sac-inset);
-  border: 1px solid var(--sac-line);
-  border-radius: 3px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
 }
-.sacadia .sheet-header .hp-vital .hp-readout .sep {
+.sacadia .sheet-header .charname:hover {
+  border-bottom-color: var(--sac-line);
+}
+.sacadia .sheet-header .charname:focus {
+  border-bottom-color: var(--sac-gold);
+  box-shadow: none;
+}
+.sacadia .sheet-header .identity-line {
+  margin-top: -0.4rem;
+  font-size: 0.8rem;
   color: var(--sac-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.sacadia .sheet-header .hp-vital .hp-readout .hp-max {
+.sacadia .sheet-header .vitals {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+}
+.sacadia .sheet-header .vital {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.sacadia .sheet-header .vital .vital-num {
   font-size: 1.05rem;
-  font-weight: 600;
-  font-family: var(--sac-font-display);
+  font-weight: bold;
   color: var(--sac-gold-hi);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .sheet-header .hp-vital {
+  flex: 1 1 13rem;
+  min-width: 0;
+}
+.sacadia .sheet-header .hp-readout {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .sheet-header .hp-readout .sac-label {
+  margin-right: 0.35rem;
+}
+.sacadia .sheet-header .hp-readout .hp-cur, .sacadia .sheet-header .hp-readout .hp-max {
+  font-family: var(--sac-font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--sac-gold-hi);
+}
+.sacadia .sheet-header .hp-readout .hp-cur, .sacadia .sheet-header .hp-readout input.hp-max {
+  width: 2.8rem;
+  field-sizing: content;
+  min-width: 1.6ch;
+}
+.sacadia .sheet-header .hp-readout .hp-cur {
+  text-align: right;
+}
+.sacadia .sheet-header .hp-readout input.hp-max {
+  text-align: left;
+}
+.sacadia .sheet-header .hp-readout span.hp-max {
   cursor: help;
 }
-.sacadia .sheet-header .hp-vital .hp-readout .hp-adj {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.1rem;
-  margin-left: 0.5rem;
-  cursor: help;
-}
-.sacadia .sheet-header .hp-vital .hp-readout .hp-adj-sign {
-  font-size: 0.72rem;
+.sacadia .sheet-header .hp-readout .sep {
   color: var(--sac-dim);
 }
-.sacadia .sheet-header .hp-vital .hp-readout .hp-temp {
-  margin-left: 0.4rem;
-  padding: 0.02rem 0.35rem;
+.sacadia .sheet-header .hp-readout .hp-temp {
+  margin-left: 0.45rem;
+  padding: 0.02rem 0.4rem;
+  align-self: center;
   cursor: help;
   font-family: var(--sac-font-ui);
-  font-weight: bold;
-  font-size: 0.72rem;
+  font-size: 0.68rem;
+  font-weight: 700;
   color: var(--sac-gold-hi);
   background: rgba(212, 165, 60, 0.16);
-  border: 1px solid var(--sac-gold);
   border-radius: 0.7rem;
 }
-.sacadia .sheet-header .hp-vital .hp-readout .hp-bonus {
-  width: 2.1rem;
-  text-align: center;
-  padding: 0.02rem 0.15rem;
-  font-size: 0.72rem;
-  color: var(--sac-dim);
-  background: var(--sac-inset);
-  border: 1px dashed var(--sac-line);
-  border-radius: 3px;
-}
-.sacadia .sheet-header .hp-vital .hp-readout .hp-bonus:focus {
-  color: var(--sac-text);
-  border-style: solid;
-}
-.sacadia .sheet-header .hp-vital .hp-meter {
-  width: 11rem;
-  margin-top: 0.28rem;
-  height: 0.55rem;
+.sacadia .sheet-header .hp-meter {
+  width: auto;
+  min-width: 0;
+  height: 0.45rem;
+  border: none;
 }
 .sacadia .sheet-header .madness-track {
   display: flex;
@@ -888,48 +918,53 @@
   text-transform: uppercase;
   color: var(--sac-blood);
 }
-.sacadia .sheet-header .header-stats .derived,
-.sacadia .sheet-header .defenses .defense {
+.sacadia .sheet-header .readouts {
+  display: flex;
+  gap: 0.3rem;
+}
+.sacadia .sheet-header .readout-gap {
+  flex: 0 0 0.45rem;
+}
+.sacadia .sheet-header .readout {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.15rem 0.4rem;
-  border: 1px solid var(--sac-line);
-  border-radius: 4px;
-  min-width: 3rem;
+  gap: 0.12rem;
+  padding: 0.32rem 0.2rem 0.28rem;
   background: var(--sac-panel);
+  border-radius: 4px;
 }
-.sacadia .sheet-header .header-stats .derived label,
-.sacadia .sheet-header .defenses .defense label {
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--sac-dim);
-  font-weight: 600;
-}
-.sacadia .sheet-header .header-stats .derived span,
-.sacadia .sheet-header .defenses .defense span {
-  font-size: 1.1rem;
-  font-weight: 600;
+.sacadia .sheet-header .readout .readout-value {
   font-family: var(--sac-font-display);
-  color: var(--sac-gold-hi);
-  font-variant-numeric: tabular-nums;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sac-text);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
 }
-.sacadia .sheet-header .header-stats .derived .def-input,
-.sacadia .sheet-header .defenses .defense .def-input {
-  width: 2.6rem;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0;
-  border: none;
-  background: rgba(255, 255, 255, 0.04);
-}
-.sacadia .sheet-header .defenses .defense.superseded span {
+.sacadia .sheet-header .readout .readout-value small {
+  font-family: var(--sac-font-ui);
+  font-size: 0.66rem;
+  font-weight: 400;
   color: var(--sac-dim);
 }
-.sacadia .sheet-header .defenses .defense .ad-mark {
-  margin-left: 0.12rem;
+.sacadia .sheet-header .readout input.readout-value {
+  width: 100%;
+  max-width: 3rem;
+}
+.sacadia .sheet-header .readout .readout-value input {
+  width: 1.6rem;
+  font: inherit;
+  color: inherit;
+}
+.sacadia .sheet-header .readout.superseded .readout-value {
+  color: var(--sac-dim);
+}
+.sacadia .sheet-header .ad-mark {
+  margin-left: 0.1rem;
   font-family: var(--sac-font-ui);
   font-size: 0.5rem;
   font-weight: 700;
@@ -937,65 +972,119 @@
   color: var(--sac-gold);
   vertical-align: super;
 }
-.sacadia .sheet-header .header-stats .derived.lore span {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.05rem;
+.sacadia .sheet-header .npc-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.5rem;
 }
-.sacadia .sheet-header .header-stats .derived.lore span input {
-  width: 2rem;
-  text-align: center;
-  padding: 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  font-family: var(--sac-font-display);
-  color: var(--sac-gold-hi);
-  background: transparent;
-  border: none;
-  font-variant-numeric: tabular-nums;
+.sacadia .sheet-header .npc-row .sac-field {
+  flex: 1 1 6rem;
 }
-.sacadia .sheet-header .header-stats .derived.lore span input:focus {
-  box-shadow: none;
-  border-bottom: 1px solid var(--sac-gold);
+.sacadia .sheet-header .npc-row .sac-field:first-child {
+  flex: 2 1 8rem;
 }
-.sacadia .sheet-header .charname {
-  font-family: var(--sac-font-display);
-  color: var(--sac-gold-hi);
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--sac-line);
-  border-radius: 0;
+.sacadia .sheet-header .npc-row .sac-field.narrow {
+  flex: 0 0 4.2rem;
 }
-.sacadia .sheet-header .charname:focus {
-  border-bottom-color: var(--sac-gold);
-  box-shadow: none;
+.sacadia.actor .sheet-header {
+  align-items: stretch;
+}
+.sacadia.actor .sheet-header .portrait {
+  position: relative;
+  flex: 0 0 136px;
+  min-height: 136px;
+}
+.sacadia.actor .sheet-header .profile-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 18%;
 }
 .sacadia .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+  gap: 0.4rem;
 }
 .sacadia .stats-grid .stat {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.2rem;
-  padding: 0.35rem;
-  border: 1px solid var(--sac-line);
+  gap: 0.5rem;
+  padding: 0.35rem 0.4rem;
+  background: var(--sac-panel);
   border-radius: 4px;
 }
+.sacadia .stats-grid .stat .stat-use {
+  position: relative;
+  flex: 0 0 auto;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.sacadia .stats-grid .stat .stat-use img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 0;
+}
+.sacadia .stats-grid .stat a.stat-use {
+  cursor: pointer;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+.sacadia .stats-grid .stat a.stat-use .use-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 14, 6, 0.55);
+  color: var(--sac-gold-hi);
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.sacadia .stats-grid .stat a.stat-use:hover, .sacadia .stats-grid .stat a.stat-use:focus-visible {
+  border-color: var(--sac-gold);
+  box-shadow: 0 0 6px rgba(212, 165, 60, 0.45);
+}
+.sacadia .stats-grid .stat a.stat-use:hover .use-overlay, .sacadia .stats-grid .stat a.stat-use:focus-visible .use-overlay {
+  opacity: 1;
+}
+.sacadia .stats-grid .stat .stat-body {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05rem;
+}
 .sacadia .stats-grid .stat .stat-name {
-  font-weight: bold;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
 }
 .sacadia .stats-grid .stat a.stat-name {
   cursor: pointer;
 }
 .sacadia .stats-grid .stat a.stat-name:hover {
-  text-shadow: 0 0 6px rgba(212, 165, 60, 0.8);
+  color: var(--sac-gold-hi);
+  text-shadow: 0 0 6px rgba(212, 165, 60, 0.6);
 }
 .sacadia .stats-grid .stat input {
   width: 3rem;
-  text-align: center;
+  height: auto;
+  padding: 0;
+  text-align: left;
+  font-family: var(--sac-font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sac-text);
 }
 .sacadia .trait-expertise {
   margin: 0.6rem 0;
@@ -1148,7 +1237,7 @@
   min-width: 1.1rem;
   text-align: center;
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--sac-dim);
 }
 .sacadia .condition-grid .condition:hover .condition-track a {
@@ -1166,12 +1255,6 @@
 }
 .sacadia .condition-grid .condition.active .condition-value {
   color: #e88d91;
-}
-.sacadia .tab[data-tab=stats] > div > h3 {
-  font-size: 1.05rem;
-  margin: 0.65rem 0 0.35rem;
-  padding-bottom: 0.12rem;
-  border-bottom: 1px solid var(--sac-line-strong);
 }
 .sacadia .talents .talent-group {
   margin-bottom: 0.55rem;
@@ -1263,12 +1346,6 @@
 .sacadia .identity-band .id-field.wide {
   grid-column: span 2;
 }
-.sacadia .identity-band .id-field > span {
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--sac-dim);
-}
 .sacadia .identity-band .id-field input, .sacadia .identity-band .id-field select {
   width: 100%;
   padding: 0.12rem 0.3rem;
@@ -1345,16 +1422,23 @@
 .sacadia .inv-group .inv-head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--sac-line-strong);
+  align-items: flex-end;
+  gap: 0.5rem;
 }
 .sacadia .inv-group .inv-head a {
   cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .inv-group .inv-head a:hover {
+  color: var(--sac-gold-hi);
 }
 .sacadia .inv-group .inv-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 .sacadia .inv-group .inv-empty {
   opacity: 0.55;
@@ -1365,17 +1449,18 @@
 .sacadia .inv-row {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.3rem;
-  border-radius: 3px;
+  gap: 0.5rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 4px;
 }
 .sacadia .inv-row:hover {
   background: rgba(212, 165, 60, 0.07);
 }
 .sacadia .inv-row.equipped {
-  background: rgba(212, 165, 60, 0.13);
+  background: var(--sac-panel);
 }
 .sacadia .inv-row .equip-toggle {
+  flex: 0 0 auto;
   cursor: pointer;
   color: var(--sac-dim);
 }
@@ -1383,24 +1468,56 @@
   color: var(--sac-gold);
 }
 .sacadia .inv-row .inv-img {
-  border: 1px solid var(--sac-line);
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border: none;
   border-radius: 3px;
+  object-fit: cover;
+}
+.sacadia .inv-row .inv-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.sacadia .inv-row .inv-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
 }
 .sacadia .inv-row .inv-name {
-  flex: 1;
-}
-.sacadia .inv-row .armor-summary {
-  font-size: 0.7rem;
-  opacity: 0.75;
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 .sacadia .inv-row .inv-qty {
   font-size: 0.8rem;
-  opacity: 0.8;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .inv-row .inv-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.6rem;
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .inv-row .inv-facts .fact-tag {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.64rem;
+  color: var(--sac-olive);
 }
 .sacadia .inv-row .inv-controls {
+  flex: 0 0 auto;
   display: flex;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.45rem;
 }
 .sacadia .inv-row .inv-controls a {
   cursor: pointer;
@@ -1409,8 +1526,14 @@
 .sacadia .inv-row .inv-controls a:hover {
   color: var(--sac-gold-hi);
 }
-.sacadia .inv-row .signature-toggle {
-  color: var(--sac-dim);
+.sacadia .inv-row .hover-controls {
+  display: flex;
+  gap: 0.45rem;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+.sacadia .inv-row:hover .hover-controls, .sacadia .inv-row:focus-within .hover-controls {
+  opacity: 1;
 }
 .sacadia .inv-row .signature-toggle.on {
   color: var(--sac-gold);
@@ -1423,67 +1546,75 @@
   color: var(--sac-gold);
 }
 .sacadia .inv-row .storage-toggle {
-  font-size: 0.68rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--sac-gold);
+  font-size: 0.72rem;
+  font-variant-numeric: lining-nums tabular-nums;
   white-space: nowrap;
+  color: var(--sac-text);
+}
+.sacadia .inv-row .storage-toggle i {
+  color: var(--sac-gold);
+  margin-right: 0.1rem;
 }
 .sacadia .inv-row .storage-toggle.sis {
   color: var(--sac-dim);
 }
-.sacadia .sacadia .item-slots {
+.sacadia .inv-row .storage-toggle.sis i {
+  color: var(--sac-dim);
+}
+.sacadia .item-slots {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.4rem 1.2rem;
   align-items: center;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
+  margin: 0.15rem 0 0.2rem;
+  font-size: 0.85rem;
+  font-variant-numeric: lining-nums tabular-nums;
   color: var(--sac-dim);
 }
-.sacadia .sacadia .item-slots.overburdened {
-  color: var(--sac-blood);
+.sacadia .item-slots .slot-count {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  cursor: help;
 }
-.sacadia .sacadia .resistances-field, .sacadia .sacadia .size-field {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.35rem;
-  font-size: 0.8rem;
-}
-.sacadia .sacadia .resistances-field span, .sacadia .sacadia .size-field span {
-  color: var(--sac-dim);
+.sacadia .item-slots .slot-count .slot-val {
   white-space: nowrap;
 }
-.sacadia .sacadia .resistances-field input, .sacadia .sacadia .size-field input {
-  flex: 1;
-  min-width: 0;
+.sacadia .item-slots .slot-count i {
+  color: var(--sac-gold);
+  font-size: 0.75rem;
 }
-.sacadia .sacadia .talent-group.specialties h4 a {
+.sacadia .item-slots .slot-count b {
+  color: var(--sac-text);
+}
+.sacadia .item-slots.overburdened .slot-count b {
+  color: var(--sac-blood);
+}
+.sacadia .talent-group.specialties h4 a {
   cursor: pointer;
   margin-left: 0.3rem;
 }
-.sacadia .sacadia .talent-group.specialties .specialty {
+.sacadia .talent-group.specialties .specialty {
   display: flex;
   gap: 0.3rem;
   align-items: center;
 }
-.sacadia .sacadia .talent-group.specialties .specialty input[type=text] {
+.sacadia .talent-group.specialties .specialty input[type=text] {
   flex: 1;
   min-width: 0;
 }
-.sacadia .sacadia .talent-group.specialties .specialty select {
+.sacadia .talent-group.specialties .specialty select {
   flex: 0 1 8rem;
   min-width: 0;
 }
-.sacadia .sacadia .talent-group.specialties .specialty .rank {
+.sacadia .talent-group.specialties .specialty .rank {
   width: 2.6rem;
 }
-.sacadia .sacadia .talent-group.specialties .specialty a {
+.sacadia .talent-group.specialties .specialty a {
   cursor: pointer;
   color: var(--sac-dim);
 }
-.sacadia .sacadia .talent-group.specialties .specialty a:hover {
+.sacadia .talent-group.specialties .specialty a:hover {
   color: var(--sac-gold-hi);
 }
 .sacadia .research-list .prereq-met {
@@ -1740,7 +1871,7 @@
   align-items: baseline;
   gap: 0.3rem;
   font-size: 0.8rem;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sacadia .combat-panel .cp-counters .cp-counter label {
   font-size: 0.58rem;
@@ -1823,7 +1954,7 @@
 }
 .sacadia .combat-panel .log-entry .log-ap {
   opacity: 0.8;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sacadia .combat-panel .log-entry a {
   cursor: pointer;
@@ -1879,7 +2010,7 @@
   height: 1.4rem;
   border: 1px solid var(--sac-line);
   border-radius: 4px;
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
   font-weight: 600;
 }
 .sacadia .combat-aux .basic-actions-group {
@@ -2010,6 +2141,9 @@
   padding: 0.15rem 0;
   grid-column: 1/-1;
 }
+.sacadia .ability-group[data-group=passive] .sac-chip.tag {
+  display: none;
+}
 .sacadia .rest-controls,
 .sacadia .npc-controls {
   display: flex;
@@ -2077,20 +2211,20 @@
   font-size: 0.85rem;
 }
 .sacadia .ability-card {
-  border: 1px solid var(--sac-line);
-  border-radius: 6px;
+  border: 1px solid transparent;
+  border-radius: 5px;
   background: var(--sac-panel);
   overflow: hidden;
 }
 .sacadia .ability-card.expanded {
-  border-color: var(--sac-line-strong);
+  border-color: var(--sac-line);
   grid-column: 1/-1;
 }
 .sacadia .ability-row {
   display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  padding: 0.5rem 0.6rem;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.35rem 0.45rem;
 }
 .sacadia .ability-row:hover {
   background: rgba(212, 165, 60, 0.06);
@@ -2099,20 +2233,39 @@
   position: relative;
   flex: 0 0 auto;
   display: block;
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   border: 1px solid var(--sac-line);
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   transition: border-color 0.12s ease, box-shadow 0.12s ease;
 }
 .sacadia .ability-row .ability-use .ability-img {
   display: block;
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   border: none;
   border-radius: 0;
+}
+.sacadia .ability-row .ability-use .ap-badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.05rem;
+  padding: 0 0.22rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #14100a;
+  background: var(--sac-gold);
+  border-top-left-radius: 4px;
+}
+.sacadia .ability-row .ability-use .ap-badge i {
+  font-size: 0.55rem;
 }
 .sacadia .ability-row .ability-use .use-overlay {
   position: absolute;
@@ -2122,7 +2275,7 @@
   justify-content: center;
   background: rgba(20, 14, 6, 0.55);
   color: var(--sac-gold-hi);
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: opacity 0.12s ease;
 }
@@ -2138,12 +2291,11 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding-top: 0.1rem;
+  gap: 0.25rem;
 }
 .sacadia .ability-row .ability-name {
   font-family: var(--sac-font-display);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.15;
   cursor: pointer;
@@ -2176,6 +2328,9 @@
   gap: 0.45rem;
   align-items: center;
   flex: 0 0 auto;
+  align-self: flex-start;
+  opacity: 0;
+  transition: opacity 0.12s ease;
 }
 .sacadia .ability-row .ability-controls a {
   cursor: pointer;
@@ -2183,6 +2338,9 @@
 }
 .sacadia .ability-row .ability-controls a:hover {
   color: var(--sac-gold-hi);
+}
+.sacadia .ability-row:hover .ability-controls, .sacadia .ability-row:focus-within .ability-controls {
+  opacity: 1;
 }
 .sacadia .ability-drawer {
   border-top: 1px solid var(--sac-line);
@@ -2352,46 +2510,134 @@
 .sacadia .damage-parts .damage-part a {
   cursor: pointer;
 }
-.sacadia.ability-card {
+.sacadia.chat-card, .sacadia.ability-card, .sacadia.resist-card {
   background: var(--sac-umber);
   border: 1px solid var(--sac-line-strong);
   border-radius: 6px;
   padding: 0.5rem 0.6rem;
   color: var(--sac-text);
+  font-variant-numeric: lining-nums;
 }
-.sacadia.ability-card .card-header {
+.sacadia.chat-card .card-header, .sacadia.ability-card .card-header, .sacadia.resist-card .card-header {
   display: flex;
   align-items: center;
   gap: 0.55rem;
   border-bottom: 1px solid var(--sac-line);
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.35rem;
 }
-.sacadia.ability-card .card-header img {
+.sacadia.chat-card .card-header img, .sacadia.ability-card .card-header img, .sacadia.resist-card .card-header img {
   width: 72px;
   height: 72px;
   flex: 0 0 auto;
   border: 1px solid var(--sac-line-strong);
   border-radius: 5px;
 }
-.sacadia.ability-card .card-header h3 {
+.sacadia.chat-card .card-header img.card-art, .sacadia.ability-card .card-header img.card-art, .sacadia.resist-card .card-header img.card-art {
+  width: 56px;
+  height: 56px;
+}
+.sacadia.chat-card .card-header h3, .sacadia.ability-card .card-header h3, .sacadia.resist-card .card-header h3 {
   margin: 0;
   border: none;
+  line-height: 1.1;
   font-family: var(--sac-font-display);
   color: var(--sac-gold-hi);
 }
-.sacadia.ability-card .card-meta {
+.sacadia.chat-card .card-emblem, .sacadia.ability-card .card-emblem, .sacadia.resist-card .card-emblem {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 5px;
+  background: radial-gradient(circle at 50% 40%, var(--sac-panel), var(--sac-inset) 75%);
+  border: 1px solid var(--sac-gold-lo);
+  box-shadow: inset 0 0 0 2px var(--sac-inset), inset 0 0 0 3px rgba(212, 165, 60, 0.28);
+}
+.sacadia.chat-card .card-emblem i, .sacadia.ability-card .card-emblem i, .sacadia.resist-card .card-emblem i {
+  font-size: 1.3rem;
+  color: var(--sac-gold);
+}
+.sacadia.chat-card .card-title, .sacadia.ability-card .card-title, .sacadia.resist-card .card-title {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.sacadia.chat-card .card-title h3, .sacadia.ability-card .card-title h3, .sacadia.resist-card .card-title h3 {
+  font-size: 1.35rem;
+}
+.sacadia.chat-card .card-title .card-meta, .sacadia.ability-card .card-title .card-meta, .sacadia.resist-card .card-title .card-meta {
+  margin: 0;
+}
+.sacadia.chat-card .card-meta, .sacadia.ability-card .card-meta, .sacadia.resist-card .card-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.15rem 0.5rem;
   font-size: 0.72rem;
   margin: 0.25rem 0;
   color: var(--sac-dim);
 }
-.sacadia.ability-card .card-meta .tag {
+.sacadia.chat-card .card-meta .tag, .sacadia.ability-card .card-meta .tag, .sacadia.resist-card .card-meta .tag {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--sac-olive);
+}
+.sacadia.chat-card .card-roll, .sacadia.ability-card .card-roll, .sacadia.resist-card .card-roll {
+  margin: 0.35rem 0 0.25rem;
+}
+.sacadia.chat-card .rc-sub, .sacadia.ability-card .rc-sub, .sacadia.resist-card .rc-sub {
+  font-size: 0.78rem;
+  color: var(--sac-dim);
+  margin: 0.3rem 0;
+}
+.sacadia.chat-card .dice-roll .dice-formula, .sacadia.chat-card .dice-roll .dice-total, .sacadia.ability-card .dice-roll .dice-formula, .sacadia.ability-card .dice-roll .dice-total, .sacadia.resist-card .dice-roll .dice-formula, .sacadia.resist-card .dice-roll .dice-total {
+  background: var(--sac-inset);
+  border-color: var(--sac-line-strong);
+  color: var(--sac-text);
+}
+.sacadia.chat-card .card-parts, .sacadia.ability-card .card-parts, .sacadia.resist-card .card-parts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.3rem;
+}
+.sacadia.chat-card .card-parts .part, .sacadia.ability-card .card-parts .part, .sacadia.resist-card .card-parts .part {
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  background: rgba(212, 165, 60, 0.12);
+  color: var(--sac-dim);
+}
+.sacadia.chat-card .card-parts .part b, .sacadia.ability-card .card-parts .part b, .sacadia.resist-card .card-parts .part b {
+  color: var(--sac-text);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia.chat-card .card-parts .part.warn, .sacadia.ability-card .card-parts .part.warn, .sacadia.resist-card .card-parts .part.warn {
+  background: rgba(192, 80, 85, 0.16);
+}
+.sacadia.chat-card .card-parts .part.warn b, .sacadia.ability-card .card-parts .part.warn b, .sacadia.resist-card .card-parts .part.warn b {
+  color: var(--sac-blood);
+}
+.sacadia.chat-card .card-save, .sacadia.ability-card .card-save, .sacadia.resist-card .card-save {
+  margin-top: 0.35rem;
+}
+.sacadia.chat-card .card-save button, .sacadia.ability-card .card-save button, .sacadia.resist-card .card-save button {
+  width: 100%;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.3;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-gold-lo);
+  border-radius: 4px;
+  color: var(--sac-gold-hi);
+  font-weight: 600;
+}
+.sacadia.chat-card .card-save button:hover, .sacadia.chat-card .card-save button:focus-visible, .sacadia.ability-card .card-save button:hover, .sacadia.ability-card .card-save button:focus-visible, .sacadia.resist-card .card-save button:hover, .sacadia.resist-card .card-save button:focus-visible {
+  border-color: var(--sac-gold);
+  background: var(--sac-panel);
+  box-shadow: none;
 }
 .sacadia.ability-card .card-roll {
   margin: 0.3rem 0;
@@ -2570,19 +2816,10 @@
   font-size: 0.85rem;
   color: var(--sac-gold-hi);
 }
-.sacadia.ability-card .card-save button {
-  width: 100%;
-  cursor: pointer;
-}
 .sacadia.ability-card .card-desc {
   margin-top: 0.4rem;
   font-size: 0.85rem;
   color: var(--sac-dim);
-}
-.sacadia.ability-card .dice-roll .dice-formula, .sacadia.ability-card .dice-roll .dice-total {
-  background: var(--sac-inset);
-  border-color: var(--sac-line-strong);
-  color: var(--sac-text);
 }
 .sacadia.ability-card .card-modifiers {
   display: flex;
@@ -2632,69 +2869,86 @@
   letter-spacing: 0.03em;
 }
 .sacadia.gm-note {
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 6px;
+  padding: 0.4rem 0.55rem;
+  color: var(--sac-text);
   font-size: 0.85rem;
+  line-height: 1.35;
+  font-variant-numeric: lining-nums;
+}
+.sacadia.gm-note b, .sacadia.gm-note strong {
+  color: var(--sac-gold-hi);
+}
+.sacadia.gm-note button {
+  cursor: pointer;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  padding: 0.1rem 0.45rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  color: var(--sac-text);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia.gm-note button:hover, .sacadia.gm-note button:focus-visible {
+  border-color: var(--sac-gold);
+  box-shadow: none;
+}
+.sacadia.gm-note button.applied, .sacadia.gm-note button.apply {
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  font-weight: bold;
+}
+.sacadia.gm-note button.undo {
+  color: var(--sac-dim);
+}
+.sacadia.gm-note button.mark-dead {
+  border-color: var(--sac-blood-deep);
+  color: var(--sac-blood);
+  font-weight: bold;
 }
 .sacadia.gm-note .hp-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 .sacadia.gm-note .hp-controls button {
   flex: 1;
   min-width: fit-content;
-  cursor: pointer;
   white-space: nowrap;
-  font-size: 0.72rem;
-  line-height: 1.4;
-  padding: 0.05rem 0.35rem;
 }
-.sacadia.gm-note .hp-controls button.applied {
-  border-color: #1a7f37;
-  font-weight: bold;
-}
-.sacadia.gm-note .hp-controls button.undo {
+.sacadia.gm-note .hp-controls .undo {
   flex: 0 0 auto;
-  opacity: 0.8;
 }
-.sacadia.gm-note .hp-controls button.mark-dead {
+.sacadia.gm-note .hp-controls .mark-dead {
   flex-basis: 100%;
-  border-color: #911d20;
-  color: #911d20;
-  font-weight: bold;
 }
 .sacadia.gm-note .cond-controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem;
-  margin-top: 0.2rem;
+  margin-top: 0.3rem;
 }
 .sacadia.gm-note .cond-controls .cond-name {
-  font-size: 0.75rem;
-  font-weight: bold;
-  margin-right: 0.15rem;
-}
-.sacadia.gm-note .cond-controls button {
-  cursor: pointer;
   font-size: 0.72rem;
-  line-height: 1.4;
-  padding: 0.05rem 0.4rem;
-}
-.sacadia.gm-note .cond-controls button.apply {
-  border-color: #7a5b1e;
-}
-.sacadia.gm-note .cond-controls button.undo {
-  opacity: 0.8;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sac-dim);
+  margin-right: 0.15rem;
 }
 .sacadia.gm-note .crit-controls {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem;
-  margin-top: 0.25rem;
-  padding-top: 0.2rem;
-  border-top: 1px dashed var(--sac-gold);
+  margin-top: 0.3rem;
+  padding-top: 0.25rem;
+  border-top: 1px dashed var(--sac-gold-lo);
 }
 .sacadia.gm-note .crit-controls .crit-label {
   flex-basis: 100%;
@@ -2706,32 +2960,24 @@
   color: var(--sac-gold-hi);
 }
 .sacadia.gm-note .crit-controls button.crit-opt {
-  cursor: pointer;
-  font-size: 0.72rem;
-  line-height: 1.4;
-  padding: 0.05rem 0.4rem;
-  border-color: var(--sac-gold);
+  border-color: var(--sac-gold-lo);
 }
 .sacadia.gm-note .post-roll-controls {
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
-  margin-top: 0.25rem;
+  margin-top: 0.3rem;
 }
 .sacadia.gm-note button.post-roll {
-  cursor: pointer;
-  font-size: 0.72rem;
-  line-height: 1.4;
-  padding: 0.05rem 0.4rem;
   border-color: var(--sac-gold);
   color: var(--sac-gold-hi);
   font-weight: bold;
 }
-.sacadia .sacadia .resolution-row.save-negate {
+.sacadia .resolution-row.save-negate {
   flex-wrap: wrap;
   gap: 0.25rem;
 }
-.sacadia .sacadia .resolution-row.save-negate button {
+.sacadia .resolution-row.save-negate button {
   cursor: pointer;
   font-size: 0.72rem;
   line-height: 1.4;
@@ -2801,13 +3047,6 @@
 .sacadia .research-list .research-row small {
   opacity: 0.75;
 }
-.sacadia.resist-card {
-  background: var(--sac-umber);
-  border: 1px solid var(--sac-line-strong);
-  border-radius: 6px;
-  padding: 0.5rem 0.6rem;
-  color: var(--sac-text);
-}
 .sacadia.resist-card .rc-head {
   display: flex;
   align-items: center;
@@ -2821,81 +3060,173 @@
 .sacadia.resist-card .rc-head i {
   color: var(--sac-gold);
 }
-.sacadia.resist-card .rc-sub {
+.sacadia.resist-card .rc-section {
+  margin: 0.45rem 0 0.2rem;
+  border: none;
+  padding: 0;
+  font-family: var(--sac-font-ui);
   font-size: 0.72rem;
+  font-weight: bold;
   color: var(--sac-dim);
-  margin: 0.3rem 0;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+}
+.sacadia.resist-card .rc-section small {
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
 }
 .sacadia.resist-card .rc-dice {
   list-style: none;
-  margin: 0.2rem 0;
+  margin: 0.3rem 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.2rem;
 }
 .sacadia.resist-card .rc-die {
-  display: flex;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1.9rem 2.2rem 1fr auto;
+  align-items: center;
   gap: 0.4rem;
-  font-variant-numeric: tabular-nums;
-  padding: 0.1rem 0.35rem;
-  border-radius: 3px;
+  padding: 0.15rem 0.45rem 0.15rem 0.2rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
   background: var(--sac-inset);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sacadia.resist-card .rc-die .rc-d20 {
-  font-family: var(--sac-font-display);
-  color: var(--sac-gold-hi);
-  min-width: 1.6rem;
+  display: grid;
+  place-items: center;
+  height: 1.45rem;
+  border-radius: 3px;
+  border: 1px solid var(--sac-line-strong);
+  color: var(--sac-dim);
+  font-size: 0.8rem;
 }
 .sacadia.resist-card .rc-die .rc-plus {
   color: var(--sac-dim);
   font-size: 0.8rem;
 }
 .sacadia.resist-card .rc-die .rc-total {
-  font-weight: bold;
-  margin-left: 0.1rem;
+  font-family: var(--sac-font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sac-text);
 }
-.sacadia.resist-card .rc-die b {
-  margin-left: auto;
+.sacadia.resist-card .rc-die .rc-mark {
+  justify-self: end;
+  font-size: 0.95rem;
 }
-.sacadia.resist-card .rc-die.pass b {
+.sacadia.resist-card .rc-die small.rc-mark {
+  font-size: 0.7rem;
+  color: var(--sac-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.sacadia.resist-card .rc-die.pass {
+  background: rgba(111, 191, 133, 0.08);
+  border-color: rgba(111, 191, 133, 0.3);
+}
+.sacadia.resist-card .rc-die.pass .rc-mark {
   color: #6fbf85;
 }
-.sacadia.resist-card .rc-die.fail b {
+.sacadia.resist-card .rc-die.fail {
+  background: rgba(192, 80, 85, 0.09);
+  border-color: rgba(192, 80, 85, 0.32);
+}
+.sacadia.resist-card .rc-die.fail .rc-mark {
   color: var(--sac-blood);
 }
 .sacadia.resist-card .rc-die.dropped {
-  opacity: 0.45;
+  opacity: 0.5;
+}
+.sacadia.resist-card .rc-die.dropped .rc-total {
   text-decoration: line-through;
 }
-.sacadia.resist-card .rc-die.auto {
+.sacadia.resist-card .rc-die.auto .rc-total {
+  font-family: var(--sac-font-ui);
+  font-size: 0.8rem;
+  font-weight: normal;
   font-style: italic;
   color: var(--sac-dim);
 }
-.sacadia.resist-card .rc-die.pending {
+.sacadia.resist-card .rc-outcome, .sacadia.resist-card .rc-resolution > span {
+  display: block;
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--sac-panel);
   color: var(--sac-text);
+}
+.sacadia.resist-card .rc-outcome.fail, .sacadia.resist-card .rc-resolution > .took {
+  background: rgba(192, 80, 85, 0.14);
+  color: #e08a8e;
+}
+.sacadia.resist-card .rc-outcome.pass, .sacadia.resist-card .rc-resolution > .clean {
+  background: rgba(111, 191, 133, 0.12);
+  color: #8fd3a2;
+}
+.sacadia.resist-card .rc-outcome.damage i {
+  color: var(--sac-blood);
+  margin-right: 0.2rem;
 }
 .sacadia.resist-card .rc-resolution {
   margin-top: 0.35rem;
-  padding-top: 0.3rem;
-  border-top: 1px solid var(--sac-line);
-  font-weight: bold;
-  text-align: center;
-  color: var(--sac-dim);
-}
-.sacadia.resist-card .rc-resolution .took {
-  color: var(--sac-blood);
-}
-.sacadia.resist-card .rc-resolution .clean {
-  color: #6fbf85;
-}
-.sacadia.resist-card .rc-resolution .pending {
-  color: var(--sac-dim);
+  font-size: 0.8rem;
   font-style: italic;
+  color: var(--sac-dim);
+}
+.sacadia.resist-card .rc-resolution > span {
+  font-style: normal;
+}
+.sacadia.resist-card .rc-resolution > .pending {
+  background: none;
+  padding: 0;
   font-weight: normal;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--sac-dim);
+}
+.sacadia.rest-card .rest-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 0.7rem;
+  align-items: baseline;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.sacadia.rest-card .rest-list li {
+  display: contents;
+}
+.sacadia.rest-card .rest-list .rest-label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sac-dim);
+}
+.sacadia.rest-card .rest-list .rest-value {
+  font-size: 0.85rem;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia.rest-card .rest-list .rest-value b {
+  color: var(--sac-gold-hi);
+}
+.sacadia.note-card {
+  padding: 0.4rem 0.55rem;
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+.sacadia.note-card b, .sacadia.note-card strong {
+  color: var(--sac-gold-hi);
 }
 .sacadia.gm-note .rc-manual-dice {
   display: flex;
@@ -2906,7 +3237,7 @@
 .sacadia.gm-note .rc-manual-dice .rc-total {
   font-family: var(--sac-font-display);
   color: var(--sac-gold-hi);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 .sacadia .effects-list {
   list-style: none;
@@ -2936,4 +3267,63 @@
 }
 .sacadia .effects-list .item-controls a {
   cursor: pointer;
+}
+.sacadia .tab > h3,
+.sacadia .tab > div > h3,
+.sacadia .ability-group > h3,
+.sacadia .inv-head > h3 {
+  margin: 0.9rem 0 0.45rem;
+  padding: 0 0 0.25rem;
+  font-family: var(--sac-font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .tab > h3:first-child,
+.sacadia .tab > div:first-child > h3:first-child,
+.sacadia .tab > .ability-group:first-of-type > h3 {
+  margin-top: 0.25rem;
+}
+.sacadia .inv-head > h3 {
+  flex: 1;
+  margin-bottom: 0;
+}
+.sacadia .build-band {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.5rem 0.6rem;
+  padding: 0.55rem 0.65rem;
+  background: var(--sac-panel);
+  border-radius: 5px;
+}
+.sacadia .build-band .sac-field {
+  grid-column: span 2;
+}
+.sacadia .build-band .sac-field.narrow {
+  grid-column: span 1;
+}
+.sacadia .build-band .sac-field.hp-adjust, .sacadia .build-band .sac-field.wide {
+  grid-column: span 2;
+}
+.sacadia .build-band .with-level {
+  display: flex;
+  gap: 0.3rem;
+}
+.sacadia .build-band .with-level select {
+  flex: 1;
+  min-width: 0;
+}
+.sacadia .build-band .with-level input {
+  flex: 0 0 3rem;
+  width: 3rem;
+}
+.sacadia .identity-band {
+  background: var(--sac-panel);
+  border: none;
+}
+.sacadia .identity-band .id-field input, .sacadia .identity-band .id-field select {
+  background: var(--sac-inset);
 }

@@ -17,7 +17,8 @@ import { deathThreshold } from './helpers/derivation.mjs';
 import { ManualLauncher } from './helpers/manual.mjs';
 import { defineZoneBehavior, configureZones, resizeMadnessZones, zonesOf, deleteZone, carryZones } from './helpers/zones.mjs';
 import { revealHidden } from './helpers/conditions.mjs';
-import { ownsAbility } from './helpers/actor-utils.mjs';
+import { abilityItem, ownsAbility } from './helpers/actor-utils.mjs';
+import { postRollCard, styleInitiativeMessage } from './helpers/chat-cards.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 // In-Foundry tests: registered only when the Quench module is active.
@@ -244,7 +245,8 @@ Hooks.on('updateActor', async (actor, changes, options) => {
     && !actor.getFlag('sacadia', 'uses')?.combat?.legendary_death) {
     const r = await new Roll(`${Math.max(1, actor.system.stats?.power?.value ?? 1)}d4`).evaluate();
     await actor.update({ 'system.health.value': hp + r.total, 'flags.sacadia.uses.combat.legendary_death': 1 });
-    await r.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: game.i18n.format('SACADIA.Dying.DeathMastery', { n: r.total }) });
+    await postRollCard({ actor, roll: r, icon: 'fa-solid fa-skull', title: abilityItem(actor, 'legendary_death')?.name ?? 'Death Mastery',
+      meta: [game.i18n.format('SACADIA.Dying.DeathMastery', { n: r.total })] });
     return;
   }
   const wounded = hp < 0;
@@ -618,6 +620,7 @@ Hooks.on('renderChatMessageHTML', (message, html) => {
     btn.addEventListener('click', () => resolveRequests(message));
     (html.querySelector('.message-content') ?? html).append(btn);
   }
+  styleInitiativeMessage(message, html);
   for (const btn of html.querySelectorAll('[data-action="rollSave"]')) {
     btn.addEventListener('click', onSaveRoll);
   }

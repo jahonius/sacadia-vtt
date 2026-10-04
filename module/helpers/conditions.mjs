@@ -189,7 +189,7 @@ export async function revealHidden(actor) {
     delete fr.hide_behind_hide;
     await actor.update({ 'system.combatState.focusRounds': replaceWith(fr) });
   }
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Hidden.Revealed', { name: actor.name })}</div>` });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Hidden.Revealed', { name: actor.name })}</div>` });
 }
 
 /**

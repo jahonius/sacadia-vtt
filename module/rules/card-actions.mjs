@@ -4,6 +4,7 @@
  */
 import { fireKillTriggers, runOnKill } from './damage.mjs';
 import { replaceWith } from '../helpers/update-ops.mjs';
+import { postRollCard } from '../helpers/chat-cards.mjs';
 
 /** Call of the Dying (GM button): undo this turn's Battle Fatigue gain; spend the ally's reaction + Call point. */
 export async function onCallOfTheDying(event) {
@@ -18,7 +19,7 @@ export async function onCallOfTheDying(event) {
     'system.classPools.call.value': Math.max(0, (r.system.classPools?.call?.value ?? 0) - 1) });
   event.currentTarget.disabled = true;
   await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: r }),
-    content: `<div class="sacadia">${game.i18n.format('SACADIA.Dying.Prevented', { label: 'Call of the Dying', name: t.name })}</div>` });
+    content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Dying.Prevented', { label: 'Call of the Dying', name: t.name })}</div>` });
 }
 
 /** Set a target's leveled-condition value to the button's absolute value (GM only). */
@@ -78,9 +79,10 @@ export async function onCritSelf(event) {
   }
   if (effect === 'tempHp') {
     // Roll the (already Lifeguard/level-scaled) temp-HP die and grant it — temp HP does not stack, so a
-    // new grant takes the higher of new-vs-current (book p.223). Shown as a public roll.
+    // new grant takes the higher of new-vs-current (book p.223).
     const roll = await new Roll(dice || '1d6').evaluate();
-    await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor }), flavor: game.i18n.localize('SACADIA.Crit.TempHp') });
+    await postRollCard({ actor, roll, icon: 'fa-solid fa-heart-circle-plus', title: label || game.i18n.localize('SACADIA.Crit.TempHp'),
+      tag: game.i18n.localize('SACADIA.Check.Critical') });
     const next = Math.max(actor.system.health?.temp ?? 0, roll.total);
     await actor.update({ 'system.health.temp': next });
     return;

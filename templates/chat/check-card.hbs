@@ -1,0 +1,24 @@
+{{!-- A roll posted as a card (Trait, talent and specialty checks from the sheet; a few rolled effects): an emblem and
+     title, the dice in Foundry's wells, and what each part of the total is. --}}
+<div class="sacadia chat-card check-card">
+  <header class="card-header">
+    {{#if img}}<img class="card-art" src="{{img}}" alt=""/>{{else}}<span class="card-emblem"><i class="{{icon}}"></i></span>{{/if}}
+    <div class="card-title">
+      <h3>{{title}}</h3>
+      {{#if (or tag meta.length)}}
+      <div class="card-meta">
+        {{#if tag}}<span class="tag">{{tag}}</span>{{/if}}
+        {{#each meta}}<span>{{this}}</span>{{/each}}
+      </div>
+      {{/if}}
+    </div>
+  </header>
+
+  <div class="card-roll">{{{rollHtml}}}</div>
+
+  {{#if parts.length}}
+  <div class="card-parts">
+    {{#each parts}}<span class="part{{#if warn}} warn{{/if}}">{{label}}{{#if value}} <b>{{value}}</b>{{/if}}</span>{{/each}}
+  </div>
+  {{/if}}
+</div>

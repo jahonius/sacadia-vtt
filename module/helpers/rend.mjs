@@ -134,7 +134,7 @@ export async function rendPostUpdate(actor, options, userId) {
     const { add } = distributeRend(armorPieces(actor), n, { prefer: r.prefer });
     await writeRend(actor, add, 1);
     if (findGear(actor, 'stamped_feathers') && rendCapacity(armorPieces(actor)) === 0 && armorPieces(actor).length) {
-      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Rend.StampedFeathers', { name: actor.name })}</div>` });
+      await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rend.StampedFeathers', { name: actor.name })}</div>` });
     }
   } else if (r.delta < 0) {
     const { sub } = restoreRend(armorPieces(actor), -r.delta);
@@ -146,7 +146,7 @@ export async function rendPostUpdate(actor, options, userId) {
     const hem = actor.system.conditions?.hemorrhage?.value ?? 0;
     await actor.update({ 'system.conditions.corroded.value': 0,
       'system.conditions.hemorrhage.value': Math.min(CONFIG.SACADIA.conditionStoreMax, hem + corroded) });
-    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Rend.CorrodedToHemorrhage', { name: actor.name, n: corroded })}</div>` });
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rend.CorrodedToHemorrhage', { name: actor.name, n: corroded })}</div>` });
   }
 }
 
@@ -171,10 +171,10 @@ export async function corrodedTurnStart(actor) {
   if (rendCapacity(armorPieces(actor)) === 0 && !brittlework(actor)) {
     const hem = actor.system.conditions?.hemorrhage?.value ?? 0;
     await actor.update({ 'system.conditions.corroded.value': 0, 'system.conditions.hemorrhage.value': Math.min(CONFIG.SACADIA.conditionStoreMax, hem + n) });
-    return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Rend.CorrodedToHemorrhage', { name: actor.name, n })}</div>` });
+    return ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rend.CorrodedToHemorrhage', { name: actor.name, n })}</div>` });
   }
   const cur = actor.system.conditions?.rended?.value ?? 0;
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Rend.Corroded', { name: actor.name, n })}</div>` });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Rend.Corroded', { name: actor.name, n })}</div>` });
   await actor.update({ 'system.conditions.rended.value': cur + n });
 }
 

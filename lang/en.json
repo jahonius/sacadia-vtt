@@ -35,7 +35,11 @@
       "TipSuperseded": "All Defense is higher, so it applies here instead.",
       "TipBase": "Base",
       "TipCapped": "Stat capped by Max Stat {cap}",
-      "TipTotal": "Total"
+      "TipTotal": "Total",
+      "PDShort": "PD",
+      "TDShort": "TD",
+      "MDShort": "MD",
+      "DRShort": "DR"
     },
     "Profession": {
       "Bladedancer": "Bladedancer",
@@ -256,12 +260,20 @@
       "Biography": "Biography",
       "Effects": "Effects",
       "Description": "Description",
-      "Attributes": "Attributes"
+      "Attributes": "Attributes",
+      "Character": "Character"
     },
     "Header": {
       "Primary": "Primary Profession",
       "Secondary": "Secondary Profession",
-      "Level": "Level"
+      "Level": "Level",
+      "Build": "Build",
+      "LevelN": "Level {n}",
+      "Resists": "Resists {list}",
+      "MaxHpAdjust": "Max HP adjustment",
+      "ProfShort": "Prof",
+      "NoResistances": "None (e.g. fire 5)",
+      "Traits": "Traits"
     },
     "Npc": {
       "Cr": "CR",
@@ -287,7 +299,8 @@
       "Heritage": "Heritage",
       "Ancestry": "Ancestry",
       "Age": "Age",
-      "Size": "Size"
+      "Size": "Stature",
+      "Title": "Identity"
     },
     "Background": {
       "Appearance": "Physical Appearance",
@@ -303,7 +316,8 @@
       "Story": "Story",
       "StoryHint": "Your history up until this point.",
       "Mementos": "Mementos",
-      "MementosHint": "Small narrative pieces or keepsakes you carry."
+      "MementosHint": "Small narrative pieces or keepsakes you carry.",
+      "Title": "Background"
     },
     "Roll": {
       "RollStat": "Roll {label}",
@@ -437,7 +451,7 @@
     },
     "Kill": {
       "Banked": "Kill! {label}: your next attack this turn is buffed.",
-      "TempHp": "{label} (kill)"
+      "OnKill": "On a kill"
     },
     "MultiAttack": {
       "Nth": "Attack {n}"
@@ -638,7 +652,8 @@
       "Yarrowstem": "Yarrowstem armed: the next drop to 0 Madness becomes ½ Proficiency instead.",
       "Incredulous": "On a hit, apply one Insane-table result to the target: {a} or {b}.",
       "SphereInsanium": "Sphere Insanium: +2 Delirium to {names} (no check).",
-      "SphereCheck": "Sphere Insanium: Wiles Check against your own Check DC — on a failure, end the Focus."
+      "SphereCheck": "Sphere Insanium: Wiles Check against your own Check DC — on a failure, end the Focus.",
+      "MindMapFirst": "First roll {n}"
     },
     "Insane": {
       "Title": "Insane Table",
@@ -741,7 +756,10 @@
       "Overburdened": "Overburdened: half speed",
       "StoredInCombat": "{name} is in a Stored Item Slot, which you can’t reach in combat. Equip it anyway?",
       "SwapInCombat": "Items move between readied and stored slots during a rest. Swap it anyway?",
-      "DrawStored": "{weapon} is in a Stored Item Slot, which you can’t reach in combat. Draw it anyway?"
+      "DrawStored": "{weapon} is in a Stored Item Slot, which you can’t reach in combat. Draw it anyway?",
+      "Readied": "Readied",
+      "Stored": "Stored",
+      "SlotsN": "{n} slot(s)"
     },
     "Progression": {
       "Level": "Level",
@@ -763,12 +781,22 @@
       "Long": "Long Rest",
       "ShortHint": "Quick Rest: recover ability pools, clear most conditions, Rend −1, and spend HP pools to heal.",
       "LongHint": "Long Rest: full HP, refill HP pools & Lore, recover ability pools, clear conditions & Rend.",
-      "ShortDone": "took a Short Rest.",
-      "LongDone": "took a Long Rest.",
       "HealTitle": "Spend HP Pools",
       "HealPrompt": "Each pool heals {per} HP. You have {available} pools. How many to spend?",
       "HealDo": "Heal",
-      "HealSkip": "Skip"
+      "HealSkip": "Skip",
+      "Nothing": "Nothing to recover.",
+      "Health": "Health",
+      "HpPools": "HP Pools",
+      "PoolsSpent": "{n} spent, {left} left",
+      "Cleared": "Cleared",
+      "Refilled": "Refilled",
+      "Rend": "Rend",
+      "RendRepaired": "armor repaired",
+      "TempHp": "Temp HP",
+      "Lore": "Lore Points",
+      "Cracked": "Slightly Cracked",
+      "BattleFatigue": "Battle Fatigue"
     },
     "Resource": {
       "Health": "Health",
@@ -791,7 +819,8 @@
       "Toggle": "Toggle Effect",
       "Temporary": "Temporary Effects",
       "Passive": "Passive Effects",
-      "Inactive": "Inactive Effects"
+      "Inactive": "Inactive Effects",
+      "Duration": "Duration"
     },
     "PostRoll": {
       "Confirm": "Apply",
@@ -870,7 +899,7 @@
       "Dead": "{name} dies ({hp} HP ≤ {threshold}).",
       "CallOfTheDying": "Call of the Dying ({name}): prevent it",
       "Prevented": "{label}: {name} doesn't gain Battle Fatigue this turn.",
-      "DeathMastery": "Death Mastery: +{n} HP"
+      "DeathMastery": "+{n} HP"
     },
     "Speed": {
       "Label": "Speed",
@@ -880,7 +909,6 @@
     "Cracked": {
       "Label": "Slightly Cracked",
       "Hint": "Saved d3 rolls (rolled at each rest: Proficiency d3, +1 with Mastery of Temperament). Spend one with the Slightly Cracked Boost in place of a 1D3−1 Madness roll, or with Pull the Strand.",
-      "Rolled": "Slightly Cracked — saved rolls",
       "None": "No Slightly Cracked rolls saved.",
       "Pick": "Use which saved roll?",
       "PickSigned": "Add or subtract which saved roll?",
@@ -906,7 +934,6 @@
       "Place": "Click the map to place {name} (Esc to use your target or yourself).",
       "Check": "{name} is in {zone} — make the check.",
       "Exit": "{name} tries to leave {zone} — Wiles Check or its move ends inside.",
-      "Damage": "{zone}: {name} takes the damage.",
       "CasterCost": "{zone}: you take {n} damage for maintaining it.",
       "PlaceTiles": "Click {n} more tile(s) next to the cloud for {name} (Esc to stop early).",
       "TileAdjacent": "Pick a tile that touches the cloud (no diagonals).",
@@ -972,11 +999,12 @@
       "NoIronTarget": "You have no weapon or armor to warp.",
       "IronWhich": "Warp which item?",
       "IronDone": "{name} now deals or resists {element}.",
-      "Moonstone": "Moonstone Earrings: the Lore point is spent.",
-      "MoonstoneSaved": "Moonstone Earrings: a 10! The Lore point isn’t spent.",
+      "Moonstone": "The Lore point is spent.",
+      "MoonstoneSaved": "A 10! The Lore point isn’t spent.",
       "GainReactions": "Reactions {n}",
       "SaptouchedAsk": "Saptouched: spend a Lore point to turn the Pin back on its giver?",
-      "Saptouched": "Saptouched: {name} makes checks against {n} Pin instead."
+      "Saptouched": "Saptouched: {name} makes checks against {n} Pin instead.",
+      "MoonstoneTitle": "Moonstone Earrings"
     },
     "DamageType": {
       "Bludgeoning": "Bludgeoning",
@@ -1048,6 +1076,26 @@
       "NoGm": "No GM is connected. This card’s effects will wait until a GM joins and applies them.",
       "Apply": "Apply (posted while no GM was connected)",
       "AutomationError": "Sacadia automation stopped partway ({where}): {error}. See the console (F12) for details."
+    },
+    "Check": {
+      "Trait": "Trait Check",
+      "Talent": "Talent Check",
+      "Specialty": "Specialty",
+      "SpecialtyOf": "{talent} · {trait}",
+      "AdvN": "{n}× Advantage",
+      "DisN": "{n}× Disadvantage",
+      "Untrained": "Untrained",
+      "TraitBonus": "Trait bonus",
+      "Bonus": "Bonus",
+      "Save": "Save",
+      "SaveVs": "vs {name}",
+      "LevelsN": "{n} level(s)",
+      "ChecksN": "{n} check(s)",
+      "TakesDamage": "Takes {n} damage",
+      "Roll": "Roll",
+      "Resisting": "Resisting",
+      "MakeTraitCheck": "Make Trait Check",
+      "Critical": "Critical Hit"
     }
   },
   "TYPES": {

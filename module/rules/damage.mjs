@@ -7,6 +7,7 @@ import { cloudContext } from '../helpers/zones.mjs';
 import { conditionAttemptAllowed, conditionImmune } from '../helpers/conditions.mjs';
 import { damageAfterDr, evaluatePredicate, poolsAfterDamage, resolveModifierValue, typedResistance } from '../helpers/derivation.mjs';
 import { replaceWith } from '../helpers/update-ops.mjs';
+import { postRollCard } from '../helpers/chat-cards.mjs';
 
 /**
  * Fire an attacker's kill triggers — the effects that go off when it drops a target to 0 HP (book: "if
@@ -39,7 +40,8 @@ export async function fireKillTriggers(attacker) {
       const tier = kt.tempHp.filter((t) => level >= (t.minLevel ?? 0)).sort((a, b) => (b.minLevel ?? 0) - (a.minLevel ?? 0))[0];
       if (tier) {
         const roll = await new Roll(tier.formula).evaluate();
-        await roll.toMessage({ speaker: ChatMessage.getSpeaker({ actor: attacker }), flavor: game.i18n.format('SACADIA.Kill.TempHp', { label: item.name }) });
+        await postRollCard({ actor: attacker, roll, icon: 'fa-solid fa-heart-circle-plus', title: item.name, tag: game.i18n.localize('SACADIA.Card.TempHpGrant'),
+          meta: [game.i18n.localize('SACADIA.Kill.OnKill')] });
         await attacker.update({ 'system.health.temp': Math.max(attacker.system.health?.temp ?? 0, roll.total) });
       }
     }
@@ -112,7 +114,7 @@ export async function swarmEffectsCap(target, applied, sub) {
   const next = { ...fr };
   delete next.swarm_effects;
   await target.update({ 'system.combatState.focusRounds': replaceWith(next) });
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: target }), content: `<div class="sacadia">${game.i18n.format('SACADIA.Zone.SwarmEffects', { name: target.name, cap })}</div>` });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: target }), content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Zone.SwarmEffects', { name: target.name, cap })}</div>` });
   return cap;
 }
 
@@ -141,7 +143,7 @@ export async function runOnKill(victim) {
     content += `<div class="card-save"><button type="button" data-action="rollSave" data-trait="courage" data-dc="${dc}" data-inflict="${inflict}" data-caster="${attacker.uuid}">`
       + `${game.i18n.localize('SACADIA.Card.RollSave')} — Tearing Fright (${label} ${level})</button></div>`;
   }
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: attacker }), content: `<div class="sacadia">${content}</div>` });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: attacker }), content: `<div class="sacadia chat-card note-card">${content}</div>` });
 }
 
 /**

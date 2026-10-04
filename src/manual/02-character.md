@@ -5,23 +5,25 @@ Background. This page covers where each piece goes on the sheet.
 
 ## 1. Identity and profession
 
-At the top of the sheet, set your **name**, **level**, and **primary profession** (and a secondary one if
-you multiclass). The prestige professions, **Magus** and **Witch**, are chosen the same way. Their
-features follow your level *in that profession*. Your level and profession set these for you:
+Your **name** goes at the top of the sheet. On the **Character** tab, under **Build**, set your **level** and
+**primary profession** with your level in it (and a secondary one if you multiclass). The prestige professions,
+**Magus** and **Witch**, are chosen the same way. Their features follow your level *in that profession*. The header
+sums the build up under your name. Your level and profession set these for you:
 
 - **Proficiency** and **Max AP**, from your level.
-- **Max Health**, from your profession's HP per level. Use the **±** box beside Health for Heritage HP
-  or a rolled difference.
+- **Max Health**, from your profession's HP per level. Use **Max HP adjustment** (Character tab, under Build) for
+  Heritage HP or a rolled difference.
 - **Check DC**, from your profession's formula.
 - **Lore points**, from your level and Fate.
 - **Move Speed** (header): 30ft, adjusted by your abilities, Heavy Armor, a Tower Shield, and Slowed.
 
-Culture, Heritage, Ancestry, and your backstory prompts go on the **Biography** tab.
+Culture, Heritage, Ancestry, and your backstory prompts go on the **Character** tab too, under **Identity** and
+**Background**.
 
 ## 2. Traits
 
 On the **Stats** tab, enter your five Traits: Power, Finesse, Courage, Wiles, and Fate. Click a Trait's
-name to roll a Trait Check with it. Your profession's **Trait Expertise** is marked there too.
+icon (or its name) to roll a Trait Check with it. Your profession's **Trait Expertise** is marked there too.
 
 ## 3. Abilities
 
@@ -58,9 +60,10 @@ Drag weapons and armor from the equipment compendia onto your sheet, then use th
 
 ## Size, resistances and talents
 
-- **Size** and **Resistances** sit under your defenses. Resistances take a list such as `physical 2, fire 5, rot immune`
-  (types, the groups physical / elemental / mental, or `all`; a negative number is a vulnerability). They apply when
-  damage of that type lands; armor with a resistance (Corrupted Iron) adds to it.
+- **Size** and **Resistances** are on the Character tab, under Build (an NPC's are in its header). Resistances take a
+  list such as `physical 2, fire 5, rot immune` (types, the groups physical / elemental / mental, or `all`; a negative
+  number is a vulnerability). They apply when damage of that type lands; armor with a resistance (Corrupted Iron) adds
+  to it.
 - **Specializations** (Stats tab, under Talents): add a specialized talent, choose its general talent and its ranks.
   Its dice button rolls that talent with 1X advantage per rank. A talent you don't have rolls at 1X disadvantage and
   without Proficiency (p.146).
