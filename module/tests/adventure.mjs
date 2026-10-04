@@ -41,6 +41,26 @@ export function registerAdventure(quench) {
       // (v14 constrains even a GM's token update by the walls in its path).
       const at = (x, y) => ({ x: scene.dimensions.sceneX + x, y: scene.dimensions.sceneY + y });
       const moveTo = (t, x, y, extra = {}) => t.move([{ ...at(x, y), ...extra }], { constrainOptions: { ignoreWalls: true, ignoreCost: true } });
+      // A move the way a player drags one: the walls apply.
+      const walk = (t, x, y) => t.move([at(x, y)], { constrainOptions: { ignoreCost: true } });
+      // Walk there and wait to arrive: a move resolves while the token is still on its way (it's split where it crosses
+      // a Region), so this waits for its position.
+      const walkTo = async (t, x, y, what) => {
+        const to = at(x, y);
+        await walk(t, x, y);
+        await until(() => t.x === to.x && t.y === to.y, { timeout: 10000, what })
+          .catch(() => assert.fail(`${what}: stopped at ${t.x - scene.dimensions.sceneX},${t.y - scene.dimensions.sceneY}`));
+      };
+      // A Change Level: Foundry follows the token to its new level by redrawing the canvas, and a move made during the
+      // redraw is cut short. Call this before the move that changes level, and await what it returns after.
+      const levelChange = (t, level) => {
+        const redrawn = new Promise((resolve) => Hooks.once('canvasReady', resolve));
+        return async () => {
+          await Promise.race([redrawn, sleep(15000)]);
+          await until(() => t.level === level.id && canvas.level?.id === level.id && canvas.ready && !canvas.loading && canvas.tokens.get(t.id),
+            { timeout: 15000, step: 200, what: `${t.name} on the ${level.name} level` });
+        };
+      };
       // View a level and wait for the canvas to redraw with every token on it.
       const viewLevel = async (level) => {
         const missing = () => scene.tokens.filter((t) => !canvas.tokens.get(t.id)).map((t) => `${t.name}@${t.level === level.id ? 'here' : 'other'}`);
@@ -209,6 +229,14 @@ export function registerAdventure(quench) {
         await canvas.animatePan({ ...at(1000, 1600), scale: 0.32, duration: 0 });
       });
 
+      it('the glyph by the gate lights the wall face but not the passage under the walkway', async () => {
+        await viewLevel(scene.levels.find((l) => l.name === 'Ground'));
+        const glyph = scene.lights.find((l) => l.name === 'Glyph' && l.x === at(1000, 0).x);
+        const shape = await until(() => canvas.lighting.get(glyph.id)?.lightSource?.shape, { what: 'the glyph light' });
+        assert.ok(shape.contains(...Object.values(at(1000, 1500))), 'in front of the wall');
+        assert.ok(!shape.contains(...Object.values(at(1000, 1650))), 'in the gate passage');
+      });
+
       it('line of sight: from the ground the wall blocks the view north; from the wall top it does not', async () => {
         const ground = scene.levels.find((l) => l.name === 'Ground');
         const top = scene.levels.find((l) => l.name === 'Wall Top');
@@ -260,9 +288,18 @@ export function registerAdventure(quench) {
           await viewLevel(top);
           const h = tokenOf('Honnasusara');
           canvas.tokens.get(h.id).control({ releaseOthers: true });
-          await moveTo(h, 1650, 2000); // onto the stairs
-          await until(() => h.level === ground.id, { timeout: 15000, what: 'Honnasusara down the stairs' });
+          await moveTo(h, 1650, 1700); // the walkway, at the stair head
+          const down = levelChange(h, ground);
+          await walk(h, 1650, 2400); // down the stairs: the level change stops her at their foot
+          await down();
           assert.equal(asked.length, 1, 'the stairs asked once');
+          // She lands at the foot of the stairs, not shut inside the wall: she walks off into the camp, and back up.
+          await walkTo(h, 1650, 2700, 'off the stairs into the camp');
+          const up = levelChange(h, top);
+          await walk(h, 1650, 2400);
+          await up();
+          assert.equal(asked.length, 2, 'the foot of the stairs asked once');
+          await walkTo(h, 1650, 1700, 'up the stairs onto the walkway');
 
           const m = tokenOf('Manchuthara');
           await viewLevel(top);
@@ -270,7 +307,7 @@ export function registerAdventure(quench) {
           await m.update({ movementAction: 'jump' });
           await moveTo(m, 1450, 2100, { action: 'jump' }); // off the wall, over the hay
           await until(() => m.level === ground.id, { timeout: 15000, what: 'Manchuthara into the hay' });
-          assert.equal(asked.length, 2, 'the hay asked once');
+          assert.equal(asked.length, 3, 'the hay asked once');
         } finally {
           stub.restore();
           stub = stubDialogs(autoAnswer);
@@ -335,6 +372,18 @@ export function registerAdventure(quench) {
         assert.equal(flat(r.toHit), 6, 'fist to-hit');
       });
 
+      it('"A shape looms out of the mist…" shows when Wanabbul first walks through the fog line, then switches itself off', async () => {
+        const ground = scene.levels.find((l) => l.name === 'Ground');
+        await viewLevel(ground);
+        const fogLine = scene.regions.find((r) => r.name === 'The Fog Line');
+        const text = fogLine.behaviors.find((b) => b.type === 'displayScrollingText');
+        assert.notOk(text.disabled, 'armed before');
+        errors.clear();
+        await moveTo(tokenOf('Wanabbul the Vast'), 800, 800); // south through the fog line (map rows 5–6)
+        await until(() => text.disabled, { timeout: 15000, what: 'the text to switch off after he leaves the fog line' });
+        assert.deepEqual(errors.errors.filter((e) => /includedInLevel/.test(e)), [], 'no core "once" error');
+      });
+
       it('the Breach macro smashes a hole as wide as the demon and cuts the wall top in two', async () => {
         const ground = scene.levels.find((l) => l.name === 'Ground');
         const top = scene.levels.find((l) => l.name === 'Wall Top');
@@ -368,6 +417,29 @@ export function registerAdventure(quench) {
         const save = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && /data-action="rollSave"/.test(m.content)
           && /data-dc="18"/.test(m.content)), { timeout: 20000, what: 'the pit trap check card' });
         assert.match(save.content, /pinned/);
+        await settle(since);
+      });
+
+      it('initiative: the staged order leaves nothing to roll; after Reset Initiative, Roll All rolls 1D20 + the better of Courage and Finesse + Proficiency', async () => {
+        const combat = game.combats.find((c) => c.scene?.id === scene.id);
+        await combat.startCombat();
+        await ui.combat.render({ force: true });
+        const rollButtons = () => ui.combat.element?.querySelectorAll('[data-action="rollInitiative"]').length ?? 0;
+        await until(() => ui.combat.viewed === combat && ui.combat.element?.querySelector('[data-action="rollAll"]'), { what: 'the Combat Tracker' });
+        assert.equal(rollButtons(), 0, 'every combatant starts with an initiative, so Foundry offers no roll');
+        await combat.resetAll();
+        await until(() => rollButtons() === combat.combatants.size, { what: 'a roll button for each combatant' });
+        const since = Date.now();
+        ui.combat.element.querySelector('[data-action="rollAll"]').click();
+        await until(() => combat.combatants.every((c) => Number.isFinite(c.initiative)), { timeout: 15000, what: 'everyone to roll' });
+        for (const c of combat.combatants) {
+          const message = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && m.flags?.core?.initiativeRoll
+            && m.speaker?.token === c.tokenId), { what: `${c.name}'s initiative roll` });
+          const [roll] = message.rolls;
+          const data = c.actor.getRollData();
+          assert.equal(roll.total, c.initiative, `${c.name}: the tracker shows the roll`);
+          assert.equal(flat(roll), Math.max(data.courage, data.finesse) + data.proficiency, `${c.name}: the Check bonus`);
+        }
         await settle(since);
       });
     });

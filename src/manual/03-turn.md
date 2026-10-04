@@ -1,5 +1,11 @@
 # Taking Your Turn
 
+## Rolling initiative
+
+Initiative is a Courage or Finesse Check, whichever is better (book p.233). Once the GM has set up a combat, press
+**Initiative** at the top of your sheet. If your token isn't in the Combat Tracker yet, this adds it, then rolls. You
+roll once per combat: pressing it again just tells you your number, and the GM rerolls from the Combat Tracker.
+
 ## Starting a turn
 
 Turn tracking needs a combat in Foundry's Combat Tracker. When your turn begins, the system:

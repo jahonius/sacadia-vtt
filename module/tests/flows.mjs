@@ -105,6 +105,78 @@ export function registerFlows(quench) {
   }, { displayName: 'Sacadia: a combat, turn by turn' });
 
   /* ---------------------------------------------------------------------------------------------------------- */
+  quench.registerBatch('sacadia.initiative', (context) => {
+    const { describe, it, before, after, assert } = context;
+    describe("Rolling initiative from a sheet's Initiative button", function () {
+      this.timeout(60000);
+      const fx = fixture();
+      let hero, foe, combat, notices, info;
+      const combatantOf = (actor) => combat.combatants.find((c) => c.actorId === actor.id);
+      const clickInitiative = async (actor) => {
+        await actor.sheet.render(true);
+        const button = await until(() => actor.sheet.element?.querySelector('[data-action="rollInitiative"]'), { what: `${actor.name}'s Initiative button` });
+        button.click();
+      };
+      /** The roll on the initiative card for a combatant, and its flat part (the total less the dice). */
+      const initiativeRoll = (c, since) => until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since
+        && m.flags?.core?.initiativeRoll && m.speaker?.token === c.tokenId)?.rolls[0], { what: `${c.name}'s initiative card` });
+      const flat = (roll) => roll.total - roll.dice.reduce((t, d) => t + d.total, 0);
+      const bonus = (actor) => { const d = actor.getRollData(); return Math.max(d.courage, d.finesse) + d.proficiency; };
+
+      before(async () => {
+        fx.start();
+        hero = await fx.actor('Initiate', 'character', { stats: { courage: { value: 2 } } }, linked(1));
+        foe = await fx.actor('Ambusher', 'npc', { stats: { courage: { value: 3 }, finesse: { value: 5 } } }, linked(-1));
+        await arena(fx, [['hero', hero, 300, 300, 1], ['foe', foe, 600, 300, -1]]);
+        // An encounter the tokens aren't in yet: the button adds them.
+        combat = fx.track(await Combat.create({ scene: canvas.scene.id, active: true }));
+        await until(() => game.combat === combat, { what: 'the encounter' });
+        notices = [];
+        info = ui.notifications.info;
+        ui.notifications.info = (message, options) => { notices.push(String(message)); return info.call(ui.notifications, message, options); };
+      });
+      after(async () => {
+        ui.notifications.info = info;
+        for (const a of [hero, foe]) await a?.sheet.close();
+        await fx.cleanup();
+      });
+
+      it("a character's button adds its token to the combat and rolls 1D20 + the better of Courage and Finesse + Proficiency", async () => {
+        const since = Date.now();
+        await clickInitiative(hero);
+        const c = await until(() => combatantOf(hero), { what: 'the hero to join the combat' });
+        await until(() => Number.isFinite(c.initiative), { what: "the hero's initiative" });
+        const roll = await initiativeRoll(c, since);
+        assert.equal(roll.total, c.initiative);
+        assert.equal(flat(roll), bonus(hero));
+        assert.equal(bonus(hero), 2 + hero.system.proficiency, 'Courage 2 beats Finesse');
+        await settle(since);
+      });
+
+      it("an NPC's button rolls with its stat block's numbers (no Proficiency)", async () => {
+        const since = Date.now();
+        await clickInitiative(foe);
+        const c = await until(() => combatantOf(foe), { what: 'the NPC to join the combat' });
+        await until(() => Number.isFinite(c.initiative), { what: "the NPC's initiative" });
+        assert.equal(flat(await initiativeRoll(c, since)), 5, 'Finesse 5');
+        await settle(since);
+      });
+
+      it('pressing it again keeps the roll and says so: rerolling is the GM\'s, from the Combat Tracker', async () => {
+        const c = combatantOf(hero);
+        const before = c.initiative;
+        const since = Date.now();
+        await clickInitiative(hero);
+        await until(() => notices.some((n) => n.includes('already rolled initiative')), { what: 'the notice' });
+        await sleep(300);
+        assert.equal(c.initiative, before);
+        assert.equal(combat.combatants.size, 2, 'no second combatant');
+        assert.notOk(game.messages.contents.some((m) => (m.timestamp ?? 0) >= since && m.flags?.core?.initiativeRoll), 'no new roll');
+      });
+    });
+  }, { displayName: 'Sacadia: rolling initiative from a sheet' });
+
+  /* ---------------------------------------------------------------------------------------------------------- */
   quench.registerBatch('sacadia.flows', (context) => {
     const { describe, it, before, after, afterEach, assert } = context;
     describe('Reactions, Boosts, no-roll effects, kills and Insanity', function () {
