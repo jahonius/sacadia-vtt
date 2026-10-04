@@ -11,7 +11,7 @@
       <input class="charname" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Name'}}"/>
       {{#if isCharacter}}
       <div class="rest-controls">
-        <a data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
+        <a class="primary" data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
         <a data-action="shortRest" title="{{localize 'SACADIA.Rest.ShortHint'}}"><i class="fa-solid fa-mug-hot"></i> {{localize 'SACADIA.Rest.Short'}}</a>
         <a data-action="longRest" title="{{localize 'SACADIA.Rest.LongHint'}}"><i class="fa-solid fa-bed"></i> {{localize 'SACADIA.Rest.Long'}}</a>
       </div>
@@ -19,7 +19,7 @@
       {{!-- NPC quick-build lives in the always-visible header so it's clearly available. --}}
       {{#unless isCharacter}}
       <div class="npc-controls">
-        <a data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
+        <a class="primary" data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
         <a data-action="pasteStatBlock" title="{{localize 'SACADIA.StatBlock.Hint'}}"><i class="fa-solid fa-paste"></i> {{localize 'SACADIA.StatBlock.Button'}}</a>
       </div>
       {{/unless}}
@@ -28,7 +28,9 @@
     {{!-- A character's build (professions, level, size, resistances) is set on the Character tab; the header
          only summarizes it, so play-time readouts get the room. --}}
     {{#if isCharacter}}
-    <div class="identity-line">{{identityLine}}</div>
+    <div class="identity-line">
+      {{#each identity as |p|}}{{#unless @first}}<span class="id-sep" aria-hidden="true">◆</span>{{/unless}}<span class="id-part{{#if p.quiet}} quiet{{/if}}">{{p.label}}{{#if p.n}} <b>{{p.n}}</b>{{/if}}</span>{{/each}}
+    </div>
     {{else}}
     <div class="npc-row">
       <label class="sac-field">
@@ -63,7 +65,8 @@
     </div>
     {{/if}}
 
-    {{!-- Vitals: HP (number + bar) grows to fill the row; AP, reactions and Madness sit at its end. --}}
+    {{!-- Vitals: HP (number + bar, and Madness when it's in play) over the defense plate; AP, reactions and Lore over
+         the ledger, in the same columns. --}}
     <div class="vitals">
       <div class="vital hp-vital">
         <div class="hp-readout">
@@ -76,6 +79,14 @@
           <input type="number" class="hp-max ghost" name="system.health.max" value="{{system.health.max}}" aria-label="{{localize 'SACADIA.Resource.MaxHealth'}}"/>
           {{/if}}
           {{#if system.health.temp}}<span class="hp-temp" data-tooltip="{{localize 'SACADIA.Resource.TempHpHint'}}">+{{system.health.temp}} {{localize 'SACADIA.Resource.TempHp'}}</span>{{/if}}
+          {{!-- Madness is a state like Health, so it shares Health's line (when it's in play). --}}
+          {{#if showMadness}}
+          <span class="madness-track" data-tooltip="{{localize 'SACADIA.Condition.Madness'}}">
+            <i class="fa-solid fa-brain" aria-label="{{localize 'SACADIA.Condition.Madness'}}"></i>
+            <span class="sac-pips">{{#each madnessPips as |pip|}}<span class="sac-pip mad {{#if pip.on}}on{{/if}} {{#if pip.threshold}}threshold{{/if}}"></span>{{/each}}</span>
+            {{#if insane}}<span class="insane-note">{{localize 'SACADIA.Insane.Badge'}}</span>{{/if}}
+          </span>
+          {{/if}}
         </div>
         <div class="sac-meter hp-meter {{hpState}}" title="{{system.health.value}} / {{system.health.max}}">
           <div class="fill" style="width: {{hpPct}}%"></div>
@@ -83,10 +94,11 @@
       </div>
 
       {{#if isCharacter}}
+      <div class="side-vitals">
       <div class="vital">
         <span class="sac-label">{{localize 'SACADIA.Economy.Ap'}}</span>
         {{#if apPips}}
-        <div class="sac-pips" title="{{apText}}">{{#each apPips as |pip|}}<span class="sac-pip {{#if pip.on}}on{{/if}}"></span>{{/each}}</div>
+        <div class="sac-pips ap-pips" title="{{apText}}">{{#each apPips as |pip|}}<i class="fa-solid fa-bolt ap-pip {{#if pip.on}}on{{/if}}"></i>{{/each}}</div>
         {{else}}
         <span class="vital-num">{{apText}}</span>
         {{/if}}
@@ -101,21 +113,22 @@
         {{/if}}
       </div>
 
-      {{#if showMadness}}
-      <div class="vital">
-        <span class="sac-label">{{localize 'SACADIA.Condition.Madness'}}</span>
-        <div class="madness-track">
-          <div class="sac-pips">{{#each madnessPips as |pip|}}<span class="sac-pip mad {{#if pip.on}}on{{/if}} {{#if pip.threshold}}threshold{{/if}}"></span>{{/each}}</div>
-          {{#if insane}}<span class="insane-note">{{localize 'SACADIA.Insane.Badge'}}</span>{{/if}}
-        </div>
+      {{#if system.lorePoints.max}}
+      <div class="vital lore" data-tooltip="{{localize 'SACADIA.Resource.LorePoints'}}">
+        <span class="sac-label">{{localize 'SACADIA.Resource.LorePoints'}}</span>
+        <span class="vital-num"><input type="number" class="ghost" name="system.lorePoints.value" value="{{system.lorePoints.value}}" min="0"
+          aria-label="{{localize 'SACADIA.Resource.LorePoints'}}"/><small>/{{system.lorePoints.max}}</small></span>
       </div>
       {{/if}}
+      </div>
       {{/if}}
     </div>
 
-    {{!-- Readouts: the five defenses, then the derived numbers, as one row of equal tiles. Characters derive
-         defenses (read-only; the tooltip shows the breakdown); NPCs are hand-authored stat blocks (editable). --}}
+    {{!-- Readouts: the five defenses as one plate (what attacks are rolled against), then the derived numbers as an
+         open ledger. Characters derive defenses (read-only; the tooltip shows the breakdown); NPCs are hand-authored
+         stat blocks (editable). --}}
     <div class="readouts">
+      <div class="defense-plate">
       {{#each system.defenses as |def key|}}
       <div class="readout defense {{#if def.supersededByAd}}superseded{{/if}} {{#if def.cappedStat}}capped{{/if}}"
            {{#if @root.isCharacter}}data-tooltip-html="{{lookup @root.defTooltips key}}"{{else}}data-tooltip="{{def.label}}{{#if def.supersededByAd}} — {{localize 'SACADIA.Defense.AD'}}{{/if}}{{#if def.cappedStat}} — {{localize 'SACADIA.Armor.MaxStat'}}{{/if}}"{{/if}}>
@@ -128,7 +141,8 @@
         {{/if}}
       </div>
       {{/each}}
-      <span class="readout-gap" aria-hidden="true"></span>
+      </div>
+      <div class="ledger">
       {{#if isCharacter}}
       <div class="readout" data-tooltip="{{localize 'SACADIA.Progression.Proficiency'}}">
         <span class="sac-label">{{localize 'SACADIA.Header.ProfShort'}}</span><span class="readout-value">{{system.proficiency}}</span>
@@ -140,12 +154,6 @@
         <span class="sac-label">{{localize 'SACADIA.Speed.Label'}}</span>
         <span class="readout-value">{{system.speed.value}}<small>ft</small>{{#if system.speed.fly}}<small> · {{localize 'SACADIA.Speed.Fly'}} {{system.speed.fly}}</small>{{/if}}</span>
       </div>
-      {{#if system.lorePoints.max}}
-      <div class="readout lore" data-tooltip="{{localize 'SACADIA.Resource.LorePoints'}}">
-        <span class="sac-label">{{localize 'SACADIA.Resource.LorePoints'}}</span>
-        <span class="readout-value"><input type="number" class="ghost" name="system.lorePoints.value" value="{{system.lorePoints.value}}" min="0"/><small>/{{system.lorePoints.max}}</small></span>
-      </div>
-      {{/if}}
       {{else}}
       {{!-- NPCs author a flat Check DC (targets roll against it to resist this monster's conditions / saves). --}}
       <div class="readout check-dc" data-tooltip="{{localize 'SACADIA.Defense.CheckDC'}}">
@@ -153,6 +161,7 @@
         <input type="number" class="readout-value ghost" name="system.checkDc" value="{{system.checkDc}}" min="0"/>
       </div>
       {{/if}}
+      </div>
     </div>
 
     {{!-- NPC typed damage resistances (book p.222); a character's are on the Character tab. --}}
