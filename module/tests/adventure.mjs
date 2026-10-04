@@ -41,6 +41,12 @@ export function registerAdventure(quench) {
       // (v14 constrains even a GM's token update by the walls in its path).
       const at = (x, y) => ({ x: scene.dimensions.sceneX + x, y: scene.dimensions.sceneY + y });
       const moveTo = (t, x, y, extra = {}) => t.move([{ ...at(x, y), ...extra }], { constrainOptions: { ignoreWalls: true, ignoreCost: true } });
+      // Wait out a walk's animation and the 2s scrolling text it set off, so the next redraw or the cleanup doesn't
+      // tear the canvas down under the text.
+      const textPlayed = async (t) => {
+        await canvas.tokens.get(t.id)?.movementAnimationPromise;
+        await sleep(2200);
+      };
       // A move the way a player drags one: the walls apply.
       const walk = (t, x, y) => t.move([at(x, y)], { constrainOptions: { ignoreCost: true } });
       // Walk there and wait to arrive: a move resolves while the token is still on its way (it's split where it crosses
@@ -237,7 +243,30 @@ export function registerAdventure(quench) {
         assert.ok(!shape.contains(...Object.values(at(1000, 1650))), 'in the gate passage');
       });
 
-      it('line of sight: from the ground the wall blocks the view north; from the wall top it does not', async () => {
+      it('line of sight: from where they start on the wall top, each defender sees Wanabbul and a demon at the foot of the wall', async () => {
+        const ground = scene.levels.find((l) => l.name === 'Ground');
+        const top = scene.levels.find((l) => l.name === 'Wall Top');
+        await viewLevel(top);
+        // A Weaverspool waits at the front gate. A point can't stand in for it: a bare point is tested on the viewed
+        // level, while a token is tested across the levels.
+        const spool = actor('Weaverspool');
+        const [gate] = await scene.createEmbeddedDocuments('Token', [(await spool.getTokenDocument({ ...at(1100, 1485), level: ground.id, elevation: 0 })).toObject()]);
+        try {
+          const demons = [tokenOf('Wanabbul the Vast'), gate];
+          await until(() => demons.every((d) => canvas.tokens.get(d.id)), { what: 'the demons on the canvas' });
+          for (const name of ['Selthimor', 'Chunrudar', 'Honnasusara', 'Manchuthara']) {
+            canvas.tokens.get(tokenOf(name).id).control({ releaseOthers: true });
+            await until(() => demons.every((d) => canvas.tokens.get(d.id).isVisible), { timeout: 10000,
+              what: `${name} to see ${demons.filter((d) => !canvas.tokens.get(d.id).isVisible).map((d) => d.name).join(' and ')}` });
+          }
+          await shot('breach-4-wall-top-vision');
+        } finally {
+          canvas.tokens.releaseAll();
+          await gate.delete();
+        }
+      });
+
+      it('line of sight: from the ground the wall hides the north and the defenders on top of it', async () => {
         const ground = scene.levels.find((l) => l.name === 'Ground');
         const top = scene.levels.find((l) => l.name === 'Wall Top');
         const selthimor = tokenOf('Selthimor');
@@ -249,17 +278,14 @@ export function registerAdventure(quench) {
         const north = { ...at(1150, 900), elevation: 0 };
         const camp = { ...at(1150, 2800), elevation: 0 };
         // Perception catches up a moment after the token is controlled.
-        await until(() => canvas.visibility.testVisibility(camp, { tolerance: 0 }) && !canvas.visibility.testVisibility(north, { tolerance: 0 }),
-          { timeout: 10000, what: 'his line of sight: the camp in view, the wall hiding the north' });
+        await until(() => canvas.visibility.testVisibility(camp, { tolerance: 0 }) && !canvas.visibility.testVisibility(north, { tolerance: 0 })
+          && !canvas.tokens.get(tokenOf('Wanabbul the Vast').id).isVisible && !canvas.tokens.get(tokenOf('Honnasusara').id).isVisible,
+          { timeout: 10000, what: 'his line of sight: the camp in view, the wall hiding the north, Wanabbul, and Honnasusara on top of it' });
         await shot('breach-3-ground-vision');
-        // Manchuthara, on the wall top, sees past it.
-        const m = tokenOf('Manchuthara');
-        await viewLevel(top);
-        canvas.tokens.get(m.id).control({ releaseOthers: true });
-        await until(() => canvas.visibility.testVisibility({ ...north, elevation: 40 }, { tolerance: 0 }),
-          { timeout: 10000, what: 'from the wall top, the view north' });
-        await shot('breach-4-wall-top-vision');
         canvas.tokens.releaseAll();
+        // Back to the tower top, viewed from the Wall Top: viewed from the Ground, his move up would play the
+        // ground-only fog-line text over the tower.
+        await viewLevel(top);
         await moveTo(selthimor, 200, 600, { level: top.id, elevation: 40 });
       });
 
@@ -381,6 +407,7 @@ export function registerAdventure(quench) {
         errors.clear();
         await moveTo(tokenOf('Wanabbul the Vast'), 800, 800); // south through the fog line (map rows 5–6)
         await until(() => text.disabled, { timeout: 15000, what: 'the text to switch off after he leaves the fog line' });
+        await textPlayed(tokenOf('Wanabbul the Vast'));
         assert.deepEqual(errors.errors.filter((e) => /includedInLevel/.test(e)), [], 'no core "once" error');
       });
 
@@ -418,6 +445,7 @@ export function registerAdventure(quench) {
           && /data-dc="18"/.test(m.content)), { timeout: 20000, what: 'the pit trap check card' });
         assert.match(save.content, /pinned/);
         await settle(since);
+        await textPlayed(tokenOf('Wanabbul the Vast')); // "The ground gives way!"
       });
 
       it('initiative: the staged order leaves nothing to roll; after Reset Initiative, Roll All rolls 1D20 + the better of Courage and Finesse + Proficiency', async () => {

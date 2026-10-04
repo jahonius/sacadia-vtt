@@ -13,7 +13,7 @@ Each level sees the other, so the GM's view looks the same on either. What chang
 
 **Night.** The fight happens at night (Darkness 0.9). Dim moonlight lets everyone see within line of sight. The Tianqi glyphs glow blue along the wall's north face, torches burn on the wall top, and lanterns hang in the camp. Mist lies over the Upper Heibrim north of the wall; the wall holds it back (a *Suppress Weather* Region over everything south of it). Wanabbul trails a haze of black smoke. The first time he steps forward out of the mist, everyone sees *"A shape looms out of the mist…"*. To brighten the scene, lower the Darkness slider in the scene's lighting settings or from the Lighting controls.
 
-**Line of sight.** Token Vision is on: each player sees what their hero sees, and you see everything. A hero who climbs down loses sight of everything north of the wall. To share the whole map instead, turn off *Token Vision* in the scene's settings.
+**Line of sight.** Token Vision is on: each player sees what their hero sees, and you see everything. From the wall top, the defenders see down over the wall they stand on and over the tents, though not something tucked right behind a tent. A hero who climbs down loses sight of everything north of the wall, and of the defenders still on top of it. To share the whole map instead, turn off *Token Vision* in the scene's settings.
 
 **Getting down.**
 
