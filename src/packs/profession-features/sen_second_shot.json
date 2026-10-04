@@ -3,7 +3,7 @@
   "_key": "!items!a9851e0c0c124d00",
   "name": "Second Shot",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sen_second_shot_icon.webp",
   "system": {
     "description": "<p>When you make your first ranged attack each turn, you do not exhaust any limbs.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "sen_second_shot",
       "feature": true,
       "level": 7,
-      "buildHash": "fc0239826b26"
+      "buildHash": "37ce8876bdf9"
     }
   }
 }

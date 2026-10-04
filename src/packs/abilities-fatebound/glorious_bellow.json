@@ -3,7 +3,7 @@
   "_key": "!items!18589eb850fcf839",
   "name": "Glorious Bellow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/glorious_bellow_icon.webp",
   "system": {
     "description": "<p>Increase the range of Astonishing Shout by 5ft.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "glorious_bellow",
       "transcribed": true,
-      "buildHash": "8df1a1470633"
+      "buildHash": "7710effe6e27"
     }
   }
 }

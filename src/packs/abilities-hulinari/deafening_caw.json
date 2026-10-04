@@ -3,7 +3,7 @@
   "_key": "!items!08dc71869a5dfe62",
   "name": "Deafening Caw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/deafening_caw_icon.webp",
   "system": {
     "description": "<p>When in Swarm Form, attempt to give all enemies within 10ft of you 1D4 Fumble. Increase this Fumble to 1D6 at level 5, and 1D8 at level 11. They make Fate Checks against this effect.</p>",
     "tag": "action",
@@ -95,7 +95,7 @@
     "sacadia": {
       "catalogId": "deafening_caw",
       "transcribed": true,
-      "buildHash": "53690e96ee5a"
+      "buildHash": "388d6f914f20"
     }
   }
 }

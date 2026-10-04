@@ -3,7 +3,7 @@
   "_key": "!items!b7a780218f559eac",
   "name": "Oldgrove",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_oldgrove_icon.webp",
   "system": {
     "description": "<p>Increase the Dice Type of Olive Branch from XD6 to XD8.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_oldgrove",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "db3f2258490e"
+      "buildHash": "2693b64d0238"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!682185ff6ec7bb1a",
   "name": "Mastery of the Cornered",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_cornered_icon.webp",
   "system": {
     "description": "<p>When you are Surrounded or Cornered, creatures do not gain 1X Advantage on attacks made against you.</p>",
     "tag": "passive",
@@ -49,7 +49,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "ae377a7b347f"
+      "buildHash": "5ef1ebc54344"
     }
   }
 }

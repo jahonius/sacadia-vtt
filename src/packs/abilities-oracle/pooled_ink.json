@@ -3,7 +3,7 @@
   "_key": "!items!77762ca418893581",
   "name": "Pooled Ink",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/pooled_ink_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/pooled_ink_icon.webp",
   "system": {
     "description": "<p>All terrain inside Stygian Abyss is difficult terrain when you have at least 3 Madness.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pooled_ink",
-      "buildHash": "271297e17a84"
+      "buildHash": "9c913e1d06bf"
     }
   }
 }

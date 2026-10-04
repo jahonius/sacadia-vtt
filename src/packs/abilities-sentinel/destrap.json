@@ -3,7 +3,7 @@
   "_key": "!items!557ac12cc286146b",
   "name": "Destrap",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/destrap_icon.webp",
   "system": {
     "description": "<p>Expend one Trickshot point and make a ranged weapon attack against a target. If you hit, rend the target's armor by X instead of dealing damage, where X is half your Proficiency (rounded up).</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "destrap",
-      "buildHash": "163b7060abc6"
+      "buildHash": "dab421fa0351"
     }
   }
 }

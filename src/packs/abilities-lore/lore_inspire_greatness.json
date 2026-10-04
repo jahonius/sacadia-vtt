@@ -3,7 +3,7 @@
   "_key": "!items!f393eaa17c2da3b9",
   "name": "Inspire Greatness",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_inspire_greatness_icon.webp",
   "system": {
     "description": "<p>You may expend a lore point to rally yourself or an ally, removing all conditions from the chosen target except those caused by the environment.</p>",
     "tag": "lore",
@@ -63,7 +63,7 @@
       "catalogId": "lore_inspire_greatness",
       "transcribed": true,
       "lore": true,
-      "buildHash": "d676deda65a6"
+      "buildHash": "1af811ce343f"
     }
   }
 }

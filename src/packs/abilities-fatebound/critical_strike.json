@@ -3,7 +3,7 @@
   "_key": "!items!2d67db9c0d656fe6",
   "name": "Critical Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/critical_strike_icon.webp",
   "system": {
     "description": "<p>If you critically hit with your divine weapon, you may make a critical effect be that you make your next attack with an additional 1X advantage.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "critical_strike",
       "transcribed": true,
-      "buildHash": "6051983c8dbd"
+      "buildHash": "ff6a0e636382"
     }
   }
 }

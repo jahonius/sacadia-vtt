@@ -3,7 +3,7 @@
   "_key": "!items!4ffeb26fc6e436e1",
   "name": "Still Up",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_still_up_icon.webp",
   "system": {
     "description": "<p>If an ability or action would cause you to drop below 0HP, you may expend a Lore Point to gain 1/3 of your Max HP (rounded up).</p>",
     "tag": "lore",
@@ -47,7 +47,7 @@
       "catalogId": "lore_still_up",
       "transcribed": true,
       "lore": true,
-      "buildHash": "a05a3a637103"
+      "buildHash": "98aeb9ed5707"
     }
   }
 }

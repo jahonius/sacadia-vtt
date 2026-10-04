@@ -3,7 +3,7 @@
   "_key": "!items!8e2d10b12b8e08c8",
   "name": "Last Stand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_last_stand_icon.webp",
   "system": {
     "description": "<p>If you are about to die, you may spend one lore point to take one final turn immediately. After taking your additional turn, you die.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_last_stand",
       "transcribed": true,
       "lore": true,
-      "buildHash": "96ba55c879ab"
+      "buildHash": "662b6e0909e7"
     }
   }
 }

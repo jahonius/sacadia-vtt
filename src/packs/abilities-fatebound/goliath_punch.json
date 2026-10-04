@@ -3,7 +3,7 @@
   "_key": "!items!cc2d1897f2b31172",
   "name": "Goliath Punch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/goliath_punch_icon.webp",
   "system": {
     "description": "<p>Whenever you critically hit while wielding an extra heavy weapon, you may choose to have the critical effect be to throw the enemy up to 5X feet away, where X is half your Proficiency (rounded up).</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "goliath_punch",
       "transcribed": true,
-      "buildHash": "684ddc5910cd"
+      "buildHash": "ba88c032517a"
     }
   }
 }

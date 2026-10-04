@@ -3,7 +3,7 @@
   "_key": "!items!5d056b4dbe7f568d",
   "name": "Stone Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/stone_weapon_icon.webp",
   "system": {
     "description": "<p>Once per quick rest as a reaction to an enemy within 30ft of you moving, you may use a reaction to cause them to treat terrain as difficult for that Move action.</p>",
     "tag": "reaction",
@@ -44,7 +44,7 @@
     "sacadia": {
       "catalogId": "stone_weapon",
       "transcribed": true,
-      "buildHash": "7b701f8aedc0"
+      "buildHash": "c7f59ed2a28c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d215955241263bde",
   "name": "Life Transference",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_life_transference_icon.webp",
   "system": {
     "description": "<p>Choose 1 ally within 5ft and expend a Spell Slot. Roll XD6, where X is up to half your Proficiency, rounded up. Lose that HP. Give your ally T emp HP equal to twice the HP you lost.</p>",
     "tag": "action",
@@ -51,7 +51,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Sacrifice",
-      "buildHash": "16510855c2ff"
+      "buildHash": "62ddbca8757d"
     }
   }
 }

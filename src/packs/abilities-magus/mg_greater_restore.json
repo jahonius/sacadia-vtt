@@ -3,7 +3,7 @@
   "_key": "!items!1a1bd422deadeaad",
   "name": "Greater Restore",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_restore_icon.webp",
   "system": {
     "description": "<p>When you use Lesser Restore, you may remove X levels of any Greater Mental Condition (Fatigue, Frenzy, Panic, Taunt) or the Surprised Condition.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Magic Identification[3]",
-      "buildHash": "21c5c1d3e6f1"
+      "buildHash": "05169b4253a7"
     }
   }
 }

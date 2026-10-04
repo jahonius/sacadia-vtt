@@ -3,7 +3,7 @@
   "_key": "!items!f087af8c11604aa8",
   "name": "Tower Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sol_tower_training_icon.webp",
   "system": {
     "description": "<p>When you wield a Tower Shield, increase your PD by 1. When you use the Steady action while wielding a Tower Shield, you may use a reaction to add your shield's TD benefit to an ally within 5ft of you.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
       "catalogId": "sol_tower_training",
       "feature": true,
       "level": 7,
-      "buildHash": "019744ade785"
+      "buildHash": "bd69b2e3c437"
     }
   }
 }

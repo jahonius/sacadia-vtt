@@ -3,7 +3,7 @@
   "_key": "!items!f501281a21bead14",
   "name": "Dancerwind",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_dancerwind_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. On their next turn, their Move Speed is increased by 5ft, and they can 5ft adjust into difficult terrain.</p>",
     "tag": "action",
@@ -52,7 +52,7 @@
       "catalogId": "wt_dancerwind",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "344b33a81fd3"
+      "buildHash": "8aed0ad8d97c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!193a5795faa0b0f3",
   "name": "Powerful Buck",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/powerful_buck_icon.webp",
   "system": {
     "description": "<p>When you use Kick on an enemy, they are pushed 10ft away instead of 5ft.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "powerful_buck",
       "transcribed": true,
-      "buildHash": "a4d8e0ed9454"
+      "buildHash": "d3ed9b6175eb"
     }
   }
 }

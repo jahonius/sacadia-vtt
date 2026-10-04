@@ -3,7 +3,7 @@
   "_key": "!items!e995f79ad0a76e75",
   "name": "Extra Taunt",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/extra_taunt_icon.webp",
   "system": {
     "description": "<p>When you use Taunting Call, attempt to give levels of Taunt equal to your Proficiency to that target.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "extra_taunt",
-      "buildHash": "eee495db70f5"
+      "buildHash": "335a298021de"
     }
   }
 }

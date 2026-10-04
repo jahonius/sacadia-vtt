@@ -3,7 +3,7 @@
   "_key": "!items!cd0e2b25c9833360",
   "name": "Wilder Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/wilder_strike_icon.webp",
   "system": {
     "description": "<p>The minimum base damage dice of Wild Strike is 1D4.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "wilder_strike",
       "transcribed": true,
-      "buildHash": "f0678c90ec32"
+      "buildHash": "d843382d8c77"
     }
   }
 }

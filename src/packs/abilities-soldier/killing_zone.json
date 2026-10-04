@@ -3,7 +3,7 @@
   "_key": "!items!99eb928094a8626e",
   "name": "Killing Zone",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/killing_zone_icon.webp",
   "system": {
     "description": "<p>You may use Ticket to Enter against enemies that move within your spear range, even if they do not leave your spear's range.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "killing_zone",
-      "buildHash": "873cf3b75e56"
+      "buildHash": "a553821ed2f1"
     }
   }
 }

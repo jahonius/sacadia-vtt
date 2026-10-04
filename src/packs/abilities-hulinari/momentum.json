@@ -3,7 +3,7 @@
   "_key": "!items!11ccf247ba6516b8",
   "name": "Momentum",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/momentum_icon.webp",
   "system": {
     "description": "<p>When you use the ‘Charge the Line’ ability, creatures who fail fall Prone.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "momentum",
       "transcribed": true,
-      "buildHash": "a417d7619f1b"
+      "buildHash": "4d501e233159"
     }
   }
 }

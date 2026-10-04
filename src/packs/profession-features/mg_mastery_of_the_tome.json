@@ -3,7 +3,7 @@
   "_key": "!items!5c3c156764ce7047",
   "name": "Mastery of the Tome",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_mastery_of_the_tome_icon.webp",
   "system": {
     "description": "<p>Gain 3 Spell Slots.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_mastery_of_the_tome",
       "feature": true,
       "level": 5,
-      "buildHash": "b1744e23582d"
+      "buildHash": "9cedba0ee4aa"
     }
   }
 }

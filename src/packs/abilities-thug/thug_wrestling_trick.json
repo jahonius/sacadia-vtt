@@ -3,7 +3,7 @@
   "_key": "!items!5a1057537a43c115",
   "name": "Wrestling Trick",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_wrestling_trick_icon.webp",
   "system": {
     "description": "<p>When you take this ability, you get an Action Pool of trick points equal to your Proficiency Score. You may expend a trick point to use any of the tricks you know. You recover trick points after every quick rest. Whenever you may spend points, you may add to the list of tricks you know.</p>",
     "tag": "action",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_wrestling_trick",
-      "buildHash": "0cb09fd5c3c9"
+      "buildHash": "98bf92269277"
     }
   }
 }

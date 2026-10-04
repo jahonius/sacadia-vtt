@@ -3,7 +3,7 @@
   "_key": "!items!86d6e64cb93e7151",
   "name": "Lesser Restore",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_lesser_restore_icon.webp",
   "system": {
     "description": "<p>Expend 1 Spell Slot. Touch one target within 5ft of you and remove X levels of a Lesser Mental Condition that they possess (Delirium, Jinxed, Slowed, Sting), where X is half your Proficiency, rounded up.</p>",
     "tag": "action",
@@ -89,7 +89,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Magic Identification[1]",
-      "buildHash": "c347e25f3218"
+      "buildHash": "9f83366cbcc0"
     }
   }
 }

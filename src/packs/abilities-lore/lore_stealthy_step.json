@@ -3,7 +3,7 @@
   "_key": "!items!2c0deef98d8bd801",
   "name": "Stealthy Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_stealthy_step_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point to fade into the shadows and disappear at the start of your turn. No one may make an attack on you until the start of your next turn, and your movement does not provoke attacks of opportunity. Treat the first attack you make on every unique target as surprised until the start of your next turn.</p>",
     "tag": "lore",
@@ -47,7 +47,7 @@
       "catalogId": "lore_stealthy_step",
       "transcribed": true,
       "lore": true,
-      "buildHash": "380cefde7628"
+      "buildHash": "7834aca9d35b"
     }
   }
 }

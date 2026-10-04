@@ -3,7 +3,7 @@
   "_key": "!items!4e7fc3e45cb92def",
   "name": "Marble Swim",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_marble_swim_icon.webp",
   "system": {
     "description": "<p>You may use a Lore Point to swim through marble. If you are within 5ft of marble, you disappear into it. At the start of your next turn, you may reappear anywhere within 50ft of where you disappeared provided the two points are continuously connected by Marble. When you do, treat all enemies as surprised for the very next action you take if it is an attack.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_marble_swim",
       "transcribed": true,
       "lore": true,
-      "buildHash": "233055dd2974"
+      "buildHash": "b4177c90e372"
     }
   }
 }

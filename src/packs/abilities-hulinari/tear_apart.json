@@ -3,7 +3,7 @@
   "_key": "!items!82aef8b055c0876c",
   "name": "Tear Apart",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/tear_apart_icon.webp",
   "system": {
     "description": "<p>As a Boost to any attack made against a single target, if you kill that target, you rip them apart. All enemies within 5ft of you gain the Surprised Condition.</p>",
     "tag": "boost",
@@ -47,7 +47,7 @@
     "sacadia": {
       "catalogId": "tear_apart",
       "transcribed": true,
-      "buildHash": "58c29fe93d5b"
+      "buildHash": "e6cd8e50efbd"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!76cb4d19f1dbbca5",
   "name": "Triple Throw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_triple_throw_icon.webp",
   "system": {
     "description": "<p>When you make an attack using Plural Throw, you may make that attack against up to three targets instead of two (each target must be within 5ft of at least one other target and within your Versatile weapon range).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_triple_throw",
-      "buildHash": "4527b1cc5e62"
+      "buildHash": "28cd7e4e5bd0"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!dfcdbd8f1b6f694d",
   "name": "Bloodsapper",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodsapper_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/bloodsapper_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy within 30ft of you taking the Move action, exhaust one of the following limbs of that target: One Arm or Leg (choose one).</p>",
     "tag": "reaction",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bloodsapper",
-      "buildHash": "39d99d492db7"
+      "buildHash": "3a8d23a20741"
     }
   }
 }

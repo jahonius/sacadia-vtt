@@ -3,7 +3,7 @@
   "_key": "!items!1c123645cbfc3214",
   "name": "Enduring Animal",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/enduring_animal_icon.webp",
   "system": {
     "description": "<p>Roll all Trait Checks against Fatigue using the ‘Make Trait Check’ action at 1X advantage.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "enduring_animal",
       "transcribed": true,
-      "buildHash": "4320ffe97805"
+      "buildHash": "45857f440721"
     }
   }
 }

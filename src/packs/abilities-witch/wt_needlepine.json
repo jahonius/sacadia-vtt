@@ -3,7 +3,7 @@
   "_key": "!items!976d48bd00647ff8",
   "name": "Needlepine",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_needlepine_icon.webp",
   "system": {
     "description": "<p>Choose one enemy within 5ft of you when you initiate this, and further choose one weapon type they wield. For as long as you maintain Focus on Needlepine, decrease the damage dice of all attacks they make with that weapon type by two dice types. Every turn you maintain Focus on Needlepine, you can only renew Focus when you are within 5ft of that target. You may not use Needlepine more than once on a single target simultaneously.</p>",
     "tag": "focus",
@@ -103,7 +103,7 @@
       "catalogId": "wt_needlepine",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "ac76b9181107"
+      "buildHash": "27b50479ff2d"
     }
   }
 }

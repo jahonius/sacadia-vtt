@@ -3,7 +3,7 @@
   "_key": "!items!6e6dc6cf59902e2d",
   "name": "Kickbuck",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_kickbuck_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point. You kick one target within 5ft of you. They are pushed back 5Xft (where X is your Proficiency), and take 2D6 damage per 5ft moved. They are knocked Prone.</p>",
     "tag": "action",
@@ -71,7 +71,7 @@
       "catalogId": "lore_kickbuck",
       "transcribed": true,
       "lore": true,
-      "buildHash": "8c03cc6a5e8a"
+      "buildHash": "b3ae23b49e50"
     }
   }
 }

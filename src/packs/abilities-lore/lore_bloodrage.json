@@ -3,7 +3,7 @@
   "_key": "!items!a62979fedafa7646",
   "name": "Bloodrage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_bloodrage_icon.webp",
   "system": {
     "description": "<p>Expend a lore point to go into a blood rage for up to X rounds (X is your Proficiency). When in a blood rage, add Power + Fate to all damage you deal through attacks.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_bloodrage",
       "transcribed": true,
       "lore": true,
-      "buildHash": "5b992a337cea"
+      "buildHash": "aa4f5191231b"
     }
   }
 }

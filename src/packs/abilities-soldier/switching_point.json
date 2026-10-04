@@ -3,7 +3,7 @@
   "_key": "!items!ed01661df7cfc417",
   "name": "Switching Point",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/switching_point_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy moving within 5ft of you or from 5ft to 10ft range, you may switch one held item with one combat-readied item.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "switching_point",
-      "buildHash": "6b5ef24b298f"
+      "buildHash": "8e60b5b71593"
     }
   }
 }

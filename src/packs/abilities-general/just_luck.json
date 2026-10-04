@@ -3,7 +3,7 @@
   "_key": "!items!10e30e340de99b5a",
   "name": "Just Luck",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/just_luck_icon.webp",
   "system": {
     "description": "<p>Increase your AD by 1 on top of any armor you are wearing. You may not take this and Trained Mind, Trained Body, and Trained Finesse.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "just_luck",
-      "buildHash": "36ac92051d8c"
+      "buildHash": "374d5cba3eef"
     }
   }
 }

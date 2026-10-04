@@ -3,7 +3,7 @@
   "_key": "!items!a7ec81d3d988471f",
   "name": "Bleeding Barbs",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bleeding_barbs_icon.webp",
   "system": {
     "description": "<p>As a Boost to Viscous Mockery, expend a Spell Slot. The target instead makes Wiles Checks against X levels of Jinxed, where X is your Proficiency.</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Linguist[2]",
-      "buildHash": "40b7fc956e2a"
+      "buildHash": "2151c5979ddc"
     }
   }
 }

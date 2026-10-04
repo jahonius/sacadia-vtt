@@ -3,7 +3,7 @@
   "_key": "!items!621123fb060e88f0",
   "name": "Boosted Attack",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boosted_attack_icon.webp",
   "system": {
     "description": "<p>You may apply up to two unique Boosts to attacks made with your divine weapon. Boosts taken this way cannot be the same.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "boosted_attack",
       "transcribed": true,
-      "buildHash": "99cbb656bc3e"
+      "buildHash": "02f18d889bfb"
     }
   }
 }

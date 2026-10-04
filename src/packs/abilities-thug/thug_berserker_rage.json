@@ -3,7 +3,7 @@
   "_key": "!items!e8396d436e811074",
   "name": "Berserker Rage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_berserker_rage_icon.webp",
   "system": {
     "description": "<p>You may use an action to go into a berserk rage, through which you are indomitably strong. When you are raging, you gain one extra melee attack per turn that does not count towards either AP or limb count. You may not apply a Boost to this attack. Rage goes away after X rounds (where X is equal to your Proficiency), after which you gain Fatigue equal to half your Proficiency, rounded up. You may go into a rage once per Quick Rest.</p>",
     "tag": "action",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_berserker_rage",
-      "buildHash": "b168d53fbaec"
+      "buildHash": "e7f36d02c2a5"
     }
   }
 }

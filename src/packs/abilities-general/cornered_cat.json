@@ -3,7 +3,7 @@
   "_key": "!items!8ee14b27e9b9c164",
   "name": "Cornered Cat",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/cornered_cat_icon.webp",
   "system": {
     "description": "<p>All of your attacks gain 1X advantage when you are Cornered.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "cornered_cat",
-      "buildHash": "bfdd2bac98a8"
+      "buildHash": "ddd1a900345d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!96c11379a55dfb38",
   "name": "Longstride",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_longstride_icon.webp",
   "system": {
     "description": "<p>When you take the 5ft adjust boost, adjust your position by up to 10ft instead.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_longstride",
-      "buildHash": "80bbcf88b712"
+      "buildHash": "5286afe476ba"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!88f96814911e1031",
   "name": "Quiet Smirk",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/quiet_smirk_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/quiet_smirk_icon.webp",
   "system": {
     "description": "<p>Instead of rolling to determine the Madness you gain from a single action, you may expend one Prescient Point as a Boost to that action to gain the minimum amount.</p>",
     "tag": "boost",
@@ -43,7 +43,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "quiet_smirk",
-      "buildHash": "f5d785e77933"
+      "buildHash": "5bb317a46b70"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!cf73b3344d043c57",
   "name": "Confusing Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_confusing_step_icon.webp",
   "system": {
     "description": "<p>Expend a Lore point to take a Move action (without exhausting your limbs or spending AP, regardless of when you use this). Every enemy within 30ft of you at the end of this Move action takes the Surrounded condition until the start of your next turn.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_confusing_step",
       "transcribed": true,
       "lore": true,
-      "buildHash": "977f629b10e4"
+      "buildHash": "cb7b2c7a74a2"
     }
   }
 }

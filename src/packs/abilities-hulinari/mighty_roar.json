@@ -3,7 +3,7 @@
   "_key": "!items!87ad0809d2681984",
   "name": "Mighty Roar",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/mighty_roar_icon.webp",
   "system": {
     "description": "<p>You may roar in the face of a prone target within 5ft when in Brute Form. They make a Courage Check against your Check DC, and take X levels of Fatigue if they fail (where X is half your Proficiency, rounded up).</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
     "sacadia": {
       "catalogId": "mighty_roar",
       "transcribed": true,
-      "buildHash": "21059a0134ed"
+      "buildHash": "b4cc5a7152ca"
     }
   }
 }

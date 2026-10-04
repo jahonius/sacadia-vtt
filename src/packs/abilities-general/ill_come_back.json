@@ -3,7 +3,7 @@
   "_key": "!items!58d7bc5b91cd6dd0",
   "name": "I'll Come Back",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/ill_come_back_icon.webp",
   "system": {
     "description": "<p>If your turn ends and you have thrown at least 3 versatile weapons on your turn, gain one extra reaction this turn.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "ill_come_back",
-      "buildHash": "b6429cc955d1"
+      "buildHash": "a2c7da98a61b"
     }
   }
 }

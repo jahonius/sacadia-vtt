@@ -3,7 +3,7 @@
   "_key": "!items!166e1f56f3cde53e",
   "name": "Armor of Itthoa",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_armor_of_itthoa_icon.webp",
   "system": {
     "description": "<p>Expend a Spell Slot. Gain XD6 temporary HP, where X is half your Proficiency (rounded up). If you drop Focus, lose all Temporary HP immediately. Whenever a target deals damage to you and that damage reduces your Temporary HP, the target takes damage equal to the Temporary HP you lose.</p>",
     "tag": "focus",
@@ -57,7 +57,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Thaumaturgy[2]",
-      "buildHash": "014860fe9229"
+      "buildHash": "bb4d702236c2"
     }
   }
 }

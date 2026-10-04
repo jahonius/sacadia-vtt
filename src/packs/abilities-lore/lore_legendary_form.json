@@ -3,7 +3,7 @@
   "_key": "!items!657497bcd17cb67d",
   "name": "Legendary Form",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_legendary_form_icon.webp",
   "system": {
     "description": "<p>Expend a lore point with a Body action while in Brute Form. Increase your size by one type until the start of your next turn.</p>",
     "tag": "action",
@@ -53,7 +53,7 @@
       "catalogId": "lore_legendary_form",
       "transcribed": true,
       "lore": true,
-      "buildHash": "c365ae233aec"
+      "buildHash": "044ac5850089"
     }
   }
 }

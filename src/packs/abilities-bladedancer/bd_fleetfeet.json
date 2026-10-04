@@ -3,7 +3,7 @@
   "_key": "!items!4787cb01588c2fa2",
   "name": "Fleetfeet",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_fleetfeet_icon.webp",
   "system": {
     "description": "<p>Increase your base Move speed by 5ft.</p>",
     "tag": "passive",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_fleetfeet",
-      "buildHash": "ed8134e798e1"
+      "buildHash": "11398970a263"
     }
   }
 }

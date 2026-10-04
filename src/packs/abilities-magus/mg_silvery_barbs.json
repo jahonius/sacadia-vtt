@@ -3,7 +3,7 @@
   "_key": "!items!6ed39c5eb3e944e6",
   "name": "Silvery Barbs",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_silvery_barbs_icon.webp",
   "system": {
     "description": "<p>As a Boost to Viscous Mockery, expend a Spell Slot and choose an ally within 5ft of the enemy target who you mock. That ally gains X to their next to-hit rolled against the enemy target, where X is the amount of Fumble the enemy takes.</p>",
     "tag": "boost",
@@ -52,7 +52,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Intuition[2]",
-      "buildHash": "f1c8316d578c"
+      "buildHash": "e96eec676d80"
     }
   }
 }

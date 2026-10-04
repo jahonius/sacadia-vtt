@@ -3,7 +3,7 @@
   "_key": "!items!279f679a8cf9b6fd",
   "name": "Command",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_command_icon.webp",
   "system": {
     "description": "<p>Expend a spell slot and choose one target within 30ft of you. They make a Courage Check against your Check DC or expend a reaction to take a below action you choose: Drop: Target creature becomes prone Attack: Target makes a basic attack with an equipped weapon against a target you choose within range Approach: Target moves as far as it can up to its move speed towards you Flee: Target moves as far as it can up to its move speed away from you</p>",
     "tag": "action",
@@ -88,7 +88,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Speaker[2], Religious Rites[2]",
-      "buildHash": "10f07de0307c"
+      "buildHash": "4352264aec76"
     }
   }
 }

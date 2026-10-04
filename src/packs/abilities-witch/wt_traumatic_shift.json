@@ -3,7 +3,7 @@
   "_key": "!items!bc9ff0e42d8b56d8",
   "name": "Traumatic Shift",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_traumatic_shift_icon.webp",
   "system": {
     "description": "<p>When you use Transmute Trauma, the second target gets 1X Disadvantage on Trait Checks against the effect.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
       "catalogId": "wt_traumatic_shift",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "fb948a2846df"
+      "buildHash": "f1639115c5a4"
     }
   }
 }

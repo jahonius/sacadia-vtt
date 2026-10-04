@@ -3,7 +3,7 @@
   "_key": "!items!bf2b5996f66e0602",
   "name": "Crushing Blow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/crushing_blow_icon.webp",
   "system": {
     "description": "<p>When you critically hit a Targeted Foe, increase the dice type of your divine weapon by one dice type.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "crushing_blow",
       "transcribed": true,
-      "buildHash": "e8cf5e7aeb70"
+      "buildHash": "1e05ac85b208"
     }
   }
 }

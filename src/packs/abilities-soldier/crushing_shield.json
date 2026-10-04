@@ -3,7 +3,7 @@
   "_key": "!items!cfeb2b8c9894f9b6",
   "name": "Crushing Shield",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/crushing_shield_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy moving to within 5ft of you from further away while you are wielding a shield, you may attempt to give them 1 rend (Power Check negates). If you have Steadied, attempt to give them 2 instead.</p>",
     "tag": "reaction",
@@ -53,7 +53,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "crushing_shield",
-      "buildHash": "83e62053f9d7"
+      "buildHash": "088493c7b22f"
     }
   }
 }

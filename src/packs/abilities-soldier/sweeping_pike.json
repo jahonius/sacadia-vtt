@@ -3,7 +3,7 @@
   "_key": "!items!a31a4376c09f3616",
   "name": "Sweeping Pike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/sweeping_pike_icon.webp",
   "system": {
     "description": "<p>Increase the range of Sweep to 10ft.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sweeping_pike",
-      "buildHash": "a57c1b5f8da4"
+      "buildHash": "1d8f58285e8a"
     }
   }
 }

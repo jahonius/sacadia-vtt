@@ -3,7 +3,7 @@
   "_key": "!items!2e4f4e40b31eeb3e",
   "name": "Black Mirror",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/black_mirror_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/black_mirror_icon.webp",
   "system": {
     "description": "<p>You may wait until damage is rolled before using Black Rebuke.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "black_mirror",
-      "buildHash": "1113dc571da2"
+      "buildHash": "f70f25b1fbd1"
     }
   }
 }

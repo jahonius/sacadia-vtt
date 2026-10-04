@@ -3,7 +3,7 @@
   "_key": "!items!e94cd58afd39ce62",
   "name": "Anointed",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_anointed_icon.webp",
   "system": {
     "description": "<p>You get 1X advantage on checks against Pin when it is first given to you (but not on use of the 'Make Trait Check' action).</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_anointed",
-      "buildHash": "5a0d334ec394"
+      "buildHash": "21eb7e964b3d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!01aadcb4e39c6602",
   "name": "Hawkeye",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/hawkeye_icon.webp",
   "system": {
     "description": "<p>For each successful ranged attack with a bow you make against a target you have not attacked yet this turn, add half your Proficiency (rounded up) to To-Hit against future new targets you have not attacked or forced to make a trait check on this turn.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "hawkeye",
-      "buildHash": "65df3fb50bc8"
+      "buildHash": "560af23e96d1"
     }
   }
 }

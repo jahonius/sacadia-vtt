@@ -3,7 +3,7 @@
   "_key": "!items!abad881ed6e48b44",
   "name": "Blindstab",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/blindstab_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice dealt by Blade Aura by one type.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "blindstab",
       "transcribed": true,
-      "buildHash": "20818791e32c"
+      "buildHash": "2151194992d8"
     }
   }
 }

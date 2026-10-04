@@ -3,7 +3,7 @@
   "_key": "!items!9e3d48e65b865cd0",
   "name": "Fourleaf Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_fourleaf_touch_icon.webp",
   "system": {
     "description": "<p>Choose one ally within 5ft when you initiate this. For as long as you maintain Focus, increase their Check DC by half your Fate Score, rounded up. Every turn you maintain Focus, you can only renew Focus on this ability when you are within 5ft of that target.</p>",
     "tag": "focus",
@@ -83,7 +83,7 @@
       "catalogId": "wt_fourleaf_touch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "ae076cefe677"
+      "buildHash": "bb3f064b85b5"
     }
   }
 }

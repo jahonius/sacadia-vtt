@@ -3,7 +3,7 @@
   "_key": "!items!000891c2829353b0",
   "name": "Sands and Wind",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_sands_and_wind_icon.webp",
   "system": {
     "description": "<p>Expend one Arrangement point and move 5Xft (where X is half your Proficiency). All creatures in a square through which you moved on this movement must make a Courage Check against your Check DC or be affected by the Dim condition until the start of your next turn.</p>",
     "tag": "action",
@@ -64,7 +64,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_sands_and_wind",
-      "buildHash": "e12f43bba833"
+      "buildHash": "dc0ad5737ec0"
     }
   }
 }

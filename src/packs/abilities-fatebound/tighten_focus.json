@@ -3,7 +3,7 @@
   "_key": "!items!d73577da2d4fcce3",
   "name": "Tighten Focus",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/tighten_focus_icon.webp",
   "system": {
     "description": "<p>When you use Targeted Foe, add your Fate to your to-hit and damage against that target instead of half your Fate. Aristeia [0] Aristeia: When you take Aristeia, gain an Action Pool of Glory points equal to your Proficiency Score. You may spend skill points to learn various Aristeia. Whenever you may spend skill points, you may add to the list of Aristeia you know. When you use the ability, you may declare one of your known Aristeia. You get all of Glory points back after a quick rest.</p>",
     "tag": "passive",
@@ -67,7 +67,7 @@
     "sacadia": {
       "catalogId": "tighten_focus",
       "transcribed": true,
-      "buildHash": "4d9b7e963d6e"
+      "buildHash": "f3dafc02d962"
     }
   }
 }

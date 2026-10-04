@@ -3,7 +3,7 @@
   "_key": "!items!95bdfb52d3259bb7",
   "name": "Wild Cleave",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/wild_cleave_icon.webp",
   "system": {
     "description": "<p>Whenever you kill an enemy with a melee weapon, if there is another enemy target who is both within your melee weapon range and within 5ft of that target, you may deal the remainder of your damage to that new target, provided your attack would hit the second target.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "wild_cleave",
       "transcribed": true,
-      "buildHash": "51c48f116bc9"
+      "buildHash": "d0d33c956322"
     }
   }
 }

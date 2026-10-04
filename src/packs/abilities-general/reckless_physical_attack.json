@@ -3,7 +3,7 @@
   "_key": "!items!c3e1c7e95cfe16b4",
   "name": "Reckless Physical Attack",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/reckless_physical_attack_icon.webp",
   "system": {
     "description": "<p>You may expend a Boost on a melee attack made on your turn against PD to get 1x advantage on all melee attacks you make against PD during your turn. All attacks made against your PD until the start of your next turn are made at 1x advantage.</p>",
     "tag": "boost",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reckless_physical_attack",
-      "buildHash": "f91b74649643"
+      "buildHash": "52b089ae32cc"
     }
   }
 }

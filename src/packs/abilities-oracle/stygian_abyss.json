@@ -3,7 +3,7 @@
   "_key": "!items!953d3edae342e0ff",
   "name": "Stygian Abyss",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/stygian_abyss_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/stygian_abyss_icon.webp",
   "system": {
     "description": "<p>You create a sphere with radius 5x your Madness in feet centered on a point you choose within 60ft. For as long as you maintain Focus, light does not penetrate into or out of this sphere. If your Madness changes, the radius of the aura changes. You may move the center of this sphere 10ft every turn when you expend a Focus action to maintain Focus on Stygian Abyss. Take X damage each turn you maintain Focus on Stygian Abyss, where X is your Proficiency (including the turn you initiate it).</p>",
     "tag": "focus",
@@ -101,7 +101,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "stygian_abyss",
-      "buildHash": "8b7d58159cbb"
+      "buildHash": "dfd4764e4ea8"
     }
   }
 }

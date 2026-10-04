@@ -3,7 +3,7 @@
   "_key": "!items!b808ee2cd9e4602b",
   "name": "Too Close!",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/too_close_icon.webp",
   "system": {
     "description": "<p>When you make an attack against a target within 5ft of you using a ranged weapon, increase the dice type by one type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "too_close",
-      "buildHash": "33bff2a6559c"
+      "buildHash": "26af2582138a"
     }
   }
 }

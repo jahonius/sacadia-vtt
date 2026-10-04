@@ -3,7 +3,7 @@
   "_key": "!items!49528785010a7bbd",
   "name": "Slickthrow",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/slickthrow_icon.webp",
   "system": {
     "description": "<p>When you use Treacherous Throw, increase the base dice type of Fumble given by one type.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "slickthrow",
       "transcribed": true,
-      "buildHash": "40b3b6c56abc"
+      "buildHash": "569edd2ecebf"
     }
   }
 }

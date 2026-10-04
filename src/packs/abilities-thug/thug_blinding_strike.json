@@ -3,7 +3,7 @@
   "_key": "!items!847562d87d50927b",
   "name": "Blinding Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_blinding_strike_icon.webp",
   "system": {
     "description": "<p>Choose a target you have pinned through Natural Wrestler and expend a trick point. They make a Finesse Check against your Check DC. If they fail, until the end of their next turn, they receive the Blinded Condition.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_blinding_strike",
-      "buildHash": "4e785f360ced"
+      "buildHash": "4873be79f6a6"
     }
   }
 }

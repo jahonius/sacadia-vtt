@@ -3,7 +3,7 @@
   "_key": "!items!f473aefcc67c8e63",
   "name": "Swordplay",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/swordplay_icon.webp",
   "system": {
     "description": "<p>When you wield a sword, increase the dice type of the Block reaction's effect by one type.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "swordplay",
-      "buildHash": "ac5948c00c2f"
+      "buildHash": "fc83fc74f8b8"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!11d22aad0dcfd3ff",
   "name": "Wild Throws",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/wild_throws_icon.webp",
   "system": {
     "description": "<p>When you use Wild Strike with Versatile Weapons, you may make Versatile throws with one or either weapon.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "wild_throws",
       "transcribed": true,
-      "buildHash": "134a083fce27"
+      "buildHash": "d2579d1559b9"
     }
   }
 }

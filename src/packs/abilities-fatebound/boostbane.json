@@ -3,7 +3,7 @@
   "_key": "!items!a1cfadfcf19879fe",
   "name": "Boostbane",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boostbane_icon.webp",
   "system": {
     "description": "<p>Expend two Boosts on a melee attack with your divine weapon. If you miss but your to-hit is greater than or equal to 5 below the target’s defense, reduce your weapon’s base damage by two dice types and deal that damage to the target. Do not add modifiers to damage dealt (only deal base damage dice).</p>",
     "tag": "boost",
@@ -51,7 +51,7 @@
     "sacadia": {
       "catalogId": "boostbane",
       "transcribed": true,
-      "buildHash": "df629538213f"
+      "buildHash": "71e2ab3a3a67"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!a1d73b67422e1f4a",
   "name": "Toxic Masculinity",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/thug_toxic_masculinity_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of all melee attacks you make by one type.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
       "catalogId": "thug_toxic_masculinity",
       "feature": true,
       "level": 15,
-      "buildHash": "0d2613f7c879"
+      "buildHash": "93e20345f8b4"
     }
   }
 }

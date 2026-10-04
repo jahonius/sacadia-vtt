@@ -3,7 +3,7 @@
   "_key": "!items!a21aedadf1555c00",
   "name": "Shield Bash",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/shield_bash_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of your shield by one dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shield_bash",
-      "buildHash": "98903999df54"
+      "buildHash": "8d0969c06e12"
     }
   }
 }

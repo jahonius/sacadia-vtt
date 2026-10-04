@@ -3,7 +3,7 @@
   "_key": "!items!32d21d089029b67c",
   "name": "Suppressing Fire",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/suppressing_fire_icon.webp",
   "system": {
     "description": "<p>Expend one Trickshot point and choose an X by X square within your ranged weapon range (where X is a number of tiles equal to half your Proficiency rounded up). Every creature within this space gets 1X disadvantage on all attacks they make while inside the space, and the terrain is treated as difficult terrain.</p>",
     "tag": "focus",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "suppressing_fire",
-      "buildHash": "aa1544e25593"
+      "buildHash": "a9778f956072"
     }
   }
 }

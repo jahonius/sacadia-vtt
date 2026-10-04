@@ -3,7 +3,7 @@
   "_key": "!items!ea7d12bbb1eb3762",
   "name": "Elemental Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/fb_elemental_weapon_icon.webp",
   "system": {
     "description": "<p>Your divine weapon does elemental damage (choose one when you take this ability: Earth, Air, Fire, Water, Rot, Salt) instead of normal damage. Elemental damage overcomes physical weapon resistances. Additionally, you may summon and dismiss your divine weapon with a Boost to any action, even if physically separated. The divine weapon does not take up space in your readied item slots (RIS).</p>",
     "tag": "passive",
@@ -41,7 +41,7 @@
       "catalogId": "fb_elemental_weapon",
       "feature": true,
       "level": 3,
-      "buildHash": "5c16abfce8f5"
+      "buildHash": "3c3a80276abb"
     }
   }
 }

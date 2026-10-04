@@ -3,7 +3,7 @@
   "_key": "!items!69e774a2482efc18",
   "name": "Sticking your Neck Out",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/sticking_your_neck_out_icon.webp",
   "system": {
     "description": "<p>When you use Remaneuver, you may increase your to-hit by an amount up to twice your Proficiency. Still gain Sting when you do this.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sticking_your_neck_out",
-      "buildHash": "d209607a2ed4"
+      "buildHash": "e77b0a36a039"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!4419269fd8c62c9c",
   "name": "Reactive Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_reactive_icon.webp",
   "system": {
     "description": "<p>Gain one additional reaction each turn.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "f0133374efd3"
+      "buildHash": "0063fdbd5bab"
     }
   }
 }

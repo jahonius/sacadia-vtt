@@ -3,7 +3,7 @@
   "_key": "!items!ace6371aa0a75c8c",
   "name": "Legendary Reactionary",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/legendary_reactionary_icon.webp",
   "system": {
     "description": "<p>When you expend an action to use Reactionary, gain two reactions to use before the start of the next turn. You may not use two reactions in response to the same event.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "legendary_reactionary",
-      "buildHash": "77844dd8aa68"
+      "buildHash": "689fd890a47e"
     }
   }
 }

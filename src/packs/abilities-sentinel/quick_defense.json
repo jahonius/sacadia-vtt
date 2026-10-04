@@ -3,7 +3,7 @@
   "_key": "!items!c68077cebaa41f83",
   "name": "Quick Defense",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/quick_defense_icon.webp",
   "system": {
     "description": "<p>When someone looses a ranged physical projectile at you (and after the roll is made), you can use your reaction to attempt to deflect it with your own ranged projectile. Roll 1D4 and remove it from the target's to-hit score. The dice type of this roll increases to 1D6 at level 5, and to 1D8 at level 11. Increase this dice type by 1 dice type if you have Steadied.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "quick_defense",
-      "buildHash": "8574d2cd5e3c"
+      "buildHash": "30f27964b20e"
     }
   }
 }

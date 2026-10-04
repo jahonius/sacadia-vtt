@@ -3,7 +3,7 @@
   "_key": "!items!392363a909b56808",
   "name": "Surrounded by Me",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_surrounded_by_me_icon.webp",
   "system": {
     "description": "<p>Once per turn as a Boost to a or melee attack action, increase damage on that attack by half your Proficiency (rounded up) for each enemy within 5ft of you if it successfully hits. Treat Swarm enemies as a single entity for this effect.</p>",
     "tag": "boost",
@@ -73,7 +73,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_surrounded_by_me",
-      "buildHash": "22967ee1b48b"
+      "buildHash": "34cc6f1dba31"
     }
   }
 }

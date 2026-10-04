@@ -3,7 +3,7 @@
   "_key": "!items!cef2089fdbb300c4",
   "name": "Targeted Foe",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/targeted_foe_icon.webp",
   "system": {
     "description": "<p>Choose one target. As long as you maintain Focus, add half your Fate (rounded up) to all to-hit and damage rolls made against that target. You may use this once per combat.</p>",
     "tag": "focus",
@@ -84,7 +84,7 @@
     "sacadia": {
       "catalogId": "targeted_foe",
       "transcribed": true,
-      "buildHash": "46120b85a490"
+      "buildHash": "ca5638cc9cce"
     }
   }
 }

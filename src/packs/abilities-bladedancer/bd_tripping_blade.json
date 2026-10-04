@@ -3,7 +3,7 @@
   "_key": "!items!50257c5b62527a3e",
   "name": "Tripping Blade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_tripping_blade_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. They make a Finesse Check against your Check DC or are knocked Prone.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_tripping_blade",
-      "buildHash": "af2da33bd9b3"
+      "buildHash": "117798c58b67"
     }
   }
 }

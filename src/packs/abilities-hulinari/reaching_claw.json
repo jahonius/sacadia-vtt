@@ -3,7 +3,7 @@
   "_key": "!items!b8a48b6dee5db80f",
   "name": "Reaching Claw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/reaching_claw_icon.webp",
   "system": {
     "description": "<p>Make a melee attack against an enemy 15’ from you in Brute Form. If successful, move them to within 10’ of you. Treat them as prone for your next attack made this turn.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
     "sacadia": {
       "catalogId": "reaching_claw",
       "transcribed": true,
-      "buildHash": "f39d6e391770"
+      "buildHash": "2f55363cb9b0"
     }
   }
 }

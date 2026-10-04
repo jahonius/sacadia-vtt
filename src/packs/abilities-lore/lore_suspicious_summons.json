@@ -3,7 +3,7 @@
   "_key": "!items!16e1eb0f504ad72a",
   "name": "Suspicious Summons",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_suspicious_summons_icon.webp",
   "system": {
     "description": "<p>Expend a lore point while in a city of your home culture. You summon Folk Fae from your home culture to the fight, with a combined CR up to one fourth your level (rounded up). These Folk Fae are allies to you, and help in the fight.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_suspicious_summons",
       "transcribed": true,
       "lore": true,
-      "buildHash": "d0785b085bca"
+      "buildHash": "3283791a9b62"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d86ac9d2fc489376",
   "name": "Animate Dead",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_animate_dead_icon.webp",
   "system": {
     "description": "<p>Choose the corpses of up to X creatures when you initiate this ability, where X is half your Proficiency Score (rounded up). Expend X Spell Slots. The corpses of these targets rise as CR2 Shambling Shades. Their turn is placed in the turn tracker immediately after you. Each turn after the turn you summon the Shades, when you renew Focus you give the Shades a simple command, which they follow on their turn. When your Focus ends, they all die, and they cannot be animated again.</p>",
     "tag": "focus",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Necromantic Lore[3]",
-      "buildHash": "827353a36609"
+      "buildHash": "4b4fabb40f3c"
     }
   }
 }

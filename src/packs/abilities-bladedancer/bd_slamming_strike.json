@@ -3,7 +3,7 @@
   "_key": "!items!4c7d6381fbe7eb13",
   "name": "Slamming Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_slamming_strike_icon.webp",
   "system": {
     "description": "<p>Expend one Arrangement point. You do not need to end movement made on this Arrangement within 5ft of your starting square. Instead, move up to your move speed in a straight line to a target creature and make a melee attack against them. Gain 1x advantage to your To-Hit and increase your base damage by one dice type if you successfully hit for every 15ft of distance traveled through Slamming Strike.</p>",
     "tag": "action",
@@ -53,7 +53,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_slamming_strike",
-      "buildHash": "8b9121ee178e"
+      "buildHash": "5262de50638d"
     }
   }
 }

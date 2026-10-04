@@ -3,7 +3,7 @@
   "_key": "!items!fd16ac91b38c2022",
   "name": "Larger Than Life",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/larger_than_life_icon.webp",
   "system": {
     "description": "<p>Your Brute Form is a Large creature rather than Medium.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "larger_than_life",
       "transcribed": true,
-      "buildHash": "4dc4d1cc09ed"
+      "buildHash": "9a38ede3217c"
     }
   }
 }

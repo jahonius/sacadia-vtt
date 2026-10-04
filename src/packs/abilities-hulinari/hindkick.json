@@ -3,7 +3,7 @@
   "_key": "!items!ddef6f20d5a3d7c3",
   "name": "Hindkick",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/hindkick_icon.webp",
   "system": {
     "description": "<p>When you use the Kick action on an enemy, they gain 1X Disadvantage on the Trait Check against Kick.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
     "sacadia": {
       "catalogId": "hindkick",
       "transcribed": true,
-      "buildHash": "ea579ce6374a"
+      "buildHash": "5d7a53026d05"
     }
   }
 }

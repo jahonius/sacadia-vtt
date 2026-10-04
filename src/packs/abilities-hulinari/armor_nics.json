@@ -3,7 +3,7 @@
   "_key": "!items!259825c45418413a",
   "name": "Armor Nics",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/armor_nics_icon.webp",
   "system": {
     "description": "<p>When you use 'Clouded Foe' on a target, you may use a reaction to reduce or increase their MD, PD, TD, or DR by your Finesse score against a single attack. You may declare this ability after the attack roll is made.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "armor_nics",
       "transcribed": true,
-      "buildHash": "663c9133ab79"
+      "buildHash": "b35f619103e2"
     }
   }
 }

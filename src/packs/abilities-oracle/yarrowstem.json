@@ -3,7 +3,7 @@
   "_key": "!items!0a281ab22d02d373",
   "name": "Yarrowstem",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/yarrowstem_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/yarrowstem_icon.webp",
   "system": {
     "description": "<p>After casting this, if you would drop to 0 madness on your turn or at its end, instead gain madness equal to half your Proficiency (rounded up). You may use this once per quick rest.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "yarrowstem",
-      "buildHash": "20a72a7b65f8"
+      "buildHash": "274312b9cb71"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!cddac80d65258a27",
   "name": "Jagged Blade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_jagged_blade_icon.webp",
   "system": {
     "description": "<p>Name one versatile weapon you own. The first time per quick rest that you attempt to Artery Strike a target with this weapon, attempt to give them one extra level of Hemorrhage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_jagged_blade",
-      "buildHash": "332a61580791"
+      "buildHash": "0fbaf880288e"
     }
   }
 }

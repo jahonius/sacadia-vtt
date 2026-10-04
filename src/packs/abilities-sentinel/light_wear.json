@@ -3,7 +3,7 @@
   "_key": "!items!ccbf94fca54e5bd9",
   "name": "Light Wear",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/light_wear_icon.webp",
   "system": {
     "description": "<p>When you wear only light armor, increase your PD by 1.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "light_wear",
-      "buildHash": "d2992e66482b"
+      "buildHash": "8c1f8a64163b"
     }
   }
 }

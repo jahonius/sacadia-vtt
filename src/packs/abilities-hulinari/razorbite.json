@@ -3,7 +3,7 @@
   "_key": "!items!d85cc84f8cbe889d",
   "name": "Razorbite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/razorbite_icon.webp",
   "system": {
     "description": "<p>As a Boost to Birdbite, instead of making attacks against all enemy targets, make a single Unarmed attack against one target in Clouded Foe. Increase the damage dice of this attack X times, where X is your Proficiency.</p>",
     "tag": "boost",
@@ -53,7 +53,7 @@
     "sacadia": {
       "catalogId": "razorbite",
       "transcribed": true,
-      "buildHash": "2af9da0b2d7b"
+      "buildHash": "4e1048edcc0c"
     }
   }
 }

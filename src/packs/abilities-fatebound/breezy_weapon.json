@@ -3,7 +3,7 @@
   "_key": "!items!d1af477356312c2a",
   "name": "Breezy Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/breezy_weapon_icon.webp",
   "system": {
     "description": "<p>Once per quick rest as a Boost to the Kick action, you may make the Kick action against a creature within 60ft of you instead of 5ft, and push them in any direction.</p>",
     "tag": "boost",
@@ -43,7 +43,7 @@
     "sacadia": {
       "catalogId": "breezy_weapon",
       "transcribed": true,
-      "buildHash": "94ccc22fd773"
+      "buildHash": "5489e1c213d2"
     }
   }
 }

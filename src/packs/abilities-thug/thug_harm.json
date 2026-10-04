@@ -3,7 +3,7 @@
   "_key": "!items!147a7ecc8edfb900",
   "name": "Harm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_harm_icon.webp",
   "system": {
     "description": "<p>Choose one target within melee range to whom you have given Wrestle Pin. They make a Finesse Check against your Check DC or take 1D10 damage per level of Pin they have.</p>",
     "tag": "action",
@@ -61,7 +61,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_harm",
-      "buildHash": "877cc059ab70"
+      "buildHash": "5545126351d6"
     }
   }
 }

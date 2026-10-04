@@ -3,7 +3,7 @@
   "_key": "!items!4e9c6656750c7f30",
   "name": "Gut Punch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_gut_punch_icon.webp",
   "system": {
     "description": "<p>In reaction to an ally successfully making a melee attack against a target to whom you have given Wrestle Pin and who currently has 3 or more levels of Wrestle Pin, you may expend a trick point and deal Harm damage.</p>",
     "tag": "reaction",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_gut_punch",
-      "buildHash": "4bfc0ed0fa7f"
+      "buildHash": "02ba7b552f12"
     }
   }
 }

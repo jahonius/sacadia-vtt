@@ -3,7 +3,7 @@
   "_key": "!items!2b9afb7bd56c63e9",
   "name": "Tweak the Heart",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_tweak_the_heart_icon.webp",
   "system": {
     "description": "<p>In reaction to an ally within 5ft of you attempting to give a target a condition, you may expend a reaction to increase their Check DC by 1 for that effect.</p>",
     "tag": "reaction",
@@ -52,7 +52,7 @@
       "catalogId": "wt_tweak_the_heart",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "77c150bf912e"
+      "buildHash": "f4b5f55fb51a"
     }
   }
 }

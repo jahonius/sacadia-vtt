@@ -3,7 +3,7 @@
   "_key": "!items!8b1cb2882df8cb62",
   "name": "Twist my Words",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_twist_my_words_icon.webp",
   "system": {
     "description": "<p>As a reaction to an ally within 5ft of you using an ability that would target an enemy, you may expend a Divine Touch point to allow them to target an ally instead.</p>",
     "tag": "reaction",
@@ -37,7 +37,7 @@
       "catalogId": "wt_twist_my_words",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "8405a6ae6b05"
+      "buildHash": "e19dd6a16b94"
     }
   }
 }

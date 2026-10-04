@@ -3,7 +3,7 @@
   "_key": "!items!c67ade2b97d718c2",
   "name": "Low Ground",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/low_ground_icon.webp",
   "system": {
     "description": "<p>Creatures do not get advantage to hit you when they have height advantage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "low_ground",
-      "buildHash": "9b0452479929"
+      "buildHash": "df67befa31b5"
     }
   }
 }

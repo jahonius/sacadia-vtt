@@ -3,7 +3,7 @@
   "_key": "!items!00f8fed914b0cf09",
   "name": "Tricky Boy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_tricky_boy_icon.webp",
   "system": {
     "description": "<p>Name one versatile weapon you own. This weapon does not deal damage. Instead, the first time you attack an enemy with this weapon in combat, they gain Surprised. This only works once per enemy per combat.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_tricky_boy",
-      "buildHash": "836b1cd0ddde"
+      "buildHash": "97581d1677e8"
     }
   }
 }

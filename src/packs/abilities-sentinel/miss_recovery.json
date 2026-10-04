@@ -3,7 +3,7 @@
   "_key": "!items!24e7d5e02de3f026",
   "name": "Miss Recovery",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/miss_recovery_icon.webp",
   "system": {
     "description": "<p>The first time each quick rest that you would make an attack with a bow and you roll a natural 1 on the dice roll applied to your to-hit, gain 1 AP for that turn.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "miss_recovery",
-      "buildHash": "ec856b3ee044"
+      "buildHash": "7221338be790"
     }
   }
 }

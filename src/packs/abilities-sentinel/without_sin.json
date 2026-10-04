@@ -3,7 +3,7 @@
   "_key": "!items!b142089d1f7114bd",
   "name": "Without Sin",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/without_sin_icon.webp",
   "system": {
     "description": "<p>When you critically hit with a sling attack that would cause a target to receive an adversarial condition, you may make the critical effect be that the target must roll against one additional level (to a maximum of your Proficiency).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "without_sin",
-      "buildHash": "a4520ef2d081"
+      "buildHash": "e6dc4acc9a23"
     }
   }
 }

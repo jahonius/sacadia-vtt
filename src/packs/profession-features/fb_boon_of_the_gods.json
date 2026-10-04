@@ -3,7 +3,7 @@
   "_key": "!items!e0818087f02d363d",
   "name": "Boon of the Gods",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/fb_boon_of_the_gods_icon.webp",
   "system": {
     "description": "<p>Your divine weapon is imbued with the aura of your divine patron. Once per quick rest, you may increase the damage dice of an attack by two dice types as a Boost to an attack.</p>",
     "tag": "boost",
@@ -58,7 +58,7 @@
       "catalogId": "fb_boon_of_the_gods",
       "feature": true,
       "level": 7,
-      "buildHash": "ca819773ca45"
+      "buildHash": "ca3c0f38ddc1"
     }
   }
 }

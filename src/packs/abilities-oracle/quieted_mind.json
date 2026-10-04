@@ -3,7 +3,7 @@
   "_key": "!items!0fad650d0150c91a",
   "name": "Quieted Mind",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/quieted_mind_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/quieted_mind_icon.webp",
   "system": {
     "description": "<p>Once per quick rest, remove all levels of any mental adversarial conditions as well as all Madness and Insanity.</p>",
     "tag": "action",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "quieted_mind",
-      "buildHash": "898e7b59e3fc"
+      "buildHash": "6de58aa154be"
     }
   }
 }

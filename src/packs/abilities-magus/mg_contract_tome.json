@@ -3,7 +3,7 @@
   "_key": "!items!66c0fb45fa52841a",
   "name": "Contract Tome",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_contract_tome_icon.webp",
   "system": {
     "description": "<p>Rarity Legendary[1], Element Salt, Prerequisites: Literary General Talent, Myrghos in Empire. Item Slots 1, Attunement Yes, Relic Yes. A meticulous white scroll, bound around a golden scroll rod. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Lawful Protection: Gain +1 to your MD, TD, or PD when you are attuned to this scroll (choose one when you take this ability).</p>",
     "tag": "passive",
@@ -83,7 +83,7 @@
       "transcribed": true,
       "prestige": "magus",
       "tome": "tome",
-      "buildHash": "888591b4ef5d"
+      "buildHash": "04e7ef78c9bf"
     }
   }
 }

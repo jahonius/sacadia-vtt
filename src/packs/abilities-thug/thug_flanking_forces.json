@@ -3,7 +3,7 @@
   "_key": "!items!d074177bdb7cb62d",
   "name": "Flanking Forces",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_flanking_forces_icon.webp",
   "system": {
     "description": "<p>When you have a target surrounded, you may use a boost to gain 1X Advantage on the first melee attack made against them each turn.</p>",
     "tag": "boost",
@@ -55,7 +55,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_flanking_forces",
-      "buildHash": "2b5771510fdf"
+      "buildHash": "678b6598f0d4"
     }
   }
 }

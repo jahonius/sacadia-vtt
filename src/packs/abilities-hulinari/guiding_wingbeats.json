@@ -3,7 +3,7 @@
   "_key": "!items!cbc1f23a407e448b",
   "name": "Guiding Wingbeats",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/guiding_wingbeats_icon.webp",
   "system": {
     "description": "<p>For as long as you maintain Focus, increase the To-Hit of all allies within the Cloud by +X, where X is half your Proficiency, rounded up.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "guiding_wingbeats",
       "transcribed": true,
-      "buildHash": "87e2dc216efd"
+      "buildHash": "bcb386469355"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!5851a770dd7c4858",
   "name": "Vision Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_vision_icon.webp",
   "system": {
     "description": "<p>Increase your number of prescient points by two.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "f8657ed9fe44"
+      "buildHash": "0fac96679b93"
     }
   }
 }

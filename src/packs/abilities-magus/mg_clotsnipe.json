@@ -3,7 +3,7 @@
   "_key": "!items!447b862af0e29789",
   "name": "Clotsnipe",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_clotsnipe_icon.webp",
   "system": {
     "description": "<p>Expend a Spell Slot. Make a ranged attack vs. TD in a 30ft line emanating from you. It targets all creatures in that line, terminating when it hits a wall or barrier. The attack deals 1D10+Wiles damage to any target it hits. For every additional AP you expend beyond the first in this attack (to a limit of your Proficiency), increase the dice type of the attack by one dice type, and the range by 10ft. When you make this attack, lose 1D4 HP per AP expended.</p>",
     "tag": "action",
@@ -78,7 +78,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Religious Rites[1]",
-      "buildHash": "1afa5bfb01d8"
+      "buildHash": "ef0b87dbf7c7"
     }
   }
 }

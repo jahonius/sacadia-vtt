@@ -3,7 +3,7 @@
   "_key": "!items!5ec3c99db64fc7ef",
   "name": "Siphon Soul",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_siphon_soul_icon.webp",
   "system": {
     "description": "<p>Expend X Spell Slots and attempt to give a target 2X Fatigue (X maxes at half your Proficiency, rounded up). The target makes Courage Checks against this effect. For every level of Fatigue they gain from this effect, gain 1 AP that you can use before the end of your turn. You may only use this once per combat.</p>",
     "tag": "action",
@@ -72,7 +72,7 @@
       "transcribed": true,
       "prestige": "magus",
       "tome": "blood",
-      "buildHash": "35bd5ed645fa"
+      "buildHash": "c1052d6ca825"
     }
   }
 }

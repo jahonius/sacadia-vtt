@@ -3,7 +3,7 @@
   "_key": "!items!d30e25fc0b2fa160",
   "name": "Herd Management",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/herd_management_icon.webp",
   "system": {
     "description": "<p>The number of herd points you get per quick rest is equal to twice your Proficiency Score. Form of the Brute You may only take the below abilities if you have the Brute Hulinari Heritage.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "herd_management",
       "transcribed": true,
-      "buildHash": "b36018ee0233"
+      "buildHash": "d7817d8f7dda"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!1ab5cb2bdb3fcd6c",
   "name": "Speed of the Gods",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/bd_speed_of_the_gods_icon.webp",
   "system": {
     "description": "<p>Increase your base Move Speed by 10ft. Increase your base Climb and Jump distance within combat by 5ft each.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
       "catalogId": "bd_speed_of_the_gods",
       "feature": true,
       "level": 15,
-      "buildHash": "b914db2c59dc"
+      "buildHash": "16fc2a0f2d20"
     }
   }
 }

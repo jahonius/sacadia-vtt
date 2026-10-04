@@ -3,7 +3,7 @@
   "_key": "!items!d5db2cf2f0063a71",
   "name": "Forest Hooves",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/forest_hooves_icon.webp",
   "system": {
     "description": "<p>Ignore difficult terrain from any cause.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "forest_hooves",
       "transcribed": true,
-      "buildHash": "79fecc8ce8f4"
+      "buildHash": "4f2ef005e310"
     }
   }
 }

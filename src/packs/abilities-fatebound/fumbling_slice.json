@@ -3,7 +3,7 @@
   "_key": "!items!32d62815a72cf9ba",
   "name": "Fumbling Slice",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/fumbling_slice_icon.webp",
   "system": {
     "description": "<p>When you critically hit a target, give them 1D4 Fumble in addition to other critical effects.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "fumbling_slice",
       "transcribed": true,
-      "buildHash": "1425c39bc748"
+      "buildHash": "abce8dfc8760"
     }
   }
 }

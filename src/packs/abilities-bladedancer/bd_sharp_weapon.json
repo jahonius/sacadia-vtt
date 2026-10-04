@@ -3,7 +3,7 @@
   "_key": "!items!1a7e61c63ef85a2a",
   "name": "Sharp Weapon",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_sharp_weapon_icon.webp",
   "system": {
     "description": "<p>Name one versatile weapon you own. Increase the dice type of that weapon by one dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_sharp_weapon",
-      "buildHash": "ced86861fe3e"
+      "buildHash": "74737bb5feef"
     }
   }
 }

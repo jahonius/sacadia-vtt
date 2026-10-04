@@ -3,7 +3,7 @@
   "_key": "!items!94503c67748689a5",
   "name": "Mastery of the Swarm",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_swarm_icon.webp",
   "system": {
     "description": "<p>Your flock constantly swarms around you. Gain damage resistance equal to half your Proficiency (rounded up) against all physical damage when in Swarm Form.</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "0d903f0fd1d1"
+      "buildHash": "03b13ad980d4"
     }
   }
 }

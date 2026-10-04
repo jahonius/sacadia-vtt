@@ -3,7 +3,7 @@
   "_key": "!items!bc16f01488e87195",
   "name": "Drag Faster",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_drag_faster_icon.webp",
   "system": {
     "description": "<p>As a Boost to the Move action when you have given a target Dragged through Forceful Pinnings, move at full speed.</p>",
     "tag": "boost",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_drag_faster",
-      "buildHash": "eb86cbb895c8"
+      "buildHash": "9d110c9b9048"
     }
   }
 }

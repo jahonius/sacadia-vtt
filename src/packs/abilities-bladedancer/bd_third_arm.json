@@ -3,7 +3,7 @@
   "_key": "!items!2010f536df7f9e99",
   "name": "Third Arm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_third_arm_icon.webp",
   "system": {
     "description": "<p>When you use Wild Strike, you may make up to three attacks using Wild Strike using a single AP. All of these attacks must be made against different targets.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_third_arm",
-      "buildHash": "53349bfbb50c"
+      "buildHash": "7686bb40f5f7"
     }
   }
 }

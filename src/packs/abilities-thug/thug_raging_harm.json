@@ -3,7 +3,7 @@
   "_key": "!items!215ad83bc547a6a3",
   "name": "Raging Harm",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_raging_harm_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of Harm by one dice type when you are Raging.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_raging_harm",
-      "buildHash": "5ce3343a730a"
+      "buildHash": "5b3d1e8f6805"
     }
   }
 }

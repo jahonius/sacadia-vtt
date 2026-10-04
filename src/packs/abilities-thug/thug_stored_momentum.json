@@ -3,7 +3,7 @@
   "_key": "!items!6130429daab7c8e6",
   "name": "Stored Momentum",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_stored_momentum_icon.webp",
   "system": {
     "description": "<p>You may only apply this Boost to Harm. Store the target's D20 roll against your Harm (do not store modifiers added to the D20 roll. You may do this whether the Finesse Check succeeds or fails against Harm). The next time someone other than the target you have pinned attempts to hit you, remove this stored number. If the D20 roll surpasses the D20 used in their attack, their attack hits your wrestling target instead of you. You may only store one Harm Check at a time this way, and if you use Stored Momentum when you have a stored roll, replace the stored roll. If your target removes all levels of Pin, lose any stored roll.</p>",
     "tag": "boost",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_stored_momentum",
-      "buildHash": "a831e49dde78"
+      "buildHash": "77f2fd2fa833"
     }
   }
 }

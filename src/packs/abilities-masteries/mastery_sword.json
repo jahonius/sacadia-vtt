@@ -3,7 +3,7 @@
   "_key": "!items!55c203c62b2313fb",
   "name": "Sword Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/masteries/mastery_sword_icon.webp",
   "system": {
     "description": "<p>Gain +1 to melee to-hit and damage with weapons in the sword family. While holding your sword, you may use an action to assume a parrying stance until the start of your next turn; while in it you gain one additional reaction, usable only to make an opportunity attack.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
     "sacadia": {
       "catalogId": "mastery_sword",
       "mastery": true,
-      "buildHash": "a1342f15f47b"
+      "buildHash": "2c450fac077b"
     }
   }
 }

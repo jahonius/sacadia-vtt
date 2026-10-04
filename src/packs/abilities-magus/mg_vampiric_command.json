@@ -3,7 +3,7 @@
   "_key": "!items!fc6880a6b7bcfa85",
   "name": "Vampiric Command",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_vampiric_command_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy taking damage from Hemorrhage due to Bloodsight, expend 1 Spell Slot. Remove all levels of Hemorrhage that target possesses, and decide the first X AP that they expense on their turn (where X is the levels of Hemorrhage removed).</p>",
     "tag": "reaction",
@@ -48,7 +48,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Demon Lore[3]",
-      "buildHash": "e8da04476df0"
+      "buildHash": "29695b690169"
     }
   }
 }

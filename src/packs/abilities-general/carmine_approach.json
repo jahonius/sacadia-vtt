@@ -3,7 +3,7 @@
   "_key": "!items!039a8db3f5bf8724",
   "name": "Carmine Approach",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/carmine_approach_icon.webp",
   "system": {
     "description": "<p>Gain an additional 1X Advantage when you have Half Cover.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "carmine_approach",
-      "buildHash": "f417040f8d7a"
+      "buildHash": "c7a6630a708e"
     }
   }
 }

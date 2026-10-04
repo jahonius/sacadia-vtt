@@ -3,7 +3,7 @@
   "_key": "!items!75b4411ffe8d6736",
   "name": "Blessing of Hot Coal",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_hot_coal_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_hot_coal_icon.webp",
   "system": {
     "description": "<p>Choose a target within 60ft of you. Reduce your Madness by up to M. Increase the damage dealt on that target's next attack (if they hit) by 1 Dice Type per level of Madness expended.</p>",
     "tag": "action",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blessing_of_hot_coal",
-      "buildHash": "f3c7b154547a"
+      "buildHash": "5aa883f4d3f7"
     }
   }
 }

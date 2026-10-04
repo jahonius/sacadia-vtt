@@ -3,7 +3,7 @@
   "_key": "!items!4208a7c14fa73f21",
   "name": "Birdbite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/birdbite_icon.webp",
   "system": {
     "description": "<p>Make an unarmed attack against all enemy targets inside your Swarm. Roll to-hit and damage separately against each. If a larger creature occupies multiple Clouded Foe tiles, you may make a separate attack against each occupied square.</p>",
     "tag": "action",
@@ -61,7 +61,7 @@
     "sacadia": {
       "catalogId": "birdbite",
       "transcribed": true,
-      "buildHash": "845b5d18515c"
+      "buildHash": "bdc7e6eef076"
     }
   }
 }

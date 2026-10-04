@@ -3,7 +3,7 @@
   "_key": "!items!b1ce2feef2bca9ef",
   "name": "Scrollwriter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_scrollwriter_icon.webp",
   "system": {
     "description": "<p>Gain 3 Spell Slots.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_scrollwriter",
       "feature": true,
       "level": 3,
-      "buildHash": "99531984783e"
+      "buildHash": "16bdfe15f7a9"
     }
   }
 }

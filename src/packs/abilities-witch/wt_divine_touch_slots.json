@@ -3,7 +3,7 @@
   "_key": "!items!831da6726e5b6a64",
   "name": "Divine Touch Slots",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_divine_touch_slots_icon.webp",
   "system": {
     "description": "<p>When you take this, gain an Action Pool of Divine Touch points equal to your Proficiency Score. You get all Divine Touch points back after a quick rest. When you take this ability, you may spend skill points to learn Divine Touches. Whenever you may spend skill points, you may add to the list of Divine Touches you know.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_divine_touch_slots",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "025a7be71c19"
+      "buildHash": "88dca8280439"
     }
   }
 }

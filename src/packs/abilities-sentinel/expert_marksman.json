@@ -3,7 +3,7 @@
   "_key": "!items!2eeb8205923d4b39",
   "name": "Expert Marksman",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/expert_marksman_icon.webp",
   "system": {
     "description": "<p>When you make a ranged attack, do not gain 1X disadvantage to attacks made against creatures with half cover.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "expert_marksman",
-      "buildHash": "237b931c4f33"
+      "buildHash": "e9c4c2a63ae3"
     }
   }
 }

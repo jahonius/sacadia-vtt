@@ -3,7 +3,7 @@
   "_key": "!items!d7082f18c31c0a61",
   "name": "Most Dangerous Game",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/most_dangerous_game_icon.webp",
   "system": {
     "description": "<p>When you fight humanoid creatures, gain +1 to hit and damage.</p>",
     "tag": "passive",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "most_dangerous_game",
-      "buildHash": "bf1eef73229b"
+      "buildHash": "78af076802f5"
     }
   }
 }

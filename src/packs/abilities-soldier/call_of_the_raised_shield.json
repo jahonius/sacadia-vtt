@@ -3,7 +3,7 @@
   "_key": "!items!f2a5bb39a0475810",
   "name": "Call of the Raised Shield",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_the_raised_shield_icon.webp",
   "system": {
     "description": "<p>Expend 1 Call Point as a reaction to impose 1X advantage on X targets (you or allies) within 15ft on Trait Checks against one effect. X is half your Proficiency (rounded up).</p>",
     "tag": "reaction",
@@ -50,7 +50,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_the_raised_shield",
-      "buildHash": "309600f7e1d2"
+      "buildHash": "2acf5a728434"
     }
   }
 }

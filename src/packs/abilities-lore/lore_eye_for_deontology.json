@@ -3,7 +3,7 @@
   "_key": "!items!67db0288193b1e9e",
   "name": "Eye for Deontology",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_eye_for_deontology_icon.webp",
   "system": {
     "description": "<p>If you spend at least one minute speaking with someone, you may expend a lore point to immediately know their alignment (according to your moral deontology), deepest desires, and one secret about them.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_eye_for_deontology",
       "transcribed": true,
       "lore": true,
-      "buildHash": "cf44c384de5c"
+      "buildHash": "b0021741127f"
     }
   }
 }

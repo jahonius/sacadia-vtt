@@ -3,7 +3,7 @@
   "_key": "!items!5eb174731307db20",
   "name": "Witch's Control",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/wt_witchs_control_icon.webp",
   "system": {
     "description": "<p>You may use Witch's Finger on every adversarial condition.</p>",
     "tag": "boost",
@@ -37,7 +37,7 @@
       "catalogId": "wt_witchs_control",
       "feature": true,
       "level": 15,
-      "buildHash": "b357c19d8036"
+      "buildHash": "a11c1266389a"
     }
   }
 }

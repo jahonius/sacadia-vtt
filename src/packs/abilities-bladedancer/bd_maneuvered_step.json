@@ -3,7 +3,7 @@
   "_key": "!items!5c0a727a2aac6054",
   "name": "Maneuvered Step",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_maneuvered_step_icon.webp",
   "system": {
     "description": "<p>Expend one Arrangement point. Move up to your move speed. As you move, any creature within 5ft of you which has not yet been moved by your Maneuvering Dance is moved 5ft away from you, unless the space they would move into is blocked by another creature or object. Creatures are moved by this effect the first time you step within 5ft of them. You may not use this action if you are sharing a square with another creature.</p>",
     "tag": "action",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_maneuvered_step",
-      "buildHash": "b1eee51cc77d"
+      "buildHash": "14219d18b8c4"
     }
   }
 }

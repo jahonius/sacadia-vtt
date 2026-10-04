@@ -3,7 +3,7 @@
   "_key": "!items!79f9a2a95a62a285",
   "name": "Stormcloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/stormcloud_icon.webp",
   "system": {
     "description": "<p>Increase the tiles Clouded Foe and Clouded Ally occupy by 2.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "stormcloud",
       "transcribed": true,
-      "buildHash": "ca7d138dac56"
+      "buildHash": "0b839d84f2bd"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!ec136e373145c959",
   "name": "Shrieking Abyss",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/shrieking_abyss_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/shrieking_abyss_icon.webp",
   "system": {
     "description": "<p>Every enemy who starts their turn within Stygian Abyss must roll a Fate Check or take MD2 damage. Increase this damage to MD4 at level 5, and MD6 at level 11.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shrieking_abyss",
-      "buildHash": "d46179b2fdbc"
+      "buildHash": "e8d69c319971"
     }
   }
 }

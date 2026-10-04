@@ -3,7 +3,7 @@
   "_key": "!items!6535119019fec114",
   "name": "Drain Tolerant",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/drain_tolerant_icon.webp",
   "system": {
     "description": "<p>You may take this ability up to three times (2nd/3rd instance costs 3 CSP). Each time, choose one adversarial condition: Corroded, Debilitated, Delirium, Hemorrhage, Jinxed, Nausea, Pinned, Paralysis, Pulled, Slowed, or Sting. When someone attempts to give you that condition, make your initial Trait Check against the effect at 1X advantage. Choosing the same condition each time stacks the advantage.</p>",
     "tag": "passive",
@@ -63,7 +63,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "drain_tolerant",
-      "buildHash": "e5ec2284c609"
+      "buildHash": "fb287934314b"
     }
   }
 }

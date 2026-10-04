@@ -3,7 +3,7 @@
   "_key": "!items!55c4563b9fa6d963",
   "name": "Reverse Pankration",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_reverse_pankration_icon.webp",
   "system": {
     "description": "<p>For every 2 successful melee attacks you have made against a target this turn, increase your Check DC by 1.</p>",
     "tag": "passive",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_reverse_pankration",
-      "buildHash": "b5a495d398f6"
+      "buildHash": "a19b7166f634"
     }
   }
 }

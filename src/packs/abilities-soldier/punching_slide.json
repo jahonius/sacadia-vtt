@@ -3,7 +3,7 @@
   "_key": "!items!3da9773c47fc0827",
   "name": "Punching Slide",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/punching_slide_icon.webp",
   "system": {
     "description": "<p>When you use Step and Slide, increase the damage dealt by your one-handed melee weapon by one additional dice type.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "punching_slide",
-      "buildHash": "8dcf2aeb118b"
+      "buildHash": "f1e12042da36"
     }
   }
 }

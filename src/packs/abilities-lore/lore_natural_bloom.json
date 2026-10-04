@@ -3,7 +3,7 @@
   "_key": "!items!8ed5103912f709fc",
   "name": "Natural Bloom",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_natural_bloom_icon.webp",
   "system": {
     "description": "<p>Expending a Lore Point while in the natural biome of your Sylnfolk Ancestry, defined when you create your character. For the next minute, you gain the following abilities: **Biome’s Touch** (Reaction): As a reaction to an enemy or ally making an attack within your biome while steadied, you can make it succeed or fail. You may not affect nat1s or nat20s rolled this way. **Biomestep** (Boost): As a Boost to a Move action, disappear and reappear within 30ft on the map within your Biome. You do not provoke attacks of opportunity through this boosted teleportation.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_natural_bloom",
       "transcribed": true,
       "lore": true,
-      "buildHash": "fcc22b2ed237"
+      "buildHash": "77820da14eac"
     }
   }
 }

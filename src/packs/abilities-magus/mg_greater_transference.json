@@ -3,7 +3,7 @@
   "_key": "!items!d5ce178079d97af8",
   "name": "Greater Transference",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_transference_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of Life Transference from XD6 to XD8.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "transcribed": true,
       "prestige": "magus",
       "tome": "blood",
-      "buildHash": "b07a0f0281b9"
+      "buildHash": "df48399327e5"
     }
   }
 }

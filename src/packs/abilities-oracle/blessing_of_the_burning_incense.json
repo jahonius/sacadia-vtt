@@ -3,7 +3,7 @@
   "_key": "!items!ac999b9954db0805",
   "name": "Blessing of the Burning Incense",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_burning_incense_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_burning_incense_icon.webp",
   "system": {
     "description": "<p>As an action, touch an ally who has any adversarial condition. Remove any number of your Madness levels and roll that number of Trait Checks against one of that ally's conditions. If you have jewelry or other bonuses to trait checks, you can apply them here.</p>",
     "tag": "action",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blessing_of_the_burning_incense",
-      "buildHash": "4838eaa59a82"
+      "buildHash": "13fb7fa6d7f9"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!99a230830e1da1bd",
   "name": "Talented Mage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_talented_mage_icon.webp",
   "system": {
     "description": "<p>Gain one additional Talent Point to spend this level. You must spend this Talent point on Knowledge Talents.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "mg_talented_mage",
       "feature": true,
       "level": 7,
-      "buildHash": "9ff6d11fa2d8"
+      "buildHash": "da0432652e4e"
     }
   }
 }

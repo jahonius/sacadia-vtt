@@ -3,7 +3,7 @@
   "_key": "!items!11bcd4f726777c07",
   "name": "Flashfire",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/flashfire_icon.webp",
   "system": {
     "description": "<p>When a target moves to within 15ft of you from further away, you may use your reaction to attempt to give them Surprise. They roll Wiles Checks against the effect.</p>",
     "tag": "reaction",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "flashfire",
-      "buildHash": "577e914b1cc2"
+      "buildHash": "41f5c34078de"
     }
   }
 }

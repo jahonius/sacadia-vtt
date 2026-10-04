@@ -3,7 +3,7 @@
   "_key": "!items!e793d8c292a3a84f",
   "name": "Silent Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_silent_strike_icon.webp",
   "system": {
     "description": "<p>Whenever you make a melee attack against a creature with Surprise, do so with 1X advantage.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_silent_strike",
-      "buildHash": "4d759db6424a"
+      "buildHash": "f52a445804fd"
     }
   }
 }

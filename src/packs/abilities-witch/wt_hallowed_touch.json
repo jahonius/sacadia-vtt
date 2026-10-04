@@ -3,7 +3,7 @@
   "_key": "!items!2f9fda67a3dc838d",
   "name": "Hallowed Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_hallowed_touch_icon.webp",
   "system": {
     "description": "<p>When an ally within 5ft of you attempts to give temporary HP, you may expend a Reaction to add one die to the amount rolled (e.g., if they would roll 3D4, they instead roll 4D4).</p>",
     "tag": "reaction",
@@ -62,7 +62,7 @@
       "catalogId": "wt_hallowed_touch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "bcfd0f8f4ea4"
+      "buildHash": "23da3f491920"
     }
   }
 }

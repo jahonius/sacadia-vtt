@@ -3,7 +3,7 @@
   "_key": "!items!9b6dd6aa1105fbb8",
   "name": "Death Ward",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_death_ward_icon.webp",
   "system": {
     "description": "<p>Choose a target within 5ft of you when you initiate this, and expend a Spell Slot. The next time they would drop to 0HP or below, they drop to 1HP instead, and your Focus ends.</p>",
     "tag": "focus",
@@ -48,7 +48,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Astrology[3]",
-      "buildHash": "e10632634d05"
+      "buildHash": "853c0cb2ae01"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!f8a2c437b6652c17",
   "name": "Exhaustive Rage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_exhaustive_rage_icon.webp",
   "system": {
     "description": "<p>When you are raging and successfully make at least 5 melee attacks against an enemy in a round, that enemy makes a Power Check against your Check DC or takes one level of Debilitated if they do not already have one.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_exhaustive_rage",
-      "buildHash": "4f6a5beca169"
+      "buildHash": "37c500e355f5"
     }
   }
 }

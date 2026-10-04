@@ -3,7 +3,7 @@
   "_key": "!items!eb3bfc8750b53979",
   "name": "Mind Sliver",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_mind_sliver_icon.webp",
   "system": {
     "description": "<p>As a reaction to a target making a Trait Check against a mental condition, expend a Spell Slot. The target gets 1X Disadvantage on the Trait Check, and takes 1D4 mental damage for each failed Trait Check made. Increase the damage of this effect to 1D6 at Level 5, and 1D8 at Level 11.</p>",
     "tag": "reaction",
@@ -59,7 +59,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Intuition[1]",
-      "buildHash": "9d551ca21b5a"
+      "buildHash": "c2b8a500d623"
     }
   }
 }

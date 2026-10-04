@@ -3,7 +3,7 @@
   "_key": "!items!bdb8db4fdc9a90e4",
   "name": "Mastery of the Versatile Weapon",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/masteries/mastery_versatile_weapon_icon.webp",
   "system": {
     "description": "<p>Increase To-Hit and damage by +1 on all attacks you make with a Versatile weapon.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
     "sacadia": {
       "catalogId": "mastery_versatile_weapon",
       "mastery": true,
-      "buildHash": "ee87a02b508f"
+      "buildHash": "da88628943e1"
     }
   }
 }

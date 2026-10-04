@@ -3,7 +3,7 @@
   "_key": "!items!2b95b672dbd509fe",
   "name": "Mastery of the Pack",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/legendary_pack_icon.webp",
   "system": {
     "description": "<p>The first time each turn you move within 5ft of an enemy in Pack Form, deal damage to them equal to your Finesse.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "41f0ba85d08d"
+      "buildHash": "978fec424087"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!6bac2490c18e365c",
   "name": "Improvisational",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/improvisational_icon.webp",
   "system": {
     "description": "<p>When you use the Block or Dodge reaction and only wield unarmed weapons, increase the benefit by 1 dice type.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "improvisational",
-      "buildHash": "ff19f962fc5a"
+      "buildHash": "6664280eec60"
     }
   }
 }

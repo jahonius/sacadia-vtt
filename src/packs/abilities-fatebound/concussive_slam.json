@@ -3,7 +3,7 @@
   "_key": "!items!3686234a1c02df37",
   "name": "Concussive Slam",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/concussive_slam_icon.webp",
   "system": {
     "description": "<p>As a Boost to Bludgeonmaster, rend one armor on all targets who fail the Bludgeonmaster Check DC.</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "concussive_slam",
       "transcribed": true,
-      "buildHash": "1222bab55ea3"
+      "buildHash": "783a7bda1a37"
     }
   }
 }

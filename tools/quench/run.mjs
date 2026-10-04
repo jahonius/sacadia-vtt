@@ -20,6 +20,7 @@
  *   QUENCH_PORT   the server port; default 30123
  *   QUENCH_ALL_ERRORS=1  print every browser error after the run, not only the system's
  *   QUENCH_SYSTEM the system folder to test; default this repo (point it at an unpacked release zip to test what ships)
+ *   QUENCH_SCREENSHOTS=<dir>  let tests save screenshots there (`window.__quenchScreenshot(name)`)
  *
  * Close any Foundry server that has this system's world loaded first: the compendium files can only be open once.
  */
@@ -180,6 +181,12 @@ async function runBatches() {
   await page.evaluate(async () => { await quench.app.render({ force: true }); });
   await page.waitForFunction(() => !!quench.app.element, null, { timeout: 30000 });
   await page.exposeFunction('__quenchProgress', (line) => console.log(line));
+  // QUENCH_SCREENSHOTS=<dir>: tests may call `window.__quenchScreenshot(name)` to save the page as <dir>/<name>.png.
+  if (process.env.QUENCH_SCREENSHOTS) {
+    const dir = path.resolve(process.env.QUENCH_SCREENSHOTS);
+    fs.mkdirSync(dir, { recursive: true });
+    await page.exposeFunction('__quenchScreenshot', async (name) => { await page.screenshot({ path: path.join(dir, `${name}.png`) }); });
+  }
   await page.evaluate((f) => { window.sacadiaSweepFilter = f; }, sweepFilter);
   const json = await page.evaluate((pat) => new Promise(async (resolve) => {
     Hooks.once('quenchReports', ({ json: j }) => resolve(j));

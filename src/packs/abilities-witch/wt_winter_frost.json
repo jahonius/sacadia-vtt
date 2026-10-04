@@ -3,7 +3,7 @@
   "_key": "!items!7ce9af8a374a6b60",
   "name": "Winter Frost",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_winter_frost_icon.webp",
   "system": {
     "description": "<p>Choose an enemy within 5ft of you, as well as one Adversarial Condition of which they possess at least one level. Expend a Divine Touch Point. That target’s condition becomes Enduring for as long as you maintain Focus. Every turn you maintain Focus on Winter Frost, you can only renew Focus on this ability when you are within 5ft of that target. You must expend one Divine Touch Point each turn when you renew Focus.</p>",
     "tag": "focus",
@@ -136,7 +136,7 @@
       "catalogId": "wt_winter_frost",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "36faac657518"
+      "buildHash": "68ffedfca976"
     }
   }
 }

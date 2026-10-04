@@ -3,7 +3,7 @@
   "_key": "!items!53bfcf5f4ae33726",
   "name": "Masterful Stepping",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_masterful_stepping_icon.webp",
   "system": {
     "description": "<p>If you expend a lore point this way, all enemy attacks would miss you even if they would hit until the start of your next turn.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_masterful_stepping",
       "transcribed": true,
       "lore": true,
-      "buildHash": "21381342df96"
+      "buildHash": "742348356d52"
     }
   }
 }

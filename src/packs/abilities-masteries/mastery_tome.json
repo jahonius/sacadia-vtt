@@ -3,7 +3,7 @@
   "_key": "!items!d45dcfbbb7c3f9fe",
   "name": "Tome Mastery",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/masteries/mastery_tome_icon.webp",
   "system": {
     "description": "<p>When you cast 'Forbidden Knowledge', increase the damage dice dealt by one dice type (e.g., XD8 becomes XD10).</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
     "sacadia": {
       "catalogId": "mastery_tome",
       "mastery": true,
-      "buildHash": "cc4a345f039a"
+      "buildHash": "1d58fbc40cff"
     }
   }
 }

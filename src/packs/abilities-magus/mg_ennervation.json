@@ -3,7 +3,7 @@
   "_key": "!items!2b9e5d4dd3370641",
   "name": "Ennervation",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_ennervation_icon.webp",
   "system": {
     "description": "<p>Touch one target within 5ft and expend a Spell Slot. They make a Fate Check. If they fail, Roll XD8, where X is your Proficiency. They take that damage. Gain half the damage dealt (rounded up) as temporary HP.</p>",
     "tag": "action",
@@ -68,7 +68,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Bloodthinner, Vampiric Command, and Vampiric Siphon are already in your Tome",
-      "buildHash": "c8826afb6f12"
+      "buildHash": "455d9416a5b7"
     }
   }
 }

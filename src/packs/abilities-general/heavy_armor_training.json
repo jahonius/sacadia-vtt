@@ -3,7 +3,7 @@
   "_key": "!items!f3d88d2a3ac6d5f1",
   "name": "Heavy Armor Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/heavy_armor_training_icon.webp",
   "system": {
     "description": "<p>Gain training in Heavy Armor.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "heavy_armor_training",
-      "buildHash": "4c8aa6bd7626"
+      "buildHash": "59a59d53cbc4"
     }
   }
 }

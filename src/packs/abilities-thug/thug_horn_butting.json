@@ -3,7 +3,7 @@
   "_key": "!items!ac4298d017611087",
   "name": "Horn Butting",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_horn_butting_icon.webp",
   "system": {
     "description": "<p>As a boost to the Kick action, deal 1D10+Power damage if they fail the Trait Check. Increase damage dealt this way to 2D6+Power damage at level 5, and 2D8+Power damage at level 11.</p>",
     "tag": "boost",
@@ -67,7 +67,7 @@
           "ladderIndex": 6
         }
       ],
-      "buildHash": "16097793780a"
+      "buildHash": "94d2fea425cc"
     }
   }
 }

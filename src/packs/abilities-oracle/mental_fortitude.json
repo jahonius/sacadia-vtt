@@ -3,7 +3,7 @@
   "_key": "!items!c22f1c99595f94ea",
   "name": "Mental Fortitude",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/mental_fortitude_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mental_fortitude_icon.webp",
   "system": {
     "description": "<p>Your mind is like a steel trap. Add your Wiles score to any Trait Check you make against mental conditions. If the Trait Check you must make is a Wiles Check, add your Wiles score again.</p>",
     "tag": "passive",
@@ -61,7 +61,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "mental_fortitude",
-      "buildHash": "50cdfad771ee"
+      "buildHash": "b41c330206e3"
     }
   }
 }

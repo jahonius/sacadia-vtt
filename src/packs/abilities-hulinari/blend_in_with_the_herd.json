@@ -3,7 +3,7 @@
   "_key": "!items!4bce45ab18f95c63",
   "name": "Blend in with the Herd",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/blend_in_with_the_herd_icon.webp",
   "system": {
     "description": "<p>Expend a Herd Point as a reaction to an enemy making an attack against you or an ally within 5ft of you. If you do, roll 1DX, where X is the number of allies within 5ft of you, including yourself, and each outcome on the 1DX roll corresponds to an ally. The enemy’s attack instead targets the target rolled on the 1DX die. If the target is out of range of the enemy’s attack, that attack misses.</p>",
     "tag": "reaction",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "blend_in_with_the_herd",
       "transcribed": true,
-      "buildHash": "03596f490ed8"
+      "buildHash": "6ea4a508e5c3"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!fa6196c88663056f",
   "name": "Vaulter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_vaulter_icon.webp",
   "system": {
     "description": "<p>Once per turn as a reaction to a creature ending a move action within 5ft of you, you may move 10 feet in any direction. If you have Steadied, you may move 20 feet.</p>",
     "tag": "reaction",
@@ -43,7 +43,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_vaulter",
-      "buildHash": "eb6405d08180"
+      "buildHash": "5b3134f40ef2"
     }
   }
 }

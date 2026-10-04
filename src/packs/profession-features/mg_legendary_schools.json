@@ -3,7 +3,7 @@
   "_key": "!items!711c7813484be9e3",
   "name": "Mastery of Schools",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/mg_legendary_schools_icon.webp",
   "system": {
     "description": "<p>Choose one ability from a different subclass than yours. Research that ability and add it to your Tome. You may take this ability (as may those who follow).</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "09ef2a6ceb4a"
+      "buildHash": "23b6ca92733d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!c350017286afad62",
   "name": "Stood Ground",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/stood_ground_icon.webp",
   "system": {
     "description": "<p>Choose one target. For each turn that you maintain Focus on that target (beginning on the round you initiate this ability), reduce damage they deal to you by 1 through any effect. If you leave the square you are standing in when you activate Stood Ground through any cause, your Focus immediately ends.</p>",
     "tag": "focus",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "stood_ground",
-      "buildHash": "7b9ac996037b"
+      "buildHash": "43c0f5c3dc25"
     }
   }
 }

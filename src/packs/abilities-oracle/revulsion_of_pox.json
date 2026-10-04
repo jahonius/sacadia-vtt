@@ -3,7 +3,7 @@
   "_key": "!items!6150048b07720a22",
   "name": "Revulsion of Pox",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/revulsion_of_pox_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/revulsion_of_pox_icon.webp",
   "system": {
     "description": "<p>Attempt to give Nausea up to your proficiency to one target within 60ft of you that you can see. They roll a Power Check against the effect.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "revulsion_of_pox",
-      "buildHash": "49d1ae9e0035"
+      "buildHash": "073d98037660"
     }
   }
 }

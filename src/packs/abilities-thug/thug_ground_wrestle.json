@@ -3,7 +3,7 @@
   "_key": "!items!3a69607fbe4f526a",
   "name": "Ground Wrestle",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_ground_wrestle_icon.webp",
   "system": {
     "description": "<p>When you attempt to give Wrestle Pin to a target who is Prone, they make their Finesse Checks at 1X Disadvantage.</p>",
     "tag": "passive",
@@ -50,7 +50,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_ground_wrestle",
-      "buildHash": "105a8c7c3f93"
+      "buildHash": "a46218b5bf2d"
     }
   }
 }

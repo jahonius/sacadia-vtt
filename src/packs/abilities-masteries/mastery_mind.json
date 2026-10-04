@@ -3,7 +3,7 @@
   "_key": "!items!ee80c39c33633465",
   "name": "Mastery of the Mind",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/masteries/mastery_mind_icon.webp",
   "system": {
     "description": "<p>When you are insane, insane-table effects cannot force you to attack an ally or treat allies as enemies.</p>",
     "tag": "passive",
@@ -26,7 +26,7 @@
     "sacadia": {
       "catalogId": "mastery_mind",
       "mastery": true,
-      "buildHash": "c9a4a4bfe1d4"
+      "buildHash": "1c71cf852a0c"
     }
   }
 }

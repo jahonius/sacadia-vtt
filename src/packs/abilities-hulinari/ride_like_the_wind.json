@@ -3,7 +3,7 @@
   "_key": "!items!0f0965ca92c20591",
   "name": "Ride Like the Wind",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/ride_like_the_wind_icon.webp",
   "system": {
     "description": "<p>As long as you maintain Focus in Pack Form, double your movement speed.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "ride_like_the_wind",
       "transcribed": true,
-      "buildHash": "2009e4bb265d"
+      "buildHash": "6e9a0758a225"
     }
   }
 }

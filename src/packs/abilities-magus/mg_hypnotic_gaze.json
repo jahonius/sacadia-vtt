@@ -3,7 +3,7 @@
   "_key": "!items!46691c8b801e42ef",
   "name": "Hypnotic Gaze",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_hypnotic_gaze_icon.webp",
   "system": {
     "description": "<p>Expend a Spell Slot and choose a target within 60ft. They make Fate Checks against X levels of Frenzied, where X is half your Proficiency, rounded up.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Divination",
-      "buildHash": "9685f613ce72"
+      "buildHash": "3e31b162b3c3"
     }
   }
 }

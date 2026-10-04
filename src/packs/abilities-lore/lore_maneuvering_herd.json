@@ -3,7 +3,7 @@
   "_key": "!items!438e58e2b2df88c2",
   "name": "Maneuvering Herd",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_maneuvering_herd_icon.webp",
   "system": {
     "description": "<p>Expend a Lore point when within 5ft of any number of allies up to your Proficiency. You may then move up to your Move Speed, carrying any number of those allies anywhere along that route with you.</p>",
     "tag": "action",
@@ -38,7 +38,7 @@
       "catalogId": "lore_maneuvering_herd",
       "transcribed": true,
       "lore": true,
-      "buildHash": "20a35bcc8836"
+      "buildHash": "eb35d569e6c9"
     }
   }
 }

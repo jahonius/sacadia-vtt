@@ -3,7 +3,7 @@
   "_key": "!items!583978eccb5824bf",
   "name": "Fumbling Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/fumbling_strike_icon.webp",
   "system": {
     "description": "<p>As a Boost to a ranged weapon attack, expend a Trickshot point. If you hit, attempt to give the target Fumble equal to your Proficiency in addition to damage dealt.</p>",
     "tag": "boost",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "fumbling_strike",
-      "buildHash": "493f9d0ba5e7"
+      "buildHash": "1a82c2ca359f"
     }
   }
 }

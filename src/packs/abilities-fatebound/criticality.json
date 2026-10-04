@@ -3,7 +3,7 @@
   "_key": "!items!79d14791387a5586",
   "name": "Criticality",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/criticality_icon.webp",
   "system": {
     "description": "<p>Your attacks critically hit whenever you roll a natural 19 or 20, rather than only a 20.</p>",
     "tag": "passive",
@@ -49,7 +49,7 @@
     "sacadia": {
       "catalogId": "criticality",
       "transcribed": true,
-      "buildHash": "1d4d3c2ee2bc"
+      "buildHash": "7251075db4b4"
     }
   }
 }

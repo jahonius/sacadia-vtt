@@ -3,7 +3,7 @@
   "_key": "!items!4ec6452e2b33e965",
   "name": "Step and Slide",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/step_and_slide_icon.webp",
   "system": {
     "description": "<p>As a boost to Stepping Strike, increase the damage dealt by your one-handed melee weapon by one dice type.</p>",
     "tag": "boost",
@@ -60,7 +60,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "step_and_slide",
-      "buildHash": "0587585e312d"
+      "buildHash": "9ae9f0c7ea43"
     }
   }
 }

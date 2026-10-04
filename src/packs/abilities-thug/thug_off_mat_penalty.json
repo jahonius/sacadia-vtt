@@ -3,7 +3,7 @@
   "_key": "!items!98b55df1dd67caca",
   "name": "Off-Mat Penalty",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_off_mat_penalty_icon.webp",
   "system": {
     "description": "<p>A target to whom you have given Wrestle Pin may be Kicked or pushed (through any actions that would maneuver the target) by your allies without ending Pin provided you can move with the target and retain the same orientation with respect to the target.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_off_mat_penalty",
-      "buildHash": "a58c51b3d4ea"
+      "buildHash": "06a9d5a5217e"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!5387306a14db8c4d",
   "name": "Relaxed Call",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/relaxed_call_icon.webp",
   "system": {
     "description": "<p>When you use Call of Respite, gain 1X advantage on Trait Checks made to aid your allies.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "relaxed_call",
-      "buildHash": "cc2ff31d0ce1"
+      "buildHash": "ce97ffb3f0a5"
     }
   }
 }

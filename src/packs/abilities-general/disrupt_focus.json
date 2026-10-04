@@ -3,7 +3,7 @@
   "_key": "!items!65b3df45d3b66bbd",
   "name": "Disrupt Focus",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/disrupt_focus_icon.webp",
   "system": {
     "description": "<p>Attempt to disrupt the Focus of a single target within 5ft. They make a Wiles Check against your Check DC or lose Focus on any Focus action they are maintaining.</p>",
     "tag": "action",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "disrupt_focus",
-      "buildHash": "f9b9e1b80aaa"
+      "buildHash": "0579291538a9"
     }
   }
 }

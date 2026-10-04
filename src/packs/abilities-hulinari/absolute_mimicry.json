@@ -3,7 +3,7 @@
   "_key": "!items!d7e13febe712492b",
   "name": "Absolute Mimicry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/absolute_mimicry_icon.webp",
   "system": {
     "description": "<p>Choose a target within 30ft and give one of the following one-word commands to them. They make a Wiles Check against your Check DC or use their next action to follow the command. Once a target makes a trait check against this effect, you cannot use it against them again until a quick rest has ended. Stop: The target loses 1 AP on their next turn and does not get a reaction between now and the start of their turn. Flee: The target uses their first action to move 30ft away from the nearest enemy target, provoking a reaction attack as they do. Attack: The target uses their first turn to attack the nearest enemy. This effect cannot make them attack an ally. If there are no targets within range, they treat this like Stop. Drop: The target falls Prone as a reaction. They may stand up on their turn.</p>",
     "tag": "action",
@@ -83,7 +83,7 @@
     "sacadia": {
       "catalogId": "absolute_mimicry",
       "transcribed": true,
-      "buildHash": "904f0e6db6b0"
+      "buildHash": "6ed2bdaf11e6"
     }
   }
 }

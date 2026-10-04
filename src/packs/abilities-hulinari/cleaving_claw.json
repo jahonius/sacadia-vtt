@@ -3,7 +3,7 @@
   "_key": "!items!124e204afefc0700",
   "name": "Cleaving Claw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/cleaving_claw_icon.webp",
   "system": {
     "description": "<p>Your claws rend armor. When you critically hit with an unarmed melee attack and choose to rend, rend 2 instead of 1 PD.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "cleaving_claw",
       "transcribed": true,
-      "buildHash": "a4f494671c8e"
+      "buildHash": "a0fcf14bdddb"
     }
   }
 }

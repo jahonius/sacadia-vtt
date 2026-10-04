@@ -3,7 +3,7 @@
   "_key": "!items!886fe114c54e0941",
   "name": "Hoofslam",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/hoofslam_icon.webp",
   "system": {
     "description": "<p>As a Boost to any action that imposes a trait check on an enemy that will move them if they fail (e.g., Kick, Charge the Line), you may expend one Herd Point per target that rolls a Trait Check against being moved. Each target you selects makes this Trait Check at 1X Disadvantage.</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "hoofslam",
       "transcribed": true,
-      "buildHash": "74cb7e404b43"
+      "buildHash": "ae6a89ca5152"
     }
   }
 }

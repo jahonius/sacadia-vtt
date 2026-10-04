@@ -3,7 +3,7 @@
   "_key": "!items!0a16f1ee4c642f97",
   "name": "Guardian of the Ambush",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/guardian_of_the_ambush_icon.webp",
   "system": {
     "description": "<p>Gain 1 AP on the first round of combat.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "guardian_of_the_ambush",
-      "buildHash": "127349a283ed"
+      "buildHash": "c865de8f633e"
     }
   }
 }

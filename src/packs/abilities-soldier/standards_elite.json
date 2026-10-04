@@ -3,7 +3,7 @@
   "_key": "!items!7040daac7584c2e2",
   "name": "Standards Elite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/standards_elite_icon.webp",
   "system": {
     "description": "<p>Once per quick rest, you may use the standards of your people to remove one level of Panic or Fatigue from yourself or an ally as a reaction.</p>",
     "tag": "reaction",
@@ -64,7 +64,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "standards_elite",
-      "buildHash": "38b7c3784f92"
+      "buildHash": "afef60ca6484"
     }
   }
 }

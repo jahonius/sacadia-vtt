@@ -3,7 +3,7 @@
   "_key": "!items!18864c3d7b3e3793",
   "name": "Divine Slam",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/divine_slam_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point. All creatures within 10ft of you make a Finesse Check against your Check DC or are pushed 5X ft away from you, where X is half your Proficiency (rounded up).</p>",
     "tag": "action",
@@ -53,7 +53,7 @@
     "sacadia": {
       "catalogId": "divine_slam",
       "transcribed": true,
-      "buildHash": "b3084011b25f"
+      "buildHash": "95ba2236dcba"
     }
   }
 }

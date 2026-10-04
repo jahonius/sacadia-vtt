@@ -3,7 +3,7 @@
   "_key": "!items!dc356b381270c160",
   "name": "Voice of the Leader",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/voice_of_the_leader_icon.webp",
   "system": {
     "description": "<p>The number of calls you get per quick rest is equal to twice your Proficiency Score, rather than your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "voice_of_the_leader",
-      "buildHash": "c13a7540d398"
+      "buildHash": "fb194f9429cf"
     }
   }
 }

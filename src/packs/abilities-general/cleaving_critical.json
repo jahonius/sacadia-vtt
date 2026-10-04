@@ -3,7 +3,7 @@
   "_key": "!items!4ab9fbc455246385",
   "name": "Cleaving Critical",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/cleaving_critical_icon.webp",
   "system": {
     "description": "<p>When you critically hit an enemy with a melee attack, you may make the effect to be that you roll base damage against another target within 5ft of the target you critically hit against and who is still within your melee weapon range.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "cleaving_critical",
-      "buildHash": "fd097be65fc1"
+      "buildHash": "f40ee5588a43"
     }
   }
 }

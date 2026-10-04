@@ -3,7 +3,7 @@
   "_key": "!items!d6cb20e90d4dcc65",
   "name": "Hide Behind Hide",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/hide_behind_hide_icon.webp",
   "system": {
     "description": "<p>You may only use this on your first turn in combat. For as long as you maintain Focus, nothing in the combat sees you or may directly attack you. Focus immediately ends as soon as you make an attack, impose a trait check against a creature, take damage, or cause a physical change to the environment.</p>",
     "tag": "focus",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "hide_behind_hide",
-      "buildHash": "fd5b57d28586"
+      "buildHash": "134281983be9"
     }
   }
 }

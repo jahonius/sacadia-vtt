@@ -3,7 +3,7 @@
   "_key": "!items!06474c013bef804a",
   "name": "Pankration",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_pankration_icon.webp",
   "system": {
     "description": "<p>When you have given a target Wrestle Pin and then melee attack or Harm them, increase damage dealt by Harm and melee attacks by X, where X is the amount of Pin that target has.</p>",
     "tag": "passive",
@@ -66,7 +66,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_pankration",
-      "buildHash": "c1a8f0d4a86f"
+      "buildHash": "2f7f6549c6b5"
     }
   }
 }

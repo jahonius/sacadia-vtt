@@ -3,7 +3,7 @@
   "_key": "!items!7709859928253d0b",
   "name": "Call of Respite",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_respite_icon.webp",
   "system": {
     "description": "<p>Expend 1 Call Point and make trait checks against one level of any adversarial condition from up to X targets within 15ft of you (X is half your Proficiency, rounded up). The condition can differ for each target.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_respite",
-      "buildHash": "5ad457141543"
+      "buildHash": "9fff3d5d9cd0"
     }
   }
 }

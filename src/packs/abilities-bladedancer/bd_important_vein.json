@@ -3,7 +3,7 @@
   "_key": "!items!037eb44c51b54343",
   "name": "Important Vein",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_important_vein_icon.webp",
   "system": {
     "description": "<p>As a critical effect when you make an attack against a target, you may give that target one level of Hemorrhage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_important_vein",
-      "buildHash": "74212b94d046"
+      "buildHash": "cff529b311d1"
     }
   }
 }

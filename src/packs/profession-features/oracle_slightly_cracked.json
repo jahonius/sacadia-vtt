@@ -3,7 +3,7 @@
   "_key": "!items!f57674a422483835",
   "name": "Slightly Cracked",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/oracle_slightly_cracked_icon.webp",
   "system": {
     "description": "<p>At the start of each quick rest, roll XD3 and save the die roll, where X is equal to your Proficiency Score. As a boost to an oracle ability that requires you to gain or lose 1D3-1 Madness, you may use a Boost to use a reserved roll instead of rolling for Madness.</p>",
     "tag": "boost",
@@ -45,7 +45,7 @@
       "catalogId": "oracle_slightly_cracked",
       "feature": true,
       "level": 3,
-      "buildHash": "3304d11289f2"
+      "buildHash": "55d8bef824fe"
     }
   }
 }

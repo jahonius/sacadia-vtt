@@ -3,7 +3,7 @@
   "_key": "!items!85fa6f543d3777bf",
   "name": "Blessing of the Winged Sandal",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_winged_sandal_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_the_winged_sandal_icon.webp",
   "system": {
     "description": "<p>When an ally within 60ft of you takes the Move action, you may use your reaction to add up to 10ft to their Move action.</p>",
     "tag": "reaction",
@@ -40,7 +40,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blessing_of_the_winged_sandal",
-      "buildHash": "58901cae6cd9"
+      "buildHash": "def1885f2b68"
     }
   }
 }

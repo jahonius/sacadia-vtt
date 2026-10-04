@@ -3,7 +3,7 @@
   "_key": "!items!2920d004ca985d31",
   "name": "Lodestone Shards",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_lodestone_shards_icon.webp",
   "system": {
     "description": "<p>When you focus on Razorleaf, increase the dice type of your ally’s weapon by an additional dice type.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_lodestone_shards",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "6ef9bc5702f2"
+      "buildHash": "bbb1d1d69d46"
     }
   }
 }

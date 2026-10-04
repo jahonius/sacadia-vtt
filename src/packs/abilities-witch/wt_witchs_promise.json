@@ -3,7 +3,7 @@
   "_key": "!items!fe4a7e777425c1d2",
   "name": "Witch's Promise",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_witchs_promise_icon.webp",
   "system": {
     "description": "<p>When you choose to play a Witch, choose one Witch's Promise, and take associated abilities and restrictions.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_witchs_promise",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "bd3c1618a285"
+      "buildHash": "c6fc5ab20a82"
     }
   }
 }

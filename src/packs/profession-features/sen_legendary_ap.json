@@ -3,7 +3,7 @@
   "_key": "!items!5c4a42405d2cd056",
   "name": "Legendary AP",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sen_legendary_ap_icon.webp",
   "system": {
     "description": "<p>Once per turn as a boost to an action, you may recover a single AP.</p>",
     "tag": "boost",
@@ -55,7 +55,7 @@
       "catalogId": "sen_legendary_ap",
       "feature": true,
       "level": 15,
-      "buildHash": "af2c0c5e709f"
+      "buildHash": "6a5ab38c2be6"
     }
   }
 }

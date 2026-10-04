@@ -3,7 +3,7 @@
   "_key": "!items!2c22925563619ddd",
   "name": "Call of Effort",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_of_effort_icon.webp",
   "system": {
     "description": "<p>As a Boost to Call of Power, expend one additional call point. For the duration of Call of Power, allies affected by the call add 1 to damage for each AP expended on an effect.</p>",
     "tag": "boost",
@@ -50,7 +50,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_of_effort",
-      "buildHash": "b11b18fb1e02"
+      "buildHash": "98b903d3c69a"
     }
   }
 }

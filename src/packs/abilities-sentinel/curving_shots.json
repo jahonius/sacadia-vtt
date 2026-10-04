@@ -3,7 +3,7 @@
   "_key": "!items!c4bda22237d7dbba",
   "name": "Curving Shots",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/sentinel/curving_shots_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/curving_shots_icon.webp",
   "system": {
     "description": "<p>You may attack creatures in full cover (even when you do not have sight of them, provided you know which square they are standing in). Gain 1X disadvantage to attacks made against them.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "curving_shots",
-      "buildHash": "4fb70630e621"
+      "buildHash": "c510e304d74e"
     }
   }
 }

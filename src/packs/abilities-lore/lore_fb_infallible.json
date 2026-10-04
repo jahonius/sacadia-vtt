@@ -3,7 +3,7 @@
   "_key": "!items!99b92ac0883f39bb",
   "name": "Infallible",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_fb_infallible_icon.webp",
   "system": {
     "description": "<p>Expend one Lore point. Until the start of your next turn, any attack you would miss hits instead.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_fb_infallible",
       "transcribed": true,
       "lore": true,
-      "buildHash": "4f7e3810ff76"
+      "buildHash": "34191c54ee35"
     }
   }
 }

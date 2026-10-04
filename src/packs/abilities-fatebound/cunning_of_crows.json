@@ -3,7 +3,7 @@
   "_key": "!items!7713696fbc98166d",
   "name": "Cunning of Crows",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/cunning_of_crows_icon.webp",
   "system": {
     "description": "<p>When you use the Dodge action, you may add half your Fate Score (rounded up) to your Dodge roll.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "cunning_of_crows",
       "transcribed": true,
-      "buildHash": "c6dbf4ebd442"
+      "buildHash": "c87f8d11124b"
     }
   }
 }

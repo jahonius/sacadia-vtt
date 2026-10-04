@@ -3,7 +3,7 @@
   "_key": "!items!4737e1f447744836",
   "name": "Head-Off",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/head_off_icon.webp",
   "system": {
     "description": "<p>When you use the Head Strike Boost, add XD8 damage, where X is your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "head_off",
-      "buildHash": "435e4bd47459"
+      "buildHash": "a09759203ead"
     }
   }
 }

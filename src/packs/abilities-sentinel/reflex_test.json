@@ -3,7 +3,7 @@
   "_key": "!items!7ca365a2e454c31f",
   "name": "Reflex Test",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/reflex_test_icon.webp",
   "system": {
     "description": "<p>When wielding a Sling, choose one target within your sling range. Attempt to give that target X Slowed, where X is half your Proficiency (rounded up). Finesse Checks negate.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reflex_test",
-      "buildHash": "ebb35d50ff34"
+      "buildHash": "4c9c1629fd24"
     }
   }
 }

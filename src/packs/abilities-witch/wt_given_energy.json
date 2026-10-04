@@ -3,7 +3,7 @@
   "_key": "!items!b61aaadc9c733c2f",
   "name": "Given Energy",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_given_energy_icon.webp",
   "system": {
     "description": "<p>You can choose yourself as one of the targets of Funnel Energy.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_given_energy",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "3c7291e7353e"
+      "buildHash": "cb385e16f5e9"
     }
   }
 }

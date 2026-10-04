@@ -3,7 +3,7 @@
   "_key": "!items!e1b0585aefc479f6",
   "name": "Light Armor Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/light_armor_training_icon.webp",
   "system": {
     "description": "<p>Gain training in light armors.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "light_armor_training",
-      "buildHash": "203123e4240d"
+      "buildHash": "ee74383d0acd"
     }
   }
 }

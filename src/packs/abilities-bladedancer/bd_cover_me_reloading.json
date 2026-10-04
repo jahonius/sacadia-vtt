@@ -3,7 +3,7 @@
   "_key": "!items!ee849f5c8038fbe3",
   "name": "Cover Me, Reloading",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_cover_me_reloading_icon.webp",
   "system": {
     "description": "<p>As soon as your turn ends, if you are not holding a weapon, you may expend a reaction to take a single move action. You may apply one boost to this move action. If you have Steadied, you may increase your Move Speed by 10ft using this.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_cover_me_reloading",
-      "buildHash": "d28d754a2193"
+      "buildHash": "ed1d8aee631f"
     }
   }
 }

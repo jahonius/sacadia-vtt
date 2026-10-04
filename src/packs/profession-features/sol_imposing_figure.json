@@ -3,7 +3,7 @@
   "_key": "!items!50cccc7eabbb353c",
   "name": "Imposing Figure",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/sol_imposing_figure_icon.webp",
   "system": {
     "description": "<p>You may spend an action to display an imposing figure to appear more challenging to your enemies. Attempt to give one enemy within 10ft of you who you can see Taunt equal to half your Proficiency (rounded up). They roll Courage Checks against the effect.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
       "catalogId": "sol_imposing_figure",
       "feature": true,
       "level": 3,
-      "buildHash": "c19be5d10de5"
+      "buildHash": "b1b774b7433c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d775d3253453a6fc",
   "name": "Greater Shield",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_shield_icon.webp",
   "system": {
     "description": "<p>Increase the dice type of Checkered Shield by 1 dice type.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Magical Identification[2]",
-      "buildHash": "551ae2c149ec"
+      "buildHash": "ed4495aa279a"
     }
   }
 }

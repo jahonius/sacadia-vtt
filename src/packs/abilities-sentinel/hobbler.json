@@ -3,7 +3,7 @@
   "_key": "!items!88b0b5eff812e2b6",
   "name": "Hobbler",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/hobbler_icon.webp",
   "system": {
     "description": "<p>Choose a 10x10 square within range while wielding a sling. Everything in that square makes a Finesse Check against your Check DC or is knocked Prone. At level 11 increase the area of Hobbler to 15x15ft. Once a creature has passed this check, they are immune to Hobbler until a quick rest has passed.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "hobbler",
-      "buildHash": "330d1001b526"
+      "buildHash": "737011dad4a6"
     }
   }
 }

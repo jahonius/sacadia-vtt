@@ -3,7 +3,7 @@
   "_key": "!items!785dd370b01e3c04",
   "name": "Boostbuster",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boostbuster_icon.webp",
   "system": {
     "description": "<p>You may apply one Boost to attacks of opportunity.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "boostbuster",
       "transcribed": true,
-      "buildHash": "3f0e90ab27a9"
+      "buildHash": "e7b5b5a9b1ef"
     }
   }
 }

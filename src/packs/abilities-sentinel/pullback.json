@@ -3,7 +3,7 @@
   "_key": "!items!26173547f7da7682",
   "name": "Pullback",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/pullback_icon.webp",
   "system": {
     "description": "<p>When you make a Crossbow attack and would benefit from either Boltshot or Boltshot Pro, increase the damage dealt from that effect from X to XD4.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pullback",
-      "buildHash": "f6d98b49278e"
+      "buildHash": "8bb6091d526d"
     }
   }
 }

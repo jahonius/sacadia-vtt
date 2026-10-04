@@ -3,7 +3,7 @@
   "_key": "!items!9f3133dfa9c33c9b",
   "name": "Divine Sling",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_divine_sling_icon.webp",
   "system": {
     "description": "<p>While wielding a sling, expend one lore point along with an attack made with that sling. Choose a number of enemies up to X within an X by X square, where X is your Proficiency (measured in tiles). The furthest point of that square must be within your sling range. Every creature you select makes a Wiles Check against your Check DC or takes the Surprised Condition. This effect is in addition to all other effects your sling attack causes.</p>",
     "tag": "lore",
@@ -64,7 +64,7 @@
       "catalogId": "lore_divine_sling",
       "transcribed": true,
       "lore": true,
-      "buildHash": "497ea9a3a4fa"
+      "buildHash": "daed866ef433"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!b3bcb1f330bc870a",
   "name": "One-Two Bash",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/one_two_bash_icon.webp",
   "system": {
     "description": "<p>For each attack you successfully make on your turn with a shield, gain +1 to to-hit and damage with a one-handed melee weapon made using your other hand until the start of your next turn.</p>",
     "tag": "passive",
@@ -66,7 +66,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "one_two_bash",
-      "buildHash": "b331596876f6"
+      "buildHash": "96ec2c515b5d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!638399e8efaf3100",
   "name": "Bloodthinner",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bloodthinner_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of Hemorrhage you give a target by one dice type.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "You are an Oracle who has gone insane previously",
-      "buildHash": "d27dc27cd2ca"
+      "buildHash": "bff6d8713c43"
     }
   }
 }

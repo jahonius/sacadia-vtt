@@ -3,7 +3,7 @@
   "_key": "!items!797f714909dd1e4c",
   "name": "Fumbling Wander",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/fumbling_wander_icon.webp",
   "system": {
     "description": "<p>As a reaction to an enemy moving to within 5ft range of you, you may attempt to give them 1D8 Fumble. They make a Fate Check against this effect. If you are Steadied, you may give them 8 Fumble if they fail the check.</p>",
     "tag": "reaction",
@@ -59,7 +59,7 @@
     "sacadia": {
       "catalogId": "fumbling_wander",
       "transcribed": true,
-      "buildHash": "feeb465b7154"
+      "buildHash": "ed31c5ad2bde"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!bed68aacab587b84",
   "name": "Skittish",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/skittish_icon.webp",
   "system": {
     "description": "<p>When in Pack Form, declare a target. When you do so, gain 1x advantage to all Trait Checks that enemy makes you roll.</p>",
     "tag": "focus",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "skittish",
       "transcribed": true,
-      "buildHash": "8d2774039ca5"
+      "buildHash": "91b0c84a16f9"
     }
   }
 }

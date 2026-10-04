@@ -3,7 +3,7 @@
   "_key": "!items!199f4b6b9a701041",
   "name": "Divine Protection",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/divine_protection_icon.webp",
   "system": {
     "description": "<p>Increase your TD by 1 when you wear a Cloth armor set.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "divine_protection",
-      "buildHash": "4f948ae8ba37"
+      "buildHash": "61dafa4bbd9a"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!f0c51679fbe9747f",
   "name": "Vision of Hemlock",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/vision_of_hemlock_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/vision_of_hemlock_icon.webp",
   "system": {
     "description": "<p>Expend one Prescient Point. Attempt to give X Frenzy (X is half your Proficiency, rounded up) to one target within 60ft of you. They roll Wiles Checks against the effect.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "vision_of_hemlock",
-      "buildHash": "d8caab44cdc9"
+      "buildHash": "0e9110ffc54d"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!d82ce286c5eef27b",
   "name": "Elder Tome",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_elder_tome_icon.webp",
   "system": {
     "description": "<p>Rarity Legendary[1], Element Earth, Prerequisites: Literary General Talent, Shau in Empire. Item Slots 1, Attunement Yes, Relic Yes. An ancient and tattered scroll, bound in a tarnished bronze rod. Magus Tome: Whenever you research a new Magus ability using a Long Rest Action, record the name of that ability in your tome. You can purchase any Magus ability recorded in your tome if you meet the prerequisites, provided you are attuned to the Tome. Lawful Protection: Gain +1 to your Check DC when you take this tome, provided you remain attuned to the Tome.</p>",
     "tag": "passive",
@@ -47,7 +47,7 @@
       "transcribed": true,
       "prestige": "magus",
       "tome": "tome",
-      "buildHash": "c57f604639d4"
+      "buildHash": "e7b037e08906"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!5bdcfb8fb9129fd3",
   "name": "Porcupine",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/porcupine_icon.webp",
   "system": {
     "description": "<p>When you are Focusing on Protectorate and make an opportunity attack, increase the damage dice of your melee weapon by one additional dice type.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "porcupine",
-      "buildHash": "ecfe1e0c8343"
+      "buildHash": "fbbe9f7fb588"
     }
   }
 }

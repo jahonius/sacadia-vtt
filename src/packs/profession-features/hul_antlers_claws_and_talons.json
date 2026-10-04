@@ -3,7 +3,7 @@
   "_key": "!items!de14e859f158613f",
   "name": "Antlers, Claws, and Talons",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/hul_antlers_claws_and_talons_icon.webp",
   "system": {
     "description": "<p>When you make an unarmed attack in Beast form, change the damage dice from 1D4 to 1D8.</p>",
     "tag": "passive",
@@ -53,7 +53,7 @@
       "catalogId": "hul_antlers_claws_and_talons",
       "feature": true,
       "level": 1,
-      "buildHash": "735e07923c6c"
+      "buildHash": "599972e47243"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!5b246be48f2599ca",
   "name": "Sword Lunger",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/sword_lunger_icon.webp",
   "system": {
     "description": "<p>Once per quick rest when wielding a sword, you may make a sword attack at 10ft range against one target. Treat the target as Surprised for this.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sword_lunger",
-      "buildHash": "4768d5cb3b60"
+      "buildHash": "5a001a034b12"
     }
   }
 }

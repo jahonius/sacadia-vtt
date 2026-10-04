@@ -3,7 +3,7 @@
   "_key": "!items!759164da0226ff54",
   "name": "Sharp Cloud",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/sharp_cloud_icon.webp",
   "system": {
     "description": "<p>For as long as you maintain Focus on Sharp Cloud, enemies starting their turn in Clouded Foe or attempting to move through it must make a Power Check or take XD10 damage, where X is your Finesse Score.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "sharp_cloud",
       "transcribed": true,
-      "buildHash": "23d0530adfa6"
+      "buildHash": "0b55ea4fadf7"
     }
   }
 }

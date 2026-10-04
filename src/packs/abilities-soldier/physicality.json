@@ -3,7 +3,7 @@
   "_key": "!items!6ee7c60b502dbcea",
   "name": "Physicality",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/physicality_icon.webp",
   "system": {
     "description": "<p>Whenever you hit someone with a shield, you may push them 5ft away from you.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "physicality",
-      "buildHash": "b9be066aeb90"
+      "buildHash": "ba6c75f0476d"
     }
   }
 }

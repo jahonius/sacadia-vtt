@@ -3,7 +3,7 @@
   "_key": "!items!c4a00555533f51e6",
   "name": "Evasion",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/evasion_icon.webp",
   "system": {
     "description": "<p>When you would take damage requiring a Finesse Check, take half damage (rounded up) on a failure or no damage on a success.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "evasion",
-      "buildHash": "ce7b6976f380"
+      "buildHash": "785adc612930"
     }
   }
 }

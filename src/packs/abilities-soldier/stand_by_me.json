@@ -3,7 +3,7 @@
   "_key": "!items!e342cb845a4b84e2",
   "name": "Stand By Me",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/stand_by_me_icon.webp",
   "system": {
     "description": "<p>For as long as you maintain Focus, whenever you are within 5ft of an ally, your ally adds half your Courage (rounded up) to all Trait Checks. You may select one ally to benefit from this ability with you. You may change the benefiting ally each turn when you use a Focus action.</p>",
     "tag": "focus",
@@ -61,7 +61,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "stand_by_me",
-      "buildHash": "351f728e3682"
+      "buildHash": "598efacad0f5"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!941af034ed8ea6ce",
   "name": "Devastating Hand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_devastating_hand_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of the same weapon from Harmful Hand by one additional damage die.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_devastating_hand",
-      "buildHash": "012d3ac69a61"
+      "buildHash": "ecf3e5773b03"
     }
   }
 }

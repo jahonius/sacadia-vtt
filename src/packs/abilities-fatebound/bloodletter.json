@@ -3,7 +3,7 @@
   "_key": "!items!d520d56f65399c16",
   "name": "Bloodletter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/bloodletter_icon.webp",
   "system": {
     "description": "<p>When you attempt to give Hemorrhage to a target, they make Trait Checks against the effect at 1X disadvantage for every 3 levels of Hemorrhage you attempt to give them.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "bloodletter",
       "transcribed": true,
-      "buildHash": "b24a3e5ee980"
+      "buildHash": "175b40afe3fe"
     }
   }
 }

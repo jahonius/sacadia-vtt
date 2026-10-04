@@ -3,7 +3,7 @@
   "_key": "!items!d92eec8b8e098954",
   "name": "The Sauce",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_the_sauce_icon.webp",
   "system": {
     "description": "<p>You may spend a lore point to expend half your AP on abilities or actions when it is not your turn through a reaction. You may not use actions or move while you do this. Treat your limbs as unexhausted when you do this, and do not exhaust your limbs.</p>",
     "tag": "reaction",
@@ -39,7 +39,7 @@
       "catalogId": "lore_the_sauce",
       "transcribed": true,
       "lore": true,
-      "buildHash": "fa4e559f15e3"
+      "buildHash": "6b2f26893f07"
     }
   }
 }

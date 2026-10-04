@@ -3,7 +3,7 @@
   "_key": "!items!da7ed66d9858f50d",
   "name": "Attempt Hold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_attempt_hold_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 30ft and expend one Spell Slot. That target makes Wiles Checks against X levels of Paralyzed, where X is your Proficiency.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Magic Identification[2]",
-      "buildHash": "2b043cc96fb1"
+      "buildHash": "076b48f6b16a"
     }
   }
 }

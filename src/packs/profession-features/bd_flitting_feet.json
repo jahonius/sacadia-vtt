@@ -3,7 +3,7 @@
   "_key": "!items!118e6653dad7dd59",
   "name": "Flitting Feet",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/bd_flitting_feet_icon.webp",
   "system": {
     "description": "<p>Increase your Move speed by 5ft. You can move through squares occupied by a creature of the same size as you by treating it as difficult terrain. You may freely move through squares occupied by a creature any size larger or smaller than you. You may not end your turn inside a square occupied by any other creature.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
       "catalogId": "bd_flitting_feet",
       "feature": true,
       "level": 3,
-      "buildHash": "d6d479f25a0b"
+      "buildHash": "36ad9c66135c"
     }
   }
 }

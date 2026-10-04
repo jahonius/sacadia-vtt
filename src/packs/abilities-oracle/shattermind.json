@@ -3,7 +3,7 @@
   "_key": "!items!947490583da117b0",
   "name": "Shattermind",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/shattermind_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/shattermind_icon.webp",
   "system": {
     "description": "<p>You may gain Madness. Madness is a special adversarial condition that only Oracles use, and represents your growing insanity as you fight. It follows adversarial condition rules (you lose one level at the end of your turn if you have any), but abilities can stack Madness even if you already have it.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shattermind",
-      "buildHash": "cbf1efa120c9"
+      "buildHash": "3b1143b50e6f"
     }
   }
 }

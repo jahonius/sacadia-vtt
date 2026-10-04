@@ -3,7 +3,7 @@
   "_key": "!items!616ef07e2ce63c9a",
   "name": "Head Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/head_strike_icon.webp",
   "system": {
     "description": "<p>Expend one Trickshot point and apply Head Strike as a Boost to a ranged weapon attack. If you hit, deal an additional XD8 extra damage, where X is half your Proficiency Score (rounded up).</p>",
     "tag": "boost",
@@ -63,7 +63,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "head_strike",
-      "buildHash": "a59c211c0313"
+      "buildHash": "6a4be9c060e7"
     }
   }
 }

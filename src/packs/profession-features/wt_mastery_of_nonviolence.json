@@ -3,7 +3,7 @@
   "_key": "!items!86827547aa4f3bfa",
   "name": "Mastery of Nonviolence",
   "type": "ability",
-  "img": "icons/svg/upgrade.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/wt_mastery_of_nonviolence_icon.webp",
   "system": {
     "description": "<p>(Prerequisite: Promise of Nonviolence). When you use Hallowed Touch, increase the dice type of effects by one additional dice type.</p>",
     "tag": "passive",
@@ -38,7 +38,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "c523a7bf76aa"
+      "buildHash": "26ccb10552f6"
     }
   }
 }

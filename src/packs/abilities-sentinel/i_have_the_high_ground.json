@@ -3,7 +3,7 @@
   "_key": "!items!c4f1197d5a73a80e",
   "name": "I Have the High Ground",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/i_have_the_high_ground_icon.webp",
   "system": {
     "description": "<p>When you have height advantage over targets, you are treated as having Half Cover.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "i_have_the_high_ground",
-      "buildHash": "a7c59f05c538"
+      "buildHash": "cd41543b1304"
     }
   }
 }

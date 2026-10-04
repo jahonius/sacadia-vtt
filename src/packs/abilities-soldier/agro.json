@@ -3,7 +3,7 @@
   "_key": "!items!7aabaf1c8f2d1a10",
   "name": "Agro",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/agro_icon.webp",
   "system": {
     "description": "<p>Choose one enemy within 5ft of you. They make a Courage Check. If they fail, they move back 5X feet, where X is half your Proficiency (rounded up).</p>",
     "tag": "action",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "agro",
-      "buildHash": "800192c9063f"
+      "buildHash": "bdee7b53b9f0"
     }
   }
 }

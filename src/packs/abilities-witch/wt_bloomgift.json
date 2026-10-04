@@ -3,7 +3,7 @@
   "_key": "!items!89f4cb710cdd3f98",
   "name": "Bloomgift",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_bloomgift_icon.webp",
   "system": {
     "description": "<p>Choose an ally within 5ft and expend a Divine Touch Point. Expend AP (in addition to the AP to use Bloomgift) up to half your Proficiency, rounded up. For each AP you expend, that ally gains one reaction before the start of their next turn.</p>",
     "tag": "action",
@@ -47,7 +47,7 @@
       "catalogId": "wt_bloomgift",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "a0476e49d2a1"
+      "buildHash": "e059b4aae6b0"
     }
   }
 }

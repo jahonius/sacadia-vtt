@@ -3,7 +3,7 @@
   "_key": "!items!a9fbcee1dee20580",
   "name": "Labyrinth Gaze",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/labyrinth_gaze_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/labyrinth_gaze_icon.webp",
   "system": {
     "description": "<p>Instead of adding half your Proficiency, add your Proficiency to any damage you deal while Insane.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "labyrinth_gaze",
-      "buildHash": "01689aa683ad"
+      "buildHash": "477c61257cc0"
     }
   }
 }

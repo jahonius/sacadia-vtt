@@ -26,6 +26,9 @@ export default class SacadiaNPC extends SacadiaActorBase {
     schema.creatureType = new fields.StringField({
       required: true, blank: true, choices: Object.keys(CONFIG.SACADIA.creatureTypes),
     });
+    // Base Move Speed in feet (a stat-block number; 30 when unset). The derived `speed` object that
+    // `_prepareSpeed` builds replaces this at prepare time, as it does for characters.
+    schema.speed = new fields.NumberField({ ...requiredInteger, initial: 30, min: 0 });
 
     // GM-authored base defenses (the stat-block numbers). Effect/condition bonuses add on top in
     // derived data; AD defaults to a sensible floor.

@@ -3,7 +3,7 @@
   "_key": "!items!b969c44952b6447b",
   "name": "Hot Iron",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/hot_iron_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point as a Boost to any melee attack made against a single target. On a successful hit, deal an additional XD6 elemental damage, where X is your Proficiency. The type of elemental damage is the same as your divine weapon.</p>",
     "tag": "boost",
@@ -50,7 +50,7 @@
     "sacadia": {
       "catalogId": "hot_iron",
       "transcribed": true,
-      "buildHash": "e8339b56af45"
+      "buildHash": "a4da0b3eb3d0"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!168ba2aaca962f01",
   "name": "Mimicked Caw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/mimicked_caw_icon.webp",
   "system": {
     "description": "<p>Choose a target within 30ft of you who is using the Focus action. They make a Wiles Check against your Check DC, losing Focus on their ability with a failed Check DC.</p>",
     "tag": "action",
@@ -57,7 +57,7 @@
     "sacadia": {
       "catalogId": "mimicked_caw",
       "transcribed": true,
-      "buildHash": "963d14aa95d8"
+      "buildHash": "5939e93f9a8b"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!604d8cced1c92248",
   "name": "Foe Transference",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_foe_transference_icon.webp",
   "system": {
     "description": "<p>You may target an enemy with Shield Transference. If you use this on an enemy, they may make a Finesse Check against your Check DC to prevent the effect when you initiate and each round you renew the effect.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_foe_transference",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "69b98b39921a"
+      "buildHash": "2d4b0386d6d2"
     }
   }
 }

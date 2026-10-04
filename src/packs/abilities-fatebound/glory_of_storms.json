@@ -3,7 +3,7 @@
   "_key": "!items!36459f43ee85938f",
   "name": "Glory of Storms",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/glory_of_storms_icon.webp",
   "system": {
     "description": "<p>You may expend a Glory point as a Boost to any action to ignore the effects of all conditions for your turn, including any Exhaustion you have from being Wounded. You may still roll Trait Checks against any conditions. If you have levels of Wrestle Pin from a creature one size larger or smaller than you, you may still move, but at half speed (rounded up). The creature pinning you moves with you or lets go (removing all Pin). If you use Glory of Storms and are pinned by a creature two sizes larger than you or larger, you still may not use actions. The effects of Glory of Storms end at the end of your turn.</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
     "sacadia": {
       "catalogId": "glory_of_storms",
       "transcribed": true,
-      "buildHash": "a454ee4f67a7"
+      "buildHash": "ce7106c3de40"
     }
   }
 }

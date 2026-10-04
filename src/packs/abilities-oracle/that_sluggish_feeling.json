@@ -3,7 +3,7 @@
   "_key": "!items!d10e0e1c3b60d278",
   "name": "That Sluggish Feeling",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/that_sluggish_feeling_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/that_sluggish_feeling_icon.webp",
   "system": {
     "description": "<p>When an enemy within 30ft of you tries to move, you may expend a reaction to reduce their movement speed to half (rounded up) for that Move action. If you have Steadied, you may instead reduce their Move Speed to 5ft.</p>",
     "tag": "reaction",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "that_sluggish_feeling",
-      "buildHash": "e0f31f5de859"
+      "buildHash": "f045bf73a14b"
     }
   }
 }

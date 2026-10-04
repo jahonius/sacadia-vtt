@@ -3,7 +3,7 @@
   "_key": "!items!4d181ea0473b6997",
   "name": "Boosted Fury",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boosted_fury_icon.webp",
   "system": {
     "description": "<p>As a Boost to an attack with a divine weapon, you may reduce your to-hit by X to increase damage if you successfully hit by 2X (where X is any number up to your Proficiency).</p>",
     "tag": "boost",
@@ -62,7 +62,7 @@
     "sacadia": {
       "catalogId": "boosted_fury",
       "transcribed": true,
-      "buildHash": "b014c9a49b24"
+      "buildHash": "703ef8571547"
     }
   }
 }

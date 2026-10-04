@@ -3,7 +3,7 @@
   "_key": "!items!a332a17358fb97e4",
   "name": "Slightly Darker Wear",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/slightly_darker_wear_icon.webp",
   "system": {
     "description": "<p>When you wear only light armor, further increase your PD by 1.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "slightly_darker_wear",
-      "buildHash": "53cad7a898c2"
+      "buildHash": "c638260d0413"
     }
   }
 }

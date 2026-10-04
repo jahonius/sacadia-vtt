@@ -3,7 +3,7 @@
   "_key": "!items!2628750ab66127df",
   "name": "Paralytic Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_paralytic_strike_icon.webp",
   "system": {
     "description": "<p>When you successfully hit with a critical attack, you may make a critical effect be to give one level of Paralysis to the target.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_paralytic_strike",
-      "buildHash": "8628574245af"
+      "buildHash": "2b7e8ddb421a"
     }
   }
 }

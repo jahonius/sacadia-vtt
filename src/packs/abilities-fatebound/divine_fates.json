@@ -3,7 +3,7 @@
   "_key": "!items!20192078d5a3003b",
   "name": "Divine Fates",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/divine_fates_icon.webp",
   "system": {
     "description": "<p>Increase the Fumble given to each target when using Lucky Break by one dice type.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "divine_fates",
       "transcribed": true,
-      "buildHash": "dfe78c3e217f"
+      "buildHash": "f3f9869c8db7"
     }
   }
 }

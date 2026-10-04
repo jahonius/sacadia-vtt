@@ -3,7 +3,7 @@
   "_key": "!items!fdd46fb9eb68efb5",
   "name": "Dodge",
   "type": "ability",
-  "img": "icons/svg/shield.svg",
+  "img": "systems/sacadia/assets/icons/abilities/basic-actions/basic_dodge_icon.webp",
   "system": {
     "description": "<p>(Prerequisite: Medium Armor). You may use a reaction when you have Steadied to reduce a ranged physical attack made against you by 1D4. Increase the die roll made this way to 1D6 at Level 5, and 1D8 at Level 11.</p>",
     "tag": "reaction",
@@ -27,7 +27,7 @@
       "catalogId": "basic_dodge",
       "basic": true,
       "postRoll": "dodge",
-      "buildHash": "e707b89069a5"
+      "buildHash": "d86aa1459ca9"
     }
   }
 }

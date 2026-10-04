@@ -3,7 +3,7 @@
   "_key": "!items!00eda80bad7b3f6c",
   "name": "Greased and Wily",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_greased_and_wily_icon.webp",
   "system": {
     "description": "<p>As long as you maintain focus and have Pinned an enemy, melee attacks against you from anyone other than the enemy who you have Pinned are made at 1X disadvantage.</p>",
     "tag": "focus",
@@ -55,7 +55,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_greased_and_wily",
-      "buildHash": "d15aad66f2aa"
+      "buildHash": "4b308acf92f6"
     }
   }
 }

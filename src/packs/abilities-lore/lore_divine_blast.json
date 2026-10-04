@@ -3,7 +3,7 @@
   "_key": "!items!7d455900b571b333",
   "name": "Divine Blast",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_divine_blast_icon.webp",
   "system": {
     "description": "<p>While wielding a crossbow, expend one lore point along with an attack made with that crossbow. If you expend all of your AP in this shot, increase the dice type of your attack by 4 dice types.</p>",
     "tag": "lore",
@@ -63,7 +63,7 @@
       "catalogId": "lore_divine_blast",
       "transcribed": true,
       "lore": true,
-      "buildHash": "3f4c7772071c"
+      "buildHash": "0a68e7677f50"
     }
   }
 }

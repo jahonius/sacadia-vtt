@@ -3,7 +3,7 @@
   "_key": "!items!27e2dcc5467544ca",
   "name": "Enfeeblement",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_enfeeblement_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you. Expend a Spell Slot and choose one weapon or attack they wield (e.g., a Bite attack, a Sword, their Unarmed Attack). For as long as you maintain Focus on that target, reduce the damage dice of that weapon by one dice type.</p>",
     "tag": "focus",
@@ -53,7 +53,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Social Rites[2]",
-      "buildHash": "be5a7cc670cb"
+      "buildHash": "69aa80faed52"
     }
   }
 }

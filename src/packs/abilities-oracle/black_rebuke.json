@@ -3,7 +3,7 @@
   "_key": "!items!f71719c61a27070d",
   "name": "Black Rebuke",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/black_rebuke_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/black_rebuke_icon.webp",
   "system": {
     "description": "<p>As a reaction when an enemy hits you or one ally with an attack and the enemy is within 30ft of you, remove all Madness, then deal all damage that enemy deals back to them. You must declare that you use Black Rebuke before damage is rolled.</p>",
     "tag": "reaction",
@@ -39,7 +39,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "black_rebuke",
-      "buildHash": "bbf8a9391be3"
+      "buildHash": "0da0df93f063"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!395ebbe1e68dc062",
   "name": "We Don’t Hibernate",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/we_don_t_hibernate_icon.webp",
   "system": {
     "description": "<p>You are immune to the Fatigue condition from any source.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "we_don_t_hibernate",
       "transcribed": true,
-      "buildHash": "6f3580d8c248"
+      "buildHash": "5147c9173dbf"
     }
   }
 }

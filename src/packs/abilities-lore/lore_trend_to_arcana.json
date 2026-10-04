@@ -3,7 +3,7 @@
   "_key": "!items!d037379dc2ea2315",
   "name": "Trend to Arcana",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_trend_to_arcana_icon.webp",
   "system": {
     "description": "<p>Whenever you or any allies roll 1D10 or 2D6 (or multiples of either of these dice) within 30ft of you, they roll 1D12 instead. Whenever an enemy would roll 2D6 or 2D8, they roll 1D12 instead. This effect lasts for one minute.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_trend_to_arcana",
       "transcribed": true,
       "lore": true,
-      "buildHash": "b67188dec5af"
+      "buildHash": "11e288be3be9"
     }
   }
 }

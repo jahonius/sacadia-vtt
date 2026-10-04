@@ -3,7 +3,7 @@
   "_key": "!items!565c550538a0545b",
   "name": "Military Training",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/military_training_icon.webp",
   "system": {
     "description": "<p>You gain training in military weapons.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "military_training",
-      "buildHash": "d65abddc639d"
+      "buildHash": "df9a64026f47"
     }
   }
 }

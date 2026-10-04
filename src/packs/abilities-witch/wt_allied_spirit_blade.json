@@ -3,7 +3,7 @@
   "_key": "!items!f7955610cc041610",
   "name": "Allied Spirit Blade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_allied_spirit_blade_icon.webp",
   "system": {
     "description": "<p>Expend one Divine Touch point and choose the weapon held by an ally within 5ft of you (you may choose a fist or bite attack of an ally as well, but it must be a specified fist or attack type of that ally). For as long as you maintain Focus, that weapon glows 5ft dimly with a spiritual energy. It attacks AD (the lowest armor score among MD, TD, PD) instead of other armor types. Additionally, the weapon can strike incorporeal targets. Every turn you maintain Focus on Allied Spirit Blade, you can only renew Focus on this ability when you are within 5ft of that allied target’s weapon.</p>",
     "tag": "focus",
@@ -54,7 +54,7 @@
       "catalogId": "wt_allied_spirit_blade",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "5b12f661a369"
+      "buildHash": "0c30e9678b6e"
     }
   }
 }

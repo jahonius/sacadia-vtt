@@ -3,7 +3,7 @@
   "_key": "!items!cb6e4318ce3426b2",
   "name": "Harmful Hand",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_harmful_hand_icon.webp",
   "system": {
     "description": "<p>Choose one weapon type (e.g., hand axe) you are trained in. Increase the base damage die of using this weapon by one type.</p>",
     "tag": "passive",
@@ -52,7 +52,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_harmful_hand",
-      "buildHash": "fbd563afa117"
+      "buildHash": "706bb0a0d711"
     }
   }
 }

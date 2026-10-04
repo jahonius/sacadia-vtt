@@ -3,7 +3,7 @@
   "_key": "!items!0b22727075d47f5a",
   "name": "Gutwrenching Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_gutwrenching_strike_icon.webp",
   "system": {
     "description": "<p>Your base damage when you make a melee attack is increased by half your Finesse (rounded up).</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_gutwrenching_strike",
-      "buildHash": "c29c719fc650"
+      "buildHash": "ec129dcbd228"
     }
   }
 }

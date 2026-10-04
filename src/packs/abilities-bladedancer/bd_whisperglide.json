@@ -3,7 +3,7 @@
   "_key": "!items!3dfc1d4fc63120ca",
   "name": "Whisperglide",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_whisperglide_icon.webp",
   "system": {
     "description": "<p>As a Boost to an attack action, you may increase the damage dice of your attack by the number of times you have used the 5ft adjust action this turn (to a maximum of your Proficiency).</p>",
     "tag": "boost",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_whisperglide",
-      "buildHash": "2a50d2ba5513"
+      "buildHash": "fdf14e6525fa"
     }
   }
 }

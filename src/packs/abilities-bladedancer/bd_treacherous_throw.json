@@ -3,7 +3,7 @@
   "_key": "!items!06bca2365ef6b2bc",
   "name": "Treacherous Throw",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_treacherous_throw_icon.webp",
   "system": {
     "description": "<p>Up to once per turn while wielding two versatile weapons, choose a point within 30ft of you. Every creature within 5Xft from that spot (where X is half your Proficiency, rounded up) makes a Finesse Check against your Check DC or takes 1D4 Fumble. Roll each Fumble separately. When you use this ability, remove one versatile weapon from your inventory until the end of combat.</p>",
     "tag": "action",
@@ -80,7 +80,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_treacherous_throw",
-      "buildHash": "7461263aebf9"
+      "buildHash": "aa2d3d74fc45"
     }
   }
 }

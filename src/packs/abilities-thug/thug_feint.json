@@ -3,7 +3,7 @@
   "_key": "!items!7daa56e0dec52e20",
   "name": "Feint",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_feint_icon.webp",
   "system": {
     "description": "<p>Expend a trick point and choose one target within 5 feet of you to roll a Wiles Check against your Check DC. If they fail, they gain the Surprised condition.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_feint",
-      "buildHash": "442fec8b18ea"
+      "buildHash": "f8bf67904b97"
     }
   }
 }

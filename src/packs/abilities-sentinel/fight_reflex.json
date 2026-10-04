@@ -3,7 +3,7 @@
   "_key": "!items!47a9085090a63a87",
   "name": "Fight Reflex",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/fight_reflex_icon.webp",
   "system": {
     "description": "<p>When you maintain Focus on Stood Ground, also increase damage you deal to that target by 1 for each round you maintain Focus on them (beginning on the round you initiate Stood Ground).</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "fight_reflex",
-      "buildHash": "7c5fe9c1b6db"
+      "buildHash": "ea728a3aa536"
     }
   }
 }

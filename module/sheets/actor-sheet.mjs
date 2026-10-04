@@ -1347,7 +1347,9 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const ap = num(/\bap\b\s*[:=]?\s*(\d+)/i);
     const dc = num(/\b(?:check\s*dc|dc)\b\s*[:=]?\s*(\d+)/i);
     const cr = num(/\bcr\b\s*[:=]?\s*(\d+)/i);
+    const speed = num(/\b(?:speed|move)\b\s*[:=]?\s*(\d+)/i);
     if (hp != null) { update['system.health.max'] = hp; update['system.health.value'] = hp; }
+    if (speed != null) update['system.speed'] = speed;
     if (ap != null) { update['system.ap.max'] = ap; update['system.ap.value'] = ap; }
     for (const def of ['ad', 'pd', 'td', 'md', 'dr']) {
       const v = num(new RegExp(`\\b${def}\\b\\s*[:=]?\\s*(\\d+)`, 'i'));

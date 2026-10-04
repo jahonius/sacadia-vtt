@@ -3,7 +3,7 @@
   "_key": "!items!a1307ea74c37a7d8",
   "name": "Mage Critical",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/mage_critical_icon.webp",
   "system": {
     "description": "<p>Whenever you critically hit with an attack, you may have the critical effect be that the target must roll a Wiles Check to maintain Focus on one ability, losing Focus on a failed check.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "mage_critical",
-      "buildHash": "dd259a332a25"
+      "buildHash": "8ac005bd081c"
     }
   }
 }

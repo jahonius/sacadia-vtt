@@ -3,7 +3,7 @@
   "_key": "!items!2b012f46d403f4ba",
   "name": "Heavy Weaponry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/heavy_weaponry_icon.webp",
   "system": {
     "description": "<p>You gain training in heavy weapons such as greatswords, and may make a Heavy Weapon your Divine Weapon.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "heavy_weaponry",
       "transcribed": true,
-      "buildHash": "7dc10e614d3e"
+      "buildHash": "fb4baff6b671"
     }
   }
 }

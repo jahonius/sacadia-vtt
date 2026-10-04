@@ -3,7 +3,7 @@
   "_key": "!items!7fb9250a8be7fb93",
   "name": "Enemies Abound",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_enemies_abound_icon.webp",
   "system": {
     "description": "<p>Choose one enemy target within 30ft. That target makes a Wiles Check against your Check DC. If they fail, they treat all allies as enemies. Whenever the affected target chooses another creature as a target for its abilities, it must choose at random from among all creatures it can see within range of the ability it is using. If an enemy provokes a reaction attack from the affected creature, the creature must make that attack if it is able to. The affected target makes a Wiles Check against this effect every time you renew Focus. It also makes a Wiles Check against this effect if it takes damage of any kind. When it passes the Check, the effect ends.</p>",
     "tag": "focus",
@@ -69,7 +69,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Speaker[3]",
-      "buildHash": "979b58f9ec9d"
+      "buildHash": "5f625a8fdc75"
     }
   }
 }

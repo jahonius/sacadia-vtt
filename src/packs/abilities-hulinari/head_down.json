@@ -3,7 +3,7 @@
   "_key": "!items!4f19e4975c2011ff",
   "name": "Head Down",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/head_down_icon.webp",
   "system": {
     "description": "<p>As a Boost to a Move action when you are using Pack Mule, adversaries may not use Reaction Attacks on an ally you are carrying.</p>",
     "tag": "boost",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "head_down",
       "transcribed": true,
-      "buildHash": "87752f65ae7e"
+      "buildHash": "c6ee4bbe2b13"
     }
   }
 }

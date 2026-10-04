@@ -3,7 +3,7 @@
   "_key": "!items!479dd2673cb9cba7",
   "name": "Webcraft",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_webcraft_icon.webp",
   "system": {
     "description": "<p>Expend a Lore point to immediately deal 5M damage to X enemies within 60ft, where X is a number up to your Proficiency.</p>",
     "tag": "lore",
@@ -79,7 +79,7 @@
       "catalogId": "lore_webcraft",
       "transcribed": true,
       "lore": true,
-      "buildHash": "dcb228cc3502"
+      "buildHash": "efd4080a9f54"
     }
   }
 }

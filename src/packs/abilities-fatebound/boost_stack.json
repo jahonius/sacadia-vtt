@@ -3,7 +3,7 @@
   "_key": "!items!4b3e6a9973ff2a83",
   "name": "Boost Stack",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/boost_stack_icon.webp",
   "system": {
     "description": "<p>You may apply up to three unique Boosts to attacks made with your divine weapon. Boosts taken this way cannot be the same.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "boost_stack",
       "transcribed": true,
-      "buildHash": "735fb1c5a686"
+      "buildHash": "b9e00ffb8931"
     }
   }
 }

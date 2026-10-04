@@ -3,7 +3,7 @@
   "_key": "!items!c91916ea38ebe026",
   "name": "Home Advantage",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_home_advantage_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point while in the wilderness. Give all unique enemies within 120ft of you Fumble equal to your level (treat swarms as a single enemy). For each enemy given Fumble this way, you gain +1 to all To-Hits you make for the remainder of this turn.</p>",
     "tag": "lore",
@@ -62,7 +62,7 @@
       "catalogId": "lore_home_advantage",
       "transcribed": true,
       "lore": true,
-      "buildHash": "500158a0b820"
+      "buildHash": "371e140d0e78"
     }
   }
 }

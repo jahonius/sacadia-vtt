@@ -3,7 +3,7 @@
   "_key": "!items!ce93b8aedd7549dd",
   "name": "Bleedstep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_bleedstep_icon.webp",
   "system": {
     "description": "<p>Expend one Arrangement point and move up to your move speed. As you move, attempt to give every enemy within 5ft 1 level of Hemorrhage. Finesse Check negates.</p>",
     "tag": "action",
@@ -73,7 +73,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_bleedstep",
-      "buildHash": "dfdf97a01bfb"
+      "buildHash": "023e4b9c9233"
     }
   }
 }

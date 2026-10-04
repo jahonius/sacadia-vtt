@@ -3,7 +3,7 @@
   "_key": "!items!a02c217ffdd612c3",
   "name": "No Holds Barred",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_no_holds_barred_icon.webp",
   "system": {
     "description": "<p>Expend a lore point. For the remainder of your turn, increase the damage dice of all attacks you make by two dice types.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_no_holds_barred",
       "transcribed": true,
       "lore": true,
-      "buildHash": "2eaef7d66201"
+      "buildHash": "285ddcf0a306"
     }
   }
 }

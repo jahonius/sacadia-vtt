@@ -3,7 +3,7 @@
   "_key": "!items!7414c4197b3d7b85",
   "name": "Stabby Aura",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/stabby_aura_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice dealt by Blade Aura by one type.</p>",
     "tag": "passive",
@@ -45,7 +45,7 @@
     "sacadia": {
       "catalogId": "stabby_aura",
       "transcribed": true,
-      "buildHash": "78a7fd5db481"
+      "buildHash": "e015e1aa699f"
     }
   }
 }

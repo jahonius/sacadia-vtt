@@ -3,7 +3,7 @@
   "_key": "!items!51d17235fb716e95",
   "name": "Bleeding Bane",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_bleeding_bane_icon.webp",
   "system": {
     "description": "<p>Choose one ally. The damage dice caused by Hemorrhage they give is increased by one dice type for as long as you retain Focus.Every turn you maintain Focus on Bleeding Bane, you can only renew Focus on this ability when you are within 5ft of that target. If you drop Focus, any Hemmorhage they have given already reverts to doing normal damage (i.e., the effect does not linger beyond your Focus).</p>",
     "tag": "focus",
@@ -54,7 +54,7 @@
       "catalogId": "wt_bleeding_bane",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "fd1587063230"
+      "buildHash": "c5f24034af90"
     }
   }
 }

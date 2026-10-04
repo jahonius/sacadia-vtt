@@ -3,7 +3,7 @@
   "_key": "!items!c489c364abddb4d9",
   "name": "Strength of Ten Men",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/strength_of_ten_men_icon.webp",
   "system": {
     "description": "<p>When you use Sweeping Claws, your attack only deals damage to enemies, and does not harm allies.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "strength_of_ten_men",
       "transcribed": true,
-      "buildHash": "6d8215b5861c"
+      "buildHash": "0f34e6704751"
     }
   }
 }

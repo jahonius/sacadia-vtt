@@ -3,7 +3,7 @@
   "_key": "!items!2710275610c2b581",
   "name": "Reactionary",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/reactionary_icon.webp",
   "system": {
     "description": "<p>Gain one reaction to use before the start of your next turn. If you do not use this reaction, it goes away at the start of your next turn. You may not use two reactions in response to the same event.</p>",
     "tag": "action",
@@ -38,7 +38,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "reactionary",
-      "buildHash": "7918c71f9aa6"
+      "buildHash": "ec05276623a6"
     }
   }
 }

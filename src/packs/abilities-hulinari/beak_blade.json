@@ -3,7 +3,7 @@
   "_key": "!items!ed729c3bdb5f391a",
   "name": "Beak & Blade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/beak_blade_icon.webp",
   "system": {
     "description": "<p>Expend X Trickster Points when you initiate this ability (to a maximum of half your Proficiency rounded up), and expend one additional Trickster Point each turn you maintain Focus. Choose one ally within Clouded Ally when you Initiate this. For as long as that ally remains within Clouded Ally, increase the damage dice of all melee attacks they deal by X dice types.</p>",
     "tag": "focus",
@@ -51,7 +51,7 @@
     "sacadia": {
       "catalogId": "beak_blade",
       "transcribed": true,
-      "buildHash": "40a2e78189b8"
+      "buildHash": "2b76ea01fb21"
     }
   }
 }

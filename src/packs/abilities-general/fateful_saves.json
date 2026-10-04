@@ -3,7 +3,7 @@
   "_key": "!items!b2dfbddf044c696b",
   "name": "Fateful Saves",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/fateful_saves_icon.webp",
   "system": {
     "description": "<p>Once per quick rest, you may use a Boost to add your Fate Score to all rolls on a Trait Check you make.</p>",
     "tag": "boost",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "fateful_saves",
-      "buildHash": "11e551593a05"
+      "buildHash": "9f8d86c0855b"
     }
   }
 }

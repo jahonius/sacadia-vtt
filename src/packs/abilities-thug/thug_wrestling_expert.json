@@ -3,7 +3,7 @@
   "_key": "!items!96ebe12490a2ff40",
   "name": "Wrestling Expert",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_wrestling_expert_icon.webp",
   "system": {
     "description": "<p>The number of trick points you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_wrestling_expert",
-      "buildHash": "34621acdbde6"
+      "buildHash": "294b68d1c30e"
     }
   }
 }

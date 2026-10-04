@@ -3,7 +3,7 @@
   "_key": "!items!4d9624427619a727",
   "name": "Wild Chain",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_wild_chain_icon.webp",
   "system": {
     "description": "<p>Whenever you critically hit when you use Wild Strike, you may have the critical effect be for you to make a attack against an additional target. Treat this as part of the same attack. There is no limit to the number of times you can do this if you continue to critically hit.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_wild_chain",
-      "buildHash": "d175eacae6e2"
+      "buildHash": "37f55864c310"
     }
   }
 }

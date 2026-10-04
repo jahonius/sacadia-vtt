@@ -3,7 +3,7 @@
   "_key": "!items!804e2d37076b8c03",
   "name": "Guidance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_guidance_icon.webp",
   "system": {
     "description": "<p>Choose one target within 30ft when you initiate this. For as long as you maintain Focus, the first time they have to make a Trait Check, they add your Fate Score to one die rolled (i.e., if they make Trait Checks against 4 levels of Hemorrhage, they add your Fate to only one of the D20s they roll against the effect - though they can freely choose which one). Then, end Guidance.</p>",
     "tag": "focus",
@@ -53,7 +53,7 @@
       "transcribed": true,
       "prestige": "magus",
       "tome": "contract",
-      "buildHash": "a01a844de57c"
+      "buildHash": "daa48592bac7"
     }
   }
 }

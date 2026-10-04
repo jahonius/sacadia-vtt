@@ -3,7 +3,7 @@
   "_key": "!items!57a8528d86648d8c",
   "name": "Covering Dance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_covering_dance_icon.webp",
   "system": {
     "description": "<p>Expend one Arrangement point. Move up to your move speed. All allies you fully encircle with this move gain Half Cover until the start of your next turn.</p>",
     "tag": "action",
@@ -42,7 +42,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_covering_dance",
-      "buildHash": "c797f82dc75a"
+      "buildHash": "e2984994934a"
     }
   }
 }

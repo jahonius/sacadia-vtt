@@ -3,7 +3,7 @@
   "_key": "!items!352f0ec6f4db7f41",
   "name": "Field of Flowers",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_field_of_flowers_icon.webp",
   "system": {
     "description": "<p>Choose one ally within 5ft of you. Until the start of your next turn, all reaction attacks made against them are made at 1X Disadvantage.</p>",
     "tag": "action",
@@ -52,7 +52,7 @@
       "catalogId": "wt_field_of_flowers",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "066f58cccf8c"
+      "buildHash": "af9548f9b2f6"
     }
   }
 }

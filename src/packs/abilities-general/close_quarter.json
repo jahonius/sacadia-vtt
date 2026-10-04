@@ -3,7 +3,7 @@
   "_key": "!items!ed2a2c9cf129540e",
   "name": "Close Quarter",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/close_quarter_icon.webp",
   "system": {
     "description": "<p>In reaction to someone missing an attack against you when you are wielding a dagger, you may make an opportunity attack against them with a dagger. If you have Steadied, you may apply any boosts to this attack.</p>",
     "tag": "reaction",
@@ -52,7 +52,7 @@
     "sacadia": {
       "catalogId": "close_quarter",
       "opportunity": true,
-      "buildHash": "ab5be58d5d5a"
+      "buildHash": "83f4e536d1bf"
     }
   }
 }

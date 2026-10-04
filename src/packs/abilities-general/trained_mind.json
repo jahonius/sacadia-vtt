@@ -3,7 +3,7 @@
   "_key": "!items!f5ee6848e648ae60",
   "name": "Trained Mind",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/trained_mind_icon.webp",
   "system": {
     "description": "<p>You may take this ability up to two times. Every time you do, increase your MD by 1 on top of any armor you are wearing. Second instance costs 2 CSP.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "trained_mind",
-      "buildHash": "61bc109d997d"
+      "buildHash": "3538697c75c9"
     }
   }
 }

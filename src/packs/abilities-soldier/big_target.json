@@ -3,7 +3,7 @@
   "_key": "!items!6614c6877b1e6954",
   "name": "Big Target",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/big_target_icon.webp",
   "system": {
     "description": "<p>When you attempt to give a target Taunt, attempt to give one additional level.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "big_target",
-      "buildHash": "f4476d410079"
+      "buildHash": "3632e76b2340"
     }
   }
 }

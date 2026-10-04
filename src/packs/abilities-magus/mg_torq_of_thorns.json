@@ -3,7 +3,7 @@
   "_key": "!items!c6b975bf508905cc",
   "name": "Torq of Thorns",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_torq_of_thorns_icon.webp",
   "system": {
     "description": "<p>In response to an attack made by an ally within 30ft of you that is some number on the die away from a critical hit, you may expend any number of Spell Slots. For each Spell Slot expended, increase the critical range of your ally by one (e.g., if an ally rolls a nat18, and they only critically hit on a 20, you may expend two spell slots to make the attack critically hit).</p>",
     "tag": "reaction",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "You are a Fatebound with the Targeted Foe ability",
-      "buildHash": "356d44f8d5af"
+      "buildHash": "d567aecbb12a"
     }
   }
 }

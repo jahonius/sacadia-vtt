@@ -3,7 +3,7 @@
   "_key": "!items!5b7fc43c6be289af",
   "name": "Slamming Critical",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/slamming_critical_icon.webp",
   "system": {
     "description": "<p>When you critically hit a target with an attack made against PD, you may cause the effect to be to knock the target Prone.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "slamming_critical",
-      "buildHash": "b151cfd4b22c"
+      "buildHash": "52d62539bd45"
     }
   }
 }

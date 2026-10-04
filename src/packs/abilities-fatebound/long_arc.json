@@ -3,7 +3,7 @@
   "_key": "!items!755131d12f82451b",
   "name": "Long Arc",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/long_arc_icon.webp",
   "system": {
     "description": "<p>Once per turn as a Boost to an attack with a divine weapon, you may expend one additional AP to make that attack against two targets. Only apply the base weapon damage dice to all targets (i.e., do not add Power or other modifiers to damage dealt). You may only use this Boost if two enemies are within range and within 5ft of one another.</p>",
     "tag": "boost",
@@ -59,7 +59,7 @@
     "sacadia": {
       "catalogId": "long_arc",
       "transcribed": true,
-      "buildHash": "bbb44a810804"
+      "buildHash": "90169694642f"
     }
   }
 }

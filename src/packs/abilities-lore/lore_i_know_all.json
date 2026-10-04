@@ -3,7 +3,7 @@
   "_key": "!items!7ec93d42fa4aa1b6",
   "name": "I Know All",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_i_know_all_icon.webp",
   "system": {
     "description": "<p>Choose one target within 60ft of you who is a favored enemy type. Expend one lore point. You may look at their Monster Card until the end of combat.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_i_know_all",
       "transcribed": true,
       "lore": true,
-      "buildHash": "792489a3b62a"
+      "buildHash": "e1c47bd136e2"
     }
   }
 }

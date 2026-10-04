@@ -3,7 +3,7 @@
   "_key": "!items!9702b5c444930c28",
   "name": "Mostly Human",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/profession-features/hul_mostly_human_icon.webp",
   "system": {
     "description": "<p>You may change between a human and beast form as a Boost to another action.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "hul_mostly_human",
       "feature": true,
       "level": 15,
-      "buildHash": "59331b7deeba"
+      "buildHash": "f0a6ab71a8b5"
     }
   }
 }

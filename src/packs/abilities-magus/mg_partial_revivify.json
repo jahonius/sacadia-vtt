@@ -3,7 +3,7 @@
   "_key": "!items!adcf2d73a7d0fe46",
   "name": "Partial Revivify",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_partial_revivify_icon.webp",
   "system": {
     "description": "<p>Choose one ally within 5ft of you with the Dying Condition. Expend a Spell Slot. For as long as you maintain Focus on that target, they ignore the effects of their Enduring Fatigue accumulated from Dying until they drop unconscious. When they do, this effect ends.</p>",
     "tag": "focus",
@@ -53,7 +53,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Medic[2]",
-      "buildHash": "55924f157b9f"
+      "buildHash": "8934ec2dc37a"
     }
   }
 }

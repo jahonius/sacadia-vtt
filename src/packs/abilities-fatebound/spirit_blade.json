@@ -3,7 +3,7 @@
   "_key": "!items!0a5647fd7d2fba51",
   "name": "Spirit Blade",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/spirit_blade_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point. For as long as you maintain Focus, your divine weapon glows with a spiritual energy. It attacks AD (the lowest armor score among MD, TD, PD) instead of other armor types. Additionally, your weapon can strike incorporeal targets.</p>",
     "tag": "focus",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "spirit_blade",
       "transcribed": true,
-      "buildHash": "91767e36721b"
+      "buildHash": "063505b2c567"
     }
   }
 }

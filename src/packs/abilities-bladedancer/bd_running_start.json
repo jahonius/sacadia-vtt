@@ -3,7 +3,7 @@
   "_key": "!items!8005cf9d80ec981c",
   "name": "Running Start",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_running_start_icon.webp",
   "system": {
     "description": "<p>At the start of combat when you are not ambushed, you may move half your move speed (rounded up) in any direction prior to anyone taking an action.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_running_start",
-      "buildHash": "6ae8afd7098e"
+      "buildHash": "c9f524ec2b34"
     }
   }
 }

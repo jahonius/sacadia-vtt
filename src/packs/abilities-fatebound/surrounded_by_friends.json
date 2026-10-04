@@ -3,7 +3,7 @@
   "_key": "!items!14609d059cb03327",
   "name": "Surrounded by Friends",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/surrounded_by_friends_icon.webp",
   "system": {
     "description": "<p>Count all creatures (not just enemies) when determining the modifier to apply to damage by the Surrounded by Me boost.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "surrounded_by_friends",
       "transcribed": true,
-      "buildHash": "6aa8ed0a0609"
+      "buildHash": "57eb9cc1b063"
     }
   }
 }

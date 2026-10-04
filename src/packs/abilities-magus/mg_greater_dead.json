@@ -3,7 +3,7 @@
   "_key": "!items!e6958e58090d9715",
   "name": "Greater Dead",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_greater_dead_icon.webp",
   "system": {
     "description": "<p>When you animate dead, they become Dancing Shades (CR3) instead of Shambling Shades (CR2).</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "blood",
       "research": "Reincarnation",
-      "buildHash": "0b4d91bc3428"
+      "buildHash": "5d333b57d330"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!f415a365b85b7f29",
   "name": "Sacrifice",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/sacrifice_icon.webp",
   "system": {
     "description": "<p>If you are standing within 5ft of an ally who would take damage from an attack, you may use your reaction to instead take that damage. If you have Steadied, you may use this on an ally within 10ft of you.</p>",
     "tag": "reaction",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sacrifice",
-      "buildHash": "4d7eb7de0e8a"
+      "buildHash": "93d3f4481cd0"
     }
   }
 }

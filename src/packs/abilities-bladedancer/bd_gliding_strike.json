@@ -3,7 +3,7 @@
   "_key": "!items!1b3e4e1bbf900f93",
   "name": "Gliding Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_gliding_strike_icon.webp",
   "system": {
     "description": "<p>If you recover a use of 5ft adjust through Glidestep on an attack action you make, add your Finesse to damage you deal on that attack.</p>",
     "tag": "passive",
@@ -54,7 +54,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_gliding_strike",
-      "buildHash": "e1993935d9be"
+      "buildHash": "ded5978776a3"
     }
   }
 }

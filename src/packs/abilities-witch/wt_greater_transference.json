@@ -3,7 +3,7 @@
   "_key": "!items!df423b152a762854",
   "name": "Greater Transference",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_greater_transference_icon.webp",
   "system": {
     "description": "<p>When you use Shield Transference on an ally, you transfer both types of defense by your Fate, rather than half your Fate.</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_greater_transference",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "34f4b51c65d3"
+      "buildHash": "0d56eb0b623c"
     }
   }
 }

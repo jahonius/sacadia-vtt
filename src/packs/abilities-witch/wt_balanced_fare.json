@@ -3,7 +3,7 @@
   "_key": "!items!fed3f2942145b774",
   "name": "Balanced Fare",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_balanced_fare_icon.webp",
   "system": {
     "description": "<p>In response to an ally within 5ft of you attempting to hit a target and missing, you may deal XD6 damage to them, where X is the amount by which they missed. They then hit. You cannot use this to turn a natural 1 into a hit. They must agree to take this damage before you roll the dice, and before the attack hits.</p>",
     "tag": "reaction",
@@ -37,7 +37,7 @@
       "catalogId": "wt_balanced_fare",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "4698014879ab"
+      "buildHash": "9b5a24c26a8c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!5ddef3922ae84d10",
   "name": "Kneejerk",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_kneejerk_icon.webp",
   "system": {
     "description": "<p>When you have given a target levels of Wrestle Pin and they only have one level of Pin, increase the damage dice you deal through melee attacks by one dice type.</p>",
     "tag": "passive",
@@ -48,7 +48,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_kneejerk",
-      "buildHash": "d11e46af65ea"
+      "buildHash": "a256772ad6f3"
     }
   }
 }

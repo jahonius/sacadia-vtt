@@ -3,7 +3,7 @@
   "_key": "!items!50c13d68079c6d8a",
   "name": "Call to Overcome",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/call_to_overcome_icon.webp",
   "system": {
     "description": "<p>Expend one call point. Reduce all adversarial conditions on yourself or one ally within 5ft by 1 level.</p>",
     "tag": "action",
@@ -46,7 +46,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "call_to_overcome",
-      "buildHash": "fe7024f5ae5c"
+      "buildHash": "2253faffb6b2"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!afaf2156e56cb056",
   "name": "Pincushion",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/pincushion_icon.webp",
   "system": {
     "description": "<p>When you push an enemy using Pushback and they are pushed into melee weapon range of any of your allies, you may select one ally who can use their reaction to make a melee weapon attack against the target even if they normally would be unable to do so.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "pincushion",
-      "buildHash": "1a6126444316"
+      "buildHash": "b87340593b42"
     }
   }
 }

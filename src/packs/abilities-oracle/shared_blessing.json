@@ -3,7 +3,7 @@
   "_key": "!items!f16c0198a1eeaf5a",
   "name": "Shared Blessing",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/shared_blessing_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/shared_blessing_icon.webp",
   "system": {
     "description": "<p>When you use Blessing of the Iron Wall, you may choose one target within 5ft of you that you can see when you initiate this ability. Apply the effect of Blessing of the Iron Wall to them instead of you for as long as you maintain focus.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shared_blessing",
-      "buildHash": "c6e83c83a57a"
+      "buildHash": "fe4fe878b0e9"
     }
   }
 }

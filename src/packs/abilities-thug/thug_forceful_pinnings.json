@@ -3,7 +3,7 @@
   "_key": "!items!ed0721a1ccab6434",
   "name": "Forceful Pinnings",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_forceful_pinnings_icon.webp",
   "system": {
     "description": "<p>Attempt to give a target within 5ft of you Dragged and Prone. They make a Power Check against this effect. They lose both at the end of your turn.</p>",
     "tag": "action",
@@ -63,7 +63,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_forceful_pinnings",
-      "buildHash": "b10f78989214"
+      "buildHash": "fb33e499eb43"
     }
   }
 }

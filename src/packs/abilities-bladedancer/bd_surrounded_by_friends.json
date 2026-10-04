@@ -3,7 +3,7 @@
   "_key": "!items!bf2cd7cd825d152f",
   "name": "Surrounded by Friends",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_surrounded_by_friends_icon.webp",
   "system": {
     "description": "<p>Count all creatures (not just enemies) when determining the modifier to apply to damage by the Surrounded by Me boost.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_surrounded_by_friends",
-      "buildHash": "d58480ab09bd"
+      "buildHash": "224f9f1357a7"
     }
   }
 }

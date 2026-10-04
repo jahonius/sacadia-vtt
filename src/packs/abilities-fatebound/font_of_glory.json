@@ -3,7 +3,7 @@
   "_key": "!items!e04d5d408cc43103",
   "name": "Font of Glory",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/font_of_glory_icon.webp",
   "system": {
     "description": "<p>The number of Glory points you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -36,7 +36,7 @@
     "sacadia": {
       "catalogId": "font_of_glory",
       "transcribed": true,
-      "buildHash": "999ad08143b8"
+      "buildHash": "db04bb379580"
     }
   }
 }

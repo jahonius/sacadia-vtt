@@ -3,7 +3,7 @@
   "_key": "!items!738905adcdf8136e",
   "name": "Infallible",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_infallible_icon.webp",
   "system": {
     "description": "<p>Expend one Lore point. Until the end of your turn, any attack you attempt that would miss hits instead. If you use this and it is not your turn (as in, during a reaction attack) it applies until the end of your next turn.</p>",
     "tag": "lore",
@@ -53,7 +53,7 @@
       "catalogId": "lore_infallible",
       "transcribed": true,
       "lore": true,
-      "buildHash": "671fb47d3c6b"
+      "buildHash": "8246a9c5d9fc"
     }
   }
 }

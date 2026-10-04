@@ -3,7 +3,7 @@
   "_key": "!items!ffbaac03f383824d",
   "name": "Agile Dance",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_agile_dance_icon.webp",
   "system": {
     "description": "<p>Reactions used to grab or make an Attack of Opportunity on you are made at 1X disadvantage.</p>",
     "tag": "passive",
@@ -58,7 +58,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_agile_dance",
-      "buildHash": "d1b4218144df"
+      "buildHash": "c4632d321c62"
     }
   }
 }

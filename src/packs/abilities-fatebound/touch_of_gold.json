@@ -3,7 +3,7 @@
   "_key": "!items!b0f34e105ff798f6",
   "name": "Touch of Gold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/fatebound/touch_of_gold_icon.webp",
   "system": {
     "description": "<p>Expend one Glory point to attempt to give Fatigue equal to half your Proficiency (rounded up) to one target within 5ft of you. They make a Fate check against this effect.</p>",
     "tag": "action",
@@ -58,7 +58,7 @@
     "sacadia": {
       "catalogId": "touch_of_gold",
       "transcribed": true,
-      "buildHash": "666cbc11d91b"
+      "buildHash": "9f59d59387b0"
     }
   }
 }

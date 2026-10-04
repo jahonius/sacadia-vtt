@@ -3,7 +3,7 @@
   "_key": "!items!cb2a4c63528e99d3",
   "name": "Bane",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_bane_icon.webp",
   "system": {
     "description": "<p>Expend X Spell Slots, where X is a number up to your Proficiency. Choose X targets within 30ft of you that you can see. Each target makes a Fate Check against your Check DC. For as long as you maintain Focus, all enemies who fail this Trait Check subtract your Fate score from all Trait Checks and Attack Rolls that they make. Each target you Bane can end this effect with a successful Make Trait Check action.</p>",
     "tag": "focus",
@@ -78,7 +78,7 @@
       "prestige": "magus",
       "tome": "elder",
       "research": "Dungeoneering[2]",
-      "buildHash": "037113d937e5"
+      "buildHash": "1a052a0af6b3"
     }
   }
 }

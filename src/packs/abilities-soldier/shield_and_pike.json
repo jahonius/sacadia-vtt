@@ -3,7 +3,7 @@
   "_key": "!items!730a623f9ee301ca",
   "name": "Shield and Pike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/shield_and_pike_icon.webp",
   "system": {
     "description": "<p>If you wield a shield in one hand, you may wield a pike in the other. Treat it as a one-handed melee weapon when you wield it.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "shield_and_pike",
-      "buildHash": "fb8e979f6f39"
+      "buildHash": "f7505518ab18"
     }
   }
 }

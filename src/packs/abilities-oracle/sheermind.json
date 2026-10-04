@@ -3,7 +3,7 @@
   "_key": "!items!b8a028e99f0a5b19",
   "name": "Sheermind",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/sheermind_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/sheermind_icon.webp",
   "system": {
     "description": "<p>Attempt to give Delirium up to your Proficiency to one target within 60ft of you. They roll Wiles Checks against the effect.</p>",
     "tag": "action",
@@ -62,7 +62,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "sheermind",
-      "buildHash": "41d9c3ba347a"
+      "buildHash": "f729c0c9f6e6"
     }
   }
 }

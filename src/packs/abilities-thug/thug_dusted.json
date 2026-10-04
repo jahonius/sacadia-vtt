@@ -3,7 +3,7 @@
   "_key": "!items!cb672e0734ad2b38",
   "name": "Dusted",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_dusted_icon.webp",
   "system": {
     "description": "<p>When a creature uses the 'Make Trait Check' action against Wrestle Pin you have given them, you may use a reaction to impose 1X disadvantage on that trait check.</p>",
     "tag": "reaction",
@@ -37,7 +37,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_dusted",
-      "buildHash": "340317fd03bc"
+      "buildHash": "b36a54cd8618"
     }
   }
 }

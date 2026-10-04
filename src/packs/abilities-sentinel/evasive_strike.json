@@ -3,7 +3,7 @@
   "_key": "!items!a1ea554755c51149",
   "name": "Evasive Strike",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/evasive_strike_icon.webp",
   "system": {
     "description": "<p>When you use Evasion, you may make an attack using your reaction. Treat the enemy as Surprised for this.</p>",
     "tag": "reaction",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "evasive_strike",
-      "buildHash": "533e27e7f9ab"
+      "buildHash": "e7a6ac1a4e36"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!4cac9b5e9dc19296",
   "name": "Masterful Unfurling",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_masterful_unfurling_icon.webp",
   "system": {
     "description": "<p>Gain 3 Spell Slots.</p>",
     "tag": "passive",
@@ -39,7 +39,7 @@
       "prestige": "magus",
       "tome": "any",
       "research": "Handcopy[3]",
-      "buildHash": "fcac0a26420a"
+      "buildHash": "ab72c2664d89"
     }
   }
 }

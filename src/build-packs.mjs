@@ -27,6 +27,7 @@ import { BASICS } from './basics.mjs';
 import { PROGRESSION } from './progression.mjs';
 import { buildManual } from './manual.mjs';
 import { ADORNMENTS, TRINKETS, WEAPONS, ARMORS, SHIELDS } from './equipment.mjs';
+import { SHIPPED_DIR, hasIcons, iconGroup, iconPattern, systemPath } from './icons.mjs';
 import { inferMaterial, inferShieldSize } from '../module/helpers/actor-utils.mjs';
 import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES, BOOST_OVERRIDES, ACTIVITY_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, ZONE_OVERRIDES, TEXT_OVERRIDES, TAG_OVERRIDES, EXTRAAP_OVERRIDES, POOL_OVERRIDES, AMOUNTPROMPT_OVERRIDES, LORE_MADNESS, USAGE_OVERRIDES, USAGE_UPGRADES, AID_RESIST_OVERRIDES, OPPORTUNITY_IDS } from './modifiers.mjs';
 import { MADNESS_ANNOTATIONS } from './madness.mjs';
@@ -69,22 +70,20 @@ const ACTIVE_TAGS = new Set(['action', 'focus', 'ceremony']);
 const ACTIONABLE_TAGS = new Set(['action', 'focus', 'ceremony', 'reaction']);
 const DEFAULT_IMG = 'icons/svg/book.svg';
 
-// Generated ability icons live at assets/icons/abilities/<profession>/<catalogId>_icon.<ext> (see
-// src/generate-icons.mjs). When one exists, wire the ability's img to it (a Foundry data path under the
-// system root); otherwise keep the svg default. Directory listings are cached per profession.
-const ICON_BASE = path.join(ROOT, 'assets', 'icons', 'abilities');
+// Generated icons (src/generate-icons.mjs; locations in src/icons.mjs): when one exists for an item, its img points
+// at it; otherwise the item keeps its svg default. The 256 px WebP is preferred over any older format. Folder
+// listings are cached per icon group.
 const _iconDirCache = new Map();
 function iconFor(pack, catalogId) {
-  if (!pack.startsWith('abilities-')) return null;
-  const profession = pack.replace(/^abilities-/, '');
-  if (!_iconDirCache.has(profession)) {
-    const dir = path.join(ICON_BASE, profession);
-    _iconDirCache.set(profession, fs.existsSync(dir) ? fs.readdirSync(dir) : []);
+  if (!hasIcons(pack)) return null;
+  const group = iconGroup(pack);
+  if (!_iconDirCache.has(group)) {
+    const dir = path.join(SHIPPED_DIR, group);
+    _iconDirCache.set(group, fs.existsSync(dir) ? fs.readdirSync(dir) : []);
   }
-  const safe = catalogId.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(`^${safe}(_icon)?\\.(png|jpe?g)$`, 'i');
-  const file = _iconDirCache.get(profession).find((f) => re.test(f));
-  return file ? `systems/sacadia/assets/icons/abilities/${profession}/${file}` : null;
+  const matches = _iconDirCache.get(group).filter((f) => iconPattern(catalogId).test(f));
+  const file = matches.find((f) => f.endsWith('.webp')) ?? matches[0];
+  return file ? systemPath(group, file) : null;
 }
 
 /* -------------------------------------------- */
@@ -544,7 +543,7 @@ function basicToItem(b) {
     _key: `!items!${_id}`,
     name: b.name,
     type: 'ability',
-    img: b.tag === 'reaction' ? 'icons/svg/shield.svg' : 'icons/svg/combat.svg',
+    img: iconFor('basic-actions', b.id) ?? (b.tag === 'reaction' ? 'icons/svg/shield.svg' : 'icons/svg/combat.svg'),
     system: {
       description: `<p>${b.description}</p>`,
       tag: b.tag,
@@ -629,7 +628,9 @@ function weaponToItem(pack, e) {
     _id, _key: `!items!${_id}`, name: e.name, type: 'gear', img: 'icons/svg/sword.svg',
     system: {
       // Versatile weapons (the throwable ones) carry the trait, read as `self:attack:trait:versatile`.
-      description: descParts.join(''), quantity: 1, weight: 0, value: e.value ?? 0, equipped: false, traits: e.throw ? 'versatile' : '',
+      // Heavy weapons carry the `heavy` trait, read as `self:wielding:heavy` (Heavy Weapons Mastery).
+      description: descParts.join(''), quantity: 1, weight: 0, value: e.value ?? 0, equipped: false,
+      traits: [e.throw ? 'versatile' : '', /heavy/i.test(e.prereq ?? '') ? 'heavy' : ''].filter(Boolean).join(', '),
       // Item slots (book p.187): basic weapons 1, military 2, heavy 3.
       slots: /heavy/i.test(e.prereq ?? '') ? 3 : /military/i.test(e.prereq ?? '') ? 2 : 1, storage: 'ris', providesSis: 0,
       weaponType: e.type,

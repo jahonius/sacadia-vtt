@@ -10,7 +10,7 @@
     "weight": 0,
     "value": 5000,
     "equipped": false,
-    "traits": "",
+    "traits": "heavy",
     "slots": 3,
     "storage": "ris",
     "providesSis": 0,
@@ -33,7 +33,7 @@
     "sacadia": {
       "catalogId": "greensword",
       "kind": "weapon",
-      "buildHash": "84dc232ed89e"
+      "buildHash": "645f33298b4d"
     }
   }
 }

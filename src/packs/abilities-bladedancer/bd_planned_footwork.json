@@ -3,7 +3,7 @@
   "_key": "!items!b0c3af2e63f4f165",
   "name": "Planned Footwork",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_planned_footwork_icon.webp",
   "system": {
     "description": "<p>The number of Arrangement points you get per quick rest is equal to twice your Proficiency Score.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_planned_footwork",
-      "buildHash": "02451dbefa00"
+      "buildHash": "feec49ae910b"
     }
   }
 }

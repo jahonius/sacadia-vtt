@@ -3,7 +3,7 @@
   "_key": "!items!c38e7d6078220bab",
   "name": "Headlock",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_headlock_icon.webp",
   "system": {
     "description": "<p>Choose a target to whom you have given Wrestle Pin and expend a trick point. They make a Finesse Check against your Check DC. If they fail, give them one Paralysis.</p>",
     "tag": "action",
@@ -59,7 +59,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_headlock",
-      "buildHash": "e267ade3a436"
+      "buildHash": "4546347b8dc3"
     }
   }
 }

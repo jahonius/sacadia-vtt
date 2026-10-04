@@ -10,7 +10,7 @@
     "weight": 0,
     "value": 200,
     "equipped": false,
-    "traits": "",
+    "traits": "heavy",
     "slots": 3,
     "storage": "ris",
     "providesSis": 0,
@@ -33,7 +33,7 @@
     "sacadia": {
       "catalogId": "greater_club",
       "kind": "weapon",
-      "buildHash": "3ad58e0da388"
+      "buildHash": "4381676b6812"
     }
   }
 }

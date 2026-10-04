@@ -3,7 +3,7 @@
   "_key": "!items!8c4d60dd7e6bf926",
   "name": "Strength of Giants",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_strength_of_giants_icon.webp",
   "system": {
     "description": "<p>Increase the base damage dice of Harm by one type.</p>",
     "tag": "passive",
@@ -44,7 +44,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_strength_of_giants",
-      "buildHash": "081cce9af31e"
+      "buildHash": "735b6ef30f47"
     }
   }
 }

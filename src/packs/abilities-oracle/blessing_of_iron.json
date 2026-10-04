@@ -3,7 +3,7 @@
   "_key": "!items!9f5be85baede35bb",
   "name": "Blessing of Iron",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_iron_icon.jpg",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/blessing_of_iron_icon.webp",
   "system": {
     "description": "<p>Choose one target within 5ft of you when you initiate this Blessing. As long as you maintain focus, increase the basic damage dice of any weapon they use by one dice type.</p>",
     "tag": "focus",
@@ -55,7 +55,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "blessing_of_iron",
-      "buildHash": "8bcf9507f510"
+      "buildHash": "3f1b8fa4b2f2"
     }
   }
 }

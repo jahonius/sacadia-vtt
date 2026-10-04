@@ -3,7 +3,7 @@
   "_key": "!items!1f80a455fd0f4e2c",
   "name": "Cheststep",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_cheststep_icon.webp",
   "system": {
     "description": "<p>As a reaction to a creature within 5ft of you attempting to stand up from being Prone, you may force them to make a Power Check against your Check DC. If they fail, they remain Prone.</p>",
     "tag": "reaction",
@@ -57,7 +57,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_cheststep",
-      "buildHash": "60eb1fc50f57"
+      "buildHash": "4e2b997c725c"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!08a3668b652825f3",
   "name": "Razorleaf",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_razorleaf_icon.webp",
   "system": {
     "description": "<p>Choose one ally within 5ft of you when you initiate this, and further choose one weapon type they wield. For as long as you maintain Focus on Razorleaf, increase the damage dice of all attacks they make with that weapon type by two dice types. Every turn you maintain Focus on Razorleaf, you can only renew Focus when you are within 5ft of that ally. You may not use Razorleaf more than once on a single target simultaneously and cannot choose yourself.</p>",
     "tag": "focus",
@@ -103,7 +103,7 @@
       "catalogId": "wt_razorleaf",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "9effdcf0336f"
+      "buildHash": "369ebfd50ad4"
     }
   }
 }

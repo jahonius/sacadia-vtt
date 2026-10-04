@@ -3,7 +3,7 @@
   "_key": "!items!8458409daf22f335",
   "name": "Blossom",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_blossom_icon.webp",
   "system": {
     "description": "<p>As a reaction to an ally using an ability within 5ft of you, expend a reaction. That ally does not exhaust a limb through that ability use.</p>",
     "tag": "reaction",
@@ -52,7 +52,7 @@
       "catalogId": "wt_blossom",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "98d97481b9c5"
+      "buildHash": "5dd8ab306e9c"
     }
   }
 }

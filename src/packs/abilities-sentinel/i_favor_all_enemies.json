@@ -3,7 +3,7 @@
   "_key": "!items!fdc6227dfe65982b",
   "name": "I Favor All Enemies",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/i_favor_all_enemies_icon.webp",
   "system": {
     "description": "<p>Choose an additional favored enemy and style. All abilities that apply to Favored Enemies apply to every enemy type you choose.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "i_favor_all_enemies",
-      "buildHash": "e301093daa62"
+      "buildHash": "99685927bc91"
     }
   }
 }

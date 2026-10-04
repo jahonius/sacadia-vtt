@@ -3,7 +3,7 @@
   "_key": "!items!ca7e142a5daa840a",
   "name": "Mad Chanting",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_chanting_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/mad_chanting_icon.webp",
   "system": {
     "description": "<p>Choose one target within 15ft. They take MD4 Rot damage, where M is your Madness. Repeat this, choosing a new target within 15ft of the prior, up to X times (X is your Proficiency). Each target makes a Fate Check, taking half damage on success.</p>",
     "tag": "action",
@@ -66,7 +66,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "mad_chanting",
-      "buildHash": "69fe57b98731"
+      "buildHash": "89a6b5344703"
     }
   }
 }

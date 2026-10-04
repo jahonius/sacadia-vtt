@@ -3,7 +3,7 @@
   "_key": "!items!a763f87d8ef4554b",
   "name": "Wild Throws",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/bladedancer/bd_wild_throws_icon.webp",
   "system": {
     "description": "<p>When you use Wild Strike with Versatile Weapons, you may make Versatile throws with one or either weapon.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "bd_wild_throws",
-      "buildHash": "fa51c090dbad"
+      "buildHash": "212be8c6e6ea"
     }
   }
 }

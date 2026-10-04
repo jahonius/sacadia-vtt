@@ -3,7 +3,7 @@
   "_key": "!items!e1c1b59c7488b6be",
   "name": "High Wrestle",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/thug/thug_high_wrestle_icon.webp",
   "system": {
     "description": "<p>You do not have disadvantage to give Wrestle Pin to creatures one size larger than you, and you can give Wrestle Pin to creatures two sizes larger than you at 1x disadvantage.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "thug_high_wrestle",
-      "buildHash": "80a0179a1adc"
+      "buildHash": "1ce94ca33c55"
     }
   }
 }

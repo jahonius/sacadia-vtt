@@ -3,7 +3,7 @@
   "_key": "!items!ca2b374b844939f5",
   "name": "Greater Wellspring",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_greater_wellspring_icon.webp",
   "system": {
     "description": "<p>When you use Wellspring on an ally, they give one extra level whenever they attempt to give conditions equal to half their Proficiency, rounded up, or more (e.g., if they have 4 Proficiency and attempt to give 2 levels of Corrosion, they instead attempt to give 3).</p>",
     "tag": "passive",
@@ -37,7 +37,7 @@
       "catalogId": "wt_greater_wellspring",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "80d0425a2a87"
+      "buildHash": "963a4125181d"
     }
   }
 }

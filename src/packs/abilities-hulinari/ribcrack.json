@@ -3,7 +3,7 @@
   "_key": "!items!79b09d2c0a539e8f",
   "name": "Ribcrack",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/ribcrack_icon.webp",
   "system": {
     "description": "<p>When you use Kick on an enemy and they fail the trait check against it, you may expend a Boost to deal XD6 damage to them, where X is your Finesse.</p>",
     "tag": "boost",
@@ -50,7 +50,7 @@
     "sacadia": {
       "catalogId": "ribcrack",
       "transcribed": true,
-      "buildHash": "e4bf2a56afe1"
+      "buildHash": "9cc4a538de62"
     }
   }
 }

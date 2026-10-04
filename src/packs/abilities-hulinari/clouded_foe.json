@@ -3,7 +3,7 @@
   "_key": "!items!21fa520af331386f",
   "name": "Clouded Foe",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/clouded_foe_icon.webp",
   "system": {
     "description": "<p>When you are in Swarm Form and initiate focus on Clouded Foe, increase the size of your token to X tiles, where X is your Proficiency. One of those tiles must be the tile you are in, and all must be adjacent to at least one other tile (no diagonals). You may select tiles occupied by creatures. For as long as you maintain Focus on Clouded Foe, when you take the Move action, all tiles move together, cannot separate, and trigger reaction attacks together. If one part of your token would forcibly separate from the others, your Focus immediately ends. When you end Focus on Clouded Foe, choose one tile occupied by Clouded Foe to be your new location. For as long as you maintain Focus on Clouded Foe, enemies in a tile occupied by Clouded Foe are considered Surrounded.</p>",
     "tag": "focus",
@@ -80,7 +80,7 @@
     "sacadia": {
       "catalogId": "clouded_foe",
       "transcribed": true,
-      "buildHash": "824978747e76"
+      "buildHash": "b63f5e527a0a"
     }
   }
 }

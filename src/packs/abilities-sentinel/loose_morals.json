@@ -3,7 +3,7 @@
   "_key": "!items!971aebedbc7600dd",
   "name": "Loose Morals",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/sentinel/loose_morals_icon.webp",
   "system": {
     "description": "<p>If you make a frenzied ranged attack with a crossbow, roll with 1x advantage. This increases damage dice size for the crossbow.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "loose_morals",
-      "buildHash": "4c433018ec11"
+      "buildHash": "38ccf93353fc"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!9d0f3fee2b344031",
   "name": "Erratic Charge",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/hulinari/erratic_charge_icon.webp",
   "system": {
     "description": "<p>All creatures who make an attack of opportunity against you when you use Charge the Line do so with 1X Disadvantage. This stacks with other sources of disadvantage.</p>",
     "tag": "passive",
@@ -51,7 +51,7 @@
     "sacadia": {
       "catalogId": "erratic_charge",
       "transcribed": true,
-      "buildHash": "b898f1478a20"
+      "buildHash": "7161cb0e8644"
     }
   }
 }

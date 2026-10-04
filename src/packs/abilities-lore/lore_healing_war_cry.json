@@ -3,7 +3,7 @@
   "_key": "!items!f7f8130afd9a4a5f",
   "name": "Healing War Cry",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_healing_war_cry_icon.webp",
   "system": {
     "description": "<p>As an action when within 5ft of one ally who has less than half HP, expend one lore point. Give that ally temporary HP up to 1/4 of their maximum HP (rounded up).</p>",
     "tag": "lore",
@@ -43,7 +43,7 @@
       "catalogId": "lore_healing_war_cry",
       "transcribed": true,
       "lore": true,
-      "buildHash": "60ba80c2f1dd"
+      "buildHash": "01498aac6ff6"
     }
   }
 }

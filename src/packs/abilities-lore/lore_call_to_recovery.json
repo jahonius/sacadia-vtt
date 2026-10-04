@@ -3,7 +3,7 @@
   "_key": "!items!f2e82f6e1b025723",
   "name": "Call to Recovery",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_call_to_recovery_icon.webp",
   "system": {
     "description": "<p>Expend a Lore Point. You and all allies within 15ft of you recover up to X expended Action Pool points (e.g., Trick Strike Points, Glory Points), where X is half your Proficiency, rounded up.</p>",
     "tag": "lore",
@@ -44,7 +44,7 @@
       "catalogId": "lore_call_to_recovery",
       "transcribed": true,
       "lore": true,
-      "buildHash": "c0cf37eb1ee1"
+      "buildHash": "4d42d466b693"
     }
   }
 }

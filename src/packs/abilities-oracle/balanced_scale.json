@@ -3,7 +3,7 @@
   "_key": "!items!4900b943cb2982ab",
   "name": "Balanced Scale",
   "type": "ability",
-  "img": "systems/sacadia/assets/icons/abilities/oracle/balanced_scale_icon.png",
+  "img": "systems/sacadia/assets/icons/abilities/oracle/balanced_scale_icon.webp",
   "system": {
     "description": "<p>Choose one target within 30ft with up to N levels of Hemorrhage, Delirium, or Nausea (where N is a number up to your Madness or Proficiency, whichever is lower). Reduce your Madness by N. That condition gains the Enduring Condition.</p>",
     "tag": "action",
@@ -64,7 +64,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "balanced_scale",
-      "buildHash": "63216e626252"
+      "buildHash": "b7044ebcb537"
     }
   }
 }

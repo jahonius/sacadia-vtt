@@ -3,7 +3,7 @@
   "_key": "!items!ee9b4312fb032afc",
   "name": "Luckless Hold",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/magus/mg_luckless_hold_icon.webp",
   "system": {
     "description": "<p>As a Boost to Surge of Bad Luck, expend one additional Spell Slot. The Jinxed you give that target are treated as Enduring.</p>",
     "tag": "boost",
@@ -50,7 +50,7 @@
       "prestige": "magus",
       "tome": "contract",
       "research": "Astrology[2]",
-      "buildHash": "16afbc4e1b33"
+      "buildHash": "9f9222eb17c1"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!f63082218d44dc06",
   "name": "Soulbonded Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/lore/lore_soulbonded_touch_icon.webp",
   "system": {
     "description": "<p>When you take this ability, denote the talents and abilities that your partner has. If you expend a lore point, you may use any one of these abilities or talents for the next minute, even if you could not normally.</p>",
     "tag": "lore",
@@ -38,7 +38,7 @@
       "catalogId": "lore_soulbonded_touch",
       "transcribed": true,
       "lore": true,
-      "buildHash": "72362215df44"
+      "buildHash": "d8d342106402"
     }
   }
 }

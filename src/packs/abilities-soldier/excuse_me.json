@@ -3,7 +3,7 @@
   "_key": "!items!869b6a3c4285f416",
   "name": "Excuse Me",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/soldier/excuse_me_icon.webp",
   "system": {
     "description": "<p>If a target within melee range of you attempts to make a melee attack against another target, you may use your reaction to make a melee attack against them. Treat them as Surprised for this attack.</p>",
     "tag": "reaction",
@@ -51,7 +51,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "excuse_me",
-      "buildHash": "443d012d74a4"
+      "buildHash": "976a93f4d25a"
     }
   }
 }

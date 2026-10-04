@@ -3,7 +3,7 @@
   "_key": "!items!cc968165c57dbb2c",
   "name": "Imposition",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/general/imposition_icon.webp",
   "system": {
     "description": "<p>Treat enemies as Surprised for the first round of combat if you go before them.</p>",
     "tag": "passive",
@@ -35,7 +35,7 @@
   "flags": {
     "sacadia": {
       "catalogId": "imposition",
-      "buildHash": "934ecb74de10"
+      "buildHash": "f0dab222e85e"
     }
   }
 }

@@ -3,7 +3,7 @@
   "_key": "!items!72dbf57033aad477",
   "name": "Twisting Touch",
   "type": "ability",
-  "img": "icons/svg/book.svg",
+  "img": "systems/sacadia/assets/icons/abilities/witch/wt_twisting_touch_icon.webp",
   "system": {
     "description": "<p>Increase the damage dice of Baneful Scratch by one dice type.</p>",
     "tag": "passive",
@@ -46,7 +46,7 @@
       "catalogId": "wt_twisting_touch",
       "transcribed": true,
       "prestige": "witch",
-      "buildHash": "3e7d9b44f18b"
+      "buildHash": "be5389d88d7b"
     }
   }
 }
