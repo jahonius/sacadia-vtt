@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.2
+
+- **Initiative button:** character and NPC sheets have an **Initiative** button in the header. It rolls a Courage or
+  Finesse Check, whichever is better (p.233), and adds the creature's token to the combat first if it isn't in it yet.
+  With no combat running, a GM's button starts one on the viewed scene, and a player is told there's no combat. A
+  creature that has already rolled keeps its number; the GM rerolls from the Combat Tracker. The manual's *Taking
+  Your Turn* and GM pages explain it.
+- **The Breach fixes.** Re-import The Breach from its compendium to get them. Importing again overwrites your imported
+  copy.
+  - **Stairs:** they work in both directions. The level change now happens at the foot of the stairs, so a hero walking
+    down lands on the ground there instead of inside the wall. The stairs are railed on the Wall Top and solid on the
+    Ground.
+  - **Gate:** the wall top over the front gate no longer glows blue. The glyphs' light can't reach into the gate
+    passage under the walkway anymore.
+  - **"A shape looms out of the mist…"** now shows the first time the demon walks out of the fog. A bug in Foundry
+    14.364's Display Scrolling Text "once" option stopped it, so a Toggle Behavior switches the text off instead.
+  - **Initiative:** the GM pages explain how to roll initiative instead of using the preset turn order: Reset
+    Initiative (the ⋮ menu at the top of the Combat Tracker), then Roll All, or each player's Initiative button.
+
 ## 0.2.1
 
 - **Ability icons:** every ability, profession feature and basic action in the compendiums has its own icon (978 in

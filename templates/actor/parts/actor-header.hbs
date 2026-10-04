@@ -7,6 +7,7 @@
       <input class="charname" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'Name'}}"/>
       {{#if isCharacter}}
       <div class="rest-controls">
+        <a data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
         <a data-action="shortRest" title="{{localize 'SACADIA.Rest.ShortHint'}}"><i class="fa-solid fa-mug-hot"></i> {{localize 'SACADIA.Rest.Short'}}</a>
         <a data-action="longRest" title="{{localize 'SACADIA.Rest.LongHint'}}"><i class="fa-solid fa-bed"></i> {{localize 'SACADIA.Rest.Long'}}</a>
       </div>
@@ -14,6 +15,7 @@
       {{!-- NPC quick-build lives in the always-visible header so it's clearly available. --}}
       {{#unless isCharacter}}
       <div class="npc-controls">
+        <a data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
         <a data-action="pasteStatBlock" title="{{localize 'SACADIA.StatBlock.Hint'}}"><i class="fa-solid fa-paste"></i> {{localize 'SACADIA.StatBlock.Button'}}</a>
       </div>
       {{/unless}}

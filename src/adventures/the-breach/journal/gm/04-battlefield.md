@@ -17,7 +17,7 @@ Each level sees the other, so the GM's view looks the same on either. What chang
 
 **Getting down.**
 
-- **The stairs** (east, beside the hay) connect the levels. Walk onto them and Foundry asks whether to change level.
+- **The stairs** (east, beside the hay) connect the levels. Walk down them on the Wall Top, and at the foot Foundry asks whether to move down to the Ground. To go up, walk onto the foot of the stairs from the camp. They're a solid block on the Ground, so the foot is the only way on or off.
 - **Jumping into the hay or onto the tents:** set the token's movement to **Jump** (token HUD) and move off the wall over the hay or the west tents. Foundry asks whether to drop to the Ground. The jumper lands Prone but unharmed; each pile or tent works once.
 - Anyone else stepping off the wall falls 40ft. Move them to the Ground level yourself (token configuration, or drag with the Ground level viewed) and apply the fall.
 

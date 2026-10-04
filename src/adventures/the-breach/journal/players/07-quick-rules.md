@@ -16,7 +16,7 @@ The full rules, and how the system handles each one, are in the {{manual:manual}
 ## On Chuni's Wall
 
 - The map has two levels: the **Wall Top**, 40ft up, where you start, and the **Ground**. From the wall top you see everything; on the ground, the wall blocks your view north.
-- **Stairs** (east) take you between the levels: walk onto them and confirm the level change.
+- **Stairs** (east) take you between the levels: walk down them, or onto their foot from the camp, and confirm the level change at the foot.
 - **Jump** into the hay or onto the tents: set your token's movement to Jump (token HUD), then move off the wall over them. You land Prone but unharmed. Each pile or tent works once.
 - Standing on the walkway or the tower gives you **Height**: 1X advantage on attacks.
 

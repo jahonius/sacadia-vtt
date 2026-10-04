@@ -3,7 +3,8 @@
  *
  * - **Ground** (0–40ft): the wall, the ballista tower and the gatehouse are solid stone. Walls trace their outer faces and
  *   block sight and movement, so a creature on the ground can't see or walk through the wall. The front gate is a
- *   locked door. Tents block sight and movement; fences and the palisade stakes block movement only.
+ *   locked door. Tents block sight and movement; fences, the palisade stakes and the sides of the stairs block movement
+ *   only.
  * - **Wall Top** (40ft and up): the walkway, the tower top and the gatehouse are the floor. Their parapets block
  *   movement but not sight, so the defenders see everything below. The parapet has gaps over the hay and the tents
  *   (to jump down) and at the stairs.
@@ -14,13 +15,19 @@
 
 // The wall body's outer faces on the ground, and the walkway's inner edges on top.
 export const WALL = { north: 1585, south: 1915, topNorth: 1625, topSouth: 1870, gate: [925, 1425] };
+/**
+ * The bottom row of the stairs, where a token changes level. Core Change Level leaves a token where it entered the
+ * Region, so the change waits for the foot. At the top step a token would land on the Ground inside the wall.
+ */
+export const STAIRS_FOOT = [1590, 2400, 1830, 2510];
 
 const SENSE = { none: 0, normal: 20 };
-/** Restrictions by kind: stone and tents block everything, parapets/fences/stakes only movement. */
+/** Restrictions by kind: stone and tents block everything, parapets/fences/stakes only movement, shade only light. */
 export const KINDS = {
   stone: { light: SENSE.normal, sight: SENSE.normal, sound: SENSE.normal, move: SENSE.normal },
   tent: { light: SENSE.normal, sight: SENSE.normal, sound: SENSE.none, move: SENSE.normal },
   low: { light: SENSE.none, sight: SENSE.none, sound: SENSE.none, move: SENSE.normal },
+  shade: { light: SENSE.normal, sight: SENSE.none, sound: SENSE.none, move: SENSE.none },
 };
 
 /** Split the horizontal run x0→x1 at y into segments that break at every grid line. */
@@ -42,6 +49,9 @@ export const GROUND_WALLS = [
   { kind: 'stone', points: [[WALL.gate[0], WALL.north], [WALL.gate[0], WALL.south]], breach: true },
   { kind: 'stone', points: [[WALL.gate[1], WALL.north], [WALL.gate[1], WALL.south]], breach: true },
   { kind: 'stone', points: [[WALL.gate[0], 1750], [WALL.gate[1], 1750]], door: true, breach: true },
+  // The walkway roofs the passage, so the glyphs outside can't light it. The Wall Top shows the Ground's lighting under
+  // its walkway, and without this the passage would glow there as a block of blue.
+  { kind: 'shade', points: [[WALL.gate[0], WALL.north], [WALL.gate[1], WALL.north]], breach: true },
   // North face east of the gate, and the gatehouse.
   ...face(WALL.gate[1], 1825, WALL.north).map((points) => ({ kind: 'stone', points, breach: true })),
   { kind: 'stone', points: [[1825, WALL.north], [1825, 1430], [2000, 1430]] },
@@ -49,6 +59,8 @@ export const GROUND_WALLS = [
   ...face(0, WALL.gate[0], WALL.south).map((points) => ({ kind: 'stone', points, breach: true })),
   ...face(WALL.gate[1], 1830, WALL.south).map((points) => ({ kind: 'stone', points, breach: true })),
   { kind: 'stone', points: [[1830, WALL.south], [1830, 2060], [2000, 2060]] },
+  // The stairs are a solid block on the ground: their foot is the only way on or off (see STAIRS_FOOT).
+  { kind: 'low', points: [[1590, WALL.south], [1590, STAIRS_FOOT[1]], [1830, STAIRS_FOOT[1]], [1830, 2060]] },
   // Tents.
   { kind: 'tent', points: rect(70, 1980, 290, 2290) },
   { kind: 'tent', points: rect(425, 1980, 640, 2290) },
@@ -62,17 +74,21 @@ export const GROUND_WALLS = [
   { kind: 'low', points: [[1350, 620], [1630, 625], [1760, 655], [1880, 695], [2000, 735]] },
 ];
 
-/** Wall-top parapets (movement only), with gaps over the tents (x 0–660), the hay (1400–1590) and the stairs. */
+/**
+ * Wall-top parapets (movement only), with gaps over the tents (x 0–660), the hay (1400–1590) and the stairs. The stairs
+ * are railed down to their foot, so a token that stays on the Wall Top there is still standing on them.
+ */
 export const TOP_WALLS = [
   { kind: 'low', points: [[0, WALL.topNorth], [245, WALL.topNorth], [245, 1080], [175, 1080], [175, 625], [605, 625], [605, 1080], [535, 1080],
     [535, WALL.topNorth], [1840, WALL.topNorth], [1840, 1500], [2000, 1500]] },
   { kind: 'low', points: [[660, WALL.topSouth], [1400, WALL.topSouth]] },
   { kind: 'low', points: [[1830, WALL.topSouth], [1830, 2040], [2000, 2040]] },
+  { kind: 'low', points: [[1590, WALL.topSouth], [1590, STAIRS_FOOT[3]], [1830, STAIRS_FOOT[3]], [1830, 2040]] },
 ];
 
-/** Change Level regions (map px rectangles): the stairs for any movement, the hay and tents for jumping down. */
+/** Change Level regions (map px rectangles): the foot of the stairs for any movement, the hay and tents for jumping down. */
 export const LEVEL_CHANGES = [
-  { key: 'stairs', name: 'Stairs', rect: [1590, 1870, 1830, 2510], actions: [] },
+  { key: 'stairs', name: 'Foot of the Stairs', rect: STAIRS_FOOT, actions: [] },
   { key: 'jump-tents', name: 'Jump onto the Tents', rect: [0, WALL.south, 660, 2300], actions: ['jump'] },
   { key: 'jump-hay', name: 'Jump into the Hay', rect: [1400, WALL.south, 1590, 2540], actions: ['jump'] },
 ];

@@ -7,6 +7,7 @@ import { staleItems, refreshItems } from '../helpers/refresh.mjs';
 import { rebuildWeaponAttacks } from '../helpers/weapon-attacks.mjs';
 import { resetActionEconomy } from '../rules/turn.mjs';
 import { shortRest, longRest } from '../rules/rest.mjs';
+import { rollInitiative } from '../rules/initiative.mjs';
 import { AbilityUse } from '../rules/ability-use.mjs';
 import { promptCheckSpends } from '../helpers/conditions.mjs';
 import { gearId, ownsAbility, confirmWarn } from '../helpers/actor-utils.mjs';
@@ -63,6 +64,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       resetTurn: SacadiaActorSheet.#onResetTurn,
       shortRest: SacadiaActorSheet.#onShortRest,
       longRest: SacadiaActorSheet.#onLongRest,
+      rollInitiative: SacadiaActorSheet.#onRollInitiative,
       toggleEquip: SacadiaActorSheet.#onToggleEquip,
       toggleStorage: SacadiaActorSheet.#onToggleStorage,
       addSpecialty: SacadiaActorSheet.#onAddSpecialty,
@@ -885,6 +887,11 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
   static async #onLongRest() {
     await longRest(this.actor);
+  }
+
+  /** Roll initiative, joining the encounter if need be (rules/initiative.mjs). */
+  static async #onRollInitiative() {
+    await rollInitiative(this.actor);
   }
 
   /* -------------------------------------------- */

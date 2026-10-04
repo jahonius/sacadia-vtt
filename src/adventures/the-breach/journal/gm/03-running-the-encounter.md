@@ -9,7 +9,9 @@ The heroes start at assigned positions on the map, set by their role. The scene 
 3. **{{actor:honnasusara}}, Soldier** — melee plus supporting calls to her allies. She can open by pouring oil, then move east to support Manchuthara or north to support Selthimor and Chunrudar. Either way, she should end up closer to her allies after the barrel.
 4. **{{actor:manchuthara}}, Sentinel** — the party's ranged combatant. She can stand at the east end of the wall and fire her crossbow every round, even after the wall is breached.
 
-The Combat Tracker already holds this order: the four heroes at initiative 4, 3, 2 and 1, and Wanabbul at 0. The one-shot doesn't place Wanabbul in the order; putting him after the heroes gives them a full round of siege before he moves. Reroll initiative if your table prefers.
+The Combat Tracker already holds this order: the four heroes at initiative 4, 3, 2 and 1, and Wanabbul at 0. The one-shot doesn't place Wanabbul in the order; putting him after the heroes gives them a full round of siege before he moves.
+
+**Rolling initiative instead.** Foundry only offers an initiative roll to a combatant that has no initiative yet, so with this order in place there's nothing to roll. To roll, open the **⋮** menu at the top of the Combat Tracker, choose **Reset Initiative**, then press **Roll All** (or let each player press **Initiative** on their sheet). Each combatant rolls a Courage or Finesse Check, whichever is better (v1.2 p.233). To reroll one combatant, right-click it and choose **Re-roll Initiative**.
 
 **Height.** Everyone on the wall walkway or the ballista tower is inside the scene's **Wall Top** Region, which gives friendly tokens the Height status. Height grants 1X advantage on attacks, and with 4+ AP it triggers Manchuthara's Crossbow Mastery. The heroes start with it; it comes and goes as tokens step on and off the wall.
 

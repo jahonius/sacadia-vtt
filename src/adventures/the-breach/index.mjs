@@ -789,9 +789,14 @@ export default function build(kit) {
   const pxRect = ([x0, y0, x1, y1]) => ({ type: 'rectangle', x: X(x0), y: Y(y0), width: x1 - x0, height: y1 - y0, rotation: 0, hole: false });
   const zone = (name, effect, caster, casterToken) => ({ _id: id('behavior', name), type: 'zone', name, disabled: false,
     system: { casterUuid: `Actor.${caster._id}`, casterTokenUuid: tokenUuid(casterToken), ability: '', label: name, effect } });
-  // Core Display Scrolling Text: shown to everyone when a token's movement animation enters the Region.
-  const scrolling = (key, text, color, { once }) => ({ _id: id('behavior', 'text', key), type: 'displayScrollingText', name: text, disabled: false,
-    system: { events: ['tokenAnimateIn'], text, color, visibility: 2, once } });
+  // Core Display Scrolling Text: shown to everyone when a token's movement animation enters the Region. Its own `once`
+  // option throws in Foundry 14.364 (it calls `includedInLevel` on the behavior instead of its Region) and the text never
+  // shows, so "once" is a core Toggle Behavior that switches the text off when the token leaves the Region.
+  const scrolling = (key, text, color) => ({ _id: id('behavior', 'text', key), type: 'displayScrollingText', name: text, disabled: false,
+    system: { events: ['tokenAnimateIn'], text, color, visibility: 2, once: false } });
+  const onceOnly = (regionKey, textKey) => ({ _id: id('behavior', 'once', textKey), type: 'toggleBehavior', name: 'Show it once', disabled: false,
+    system: { events: ['tokenExit'], enable: [],
+      disable: [`Scene.${sceneId}.Region.${id('region', regionKey)}.RegionBehavior.${id('behavior', 'text', textKey)}`] } });
   const region = (key, name, color, shapes, behaviors, levels) => ({ _id: id('region', key), name, color, shapes, behaviors, visibility: 0,
     elevation: { bottom: null, top: null, topInclusive: false }, levels, restriction: { enabled: false, type: 'move', priority: 0 },
     highlightMode: 'shapes', displayMeasurements: false, hidden: false, locked: false, flags: {} });
@@ -800,12 +805,12 @@ export default function build(kit) {
       [zone('Wall Top', { insideStatus: 'height', affects: 'allies' }, wall, wallToken)], [TOP]),
     region('pit-damage', 'Pit Trap (fall)', '#8c1d18', [rect(9, 39, 3, 3)],
       [zone('Pit Trap', { damage: '3d10', affects: 'enemies', onTurnStart: false }, pit, pitToken),
-        scrolling('pit', 'The ground gives way!', '#ff6b4a', { once: false })], [GROUND]),
+        scrolling('pit', 'The ground gives way!', '#ff6b4a')], [GROUND]),
     // The wall holds back the mist of the Upper Heibrim: no fog south of it.
     region('clear-of-fog', 'Clear of the Mist', '#7fa6d9', [pxRect(CLEAR_OF_FOG)],
       [{ _id: id('behavior', 'clear-of-fog'), type: 'suppressWeather', name: 'Clear of the Mist', disabled: false, system: {} }], [GROUND, TOP]),
     region('fog-line', 'The Fog Line', '#7fa6d9', [pxRect(FOG_LINE)],
-      [scrolling('fog-line', 'A shape looms out of the mist…', '#cfd8ff', { once: true })], [GROUND]),
+      [scrolling('fog-line', 'A shape looms out of the mist…', '#cfd8ff'), onceOnly('fog-line', 'fog-line')], [GROUND]),
     region('pit-pin', 'Pit Trap (pinned)', '#8c1d18', [rect(9, 39, 3, 3)],
       [zone('Pit Trap (Pin)', { check: { trait: 'finesse', inflict: [{ condition: 'pinned', level: 5 }] }, affects: 'enemies', onTurnStart: false }, pit, pitToken)], [GROUND]),
     // Core Change Level behaviors: the stairs for any movement; the hay and the tents only when jumping down.

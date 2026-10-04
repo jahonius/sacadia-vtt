@@ -753,6 +753,11 @@
       "CspCurrent": "Available CSP",
       "Pools": "Pools"
     },
+    "Initiative": {
+      "Roll": "Initiative",
+      "Hint": "Roll initiative: a Courage or Finesse Check, whichever is better. If this creature's token isn't in the combat yet, it joins it.",
+      "AlreadyRolled": "{name} has already rolled initiative ({initiative}). The GM can reroll it from the Combat Tracker."
+    },
     "Rest": {
       "Short": "Short Rest",
       "Long": "Long Rest",
