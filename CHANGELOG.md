@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.1
+
+- **Fix:** in The Breach, the defenders on the wall top can now see past the wall to the ground below. Before, the
+  wall they stood on hid everything below them, except from right above the gate. Foundry v14 checks a sightline
+  between Scene Levels against each level's walls wherever the line passes through that level's heights, and the
+  Ground level reached up to 40ft. It now ends at 5ft, so ground walls only count where a sightline from the wall top
+  drops below head height. Re-import The Breach from its compendium to get the fix.
+- **Docs:** The Breach's player handout points to the laws in the *Story* on the sheet's Character tab (it was the
+  Biography tab before 0.3.0).
+
 ## 0.3.0
 
 - **Character sheet redesign.**

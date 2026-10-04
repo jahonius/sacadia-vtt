@@ -761,6 +761,12 @@ export default function build(kit) {
   const GROUND = id('level', 'ground');
   const TOP = id('level', 'wall-top');
   const HEIGHT = 40;
+  // v14 checks a sightline between levels against each level's walls only along the stretch of it inside that level's
+  // elevation range, and walls are as tall as their level. Ending the Ground at head height means a defender looking
+  // down from 40ft meets ground walls only in the last eighth of the line, where it drops below 5ft. So the defenders
+  // see over the wall they stand on (otherwise its faces, which surround them on the Ground, hide everything) and over
+  // the tents, except something tucked right behind one. Tokens still change level to 0ft and 40ft.
+  const GROUND_TOP = 5;
   // Placeables live in canvas coordinates, which include the scene's padding around the map (Foundry's square-grid
   // formula: padding × size, rounded up to whole squares). X()/Y() turn map pixels into canvas coordinates.
   const PADDING = 0.1;
@@ -855,7 +861,7 @@ export default function build(kit) {
     thumb: asset(MAP.thumb),
     width: sq(MAP.cols), height: sq(MAP.rows), padding: PADDING,
     levels: [
-      { _id: GROUND, name: 'Ground', sort: 100, elevation: { bottom: null, top: HEIGHT }, background: { src: asset(MAP.file), color: '#1b1f1a' },
+      { _id: GROUND, name: 'Ground', sort: 100, elevation: { bottom: null, top: GROUND_TOP }, background: { src: asset(MAP.file), color: '#1b1f1a' },
         visibility: { levels: [TOP] } },
       { _id: TOP, name: 'Wall Top', sort: 200, elevation: { bottom: HEIGHT, top: null }, background: { src: null, color: '#1b1f1a' },
         visibility: { levels: [GROUND] } },
