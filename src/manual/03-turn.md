@@ -38,6 +38,8 @@ Make Trait Check, and so on) spend AP and limbs for actions that aren't abilitie
 3. Answer any prompts:
    - **Advantage:** pick Normal, Advantage, or Disadvantage, or enter a level. Conditions, effects,
      cover, Surrounded, and so on are added on top automatically.
+   - **Consistent Roll** (attacks, p.237): spend extra AP for 1X advantage each, up to the AP you have left after the
+     ability's cost. It's paid with the action, so the turn's log shows the whole spend (Crossbow Mastery's 4+ AP).
    - **A choice** the ability needs, such as which defense to boost or which condition to remove.
    - **A variable cost**, such as how many pool points to spend.
 4. The result posts to chat as a card showing every roll and every modifier that applied.

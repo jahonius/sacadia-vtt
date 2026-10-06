@@ -5,6 +5,7 @@
 import { deleteKey } from '../helpers/update-ops.mjs';
 import { ownsAbility } from '../helpers/actor-utils.mjs';
 import { cardHead } from '../helpers/chat-cards.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 /**
  * Common rest effects (both rest types): recover ability pools to max, remove most leveled
@@ -94,7 +95,7 @@ async function promptHealPools(actor) {
     + (ownsAbility(actor, 'healthy_vigor') ? 2 : 0)
     // Mastery of Feather and Hide: "increase the size of your HP pools by the same amount" (1 per level).
     + (ownsAbility(actor, 'mastery_feather_and_hide') ? (actor.system.level ?? 0) : 0);
-  const spend = await foundry.applications.api.DialogV2.wait({
+  const spend = await sacDialog.wait({
     window: { title: game.i18n.localize('SACADIA.Rest.HealTitle') },
     content: `<div class="adv-prompt">
       <label>${game.i18n.format('SACADIA.Rest.HealPrompt', { per: perPool, available })}</label>

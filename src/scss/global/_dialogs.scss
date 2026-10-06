@@ -1,0 +1,151 @@
+// The system's prompts (module/helpers/dialogs.mjs gives every one the `sacadia-dialog` class). DialogV2 windows open
+// outside the `.sacadia` sheet, so these live at the global root (styles nested under `.sacadia` never reached them).
+// Tokens are on :root, so the skin palette applies: the sheet's umber ground, a display-face title, inset fields, and
+// the button Enter presses in gold.
+.application.sacadia-dialog {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+
+  .window-header {
+    background: var(--sac-panel);
+    border-bottom: 1px solid var(--sac-line);
+    color: var(--sac-gold-hi);
+    .window-title { font-family: var(--sac-font-display); font-size: 1rem; font-weight: 700; }
+    button, a { color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+  }
+  .window-content {
+    background: var(--sac-umber);
+    color: var(--sac-text);
+    padding: 0.7rem 0.85rem 0.8rem;
+    gap: 0.7rem;
+  }
+  .dialog-content {
+    gap: 0.5rem;
+    p { margin: 0; line-height: 1.4; }
+    strong, b { color: var(--sac-gold-hi); }
+  }
+  input, select, textarea {
+    background: var(--sac-inset);
+    border: 1px solid var(--sac-line-strong);
+    border-radius: 4px;
+    color: var(--sac-text);
+    &:focus { border-color: var(--sac-gold); box-shadow: none; outline: none; }
+  }
+  .form-footer {
+    gap: 0.4rem;
+    button {
+      min-height: 2rem;
+      background: var(--sac-panel);
+      border: 1px solid var(--sac-line-strong);
+      border-radius: 4px;
+      color: var(--sac-text);
+      font-size: 0.85rem;
+      i { color: var(--sac-dim); }
+      &:hover, &:focus-visible { border-color: var(--sac-gold-lo); background: rgba(212, 165, 60, 0.1); box-shadow: none; }
+      // The button Enter presses.
+      &[autofocus] {
+        border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: 700;
+        background: rgba(212, 165, 60, 0.16);
+        i { color: var(--sac-gold); }
+      }
+    }
+  }
+  .sac-label {
+    font-family: var(--sac-font-ui); font-size: 0.66rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--sac-dim);
+  }
+}
+
+// --- The roll prompt (attacks, Trait / talent / specialty checks) ---
+// What's being rolled at the top (icon, name, a line about it); the Advantage stepper and the Consistent Roll bolts as
+// label / control rows; a live line of what will be rolled and what it costs.
+.application.sacadia-dialog .sac-prompt.roll-prompt {
+  display: flex; flex-direction: column; gap: 0.6rem;
+
+  .sp-head {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding-bottom: 0.55rem; border-bottom: 1px solid var(--sac-line);
+    img { flex: 0 0 auto; width: 44px; height: 44px; border: 1px solid var(--sac-line-strong); border-radius: 4px; }
+    img[src$=".svg"] { // Foundry's white item glyphs, tinted gold as on the sheet (no background: the tint would fill it)
+      box-sizing: border-box; padding: 7px;
+      filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
+    }
+    .sp-name { min-width: 0; }
+    .sp-title { font-family: var(--sac-font-display); font-size: 1.25rem; font-weight: 700; line-height: 1.1; color: var(--sac-gold-hi); }
+    .sp-sub { margin-top: 0.1rem; font-size: 0.78rem; color: var(--sac-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  }
+
+  .sp-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 2rem; }
+
+  // Advantage: − value +. The value says it in words, gold for advantage and blood for disadvantage.
+  .adv-stepper {
+    display: flex; align-items: center;
+    border: 1px solid var(--sac-line-strong); border-radius: 5px; background: var(--sac-inset);
+    .step {
+      flex: 0 0 2rem; width: 2rem; height: 2rem; min-height: 0; margin: 0; padding: 0;
+      display: grid; place-items: center;
+      background: none; border: none; border-radius: 0; color: var(--sac-dim); cursor: pointer;
+      &:hover { color: var(--sac-gold-hi); background: rgba(212, 165, 60, 0.1); }
+    }
+    .adv-value {
+      min-width: 8.5rem; padding: 0 0.3rem; text-align: center;
+      font-family: var(--sac-font-display); font-size: 1rem; font-weight: 700; color: var(--sac-text);
+      border-left: 1px solid var(--sac-line); border-right: 1px solid var(--sac-line);
+      line-height: 2rem;
+      &[data-sign="1"] { color: var(--sac-gold-hi); }
+      &[data-sign="-1"] { color: var(--sac-blood); }
+    }
+  }
+
+  // Consistent Roll: one bolt per spare AP; the AP spent are solid gold, like the AP badge on an ability's icon.
+  .ap-spend { display: flex; gap: 0.2rem; }
+  .ap-spend .ap-pip {
+    width: 1.75rem; height: 1.75rem; min-height: 0; margin: 0; padding: 0;
+    display: grid; place-items: center;
+    background: var(--sac-inset); border: 1px solid var(--sac-line); border-radius: 4px;
+    color: var(--sac-line-strong); font-size: 0.85rem; cursor: pointer;
+    &:hover { border-color: var(--sac-gold-lo); color: var(--sac-gold-lo); }
+    &.on { border-color: var(--sac-gold); background: var(--sac-gold); color: #14100a; }
+  }
+
+  .sp-summary {
+    padding: 0.4rem 0.55rem; border-radius: 4px; background: var(--sac-panel);
+    font-size: 0.85rem; color: var(--sac-text); font-variant-numeric: lining-nums tabular-nums;
+    b { color: var(--sac-gold-hi); }
+    .sp-cost { color: var(--sac-dim); }
+  }
+  .sp-hint { font-size: 0.72rem; line-height: 1.35; color: var(--sac-dim); }
+}
+
+// --- Simple prompts: a label over a field (spend N of a resource, pick a pool, heal from HP pools) ---
+.adv-prompt {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  label { display: block; font-weight: 700; }
+  .hint { margin: 0; font-size: 0.78rem; color: var(--sac-dim); }
+}
+
+// --- Condition-resistance prompt ---
+.resist-prompt {
+  .rp-row {
+    display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;
+    label { flex: 0 0 8.5rem; font-size: 0.8rem; font-weight: 700; }
+    select, input { flex: 1; min-width: 0; }
+  }
+  .source-note { margin: 0.5rem 0 0; font-size: 0.82rem; font-weight: 700; color: var(--sac-gold-hi); }
+  .hint { margin: 0.3rem 0 0; font-size: 0.76rem; line-height: 1.35; color: var(--sac-dim); }
+}
+
+// --- Refresh / pending-request lists (confirm dialogs) ---
+.refresh-list { max-height: 14rem; overflow-y: auto; margin: 0.25rem 0 0; padding-left: 1.2rem; font-size: 0.85rem; }
+
+// --- Magus Tome research record ---
+.research-list {
+  display: grid; gap: 0.2rem; max-height: 60vh; overflow-y: auto; margin-top: 0.4rem;
+  .research-row { display: flex; align-items: baseline; gap: 0.4rem; cursor: pointer; }
+  .research-row small { opacity: 0.75; }
+  .prereq-met { color: var(--sac-olive); }
+  .prereq-unmet { color: var(--sac-blood); }
+}

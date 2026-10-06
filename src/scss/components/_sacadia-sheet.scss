@@ -652,6 +652,11 @@
   .equip-toggle { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); }
   &.equipped .equip-toggle { color: var(--sac-gold); }
   .inv-img { flex: 0 0 36px; width: 36px; height: 36px; border: none; border-radius: 3px; object-fit: cover; }
+  // Foundry's white item glyphs, tinted gold like the ability cards' (src/scss: .ability-use img[src$=".svg"]).
+  .inv-img[src$=".svg"] {
+    box-sizing: border-box; padding: 5px;
+    filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
+  }
   .inv-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
   .inv-title { display: flex; align-items: center; gap: 0.4rem; min-width: 0; }
   .inv-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -698,10 +703,6 @@
     .rank { width: 2.6rem; }
     a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } } }
 }
-
-// --- Tome research: prerequisite marks ---
-.research-list .prereq-met { color: var(--sac-olive); }
-.research-list .prereq-unmet { color: var(--sac-blood); }
 
 // --- Item sheet: header + equip toggles ---
 // The root carries both `sacadia` and `item`, so `&.item` (compound) targets the item sheet only.
@@ -809,13 +810,14 @@
     .cp-pool {
       display: inline-flex; align-items: center; gap: 0.25rem;
       label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sac-dim); }
+      // Ghost inputs, as in the header: the points left large in gold, the maximum small. !important + flex:none
+      // beat Foundry's later-layer form-input width, which otherwise stretches these to full width.
       input {
-        // !important + flex:none to beat Foundry's later-layer form-input width, which otherwise
-        // stretches these to full width regardless of specificity.
-        flex: 0 0 auto; width: 2.4rem !important; text-align: center; padding: 0.05rem 0.2rem;
-        font-family: var(--sac-font-display); font-size: 0.95rem; color: var(--sac-gold-hi);
-        background: var(--sac-inset); border: 1px solid var(--sac-line); border-radius: 3px;
+        flex: 0 0 auto; height: auto; padding: 0; text-align: center;
+        font-family: var(--sac-font-display); font-weight: 700;
       }
+      input.pool-cur { width: 1.9rem !important; font-size: 1.45rem; line-height: 1; color: var(--sac-gold-hi); text-align: right; }
+      input.pool-max { width: 1.5rem !important; font-size: 0.95rem; color: var(--sac-dim); text-align: left; }
       .sep { color: var(--sac-dim); }
     }
   }
@@ -827,15 +829,20 @@
     > .sac-label { margin: 0; }
     select {
       flex: 0 0 auto; width: auto !important; padding: 0.05rem 0.3rem;
-      font-size: 0.8rem; color: var(--sac-text);
-      background: var(--sac-inset); border: 1px solid var(--sac-line); border-radius: 3px;
+      font-size: 0.82rem; color: var(--sac-text);
+      background: transparent; border: 1px solid transparent; border-radius: 3px;
+      &:hover, &:focus { border-color: var(--sac-line-strong); background: var(--sac-inset); }
     }
   }
   .ap-readout {
     display: flex; align-items: center; gap: 0.35rem;
     > i { color: var(--sac-gold); }
-    > label { font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sac-dim); }
-    .ap-values { font-family: var(--sac-font-display); b { font-size: 1.35rem; color: var(--sac-gold-hi); } }
+    > label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sac-dim); }
+    .ap-values {
+      font-family: var(--sac-font-display); font-size: 0.95rem; font-weight: 700; color: var(--sac-dim);
+      font-variant-numeric: lining-nums;
+      b { font-size: 1.55rem; line-height: 1; color: var(--sac-gold-hi); }
+    }
     // NPC's editable Max AP: a compact inset field sized like the readout numeral.
     .ap-max {
       width: 2.4rem; text-align: center; padding: 0.02rem 0.2rem;
@@ -857,21 +864,28 @@
 
   .cp-grid { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: flex-start; }
   .cp-block { flex: 1 1 12rem; min-width: 0; > .sac-label { display: block; margin-bottom: 0.3rem; } }
+  .cp-grid > .cp-block:first-child { flex: 3 1 22rem; }
 
   .cp-live {
     margin-top: 0.45rem; padding-top: 0.4rem; border-top: 1px solid var(--sac-line);
     > .sac-label { display: block; margin-bottom: 0.25rem; }
   }
 
-  .limb-grid { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  // Limbs as a row of glyph tiles (hands, body, mind, focus, legs, reaction): click to mark one spent this turn; a spent
+  // limb turns blood-red, so what's left to act with reads at a glance.
+  .limb-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.25rem; }
   .limb {
-    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-    padding: 0.22rem 0.45rem; border-radius: 3px;
-    border: 1px solid var(--sac-line); color: var(--sac-dim);
+    display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+    padding: 0.32rem 0.1rem 0.25rem; border-radius: 4px;
+    border: 1px solid var(--sac-line); background: var(--sac-inset); color: var(--sac-dim);
+    font-size: 0.52rem; font-weight: 700; letter-spacing: 0.03em; line-height: 1.1; text-transform: uppercase; text-align: center;
+    white-space: nowrap;
     cursor: pointer;
     input { display: none; }
+    i { font-size: 0.95rem; color: var(--sac-text); }
+    i.flip { transform: scaleX(-1); }
     &:hover { border-color: var(--sac-gold-lo); }
-    &.spent { background: rgba(145, 29, 32, 0.3); border-color: #6e393c; color: #e0a5a8; }
+    &.spent { background: rgba(145, 29, 32, 0.28); border-color: #6e393c; color: #e0a5a8; i { color: var(--sac-blood); } }
   }
 
   .log-list { list-style: none; margin: 0; padding: 0; }
@@ -929,14 +943,26 @@
 
   .favored-enemies { width: 100%; }
 
-  .basic-actions { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  // The palette, a row per kind (Move / Offense / Utility) under an olive label, chips without outlines.
+  .basic-actions-group {
+    .ba-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem; .sac-label { margin: 0; } }
+    .ba-note { font-size: 0.66rem; color: var(--sac-dim); i { font-size: 0.6rem; color: var(--sac-gold); } }
+    .ba-row { display: flex; align-items: flex-start; gap: 0.6rem; }
+    .ba-row + .ba-row { margin-top: 0.3rem; }
+    .ba-kind {
+      flex: 0 0 4rem; padding-top: 0.22rem;
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sac-olive);
+    }
+  }
+  .basic-actions { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; gap: 0.3rem; }
   .basic-action {
     cursor: pointer; white-space: nowrap;
-    font-size: 0.75rem; padding: 0.12rem 0.5rem;
-    border: 1px solid var(--sac-line-strong); border-radius: 10px;
+    font-size: 0.76rem; padding: 0.12rem 0.55rem;
+    border: 1px solid transparent; border-radius: 10px;
+    background: rgba(234, 217, 176, 0.06);
     color: var(--sac-text);
-    small { opacity: 0.7; margin-left: 0.1rem; }
-    &:hover { background: rgba(212, 165, 60, 0.12); border-color: var(--sac-gold-lo); }
+    small.boost { margin-left: 0.15rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sac-olive); }
+    &:hover { background: rgba(212, 165, 60, 0.14); border-color: var(--sac-gold-lo); }
   }
 }
 
@@ -988,8 +1014,8 @@
     align-items: start;
   }
   .ability-empty { opacity: 0.55; font-style: italic; font-size: 0.8rem; padding: 0.15rem 0; grid-column: 1 / -1; }
-  // Under the Passive heading, every card's "Passive" chip says the same thing again.
-  &[data-group="passive"] .sac-chip.tag { display: none; }
+  // Under the Passive heading, every card's "Passive" tag says the same thing again.
+  &[data-group="passive"] .meta-tag { display: none; }
 }
 
 .rest-controls,
@@ -1021,7 +1047,6 @@
   i { color: var(--sac-gold); }
   a { margin-left: auto; cursor: pointer; color: var(--sac-gold-hi); font-weight: 600; &:hover { text-decoration: underline; } }
 }
-.refresh-list { max-height: 14rem; overflow-y: auto; margin: 0.25rem 0 0; padding-left: 1.2rem; font-size: 0.85rem; }
 
 // Ability cards: the icon (the roll button, with the AP cost as a badge), the name over one chip line, and an
 // expandable description drawer. Quiet panels, no outline; an expanded card spans the full grid width for reading.
@@ -1055,6 +1080,12 @@
     transition: border-color 0.12s ease, box-shadow 0.12s ease;
 
     .ability-img { display: block; width: 48px; height: 48px; border: none; border-radius: 0; }
+    // An item without art (Foundry's white weapon glyphs): tinted gold in a dark well, so it sits with the pixel icons.
+    &:has(img[src$=".svg"]) { background: radial-gradient(circle at 50% 40%, var(--sac-panel), var(--sac-inset) 75%); border-color: var(--sac-gold-lo); }
+    img[src$=".svg"] {
+      box-sizing: border-box; padding: 9px;
+      filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
+    }
     // The AP cost, on the icon's corner.
     .ap-badge {
       position: absolute; right: 0; bottom: 0; z-index: 1;
@@ -1089,7 +1120,22 @@
     cursor: pointer;
     &:hover { color: var(--sac-gold-hi); }
   }
-  .ability-meta { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+  // The tag as an olive word, a cost as the one boxed chip, then the facts with small gold glyphs; a passive's
+  // summary line instead.
+  .ability-meta { display: flex; flex-wrap: wrap; gap: 0.2rem 0.6rem; align-items: center; }
+  .ability-meta:not(:has(*)) { display: none; }
+  .meta-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sac-olive); }
+  .meta-fact {
+    font-size: 0.74rem; color: var(--sac-dim); white-space: nowrap;
+    i { margin-right: 0.12rem; font-size: 0.62rem; color: var(--sac-gold-lo); }
+  }
+  // A summary card's title sat high, with most of the card's space between it and the text: move some above it (the
+  // card's height is unchanged).
+  .ability-main:has(.ability-summary) { gap: 0; padding-top: 3px; }
+  .ability-summary {
+    font-size: 0.78rem; line-height: 1.3; color: var(--sac-dim);
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; // two lines, then …
+  }
 
   // Live "Out of Range" marker vs the currently-targeted token (toggled in #refreshRangeMarkers).
   .out-of-range {
@@ -1387,35 +1433,6 @@
   button { cursor: pointer; font-size: 0.72rem; line-height: 1.4; padding: 0.05rem 0.4rem; }
 }
 
-// --- Advantage roll prompt (DialogV2 content) ---
-.adv-prompt {
-  label { display: block; font-weight: bold; margin-bottom: 0.25rem; }
-  .adv-custom-row {
-    display: flex; align-items: stretch; gap: 0.4rem;
-    input[name="level"] { flex: 1; min-width: 0; }
-    .adv-roll-custom { flex: 0 0 auto; white-space: nowrap; cursor: pointer; }
-  }
-  .hint { margin: 0.4rem 0 0; font-size: 0.8rem; opacity: 0.8; }
-}
-
-// --- Condition-resistance prompt (DialogV2 content) ---
-.resist-prompt {
-  .rp-row {
-    display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;
-    label { flex: 0 0 8rem; font-weight: bold; }
-    select, input { flex: 1; min-width: 0; }
-  }
-  .source-note { margin: 0.5rem 0 0; font-size: 0.82rem; font-weight: bold; }
-  .hint { margin: 0.3rem 0 0; font-size: 0.8rem; opacity: 0.8; }
-}
-
-// --- Magus Tome research record (DialogV2 content) ---
-.research-list {
-  display: grid; gap: 0.2rem; max-height: 60vh; overflow-y: auto; margin-top: 0.4rem;
-  .research-row { display: flex; align-items: baseline; gap: 0.4rem; cursor: pointer; }
-  .research-row small { opacity: 0.75; }
-}
-
 // --- Check-pool cards: saves and condition checks (root carries `sacadia chat-card resist-card`) ---
 // One row per die (the natural roll, what was added, the total), then what it came to as a banner.
 &.resist-card {
@@ -1504,6 +1521,7 @@
 // the scarce resource on a sheet). Last in the file so it wins over the older per-tab heading rules.
 .tab > h3,
 .tab > div > h3,
+.ability-group > h3 .count { margin-left: 0.3rem; letter-spacing: 0; color: var(--sac-gold-lo); }
 .ability-group > h3,
 .inv-head > h3 {
   margin: 0.9rem 0 0.45rem;

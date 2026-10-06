@@ -13,6 +13,7 @@ import { promptCheckSpends } from '../helpers/conditions.mjs';
 import { gearId, ownsAbility, confirmWarn } from '../helpers/actor-utils.mjs';
 import { REND_KEYS } from '../helpers/rend.mjs';
 import { advantageText, cardHead, postRollCard, signed, traitEmblem } from '../helpers/chat-cards.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -146,6 +147,20 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.abilityGroups = await this.#prepareAbilityGroups();
     context.conditionGroups = this.#prepareConditionGroups();
     context.combatStrip = this.#prepareCombatStrip();
+    // The basic-action palette in its groups (movement, offense, utility). Only the Boosts (0 AP) are marked; each
+    // chip's tooltip says what it does (book pp.237–238), with its cost and the limbs it uses.
+    const loc = (k) => game.i18n.localize(k);
+    const esc = foundry.utils.escapeHTML;
+    context.basicActionGroups = Object.entries(CONFIG.SACADIA.basicActionKinds).map(([kind, label]) => ({
+      kind, label,
+      actions: Object.entries(CONFIG.SACADIA.basicActions).filter(([, p]) => p.kind === kind).map(([key, p]) => {
+        const cost = [p.ap ? `${p.ap} ${loc('SACADIA.Economy.Ap')}` : loc('SACADIA.BasicAction.Boost'),
+          ...(p.limbs ?? []).map((l) => loc(CONFIG.SACADIA.limbs[l] ?? l))].join(' · ');
+        return { key, label: p.label, boost: !p.ap,
+          tip: `<div class="sac-tip sac-actiontip"><div class="tip-title">${esc(loc(p.label))}</div>`
+            + `<div class="tip-cost">${esc(cost)}</div><div class="tip-text">${esc(loc(`SACADIA.BasicAction.Hints.${key}`))}</div></div>` };
+      }),
+    }));
     // Armed-boost tray: the boosts currently toggled on, ready for the next matching action to consume.
     const armed = new Set(actor.system.armedBoosts ?? []);
     context.armedBoosts = actor.items
@@ -341,13 +356,15 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const rangeText = range.value
       ? `${range.value} ${game.i18n.localize('SACADIA.Range.Feet')}`
       : (range.type ? game.i18n.localize(CONFIG.SACADIA.rangeTypes[range.type] ?? '') : '');
-    // First attack activity's target defense → "Attack vs MD"; the bound weapon rides along.
+    // First attack activity's target defense → "vs MD" beside a crosshairs glyph ("Attack vs Mind Defense" in its
+    // tooltip); the bound weapon rides along.
     const atk = (sys.activities ?? []).find((a) => a.type === 'attack');
+    const def = atk?.attack?.defense?.toUpperCase();
     const attackText = atk
-      ? (atk.attack.defense
-        ? `${game.i18n.localize('SACADIA.Activity.Attack')} vs ${game.i18n.localize(`SACADIA.Defense.${atk.attack.defense.toUpperCase()}`)}`
+      ? (def ? `${game.i18n.localize('SACADIA.Card.Vs')} ${game.i18n.localize(`SACADIA.Defense.${def}Short`)}`
         : game.i18n.localize('SACADIA.Activity.Attack'))
       : '';
+    const attackLong = def ? `${game.i18n.localize('SACADIA.Activity.Attack')} vs ${game.i18n.localize(`SACADIA.Defense.${def}`)}` : '';
     const weapon = atk ? this.#use.resolveWeapon(item) : null;
     const pool = sys.costs?.pool ?? {};
     const poolText = pool.key && (pool.amount > 0 || pool.variable)
@@ -365,7 +382,9 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       poolText, madBadges, rangeText,
       loreText: (sys.costs?.lore ?? 0) > 0 ? game.i18n.format('SACADIA.Lore.Cost', { n: sys.costs.lore }) : '',
       rangeValue: range.value ?? null,
-      attackText, hasSave: sys.hasSave,
+      attackText, attackLong, hasSave: sys.hasSave,
+      // A passive (no tag, nothing to roll) shows the start of what it does instead of an empty line.
+      summary: (!sys.isActive && !isBoost && !sys.tag?.match(/reaction|boost|focus/)) ? SacadiaActorSheet.#summary(sys.description) : '',
       weaponName: weapon?.name ?? '',
       isBoost, armed,
       pick: SacadiaActorSheet.#pickViewModel(item),
@@ -376,6 +395,20 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           { secrets: this.actor.isOwner, rollData: this.actor.getRollData(), relativeTo: item })
         : '',
     };
+  }
+
+  /**
+   * The start of an ability's description as one plain line (for a passive's card): tags, enrichers (`@UUID[…]{label}`
+   * keeps its label, inline rolls their formula) and spacing removed. The card's CSS ends it with an ellipsis.
+   */
+  static #summary(html) {
+    const text = String(html ?? '')
+      .replace(/@\w+\[[^\]]*\]\{([^}]*)\}/g, '$1').replace(/@\w+\[([^\]]*)\]/g, '$1')
+      .replace(/\[\[\/?\w*\s*([^\]]*)\]\]/g, '$1')
+      .replace(/<[^>]+>/g, ' ');
+    const el = document.createElement('textarea');
+    el.innerHTML = text; // decodes entities
+    return el.value.replace(/\s+/g, ' ').trim().slice(0, 180);
   }
 
   /**
@@ -443,7 +476,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       return names.length ? [{ key, names: names.join(', ') }] : [];
     });
     const exhaustion = Object.entries(CONFIG.SACADIA.exhaustionSlots).map(([key, label]) => ({
-      key, label, spent: !!sys.exhaustion?.[key],
+      key, label, icon: CONFIG.SACADIA.exhaustionIcons?.[key] ?? '', spent: !!sys.exhaustion?.[key],
     }));
     // Grants currently on this actor (blessings received), with how each expires.
     const grants = [];
@@ -743,7 +776,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
 
     if (rollType === 'stat') {
       const title = loc(CONFIG.SACADIA.stats[key]);
-      const level = await AbilityUse.promptAdvantage(title);
+      const level = await AbilityUse.promptAdvantage(title, { img: CONFIG.SACADIA.statArt?.[key], sub: loc('SACADIA.Check.Trait') });
       if (level === null) return;
       const spend = await promptCheckSpends(actor, { ...(actor.system._rollOptions?.() ?? {}), [`self:checking:trait:${key}`]: true });
       const sb = spend.bonus ? ` + ${spend.bonus}` : '';
@@ -758,7 +791,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       const talent = CONFIG.SACADIA.talents[key];
       const proficient = actor.system.talents?.[key]?.proficient ?? false;
       const title = loc(talent.label);
-      const level = await AbilityUse.promptAdvantage(title);
+      const level = await AbilityUse.promptAdvantage(title, { img: CONFIG.SACADIA.statArt?.[talent.stat],
+        sub: [loc('SACADIA.Check.Talent'), loc(CONFIG.SACADIA.stats[talent.stat]), proficient ? '' : loc('SACADIA.Check.Untrained')].filter(Boolean).join(' · ') });
       if (level === null) return;
       // Informative Scroll (trinket), named for its talent — "Informative Scroll (History)": "+1 to all checks made with
       // that Talent" while it's in a readied slot.
@@ -782,7 +816,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       if (!sp || !talent) return ui.notifications.warn(game.i18n.localize('SACADIA.Talent.SpecialtyNoTalent'));
       const label = `${loc(talent.label)}: ${sp.name}`;
       if (!(actor.system.talents?.[sp.talent]?.proficient)) ui.notifications.warn(game.i18n.format('SACADIA.Talent.SpecialtyNeedsGeneral', { name: label }));
-      const level = await AbilityUse.promptAdvantage(label);
+      const level = await AbilityUse.promptAdvantage(sp.name || loc(talent.label), { img: CONFIG.SACADIA.statArt?.[talent.stat],
+        sub: game.i18n.format('SACADIA.Check.SpecialtyOf', { talent: loc(talent.label), trait: loc(CONFIG.SACADIA.stats[talent.stat]) }) });
       if (level === null) return;
       const fumble = await this.#spendFumble();
       await this.#postCheck(` + @${talent.stat} + @proficiency${tb}${minus(fumble)}`, {
@@ -889,7 +924,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     const stale = await staleItems(this.actor);
     if (!stale.length) return this.render();
     const list = stale.map((i) => `<li>${foundry.utils.escapeHTML(i.name)}</li>`).join('');
-    const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize('SACADIA.Refresh.Title') }, rejectClose: false,
+    const ok = await sacDialog.confirm({ window: { title: game.i18n.localize('SACADIA.Refresh.Title') }, rejectClose: false,
       content: `<p>${game.i18n.localize('SACADIA.Refresh.Confirm')}</p><ul class="refresh-list">${list}</ul>` });
     if (!ok) return;
     const n = await refreshItems(this.actor, { items: stale, rebuildWeapon: rebuildWeaponAttacks });
@@ -1132,7 +1167,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   static async #pickBoost(boosts) {
-    const id = await foundry.applications.api.DialogV2.wait({
+    const id = await sacDialog.wait({
       window: { title: game.i18n.localize('SACADIA.Boost.PickTitle') },
       content: `<p>${game.i18n.localize('SACADIA.Boost.PickHint')}</p>`,
       buttons: [
@@ -1201,8 +1236,9 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     //    removes one level of a condition you already have.
     //  - Incoming levels: one check per level someone attempts to give you; every failure is a level taken
     //    (for GM-called checks — ability saves roll this automatically from the card).
-    const form = await foundry.applications.api.DialogV2.wait({
+    const form = await sacDialog.wait({
       window: { title: game.i18n.format('SACADIA.Resist.TitleFor', { condition: condLabel }) },
+      position: { width: 460 },
       content: `<div class="resist-prompt">
         <div class="rp-row"><label>${loc('SACADIA.Resist.Mode')}</label><select name="mode">
           <option value="reduce"${held > 0 ? ' selected' : ''}>${loc('SACADIA.Resist.ModeReduce')}</option>
@@ -1328,7 +1364,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     // collapsed under the paste box so it's always at hand without cluttering.
     const help = await foundry.applications.handlebars.renderTemplate(
       'systems/sacadia/templates/actor/parts/statblock-help.hbs', {});
-    const text = await foundry.applications.api.DialogV2.wait({
+    const text = await sacDialog.wait({
       window: { title: loc('SACADIA.StatBlock.Title') },
       content: `<div class="statblock-prompt">
         <p class="hint">${loc('SACADIA.StatBlock.Hint')}</p>

@@ -405,6 +405,40 @@ function registerBatches(quench) {
         assert.fail(`no hit in six attacks against an undefended target (${seen.join(', ')})`);
       });
 
+      it('a Consistent Roll spends extra AP on an attack for that much advantage, and the log shows the whole spend', async () => {
+        let attack = fighter.items.find((i) => i.getFlag('sacadia', 'weaponAttack') && !i.getFlag('sacadia', 'thrown'));
+        if (!attack) {
+          const data = await fromCatalog('dagger');
+          data.system.equipped = true;
+          const [weapon] = await fighter.createEmbeddedDocuments('Item', [data]);
+          attack = await until(() => fighter.items.find((i) => i.getFlag('sacadia', 'weaponAttack') === weapon.id && !i.getFlag('sacadia', 'thrown')),
+            { what: 'the generated attack' });
+        }
+        await resetActionEconomy(fighter);
+        await fighter.update({ 'system.ap.value': 5 }); // room for the attack and two more
+        const apBefore = fighter.system.ap.value;
+        // The attack's advantage prompt (it asks for a Consistent Roll when there's AP to spare): 2 extra AP.
+        stub.restore();
+        stub = stubDialogs((kind, o) => (kind === 'wait' && /name="consistent"/.test(o?.content ?? '') ? { level: 0, consistent: 2 } : (kind === 'wait' ? 0 : true)));
+        try {
+          target('dummy');
+          const since = Date.now();
+          await fighter.sheet.useAbility(attack);
+          const card = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && m.flags?.sacadia?.attack),
+            { timeout: 15000, what: 'the attack card' });
+          const cost = attack.system.costs?.ap ?? 1;
+          assert.equal(fighter.system.ap.value, apBefore - cost - 2, "the ability's AP plus the two spent consistently");
+          assert.equal(fighter.system.actionLog.at(-1).ap, cost + 2, 'the turn log shows the whole spend');
+          const d20 = card.rolls[0]?.dice[0];
+          assert.ok(d20?.number >= 3 && d20.modifiers.includes('kh1'), `rolled with 2X advantage (${card.rolls[0]?.formula})`);
+          assert.match(card.content, /2× Adv · Consistent Roll/);
+        } finally {
+          stub.restore();
+          stub = stubDialogs((kind) => (kind === 'wait' ? 0 : true));
+          await resetActionEconomy(fighter);
+        }
+      });
+
       it("a save card: the target's failed save gives it the condition", async () => {
         const reflex = await give(fighter, 'reflex_test');
         target('dummy');

@@ -5,6 +5,7 @@
 import { catalogIndex, refreshItems, staleItems } from '../helpers/refresh.mjs';
 import { rebuildWeaponAttacks } from '../helpers/weapon-attacks.mjs';
 import { everyActor } from '../helpers/actor-utils.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 /** Every actor a world-wide refresh covers: the world's actors and the scenes' unlinked token actors. */
 export const refreshableActors = everyActor;
@@ -19,7 +20,7 @@ export async function refreshWorldItems() {
   }
   if (!pending.length) return ui.notifications.info(game.i18n.localize('SACADIA.Refresh.NothingStale'));
   const list = pending.map(({ actor, stale }) => `<li><b>${foundry.utils.escapeHTML(actor.name)}</b>: ${stale.length}</li>`).join('');
-  const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize('SACADIA.Refresh.Title') }, rejectClose: false,
+  const ok = await sacDialog.confirm({ window: { title: game.i18n.localize('SACADIA.Refresh.Title') }, rejectClose: false,
     content: `<p>${game.i18n.localize('SACADIA.Refresh.Confirm')}</p><ul class="refresh-list">${list}</ul>` });
   if (!ok) return;
   let items = 0;
