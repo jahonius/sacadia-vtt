@@ -553,6 +553,11 @@ SACADIA.exhaustionSlots = {
   legs: 'SACADIA.Exhaustion.Legs',
   reaction: 'SACADIA.Exhaustion.Reaction',
 };
+/** Each exhaustion slot's glyph on the tracker (the left hand is the right one mirrored). */
+SACADIA.exhaustionIcons = {
+  leftArm: 'fa-solid fa-hand flip', rightArm: 'fa-solid fa-hand', body: 'fa-solid fa-shirt', mind: 'fa-solid fa-brain',
+  focus: 'fa-solid fa-bullseye', legs: 'fa-solid fa-shoe-prints', reaction: 'fa-solid fa-reply',
+};
 
 /**
  * Basic actions everyone can take (book p.237), as presets for the action-economy tracker: an AP
@@ -565,23 +570,27 @@ SACADIA.exhaustionSlots = {
 // whole-turn/economy specials (Flee, Hold Turn, Consistent Roll) don't fit a fixed spend, so they
 // stay under `other`. Ordered by kind — movement, offense, then utility — for the palette.
 SACADIA.basicActions = {
-  move: { label: 'SACADIA.BasicAction.Move', ap: 1, limbs: ['leg'] },
-  fiveFootAdjust: { label: 'SACADIA.BasicAction.FiveFootAdjust', ap: 0, limbs: ['leg'] },
-  climb: { label: 'SACADIA.BasicAction.Climb', ap: 1, limbs: ['leg'] },
-  drop: { label: 'SACADIA.BasicAction.Drop', ap: 1, limbs: ['leg'] },
-  hurdle: { label: 'SACADIA.BasicAction.Hurdle', ap: 0, limbs: ['leg'] },
-  disengage: { label: 'SACADIA.BasicAction.Disengage', ap: 1, limbs: ['leg'] },
-  attack: { label: 'SACADIA.BasicAction.Attack', ap: 1, limbs: ['oneArm'] },
-  kick: { label: 'SACADIA.BasicAction.Kick', ap: 1, limbs: ['leg'] },
-  rendArmor: { label: 'SACADIA.BasicAction.RendArmor', ap: 1, limbs: ['oneArm'] },
-  switchItem: { label: 'SACADIA.BasicAction.SwitchItem', ap: 1, limbs: ['oneArm'] },
-  steady: { label: 'SACADIA.BasicAction.Steady', ap: 1, limbs: [] },
-  hide: { label: 'SACADIA.BasicAction.Hide', ap: 1, limbs: [] },
-  help: { label: 'SACADIA.BasicAction.Help', ap: 1, limbs: [] },
-  makeTraitCheck: { label: 'SACADIA.BasicAction.MakeTraitCheck', ap: 1, limbs: [] },
-  focus: { label: 'SACADIA.BasicAction.Focus', ap: 1, limbs: ['focus'] },
-  holdAction: { label: 'SACADIA.BasicAction.HoldAction', ap: 1, limbs: [] },
-  other: { label: 'SACADIA.BasicAction.Other', ap: 1, limbs: [] },
+  move: { label: 'SACADIA.BasicAction.Move', ap: 1, limbs: ['leg'], kind: 'move' },
+  fiveFootAdjust: { label: 'SACADIA.BasicAction.FiveFootAdjust', ap: 0, limbs: ['leg'], kind: 'move' },
+  climb: { label: 'SACADIA.BasicAction.Climb', ap: 1, limbs: ['leg'], kind: 'move' },
+  drop: { label: 'SACADIA.BasicAction.Drop', ap: 1, limbs: ['leg'], kind: 'move' },
+  hurdle: { label: 'SACADIA.BasicAction.Hurdle', ap: 0, limbs: ['leg'], kind: 'move' },
+  disengage: { label: 'SACADIA.BasicAction.Disengage', ap: 1, limbs: ['leg'], kind: 'move' },
+  attack: { label: 'SACADIA.BasicAction.Attack', ap: 1, limbs: ['oneArm'], kind: 'offense' },
+  kick: { label: 'SACADIA.BasicAction.Kick', ap: 1, limbs: ['leg'], kind: 'offense' },
+  rendArmor: { label: 'SACADIA.BasicAction.RendArmor', ap: 1, limbs: ['oneArm'], kind: 'offense' },
+  switchItem: { label: 'SACADIA.BasicAction.SwitchItem', ap: 1, limbs: ['oneArm'], kind: 'offense' },
+  steady: { label: 'SACADIA.BasicAction.Steady', ap: 1, limbs: [], kind: 'utility' },
+  hide: { label: 'SACADIA.BasicAction.Hide', ap: 1, limbs: [], kind: 'utility' },
+  help: { label: 'SACADIA.BasicAction.Help', ap: 1, limbs: [], kind: 'utility' },
+  makeTraitCheck: { label: 'SACADIA.BasicAction.MakeTraitCheck', ap: 1, limbs: [], kind: 'utility' },
+  focus: { label: 'SACADIA.BasicAction.Focus', ap: 1, limbs: ['focus'], kind: 'utility' },
+  holdAction: { label: 'SACADIA.BasicAction.HoldAction', ap: 1, limbs: [], kind: 'utility' },
+  other: { label: 'SACADIA.BasicAction.Other', ap: 1, limbs: [], kind: 'utility' },
+};
+/** The palette's groups, in order (each basic action's `kind`). */
+SACADIA.basicActionKinds = {
+  move: 'SACADIA.BasicAction.KindMove', offense: 'SACADIA.BasicAction.KindOffense', utility: 'SACADIA.BasicAction.KindUtility',
 };
 
 /**

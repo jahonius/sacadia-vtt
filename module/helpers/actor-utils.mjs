@@ -3,6 +3,7 @@
  * GM-side code used to carry. The item helpers work on documents or plain data (unit-tested); the token and dialog helpers
  * touch Foundry only when called.
  */
+import { sacDialog } from './dialogs.mjs';
 
 /** Is the actor maintaining this ability's Focus (a positive streak — helpers/focus.mjs)? */
 export const maintainsFocus = (actor, id) => (actor?.system?.combatState?.focusRounds?.[id] ?? 0) > 0;
@@ -138,5 +139,5 @@ export function gmNote(html, flags = null) {
  * ahead; false (or closed) to call it off.
  */
 export function confirmWarn(title, html) {
-  return foundry.applications.api.DialogV2.confirm({ window: { title }, content: `<p>${html}</p>`, rejectClose: false });
+  return sacDialog.confirm({ window: { title }, content: `<p>${html}</p>`, rejectClose: false });
 }

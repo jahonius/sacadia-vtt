@@ -12,7 +12,6 @@
   <div class="combat-panel">
     <div class="cp-top">
       <div class="ap-readout" title="{{localize 'SACADIA.Economy.ApHint'}}">
-        <i class="fa-solid fa-bolt"></i>
         <label>{{localize 'SACADIA.Economy.Ap'}}</label>
         {{#if isCharacter}}
         <span class="ap-values"><b>{{system.ap.value}}</b> / {{system.ap.max}}</span>
@@ -29,9 +28,11 @@
         {{#each classPools as |pool|}}
         <span class="cp-pool" title="{{localize pool.label}}">
           <label>{{localize pool.label}}</label>
-          <input type="number" name="system.classPools.{{pool.key}}.value" value="{{pool.value}}" min="0"/>
+          <input type="number" class="ghost pool-cur" name="system.classPools.{{pool.key}}.value" value="{{pool.value}}" min="0"
+                 aria-label="{{localize pool.label}}"/>
           <span class="sep">/</span>
-          <input type="number" name="system.classPools.{{pool.key}}.max" value="{{pool.max}}" min="0"/>
+          <input type="number" class="ghost pool-max" name="system.classPools.{{pool.key}}.max" value="{{pool.max}}" min="0"
+                 aria-label="{{localize pool.label}} max"/>
         </span>
         {{/each}}
       </div>
@@ -62,6 +63,7 @@
           {{#each combatStrip.exhaustion as |slot|}}
           <label class="limb {{#if slot.spent}}spent{{/if}}" title="{{localize slot.label}}">
             <input type="checkbox" name="system.exhaustion.{{slot.key}}" {{checked slot.spent}}/>
+            {{#if slot.icon}}<i class="{{slot.icon}}"></i>{{/if}}
             <span>{{localize slot.label}}</span>
           </label>
           {{/each}}
@@ -147,15 +149,23 @@
     </div>
     {{/if}}
 
+    {{!-- The palette in its groups: movement, offense, utility. Nearly all cost 1 AP, so only the Boosts say so; each
+         chip's tooltip says what it does. --}}
     <div class="aux-group basic-actions-group">
-      <span class="sac-label">{{localize 'SACADIA.Economy.BasicActions'}}</span>
-      <div class="basic-actions">
-        {{#each config.basicActions as |preset key|}}
-        <a class="basic-action" data-action="logBasicAction" data-basic="{{key}}">
-          {{localize preset.label}}{{#if preset.ap}} <small>{{preset.ap}}<i class="fa-solid fa-bolt"></i></small>{{/if}}
-        </a>
-        {{/each}}
+      <div class="ba-head">
+        <span class="sac-label">{{localize 'SACADIA.Economy.BasicActions'}}</span>
+        <span class="ba-note"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.BasicAction.ApNote'}}</span>
       </div>
+      {{#each basicActionGroups as |group|}}
+      <div class="ba-row" data-kind="{{group.kind}}">
+        <span class="ba-kind">{{localize group.label}}</span>
+        <div class="basic-actions">
+          {{#each group.actions as |a|}}
+          <a class="basic-action" data-action="logBasicAction" data-basic="{{a.key}}" data-tooltip-html="{{a.tip}}" data-tooltip-direction="UP">{{localize a.label}}{{#if a.boost}} <small class="boost">{{localize 'SACADIA.BasicAction.Boost'}}</small>{{/if}}</a>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 
@@ -171,7 +181,7 @@
 
   {{#each abilityGroups as |group key|}}
   <div class="ability-group" data-group="{{key}}">
-    <h3>{{localize group.label}}</h3>
+    <h3>{{localize group.label}}{{#if group.items.length}} <span class="count">{{group.items.length}}</span>{{/if}}</h3>
     <ol class="ability-list">
       {{#each group.items as |ability|}}
       <li class="ability-card {{#if ability.expanded}}expanded{{/if}} {{#if ability.armed}}armed{{/if}} draggable" data-item-id="{{ability.id}}">
@@ -189,19 +199,22 @@
           </a>
           <div class="ability-main">
             <a class="ability-name" data-action="toggleExpand" draggable="false">{{ability.name}}</a>
+            {{!-- What kind of action it is (a word, not a box), what it costs (the one boxed thing: a resource you spend),
+                 then the facts with their glyphs. A passive shows the start of its text instead. --}}
             <div class="ability-meta">
               {{#if ability.armed}}<span class="sac-chip armed"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Boost.Armed'}}</span>{{/if}}
-              {{#if ability.tagLabel}}<span class="sac-chip tag">{{localize ability.tagLabel}}</span>{{/if}}
+              {{#if ability.tagLabel}}<span class="meta-tag">{{localize ability.tagLabel}}</span>{{/if}}
               {{#if ability.poolText}}<span class="sac-chip pool">{{ability.poolText}}</span>{{/if}}
               {{#if ability.loreText}}<span class="sac-chip pool">{{ability.loreText}}</span>{{/if}}
               {{#each ability.madBadges as |badge|}}<span class="sac-chip mad">{{badge}}</span>{{/each}}
-              {{#if ability.attackText}}<span class="sac-chip">{{ability.attackText}}</span>{{/if}}
-              {{#if ability.hasSave}}<span class="sac-chip">{{localize 'SACADIA.Activity.Save'}}</span>{{/if}}
-              {{#if ability.rangeText}}<span class="sac-chip">{{ability.rangeText}}</span>{{/if}}
-              {{#if ability.weaponName}}<span class="sac-chip" title="{{localize 'SACADIA.Ability.Weapon'}}"><i class="fa-solid fa-hand-fist"></i> {{ability.weaponName}}</span>{{/if}}
+              {{#if ability.attackText}}<span class="meta-fact" title="{{ability.attackLong}}"><i class="fa-solid fa-crosshairs"></i> {{ability.attackText}}</span>{{/if}}
+              {{#if ability.hasSave}}<span class="meta-fact"><i class="fa-solid fa-shield-halved"></i> {{localize 'SACADIA.Activity.Save'}}</span>{{/if}}
+              {{#if ability.rangeText}}<span class="meta-fact"><i class="fa-solid fa-ruler"></i> {{ability.rangeText}}</span>{{/if}}
+              {{#if ability.weaponName}}<span class="meta-fact" title="{{localize 'SACADIA.Ability.Weapon'}}"><i class="fa-solid fa-hand-fist"></i> {{ability.weaponName}}</span>{{/if}}
               {{#if ability.pick}}<select class="ability-pick" data-tooltip="{{localize 'SACADIA.Pick.Hint'}}">{{selectOptions ability.pick.choices selected=ability.pick.value}}</select>{{/if}}
               {{#if ability.rangeValue}}<span class="out-of-range" hidden>{{localize 'SACADIA.Range.OutOfRangeShort'}}</span>{{/if}}
             </div>
+            {{#if ability.summary}}<div class="ability-summary">{{ability.summary}}</div>{{/if}}
           </div>
           <div class="ability-controls">
             <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>

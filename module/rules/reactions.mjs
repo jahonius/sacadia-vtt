@@ -8,6 +8,7 @@ import { applyConditionDeltas } from '../helpers/conditions.mjs';
 import { applyDamageTo, incomingDr, restoreHitSnapshot } from './damage.mjs';
 import { applyGrant } from './grants.mjs';
 import { damageAfterDr, effectiveDefenseValue } from '../helpers/derivation.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 /**
  * Plain context for the pure post-roll registry (see module/helpers/post-roll.mjs) — everything an
@@ -94,7 +95,7 @@ export function postRollControls({ req, sub, uuid, attacker, target, hit, hpBefo
 export async function promptAmount(title, label, cap) {
   const read = (event, button, dialog) =>
     Math.max(0, Math.min(cap, Math.round(Number(dialog.element.querySelector('[name="amt"]')?.value) || 0)));
-  return foundry.applications.api.DialogV2.wait({
+  return sacDialog.wait({
     window: { title },
     content: `<div class="adv-prompt"><label>${label}</label>
       <input type="number" name="amt" value="${cap}" min="0" max="${cap}" step="1" autofocus/></div>`,
@@ -167,7 +168,7 @@ export async function onPostRoll(event) {
   } else if (entry.kind === 'reduce' && entry.pickSaved) {
     // Pull the Strand: subtract one of the reactor's saved Slightly Cracked rolls, which is spent.
     const saved = [...(reactor.system.professionResources?.oracle?.cracked ?? [])];
-    const res = await foundry.applications.api.DialogV2.wait({ window: { title }, rejectClose: false,
+    const res = await sacDialog.wait({ window: { title }, rejectClose: false,
       content: `<p>${game.i18n.localize('SACADIA.Cracked.Pick')}</p>`, buttons: saved.map((v, i) => ({ action: String(i), label: `−${v}` })) });
     if (res == null) return;
     const v = saved.splice(Number(res), 1)[0];

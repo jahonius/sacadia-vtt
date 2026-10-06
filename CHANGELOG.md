@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.3.3
+
+- **Consistent Roll** (p.237). When you use an ability that makes an attack roll, the prompt offers extra AP for 1X
+  advantage each, up to the AP you have left after its cost. The extra AP is paid with the action and logged with it,
+  and the card's to-hit line names it ("2× Adv · Consistent Roll"). That makes the crossbow Sentinel's features work as
+  written: Crossbow Mastery's "4 AP or more in a consistent attack", Boltshot's "at least 2 AP" and Bowling Bolt's "6×
+  advantage". Before, the advantage prompt gave advantage without charging AP.
+- **Abilities tab redesign.**
+  - **The turn panel** reads like the header: AP and pools as big numbers (pools edit in place), and Cover without a
+    box. The seven limbs are glyph tiles (hands, body, mind, focus, legs, reaction) that turn red when spent.
+  - **Basic actions** are grouped into Move, Offense and Utility. Nearly all cost 1 AP, so only the Boosts are marked
+    (5-Foot Adjust, Hurdle), and each one's tooltip gives its cost, the limbs it uses and the book's rule.
+  - **Ability cards:** the kind of action is a word (Action, Reaction…), the one boxed chip is a cost you spend (1 Call,
+    Lore, Madness), and the facts read plainly with small glyphs ("vs TD · 5 ft · Spear", the full defense in the
+    tooltip). Passive abilities show the first two lines of what they do. Group headings count their abilities.
+  - Foundry's plain white weapon and armor glyphs are tinted gold, on the Abilities and Inventory tabs.
+- **Prompts.** Every prompt the system opens is in the sheet's look (umber, a display-face title, the button Enter
+  presses in gold), sized to fit.
+  - **Attack and check prompt:** a header with what you're rolling, an Advantage stepper ("Normal", "1× Advantage",
+    "2× Disadvantage"), the Consistent Roll as AP bolts to click, and a live line of what will be rolled and its cost
+    ("Rolls 3d20, keeps the highest · 2 AP"). One Roll button; Enter rolls and the arrow keys step the advantage.
+  - The prompts' own styles (the resist form, the research list…) had never applied, since dialogs open outside the
+    sheet; they do now.
+
 ## 0.3.2
 
 - **A richer sheet header, the same height.** The nine equal tiles are now in tiers:

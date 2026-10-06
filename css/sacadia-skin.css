@@ -335,6 +335,324 @@
   color: var(--sac-gold-hi);
 }
 
+.sac-actiontip {
+  max-width: 19rem;
+}
+.sac-actiontip .tip-cost {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-olive);
+}
+.sac-actiontip .tip-text {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--sac-text);
+}
+
+.application.sacadia-dialog {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 6px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+.application.sacadia-dialog .window-header {
+  background: var(--sac-panel);
+  border-bottom: 1px solid var(--sac-line);
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .window-header .window-title {
+  font-family: var(--sac-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.application.sacadia-dialog .window-header button, .application.sacadia-dialog .window-header a {
+  color: var(--sac-dim);
+}
+.application.sacadia-dialog .window-header button:hover, .application.sacadia-dialog .window-header a:hover {
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .window-content {
+  background: var(--sac-umber);
+  color: var(--sac-text);
+  padding: 0.7rem 0.85rem 0.8rem;
+  gap: 0.7rem;
+}
+.application.sacadia-dialog .dialog-content {
+  gap: 0.5rem;
+}
+.application.sacadia-dialog .dialog-content p {
+  margin: 0;
+  line-height: 1.4;
+}
+.application.sacadia-dialog .dialog-content strong, .application.sacadia-dialog .dialog-content b {
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog input, .application.sacadia-dialog select, .application.sacadia-dialog textarea {
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  color: var(--sac-text);
+}
+.application.sacadia-dialog input:focus, .application.sacadia-dialog select:focus, .application.sacadia-dialog textarea:focus {
+  border-color: var(--sac-gold);
+  box-shadow: none;
+  outline: none;
+}
+.application.sacadia-dialog .form-footer {
+  gap: 0.4rem;
+}
+.application.sacadia-dialog .form-footer button {
+  min-height: 2rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  color: var(--sac-text);
+  font-size: 0.85rem;
+}
+.application.sacadia-dialog .form-footer button i {
+  color: var(--sac-dim);
+}
+.application.sacadia-dialog .form-footer button:hover, .application.sacadia-dialog .form-footer button:focus-visible {
+  border-color: var(--sac-gold-lo);
+  background: rgba(212, 165, 60, 0.1);
+  box-shadow: none;
+}
+.application.sacadia-dialog .form-footer button[autofocus] {
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  font-weight: 700;
+  background: rgba(212, 165, 60, 0.16);
+}
+.application.sacadia-dialog .form-footer button[autofocus] i {
+  color: var(--sac-gold);
+}
+.application.sacadia-dialog .sac-label {
+  font-family: var(--sac-font-ui);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+
+.application.sacadia-dialog .sac-prompt.roll-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--sac-line);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head img {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head img[src$=".svg"] {
+  box-sizing: border-box;
+  padding: 7px;
+  filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head .sp-name {
+  min-width: 0;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head .sp-title {
+  font-family: var(--sac-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-head .sp-sub {
+  margin-top: 0.1rem;
+  font-size: 0.78rem;
+  color: var(--sac-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 2rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 5px;
+  background: var(--sac-inset);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper .step {
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper .step:hover {
+  color: var(--sac-gold-hi);
+  background: rgba(212, 165, 60, 0.1);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper .adv-value {
+  min-width: 8.5rem;
+  padding: 0 0.3rem;
+  text-align: center;
+  font-family: var(--sac-font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--sac-text);
+  border-left: 1px solid var(--sac-line);
+  border-right: 1px solid var(--sac-line);
+  line-height: 2rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper .adv-value[data-sign="1"] {
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .adv-stepper .adv-value[data-sign="-1"] {
+  color: var(--sac-blood);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .ap-spend {
+  display: flex;
+  gap: 0.2rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .ap-spend .ap-pip {
+  width: 1.75rem;
+  height: 1.75rem;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 4px;
+  color: var(--sac-line-strong);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .ap-spend .ap-pip:hover {
+  border-color: var(--sac-gold-lo);
+  color: var(--sac-gold-lo);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .ap-spend .ap-pip.on {
+  border-color: var(--sac-gold);
+  background: var(--sac-gold);
+  color: #14100a;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-summary {
+  padding: 0.4rem 0.55rem;
+  border-radius: 4px;
+  background: var(--sac-panel);
+  font-size: 0.85rem;
+  color: var(--sac-text);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-summary b {
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-summary .sp-cost {
+  color: var(--sac-dim);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-hint {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--sac-dim);
+}
+
+.adv-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.adv-prompt label {
+  display: block;
+  font-weight: 700;
+}
+.adv-prompt .hint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--sac-dim);
+}
+
+.resist-prompt .rp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+.resist-prompt .rp-row label {
+  flex: 0 0 8.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.resist-prompt .rp-row select, .resist-prompt .rp-row input {
+  flex: 1;
+  min-width: 0;
+}
+.resist-prompt .source-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--sac-gold-hi);
+}
+.resist-prompt .hint {
+  margin: 0.3rem 0 0;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  color: var(--sac-dim);
+}
+
+.refresh-list {
+  max-height: 14rem;
+  overflow-y: auto;
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.research-list {
+  display: grid;
+  gap: 0.2rem;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 0.4rem;
+}
+.research-list .research-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.research-list .research-row small {
+  opacity: 0.75;
+}
+.research-list .prereq-met {
+  color: var(--sac-olive);
+}
+.research-list .prereq-unmet {
+  color: var(--sac-blood);
+}
+
 /* Styles limited to sacadia sheets */
 .sacadia {
   /* ============================================================
@@ -1605,6 +1923,11 @@
   border-radius: 3px;
   object-fit: cover;
 }
+.sacadia .inv-row .inv-img[src$=".svg"] {
+  box-sizing: border-box;
+  padding: 5px;
+  filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
+}
 .sacadia .inv-row .inv-main {
   flex: 1;
   min-width: 0;
@@ -1746,12 +2069,6 @@
 }
 .sacadia .talent-group.specialties .specialty a:hover {
   color: var(--sac-gold-hi);
-}
-.sacadia .research-list .prereq-met {
-  color: var(--sac-olive);
-}
-.sacadia .research-list .prereq-unmet {
-  color: var(--sac-blood);
 }
 .sacadia.item .sheet-header {
   display: flex;
@@ -1912,15 +2229,24 @@
 }
 .sacadia .combat-panel .cp-pools .cp-pool input {
   flex: 0 0 auto;
-  width: 2.4rem !important;
+  height: auto;
+  padding: 0;
   text-align: center;
-  padding: 0.05rem 0.2rem;
   font-family: var(--sac-font-display);
-  font-size: 0.95rem;
+  font-weight: 700;
+}
+.sacadia .combat-panel .cp-pools .cp-pool input.pool-cur {
+  width: 1.9rem !important;
+  font-size: 1.45rem;
+  line-height: 1;
   color: var(--sac-gold-hi);
-  background: var(--sac-inset);
-  border: 1px solid var(--sac-line);
-  border-radius: 3px;
+  text-align: right;
+}
+.sacadia .combat-panel .cp-pools .cp-pool input.pool-max {
+  width: 1.5rem !important;
+  font-size: 0.95rem;
+  color: var(--sac-dim);
+  text-align: left;
 }
 .sacadia .combat-panel .cp-pools .cp-pool .sep {
   color: var(--sac-dim);
@@ -1943,11 +2269,15 @@
   flex: 0 0 auto;
   width: auto !important;
   padding: 0.05rem 0.3rem;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--sac-text);
-  background: var(--sac-inset);
-  border: 1px solid var(--sac-line);
+  background: transparent;
+  border: 1px solid transparent;
   border-radius: 3px;
+}
+.sacadia .combat-panel .cp-cover select:hover, .sacadia .combat-panel .cp-cover select:focus {
+  border-color: var(--sac-line-strong);
+  background: var(--sac-inset);
 }
 .sacadia .combat-panel .ap-readout {
   display: flex;
@@ -1959,15 +2289,21 @@
 }
 .sacadia .combat-panel .ap-readout > label {
   font-size: 0.62rem;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--sac-dim);
 }
 .sacadia .combat-panel .ap-readout .ap-values {
   font-family: var(--sac-font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums;
 }
 .sacadia .combat-panel .ap-readout .ap-values b {
-  font-size: 1.35rem;
+  font-size: 1.55rem;
+  line-height: 1;
   color: var(--sac-gold-hi);
 }
 .sacadia .combat-panel .ap-readout .ap-max {
@@ -2026,6 +2362,9 @@
   display: block;
   margin-bottom: 0.3rem;
 }
+.sacadia .combat-panel .cp-grid > .cp-block:first-child {
+  flex: 3 1 22rem;
+}
 .sacadia .combat-panel .cp-live {
   margin-top: 0.45rem;
   padding-top: 0.4rem;
@@ -2036,31 +2375,49 @@
   margin-bottom: 0.25rem;
 }
 .sacadia .combat-panel .limb-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
 }
 .sacadia .combat-panel .limb {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 0.22rem 0.45rem;
-  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.32rem 0.1rem 0.25rem;
+  border-radius: 4px;
   border: 1px solid var(--sac-line);
+  background: var(--sac-inset);
   color: var(--sac-dim);
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
   cursor: pointer;
 }
 .sacadia .combat-panel .limb input {
   display: none;
 }
+.sacadia .combat-panel .limb i {
+  font-size: 0.95rem;
+  color: var(--sac-text);
+}
+.sacadia .combat-panel .limb i.flip {
+  transform: scaleX(-1);
+}
 .sacadia .combat-panel .limb:hover {
   border-color: var(--sac-gold-lo);
 }
 .sacadia .combat-panel .limb.spent {
-  background: rgba(145, 29, 32, 0.3);
+  background: rgba(145, 29, 32, 0.28);
   border-color: #6e393c;
   color: #e0a5a8;
+}
+.sacadia .combat-panel .limb.spent i {
+  color: var(--sac-blood);
 }
 .sacadia .combat-panel .log-list {
   list-style: none;
@@ -2167,7 +2524,43 @@
 .sacadia .combat-aux .favored-enemies {
   width: 100%;
 }
+.sacadia .combat-aux .basic-actions-group .ba-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+.sacadia .combat-aux .basic-actions-group .ba-head .sac-label {
+  margin: 0;
+}
+.sacadia .combat-aux .basic-actions-group .ba-note {
+  font-size: 0.66rem;
+  color: var(--sac-dim);
+}
+.sacadia .combat-aux .basic-actions-group .ba-note i {
+  font-size: 0.6rem;
+  color: var(--sac-gold);
+}
+.sacadia .combat-aux .basic-actions-group .ba-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.sacadia .combat-aux .basic-actions-group .ba-row + .ba-row {
+  margin-top: 0.3rem;
+}
+.sacadia .combat-aux .basic-actions-group .ba-kind {
+  flex: 0 0 4rem;
+  padding-top: 0.22rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-olive);
+}
 .sacadia .combat-aux .basic-actions {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
@@ -2175,18 +2568,23 @@
 .sacadia .combat-aux .basic-action {
   cursor: pointer;
   white-space: nowrap;
-  font-size: 0.75rem;
-  padding: 0.12rem 0.5rem;
-  border: 1px solid var(--sac-line-strong);
+  font-size: 0.76rem;
+  padding: 0.12rem 0.55rem;
+  border: 1px solid transparent;
   border-radius: 10px;
+  background: rgba(234, 217, 176, 0.06);
   color: var(--sac-text);
 }
-.sacadia .combat-aux .basic-action small {
-  opacity: 0.7;
-  margin-left: 0.1rem;
+.sacadia .combat-aux .basic-action small.boost {
+  margin-left: 0.15rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-olive);
 }
 .sacadia .combat-aux .basic-action:hover {
-  background: rgba(212, 165, 60, 0.12);
+  background: rgba(212, 165, 60, 0.14);
   border-color: var(--sac-gold-lo);
 }
 .sacadia .csp-footer {
@@ -2271,7 +2669,7 @@
   padding: 0.15rem 0;
   grid-column: 1/-1;
 }
-.sacadia .ability-group[data-group=passive] .sac-chip.tag {
+.sacadia .ability-group[data-group=passive] .meta-tag {
   display: none;
 }
 .sacadia .rest-controls,
@@ -2348,13 +2746,6 @@
 .sacadia .refresh-notice a:hover {
   text-decoration: underline;
 }
-.sacadia .refresh-list {
-  max-height: 14rem;
-  overflow-y: auto;
-  margin: 0.25rem 0 0;
-  padding-left: 1.2rem;
-  font-size: 0.85rem;
-}
 .sacadia .ability-card {
   border: 1px solid transparent;
   border-radius: 5px;
@@ -2392,6 +2783,15 @@
   height: 48px;
   border: none;
   border-radius: 0;
+}
+.sacadia .ability-row .ability-use:has(img[src$=".svg"]) {
+  background: radial-gradient(circle at 50% 40%, var(--sac-panel), var(--sac-inset) 75%);
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .ability-row .ability-use img[src$=".svg"] {
+  box-sizing: border-box;
+  padding: 9px;
+  filter: brightness(0) saturate(100%) invert(68%) sepia(61%) saturate(470%) hue-rotate(2deg) brightness(92%) contrast(86%);
 }
 .sacadia .ability-row .ability-use .ap-badge {
   position: absolute;
@@ -2451,8 +2851,41 @@
 .sacadia .ability-row .ability-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.2rem 0.6rem;
   align-items: center;
+}
+.sacadia .ability-row .ability-meta:not(:has(*)) {
+  display: none;
+}
+.sacadia .ability-row .meta-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-olive);
+}
+.sacadia .ability-row .meta-fact {
+  font-size: 0.74rem;
+  color: var(--sac-dim);
+  white-space: nowrap;
+}
+.sacadia .ability-row .meta-fact i {
+  margin-right: 0.12rem;
+  font-size: 0.62rem;
+  color: var(--sac-gold-lo);
+}
+.sacadia .ability-row .ability-main:has(.ability-summary) {
+  gap: 0;
+  padding-top: 3px;
+}
+.sacadia .ability-row .ability-summary {
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--sac-dim);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .sacadia .ability-row .out-of-range {
   font-size: 0.62rem;
@@ -3128,70 +3561,6 @@
   line-height: 1.4;
   padding: 0.05rem 0.4rem;
 }
-.sacadia .adv-prompt label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.25rem;
-}
-.sacadia .adv-prompt .adv-custom-row {
-  display: flex;
-  align-items: stretch;
-  gap: 0.4rem;
-}
-.sacadia .adv-prompt .adv-custom-row input[name=level] {
-  flex: 1;
-  min-width: 0;
-}
-.sacadia .adv-prompt .adv-custom-row .adv-roll-custom {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  cursor: pointer;
-}
-.sacadia .adv-prompt .hint {
-  margin: 0.4rem 0 0;
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-.sacadia .resist-prompt .rp-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.4rem;
-}
-.sacadia .resist-prompt .rp-row label {
-  flex: 0 0 8rem;
-  font-weight: bold;
-}
-.sacadia .resist-prompt .rp-row select, .sacadia .resist-prompt .rp-row input {
-  flex: 1;
-  min-width: 0;
-}
-.sacadia .resist-prompt .source-note {
-  margin: 0.5rem 0 0;
-  font-size: 0.82rem;
-  font-weight: bold;
-}
-.sacadia .resist-prompt .hint {
-  margin: 0.3rem 0 0;
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-.sacadia .research-list {
-  display: grid;
-  gap: 0.2rem;
-  max-height: 60vh;
-  overflow-y: auto;
-  margin-top: 0.4rem;
-}
-.sacadia .research-list .research-row {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  cursor: pointer;
-}
-.sacadia .research-list .research-row small {
-  opacity: 0.75;
-}
 .sacadia.resist-card .rc-head {
   display: flex;
   align-items: center;
@@ -3415,6 +3784,11 @@
 }
 .sacadia .tab > h3,
 .sacadia .tab > div > h3,
+.sacadia .ability-group > h3 .count {
+  margin-left: 0.3rem;
+  letter-spacing: 0;
+  color: var(--sac-gold-lo);
+}
 .sacadia .ability-group > h3,
 .sacadia .inv-head > h3 {
   margin: 0.9rem 0 0.45rem;

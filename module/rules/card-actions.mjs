@@ -5,6 +5,7 @@
 import { fireKillTriggers, runOnKill } from './damage.mjs';
 import { replaceWith } from '../helpers/update-ops.mjs';
 import { postRollCard } from '../helpers/chat-cards.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 /** Call of the Dying (GM button): undo this turn's Battle Fatigue gain; spend the ally's reaction + Call point. */
 export async function onCallOfTheDying(event) {
@@ -98,7 +99,7 @@ export async function onCritSelf(event) {
     if (!exhausted.length) return ui.notifications.info(game.i18n.localize('SACADIA.Crit.NoLimb'));
     let slot = exhausted[0];
     if (exhausted.length > 1) {
-      slot = await foundry.applications.api.DialogV2.wait({
+      slot = await sacDialog.wait({
         window: { title: game.i18n.localize('SACADIA.Crit.LimbPick') },
         buttons: exhausted.map((s) => ({
           action: s, label: game.i18n.localize(CONFIG.SACADIA.exhaustionSlots[s] ?? s),

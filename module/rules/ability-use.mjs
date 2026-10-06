@@ -17,6 +17,7 @@ import { attackRiders } from '../helpers/attack-riders.mjs';
 import { grantsFrom } from '../helpers/prestige.mjs';
 import { rendPreference } from '../helpers/rend.mjs';
 import { findGear, armorMaterial, ownsAbility, abilityItem, opposed, allied, confirmWarn } from '../helpers/actor-utils.mjs';
+import { sacDialog } from '../helpers/dialogs.mjs';
 
 export class AbilityUse {
   /**
@@ -497,7 +498,7 @@ export class AbilityUse {
         .filter(([k, c]) => k !== 'madness' && (ally.system.conditions?.[k]?.value ?? 0) > 0 && (!ar.mentalOnly || /mental/i.test(c.group ?? '')));
       if (!held.length) { ui.notifications.info(game.i18n.format('SACADIA.Aid.NothingToAid', { name: ally.name })); continue; }
       const condOpts = held.map(([k, c]) => `<option value="${k}">${loc(c.label)} ${ally.system.conditions[k].value}</option>`).join('');
-      const form = await foundry.applications.api.DialogV2.wait({
+      const form = await sacDialog.wait({
         window: { title: `${item.name} — ${ally.name}` },
         content: `<div class="resist-prompt"><div class="rp-row"><label>${loc('SACADIA.Resist.Condition')}</label><select name="cond">${condOpts}</select></div>`
           + (auto ? '' : `<div class="rp-row"><label>${loc('SACADIA.Resist.Trait')}</label><select name="trait">${statOpts}</select></div>`) + '</div>',
@@ -550,7 +551,7 @@ export class AbilityUse {
     // Both tired: you choose whose Fatigue moves.
     let from = tired[0];
     if (tired.length === 2) {
-      const pick = await foundry.applications.api.DialogV2.wait({ window: { title: item.name }, content: `<p>${fmt('Which', {})}</p>`,
+      const pick = await sacDialog.wait({ window: { title: item.name }, content: `<p>${fmt('Which', {})}</p>`,
         buttons: tired.map((a, i) => ({ action: String(i), label: `${a.name} (${fatigue(a)})`, default: i === 0 })), rejectClose: false });
       if (pick == null) return null;
       from = tired[Number(pick)] ?? tired[0];
@@ -711,7 +712,7 @@ export class AbilityUse {
     const prompt = cap != null
       ? game.i18n.format('SACADIA.Pool.HowManyMax', { pool: poolLabel, max: cap })
       : game.i18n.format('SACADIA.Pool.HowMany', { pool: poolLabel });
-    return foundry.applications.api.DialogV2.wait({
+    return sacDialog.wait({
       window: { title: poolLabel },
       content: `<div class="adv-prompt">
         <label>${prompt}</label>
@@ -728,7 +729,7 @@ export class AbilityUse {
     const saved = actor.system.professionResources?.oracle?.cracked ?? [];
     if (!saved.length) { ui.notifications.warn(game.i18n.localize('SACADIA.Cracked.None')); return null; }
     const buttons = saved.map((v, i) => ({ action: String(i), label: String(v), default: i === 0 }));
-    const res = await foundry.applications.api.DialogV2.wait({ window: { title }, content: `<p>${game.i18n.localize('SACADIA.Cracked.Pick')}</p>`,
+    const res = await sacDialog.wait({ window: { title }, content: `<p>${game.i18n.localize('SACADIA.Cracked.Pick')}</p>`,
       buttons, rejectClose: false });
     return res == null ? null : Number(res);
   }
@@ -854,7 +855,7 @@ export class AbilityUse {
     if (weapon && !weapon.system.equipped) {
       // A weapon in a Stored Item Slot can't be reached in combat (book p.181) — warn-but-allow.
       const stored = weapon.system.storage === 'sis' && game.combat?.started;
-      const ok = await foundry.applications.api.DialogV2.confirm({
+      const ok = await sacDialog.confirm({
         window: { title: game.i18n.localize('SACADIA.Weapon.DrawTitle') },
         content: `<p>${game.i18n.format(stored ? 'SACADIA.Inventory.DrawStored' : 'SACADIA.Weapon.DrawPrompt', { weapon: weapon.name })}</p>`,
       });
@@ -938,6 +939,25 @@ export class AbilityUse {
         ranged: (item.system.activities ?? []).some((a) => a.type === 'attack' && a.attack?.category === 'ranged'),
       };
     }
+    // Advantage / disadvantage for the attack roll(s), and a Consistent Roll (book p.237): "expend extra AP on any ability
+    // that rolls D20s in order to add advantages to that roll, on top of the AP cost of that ability", up to the AP left
+    // after its own cost. Each extra AP is 1X advantage, paid with the action (so the log shows the whole spend, which
+    // Crossbow Mastery's 4+ AP reads; Bowling Bolt's 6X advantage counts it too).
+    let advLevel = 0;
+    let consistent = 0;
+    if ((item.system.activities ?? []).some((a) => a.type === 'attack')) {
+      const baseCost = (draw && !draw.free ? 1 : 0) + (action ? this.#actionCost(action).cost : 0);
+      const spare = action ? Math.max(0, (this.actor.system.ap?.value ?? 0) - baseCost) : 0;
+      const targets = Array.from(game.user.targets ?? []).map((t) => t.name);
+      const sub = [game.i18n.localize(CONFIG.SACADIA.abilityTags[item.system.tag] ?? ''),
+        targets.length ? `${game.i18n.localize('SACADIA.Card.Vs')} ${targets.slice(0, 2).join(', ')}${targets.length > 2 ? ` +${targets.length - 2}` : ''}` : '']
+        .filter(Boolean).join(' · ');
+      const adv = await AbilityUse.#advantageDialog(item.name, spare, { img: item.img, sub, baseAp: baseCost });
+      if (adv === null) return null;
+      consistent = Math.min(spare, Math.max(0, adv.consistent));
+      advLevel = adv.level + consistent;
+      if (consistent) action.ap += consistent;
+    }
     // AP: the weapon draw (unless free) and the action itself, warned about once (warn-but-allow, book pp.236–237).
     const apCost = (draw && !draw.free ? 1 : 0) + (action ? this.#actionCost(action).cost : 0);
     const apNow = this.actor.system.ap?.value ?? 0;
@@ -956,7 +976,7 @@ export class AbilityUse {
       const saved = this.actor.system.professionResources?.oracle?.cracked ?? [];
       if (!saved.length) { ui.notifications.warn(game.i18n.localize('SACADIA.Cracked.None')); return null; }
       const buttons = saved.flatMap((v, i) => [{ action: `${i}:+`, label: `+${v}` }, { action: `${i}:-`, label: `−${v}` }]);
-      const res = await foundry.applications.api.DialogV2.wait({ window: { title: item.name },
+      const res = await sacDialog.wait({ window: { title: item.name },
         content: `<p>${game.i18n.localize('SACADIA.Cracked.PickSigned')}</p>`, buttons, rejectClose: false });
       if (!res) return null;
       const [i, sign] = String(res).split(':');
@@ -988,17 +1008,11 @@ export class AbilityUse {
       const have = this.actor.system.lorePoints?.value ?? 0;
       if (have < loreCost && !(await warn(game.i18n.format('SACADIA.Lore.Short', { name: item.name, n: loreCost, have })))) return null;
     }
-    // Advantage / disadvantage for the attack roll(s).
-    let advLevel = 0;
-    if ((item.system.activities ?? []).some((a) => a.type === 'attack')) {
-      advLevel = await AbilityUse.promptAdvantage(item.name);
-      if (advLevel === null) return null;
-    }
     // A grant's variable resource spend (Blessing of Hot Coal's Madness), deducted when the grant is built.
     const grantSpend = await this.#askGrantResource(item);
     if (grantSpend === null) return null;
     return { mcat, usage, ownsId, madInitiating, weapon, draw, usedChoice, extraAp, promptSpent, rageAttack, redirectGrant, action,
-      strand, poolCost, poolAmount, loreCost, advLevel, grantSpend, atone, breakPromise, funnel };
+      strand, poolCost, poolAmount, loreCost, advLevel, consistent, grantSpend, atone, breakPromise, funnel };
   }
 
   async useAbility(item) {
@@ -1407,6 +1421,8 @@ export class AbilityUse {
    */
   async #rollActivities(u) {
     const { abilityDamage, abilityToHit, activities, advLevel, bonuses, boostNotes, boostSets, cardActivities, catalogId, damageOpts, extraAp, forceCrit, fullOptions, isOpportunity, item, numbers, opportunitySteadiedCrit, ownedSet, pend, renewing, rollData, rolls, targetNotes, thrown, trickyBoy, usedChoice, weapon } = u;
+    // A Consistent Roll's advantage, named on the card's to-hit line ("3× Adv · Consistent Roll").
+    if (u.consistent) targetNotes.push({ label: game.i18n.localize('SACADIA.Roll.Consistent'), target: 'advantage.toHit', mode: 'add', value: u.consistent });
     const boostSaveDamage = []; // rolled boost damage riding a save activity (consumed by the first save)
 
     // First attack activity with a known target defense feeds GM-side hit resolution (Phase 10).
@@ -1499,8 +1515,8 @@ export class AbilityUse {
         fullOptions['self:attack:has-advantage'] = stacks > 0;
         fullOptions['self:attack:advantage-stacks'] = stacks; // numeric — Bowling Bolt's "≥6× advantage"
         numbers.advantageStacks = rollData.advantageStacks = stacks;
-        // "expend at least 2 AP" gate — this attack ability's AP cost (a Consistent attack costs ≥2).
-        if ((item.system.costs?.ap ?? 0) >= 2) fullOptions['self:attack:ap:2plus'] = true;
+        // "expend at least 2 AP" gate — this attack's AP: its cost plus any Consistent Roll AP spent on it.
+        if ((item.system.costs?.ap ?? 0) + (u.consistent ?? 0) >= 2) fullOptions['self:attack:ap:2plus'] = true;
         tmod = this.#targetModifiers(fullOptions, numbers, category, catalogId); // advantage-aware re-fold
       }
       targetNotes.push(...tmod.notes);
@@ -2355,7 +2371,7 @@ export class AbilityUse {
       problems.push(game.i18n.localize('SACADIA.Madness.LockedWhileInsane'));
     }
     if (!problems.length) return true;
-    return foundry.applications.api.DialogV2.confirm({
+    return sacDialog.confirm({
       window: { title: game.i18n.localize('SACADIA.Madness.PrereqTitle') },
       content: `<p>${game.i18n.format('SACADIA.Madness.PrereqIntro', { name: item.name })}</p><ul>${problems.map((p) => `<li>${p}</li>`).join('')}</ul>`,
       rejectClose: false,
@@ -2665,7 +2681,7 @@ export class AbilityUse {
     const mark = (pre) => { const { unmet } = checkPrerequisites(pre, pctx); return unmet.length ? ` <span class="prereq-unmet" title="${esc(unmet.join(', '))}">✗</span>` : ' <span class="prereq-met">✓</span>'; };
     const rows = entries.map((e) => `<label class="research-row"><input type="checkbox" name="r" value="${e.flags.sacadia.catalogId}"${recorded.has(e.flags.sacadia.catalogId) ? ' checked' : ''}/>`
       + ` <b>${esc(e.name)}</b>${e.system?.meta?.prerequisite ? ` <small>(${esc(e.system.meta.prerequisite)})</small>${mark(e.system.meta.prerequisite)}` : ''}</label>`).join('');
-    const picked = await foundry.applications.api.DialogV2.wait({
+    const picked = await sacDialog.wait({
       window: { title: game.i18n.format('SACADIA.Prestige.ResearchTitle', { name: item.name }) },
       content: `<p>${game.i18n.localize('SACADIA.Prestige.ResearchHint')}</p><div class="research-list">${rows}</div>`,
       buttons: [{ action: 'ok', label: game.i18n.localize('SACADIA.Prestige.ResearchSave'), default: true,
@@ -2715,7 +2731,7 @@ export class AbilityUse {
     const pools = Object.entries(actor.system.classPools ?? {}).filter(([, p]) => p && (p.max ?? 0) > 0);
     if (!pools.length) return null;
     const options = pools.map(([k, p]) => `<option value="${k}"${(p.value ?? 0) < (p.max ?? 0) ? '' : ' disabled'}>${game.i18n.localize(CONFIG.SACADIA.pools[k] ?? k)} (${p.value}/${p.max})</option>`).join('');
-    return foundry.applications.api.DialogV2.wait({ window: { title: actor.name }, rejectClose: false,
+    return sacDialog.wait({ window: { title: actor.name }, rejectClose: false,
       content: `<div class="adv-prompt"><label>${game.i18n.format('SACADIA.Pool.RefundWhich', { n })}</label><select name="pool">${options}</select></div>`,
       buttons: [{ action: 'ok', label: game.i18n.localize('SACADIA.PostRoll.Confirm'), default: true,
         callback: (event, button, dialog) => dialog.element.querySelector('[name="pool"]')?.value || null }] });
@@ -2762,7 +2778,7 @@ export class AbilityUse {
     const choices = this.actor.items.filter((i) => (i.type === 'gear' && i.system.weaponType) || (i.type === 'armor' && i.system.weaponType !== 'shield'));
     if (!choices.length) return ui.notifications.warn(game.i18n.localize('SACADIA.Lore.NoIronTarget'));
     const options = choices.map((i) => `<option value="${i.id}">${foundry.utils.escapeHTML(i.name)}</option>`).join('');
-    const id = await foundry.applications.api.DialogV2.wait({ window: { title: item.name }, rejectClose: false,
+    const id = await sacDialog.wait({ window: { title: item.name }, rejectClose: false,
       content: `<div class="adv-prompt"><label>${game.i18n.localize('SACADIA.Lore.IronWhich')}</label><select name="it">${options}</select></div>`,
       buttons: [{ action: 'ok', label: game.i18n.localize('SACADIA.PostRoll.Confirm'), default: true,
         callback: (event, button, dialog) => dialog.element.querySelector('[name="it"]')?.value }] });
@@ -2805,7 +2821,7 @@ export class AbilityUse {
     const opt = (k) => `<option value="${k}">${game.i18n.localize(S.conditions[k]?.label ?? k)}</option>`;
     const content = `<div class="adv-prompt"><label>${game.i18n.localize('SACADIA.Prestige.ConvertFrom')}</label><select name="from">${held.map(([k]) => opt(k)).join('')}</select>`
       + `<label>${game.i18n.localize('SACADIA.Prestige.ConvertTo')}</label><select name="to">${(convert.to ?? []).map(opt).join('')}</select></div>`;
-    const res = await foundry.applications.api.DialogV2.wait({
+    const res = await sacDialog.wait({
       window: { title: item.name }, content, rejectClose: false,
       buttons: [{ action: 'ok', label: game.i18n.localize('SACADIA.PostRoll.Confirm'), default: true,
         callback: (event, button, dialog) => ({ from: dialog.element.querySelector('[name="from"]')?.value, to: dialog.element.querySelector('[name="to"]')?.value }) }],
@@ -2967,7 +2983,7 @@ export class AbilityUse {
     const prompt = cap != null
       ? game.i18n.format('SACADIA.Spend.HowManyMax', { resource: label, max: cap })
       : game.i18n.format('SACADIA.Spend.HowMany', { resource: label });
-    return foundry.applications.api.DialogV2.wait({
+    return sacDialog.wait({
       window: { title: label },
       content: `<div class="adv-prompt">
         <label>${prompt}</label>
@@ -3295,46 +3311,94 @@ export class AbilityUse {
 
   /**
    * Ask the player for a signed Advantage level (book p.217, "NX Advantage" = N extra d20s kept
-   * best; negative = Disadvantage). Quick buttons cover ±1; the number field takes any magnitude.
+   * best; negative = Disadvantage). `img` / `sub` head the prompt (a Trait's icon and the kind of check).
    * @param {string} label
+   * @param {{img?: string, sub?: string}} [head]
    * @returns {Promise<number|null>} the advantage level (+adv / −dis / 0 normal), or null if dismissed
    */
-  static async promptAdvantage(label) {
-    const readLevel = (event, button, dialog) =>
-      Math.round(Number(dialog.element.querySelector('[name="level"]')?.value) || 0);
-    const customLabel = game.i18n.localize('SACADIA.Roll.AdvantageUse');
-    return foundry.applications.api.DialogV2.wait({
-      window: { title: game.i18n.format('SACADIA.Roll.AdvantagePrompt', { label }) },
-      content: `<div class="adv-prompt">
-        <label>${game.i18n.localize('SACADIA.Roll.AdvantageLevel')}</label>
-        <div class="adv-custom-row">
-          <input type="number" name="level" value="0" step="1"/>
-          <button type="button" class="adv-roll-custom"><i class="fa-solid fa-dice-d20"></i> ${customLabel}</button>
-        </div>
-        <p class="hint">${game.i18n.localize('SACADIA.Roll.AdvantageHint')}</p>
+  static async promptAdvantage(label, head = {}) {
+    return (await AbilityUse.#advantageDialog(label, 0, head))?.level ?? null;
+  }
+
+  /**
+   * The roll prompt: what's being rolled (icon, name, a line about it), a −/+ stepper for the Advantage level, and for
+   * an attack with AP to spare a Consistent Roll (book p.237: extra AP, 1X more advantage each, up to `consistentMax`)
+   * spent by clicking bolts. A live line says what will be rolled and what it costs; one Roll button (Enter) rolls.
+   * Arrow keys (or − / +) step the advantage. Conditions and effects are added at roll time, on top.
+   * @returns {Promise<{level: number, consistent: number}|null>} null if dismissed
+   */
+  static async #advantageDialog(label, consistentMax = 0, { img = '', sub = '', baseAp = 0 } = {}) {
+    const loc = (k) => game.i18n.localize(k);
+    const fmt = (k, d) => game.i18n.format(k, d);
+    const esc = foundry.utils.escapeHTML;
+    const read = (dialog, name) => Math.round(Number(dialog.element.querySelector(`[name="${name}"]`)?.value) || 0);
+    const head = `<header class="sp-head">${img ? `<img src="${esc(img)}" alt=""/>` : ''}<div class="sp-name">`
+      + `<div class="sp-title">${esc(label)}</div>${sub ? `<div class="sp-sub">${esc(sub)}</div>` : ''}</div></header>`;
+    const pips = Array.from({ length: consistentMax }, (_, i) =>
+      `<button type="button" class="ap-pip" data-n="${i + 1}" aria-label="${i + 1} ${loc('SACADIA.Economy.Ap')}"><i class="fa-solid fa-bolt"></i></button>`).join('');
+    const consistentRow = consistentMax > 0 ? `
+        <div class="sp-row">
+          <span class="sac-label" data-tooltip="${esc(fmt('SACADIA.Roll.ConsistentHint', { n: consistentMax }))}">${loc('SACADIA.Roll.Consistent')}</span>
+          <div class="ap-spend">${pips}</div>
+          <input type="hidden" name="consistent" value="0"/>
+        </div>` : '';
+    const result = await sacDialog.wait({
+      window: { title: fmt('SACADIA.Roll.AdvantagePrompt', { label }) },
+      position: { width: 340 },
+      content: `<div class="sac-prompt roll-prompt">
+        ${head}
+        <div class="sp-row">
+          <span class="sac-label">${loc('SACADIA.Roll.AdvantageLabel')}</span>
+          <div class="adv-stepper">
+            <button type="button" class="step" data-step="-1" aria-label="${loc('SACADIA.Roll.Less')}"><i class="fa-solid fa-minus"></i></button>
+            <output class="adv-value">${loc('SACADIA.Roll.NormalShort')}</output>
+            <button type="button" class="step" data-step="1" aria-label="${loc('SACADIA.Roll.More')}"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <input type="hidden" name="level" value="0"/>
+        </div>${consistentRow}
+        <div class="sp-summary"></div>
+        <p class="sp-hint">${loc('SACADIA.Roll.AdvantageNote')}</p>
       </div>`,
-      buttons: [
-        { action: 'dis', label: game.i18n.localize('SACADIA.Roll.Disadvantage'), icon: 'fa-solid fa-angles-down', callback: () => -1 },
-        { action: 'normal', label: game.i18n.localize('SACADIA.Roll.Normal'), icon: 'fa-solid fa-minus', callback: () => 0 },
-        { action: 'adv', label: game.i18n.localize('SACADIA.Roll.Advantage'), icon: 'fa-solid fa-angles-up', callback: () => 1 },
-        // The custom "Roll" action stays a real footer button (so Enter submits it and it reads the
-        // field), but it's hidden and proxied by the in-row button beside the input — see render.
-        { action: 'custom', label: customLabel, icon: 'fa-solid fa-dice-d20', default: true, callback: readLevel },
-      ],
+      buttons: [{ action: 'roll', label: loc('SACADIA.Check.Roll'), icon: 'fa-solid fa-dice-d20', default: true,
+        callback: (event, button, dialog) => ({ level: read(dialog, 'level'), consistent: consistentMax > 0 ? read(dialog, 'consistent') : 0 }) }],
       render: (event, dialog) => {
         const root = dialog.element;
-        const customBtn = root.querySelector('button[data-action="custom"]');
-        if (customBtn) customBtn.hidden = true;
-        root.querySelector('.adv-roll-custom')?.addEventListener('click', (e) => {
+        const level = root.querySelector('[name="level"]');
+        const cons = root.querySelector('[name="consistent"]');
+        const update = () => {
+          const l = Number(level.value) || 0;
+          const c = Number(cons?.value) || 0;
+          const net = l + c;
+          const out = root.querySelector('.adv-value');
+          out.textContent = l === 0 ? loc('SACADIA.Roll.NormalShort') : fmt(l > 0 ? 'SACADIA.Check.AdvN' : 'SACADIA.Check.DisN', { n: Math.abs(l) });
+          out.dataset.sign = String(Math.sign(l));
+          root.querySelectorAll('.ap-pip').forEach((p) => p.classList.toggle('on', Number(p.dataset.n) <= c));
+          const dice = `${1 + Math.abs(net)}d20`;
+          const keep = net > 0 ? loc('SACADIA.Roll.KeepHigh') : (net < 0 ? loc('SACADIA.Roll.KeepLow') : '');
+          const ap = baseAp + c;
+          root.querySelector('.sp-summary').innerHTML = fmt('SACADIA.Roll.Rolls', { dice: `<b>${dice}</b>` }) + (keep ? `, ${keep}` : '')
+            + (ap > 0 ? ` <span class="sp-cost">· <b>${ap}</b> ${loc('SACADIA.Economy.Ap')}</span>` : '');
+        };
+        const step = (d) => { level.value = String((Number(level.value) || 0) + d); update(); };
+        root.querySelectorAll('.adv-stepper .step').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); step(Number(b.dataset.step)); }));
+        root.querySelectorAll('.ap-pip').forEach((b) => b.addEventListener('click', (e) => {
           e.preventDefault();
-          customBtn?.click();
+          const n = Number(b.dataset.n);
+          cons.value = String(Number(cons.value) === n ? n - 1 : n); // clicking the last lit bolt takes it back
+          update();
+        }));
+        root.addEventListener('keydown', (e) => {
+          if (['ArrowLeft', 'ArrowDown', '-'].includes(e.key)) { e.preventDefault(); step(-1); }
+          if (['ArrowRight', 'ArrowUp', '+', '='].includes(e.key)) { e.preventDefault(); step(1); }
         });
-        const input = root.querySelector('[name="level"]');
-        input?.focus();
-        input?.select();
+        update();
+        root.querySelector('button[autofocus]')?.focus();
       },
       rejectClose: false,
     });
+    if (result == null) return null;
+    // A stubbed or legacy answer may be the bare level.
+    return typeof result === 'number' ? { level: result, consistent: 0 } : result;
   }
 
   /**
@@ -3345,7 +3409,7 @@ export class AbilityUse {
    * @returns {Promise<string|null>} the chosen value, or null if dismissed.
    */
   static async #promptChoice(label, choice) {
-    return foundry.applications.api.DialogV2.wait({
+    return sacDialog.wait({
       window: { title: label },
       content: choice.prompt ? `<p>${choice.prompt}</p>` : '',
       buttons: choice.options.map((o) => ({ action: o.value, label: o.label || o.value, callback: () => o.value })),
@@ -3374,7 +3438,7 @@ export class AbilityUse {
    */
   static async #pickBoosts(boosts, limit) {
     const rows = boosts.map((b) => `<label class="boost-pick"><input type="checkbox" name="b" value="${b.id}"> ${foundry.utils.escapeHTML(b.name)}</label>`).join('');
-    const ids = await foundry.applications.api.DialogV2.wait({
+    const ids = await sacDialog.wait({
       window: { title: game.i18n.localize('SACADIA.Boost.PickTitle') },
       content: `<p>${game.i18n.format('SACADIA.Boost.PickMany', { n: limit })}</p><div class="boost-picks">${rows}</div>`,
       buttons: [{ action: 'ok', label: game.i18n.localize('SACADIA.Boost.Apply'), default: true,

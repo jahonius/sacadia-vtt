@@ -35,6 +35,7 @@ import { onSaveRoll, zoneDamage, zoneSaveCard } from './rules/saves.mjs';
 import { reapOrphanGrants, removeSacadiaEffects } from './rules/grants.mjs';
 import { reconcileBasicGrants, reconcileProfessionGrants, refreshWorldItems, refreshableActors } from './rules/world.mjs';
 import { whisperReactions } from './rules/attack.mjs';
+import { sacDialog } from './helpers/dialogs.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -562,7 +563,7 @@ Hooks.once('ready', async () => {
   if (!pending.length) return;
   const list = pending.map((m) => `<li>${foundry.utils.escapeHTML(m.speaker?.alias ?? m.author?.name ?? '')}: ${foundry.utils.escapeHTML(
     (m.flavor || m.content || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 60))}</li>`).join('');
-  const ok = await foundry.applications.api.DialogV2.confirm({ window: { title: game.i18n.localize('SACADIA.Requests.PendingTitle') }, rejectClose: false,
+  const ok = await sacDialog.confirm({ window: { title: game.i18n.localize('SACADIA.Requests.PendingTitle') }, rejectClose: false,
     content: `<p>${game.i18n.format('SACADIA.Requests.Pending', { n: pending.length })}</p><ul class="refresh-list">${list}</ul>` });
   if (!ok) return;
   for (const m of pending) await resolveRequests(m);
