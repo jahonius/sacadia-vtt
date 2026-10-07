@@ -140,6 +140,28 @@ export function registerSweeps(quench) {
         });
       }
 
+      it("a character sheet's layout holds: the header its height, headings their style, the Conditions tab its count", async () => {
+        const pc = await fx.actor('Layout', 'character', { conditions: { panic: { value: 2 } } });
+        await pc.sheet.render({ force: true, position: { width: 720, height: 760 } });
+        await until(() => pc.sheet.rendered && pc.sheet.element, { what: 'the sheet to render' });
+        try {
+          const el = pc.sheet.element;
+          // The portrait runs the header's height (at least 136px): a stray rule collapsing it shows here.
+          assert.isAtLeast(el.querySelector('.sheet-header').getBoundingClientRect().height, 120, 'the header keeps its height');
+          // Section headings are small tracked capitals, not display headlines.
+          const h3 = el.querySelector('.tab[data-tab="stats"] h3');
+          const style = getComputedStyle(h3);
+          assert.equal(style.textTransform, 'uppercase', 'section headings are capitals');
+          assert.isBelow(parseFloat(style.fontSize), 16, 'section headings are small');
+          // Conditions have their own tab, which counts what's held.
+          assert.ok(el.querySelector('.tab[data-tab="conditions"] [data-action="resistCondition"][data-key="panic"]'), 'the tracker is on the Conditions tab');
+          assert.notOk(el.querySelector('.tab[data-tab="stats"] [data-action="resistCondition"]'), 'and not on the Stats tab');
+          assert.equal(el.querySelector('[data-tab="conditions"] .tab-count')?.textContent.trim(), '1', 'the tab counts the held condition');
+        } finally {
+          await pc.sheet.close();
+        }
+      });
+
       it('an NPC sheet with abilities, weapons and armor', async () => {
         const npc = await fx.actor('Monster', 'npc', { health: { value: 30, max: 30 }, resistances: 'fire 2', size: 'large' });
         await npc.createEmbeddedDocuments('Item', await Promise.all(['dagger', 'basic_iron_set', 'reflex_test', 'suppressing_fire', 'bd_blade_aura']

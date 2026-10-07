@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.4
+
+- **The roll prompt shows its modifiers.** Before you roll a Trait, talent or specialty check, or an attack, the prompt
+  lists what's already on the roll, each with its source: "+2 · Courage", "+3 · Proficiency", "1× Disadv · Frenzy 1",
+  a Trait-check bonus by the effect or ability that gives it, an Informative Scroll, a pending Fumble, Untrained, a
+  specialty's rank. Its summary counts them ("Rolls 2d20, keeps the lowest, +5"). For an attack, what depends on the
+  target (cover, height, marks) is still added when it rolls, as the prompt says. A check's chat card names the same
+  sources.
+- **Conditions tab.** The condition tracker moved off the Stats tab onto its own tab, after Abilities. It opens with
+  what's affecting the creature now: each held condition with its level and what that level does (click the name to
+  roll against it), and the states on its token (Prone, Steadied …). The tab's label counts them, so it shows from any
+  tab.
+- **Fix:** the section headings on the Stats and Character tabs went back to small capitals. 0.3.3 left them as large
+  headlines.
+
 ## 0.3.3
 
 - **Consistent Roll** (p.237). When you use an ability that makes an attack roll, the prompt offers extra AP for 1X

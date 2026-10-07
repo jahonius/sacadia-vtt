@@ -78,6 +78,18 @@
     .sp-sub { margin-top: 0.1rem; font-size: 0.78rem; color: var(--sac-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   }
 
+  // What's already on the roll: value | source, a row each; advantage in gold, disadvantage and penalties in blood.
+  .sp-mods {
+    .sac-label { display: block; margin-bottom: 0.3rem; }
+    ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.18rem 0.65rem; }
+    li { display: contents; }
+    b { justify-self: end; font-size: 0.85rem; color: var(--sac-text); font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+    li.pos b { color: var(--sac-gold-hi); }
+    li.neg b { color: var(--sac-blood); }
+    li span { font-size: 0.85rem; color: var(--sac-dim); }
+    .sp-note { margin-top: 0.35rem; font-size: 0.72rem; line-height: 1.35; font-style: italic; color: var(--sac-dim); }
+  }
+
   .sp-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; min-height: 2rem; }
 
   // Advantage: − value +. The value says it in words, gold for advantage and blood for disadvantage.

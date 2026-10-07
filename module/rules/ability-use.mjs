@@ -18,6 +18,7 @@ import { grantsFrom } from '../helpers/prestige.mjs';
 import { rendPreference } from '../helpers/rend.mjs';
 import { findGear, armorMaterial, ownsAbility, abilityItem, opposed, allied, confirmWarn } from '../helpers/actor-utils.mjs';
 import { sacDialog } from '../helpers/dialogs.mjs';
+import { standingAdvantage, toHitParts } from '../helpers/roll-breakdown.mjs';
 
 export class AbilityUse {
   /**
@@ -952,7 +953,24 @@ export class AbilityUse {
       const sub = [game.i18n.localize(CONFIG.SACADIA.abilityTags[item.system.tag] ?? ''),
         targets.length ? `${game.i18n.localize('SACADIA.Card.Vs')} ${targets.slice(0, 2).join(', ')}${targets.length > 2 ? ` +${targets.length - 2}` : ''}` : '']
         .filter(Boolean).join(' · ');
-      const adv = await AbilityUse.#advantageDialog(item.name, spare, { img: item.img, sub, baseAp: baseCost });
+      // What the first attack roll already carries: Proficiency (when trained), its Trait (Courage when a weapon attack's
+      // is lower, as the roll picks), the flat to-hit bonuses and a pending Fumble, and the standing advantage. What
+      // depends on the target (cover, height, marks …) is only known when it rolls, and the prompt says so.
+      const act = item.system.activities.find((a) => a.type === 'attack');
+      const rd = this.actor.getRollData();
+      const category = act.attack.category ?? '';
+      const thrown = !!item.flags?.sacadia?.thrown || usedChoice === 'thrown';
+      let traitKey = (thrown && !act.attack.trait && category === 'melee') ? CONFIG.SACADIA.attackCategories.ranged.trait : act.attack.effectiveTrait;
+      if (weapon && !act.attack.trait && traitKey && traitKey !== 'courage' && (Number(rd.courage) || 0) > (Number(rd[traitKey]) || 0)) traitKey = 'courage';
+      const fumble = this.actor.system.conditions?.fumbled?.value ?? 0;
+      const parts = [
+        ...(AbilityUse.proficientIn(this.actor, category) ? [{ label: game.i18n.localize('SACADIA.Progression.Proficiency'), value: Number(rd.proficiency) || 0 }] : []),
+        ...(traitKey ? [{ label: game.i18n.localize(CONFIG.SACADIA.stats[traitKey]), value: Number(rd[traitKey]) || 0 }] : []),
+        ...toHitParts(this.actor, category, item.flags?.sacadia?.catalogId ?? ''),
+        ...(fumble ? [{ label: game.i18n.localize('SACADIA.Condition.Fumbled'), value: -fumble }] : []),
+      ];
+      const adv = await AbilityUse.#advantageDialog(item.name, spare, { img: item.img, sub, baseAp: baseCost, parts,
+        standing: standingAdvantage(this.actor, 'toHit'), note: game.i18n.localize('SACADIA.Roll.TargetNote') });
       if (adv === null) return null;
       consistent = Math.min(spare, Math.max(0, adv.consistent));
       advLevel = adv.level + consistent;
@@ -3311,9 +3329,10 @@ export class AbilityUse {
 
   /**
    * Ask the player for a signed Advantage level (book p.217, "NX Advantage" = N extra d20s kept
-   * best; negative = Disadvantage). `img` / `sub` head the prompt (a Trait's icon and the kind of check).
+   * best; negative = Disadvantage). `img` / `sub` head the prompt (a Trait's icon and the kind of check); `parts` (flat
+   * modifiers, [{label, value}]) and `standing` (advantage already on the roll, [{label, n}]) are listed in it.
    * @param {string} label
-   * @param {{img?: string, sub?: string}} [head]
+   * @param {{img?: string, sub?: string, parts?: object[], standing?: object[], note?: string}} [head]
    * @returns {Promise<number|null>} the advantage level (+adv / −dis / 0 normal), or null if dismissed
    */
   static async promptAdvantage(label, head = {}) {
@@ -3323,17 +3342,33 @@ export class AbilityUse {
   /**
    * The roll prompt: what's being rolled (icon, name, a line about it), a −/+ stepper for the Advantage level, and for
    * an attack with AP to spare a Consistent Roll (book p.237: extra AP, 1X more advantage each, up to `consistentMax`)
-   * spent by clicking bolts. A live line says what will be rolled and what it costs; one Roll button (Enter) rolls.
-   * Arrow keys (or − / +) step the advantage. Conditions and effects are added at roll time, on top.
+   * spent by clicking bolts. The modifiers already on the roll are listed (`parts`: flat, `standing`: advantage, each
+   * with its source; `note` for what's only known at roll time). A live line says what will be rolled — the chosen
+   * level plus the standing advantage, and the flat total — and what it costs; one Roll button (Enter) rolls. Arrow
+   * keys (or − / +) step the advantage.
    * @returns {Promise<{level: number, consistent: number}|null>} null if dismissed
    */
-  static async #advantageDialog(label, consistentMax = 0, { img = '', sub = '', baseAp = 0 } = {}) {
+  static async #advantageDialog(label, consistentMax = 0, { img = '', sub = '', baseAp = 0, parts = [], standing = [], note = '' } = {}) {
     const loc = (k) => game.i18n.localize(k);
     const fmt = (k, d) => game.i18n.format(k, d);
     const esc = foundry.utils.escapeHTML;
     const read = (dialog, name) => Math.round(Number(dialog.element.querySelector(`[name="${name}"]`)?.value) || 0);
     const head = `<header class="sp-head">${img ? `<img src="${esc(img)}" alt=""/>` : ''}<div class="sp-name">`
       + `<div class="sp-title">${esc(label)}</div>${sub ? `<div class="sp-sub">${esc(sub)}</div>` : ''}</div></header>`;
+    const signed = (v) => (v < 0 ? `−${-v}` : `+${v}`);
+    const advWord = (n) => `${Math.abs(n)}× ${loc(n > 0 ? 'SACADIA.Roll.AdvShort' : 'SACADIA.Roll.DisadvShort')}`;
+    const mods = [
+      ...parts.filter((p) => p.value).map((p) => `<li class="${p.value < 0 ? 'neg' : ''}"><b>${signed(p.value)}</b><span>${esc(p.label)}</span></li>`),
+      ...standing.filter((s) => s.n).map((s) => `<li class="${s.n < 0 ? 'neg' : 'pos'}"><b>${advWord(s.n)}</b><span>${esc(s.label)}</span></li>`),
+    ];
+    const modsBlock = (mods.length || note) ? `
+        <div class="sp-mods">
+          <span class="sac-label">${loc('SACADIA.Roll.Modifiers')}</span>
+          ${mods.length ? `<ul>${mods.join('')}</ul>` : ''}
+          ${note ? `<p class="sp-note">${esc(note)}</p>` : ''}
+        </div>` : '';
+    const standingNet = standing.reduce((a, s) => a + (s.n || 0), 0);
+    const flat = parts.reduce((a, p) => a + (p.value || 0), 0);
     const pips = Array.from({ length: consistentMax }, (_, i) =>
       `<button type="button" class="ap-pip" data-n="${i + 1}" aria-label="${i + 1} ${loc('SACADIA.Economy.Ap')}"><i class="fa-solid fa-bolt"></i></button>`).join('');
     const consistentRow = consistentMax > 0 ? `
@@ -3346,7 +3381,7 @@ export class AbilityUse {
       window: { title: fmt('SACADIA.Roll.AdvantagePrompt', { label }) },
       position: { width: 340 },
       content: `<div class="sac-prompt roll-prompt">
-        ${head}
+        ${head}${modsBlock}
         <div class="sp-row">
           <span class="sac-label">${loc('SACADIA.Roll.AdvantageLabel')}</span>
           <div class="adv-stepper">
@@ -3368,7 +3403,7 @@ export class AbilityUse {
         const update = () => {
           const l = Number(level.value) || 0;
           const c = Number(cons?.value) || 0;
-          const net = l + c;
+          const net = l + c + standingNet;
           const out = root.querySelector('.adv-value');
           out.textContent = l === 0 ? loc('SACADIA.Roll.NormalShort') : fmt(l > 0 ? 'SACADIA.Check.AdvN' : 'SACADIA.Check.DisN', { n: Math.abs(l) });
           out.dataset.sign = String(Math.sign(l));
@@ -3377,6 +3412,7 @@ export class AbilityUse {
           const keep = net > 0 ? loc('SACADIA.Roll.KeepHigh') : (net < 0 ? loc('SACADIA.Roll.KeepLow') : '');
           const ap = baseAp + c;
           root.querySelector('.sp-summary').innerHTML = fmt('SACADIA.Roll.Rolls', { dice: `<b>${dice}</b>` }) + (keep ? `, ${keep}` : '')
+            + (flat ? `, <b>${signed(flat)}</b>` : '')
             + (ap > 0 ? ` <span class="sp-cost">· <b>${ap}</b> ${loc('SACADIA.Economy.Ap')}</span>` : '');
         };
         const step = (d) => { level.value = String((Number(level.value) || 0) + d); update(); };

@@ -1,0 +1,50 @@
+<section class="tab {{tabs.conditions.cssClass}}" data-group="primary" data-tab="conditions">
+
+  {{!-- What's affecting this creature now: each held condition with its level and what that level does (click the name
+       to roll against it), and the states set on its token (Prone, Steadied …; toggled there). --}}
+  <h3>{{localize 'SACADIA.Condition.Now'}}</h3>
+  {{#if (or heldConditions.length activeStates.length)}}
+  <div class="held-list">
+    {{#each heldConditions as |c|}}
+    <div class="held" data-tooltip-html="{{c.tooltip}}">
+      <a class="held-name" data-action="resistCondition" data-key="{{c.key}}">{{localize c.label}} <i class="fa-solid fa-dice-d20 resist-cue" title="{{localize 'SACADIA.Resist.RollFor'}}"></i></a>
+      <span class="held-level">{{c.value}}</span>
+      <span class="held-rule">{{c.ruleNow}}</span>
+    </div>
+    {{/each}}
+    {{#if activeStates.length}}
+    <div class="held-states">
+      {{#each activeStates as |st|}}<span class="state-chip">{{st.label}}</span>{{/each}}
+    </div>
+    {{/if}}
+  </div>
+  {{else}}
+  <p class="held-empty">{{localize 'SACADIA.Condition.NoneNow'}}</p>
+  {{/if}}
+
+  {{!-- Leveled condition trackers (0–6), grouped. Shown for both types — the automation applies
+       to NPCs too, so the GM sets a monster's conditions here. --}}
+  <div class="conditions">
+    <h3>{{localize 'SACADIA.Condition.All'}}</h3>
+    {{#each conditionGroups as |group gkey|}}
+    <div class="condition-group">
+      <h4>{{localize group.label}}</h4>
+      <div class="condition-grid">
+        {{#each group.conditions as |cond|}}
+        <div class="condition {{#if cond.value}}active{{/if}}" data-tooltip-html="{{cond.tooltip}}">
+          {{!-- Click the name to roll resistance for THIS condition (book p258): one Trait Check per
+               incoming level, take a level per fail. The d20 cue signals it's clickable. --}}
+          <a class="condition-name" data-action="resistCondition" data-key="{{cond.key}}">{{localize cond.label}} <i class="fa-solid fa-dice-d20 resist-cue" title="{{localize 'SACADIA.Resist.RollFor'}}"></i></a>
+          <div class="condition-track">
+            <a data-action="conditionStep" data-key="{{cond.key}}" data-dir="down"><i class="fa-solid fa-minus"></i></a>
+            <span class="condition-value">{{cond.value}}</span>
+            <a data-action="conditionStep" data-key="{{cond.key}}" data-dir="up"><i class="fa-solid fa-plus"></i></a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+
+</section>

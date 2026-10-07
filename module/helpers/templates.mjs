@@ -11,6 +11,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/sacadia/templates/actor/parts/actor-tabs.hbs',
     'systems/sacadia/templates/actor/parts/actor-stats.hbs',
     'systems/sacadia/templates/actor/parts/actor-abilities.hbs',
+    'systems/sacadia/templates/actor/parts/actor-conditions.hbs',
     'systems/sacadia/templates/actor/parts/actor-inventory.hbs',
     'systems/sacadia/templates/actor/parts/actor-biography.hbs',
     'systems/sacadia/templates/actor/parts/actor-effects.hbs',

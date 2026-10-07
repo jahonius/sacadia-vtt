@@ -19,7 +19,7 @@ Adversarial conditions (Pin, Hemorrhage, Panic, Fatigue, Fumble, and so on) have
   don't: Silenced, a condition made Enduring by Balanced Scale, Luckless Hold or Winter Frost, or Pin
   held by Wrestling Focus.
   Fumble clears completely at the end of your turn.
-- **Shaking one off:** click the condition's **name** on the Stats tab to open the resist dialog.
+- **Shaking one off:** click the condition's **name** on the **Conditions** tab to open the resist dialog.
   **Make Trait Check** rolls one check (+1 per extra AP), and each success removes a level. The
   **Incoming** mode rolls the checks for levels the GM asks you to resist.
 - **Where it came from:** each condition remembers who gave it. That's how Hemorrhage from a creature

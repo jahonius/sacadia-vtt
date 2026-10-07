@@ -100,7 +100,6 @@
       "SpecialtyNeedsGeneral": "{name}: you need the general talent to roll a specialization (book p.146)."
     },
     "Condition": {
-      "Title": "Conditions",
       "TurnDamage": "Condition damage",
       "Nausea": "Nausea",
       "Pinned": "Pinned",
@@ -120,7 +119,10 @@
       "Taunt": "Taunt",
       "Fumbled": "Fumbled",
       "Rended": "Rended",
-      "Madness": "Madness"
+      "Madness": "Madness",
+      "Now": "Affecting you now",
+      "NoneNow": "No conditions or states right now.",
+      "All": "All conditions"
     },
     "ConditionGroup": {
       "LesserPhysical": "Physical (Lesser)",
@@ -256,6 +258,7 @@
     "Tab": {
       "Stats": "Stats",
       "Abilities": "Abilities",
+      "Conditions": "Conditions",
       "Inventory": "Inventory",
       "Biography": "Biography",
       "Effects": "Effects",
@@ -337,7 +340,9 @@
       "Rolls": "Rolls {dice}",
       "KeepHigh": "keeps the highest",
       "KeepLow": "keeps the lowest",
-      "AdvantageNote": "Conditions, effects and cover are added when you roll. Arrow keys step the advantage; Enter rolls."
+      "AdvantageNote": "Arrow keys step the advantage; Enter rolls.",
+      "OtherEffects": "Other effects",
+      "TargetNote": "Your target's cover, height, marks and the like are added when you roll."
     },
     "Placeholder": {
       "Inventory": "Gear and armor arrive in Phase 5.",
@@ -1112,7 +1117,6 @@
       "AdvN": "{n}× Advantage",
       "DisN": "{n}× Disadvantage",
       "Untrained": "Untrained",
-      "TraitBonus": "Trait bonus",
       "Bonus": "Bonus",
       "Save": "Save",
       "SaveVs": "vs {name}",
@@ -1122,7 +1126,8 @@
       "Roll": "Roll",
       "Resisting": "Resisting",
       "MakeTraitCheck": "Make Trait Check",
-      "Critical": "Critical Hit"
+      "Critical": "Critical Hit",
+      "SpecialtyRank": "{name} rank {n}"
     }
   },
   "TYPES": {
