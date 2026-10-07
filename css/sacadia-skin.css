@@ -480,6 +480,45 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods .sac-label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.18rem 0.65rem;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li {
+  display: contents;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods b {
+  justify-self: end;
+  font-size: 0.85rem;
+  color: var(--sac-text);
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li.pos b {
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li.neg b {
+  color: var(--sac-blood);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li span {
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+}
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods .sp-note {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  font-style: italic;
+  color: var(--sac-dim);
+}
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-row {
   display: flex;
   align-items: center;
@@ -1102,6 +1141,22 @@
 .sacadia .sheet-tabs .item i {
   margin-right: 0.25rem;
 }
+.sacadia .sheet-tabs .tab-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.25rem;
+  margin-left: 0.15rem;
+  border-radius: 9px;
+  background: var(--sac-blood-deep);
+  color: #f3d9da;
+  font-family: var(--sac-font-ui);
+  font-size: 0.65rem;
+  font-weight: 700;
+  vertical-align: 0.1em;
+  line-height: 1;
+}
 .sacadia .sheet-header {
   display: flex;
   gap: 0.8rem;
@@ -1609,6 +1664,67 @@
 .sacadia .trait-expertise .expertise-empty {
   margin: 0.2rem 0;
   font-size: 0.78rem;
+  font-style: italic;
+  color: var(--sac-dim);
+}
+.sacadia .held-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.sacadia .held {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 2rem 1fr;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  background: var(--sac-panel);
+}
+.sacadia .held .held-name {
+  font-family: var(--sac-font-display);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--sac-gold-hi);
+  cursor: pointer;
+}
+.sacadia .held .held-name .resist-cue {
+  font-size: 0.65rem;
+  color: var(--sac-dim);
+}
+.sacadia .held .held-name:hover .resist-cue {
+  color: var(--sac-gold);
+}
+.sacadia .held .held-level {
+  font-family: var(--sac-font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: var(--sac-blood);
+}
+.sacadia .held .held-rule {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--sac-text);
+}
+.sacadia .held-states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+}
+.sacadia .state-chip {
+  padding: 0.1rem 0.55rem;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  background: rgba(234, 217, 176, 0.07);
+  border: 1px solid var(--sac-line-strong);
+  color: var(--sac-text);
+}
+.sacadia .held-empty {
+  margin: 0;
+  font-size: 0.85rem;
   font-style: italic;
   color: var(--sac-dim);
 }
@@ -3784,11 +3900,6 @@
 }
 .sacadia .tab > h3,
 .sacadia .tab > div > h3,
-.sacadia .ability-group > h3 .count {
-  margin-left: 0.3rem;
-  letter-spacing: 0;
-  color: var(--sac-gold-lo);
-}
 .sacadia .ability-group > h3,
 .sacadia .inv-head > h3 {
   margin: 0.9rem 0 0.45rem;
@@ -3800,6 +3911,11 @@
   text-transform: uppercase;
   color: var(--sac-dim);
   border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .ability-group > h3 .count {
+  margin-left: 0.3rem;
+  letter-spacing: 0;
+  color: var(--sac-gold-lo);
 }
 .sacadia .tab > h3:first-child,
 .sacadia .tab > div:first-child > h3:first-child,

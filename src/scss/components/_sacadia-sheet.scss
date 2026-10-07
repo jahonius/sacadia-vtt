@@ -42,6 +42,15 @@
     i { margin-right: 0.25rem; }
   }
 }
+// How much is affecting the creature, on the Conditions tab's label (seen from any tab).
+.sheet-tabs .tab-count {
+  display: inline-grid; place-items: center; min-width: 1.1rem; height: 1.1rem; padding: 0 0.25rem; margin-left: 0.15rem;
+  border-radius: 9px; background: var(--sac-blood-deep); color: #f3d9da;
+  font-family: var(--sac-font-ui); font-size: 0.65rem; font-weight: 700; vertical-align: 0.1em;
+  // Its own line height: the tab label's (26px) is taller than the disc, and an overflowing line box is placed at the
+  // top rather than centered, which sat the digit low.
+  line-height: 1;
+}
 
 // --- Header (actor) ---
 // Play-time readouts only, in tiers rather than equal blocks: the name and a one-line build summary (set like a book's
@@ -392,6 +401,28 @@
 // zeros sit quiet (dim name, transparent border), active ones light up in blood. Group names are
 // small ruled eyebrows, not display headings, so five groups don't eat the tab. `auto-fill` keeps
 // the column rhythm identical across groups (auto-fit would stretch short groups out of alignment).
+// --- Conditions tab: what's affecting the creature now ---
+// Each held condition as a row: its name (click to roll against it), the level large, and what that level does; then the
+// token's states (Prone, Steadied …) as chips.
+.held-list { display: flex; flex-direction: column; gap: 0.3rem; }
+.held {
+  display: grid; grid-template-columns: minmax(7rem, 9rem) 2rem 1fr; align-items: baseline; gap: 0.6rem;
+  padding: 0.4rem 0.6rem; border-radius: 4px; background: var(--sac-panel);
+  .held-name {
+    font-family: var(--sac-font-display); font-size: 0.98rem; font-weight: 700; color: var(--sac-gold-hi); cursor: pointer;
+    .resist-cue { font-size: 0.65rem; color: var(--sac-dim); }
+    &:hover .resist-cue { color: var(--sac-gold); }
+  }
+  .held-level { font-family: var(--sac-font-display); font-size: 1.25rem; font-weight: 700; line-height: 1; text-align: center; color: var(--sac-blood); }
+  .held-rule { font-size: 0.8rem; line-height: 1.35; color: var(--sac-text); }
+}
+.held-states { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.15rem; }
+.state-chip {
+  padding: 0.1rem 0.55rem; border-radius: 10px; font-size: 0.76rem;
+  background: rgba(234, 217, 176, 0.07); border: 1px solid var(--sac-line-strong); color: var(--sac-text);
+}
+.held-empty { margin: 0; font-size: 0.85rem; font-style: italic; color: var(--sac-dim); }
+
 .conditions .condition-group {
   margin-bottom: 0.55rem;
 
@@ -1521,7 +1552,6 @@
 // the scarce resource on a sheet). Last in the file so it wins over the older per-tab heading rules.
 .tab > h3,
 .tab > div > h3,
-.ability-group > h3 .count { margin-left: 0.3rem; letter-spacing: 0; color: var(--sac-gold-lo); }
 .ability-group > h3,
 .inv-head > h3 {
   margin: 0.9rem 0 0.45rem;
@@ -1534,6 +1564,8 @@
   color: var(--sac-dim);
   border-bottom: 1px solid var(--sac-line);
 }
+// A group heading's count ("ACTIVE 8"): its own rule, after the shared heading block it sits in.
+.ability-group > h3 .count { margin-left: 0.3rem; letter-spacing: 0; color: var(--sac-gold-lo); }
 .tab > h3:first-child,
 .tab > div:first-child > h3:first-child,
 .tab > .ability-group:first-of-type > h3 { margin-top: 0.25rem; }

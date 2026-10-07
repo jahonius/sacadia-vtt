@@ -18,6 +18,7 @@ import { resetActionEconomy } from '../rules/turn.mjs';
 import { applyDamageTo } from '../rules/damage.mjs';
 import { onSaveRoll } from '../rules/saves.mjs';
 import { PREFIX, until, fromCatalog, stubDialogs, fixture } from './support.mjs';
+import { standingAdvantage, traitBonusParts } from '../helpers/roll-breakdown.mjs';
 import { shortRest, longRest } from '../rules/rest.mjs';
 import { registerSweeps } from './sweep.mjs';
 import { registerFlows } from './flows.mjs';
@@ -245,6 +246,20 @@ function registerBatches(quench) {
       const fx = fixture();
       before(() => fx.start());
       after(() => fx.cleanup());
+
+      it("the roll prompt's breakdown names each source of advantage and bonus, and adds up to what the roll uses", async () => {
+        const pc = await fx.actor('Frenzied', 'character');
+        await pc.update({ 'system.conditions.frenzy.value': 2 });
+        await pc.createEmbeddedDocuments('ActiveEffect', [{ name: 'Blessed', changes: [
+          { key: 'system.advantage.trait', mode: 2, value: '1' }, { key: 'system.bonuses.trait', mode: 2, value: '2' }] }]);
+        const standing = standingAdvantage(pc, 'trait');
+        assert.deepInclude(standing, { label: `${game.i18n.localize('SACADIA.Condition.Frenzy')} 2`, n: -2 });
+        assert.deepInclude(standing, { label: 'Blessed', n: 1 });
+        assert.equal(standing.reduce((a, s) => a + s.n, 0), pc.system.advantage.trait - pc.system.disadvantage.trait, 'the lines add up to the roll');
+        const bonus = traitBonusParts(pc);
+        assert.deepInclude(bonus, { label: 'Blessed', value: 2 });
+        assert.equal(bonus.reduce((a, p) => a + p.value, 0), pc.system.bonuses.trait);
+      });
 
       it('Rend lands on worn armor and shields (never DR), is capped at what is left, and a long rest repairs it', async () => {
         const pc = await fx.actor('Rended', 'character');
