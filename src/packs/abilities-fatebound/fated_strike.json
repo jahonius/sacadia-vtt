@@ -34,18 +34,26 @@
         "label": "Fated Strike",
         "target": "damage",
         "mode": "add",
-        "scope": "melee",
+        "scope": "all",
         "value": "@fate",
-        "predicate": []
+        "predicate": [
+          {
+            "atom": "self:attack:divine"
+          }
+        ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [],
+      "kind": "divineWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "fated_strike",
       "transcribed": true,
-      "buildHash": "920fa7937d5d"
+      "buildHash": "abace75bdbdf"
     }
   }
 }

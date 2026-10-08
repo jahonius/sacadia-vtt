@@ -445,17 +445,10 @@ SACADIA.weaponTraits = [
   'flail', 'polearm', 'shield', 'divine', 'versatile',
 ];
 
-/**
- * Bladedancer Named Weapon abilities (book: "Name one versatile weapon you own"). A Versatile weapon's sheet
- * offers these (the ones its owner has) as its name; the named weapon then emits
- * `self:attack:named-by:<id>` when it's the weapon an attack uses, and `self:wielding:named:<id>` while
- * equipped. At most Proficiency names at a time (Named Weapons).
- */
 /** The Witch's Promises (using one toggles it broken / kept) and the Magus Tomes (using one opens its research record). */
 SACADIA.witchPromises = ['wt_promise_of_nonviolence', 'wt_promise_of_vengeance', 'wt_promise_of_justice'];
 SACADIA.magusTomes = ['mg_blood_tome', 'mg_contract_tome', 'mg_elder_tome'];
 
-SACADIA.namedWeaponAbilities = ['bd_sharp_weapon', 'bd_exploding_weapon', 'bd_jagged_blade', 'bd_the_vengeance', 'bd_tricky_boy', 'bd_weapon_tail'];
 
 /**
  * Simple (binary) conditions (book p.257–258): on/off, no levels. Registered as token status
@@ -636,13 +629,6 @@ SACADIA.weaponTypes = {
   crossbow: 'SACADIA.Weapon.Crossbow',
   shield: 'SACADIA.Weapon.Shield',
   other: 'SACADIA.Weapon.Other',
-};
-
-/** The three ranged weapon families a Sentinel's Bigger Stones can name (subset of weaponTypes). */
-SACADIA.rangedWeaponTypes = {
-  bow: 'SACADIA.Weapon.Bow',
-  crossbow: 'SACADIA.Weapon.Crossbow',
-  sling: 'SACADIA.Weapon.Sling',
 };
 
 /**

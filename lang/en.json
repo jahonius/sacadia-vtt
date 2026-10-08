@@ -666,11 +666,6 @@
       "Demon": "Demon",
       "Humanoid": "Humanoid"
     },
-    "FavoredEnemies": "Favored Enemies",
-    "BiggerStones": {
-      "Label": "Bigger Stones",
-      "Hint": "Bigger Stones is takeable twice — set how many times you chose each ranged family (0–2). Each point adds one damage die-size to attacks with that weapon."
-    },
     "Madness": {
       "PrereqTitle": "Madness Requirement",
       "PrereqIntro": "{name} doesn't meet its Madness requirements:",
@@ -772,8 +767,6 @@
       "Sling": "Sling",
       "Shield": "Shield",
       "Other": "Other",
-      "NamedAs": "Named as",
-      "NamedHint": "Bladedancer Named Weapons: give this Versatile weapon one of your Named Weapon abilities. Its effects apply when you attack with (or wield) this weapon.",
       "ThrowName": "Throw {weapon}",
       "NamedLimit": "You have {n} named weapons — Named Weapons allows up to your Proficiency ({max})."
     },
@@ -782,8 +775,9 @@
       "Gear": "Gear",
       "Equip": "Equip / Unequip",
       "Empty": "Nothing here yet.",
-      "Signature": "Signature",
-      "SignatureHint": "Designate as your Named / Divine weapon — instance-scoped buffs (Sharp Weapon, Humongous, …) apply to attacks with this weapon.",
+      "Signature": "Divine weapon",
+      "SignatureHint": "Your divine weapon: Fated Strike and your other divine-weapon abilities apply to attacks with it. Choose it on Fated Strike.",
+      "NamedHint": "This weapon's name: a Bladedancer Named Weapon, whose effects apply to it. Choose it on that ability.",
       "StorageHint": "Readied (RIS, at hand in combat) or Stored (SIS, in your bags). Click to swap; the number is the slots it takes.",
       "RisHint": "Readied Item Slots in use / available (5, more from abilities and items).",
       "SisHint": "Stored Item Slots in use / provided by your bags.",
@@ -894,7 +888,15 @@
     },
     "Pick": {
       "Choose": "— choose —",
-      "Hint": "Your permanent choice for this ability (made when you take it)."
+      "Hint": "Your permanent choice for this ability (made when you take it).",
+      "WeaponHint": "The weapon this ability is for, one you own (made when you take it). The inventory marks it with a star.",
+      "Label": {
+        "Favored": "Favored",
+        "HalfWilesVs": "½ Wiles vs",
+        "Fontmade": "Fontmade",
+        "Enemy": "Enemy",
+        "Weapon": "Weapon"
+      }
     },
     "HulinariForm": {
       "Label": "Hulinari Form",

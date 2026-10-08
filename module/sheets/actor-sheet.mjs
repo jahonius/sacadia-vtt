@@ -4,13 +4,14 @@ import { openManual } from '../helpers/manual.mjs';
 import { resolveModifierValue, checkPrerequisites } from '../helpers/derivation.mjs';
 import { planPool, scorePool, checkContext, foldCheckModifiers } from '../helpers/check-pool.mjs';
 import { staleItems, refreshItems } from '../helpers/refresh.mjs';
-import { rebuildWeaponAttacks } from '../helpers/weapon-attacks.mjs';
+import { rebuildWeaponAttacks, isVersatile } from '../helpers/weapon-attacks.mjs';
+import { deleteKey } from '../helpers/update-ops.mjs';
 import { resetActionEconomy } from '../rules/turn.mjs';
 import { shortRest, longRest } from '../rules/rest.mjs';
 import { rollInitiative } from '../rules/initiative.mjs';
 import { AbilityUse } from '../rules/ability-use.mjs';
 import { promptCheckSpends } from '../helpers/conditions.mjs';
-import { gearId, ownsAbility, confirmWarn } from '../helpers/actor-utils.mjs';
+import { gearId, confirmWarn } from '../helpers/actor-utils.mjs';
 import { REND_KEYS } from '../helpers/rend.mjs';
 import { advantageText, cardHead, postRollCard, signed, traitEmblem } from '../helpers/chat-cards.mjs';
 import { standingAdvantage, traitBonusParts } from '../helpers/roll-breakdown.mjs';
@@ -72,7 +73,6 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       toggleStorage: SacadiaActorSheet.#onToggleStorage,
       addSpecialty: SacadiaActorSheet.#onAddSpecialty,
       removeSpecialty: SacadiaActorSheet.#onRemoveSpecialty,
-      toggleSignature: SacadiaActorSheet.#onToggleSignature,
       conditionStep: SacadiaActorSheet.#onConditionStep,
       resistCondition: SacadiaActorSheet.#onResistCondition,
       pasteStatBlock: SacadiaActorSheet.#onPasteStatBlock,
@@ -228,12 +228,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       context.traitExpertise = this.#prepareTraitExpertise();
       context.inventory = this.#prepareInventory();
       context.classPools = this.#prepareClassPools();
-      // Sentinel's Favored Enemy selector: shown when the character has the Sentinel profession.
-      context.isSentinel = ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'sentinel');
       context.isHulinari = ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'hulinari_warrior');
       context.crackedRolls = actor.system.professionResources?.oracle?.cracked ?? [];
-      // Bigger Stones per-weapon die-size picker: shown only when the character owns the ability.
-      context.ownsBiggerStones = ownsAbility(actor, 'bigger_stones');
     }
 
     // (Backstory tab uses plain textareas bound directly to the raw fields — no enrichment needed.)
@@ -413,7 +409,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       summary: (!sys.isActive && !isBoost && !sys.tag?.match(/reaction|boost|focus/)) ? SacadiaActorSheet.#summary(sys.description) : '',
       weaponName: weapon?.name ?? '',
       isBoost, armed,
-      pick: SacadiaActorSheet.#pickViewModel(item),
+      picks: SacadiaActorSheet.#picksViewModel(item),
       rollTip: this.#abilityRollTip(item, weapon),
       expanded,
       enrichedDescription: expanded
@@ -438,23 +434,64 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   /**
-   * The permanent-pick select for an ability card (see item-ability `pick`): the choice list for its
-   * kind (weapon types / conditions / pools / limbs), narrowed by `options`, and the stored value.
-   * @returns {{choices: Record<string,string>, value: string}|null}
+   * The permanent-pick selects for an ability card (see item-ability `pick` / `pick2`): for each, the choice list for its
+   * kind (weapon types / conditions / pools / limbs …), narrowed by `options`, the chosen value, and a label when it has
+   * one. A pick whose `requires` doesn't hold (Favored Style's Fontmade element, when you don't favor Fontmade) is left out.
+   * @returns {{slot: number, kind: string, label: string, choices: Record<string,string>, value: string, weapon: boolean, hint: string}[]}
    */
-  static #pickViewModel(item) {
-    const pick = item.system.pick;
-    if (!pick?.kind) return null;
+  static #picksViewModel(item) {
+    const out = [];
+    let opts = null;
+    for (const slot of [1, 2]) {
+      const pick = item.system[slot === 2 ? 'pick2' : 'pick'];
+      if (!pick?.kind) continue;
+      if (pick.requires?.length) {
+        opts ??= item.actor?.system._rollOptions?.() ?? {};
+        if (!pick.requires.every((a) => opts[a])) continue;
+      }
+      const { choices, value } = SacadiaActorSheet.#pickChoices(item, pick, slot);
+      const weapon = pick.kind === 'divineWeapon' || pick.kind === 'namedWeapon';
+      out.push({ slot, kind: pick.kind, label: pick.label ? game.i18n.localize(pick.label) : '', choices, value, weapon,
+        hint: game.i18n.localize(weapon ? 'SACADIA.Pick.WeaponHint' : 'SACADIA.Pick.Hint') });
+    }
+    return out;
+  }
+
+  /** One pick's choices and current value. */
+  static #pickChoices(item, pick, slot) {
     const S = CONFIG.SACADIA;
+    const actor = item.actor;
+    const choices = { '': game.i18n.localize('SACADIA.Pick.Choose') };
+    const cur = item.getFlag('sacadia', slot === 2 ? 'pickValue2' : 'pickValue') ?? '';
     // A specific creature (The Vengeance): the creatures on the current scene, plus the one already chosen
     // (kept by name when it's not on this scene).
     if (pick.kind === 'creature') {
-      const choices = { '': game.i18n.localize('SACADIA.Pick.Choose') };
-      const cur = item.getFlag('sacadia', 'pickValue') ?? '';
       if (cur) choices[cur] = item.getFlag('sacadia', 'pickLabel') || cur;
       for (const t of canvas?.tokens?.placeables ?? []) {
-        if (t.actor && t.actor.id !== item.actor?.id) choices[t.actor.id] = t.actor.name;
+        if (t.actor && t.actor.id !== actor?.id) choices[t.actor.id] = t.actor.name;
       }
+      return { choices, value: cur };
+    }
+    // A weapon you own, designated on the weapon itself. The divine weapon is a melee weapon (Fated Strike: "one melee
+    // basic or military weapon"); a named weapon a versatile one that no other Named Weapon ability has named.
+    if (pick.kind === 'divineWeapon' || pick.kind === 'namedWeapon') {
+      const cid = item.flags?.sacadia?.catalogId;
+      const weapons = (actor?.items ?? []).filter((w) => ['gear', 'armor'].includes(w.type) && w.system.weaponType && w.system.weaponType !== 'shield');
+      let value = '';
+      for (const w of weapons) {
+        const named = w.flags?.sacadia?.namedAs;
+        const mine = pick.kind === 'divineWeapon' ? !!w.flags?.sacadia?.signature : named === cid;
+        const fits = pick.kind === 'divineWeapon' ? !['bow', 'crossbow', 'sling'].includes(w.system.weaponType)
+          : isVersatile(w) && (!named || named === cid);
+        if (mine) value = w.id;
+        if (mine || fits) choices[w.id] = w.name;
+      }
+      return { choices, value };
+    }
+    // One of the types you already favor (Favored Mastery's bonus type), plus the one chosen if it no longer is.
+    if (pick.kind === 'ownFavored') {
+      const types = [...(actor?.system._favoredTypes?.() ?? []), ...(cur ? [cur] : [])];
+      for (const k of types) choices[k] = game.i18n.localize(S.creatureTypes[k] ?? k);
       return { choices, value: cur };
     }
     const source = {
@@ -464,11 +501,31 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       limb: S.limbs,
       defense: { pd: 'SACADIA.Defense.PD', md: 'SACADIA.Defense.MD', td: 'SACADIA.Defense.TD' },
       element: Object.fromEntries(S.elements.map((k) => [k, S.damageTypes[k].label])),
+      favored: Object.fromEntries(Object.entries(S.creatureTypes).filter(([k]) => k !== 'humanoid')), // not a favored option
     }[pick.kind] ?? {};
     const keys = pick.options?.length ? pick.options.filter((k) => k in source) : Object.keys(source);
-    const choices = { '': game.i18n.localize('SACADIA.Pick.Choose') };
     for (const k of keys) choices[k] = game.i18n.localize(source[k]);
-    return { choices, value: item.getFlag('sacadia', 'pickValue') ?? '' };
+    return { choices, value: cur };
+  }
+
+  /**
+   * Make `weaponId` the weapon an ability designates (a pick of kind `divineWeapon` / `namedWeapon`), on the weapons: the
+   * divine weapon carries `flags.sacadia.signature` (one at a time), a named weapon `flags.sacadia.namedAs` = the naming
+   * ability (which names one weapon). An empty id clears it.
+   */
+  async #designateWeapon(item, kind, weaponId) {
+    const cid = item.flags?.sacadia?.catalogId;
+    const updates = [];
+    for (const w of this.actor.items) {
+      if (!w.system?.weaponType) continue;
+      if (kind === 'divineWeapon') {
+        const on = w.id === weaponId;
+        if (!!w.flags?.sacadia?.signature !== on) updates.push({ _id: w.id, 'flags.sacadia.signature': on });
+      } else if (w.id === weaponId) {
+        if (w.flags?.sacadia?.namedAs !== cid) updates.push({ _id: w.id, 'flags.sacadia.namedAs': cid });
+      } else if (w.flags?.sacadia?.namedAs === cid) updates.push({ _id: w.id, 'flags.sacadia.namedAs': deleteKey() });
+    }
+    if (updates.length) await this.actor.updateEmbeddedDocuments('Item', updates);
   }
 
   /** Toggle an ability card's description drawer open/closed. */
@@ -676,10 +733,11 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       const vm = {
         id: item.id, img: item.img, name: item.name, system: item.system,
         weaponSummary: weaponSummary(item.system),
-        // Signature (Named / Divine) weapon designation: an instance-scoped flag a Bladedancer or
-        // Fatebound sets on a weapon so their named/divine buffs apply to it. Shown as a star toggle.
-        isWeapon: !!item.system.weaponType && item.system.weaponType !== 'shield',
+        // The weapon's designations, chosen on the abilities' cards: the divine weapon (Fated Strike) and a Bladedancer's
+        // named weapon (the Named Weapon ability that names it). Shown as chips.
         isSignature: !!item.flags?.sacadia?.signature,
+        namedBy: item.flags?.sacadia?.namedAs
+          ? (this.actor.items.find((a) => a.type === 'ability' && a.flags?.sacadia?.catalogId === item.flags.sacadia.namedAs)?.name ?? '') : '',
       };
       vm.broken = !!item.flags?.sacadia?.broken;
       vm.stored = item.system.storage === 'sis';
@@ -749,17 +807,6 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (game.combat?.started && !(await confirmWarn(item.name, game.i18n.localize('SACADIA.Inventory.SwapInCombat')))) return;
     const toSis = item.system.storage !== 'sis';
     await item.update({ 'system.storage': toSis ? 'sis' : 'ris', ...(toSis ? { 'system.equipped': false } : {}) });
-  }
-
-  /**
-   * Toggle a weapon's Signature (Named / Divine) designation (`flags.sacadia.signature`). When the
-   * attack's bound weapon carries it, `#useAbility` emits `self:attack:named` / `self:attack:divine`,
-   * so the Bladedancer's Sharp Weapon and the Fatebound's Humongous/Ridiculous Size/Slamstrike apply to
-   * that specific weapon instance. No Proficiency cap is enforced here (a documented simplification).
-   */
-  static async #onToggleSignature(event, target) {
-    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
-    if (item) await item.setFlag('sacadia', 'signature', !item.flags?.sacadia?.signature);
   }
 
   /** Switch the active tab. Explicit so it works regardless of framework auto-binding. */
@@ -1191,16 +1238,19 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   /** @override — refresh range markers each render, and (once) hook target/token changes to keep them live. */
   _onRender(context, options) {
     super._onRender(context, options);
-    // Permanent-pick selects write straight to the owned ability's flag (not the actor form).
+    // Permanent-pick selects write straight to the owned ability's flag (not the actor form); a weapon pick to the weapons.
     for (const sel of this.element.querySelectorAll('select.ability-pick')) {
       sel.addEventListener('change', async (ev) => {
         ev.stopPropagation();
         const item = this.actor.items.get(ev.currentTarget.closest('[data-item-id]')?.dataset.itemId);
-        if (item) {
-          await item.setFlag('sacadia', 'pickValue', ev.currentTarget.value);
-          // A creature pick keeps the name for display when that creature isn't on the scene.
-          if (item.system.pick?.kind === 'creature') await item.setFlag('sacadia', 'pickLabel', game.actors.get(ev.currentTarget.value)?.name ?? ev.currentTarget.selectedOptions?.[0]?.text ?? '');
-        }
+        if (!item) return;
+        const slot = Number(ev.currentTarget.dataset.slot) === 2 ? 2 : 1;
+        const kind = item.system[slot === 2 ? 'pick2' : 'pick']?.kind;
+        const value = ev.currentTarget.value;
+        if (kind === 'divineWeapon' || kind === 'namedWeapon') return this.#designateWeapon(item, kind, value);
+        await item.setFlag('sacadia', slot === 2 ? 'pickValue2' : 'pickValue', value);
+        // A creature pick keeps the name for display when that creature isn't on the scene.
+        if (kind === 'creature') await item.setFlag('sacadia', 'pickLabel', game.actors.get(value)?.name ?? ev.currentTarget.selectedOptions?.[0]?.text ?? '');
       });
     }
     this.#refreshRangeMarkers();

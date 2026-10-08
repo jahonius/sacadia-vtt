@@ -100,8 +100,8 @@
 
   </div>
 
-  {{!-- Secondary combat aids, each segmented into its own box: class pools, Sentinel favored
-       enemies, and the Basic Actions palette. --}}
+  {{!-- Secondary combat aids, each in its own box: a Hulinari's form, Slightly Cracked's saved dice, and the Basic
+       Actions palette. --}}
   <div class="combat-aux">
     {{#if isHulinari}}
     <div class="aux-group hulinari-form-group" title="{{localize 'SACADIA.HulinariForm.Hint'}}">
@@ -117,30 +117,6 @@
       <div class="cracked-rolls">{{#each crackedRolls as |v|}}<span class="cracked-die">{{v}}</span>{{/each}}</div>
     </div>
     {{/if}}
-    {{#if isSentinel}}
-    <div class="aux-group favored-group">
-      <span class="sac-label">{{localize 'SACADIA.FavoredEnemies'}}</span>
-      <select class="favored-enemies" name="system.professionResources.sentinel.favored" multiple>
-        {{selectOptions config.creatureTypes selected=system.professionResources.sentinel.favored localize=true}}
-      </select>
-    </div>
-    {{/if}}
-
-    {{#if ownsBiggerStones}}
-    <div class="aux-group bigger-stones-group" title="{{localize 'SACADIA.BiggerStones.Hint'}}">
-      <span class="sac-label">{{localize 'SACADIA.BiggerStones.Label'}}</span>
-      <div class="bigger-stones">
-        {{#each config.rangedWeaponTypes as |label wt|}}
-        <label class="bs-slot">{{localize label}}
-          <input type="number" min="0" max="2" step="1"
-                 name="system.professionResources.sentinel.biggerStones.{{wt}}"
-                 value="{{lookup ../system.professionResources.sentinel.biggerStones wt}}"/>
-        </label>
-        {{/each}}
-      </div>
-    </div>
-    {{/if}}
-
     {{!-- The palette in its groups: movement, offense, utility. Nearly all cost 1 AP, so only the Boosts say so; each
          chip's tooltip says what it does. --}}
     <div class="aux-group basic-actions-group">
@@ -207,7 +183,7 @@
               {{#if ability.hasSave}}<span class="meta-fact"><i class="fa-solid fa-shield-halved"></i> {{localize 'SACADIA.Activity.Save'}}</span>{{/if}}
               {{#if ability.rangeText}}<span class="meta-fact"><i class="fa-solid fa-ruler"></i> {{ability.rangeText}}</span>{{/if}}
               {{#if ability.weaponName}}<span class="meta-fact" title="{{localize 'SACADIA.Ability.Weapon'}}"><i class="fa-solid fa-hand-fist"></i> {{ability.weaponName}}</span>{{/if}}
-              {{#if ability.pick}}<select class="ability-pick" data-tooltip="{{localize 'SACADIA.Pick.Hint'}}">{{selectOptions ability.pick.choices selected=ability.pick.value}}</select>{{/if}}
+              {{#each ability.picks as |p|}}<label class="meta-fact meta-pick{{#unless p.value}} unset{{/unless}}" data-tooltip="{{p.hint}}"><i class="fa-solid {{#if p.weapon}}fa-star{{else}}fa-thumbtack{{/if}}"></i>{{#if p.label}}<span class="pick-label">{{p.label}}</span>{{/if}}<select class="ability-pick" data-slot="{{p.slot}}">{{selectOptions p.choices selected=p.value}}</select></label>{{/each}}
               {{#if ability.rangeValue}}<span class="out-of-range" hidden>{{localize 'SACADIA.Range.OutOfRangeShort'}}</span>{{/if}}
             </div>
             {{#if ability.summary}}<div class="ability-summary">{{ability.summary}}</div>{{/if}}

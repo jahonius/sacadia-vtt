@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.3.6
+
+Every choice an ability makes when you take it is now made on that ability's row on the Abilities tab, not elsewhere on
+the sheet.
+
+- **Sentinel.**
+  - **Favored Enemy:** choose the type in its dropdown (Humanoid isn't offered). **I Favor All Enemies** and **Favored
+    Mastery** each add a type in their own dropdowns. The Abilities tab's Favored Enemies box is gone.
+  - **Favored Mastery** has a second dropdown, "½ Wiles vs": the one favored type its to-hit and damage bonus applies
+    against. Before, it applied against every favored type.
+  - **Bigger Stones**, taken twice, is two copies of the ability, each with its own weapon, and each costs its CSP. Two
+    copies on different weapons step each weapon's die once. Before, the counts were in a box on the Abilities tab.
+  - **Favored Style:** when you favor Fontmade, a "Fontmade" dropdown chooses the element you resist, and you resist it
+    by your Proficiency. Before, Fontmade's option did nothing.
+  - **Sling Mastery:** its condition is a dropdown. Your Check DC is 1 higher when you give a target that condition, by
+    a save or by their Trait Checks. Before, only its +1 to-hit with slings applied.
+- **Fatebound: Fated Strike** chooses your divine weapon, from your melee weapons. Its +Fate now applies only to attacks
+  with that weapon. Before, it applied to every melee attack. The Inventory's Signature toggle is gone; a "Divine
+  weapon" chip marks the weapon.
+- **Bladedancer: Named Weapons.** Sharp Weapon, Jagged Blade, Exploding Weapon, Tricky Boy and Weapon Tail each choose
+  the versatile weapon they name. **The Vengeance** chooses its weapon beside its enemy. Before, a weapon's own sheet
+  chose its name. The Inventory marks a named weapon with its name.
+- **Existing characters** come along on the GM's next load:
+  - the abilities above are refreshed from the compendium, so they have their dropdowns;
+  - a Sentinel's old Favored Enemy and Bigger Stones settings move onto the abilities, and the second Bigger Stones copy
+    is added;
+  - a Fatebound with no divine weapon marked, who owns one melee weapon, has it marked.
+- **Ability picks read like the card's other facts:** a pin (a star for a weapon), the choice in gold, and a caret.
+  Before, the pick was a full-size dropdown. One not yet chosen says "— choose —" in red.
+
 ## 0.3.5
 
 - **"Affecting you now" covers everything on you.** On the Conditions tab, each state on your token (Prone, Height …)

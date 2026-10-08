@@ -586,6 +586,9 @@ const ONE_HANDED_FAMILIES = ['dagger', 'sword', 'axe', 'bludgeon', 'unarmed', 'o
 const TWO_HANDED_MELEE = ['sword', 'axe', 'spear', 'bludgeon', 'other'];
 const DRAIN_TOLERANT = ['corroded', 'debilitated', 'delirium', 'hemorrhage', 'jinxed', 'nausea', 'pinned', 'paralysis', 'pulled', 'slowed', 'sting'];
 const NOT_IMPRESSED = ['paralysis', 'pinned', 'pulled'];
+// The adversarial conditions a creature can be given (not Madness, which is your own).
+const ADVERSARIAL = ['nausea', 'pinned', 'paralysis', 'corroded', 'debilitated', 'pulled', 'hemorrhage', 'delirium', 'jinxed', 'slowed', 'silenced',
+  'sting', 'fatigue', 'frenzy', 'panic', 'taunt', 'fumbled', 'rended'];
 export const PICK_OVERRIDES = {
   swordwork: { kind: 'weaponType', options: ONE_HANDED_FAMILIES },
   bd_harmful_hand: { kind: 'weaponType' },
@@ -605,7 +608,36 @@ export const PICK_OVERRIDES = {
   // Clever Rend: "choose one armor type (PD, TD, or MD). You rend that first." A standing pick.
   clever_rend: { kind: 'defense', options: ['pd', 'td', 'md'] },
   // The Vengeance: "one single enemy (selected when you gain this ability)" — a specific creature.
-  bd_the_vengeance: { kind: 'creature' },
+  bd_the_vengeance: { kind: 'creature', label: 'SACADIA.Pick.Label.Enemy' },
+  // Bigger Stones: "You may take this ability up to twice. Each time, choose one type of ranged weapon (bow, crossbow,
+  // or sling)." Taken twice, it's two copies, each with its own pick (both on the crossbow is +2 steps on it).
+  bigger_stones: { kind: 'weaponType', options: ['bow', 'crossbow', 'sling'] },
+  // A Favored Enemy type: "Select an enemy type when you take this", and "Choose an additional favored enemy" (I Favor
+  // All Enemies, Favored Mastery). Each pick adds one type to the Sentinel's favored set (`target:favored`).
+  favored_enemy: { kind: 'favored' },
+  i_favor_all_enemies: { kind: 'favored' },
+  legendary_favored: { kind: 'favored', label: 'SACADIA.Pick.Label.Favored' },
+  // Favored Style's Fontmade option: "Choose 1 element (Rot, Salt, Earth, Fire, Air, Water); gain resistance to this damage
+  // type equal to your Proficiency." Only shown when you favor Fontmade.
+  favored_style: { kind: 'element', label: 'SACADIA.Pick.Label.Fontmade', requires: ['self:favored:fontmade'] },
+  // Sling Mastery: "Choose one condition; increase the Check DC made against you giving a target that condition by 1."
+  mastery_sling: { kind: 'condition', options: ADVERSARIAL },
+  // Fated Strike: "Choose one melee basic or military weapon when you take this aspect. It becomes your divine weapon."
+  fated_strike: { kind: 'divineWeapon' },
+  // Bladedancer Named Weapons: "Name one versatile weapon you own" (each ability names one weapon, each weapon one name).
+  bd_sharp_weapon: { kind: 'namedWeapon' },
+  bd_exploding_weapon: { kind: 'namedWeapon' },
+  bd_jagged_blade: { kind: 'namedWeapon' },
+  bd_tricky_boy: { kind: 'namedWeapon' },
+  bd_weapon_tail: { kind: 'namedWeapon' },
+};
+
+// Second picks, for an ability that makes two choices when it's taken.
+export const PICK2_OVERRIDES = {
+  // Favored Mastery: "Choose one favored enemy type, and add half your Wiles to your to-hit and damage against that type."
+  legendary_favored: { kind: 'ownFavored', label: 'SACADIA.Pick.Label.HalfWilesVs' },
+  // The Vengeance names a versatile weapon too (its first pick is the enemy).
+  bd_the_vengeance: { kind: 'namedWeapon', label: 'SACADIA.Pick.Label.Weapon' },
 };
 
 // Usage overrides (catalogId → partial `usage`), layered over the build's "once per …" detection: raised
@@ -1671,12 +1703,14 @@ export const MODIFIER_OVERRIDES = {
       predicate: [{ atom: 'self:attack:weapon:unarmed' }] },
   ],
 
-  // Sentinel — "+1 to attack rolls with a sling." (The "chosen condition → +1 Check DC vs you" rider
-  // needs the per-choice conditional-check-dc sink → backlog.)
-  mastery_sling: [{
-    label: 'Sling Mastery', target: 'toHit', mode: 'add', scope: 'ranged', value: '1',
-    predicate: [{ atom: 'self:attack:weapon:sling' }],
-  }],
+  // Sentinel — "+1 to attack rolls with a sling. Choose one condition; increase the Check DC made against you giving a
+  // target that condition by 1." The condition is the pick: +1 to the saves you force that give it, and to the Trait
+  // Checks a target makes against the levels of it you give (as Mastery of the Pin does for Pin).
+  mastery_sling: [
+    { label: 'Sling Mastery', target: 'toHit', mode: 'add', scope: 'ranged', value: '1', predicate: [{ atom: 'self:attack:weapon:sling' }] },
+    { label: 'Sling Mastery', target: 'saveDc', mode: 'add', value: '1', predicate: [{ atom: 'inflict:picked:mastery_sling' }] },
+    { label: 'Sling Mastery', target: 'checkDcVs', mode: 'add', value: '1', predicate: [{ atom: 'vs:saving:picked:mastery_sling' }] },
+  ],
 
   // Hulinari — "Increase your HP by 1 for every two levels." A max-HP bump scaling at half level (same
   // `health.max` sink as Living Wall / Healthy Vim). The matching HP-pool-size growth is structural →
@@ -1906,9 +1940,9 @@ export const MODIFIER_OVERRIDES = {
     predicate: [{ atom: 'self:used:protectorate' }],
   }],
 
-  /* ---- Named / Divine weapon (instance-designated via the weapon's `flags.sacadia.signature`, which
-         emits `self:attack:named` + `self:attack:divine` when that weapon is the one bound to the
-         attack). Bladedancer names a versatile weapon; Fatebound designates a divine weapon. ---- */
+  /* ---- Named / Divine weapon, designated on the weapon from the ability's card: a Fatebound's divine weapon is
+         `flags.sacadia.signature` (Fated Strike's pick → `self:attack:divine` when it's the bound weapon); a Bladedancer's
+         named weapon is `flags.sacadia.namedAs` (the Named Weapon ability's pick → `self:attack:named-by:<id>`). ---- */
 
   // Bladedancer — "Name one versatile weapon you own. Increase the dice type of that weapon by one." A Named
   // Weapon ability (v1.2: one name per weapon): the weapon whose "Named as" is Sharp Weapon.
@@ -2000,12 +2034,9 @@ export const MODIFIER_OVERRIDES = {
   }],
 
   // "When you attack using your divine weapon, add your Fate score to damage (in addition to Power or
-  // Finesse)." Approximated as +Fate to melee-weapon damage: we don't yet designate a *specific* divine
-  // weapon (the named/divine-weapon frontier), so a single-weapon Fatebound reads correctly, but a
-  // multi-weapon build would over-apply. The divine-weapon *type* gates (bludgeoning/slashing/…) stay
-  // backlogged for the same reason.
+  // Finesse)." The divine weapon is Fated Strike's pick (the weapon's `signature` flag → `self:attack:divine`).
   fated_strike: [{
-    label: 'Fated Strike', target: 'damage', mode: 'add', scope: 'melee', value: '@fate', predicate: [],
+    label: 'Fated Strike', target: 'damage', mode: 'add', scope: 'all', value: '@fate', predicate: [{ atom: 'self:attack:divine' }],
   }],
 
   // Sentinel Favored Style — a passive self-buff keyed to *which* enemy type you favor (`self:favored:*`,
@@ -2087,14 +2118,10 @@ export const MODIFIER_OVERRIDES = {
   }],
 
   // Sentinel — "Take up to twice; each time choose bow/crossbow/sling and increase that weapon's damage
-  // dice by one size." A permanent per-ability weapon-type choice stored per family (0–2); each point
-  // is a damage die-step on attacks with that bound weapon. One modifier per family, gated on the bound
-  // weapon and scaled by the stored count (`@biggerStones.<type>`).
-  bigger_stones: ['bow', 'crossbow', 'sling'].map((wt) => ({
-    label: 'Bigger Stones', target: 'damage', mode: 'step', scope: 'ranged',
-    value: `@biggerStones.${wt}`,
-    predicate: [{ atom: `self:attack:weapon:${wt}` }],
-  })),
+  // dice by one size." A permanent weapon-type pick (PICK_OVERRIDES); each copy is one die-step on attacks
+  // with its picked weapon, so two copies on the crossbow are two steps.
+  bigger_stones: [{ label: 'Bigger Stones', target: 'damage', mode: 'step', scope: 'ranged', value: '1',
+    predicate: [{ atom: 'self:attack:picked:bigger_stones' }] }],
 
   /* ---- Sentinel: Cover-interaction (the defensive Cover penalty — Half −1 / Full −2 to attacks
          against a covered target — is applied in #useAbility; these negate/reduce it). ---- */
@@ -2447,10 +2474,11 @@ export const MODIFIER_OVERRIDES = {
   legendary_armor_oracle: [{ label: 'Armor Mastery', target: 'defense.pd', value: '2', predicate: [{ atom: '!self:armor:any' }] }],
   legendary_weapon: [{ label: 'Weapon Mastery', target: 'damage', mode: 'step', scope: 'ranged', value: '1', predicate: [] }],
   // "Add half your Wiles to your to-hit and damage against that favored enemy type." (Rounded down — the
-  // book doesn't say up.) The extra favored type is a second pick on the Sentinel panel.
+  // book doesn't say up.) The extra favored type is this ability's first pick, the bonus type its second
+  // (`target:pick2:legendary_favored`), which must still be one you favor.
   legendary_favored: [
-    { label: 'Favored Mastery', target: 'toHit', value: 'floor(@wiles/2)', predicate: [{ atom: 'target:favored' }] },
-    { label: 'Favored Mastery', target: 'damage', value: 'floor(@wiles/2)', predicate: [{ atom: 'target:favored' }] },
+    { label: 'Favored Mastery', target: 'toHit', value: 'floor(@wiles/2)', predicate: [{ atom: 'target:favored' }, { atom: 'target:pick2:legendary_favored' }] },
+    { label: 'Favored Mastery', target: 'damage', value: 'floor(@wiles/2)', predicate: [{ atom: 'target:favored' }, { atom: 'target:pick2:legendary_favored' }] },
   ],
   sol_tower_training: [{ label: 'Tower Training', target: 'defense.pd', value: '1', predicate: [{ atom: 'self:wielding:tower-shield' }] }],
   sol_legendary_shield: [

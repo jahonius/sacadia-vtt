@@ -5,9 +5,10 @@ habit from you.
 
 ## Bladedancer
 
-- **Named Weapons:** open a Versatile weapon's sheet and choose which Named Weapon ability it carries.
-  You can have up to your Proficiency in named weapons. **The Vengeance** needs you to choose its
-  enemy from the dropdown on its ability row.
+- **Named Weapons:** choose the Versatile weapon each one names in the dropdown on its row (Sharp Weapon,
+  Jagged Blade …). You can have up to your Proficiency in named weapons, and a weapon carries one name.
+  **The Vengeance** also needs its enemy, in its other dropdown. Once Exploding Weapon has exploded, name
+  a new weapon on its row.
 - **Throwing:** Versatile weapons come with a **Throw** ability. With Wild Throws, Wild Strike asks
   whether you're swinging or throwing. Throws count toward I'll Come Back.
 - **Exploding Weapon:** throw the named weapon at a target, and everyone else within 5ft of them takes its
@@ -17,8 +18,8 @@ habit from you.
 
 ## Fatebound
 
-- Mark your divine weapon with the **Signature** toggle in your inventory. Divine-weapon abilities and
-  Boosts check for it.
+- Choose your divine weapon in the dropdown on **Fated Strike** (one of your melee weapons). Fated Strike's
+  +Fate and the other divine-weapon abilities and Boosts apply to attacks with it.
 - **Glory** is spent from the pool beside your AP.
 - **Targeted Foe** marks your current target. Abilities that care about your Targeted Foe (Crushing
   Blow, Imbued Fury) check against that mark.
@@ -41,8 +42,16 @@ habit from you.
 
 ## Sentinel
 
-- Set your **Favored Enemies** on the Abilities tab. Abilities that care about favored enemies read the
-  target's creature type.
+- Choose your favored enemy type in the dropdown on **Favored Enemy**. **I Favor All Enemies** and
+  **Favored Mastery** each add another, in their own dropdowns. Abilities that care about favored enemies
+  read the target's creature type, which the GM sets on the NPC.
+- **Favored Mastery** has a second dropdown, **½ Wiles vs**: the one favored type its to-hit and damage
+  bonus applies against.
+- **Favored Style**, if you favor Fontmade: choose the element you resist in its **Fontmade** dropdown.
+- **Sling Mastery:** choose its condition in the dropdown. Your Check DC is 1 higher when you give a
+  target that condition.
+- **Bigger Stones** can be taken twice: drag it on again, and choose the bow, crossbow or sling on each
+  copy. Both on the same weapon steps its die twice.
 - **Trickshot** points are spent from the pool. Variable spends ask how many.
 
 ## Soldier

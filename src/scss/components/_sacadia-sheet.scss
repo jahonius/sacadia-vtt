@@ -709,10 +709,9 @@
     flex: 0 0 auto; display: flex; align-items: center; gap: 0.45rem;
     a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
   }
-  // Edit / delete (and the star, until set) only on hover or keyboard focus.
+  // Edit / delete only on hover or keyboard focus.
   .hover-controls { display: flex; gap: 0.45rem; opacity: 0; transition: opacity 0.12s ease; }
   &:hover .hover-controls, &:focus-within .hover-controls { opacity: 1; }
-  .signature-toggle.on { color: var(--sac-gold); }
   .sac-chip.signature { color: var(--sac-gold-hi); border-color: var(--sac-gold-lo); i { color: var(--sac-gold); } }
   // Readied (in hand) or stored (in your bags), with the slots it takes; click to swap.
   .storage-toggle {
@@ -946,9 +945,8 @@
   }
 }
 
-// Secondary combat aids: class pools, favored enemies, the basic-action palette — each segmented.
-// Flex (not a stretch-to-fill grid) so a lone pool stays compact instead of eating a whole row,
-// while multiclass pools / favored-enemies can still grow and wrap onto the shared top line.
+// Secondary combat aids: a Hulinari's form, Slightly Cracked's dice, the basic-action palette — each segmented.
+// Flex (not a stretch-to-fill grid) so a small box stays compact instead of eating a whole row.
 .combat-aux {
   display: flex;
   flex-wrap: wrap;
@@ -963,8 +961,6 @@
     padding: 0.4rem 0.55rem;
     > .sac-label { display: block; margin-bottom: 0.35rem; }
   }
-  // Favored-enemies wants room, so it grows to soak up the row.
-  .favored-group { flex: 1 1 14rem; }
   // Slightly Cracked: the saved d3s, as small die faces.
   .cracked-rolls { display: flex; gap: 0.3rem; }
   .cracked-die {
@@ -975,16 +971,6 @@
   }
   // The palette holds many chips — always its own full-width line.
   .basic-actions-group { flex: 1 1 100%; }
-  // Bigger Stones: three compact per-family die-size steppers.
-  .bigger-stones-group {
-    flex: 1 1 12rem;
-    .bigger-stones { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .bs-slot { display: flex; align-items: center; gap: 0.25rem; font-size: 0.85rem; }
-    .bs-slot input { width: 2.6rem; text-align: center; }
-  }
-
-  .favored-enemies { width: 100%; }
-
   // The palette, a row per kind (Move / Offense / Utility) under an olive label, chips without outlines.
   .basic-actions-group {
     .ba-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem; .sac-label { margin: 0; } }
@@ -1172,6 +1158,22 @@
   .meta-fact {
     font-size: 0.74rem; color: var(--sac-dim); white-space: nowrap;
     i { margin-right: 0.12rem; font-size: 0.62rem; color: var(--sac-gold-lo); }
+  }
+  // The ability's permanent pick (a weapon, a condition, a favored enemy …): a fact like the others, in gold, with a
+  // caret; a box shows only on hover or focus. Not chosen yet, it says so in red.
+  .meta-pick {
+    display: inline-flex; align-items: center; cursor: pointer;
+    select {
+      appearance: none; -webkit-appearance: none; field-sizing: content; // as wide as the chosen value
+      width: auto; height: auto; min-height: 0; margin: 0; padding: 0 0.95rem 0 0.15rem;
+      border: 1px solid transparent; border-radius: 3px; box-shadow: none;
+      font: inherit; font-weight: 700; color: var(--sac-gold-hi); cursor: pointer;
+      background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a8873a' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 0.2rem center / 0.5rem;
+      &:hover, &:focus { border-color: var(--sac-line-strong); background-color: var(--sac-inset); outline: none; }
+      option { color: var(--sac-text); background: var(--sac-umber); font-weight: 400; }
+    }
+    .pick-label { margin-right: 0.1rem; }
+    &.unset { i, select { color: var(--sac-blood); } }
   }
   // A summary card's title sat high, with most of the card's space between it and the text: move some above it (the
   // card's height is unchanged).

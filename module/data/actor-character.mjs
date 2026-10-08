@@ -124,13 +124,12 @@ export default class SacadiaCharacter extends SacadiaActorBase {
         insane: new fields.BooleanField({ initial: false }),
         cracked: new fields.ArrayField(new fields.NumberField({ ...requiredInteger, min: 1, max: 3 }))
       }),
-      // Sentinel: the chosen Favored Enemy creature type(s). Buffs vs favored key off `target:favored`.
+      // Sentinel (legacy, before 0.3.6): Favored Enemy types and Bigger Stones counts. They're now picks on those
+      // abilities' own cards; these fields are only read by the one-time move onto them (helpers/legacy-picks.mjs).
       sentinel: new fields.SchemaField({
         favored: new fields.ArrayField(new fields.StringField({
           required: true, blank: false, choices: Object.keys(CONFIG.SACADIA.creatureTypes),
         })),
-        // Bigger Stones — a permanent per-ability weapon-type choice (takeable twice → count 0–2 per
-        // ranged family). Each point adds one damage die-size to attacks with that weapon.
         biggerStones: new fields.SchemaField({
           bow: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 2 }),
           crossbow: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 2 }),
@@ -217,11 +216,6 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       const p = this.professions?.[slot];
       if (p?.key) n[`professionLevel.${p.key}`] = p.level ?? 0;
     }
-    // Bigger Stones die-size counts per ranged weapon family → `@biggerStones.<type>`.
-    const bs = this.professionResources?.sentinel?.biggerStones ?? {};
-    n['biggerStones.bow'] = bs.bow ?? 0;
-    n['biggerStones.crossbow'] = bs.crossbow ?? 0;
-    n['biggerStones.sling'] = bs.sling ?? 0;
     return n;
   }
 
@@ -263,15 +257,10 @@ export default class SacadiaCharacter extends SacadiaActorBase {
    */
   _cspSpent() {
     let spent = 0;
+    // An ability taken twice (Bigger Stones) is two items, so it costs twice.
     for (const item of this.parent?.items ?? []) {
       if (item.type === "ability") spent += item.system?.costs?.csp ?? 0;
     }
-    // Bigger Stones may be taken twice (book p.130, "[3|2]"): one item carries both picks (the per-weapon
-    // counts), so a second pick costs its CSP again.
-    const bs = this.professionResources?.sentinel?.biggerStones ?? {};
-    const picks = (bs.bow ?? 0) + (bs.crossbow ?? 0) + (bs.sling ?? 0);
-    const stones = picks > 1 ? this.parent?.items?.find((i) => i.flags?.sacadia?.catalogId === 'bigger_stones') : null;
-    if (stones) spent += (stones.system?.costs?.csp ?? 0) * (picks - 1);
     return spent;
   }
 

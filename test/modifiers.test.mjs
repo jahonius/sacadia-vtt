@@ -1,8 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import { resolveModifierValue, evaluatePredicate, modifierIsRollTime } from "../module/helpers/derivation.mjs";
-import { MODIFIER_OVERRIDES, ACTIVITY_OVERRIDES, INFLICT_OVERRIDES, BOOST_OVERRIDES, MARK_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, GRANT_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, CHOICE_OVERRIDES, AID_RESIST_OVERRIDES } from "../src/modifiers.mjs";
+import { MODIFIER_OVERRIDES, ACTIVITY_OVERRIDES, INFLICT_OVERRIDES, BOOST_OVERRIDES, MARK_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, GRANT_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, PICK2_OVERRIDES, CHOICE_OVERRIDES, AID_RESIST_OVERRIDES } from "../src/modifiers.mjs";
 import { boostApplies } from "../module/helpers/boosts.mjs";
+import { loadCatalog } from "../src/build-adventures.mjs";
 
 // Guard the authored Sentinel bow-ramp modifiers (combat-counter cluster): the formulas resolve as
 // intended, and the predicates gate on the bow being the bound weapon (+ a new target where relevant).
@@ -42,19 +44,68 @@ test("bow ramps contribute nothing before any missed/new-target state accrues", 
   assert.equal(resolveModifierValue(one("bowman").value, fresh), 0);
 });
 
-test("Bigger Stones: a die-step per stored point, gated on the bound weapon family", () => {
-  const mods = MODIFIER_OVERRIDES.bigger_stones;
-  assert.equal(mods.length, 3); // bow / crossbow / sling
-  const bow = mods.find((m) => m.predicate[0].atom === "self:attack:weapon:bow");
-  assert.equal(bow.target, "damage");
-  assert.equal(bow.mode, "step");
-  const n = { "biggerStones.bow": 2, "biggerStones.sling": 0 };
-  assert.equal(resolveModifierValue(bow.value, n), 2); // chose bow twice → +2 die-steps
-  const sling = mods.find((m) => m.predicate[0].atom === "self:attack:weapon:sling");
-  assert.equal(resolveModifierValue(sling.value, n), 0); // never chose sling → inert
-  // A bow modifier does not fire on a crossbow attack.
-  assert.ok(evaluatePredicate(bow.predicate.map((p) => p.atom), { "self:attack:weapon:bow": true }));
-  assert.ok(!evaluatePredicate(bow.predicate.map((p) => p.atom), { "self:attack:weapon:crossbow": true }));
+test("Bigger Stones: each copy is a die-step on attacks with its own picked ranged weapon", () => {
+  assert.deepEqual(PICK_OVERRIDES.bigger_stones, { kind: "weaponType", options: ["bow", "crossbow", "sling"] });
+  const [mod, ...rest] = MODIFIER_OVERRIDES.bigger_stones;
+  assert.equal(rest.length, 0);
+  assert.equal(mod.target, "damage");
+  assert.equal(mod.mode, "step");
+  assert.equal(resolveModifierValue(mod.value, {}), 1);
+  assert.deepEqual(mod.predicate.map((p) => p.atom), ["self:attack:picked:bigger_stones"]);
+});
+
+test("Favored Enemy, I Favor All Enemies and Favored Mastery each pick a favored creature type", () => {
+  for (const id of ["favored_enemy", "i_favor_all_enemies", "legendary_favored"]) assert.equal(PICK_OVERRIDES[id].kind, "favored", id);
+});
+
+test("Favored Mastery: half Wiles to hit and damage against the one favored type its second pick names", () => {
+  assert.equal(PICK2_OVERRIDES.legendary_favored.kind, "ownFavored");
+  for (const m of MODIFIER_OVERRIDES.legendary_favored) {
+    const atoms = m.predicate.map((p) => p.atom);
+    assert.ok(evaluatePredicate(atoms, { "target:favored": true, "target:pick2:legendary_favored": true }), m.target);
+    assert.ok(!evaluatePredicate(atoms, { "target:favored": true }), `${m.target}: not against another favored type`);
+    assert.equal(resolveModifierValue(m.value, { wiles: 5 }), 2);
+  }
+});
+
+test("Fated Strike: its pick is the divine weapon, and +Fate applies to attacks with it only", () => {
+  assert.equal(PICK_OVERRIDES.fated_strike.kind, "divineWeapon");
+  const [m] = MODIFIER_OVERRIDES.fated_strike;
+  assert.ok(evaluatePredicate(m.predicate.map((p) => p.atom), { "self:attack:divine": true }));
+  assert.ok(!evaluatePredicate(m.predicate.map((p) => p.atom), { "self:attack:weapon:sword": true }));
+});
+
+test("Named Weapons: each names its weapon on the ability (The Vengeance as its second pick)", () => {
+  for (const id of ["bd_sharp_weapon", "bd_exploding_weapon", "bd_jagged_blade", "bd_tricky_boy", "bd_weapon_tail"]) assert.equal(PICK_OVERRIDES[id].kind, "namedWeapon", id);
+  assert.equal(PICK_OVERRIDES.bd_the_vengeance.kind, "creature");
+  assert.equal(PICK2_OVERRIDES.bd_the_vengeance.kind, "namedWeapon");
+});
+
+test("Sling Mastery: +1 Check DC when you give its chosen condition, by save or by Trait Checks", () => {
+  assert.equal(PICK_OVERRIDES.mastery_sling.kind, "condition");
+  assert.ok(!PICK_OVERRIDES.mastery_sling.options.includes("madness"));
+  const dc = MODIFIER_OVERRIDES.mastery_sling.filter((m) => m.target === "saveDc" || m.target === "checkDcVs");
+  assert.deepEqual(dc.map((m) => m.predicate[0].atom).sort(), ["inflict:picked:mastery_sling", "vs:saving:picked:mastery_sling"]);
+  for (const m of dc) assert.ok(modifierIsRollTime(m));
+});
+
+test("pick overrides: every ability with a pick (or a second one) is built with it, whichever pack it's in", () => {
+  const catalog = loadCatalog();
+  for (const [field, table] of [["pick", PICK_OVERRIDES], ["pick2", PICK2_OVERRIDES]]) {
+    for (const [id, p] of Object.entries(table)) assert.equal(catalog.get(id)?.doc.system[field]?.kind, p.kind, `${id} ${field}`);
+  }
+});
+
+test("pick overrides: every pick label is in the language file", () => {
+  const en = JSON.parse(fs.readFileSync(new URL("../lang/en.json", import.meta.url), "utf8"));
+  const at = (key) => key.split(".").reduce((o, k) => o?.[k], en);
+  for (const table of [PICK_OVERRIDES, PICK2_OVERRIDES]) {
+    for (const [id, p] of Object.entries(table)) if (p.label) assert.equal(typeof at(p.label), "string", `${id}: ${p.label}`);
+  }
+});
+
+test("Favored Style: the Fontmade element is a pick shown only to a Sentinel who favors Fontmade", () => {
+  assert.deepEqual(PICK_OVERRIDES.favored_style, { kind: "element", label: "SACADIA.Pick.Label.Fontmade", requires: ["self:favored:fontmade"] });
 });
 
 test("Destrap: ranged attack vs PD, no damage, inflicts Rend ½Prof", () => {
@@ -678,8 +729,9 @@ test("Swarm v1.2: clouds are tile zones sized by Proficiency + Grey Cloud + Stor
 
 /* ---- Permanent picks ---- */
 test("pick overrides: every picked ability has a kind, and weapon-type pick modifiers gate on their own picked atom", () => {
-  for (const [id, p] of Object.entries(PICK_OVERRIDES)) assert.ok(["weaponType", "condition", "pool", "limb", "creature", "defense", "element"].includes(p.kind), id);
-  for (const id of ["swordwork", "bd_harmful_hand", "sharp_weaponry", "big_guns_expert"]) {
+  for (const [id, p] of Object.entries(PICK_OVERRIDES)) assert.ok(["weaponType", "condition", "pool", "limb", "creature", "defense", "element", "favored", "ownFavored", "divineWeapon", "namedWeapon"].includes(p.kind), id);
+  for (const [id, p] of Object.entries(PICK2_OVERRIDES)) assert.ok(PICK_OVERRIDES[id] && ["ownFavored", "namedWeapon"].includes(p.kind), id);
+  for (const id of ["swordwork", "bd_harmful_hand", "sharp_weaponry", "big_guns_expert", "bigger_stones"]) {
     const atoms = MODIFIER_OVERRIDES[id][0].predicate.map((q) => q.atom);
     assert.ok(atoms.includes(`self:attack:picked:${id}`), id);
     assert.equal(MODIFIER_OVERRIDES[id][0].mode, "step");

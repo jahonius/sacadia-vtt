@@ -48,13 +48,17 @@
         "inflict": []
       }
     ],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "favored"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "favored_enemy",
-      "buildHash": "ec946f811657"
+      "buildHash": "cf5a62aab1e2"
     }
   }
 }

@@ -29,13 +29,17 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "namedWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_exploding_weapon",
-      "buildHash": "4f6adeea2b51"
+      "buildHash": "a47c38575563"
     }
   }
 }

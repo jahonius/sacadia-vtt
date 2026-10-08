@@ -62,6 +62,10 @@ export async function resolveResist(message, req) {
   let dc = source ? actorCheckDc(source) : (dd ? actorCheckDc(dd.actor ?? dd) : null);
   if (dc != null && source) {
     const vsOpts = { ...(source.system._rollOptions?.() ?? {}), [`vs:checking:${cond}`]: true, [`vs:${reduce ? 'resisting' : 'saving'}:${cond}`]: true };
+    // The condition is one the source's ability picked (Sling Mastery's) → `vs:checking|saving|resisting:picked:<id>`.
+    for (const { id, value } of source.system._picks?.().condition ?? []) {
+      if (value === cond) { vsOpts[`vs:checking:picked:${id}`] = true; vsOpts[`vs:${reduce ? 'resisting' : 'saving'}:picked:${id}`] = true; }
+    }
     const nums = source.system._modifierNumbers?.() ?? {};
     for (const it of source.items) {
       if (it.type !== 'ability') continue;

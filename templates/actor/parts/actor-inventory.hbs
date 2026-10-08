@@ -86,6 +86,7 @@
             <span class="inv-name">{{item.name}}</span>
             {{#if (gt item.system.quantity 1)}}<span class="inv-qty">×{{item.system.quantity}}</span>{{/if}}
             {{#if item.isSignature}}<span class="sac-chip signature" title="{{localize 'SACADIA.Inventory.SignatureHint'}}"><i class="fa-solid fa-star"></i> {{localize 'SACADIA.Inventory.Signature'}}</span>{{/if}}
+            {{#if item.namedBy}}<span class="sac-chip signature" title="{{localize 'SACADIA.Inventory.NamedHint'}}"><i class="fa-solid fa-star"></i> {{item.namedBy}}</span>{{/if}}
             {{#if item.broken}}<span class="sac-chip warn">{{localize 'SACADIA.Rend.Broken'}}</span>{{/if}}
           </div>
           {{#if item.weaponSummary}}<div class="inv-facts"><span>{{item.weaponSummary}}</span></div>{{/if}}
@@ -93,7 +94,6 @@
         <div class="inv-controls">
           {{> storage item=item}}
           <span class="hover-controls">
-            {{#if item.isWeapon}}<a class="signature-toggle {{#if item.isSignature}}on{{/if}}" data-action="toggleSignature" title="{{localize 'SACADIA.Inventory.SignatureHint'}}"><i class="fa-solid fa-star"></i></a>{{/if}}
             <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
             <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
           </span>

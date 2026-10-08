@@ -1747,6 +1747,10 @@ export class AbilityUse {
         // (and `@inflict.<cond>` levels) let Tough Starter hit Pin saves, Bloodletter scale with the
         // Hemorrhage attempted, etc. Boost effects may carry the same targets (Enormity, Hoofslam).
         const inflictOpts = Object.fromEntries(inflict.map((i) => [`inflict:${i.condition}`, true]));
+        // A condition an ability picked is among them (Sling Mastery's chosen condition) → `inflict:picked:<id>`.
+        for (const { id, value } of this.actor.system._picks?.().condition ?? []) {
+          if (inflict.some((i) => i.condition === value)) inflictOpts[`inflict:picked:${id}`] = true;
+        }
         const inflictNums = Object.fromEntries(inflict.map((i) => [`inflict.${i.condition}`, i.level]));
         const smod = this.#targetModifiers({ ...fullOptions, ...inflictOpts }, { ...numbers, ...inflictNums }, category, catalogId);
         for (const n of smod.notes) if (n.target === 'saveAdvantage' || n.target === 'saveDc') targetNotes.push(n);
@@ -3083,7 +3087,12 @@ export class AbilityUse {
     const cType = actor.system.creatureType;
     if (cType) {
       o[`target:type:${cType}`] = true;
-      if ((this.actor.system.professionResources?.sentinel?.favored ?? []).includes(cType)) o['target:favored'] = true;
+      if ((this.actor.system._favoredTypes?.() ?? []).includes(cType)) o['target:favored'] = true;
+      // A creature-type pick that names this target's type (Favored Mastery's bonus type → `target:pick2:legendary_favored`).
+      const picks = this.actor.system._picks?.() ?? {};
+      for (const { id, value, slot } of [...(picks.favored ?? []), ...(picks.ownFavored ?? [])]) {
+        if (value === cType) o[`target:${slot === 2 ? 'pick2' : 'pick'}:${id}`] = true;
+      }
     }
     // Adjacency: `target:adjacent` when the target is within 5ft (one square) — the simplest positional
     // gate (Too Close!, etc.), measured from the same grid distance the range markers use.
@@ -3201,10 +3210,20 @@ export class AbilityUse {
     const GLOBAL = ['all', 'melee', 'ranged', 'magic'];
     for (const item of this.actor.items) {
       if (item.type !== 'ability') continue;
+      // An ability taken more than once with different weapon picks (Bigger Stones on the bow and on the crossbow):
+      // its `self:attack:picked:<id>` must reflect this copy's own pick, not any copy's.
+      let opts = options;
+      const cid = item.flags?.sacadia?.catalogId;
+      if (cid && item.system?.pick?.kind === 'weaponType') {
+        const pickValue = item.flags?.sacadia?.pickValue;
+        opts = { ...options };
+        if (pickValue && options[`self:attack:weapon:${pickValue}`]) opts[`self:attack:picked:${cid}`] = true;
+        else delete opts[`self:attack:picked:${cid}`];
+      }
       for (const mod of item.system?.modifiers ?? []) {
         const atoms = predicateAtoms(mod.predicate);
         if (!modifierIsRollTime(mod)) continue; // prep-folded already; this pass is roll-time only
-        if (!evaluatePredicate(atoms, options)) continue;
+        if (!evaluatePredicate(atoms, opts)) continue;
         const scope = mod.scope || 'all';
         const scopeOk = GLOBAL.includes(scope) ? (scope === 'all' || scope === category) : (scope === catalogId);
         if (!scopeOk) continue;

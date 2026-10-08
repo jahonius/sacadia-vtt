@@ -29,13 +29,17 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "namedWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_tricky_boy",
-      "buildHash": "97581d1677e8"
+      "buildHash": "0c8aba04b81e"
     }
   }
 }
