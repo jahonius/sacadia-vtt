@@ -93,19 +93,11 @@
       <div class="cs-line"><span class="cs-name">{{f.name}}</span><span class="sac-streak">{{#each f.bars}}<i></i>{{/each}}</span><span class="cs-detail">{{f.rounds}}</span></div>
       {{/each}}
       {{#each combatStrip.marks as |m|}}
-      <div class="cs-line"><span class="cs-name">{{m.key}}</span><span class="cs-detail">&rarr; {{m.names}}</span></div>
+      <div class="cs-line"><span class="cs-name">{{m.label}}</span><span class="cs-detail">&rarr; {{m.names}}</span></div>
       {{/each}}
     </div>
     {{/if}}
 
-    {{#if combatStrip.grants.length}}
-    <div class="cp-block cp-live">
-      <span class="sac-label">{{localize 'SACADIA.Combat.Grants'}}</span>
-      {{#each combatStrip.grants as |g|}}
-      <div class="cs-line"><span class="cs-name">{{g.name}}</span><span class="cs-detail">{{g.expiry}}</span></div>
-      {{/each}}
-    </div>
-    {{/if}}
   </div>
 
   {{!-- Secondary combat aids, each segmented into its own box: class pools, Sentinel favored
@@ -169,12 +161,16 @@
     </div>
   </div>
 
-  {{#if armedBoosts.length}}
-  <div class="boost-tray" title="{{localize 'SACADIA.Boost.TrayHint'}}">
-    <span class="boost-tray-label"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Boost.TrayLabel'}}</span>
+  {{!-- What rides on the next attack: armed Boosts (click to disarm) and buffs banked for it (Critical Strike …). --}}
+  {{#if (or armedBoosts.length nextAttack.length)}}
+  <div class="boost-tray" data-tooltip="{{localize 'SACADIA.Combat.NextAttackHint'}}">
+    <span class="boost-tray-label"><i class="fa-solid fa-bolt"></i> {{localize 'SACADIA.Combat.NextAttack'}}</span>
     {{#each armedBoosts as |boost|}}
     <a class="sac-chip armed boost-chip" data-action="toggleBoost" data-item-id="{{boost.id}}"
        title="{{localize 'SACADIA.Boost.Disarm'}}">{{boost.name}} <i class="fa-solid fa-xmark"></i></a>
+    {{/each}}
+    {{#each nextAttack as |p|}}
+    <span class="sac-chip pending-chip">{{p.label}}{{#if p.text}} <small>{{p.text}}</small>{{/if}}</span>
     {{/each}}
   </div>
   {{/if}}

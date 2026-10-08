@@ -78,15 +78,18 @@
     .sp-sub { margin-top: 0.1rem; font-size: 0.78rem; color: var(--sac-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   }
 
-  // What's already on the roll: value | source, a row each; advantage in gold, disadvantage and penalties in blood.
+  // What's already on the roll, a row each: the value at the left, its source right-aligned, a faint dotted leader
+  // between (like a ledger); advantage in gold, disadvantage and penalties in blood.
   .sp-mods {
     .sac-label { display: block; margin-bottom: 0.3rem; }
-    ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.18rem 0.65rem; }
-    li { display: contents; }
-    b { justify-self: end; font-size: 0.85rem; color: var(--sac-text); font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+    ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+    li { display: flex; align-items: baseline; gap: 0.45rem; }
+    b { flex: 0 0 auto; font-size: 0.85rem; color: var(--sac-text); font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
     li.pos b { color: var(--sac-gold-hi); }
     li.neg b { color: var(--sac-blood); }
-    li span { font-size: 0.85rem; color: var(--sac-dim); }
+    .sp-lead { flex: 1 1 auto; min-width: 1rem; border-bottom: 1px dotted var(--sac-line-strong); transform: translateY(-0.2em); }
+    li span { flex: 0 1 auto; min-width: 0; text-align: right; font-size: 0.85rem; color: var(--sac-dim);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .sp-note { margin-top: 0.35rem; font-size: 0.72rem; line-height: 1.35; font-style: italic; color: var(--sac-dim); }
   }
 

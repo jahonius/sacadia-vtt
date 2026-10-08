@@ -153,7 +153,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.heldConditions = Object.values(context.conditionGroups).flatMap((g) => g.conditions).filter((c) => c.value > 0)
       .sort((a, b) => b.value - a.value);
     context.activeStates = Object.entries(CONFIG.SACADIA.simpleConditions).filter(([k]) => actor.statuses?.has(k))
-      .map(([key, cfg]) => ({ key, label: game.i18n.localize(cfg.label) }));
+      .map(([key, cfg]) => ({ key, label: game.i18n.localize(cfg.label), tone: cfg.tone ?? 'neutral',
+        rule: game.i18n.localize(`SACADIA.SimpleRule.${key[0].toUpperCase()}${key.slice(1)}`) }));
     context.combatStrip = this.#prepareCombatStrip();
     // The basic-action palette in its groups (movement, offense, utility). Only the Boosts (0 AP) are marked; each
     // chip's tooltip says what it does (book pp.237–238), with its cost and the limbs it uses.
@@ -168,6 +169,16 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
           tip: `<div class="sac-tip sac-actiontip"><div class="tip-title">${esc(loc(p.label))}</div>`
             + `<div class="tip-cost">${esc(cost)}</div><div class="tip-text">${esc(loc(`SACADIA.BasicAction.Hints.${key}`))}</div></div>` };
       }),
+    }));
+    // Buffs other creatures put on this one (grants), with who gave them and how they end.
+    context.buffs = context.combatStrip.grants;
+    // What rides on the next attack: armed Boosts (below) and buffs banked for it (Critical Strike's advantage …).
+    context.nextAttack = (actor.system.pendingAttack ?? []).map((p) => ({
+      label: p.label,
+      text: [p.advantage ? `${Math.abs(p.advantage)}× ${loc(p.advantage > 0 ? 'SACADIA.Roll.AdvShort' : 'SACADIA.Roll.DisadvShort')}` : '',
+        p.toHit ? `${signed(p.toHit)} ${loc('SACADIA.Card.ToHit')}` : '', p.damage ? `${signed(p.damage)} ${loc('SACADIA.Card.Damage')}` : '',
+        p.dieStep ? `${signed(p.dieStep)} ${loc('SACADIA.Roll.Step')}` : '',
+        p.targetCondition ? loc(CONFIG.SACADIA.conditions[p.targetCondition]?.label ?? p.targetCondition) : ''].filter(Boolean).join(' · '),
     }));
     // Armed-boost tray: the boosts currently toggled on, ready for the next matching action to consume.
     const armed = new Set(actor.system.armedBoosts ?? []);
@@ -258,7 +269,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     if (tabs.conditions) {
       const sys = this.actor.system;
       tabs.conditions.count = Object.keys(CONFIG.SACADIA.conditions).filter((k) => (sys.conditions?.[k]?.value ?? 0) > 0).length
-        + Object.keys(CONFIG.SACADIA.simpleConditions).filter((k) => this.actor.statuses?.has(k)).length;
+        + Object.keys(CONFIG.SACADIA.simpleConditions).filter((k) => this.actor.statuses?.has(k)).length
+        + this.actor.effects.filter((e) => e.flags?.sacadia?.grantedBy && !e.disabled).length;
     }
     for (const [id, tab] of Object.entries(tabs)) {
       tab.active = id === this.tabGroups[group];
@@ -485,9 +497,12 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         bars: Array.from({ length: Math.min(rounds, 8) }),
       }));
     // Marks this actor has placed (stored marker-side): mark key → current target names.
+    // A mark is shown by the name of the ability that places it ("Targeted Foe"), else its key in words.
+    const markName = (key) => this.actor.items.find((i) => i.type === 'ability' && i.system.mark?.key === key)?.name
+      ?? key.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
     const marks = Object.entries(sys.marks ?? {}).flatMap(([key, uuids]) => {
       const names = (uuids ?? []).map((u) => fromUuidSync(u)?.name).filter(Boolean);
-      return names.length ? [{ key, names: names.join(', ') }] : [];
+      return names.length ? [{ key, label: markName(key), names: names.join(', ') }] : [];
     });
     const exhaustion = Object.entries(CONFIG.SACADIA.exhaustionSlots).map(([key, label]) => ({
       key, label, icon: CONFIG.SACADIA.exhaustionIcons?.[key] ?? '', spent: !!sys.exhaustion?.[key],
@@ -497,8 +512,10 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     for (const e of this.actor.effects) {
       const gb = e.flags?.sacadia?.grantedBy;
       if (!gb || e.disabled) continue;
+      const caster = gb.casterUuid ? fromUuidSync(gb.casterUuid) : null;
       grants.push({
         name: e.name,
+        from: (caster?.actor ?? caster)?.name ?? '',
         expiry: gb.kind === 'focus'
           ? game.i18n.localize('SACADIA.Combat.Maintained')
           : game.i18n.format('SACADIA.Combat.ConsumedOn', { trigger: gb.on || 'trigger' }),
@@ -510,7 +527,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       attacks: cs.attacksThisTurn ?? 0,
       focus, marks, exhaustion, grants,
       hasFocus: focus.length > 0 || marks.length > 0,
-      hasLive: focus.length > 0 || marks.length > 0 || grants.length > 0
+      // The per-turn counters show once anything has happened this turn (buffs on you are on the Conditions tab).
+      hasLive: focus.length > 0 || marks.length > 0
         || (cs.movedFeet ?? 0) > 0 || (cs.consecutiveHits ?? 0) > 0 || (cs.attacksThisTurn ?? 0) > 0,
     };
   }
@@ -586,6 +604,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         rules: cfg.rules,
         value,
         ruleNow: value > 0 ? game.i18n.localize(ruleKey && game.i18n.has(levelKey) ? levelKey : cfg.rules) : '',
+        tone: cfg.tone ?? 'debuff', // adversarial conditions are debuffs; Madness (the Oracle's track) is neutral
         tooltip: this.#conditionTooltip(cfg, value),
       });
     }

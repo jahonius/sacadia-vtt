@@ -488,15 +488,17 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.18rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
 }
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li {
-  display: contents;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
 }
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods b {
-  justify-self: end;
+  flex: 0 0 auto;
   font-size: 0.85rem;
   color: var(--sac-text);
   font-variant-numeric: lining-nums tabular-nums;
@@ -508,9 +510,21 @@
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li.neg b {
   color: var(--sac-blood);
 }
+.application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods .sp-lead {
+  flex: 1 1 auto;
+  min-width: 1rem;
+  border-bottom: 1px dotted var(--sac-line-strong);
+  transform: translateY(-0.2em);
+}
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods li span {
+  flex: 0 1 auto;
+  min-width: 0;
+  text-align: right;
   font-size: 0.85rem;
   color: var(--sac-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .application.sacadia-dialog .sac-prompt.roll-prompt .sp-mods .sp-note {
   margin-top: 0.35rem;
@@ -1674,7 +1688,7 @@
 }
 .sacadia .held {
   display: grid;
-  grid-template-columns: minmax(7rem, 9rem) 2rem 1fr;
+  grid-template-columns: minmax(7rem, 9rem) 2.6rem 1fr;
   align-items: baseline;
   gap: 0.6rem;
   padding: 0.4rem 0.6rem;
@@ -1708,19 +1722,39 @@
   line-height: 1.35;
   color: var(--sac-text);
 }
-.sacadia .held-states {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  margin-top: 0.15rem;
+.sacadia .held.state .held-level, .sacadia .held.buff .held-level {
+  font-family: var(--sac-font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-.sacadia .state-chip {
-  padding: 0.1rem 0.55rem;
-  border-radius: 10px;
-  font-size: 0.76rem;
-  background: rgba(234, 217, 176, 0.07);
-  border: 1px solid var(--sac-line-strong);
+.sacadia .held.buff .held-rule {
+  color: var(--sac-dim);
+}
+.sacadia .held.tone-debuff {
+  background: linear-gradient(rgba(192, 80, 85, 0.09), rgba(192, 80, 85, 0.09)), var(--sac-panel);
+}
+.sacadia .held.tone-debuff .held-name {
+  color: #e39a9d;
+}
+.sacadia .held.tone-debuff .held-level {
+  color: var(--sac-blood);
+}
+.sacadia .held.tone-buff {
+  background: linear-gradient(rgba(111, 191, 133, 0.08), rgba(111, 191, 133, 0.08)), var(--sac-panel);
+}
+.sacadia .held.tone-buff .held-name {
+  color: #94d4a6;
+}
+.sacadia .held.tone-buff .held-level {
+  color: #6fbf85;
+}
+.sacadia .held.tone-neutral .held-name {
   color: var(--sac-text);
+}
+.sacadia .held.tone-neutral .held-level {
+  color: var(--sac-dim);
 }
 .sacadia .held-empty {
   margin: 0;
@@ -2163,23 +2197,32 @@
   cursor: pointer;
   margin-left: 0.3rem;
 }
+.sacadia .talent-group.specialties .talent-list {
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0.3rem 0.9rem;
+}
 .sacadia .talent-group.specialties .specialty {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.35rem;
   align-items: center;
+  padding: 0.15rem 0.3rem;
 }
 .sacadia .talent-group.specialties .specialty input[type=text] {
-  flex: 1;
-  min-width: 0;
+  flex: 1 1 6rem;
+  min-width: 6rem;
 }
 .sacadia .talent-group.specialties .specialty select {
-  flex: 0 1 8rem;
+  flex: 0 0 7.5rem;
   min-width: 0;
+  font-size: 0.8rem;
 }
 .sacadia .talent-group.specialties .specialty .rank {
+  flex: 0 0 2.6rem;
   width: 2.6rem;
+  text-align: center;
 }
 .sacadia .talent-group.specialties .specialty a {
+  flex: 0 0 auto;
   cursor: pointer;
   color: var(--sac-dim);
 }
@@ -2751,6 +2794,15 @@
 }
 .sacadia .boost-tray .boost-chip:hover {
   color: var(--sac-gold-hi);
+}
+.sacadia .boost-tray .pending-chip {
+  border-color: var(--sac-gold-lo);
+  color: var(--sac-gold-hi);
+}
+.sacadia .boost-tray .pending-chip small {
+  color: var(--sac-dim);
+  text-transform: none;
+  letter-spacing: 0;
 }
 .sacadia .sac-chip.armed {
   border-color: var(--sac-gold);

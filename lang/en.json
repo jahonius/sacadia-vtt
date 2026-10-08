@@ -122,7 +122,10 @@
       "Madness": "Madness",
       "Now": "Affecting you now",
       "NoneNow": "No conditions or states right now.",
-      "All": "All conditions"
+      "All": "All conditions",
+      "StateTag": "state",
+      "BuffTag": "buff",
+      "BuffFrom": "From {name}"
     },
     "ConditionGroup": {
       "LesserPhysical": "Physical (Lesser)",
@@ -407,8 +410,6 @@
       "Toggle": "Arm / disarm this Boost",
       "Armed": "Armed",
       "Disarm": "Disarm",
-      "TrayLabel": "Armed Boosts",
-      "TrayHint": "These apply to your next matching action, then are consumed. Unused ones clear at the start of your turn.",
       "PickTitle": "Apply which Boost?",
       "PickHint": "Only one Boost may apply to an action. Choose which armed Boost to spend on this one.",
       "None": "No Boost",
@@ -511,9 +512,10 @@
       "Attacks": "Attacks",
       "Exhaustion": "Exhaustion",
       "Focus": "Focus & Marks",
-      "Grants": "Active Grants",
       "Maintained": "maintained",
-      "ConsumedOn": "consumed on {trigger}"
+      "ConsumedOn": "consumed on {trigger}",
+      "NextAttack": "On your next attack",
+      "NextAttackHint": "Armed Boosts and banked buffs ride on your next matching attack, then are used up. Unused Boosts clear at the start of your turn."
     },
     "BasicAction": {
       "Move": "Move",
@@ -1128,6 +1130,23 @@
       "MakeTraitCheck": "Make Trait Check",
       "Critical": "Critical Hit",
       "SpecialtyRank": "{name} rank {n}"
+    },
+    "SimpleRule": {
+      "Prone": "Your attacks are at 1× disadvantage; melee attacks against you get 1× advantage. You can't take reactions.",
+      "Blinded": "You fail Perception that needs sight, your attacks are at 1× disadvantage, and you count as in Darkness.",
+      "Dragged": "You can't move away from the source, and you're pulled toward it as far as it moves away.",
+      "Surprised": "Attacks that hit you are critical hits. Ends when your turn starts or you take damage.",
+      "Unconscious": "You're Prone and can't act, speak, or sense anything around you.",
+      "Insane": "Madness reached 6. You stay Insane until your Madness falls back to 0.",
+      "Steadied": "Before your next turn you can take a reaction that needs you Steadied, or give one reaction its Steadied benefit.",
+      "Raging": "One extra melee attack each turn that costs no AP or limbs (no Boost on it). Ends after rounds equal to your Proficiency, then you gain Fatigue.",
+      "BeastForm": "You're in your Hulinari beast form: your form's abilities apply.",
+      "Wounded": "Below 0 Health: gain 1 Battle Fatigue at the start of each turn. If that leaves you no AP, you fall Unconscious.",
+      "Cornered": "All attacks against you get 1× advantage.",
+      "Obscured": "+3 to your AD, PD, MD and TD.",
+      "Shadowed": "Attacks against you are at 1× disadvantage.",
+      "Height": "Your attacks get 1× advantage.",
+      "Hidden": "You can't be directly targeted. You're revealed when you attack, force a Trait Check, or take damage."
     }
   },
   "TYPES": {

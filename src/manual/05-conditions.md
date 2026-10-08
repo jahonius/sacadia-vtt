@@ -3,7 +3,7 @@
 ## Adversarial conditions
 
 Adversarial conditions (Pin, Hemorrhage, Panic, Fatigue, Fumble, and so on) have **levels**. The
-**Stats** tab tracks them, and each appears on your token with its level.
+**Conditions** tab tracks them, and each appears on your token with its level.
 
 - **Giving one:** the target rolls one Trait Check per level you try to give, and takes a level for
   each failure (see *Attacks, Checks and Damage*).
