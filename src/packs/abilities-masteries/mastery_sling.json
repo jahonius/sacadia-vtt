@@ -31,15 +31,60 @@
             "atom": "self:attack:weapon:sling"
           }
         ]
+      },
+      {
+        "label": "Sling Mastery",
+        "target": "saveDc",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "inflict:picked:mastery_sling"
+          }
+        ]
+      },
+      {
+        "label": "Sling Mastery",
+        "target": "checkDcVs",
+        "mode": "add",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "vs:saving:picked:mastery_sling"
+          }
+        ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [
+        "nausea",
+        "pinned",
+        "paralysis",
+        "corroded",
+        "debilitated",
+        "pulled",
+        "hemorrhage",
+        "delirium",
+        "jinxed",
+        "slowed",
+        "silenced",
+        "sting",
+        "fatigue",
+        "frenzy",
+        "panic",
+        "taunt",
+        "fumbled",
+        "rended"
+      ],
+      "kind": "condition"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "mastery_sling",
       "mastery": true,
-      "buildHash": "fc097e78e871"
+      "buildHash": "2f44223c0b70"
     }
   }
 }

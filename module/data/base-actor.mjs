@@ -339,19 +339,27 @@ export default class SacadiaActorBase extends SacadiaDataModel {
   /**
    * The actor's permanent picks by kind: `{ weaponType: {catalogId: value}, condition: {…}, pool: {…},
    * limb: {…} }` — read by attack/check context and the pick-driven mechanics (Poolmonger, Muscle and
-   * Memory, immunities, Bolers Ban). Several instances of one ability (Drain Tolerant ×3) each count.
-   * @returns {Record<string, {id:string, value:string}[]>}
+   * Memory, immunities, Bolers Ban). Several instances of one ability (Drain Tolerant ×3) each count. A second pick
+   * (`pick2`, Favored Mastery's bonus type) is listed with `slot: 2`. Weapon picks live on the weapons, not here.
+   * @returns {Record<string, {id:string, value:string, slot:number}[]>}
    */
   _picks() {
-    const out = { weaponType: [], condition: [], pool: [], limb: [], creature: [], defense: [], element: [] };
+    const out = { weaponType: [], condition: [], pool: [], limb: [], creature: [], defense: [], element: [], favored: [], ownFavored: [] };
     for (const item of this.parent?.items ?? []) {
       if (item.type !== 'ability') continue;
-      const kind = item.system?.pick?.kind;
-      const value = item.flags?.sacadia?.pickValue;
       const id = item.flags?.sacadia?.catalogId;
-      if (kind && value && id && out[kind]) out[kind].push({ id, value });
+      for (const [slot, field, flag] of [[1, 'pick', 'pickValue'], [2, 'pick2', 'pickValue2']]) {
+        const kind = item.system?.[field]?.kind;
+        const value = item.flags?.sacadia?.[flag];
+        if (kind && value && id && out[kind]) out[kind].push({ id, value, slot });
+      }
     }
     return out;
+  }
+
+  /** The creature types this actor favors: the picks on its Favored Enemy, I Favor All Enemies and Favored Mastery. */
+  _favoredTypes() {
+    return [...new Set(this._picks().favored.map((p) => p.value))];
   }
 
   _rollOptions(extra = {}) {
@@ -372,6 +380,8 @@ export default class SacadiaActorBase extends SacadiaDataModel {
         // Permanent pick (Swordwork's weapon family, Drain Tolerant's condition, …) → `self:pick:<id>:<value>`.
         const pickValue = item.flags?.sacadia?.pickValue;
         if (cid && pickValue) o[`self:pick:${cid}:${pickValue}`] = true;
+        const pickValue2 = item.flags?.sacadia?.pickValue2;
+        if (cid && pickValue2) o[`self:pick2:${cid}:${pickValue2}`] = true;
       }
       if (!item.system?.equipped) continue;
       // Equipped gear advertises its freeform weapon/item traits as `self:wielding:<trait>` predicates
@@ -409,8 +419,8 @@ export default class SacadiaActorBase extends SacadiaDataModel {
     if (armorCats.length) o['self:armor:any'] = true;
     for (const key of this._professionKeys?.() ?? []) o[`self:profession:${key}`] = true;
     // Sentinel's chosen Favored Enemy types → `self:favored:<type>` (Favored Style keys its self-buff on
-    // which type you favor). Character-only; NPCs have no professionResources.
-    for (const t of this.professionResources?.sentinel?.favored ?? []) o[`self:favored:${t}`] = true;
+    // which type you favor).
+    for (const t of this._favoredTypes()) o[`self:favored:${t}`] = true;
     // Token status conditions (binary, GM-tracked on the token) → `self:<key>` — e.g. Insanity
     // (`self:insane`) or the Soldier's Steadied stance (`self:steadied`). Only the simple-condition
     // keys are surfaced; leveled conditions already emit `self:condition:<key>` above.
@@ -820,8 +830,12 @@ export default class SacadiaActorBase extends SacadiaDataModel {
   _prepareResistances() {
     const out = parseResistances(this.resistances);
     for (const item of this.parent?.items ?? []) {
-      if (item.type !== "armor" || !item.system.equipped) continue;
-      for (const [k, v] of Object.entries(item.flags?.sacadia?.resist ?? {})) out[k] = (out[k] ?? 0) + (Number(v) || 0);
+      if (item.type === "armor" && item.system.equipped) {
+        for (const [k, v] of Object.entries(item.flags?.sacadia?.resist ?? {})) out[k] = (out[k] ?? 0) + (Number(v) || 0);
+      }
+      // Favored Style, favoring Fontmade: "gain resistance to this [chosen] damage type equal to your Proficiency".
+      const element = item.flags?.sacadia?.catalogId === "favored_style" ? item.flags.sacadia.pickValue : "";
+      if (element && this._favoredTypes().includes("fontmade")) out[element] = (out[element] ?? 0) + (this._modifierNumbers?.().proficiency ?? 0);
     }
     this.typedDr = out;
   }

@@ -304,13 +304,25 @@ export default class SacadiaAbility extends SacadiaItemBase {
     // the ability card's select) and surfaces as `self:pick:<catalogId>:<value>`, plus the contextual
     // `self:attack:picked:<id>` (the bound weapon is the picked type) and `self:checking|saving|resisting:
     // picked:<id>` (the checked condition is the picked one).
-    schema.pick = new fields.SchemaField({
+    // An ability that makes two choices has a second, `pick2` (its value in `flags.sacadia.pickValue2`).
+    const pickField = () => new fields.SchemaField({
       // `creature`: one specific creature (The Vengeance's chosen enemy) — the actor id, picked from the scene.
       // `defense`: one of PD / MD / TD (Contract Tome's Lawful Protection).
       // `element`: a Font element (Elemental Weapon, Corrupting Touch, Corrupted Iron).
-      kind: new fields.StringField({ required: true, blank: true, choices: ['', 'weaponType', 'condition', 'pool', 'limb', 'creature', 'defense', 'element'] }),
+      // `favored`: a Favored Enemy creature type (Favored Enemy, I Favor All Enemies, Favored Mastery); each adds one.
+      // `ownFavored`: one of the creature types you already favor (Favored Mastery's half-Wiles bonus).
+      // `divineWeapon` / `namedWeapon`: one of your weapons (Fated Strike's divine weapon; a Bladedancer Named Weapon).
+      //   These are kept on the weapon (`flags.sacadia.signature` / `namedAs`), which the attack reads; the card edits it.
+      kind: new fields.StringField({ required: true, blank: true, choices: ['', 'weaponType', 'condition', 'pool', 'limb', 'creature', 'defense',
+        'element', 'favored', 'ownFavored', 'divineWeapon', 'namedWeapon'] }),
       options: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
+      // A short label before the choice on the card (a lang key), when the choice needs naming (two picks, or a narrow one).
+      label: new fields.StringField({ required: true, blank: true }),
+      // Roll options the pick needs to matter; the card hides it otherwise (Favored Style's Fontmade element).
+      requires: new fields.ArrayField(new fields.StringField({ required: true, blank: false })),
     });
+    schema.pick = pickField();
+    schema.pick2 = pickField();
 
     // grant-choice-redirect (Shared Blessing): when `requiresAbility` is owned and an ally is targeted,
     // this ability's per-use choice buff may be applied to that ally *instead of* the caster. `key` is an

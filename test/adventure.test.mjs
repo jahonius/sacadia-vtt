@@ -93,10 +93,8 @@ test("adventure: the pregens are legal level-5 v1.2 characters", () => {
     const traits = STATS.map((k) => s.stats[k].value);
     assert.equal(traits.reduce((x, y) => x + y, 0), 6, `${a.name}: 3 Trait Points at levels 1 and 3`);
     assert.ok(Math.max(...traits) <= 2, `${a.name}: no Trait above 2 before level 6`);
-    // CSP: owned abilities' costs, plus a second Bigger Stones pick.
-    const bs = s.professionResources?.sentinel?.biggerStones ?? {};
-    const extraStones = Math.max(0, (bs.bow ?? 0) + (bs.crossbow ?? 0) + (bs.sling ?? 0) - 1) * 3;
-    const csp = a.items.filter((i) => i.type === "ability").reduce((t, i) => t + (i.system.costs?.csp ?? 0), 0) + extraStones;
+    // CSP: owned abilities' costs (an ability taken twice, like Manchuthara's Bigger Stones, is two items).
+    const csp = a.items.filter((i) => i.type === "ability").reduce((t, i) => t + (i.system.costs?.csp ?? 0), 0);
     assert.equal(csp, maxCspForLevel(5), `${a.name} spends exactly the level-5 budget`);
     // Prerequisites: Trait minimums and required abilities (the Tianqi culture prerequisite is the culture itself).
     const owned = new Set(a.items.map((i) => i.name.toLowerCase()));
@@ -113,6 +111,14 @@ test("adventure: the pregens are legal level-5 v1.2 characters", () => {
     assert.equal(s.identity.culture, "Tianqi");
     assert.equal(s.specialties[0].talent, "religion");
   }
+});
+
+test("adventure: Manchuthara's Favored Enemy and Bigger Stones are picks on the abilities", () => {
+  const m = heroes.find((a) => a.name === "Manchuthara");
+  const picks = (id) => m.items.filter((i) => i.flags.sacadia.catalogId === id).map((i) => i.flags.sacadia.pickValue);
+  assert.deepEqual(picks("favored_enemy"), ["demon"]);
+  assert.deepEqual(picks("bigger_stones"), ["crossbow", "crossbow"]); // taken twice, both on the crossbow
+  assert.equal(m.system.professionResources?.sentinel, undefined);
 });
 
 test("adventure: each weapon arrives with its generated attack, bound to it", () => {

@@ -37,6 +37,9 @@
         "predicate": [
           {
             "atom": "target:favored"
+          },
+          {
+            "atom": "target:pick2:legendary_favored"
           }
         ]
       },
@@ -47,10 +50,23 @@
         "predicate": [
           {
             "atom": "target:favored"
+          },
+          {
+            "atom": "target:pick2:legendary_favored"
           }
         ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [],
+      "kind": "favored",
+      "label": "SACADIA.Pick.Label.Favored"
+    },
+    "pick2": {
+      "options": [],
+      "kind": "ownFavored",
+      "label": "SACADIA.Pick.Label.HalfWilesVs"
+    }
   },
   "effects": [],
   "flags": {
@@ -59,7 +75,7 @@
       "feature": true,
       "level": 11,
       "legendary": true,
-      "buildHash": "c1339dc80a48"
+      "buildHash": "94b64cb1d3e0"
     }
   }
 }

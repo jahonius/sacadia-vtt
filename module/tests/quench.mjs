@@ -20,6 +20,7 @@ import { onSaveRoll } from '../rules/saves.mjs';
 import { PREFIX, until, fromCatalog, stubDialogs, fixture } from './support.mjs';
 import { standingAdvantage, traitBonusParts } from '../helpers/roll-breakdown.mjs';
 import { shortRest, longRest } from '../rules/rest.mjs';
+import { moveLegacySentinelPicks, migratePicks } from '../helpers/legacy-picks.mjs';
 import { registerSweeps } from './sweep.mjs';
 import { registerFlows } from './flows.mjs';
 import { registerAdventure, registerAdventureLook } from './adventure.mjs';
@@ -261,6 +262,87 @@ function registerBatches(quench) {
         assert.equal(bonus.reduce((a, p) => a + p.value, 0), pc.system.bonuses.trait);
       });
 
+      it("a Sentinel's Favored Enemy and Bigger Stones set on the old Abilities-tab boxes move onto the abilities' picks", async () => {
+        const pc = await fx.actor('Old Sentinel', 'character',
+          { professionResources: { sentinel: { favored: ['demon', 'undead'], biggerStones: { bow: 0, crossbow: 2, sling: 0 } } } });
+        // Copies from before: no pick, and Bigger Stones' modifiers read the counts.
+        const old = async (id, modifiers) => foundry.utils.mergeObject(await fromCatalog(id),
+          { 'system.pick.kind': '', 'flags.sacadia.buildHash': 'old', ...(modifiers ? { 'system.modifiers': modifiers } : {}) });
+        await pc.createEmbeddedDocuments('Item', [await old('favored_enemy'), await old('bigger_stones', [{ label: 'Bigger Stones', target: 'damage',
+          mode: 'step', scope: 'ranged', value: '@biggerStones.crossbow', predicate: [{ atom: 'self:attack:weapon:crossbow' }] }])]);
+        assert.isTrue(await moveLegacySentinelPicks(pc));
+        const picks = (id) => pc.items.filter((i) => i.flags.sacadia?.catalogId === id).map((i) => i.flags.sacadia.pickValue);
+        assert.deepEqual(picks('favored_enemy'), ['demon']);
+        assert.deepEqual(picks('bigger_stones'), ['crossbow', 'crossbow'], 'the second pick is a second copy');
+        const stones = pc.items.find((i) => i.flags.sacadia?.catalogId === 'bigger_stones');
+        assert.equal(pc.system.csp.spent, 2 * stones.system.costs.csp, 'which costs its CSP, as the second pick did');
+        assert.equal(stones.system.pick.kind, 'weaponType', 'refreshed from the compendium');
+        assert.deepEqual(stones.system.modifiers.map((m) => m.value), ['1']);
+        assert.equal(pc.items.find((i) => i.flags.sacadia?.catalogId === 'favored_enemy').system.pick.kind, 'favored');
+        assert.deepEqual(pc.system.professionResources.sentinel.favored, ['undead'], 'a type with no ability to hold it stays');
+        assert.equal(pc.system.professionResources.sentinel.biggerStones.crossbow, 0);
+        assert.deepEqual(pc.system._favoredTypes(), ['demon']);
+        assert.isTrue(pc.system._rollOptions()['self:favored:demon']);
+        assert.isFalse(await moveLegacySentinelPicks(pc), 'a second run has nothing to do');
+      });
+
+      it("the divine and named weapons are chosen on the abilities' cards, and marked on the weapons", async () => {
+        const pc = await fx.actor('Weapon Picker', 'character');
+        const made = await pc.createEmbeddedDocuments('Item', await Promise.all(['dagger', 'longsword', 'crossbow', 'fated_strike', 'bd_sharp_weapon',
+          'bd_jagged_blade'].map((id) => fromCatalog(id))));
+        const by = (id) => made.find((i) => i.flags.sacadia?.catalogId === id);
+        const [dagger, longsword, crossbow] = ['dagger', 'longsword', 'crossbow'].map((id) => pc.items.get(by(id).id));
+        const sheet = pc.sheet;
+        await sheet.render({ force: true });
+        try {
+          await until(() => sheet.rendered && sheet.element.querySelector('select.ability-pick'), { what: 'the sheet' });
+          const select = (cid) => sheet.element.querySelector(`[data-item-id="${by(cid).id}"] select.ability-pick`);
+          const options = (cid) => [...select(cid).options].map((o) => o.value).filter(Boolean);
+          const choose = (cid, value) => { const s = select(cid); s.value = value; s.dispatchEvent(new Event('change', { bubbles: true })); };
+          assert.sameMembers(options('fated_strike'), [dagger.id, longsword.id], 'a melee weapon');
+          assert.sameMembers(options('bd_sharp_weapon'), [dagger.id], 'a versatile weapon');
+          choose('fated_strike', longsword.id);
+          await until(() => longsword.flags.sacadia?.signature, { what: 'the longsword to be the divine weapon' });
+          await until(() => select('fated_strike')?.value === longsword.id, { what: 'the card to show it' });
+          choose('fated_strike', dagger.id);
+          await until(() => dagger.flags.sacadia?.signature && !longsword.flags.sacadia?.signature, { what: 'the divine weapon to move' });
+          await until(() => select('bd_sharp_weapon'), { what: 'the re-render' });
+          choose('bd_sharp_weapon', dagger.id);
+          await until(() => dagger.flags.sacadia?.namedAs === 'bd_sharp_weapon', { what: 'the dagger to be named' });
+          await until(() => select('bd_jagged_blade') && !options('bd_jagged_blade').includes(dagger.id), { what: 'a weapon to carry one name' });
+          assert.notInclude(options('fated_strike'), crossbow.id);
+        } finally { await sheet.close(); }
+      });
+
+      it("Favored Style's Fontmade element is resisted at Proficiency, and asked for only when you favor Fontmade", async () => {
+        const pc = await fx.actor('Fontmade Hunter', 'character', { level: 5 });
+        const [enemy, style] = await pc.createEmbeddedDocuments('Item', [
+          foundry.utils.mergeObject(await fromCatalog('favored_enemy'), { 'flags.sacadia.pickValue': 'fontmade' }),
+          foundry.utils.mergeObject(await fromCatalog('favored_style'), { 'flags.sacadia.pickValue': 'fire' })]);
+        assert.equal(pc.system.typedDr.fire, pc.system.proficiency);
+        const sheet = pc.sheet;
+        await sheet.render({ force: true });
+        try {
+          const pickOn = (id) => sheet.element.querySelector(`[data-item-id="${id}"] select.ability-pick`);
+          await until(() => sheet.rendered && pickOn(style.id), { what: 'the Fontmade dropdown' });
+          await pc.items.get(enemy.id).setFlag('sacadia', 'pickValue', 'demon');
+          assert.notOk(pc.system.typedDr.fire, 'no resistance without favoring Fontmade');
+          await sheet.render(); // (a new character's basic actions are still arriving; render what's there now)
+          assert.ok(pickOn(enemy.id) && !pickOn(style.id), 'the Fontmade dropdown is gone');
+        } finally { await sheet.close(); }
+      });
+
+      it("a Fatebound's older Fated Strike is refreshed on load, and a lone melee weapon becomes the divine one", async () => {
+        const pc = await fx.actor('Old Fatebound', 'character');
+        await pc.createEmbeddedDocuments('Item', [await fromCatalog('longsword'), await fromCatalog('crossbow'),
+          foundry.utils.mergeObject(await fromCatalog('fated_strike'), { 'system.pick.kind': '', 'flags.sacadia.buildHash': 'old' })]);
+        assert.isTrue(await migratePicks(pc));
+        assert.equal(pc.items.find((i) => i.flags.sacadia?.catalogId === 'fated_strike').system.pick.kind, 'divineWeapon');
+        assert.isTrue(pc.items.find((i) => i.flags.sacadia?.catalogId === 'longsword').flags.sacadia.signature);
+        assert.notOk(pc.items.find((i) => i.flags.sacadia?.catalogId === 'crossbow').flags.sacadia?.signature);
+        assert.isFalse(await migratePicks(pc), 'a second load has nothing to do');
+      });
+
       it('Rend lands on worn armor and shields (never DR), is capped at what is left, and a long rest repairs it', async () => {
         const pc = await fx.actor('Rended', 'character');
         const made = await pc.createEmbeddedDocuments('Item', [
@@ -451,6 +533,82 @@ function registerBatches(quench) {
           stub.restore();
           stub = stubDialogs((kind) => (kind === 'wait' ? 0 : true));
           await resetActionEconomy(fighter);
+        }
+      });
+
+      it('Bigger Stones taken twice, on the bow and on the crossbow, steps a crossbow attack once', async () => {
+        const data = await fromCatalog('crossbow');
+        data.system.equipped = true;
+        const [xbow] = await fighter.createEmbeddedDocuments('Item', [data]);
+        const attack = await until(() => fighter.items.find((i) => i.getFlag('sacadia', 'weaponAttack') === xbow.id && !i.getFlag('sacadia', 'thrown')),
+          { what: 'the generated crossbow attack' });
+        const stones = [await give(fighter, 'bigger_stones', { flags: { sacadia: { pickValue: 'bow' } } }),
+          await give(fighter, 'bigger_stones', { flags: { sacadia: { pickValue: 'sling' } } })];
+        const faces = async () => {
+          await resetActionEconomy(fighter);
+          target('dummy');
+          const since = Date.now();
+          await fighter.sheet.useAbility(attack);
+          const card = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && m.flags?.sacadia?.attack),
+            { timeout: 15000, what: 'the crossbow card' });
+          return card.rolls.find((r) => !r.dice.some((d) => d.faces === 20))?.dice[0]?.faces;
+        };
+        try {
+          const base = await faces(); // neither copy is on the crossbow
+          await stones[1].setFlag('sacadia', 'pickValue', 'crossbow');
+          assert.equal(await faces(), { 4: 6, 6: 8, 8: 10, 10: 12 }[base], `one step from the crossbow copy only (base d${base})`);
+        } finally {
+          await fighter.deleteEmbeddedDocuments('Item', [xbow.id, ...stones.map((s) => s.id)].filter((id) => fighter.items.has(id)));
+        }
+      });
+
+      it("Favored Mastery's half Wiles applies against the favored type its second pick names, not the others", async () => {
+        const data = await fromCatalog('dagger');
+        data.system.equipped = true;
+        const [dagger] = await fighter.createEmbeddedDocuments('Item', [data]);
+        const attack = await until(() => fighter.items.find((i) => i.getFlag('sacadia', 'weaponAttack') === dagger.id && !i.getFlag('sacadia', 'thrown')),
+          { what: 'the dagger attack' });
+        const abilities = [await give(fighter, 'favored_enemy', { flags: { sacadia: { pickValue: 'demon' } } }),
+          await give(fighter, 'i_favor_all_enemies', { flags: { sacadia: { pickValue: 'undead' } } }),
+          await give(fighter, 'legendary_favored', { flags: { sacadia: { pickValue: 'undead', pickValue2: 'demon' } } })];
+        const wiles = fighter.system.stats.wiles.value;
+        await fighter.update({ 'system.stats.wiles.value': 4 });
+        const card = async (type) => {
+          await dummy.update({ 'system.creatureType': type });
+          await resetActionEconomy(fighter);
+          target('dummy');
+          const since = Date.now();
+          await fighter.sheet.useAbility(attack);
+          return until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && m.flags?.sacadia?.attack), { timeout: 15000, what: 'the card' });
+        };
+        try {
+          assert.match((await card('demon')).content, /Favored Mastery/, 'against the chosen type');
+          assert.notMatch((await card('undead')).content, /Favored Mastery/, 'not against another favored type');
+        } finally {
+          await dummy.update({ 'system.creatureType': '' });
+          await fighter.update({ 'system.stats.wiles.value': wiles });
+          await fighter.deleteEmbeddedDocuments('Item', [dagger.id, ...abilities.map((a) => a.id)].filter((id) => fighter.items.has(id)));
+        }
+      });
+
+      it("Sling Mastery's chosen condition: a save that gives it is one DC harder", async () => {
+        const reflex = await give(fighter, 'reflex_test'); // gives Slowed on a failed Finesse save
+        const mastery = await give(fighter, 'mastery_sling', { flags: { sacadia: { pickValue: 'panic' } } });
+        const dc = async () => {
+          await resetActionEconomy(fighter);
+          target('dummy');
+          const since = Date.now();
+          await fighter.sheet.useAbility(reflex);
+          const msg = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && m.content.includes('data-action="rollSave"')),
+            { timeout: 15000, what: 'the save card' });
+          return Number(new DOMParser().parseFromString(msg.content, 'text/html').querySelector('[data-action="rollSave"]').dataset.dc);
+        };
+        try {
+          const other = await dc();
+          await mastery.setFlag('sacadia', 'pickValue', 'slowed');
+          assert.equal(await dc(), other + 1);
+        } finally {
+          await fighter.deleteEmbeddedDocuments('Item', [reflex.id, mastery.id].filter((id) => fighter.items.has(id)));
         }
       });
 

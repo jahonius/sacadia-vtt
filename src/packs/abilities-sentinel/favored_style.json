@@ -57,13 +57,21 @@
           }
         ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [],
+      "kind": "element",
+      "label": "SACADIA.Pick.Label.Fontmade",
+      "requires": [
+        "self:favored:fontmade"
+      ]
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "favored_style",
-      "buildHash": "1f25186ad26a"
+      "buildHash": "a1373e81704f"
     }
   }
 }

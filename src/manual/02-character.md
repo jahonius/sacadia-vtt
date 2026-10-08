@@ -37,8 +37,10 @@ sheet tracks the Combat Skill Points you spend.
 - **Basic actions.** Kick, Rend Armor, Help, Block, Dodge, Grab, and the four Opportunity Attacks are
   given to every character automatically.
 
-Some abilities ask you to make a permanent choice, such as a weapon family, a condition, or a limb. That
-choice appears as a **dropdown on the ability's row**. Set it once and the ability uses it from then on.
+Some abilities ask you to make a permanent choice, such as a weapon family, a condition, a limb, one of
+your weapons, or a Sentinel's favored enemy. That choice appears as a **dropdown on the ability's row**
+(red until you make it). Set it once and the ability uses it from then on. An ability you can take twice, such as Bigger Stones, is dragged on twice,
+and each copy has its own choice (and costs its CSP).
 
 ## 4. Equipment
 
@@ -50,9 +52,9 @@ Drag weapons and armor from the equipment compendia onto your sheet, then use th
   ("Dagger Attack"). A **Versatile** weapon (one you can throw) also gets a **Throw** ability at 40ft.
 - **Bound weapon.** An attack ability can be bound to a particular weapon from the ability's sheet. If
   you leave it on **Auto**, it uses your first equipped weapon.
-- **Signature.** Use the signature toggle to mark your Fatebound divine weapon.
-- **Named Weapons (Bladedancer).** Open a Versatile weapon's sheet and pick which of your Named
-  Weapon abilities it carries.
+- **Divine and named weapons.** A Fatebound's divine weapon and a Bladedancer's named weapons are chosen on
+  the abilities (Fated Strike, Sharp Weapon …), in the dropdown on each one's row. The inventory marks the weapon
+  with a star.
 - **Item slots** (pp.180–181). Every item takes slots in your **readied** slots (RIS: 5, what you can reach in combat)
   or your **stored** slots (SIS: what your bags hold). The tag on each row swaps it and shows its size; the counter at
   the top shows both. Reaching a stored item in combat asks first. Carrying more than both hold is **Overburdened**
@@ -79,5 +81,4 @@ there:
 
 - **Hulinari Warrior:** your **Form** (Pack, Brute, or Swarm). Toggle **Beast Form** on your token to
   take that form.
-- **Sentinel:** your **Favored Enemies** (and your Bigger Stones picks, if you have that ability).
 - **Oracle:** your saved **Slightly Cracked** rolls.

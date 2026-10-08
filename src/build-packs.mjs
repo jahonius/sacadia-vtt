@@ -29,7 +29,7 @@ import { buildManual } from './manual.mjs';
 import { ADORNMENTS, TRINKETS, WEAPONS, ARMORS, SHIELDS } from './equipment.mjs';
 import { SHIPPED_DIR, hasIcons, iconGroup, iconPattern, systemPath } from './icons.mjs';
 import { inferMaterial, inferShieldSize } from '../module/helpers/actor-utils.mjs';
-import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES, BOOST_OVERRIDES, ACTIVITY_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, ZONE_OVERRIDES, TEXT_OVERRIDES, TAG_OVERRIDES, EXTRAAP_OVERRIDES, POOL_OVERRIDES, AMOUNTPROMPT_OVERRIDES, LORE_MADNESS, USAGE_OVERRIDES, USAGE_UPGRADES, AID_RESIST_OVERRIDES, OPPORTUNITY_IDS } from './modifiers.mjs';
+import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES, BOOST_OVERRIDES, ACTIVITY_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, PICK2_OVERRIDES, ZONE_OVERRIDES, TEXT_OVERRIDES, TAG_OVERRIDES, EXTRAAP_OVERRIDES, POOL_OVERRIDES, AMOUNTPROMPT_OVERRIDES, LORE_MADNESS, USAGE_OVERRIDES, USAGE_UPGRADES, AID_RESIST_OVERRIDES, OPPORTUNITY_IDS } from './modifiers.mjs';
 import { MADNESS_ANNOTATIONS } from './madness.mjs';
 import { LORE_NO_COST } from './lore-overrides.mjs';
 
@@ -341,6 +341,7 @@ function overrideFields(catalogId, tag, description) {
     ...(MULTIATTACK_OVERRIDES[catalogId] ? { multiAttack: MULTIATTACK_OVERRIDES[catalogId] } : {}),
     ...(CHOICEREDIRECT_OVERRIDES[catalogId] ? { choiceRedirect: CHOICEREDIRECT_OVERRIDES[catalogId] } : {}),
     ...(PICK_OVERRIDES[catalogId] ? { pick: { options: [], ...PICK_OVERRIDES[catalogId] } } : {}),
+    ...(PICK2_OVERRIDES[catalogId] ? { pick2: { options: [], ...PICK2_OVERRIDES[catalogId] } } : {}),
     ...(ZONE_OVERRIDES[catalogId] ? { zone: ZONE_OVERRIDES[catalogId] } : {}),
     ...(EXTRAAP_OVERRIDES[catalogId] ? { extraAp: { max: '', label: '', selfDamagePerAp: '', ...EXTRAAP_OVERRIDES[catalogId] } } : {}),
     ...(AMOUNTPROMPT_OVERRIDES[catalogId] ? { amountPrompt: { label: '', max: '', ...AMOUNTPROMPT_OVERRIDES[catalogId] } } : {}),
@@ -424,6 +425,8 @@ function masteryToItem(m) {
       meta: { profession: m.profession, subpath: '', prerequisite: 'Level 5' },
       activities: [],
       modifiers: MODIFIER_OVERRIDES[m.id] ?? [],
+      // A permanent choice (Sling Mastery's condition).
+      ...(PICK_OVERRIDES[m.id] ? { pick: { options: [], ...PICK_OVERRIDES[m.id] } } : {}),
     },
     effects: [],
     flags: { sacadia: { catalogId: m.id, mastery: true } },

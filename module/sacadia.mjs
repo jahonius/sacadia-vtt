@@ -19,6 +19,7 @@ import { defineZoneBehavior, configureZones, resizeMadnessZones, zonesOf, delete
 import { revealHidden } from './helpers/conditions.mjs';
 import { abilityItem, ownsAbility } from './helpers/actor-utils.mjs';
 import { postRollCard, styleInitiativeMessage } from './helpers/chat-cards.mjs';
+import { migratePicks } from './helpers/legacy-picks.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 // In-Foundry tests: registered only when the Quench module is active.
@@ -387,6 +388,16 @@ Hooks.once('ready', async () => {
   const actors = new Set(game.actors);
   for (const t of canvas.tokens?.placeables ?? []) if (t.actor) actors.add(t.actor);
   for (const actor of actors) await syncConditionEffects(actor);
+});
+
+// Choices abilities make when they're taken moved onto their cards in 0.3.6: bring existing characters along (once).
+Hooks.once('ready', async () => {
+  if (game.users.activeGM !== game.user) return;
+  const actors = new Set(game.actors);
+  for (const t of canvas.tokens?.placeables ?? []) if (t.actor) actors.add(t.actor);
+  for (const actor of actors) {
+    try { await migratePicks(actor); } catch (err) { console.error(`Sacadia | moving ${actor.name}'s ability picks`, err); }
+  }
 });
 
 // Paint the condition level as a number over its token status icon. Core has no native status

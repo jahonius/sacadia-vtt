@@ -74,14 +74,20 @@
     ],
     "pick": {
       "options": [],
-      "kind": "creature"
+      "kind": "creature",
+      "label": "SACADIA.Pick.Label.Enemy"
+    },
+    "pick2": {
+      "options": [],
+      "kind": "namedWeapon",
+      "label": "SACADIA.Pick.Label.Weapon"
     }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_the_vengeance",
-      "buildHash": "1eb802d4f797"
+      "buildHash": "4af244d6476f"
     }
   }
 }

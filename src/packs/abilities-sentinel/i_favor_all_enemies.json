@@ -29,13 +29,17 @@
       "prerequisite": "Favored Style, Wiles 4"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "favored"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "i_favor_all_enemies",
-      "buildHash": "99685927bc91"
+      "buildHash": "f00817405e2c"
     }
   }
 }

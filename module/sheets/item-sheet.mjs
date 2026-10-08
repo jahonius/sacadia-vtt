@@ -111,21 +111,6 @@ export class SacadiaItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       }
     }
 
-    // Named Weapons (Bladedancer): a Versatile weapon on an actor can carry one of its owner's Named Weapon
-    // abilities as its name — each ability names one weapon, so names held by another weapon aren't offered.
-    if (['gear', 'armor'].includes(item.type) && item.actor && /\bversatile\b/i.test(item.system.traits ?? '')) {
-      const taken = new Set(item.actor.items.filter((w) => w.id !== item.id).map((w) => w.flags?.sacadia?.namedAs).filter(Boolean));
-      const choices = {};
-      for (const a of item.actor.items) {
-        const cid = a.flags?.sacadia?.catalogId;
-        if (a.type === 'ability' && CONFIG.SACADIA.namedWeaponAbilities.includes(cid) && !taken.has(cid)) choices[cid] = a.name;
-      }
-      if (Object.keys(choices).length || item.flags?.sacadia?.namedAs) {
-        context.namedChoices = choices;
-        context.namedAs = item.flags?.sacadia?.namedAs ?? '';
-      }
-    }
-
     context.enrichedDescription = await foundry.applications.ux.TextEditor.implementation.enrichHTML(
       item.system.description ?? '',
       { secrets: item.isOwner, rollData: item.getRollData?.() ?? {}, relativeTo: item }

@@ -29,13 +29,17 @@
       "prerequisite": ""
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "namedWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_weapon_tail",
-      "buildHash": "468e0dfff6af"
+      "buildHash": "6067928e2e46"
     }
   }
 }

@@ -281,16 +281,16 @@ export default function build(kit) {
       talents: ['perception', 'acrobatics'],
       specialties: [{ name: 'Hearing', talent: 'perception', rank: 3 }, { name: 'Falling', talent: 'acrobatics', rank: 3 }],
       abilities: [
-        'reactive_mind', 'favored_enemy', 'trickshot',
-        'bigger_stones', 'boltshot', 'pullback', 'pinning_bolt', 'head_strike', 'forceful_strike', 'striking_savant', 'favoritism',
+        'reactive_mind', ['favored_enemy', { flags: { pickValue: 'demon' } }], 'trickshot',
+        // Bigger Stones taken twice, both on the crossbow (1D4 → 1D8).
+        ['bigger_stones', { flags: { pickValue: 'crossbow' } }], ['bigger_stones', { key: 'bigger_stones_2', flags: { pickValue: 'crossbow' } }],
+        'boltshot', 'pullback', 'pinning_bolt', 'head_strike', 'forceful_strike', 'striking_savant', 'favoritism',
         'sen_skilled_warrior', 'rousing_success', 'mastery_crossbow',
       ],
       weapons: ['crossbow'],
       armor: ['professional_dye_set'],
       gear: [['healing_date', {}], ['torch', {}]],
       classPools: { trickshot: { value: 6, max: 6 } },
-      // Favored Enemy: Demons. Bigger Stones taken twice, both on the crossbow (1D4 → 1D8).
-      professionResources: { sentinel: { favored: ['demon'], biggerStones: { bow: 0, crossbow: 2, sling: 0 } } },
       background: {
         appearance: 'Long brown hair and deep brown eyes; brown trousers tied at the waist and a straw cloak.',
         connections: 'The younger daughter of Honnasusara.',

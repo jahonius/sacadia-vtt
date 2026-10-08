@@ -29,13 +29,17 @@
       "prerequisite": "Artery Strike"
     },
     "activities": [],
-    "modifiers": []
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "kind": "namedWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_jagged_blade",
-      "buildHash": "0fbaf880288e"
+      "buildHash": "1139a337092a"
     }
   }
 }

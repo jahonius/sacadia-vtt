@@ -42,13 +42,17 @@
           }
         ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [],
+      "kind": "namedWeapon"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bd_sharp_weapon",
-      "buildHash": "74737bb5feef"
+      "buildHash": "d4a4117d462e"
     }
   }
 }

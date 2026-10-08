@@ -35,44 +35,28 @@
         "target": "damage",
         "mode": "step",
         "scope": "ranged",
-        "value": "@biggerStones.bow",
+        "value": "1",
         "predicate": [
           {
-            "atom": "self:attack:weapon:bow"
-          }
-        ]
-      },
-      {
-        "label": "Bigger Stones",
-        "target": "damage",
-        "mode": "step",
-        "scope": "ranged",
-        "value": "@biggerStones.crossbow",
-        "predicate": [
-          {
-            "atom": "self:attack:weapon:crossbow"
-          }
-        ]
-      },
-      {
-        "label": "Bigger Stones",
-        "target": "damage",
-        "mode": "step",
-        "scope": "ranged",
-        "value": "@biggerStones.sling",
-        "predicate": [
-          {
-            "atom": "self:attack:weapon:sling"
+            "atom": "self:attack:picked:bigger_stones"
           }
         ]
       }
-    ]
+    ],
+    "pick": {
+      "options": [
+        "bow",
+        "crossbow",
+        "sling"
+      ],
+      "kind": "weaponType"
+    }
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "bigger_stones",
-      "buildHash": "6d04c9f99b86"
+      "buildHash": "db489de0bde7"
     }
   }
 }
