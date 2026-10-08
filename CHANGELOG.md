@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.5
+
+- **"Affecting you now" covers everything on you.** On the Conditions tab, each state on your token (Prone, Height …)
+  is its own row saying what it does, and each buff another creature gave you has a row with who gave it and how it
+  ends ("From Manchuthara · consumed on attack"). Buffs moved here from the Abilities tab's turn panel, and the tab's
+  count includes them. Rows are tinted by kind: debuffs red, buffs green, and the rest parchment. That covers Height,
+  whose advantage depends on where your target stands, and Madness.
+- **"On your next attack."** The Abilities tab's Armed Boosts tray is renamed. It also shows buffs banked for your next
+  attack, such as Critical Strike's advantage, with what each adds.
+- **Marks are named by their ability** in the turn panel ("Targeted Foe → Goblin"), not by their internal key.
+- **The roll prompt's modifiers read as a ledger:** the value at the left, its source right-aligned, a dotted leader
+  between.
+- **Fix:** a talent's specializations sit two to a row, so their names have room. They had been squeezed to about one
+  character wide.
+
 ## 0.3.4
 
 - **The roll prompt shows its modifiers.** Before you roll a Trait, talent or specialty check, or an attack, the prompt

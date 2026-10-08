@@ -413,7 +413,7 @@ SACADIA.conditions = {
     rules: 'SACADIA.ConditionRule.Fumbled', effects: [] },
   rended: { label: 'SACADIA.Condition.Rended', img: 'icons/svg/downgrade.svg', group: 'special',
     rules: 'SACADIA.ConditionRule.Rended', effects: [] },
-  madness: { label: 'SACADIA.Condition.Madness', img: 'icons/svg/daze.svg', group: 'special',
+  madness: { label: 'SACADIA.Condition.Madness', tone: 'neutral', img: 'icons/svg/daze.svg', group: 'special',
     rules: 'SACADIA.ConditionRule.Madness', effects: [] },
 };
 
@@ -462,43 +462,45 @@ SACADIA.namedWeaponAbilities = ['bd_sharp_weapon', 'bd_exploding_weapon', 'bd_ja
  * effects; some feed the disadvantage sink via AE changes (`mode: 2` = ADD).
  * @type {Record<string, {label:string, img:string, changes:object[]}>}
  */
+// `tone` colors a state on the Conditions tab: 'debuff' red, 'buff' green, 'neutral' parchment (Height helps only
+// against a target below you; Beast Form is a mode).
 SACADIA.simpleConditions = {
-  prone: { label: 'SACADIA.Simple.Prone', img: 'icons/svg/falling.svg',
+  prone: { label: 'SACADIA.Simple.Prone', tone: 'debuff', img: 'icons/svg/falling.svg',
     changes: [{ key: 'system.disadvantage.toHit', mode: 2, value: '1' }] },
-  blinded: { label: 'SACADIA.Simple.Blinded', img: 'icons/svg/blind.svg',
+  blinded: { label: 'SACADIA.Simple.Blinded', tone: 'debuff', img: 'icons/svg/blind.svg',
     changes: [{ key: 'system.disadvantage.toHit', mode: 2, value: '1' }] },
-  dragged: { label: 'SACADIA.Simple.Dragged', img: 'icons/svg/net.svg', changes: [] },
-  surprised: { label: 'SACADIA.Simple.Surprised', img: 'icons/svg/daze.svg', changes: [] },
-  unconscious: { label: 'SACADIA.Simple.Unconscious', img: 'icons/svg/unconscious.svg', changes: [] },
+  dragged: { label: 'SACADIA.Simple.Dragged', tone: 'debuff', img: 'icons/svg/net.svg', changes: [] },
+  surprised: { label: 'SACADIA.Simple.Surprised', tone: 'debuff', img: 'icons/svg/daze.svg', changes: [] },
+  unconscious: { label: 'SACADIA.Simple.Unconscious', tone: 'debuff', img: 'icons/svg/unconscious.svg', changes: [] },
   // Insanity (Oracle) — a state you're in or not, GM-tracked on the token; distinct from the leveled
   // Madness tracker. Predicates read it as `self:insane` (see docs/conditional-modifiers.md).
-  insane: { label: 'SACADIA.Simple.Insane', img: 'icons/svg/terror.svg', changes: [] },
+  insane: { label: 'SACADIA.Simple.Insane', tone: 'debuff', img: 'icons/svg/terror.svg', changes: [] },
   // Steadied (Soldier) — a braced stance you're in or not, GM/player-toggled on the token. Many
   // Soldier abilities read it (`self:steadied`) to upgrade their effect ("If you have Steadied …").
-  steadied: { label: 'SACADIA.Simple.Steadied', img: 'icons/svg/upgrade.svg', changes: [] },
+  steadied: { label: 'SACADIA.Simple.Steadied', tone: 'buff', img: 'icons/svg/upgrade.svg', changes: [] },
   // Raging (Thug) — a berserk state entered via Berserker Rage, toggled on the token. The rage cluster
   // reads it (`self:raging`) to switch on damage die-steps (Focused Rage, Freaking Strong, Raging Harm)
   // and gate other rage-only effects. Duration (X rounds) and the extra melee attack stay manual.
-  raging: { label: 'SACADIA.Simple.Raging', img: 'icons/svg/blood.svg', changes: [] },
+  raging: { label: 'SACADIA.Simple.Raging', tone: 'buff', img: 'icons/svg/blood.svg', changes: [] },
   // Beast Form (Hulinari Warrior) — in your beast shape or not, toggled on the token. With the character's
   // Hulinari subtype (Pack / Brute / Swarm) it surfaces `self:form:beast` + `self:form:<subtype>`, which the
   // "When in Brute Form …" abilities gate on.
-  beastForm: { label: 'SACADIA.Simple.BeastForm', img: 'icons/svg/regen.svg', changes: [] },
+  beastForm: { label: 'SACADIA.Simple.BeastForm', tone: 'neutral', img: 'icons/svg/regen.svg', changes: [] },
   // Wounded (book p.230) — below 0 HP. Kept in sync with Health automatically; drives Battle Fatigue.
-  wounded: { label: 'SACADIA.Simple.Wounded', img: 'icons/svg/blood.svg', changes: [] },
+  wounded: { label: 'SACADIA.Simple.Wounded', tone: 'debuff', img: 'icons/svg/blood.svg', changes: [] },
   // Environmental conditions (book p.254–255), GM-toggled from the map: Cornered — all attacks against it
   // at 1× advantage; Obscured (also Dim / Bright light) — +3 AD, PD, MD, TD; Shadowed — attacks against it
   // at 1× disadvantage; Height — its attacks at 1× advantage. The attack-side effects are read at roll time
   // (#situationalAdvantage); Obscured's defenses ride its AE changes.
-  cornered: { label: 'SACADIA.Simple.Cornered', img: 'icons/svg/net.svg', changes: [] },
-  obscured: { label: 'SACADIA.Simple.Obscured', img: 'icons/svg/mystery-man.svg',
+  cornered: { label: 'SACADIA.Simple.Cornered', tone: 'debuff', img: 'icons/svg/net.svg', changes: [] },
+  obscured: { label: 'SACADIA.Simple.Obscured', tone: 'buff', img: 'icons/svg/mystery-man.svg',
     changes: ['ad', 'pd', 'md', 'td'].map((d) => ({ key: `system.bonuses.defense.${d}`, mode: 2, value: '3' })) },
-  shadowed: { label: 'SACADIA.Simple.Shadowed', img: 'icons/svg/eye.svg', changes: [] },
-  height: { label: 'SACADIA.Simple.Height', img: 'icons/svg/up.svg', changes: [] },
+  shadowed: { label: 'SACADIA.Simple.Shadowed', tone: 'buff', img: 'icons/svg/eye.svg', changes: [] },
+  height: { label: 'SACADIA.Simple.Height', tone: 'neutral', img: 'icons/svg/up.svg', changes: [] },
   // Hidden — unseen: can't be directly targeted (a warning if you try). Set by a successful Sneak (the GM)
   // or Hide Behind Hide; ends automatically when the creature attacks, forces a Trait Check on someone, or
   // takes damage (book p.131 Hide Behind Hide; the Stealth talent p.206). Changing the environment is the GM's.
-  hidden: { label: 'SACADIA.Simple.Hidden', img: 'icons/svg/invisible.svg', changes: [] },
+  hidden: { label: 'SACADIA.Simple.Hidden', tone: 'buff', img: 'icons/svg/invisible.svg', changes: [] },
 };
 
 /** The Hulinari Warrior subtypes (book: "Form of the Pack / the Brute / the Swarm"). */

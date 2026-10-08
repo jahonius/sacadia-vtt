@@ -1,22 +1,32 @@
 <section class="tab {{tabs.conditions.cssClass}}" data-group="primary" data-tab="conditions">
 
-  {{!-- What's affecting this creature now: each held condition with its level and what that level does (click the name
-       to roll against it), and the states set on its token (Prone, Steadied …; toggled there). --}}
+  {{!-- What's affecting this creature now, a row each: held conditions with their level and what that level does (click
+       the name to roll against it), the states set on its token (Prone, Height …; toggled there) and what they do, and
+       buffs others gave it, with who and how they end. --}}
   <h3>{{localize 'SACADIA.Condition.Now'}}</h3>
-  {{#if (or heldConditions.length activeStates.length)}}
+  {{#if (or heldConditions.length activeStates.length buffs.length)}}
   <div class="held-list">
     {{#each heldConditions as |c|}}
-    <div class="held" data-tooltip-html="{{c.tooltip}}">
+    <div class="held tone-{{c.tone}}" data-tooltip-html="{{c.tooltip}}">
       <a class="held-name" data-action="resistCondition" data-key="{{c.key}}">{{localize c.label}} <i class="fa-solid fa-dice-d20 resist-cue" title="{{localize 'SACADIA.Resist.RollFor'}}"></i></a>
       <span class="held-level">{{c.value}}</span>
       <span class="held-rule">{{c.ruleNow}}</span>
     </div>
     {{/each}}
-    {{#if activeStates.length}}
-    <div class="held-states">
-      {{#each activeStates as |st|}}<span class="state-chip">{{st.label}}</span>{{/each}}
+    {{#each activeStates as |st|}}
+    <div class="held state tone-{{st.tone}}">
+      <span class="held-name">{{st.label}}</span>
+      <span class="held-level">{{localize 'SACADIA.Condition.StateTag'}}</span>
+      <span class="held-rule">{{st.rule}}</span>
     </div>
-    {{/if}}
+    {{/each}}
+    {{#each buffs as |b|}}
+    <div class="held buff tone-buff">
+      <span class="held-name">{{b.name}}</span>
+      <span class="held-level">{{localize 'SACADIA.Condition.BuffTag'}}</span>
+      <span class="held-rule">{{#if b.from}}{{localize 'SACADIA.Condition.BuffFrom' name=b.from}} · {{/if}}{{b.expiry}}</span>
+    </div>
+    {{/each}}
   </div>
   {{else}}
   <p class="held-empty">{{localize 'SACADIA.Condition.NoneNow'}}</p>

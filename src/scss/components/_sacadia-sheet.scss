@@ -406,7 +406,7 @@
 // token's states (Prone, Steadied …) as chips.
 .held-list { display: flex; flex-direction: column; gap: 0.3rem; }
 .held {
-  display: grid; grid-template-columns: minmax(7rem, 9rem) 2rem 1fr; align-items: baseline; gap: 0.6rem;
+  display: grid; grid-template-columns: minmax(7rem, 9rem) 2.6rem 1fr; align-items: baseline; gap: 0.6rem;
   padding: 0.4rem 0.6rem; border-radius: 4px; background: var(--sac-panel);
   .held-name {
     font-family: var(--sac-font-display); font-size: 0.98rem; font-weight: 700; color: var(--sac-gold-hi); cursor: pointer;
@@ -415,11 +415,19 @@
   }
   .held-level { font-family: var(--sac-font-display); font-size: 1.25rem; font-weight: 700; line-height: 1; text-align: center; color: var(--sac-blood); }
   .held-rule { font-size: 0.8rem; line-height: 1.35; color: var(--sac-text); }
-}
-.held-states { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.15rem; }
-.state-chip {
-  padding: 0.1rem 0.55rem; border-radius: 10px; font-size: 0.76rem;
-  background: rgba(234, 217, 176, 0.07); border: 1px solid var(--sac-line-strong); color: var(--sac-text);
+  // A token state (Prone, Height …) and a buff from another creature: the kind as a small word where a level would be;
+  // a state's name in parchment, a buff's in gold (it's helping).
+  &.state, &.buff {
+    .held-level { font-family: var(--sac-font-ui); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  }
+  &.buff .held-rule { color: var(--sac-dim); }
+  // Tone, mildly: the name and the level / kind take it over a faint tint; the rule stays parchment. Debuffs red, buffs
+  // green, neutral (Height, Beast Form, Madness) parchment.
+  &.tone-debuff { background: linear-gradient(rgba(192, 80, 85, 0.09), rgba(192, 80, 85, 0.09)), var(--sac-panel);
+    .held-name { color: #e39a9d; } .held-level { color: var(--sac-blood); } }
+  &.tone-buff { background: linear-gradient(rgba(111, 191, 133, 0.08), rgba(111, 191, 133, 0.08)), var(--sac-panel);
+    .held-name { color: #94d4a6; } .held-level { color: #6fbf85; } }
+  &.tone-neutral { .held-name { color: var(--sac-text); } .held-level { color: var(--sac-dim); } }
 }
 .held-empty { margin: 0; font-size: 0.85rem; font-style: italic; color: var(--sac-dim); }
 
@@ -726,13 +734,16 @@
 }
 
 // --- Specialized talents (Stats tab) ---
+// Their own grid, two to a row rather than the talents' three: each holds a name, a talent and a rank, and in a third
+// of the width the name had no room left at all.
 .talent-group.specialties {
   h4 a { cursor: pointer; margin-left: 0.3rem; }
-  .specialty { display: flex; gap: 0.3rem; align-items: center;
-    input[type="text"] { flex: 1; min-width: 0; }
-    select { flex: 0 1 8rem; min-width: 0; }
-    .rank { width: 2.6rem; }
-    a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } } }
+  .talent-list { grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: 0.3rem 0.9rem; }
+  .specialty { display: flex; gap: 0.35rem; align-items: center; padding: 0.15rem 0.3rem;
+    input[type="text"] { flex: 1 1 6rem; min-width: 6rem; }
+    select { flex: 0 0 7.5rem; min-width: 0; font-size: 0.8rem; }
+    .rank { flex: 0 0 2.6rem; width: 2.6rem; text-align: center; }
+    a { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } } }
 }
 
 // --- Item sheet: header + equip toggles ---
@@ -1018,6 +1029,8 @@
     color: var(--sac-gold-hi); margin-right: 0.2rem;
   }
   .boost-chip { cursor: pointer; &:hover { color: var(--sac-gold-hi); } }
+  // A buff banked for the next attack (Critical Strike's advantage …): what it adds, in small.
+  .pending-chip { border-color: var(--sac-gold-lo); color: var(--sac-gold-hi); small { color: var(--sac-dim); text-transform: none; letter-spacing: 0; } }
 }
 
 // An armed chip (on the boost's own card and in the tray) reads as "active".

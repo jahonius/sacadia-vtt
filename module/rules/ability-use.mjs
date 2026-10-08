@@ -3358,8 +3358,8 @@ export class AbilityUse {
     const signed = (v) => (v < 0 ? `−${-v}` : `+${v}`);
     const advWord = (n) => `${Math.abs(n)}× ${loc(n > 0 ? 'SACADIA.Roll.AdvShort' : 'SACADIA.Roll.DisadvShort')}`;
     const mods = [
-      ...parts.filter((p) => p.value).map((p) => `<li class="${p.value < 0 ? 'neg' : ''}"><b>${signed(p.value)}</b><span>${esc(p.label)}</span></li>`),
-      ...standing.filter((s) => s.n).map((s) => `<li class="${s.n < 0 ? 'neg' : 'pos'}"><b>${advWord(s.n)}</b><span>${esc(s.label)}</span></li>`),
+      ...parts.filter((p) => p.value).map((p) => `<li class="${p.value < 0 ? 'neg' : ''}"><b>${signed(p.value)}</b><i class="sp-lead"></i><span>${esc(p.label)}</span></li>`),
+      ...standing.filter((s) => s.n).map((s) => `<li class="${s.n < 0 ? 'neg' : 'pos'}"><b>${advWord(s.n)}</b><i class="sp-lead"></i><span>${esc(s.label)}</span></li>`),
     ];
     const modsBlock = (mods.length || note) ? `
         <div class="sp-mods">

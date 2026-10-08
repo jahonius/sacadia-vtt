@@ -52,7 +52,8 @@ its condition isn't met ("only while raging"), or the target is out of range or 
 A Boost changes your *next* matching action. To use one:
 
 1. Click the Boost's **icon** (it shows a bolt) to **arm** it. Armed Boosts are marked *Armed* and
-   listed in the **Armed Boosts** tray; click one there to disarm it.
+   listed in the **On your next attack** tray on the Abilities tab, with any buff banked for your next
+   attack (such as Critical Strike's); click a Boost there to disarm it.
 2. Use the action it applies to. The Boost's effect is included and it's used up.
 
 Only **one Boost per action**, and **none on reactions** (book p.236). Exceptions: Boostbuster and
