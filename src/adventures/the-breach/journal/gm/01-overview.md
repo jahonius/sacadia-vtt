@@ -25,6 +25,7 @@ The fight has two acts:
 
 | | |
 | --- | --- |
+| **Prologue** | {{scene:ardus-yauga}}: the rulebook's world map, for an optional opening on the road to the wall ({{page:gm/prologue}}). With the Indy Route and Augur: Nexus modules, the road plays as an animated route and the wall is a site that opens the battle map. |
 | **Scene** | {{scene:chunis-wall}}: the battle map (20 × 48 squares) as a two-level scene (the Ground and the Wall Top 40ft up) with walls and line of sight. The defenders are at their starting positions, Wanabbul is to the north, the siege engines are in place, and every feature has a map pin. A **Breach Chuni's Wall** macro opens the hole when the demon breaks through. |
 | **Heroes** | {{actor:selthimor}}, {{actor:chunrudar}}, {{actor:honnasusara}} and {{actor:manchuthara}}: level-5 Tianqi wall guards, rebuilt as rules-legal v1.2 characters. |
 | **Demons** | Wanabbul the Vast, plus Grubnut, Csenorras the Manyworm (with its split swarms), the Weaver's Daughter and her Weaverspools. |
@@ -34,11 +35,12 @@ The fight has two acts:
 
 ## Setting up
 
-1. Open **Chuni's Wall** and activate it. It has two levels, Ground and Wall Top; {{page:gm/battlefield}} explains how they work.
-2. Give each player one of the four heroes: right-click the actor → **Ownership** → *Owner*. Everyone can already view every hero (and the handouts), so let them pick first.
-3. Share the {{journal:players}} pages: **The Characters**, then each player's **How to Play** page.
-4. The fight is already set up in the Combat Tracker, in the one-shot's turn order (the four heroes, then Wanabbul). To roll initiative instead, see {{page:gm/running-the-encounter}}. When the players are ready, press **Begin Combat**. For extra drama, open the Combat Tracker's settings (the cog at the top of the tracker) and choose one of Foundry's *Combat Themes* for sounds at the start of combat and each turn.
-5. Read the **Demonology** handout aloud as soon as Wanabbul enters the fight.
+1. *Optional:* open with the {{page:gm/prologue}} on the world map. When you click into the wall, carry on from step 2.
+2. Open **Chuni's Wall** and activate it. It has two levels, Ground and Wall Top; {{page:gm/battlefield}} explains how they work.
+3. Give each player one of the four heroes: right-click the actor → **Ownership** → *Owner*. Everyone can already view every hero (and the handouts), so let them pick first.
+4. Share the {{journal:players}} pages: **The Characters**, then each player's **How to Play** page.
+5. The fight is already set up in the Combat Tracker, in the one-shot's turn order (the four heroes, then Wanabbul). To roll initiative instead, see {{page:gm/running-the-encounter}}. When the players are ready, press **Begin Combat**. For extra drama, open the Combat Tracker's settings (the cog at the top of the tracker) and choose one of Foundry's *Combat Themes* for sounds at the start of combat and each turn.
+6. Read the **Demonology** handout aloud as soon as Wanabbul enters the fight.
 
 If a hero dies, that player takes the next unused character. With four players, roll up a fifth Tianqi wall guard or let them crew the siege engines until the end of the fight.
 

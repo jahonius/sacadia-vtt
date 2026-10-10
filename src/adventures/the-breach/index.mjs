@@ -14,6 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GROUND_WALLS, TOP_WALLS, LEVEL_CHANGES, KINDS, WALL, LIGHTS, LIGHT_KINDS, CLEAR_OF_FOG, FOG_LINE } from './battlefield.mjs';
+import { WORLD, GRID as WORLD_GRID, WALL_FORT, ROAD, SMOKE, TRAVEL_MODES, ROAD_STYLE, SMOKE_STYLE } from './prologue.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 /**
@@ -720,8 +721,10 @@ export default function build(kit) {
   /* ---------------------------------------------------------------------------------------------------------- */
 
   const sceneId = id('scene', 'chunis-wall');
+  const worldId = id('scene', 'ardus-yauga');
   const tableId = id('table', 'which-demon');
   kit.register('scene', 'chunis-wall', `Scene.${sceneId}`, 'Chuni\'s Wall');
+  kit.register('scene', 'ardus-yauga', `Scene.${worldId}`, 'The Ardus Yauga');
   kit.register('table', 'which-demon', `RollTable.${tableId}`, 'Which Demon Attacks?');
   kit.register('manual', 'manual', `Compendium.sacadia.user-manual.JournalEntry.${kit.packId('user-manual', 'manual')}`, 'Sacadia User Manual');
 
@@ -857,7 +860,7 @@ export default function build(kit) {
     note('start', 0, 5, 'running-the-encounter', 'Starting positions', 'icons/svg/book.svg'),
   ];
   const scene = {
-    _id: sceneId, name: 'Chuni\'s Wall', navName: 'The Breach', folder: F.scenes._id, sort: 100, navigation: true, navOrder: 0,
+    _id: sceneId, name: 'Chuni\'s Wall', navName: 'The Breach', folder: F.scenes._id, sort: 100, navigation: true, navOrder: 1,
     thumb: asset(MAP.thumb),
     width: sq(MAP.cols), height: sq(MAP.rows), padding: PADDING,
     levels: [
@@ -887,6 +890,41 @@ export default function build(kit) {
       breach: { ground: GROUND, top: TOP, north: Y(WALL.north), south: Y(WALL.south), topNorth: Y(WALL.topNorth), topSouth: Y(WALL.topSouth), kinds: KINDS } } },
   };
 
+  /* ---------------------------------------------------------------------------------------------------------- */
+  /*  Scene: the prologue's world map (prologue.mjs)                                                             */
+  /* ---------------------------------------------------------------------------------------------------------- */
+
+  // The Ardus Yauga, for an optional opening on the road to the wall. Its two routes are Indy Route's (scene flags, as
+  // its Route Manager saves them); the Prologue macro makes Chuni's Wall an Augur: Nexus site on it through Nexus's API.
+  // Without the modules it's a map to talk over.
+  const WORLD_LEVEL = id('level', 'ardus-yauga');
+  const xy = ([x, y]) => ({ x, y });
+  const route = (key, name, points, settings) => ({ id: id('route', key), name, points: points.map(xy), settings, createdAt: 0, updatedAt: 0 });
+  const worldScene = {
+    _id: worldId, name: 'The Ardus Yauga', navName: 'Prologue', folder: F.scenes._id, sort: 50, navigation: true, navOrder: 0,
+    thumb: asset(WORLD.thumb), width: WORLD.width, height: WORLD.height, padding: 0,
+    levels: [{ _id: WORLD_LEVEL, name: 'The Ardus Yauga', sort: 100, elevation: { bottom: null, top: null },
+      background: { src: asset(WORLD.file), color: '#c8d3c4' }, visibility: { levels: [] } }],
+    initialLevel: WORLD_LEVEL,
+    initial: { x: WORLD.width / 2, y: WORLD.height / 2, scale: 0.5 },
+    grid: { type: 0, size: WORLD_GRID.size, distance: WORLD_GRID.miles, units: 'mi', color: '#000000', alpha: 0 },
+    tokenVision: false, fog: { mode: 0 },
+    environment: { darknessLevel: 0, darknessLock: true, cycle: false },
+    journal: id('journal', 'gm'), journalEntryPage: pageId('gm', 'prologue'),
+    notes: [], tokens: [], regions: [], walls: [], lights: [], drawings: [], sounds: [], tiles: [],
+    ownership: { default: NONE },
+    flags: {
+      sacadia: { adventure: 'the-breach',
+        // Read by the Prologue macro: where the Nexus site goes, and the routes and travel modes it plays and offers.
+        prologue: { road: id('route', 'road'), smoke: id('route', 'smoke'), travelModes: TRAVEL_MODES,
+          site: { name: 'Chuni\'s Wall', x: WALL_FORT[0], y: WALL_FORT[1], iconSize: 48 } } },
+      'indy-route': { routes: [
+        route('road', 'The Road to the Wall', ROAD, { ...ROAD_STYLE, dotTokenUuid: `Actor.${actorId.Selthimor}` }),
+        route('smoke', 'Smoke Along the Wall', SMOKE, SMOKE_STYLE),
+      ] },
+    },
+  };
+
   // The fight, ready in the Combat Tracker in the one-shot's turn order (the heroes 4 → 1, Wanabbul after them): the GM
   // only presses Begin Combat.
   const combatant = (t, initiative) => ({ _id: id('combatant', t._id), actorId: t.actorId, tokenId: t._id, sceneId, initiative, hidden: false,
@@ -898,6 +936,10 @@ export default function build(kit) {
   F.macros = folder('macros', 'The Breach', 'Macro', null, 0, '#2f4f8f');
   const macros = [{ _id: id('macro', 'breach'), name: 'Breach Chuni\'s Wall', type: 'script', scope: 'global', folder: F.macros._id,
     img: 'icons/environment/settlement/building-rubble.webp', command: fs.readFileSync(path.join(HERE, 'macros', 'breach-the-wall.js'), 'utf8'),
+    ownership: { default: NONE }, flags: { sacadia: { adventure: 'the-breach' } } },
+  // The prologue: the world map for everyone, the road to the wall, and Chuni's Wall as a site that opens the fight.
+  { _id: id('macro', 'prologue'), name: 'Prologue: The Road to the Wall', type: 'script', scope: 'global', folder: F.macros._id, sort: -1,
+    img: 'icons/tools/navigation/map-chart-tan.webp', command: fs.readFileSync(path.join(HERE, 'macros', 'prologue.js'), 'utf8'),
     ownership: { default: NONE }, flags: { sacadia: { adventure: 'the-breach' } } }];
 
   /* ---------------------------------------------------------------------------------------------------------- */
@@ -930,7 +972,8 @@ export default function build(kit) {
     description: p('Chuni\'s Wall is a pale and desolate place. Your station here is an isolated and cold one, as you watch northward into the '
       + 'Upper Heibrim. Demons prowl the lands north of here. You have seen them in the night. They wander aimlessly, forever hungering '
       + 'for the flesh of humanity — hungry for you. It is a quiet and tense post. Until it isn\'t.',
-    '<strong>Contents:</strong> the Chuni\'s Wall battle map with tokens, siege engines and an automated pit trap; four pregenerated '
+    '<strong>Contents:</strong> a world map for an optional prologue on the road to the wall; the Chuni\'s Wall battle map with tokens, '
+      + 'siege engines and an automated pit trap; four pregenerated '
       + 'level-5 Tianqi wall guards; Wanabbul the Vast and three optional demons; a GM guide and player handouts; and the Tianqi '
       + 'culture\'s cultural abilities and inheritance for players who bring their own characters.'),
     sort: 0,
@@ -938,7 +981,7 @@ export default function build(kit) {
     actors,
     items: looseItems,
     journal,
-    scenes: [scene],
+    scenes: [worldScene, scene],
     tables: [table],
     macros, cards: [], playlists: [], combats: [combat],
     flags: { sacadia: { adventure: 'the-breach', actorIds: actorId } },

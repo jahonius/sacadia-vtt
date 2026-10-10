@@ -92,7 +92,7 @@ export function registerAdventure(quench) {
         ({ created } = await adventure.import({ dialog: false }));
         for (const d of created.Folder ?? []) fx.track(d);
         for (const [name, docs] of Object.entries(created)) if (name !== 'Folder') docs.forEach((d) => fx.track(d));
-        scene = created.Scene[0];
+        scene = created.Scene.find((s) => s.flags.sacadia?.breach);
       });
       after(async () => {
         stub?.restore();
@@ -184,7 +184,7 @@ export function registerAdventure(quench) {
       it('the scene opens with its tokens linked and the defenders on the wall have Height', async () => {
         await scene.view();
         await until(() => canvas.ready && canvas.scene?.id === scene.id, { timeout: 30000, what: 'the canvas' });
-        assert.equal(scene.tokens.size, [...adventure.scenes][0].tokens.size);
+        assert.equal(scene.tokens.size, adventure.scenes.find((s) => s.flags.sacadia?.breach).tokens.size);
         for (const t of scene.tokens) assert.ok(t.actor, `${t.name} has its actor`);
         for (const name of ['Selthimor', 'Chunrudar', 'Honnasusara', 'Manchuthara']) {
           assert.ok(actor(name).statuses.has('height'), `${name} starts with Height`);
@@ -470,6 +470,49 @@ export function registerAdventure(quench) {
         }
         await settle(since);
       });
+
+      // Last: it makes the world map the active scene. With Augur: Nexus and Indy Route installed and active (they aren't in
+      // the default test world), it also checks the site it makes and the road it plays.
+      it('the Prologue macro opens the world map; with Augur: Nexus it makes Chuni\'s Wall a site there, once; with Indy Route it plays the road', async () => {
+        const world = created.Scene.find((s) => s.flags.sacadia?.prologue);
+        const macro = created.Macro.find((m) => m.name === 'Prologue: The Road to the Wall');
+        const sitesTo = () => Object.values(world.getFlag('augur-nexus', 'sites')?.records ?? {}).filter((r) => r.linkedSceneId === scene.id);
+        const folders = new Set(game.folders.map((f) => f.id));
+        const active = game.scenes.active;
+        const indy = game.modules.get('indy-route')?.active ? game.modules.get('indy-route').api : null;
+        try {
+          await macro.execute();
+          await until(() => world.active && canvas.scene?.id === world.id && canvas.ready, { timeout: 20000, what: 'the world map' });
+          assert.deepEqual(errors.errors, []);
+          if (game.modules.get('augur-nexus')?.active) {
+            assert.equal(sitesTo().length, 1, 'a site that opens the battle map');
+            assert.equal(scene.getFlag('augur-nexus', 'lineage')?.parentSceneId, world.id, 'the battle map sits under the world map');
+            await macro.execute();
+            assert.equal(sitesTo().length, 1, 'running it again makes no second site');
+          }
+          if (indy) {
+            const road = world.getFlag('sacadia', 'prologue').road;
+            assert.ok(indy.listRoutes().some((r) => r.id === road), "the road is in Indy Route's Route Manager");
+            await until(() => indy.isRouteActive(road), { timeout: 10000, what: 'the road to play' });
+          }
+        } finally {
+          indy?.clearAllRoutes();
+          // Nexus files the battle map in a folder under the world map's name: remove it with the rest.
+          for (const f of game.folders.filter((x) => !folders.has(x.id))) fx.track(f);
+          // Nexus turns deleting a map with sites into a confirm for its whole branch, so delete these two here, telling it
+          // the deletion is handled (the rest of the cleanup is after()).
+          if (game.modules.get('augur-nexus')?.active) for (const s of [scene, world]) await s.delete({ 'augur-nexus': { nexusDeleteHandled: true } });
+          else {
+            // Leave things as they were (the active scene, the battle map in view) and the canvas settled for what follows.
+            if (active) await active.activate(); else await world.update({ active: false });
+            await until(async () => {
+              if (!canvas.loading && canvas.scene?.id !== scene.id) await scene.view();
+              return canvas.ready && !canvas.loading && canvas.scene?.id === scene.id;
+            }, { timeout: 20000, step: 250 }).catch(() => assert.fail(`the battle map never came back into view (viewing ${canvas.scene?.name ?? 'nothing'}, `
+              + `ready ${canvas.ready}, loading ${canvas.loading}, active ${game.scenes.active?.name ?? 'none'})`));
+          }
+        }
+      });
     });
   }, { displayName: 'Sacadia: The Breach (adventure import)' });
 }
@@ -480,7 +523,7 @@ export function registerAdventure(quench) {
  */
 export function registerAdventureLook(quench) {
   quench.registerBatch('sacadia.adventure.look', (context) => {
-    const { describe, it, before, after } = context;
+    const { describe, it, assert, before, after } = context;
     describe('The Breach: lighting review', function () {
       this.timeout(180000);
       const fx = fixture();
@@ -493,9 +536,14 @@ export function registerAdventureLook(quench) {
         const { created } = await adventure.import({ dialog: false });
         for (const d of created.Folder ?? []) fx.track(d);
         for (const [name, docs] of Object.entries(created)) if (name !== 'Folder') docs.forEach((d) => fx.track(d));
-        scene = created.Scene[0];
-        await scene.view({ level: scene.levels.find((l) => l.name === 'Wall Top').id });
-        await until(() => canvas.ready && canvas.scene?.id === scene.id, { timeout: 30000, what: 'the canvas' });
+        scene = created.Scene.find((s) => s.flags.sacadia?.breach);
+        // Scene#view does nothing while the canvas is still drawing (the batch before may have left it busy): retry.
+        const top = scene.levels.find((l) => l.name === 'Wall Top').id;
+        await until(async () => {
+          if (!canvas.loading && canvas.scene?.id !== scene.id) await scene.view({ level: top });
+          return canvas.ready && !canvas.loading && canvas.scene?.id === scene.id;
+        }, { timeout: 30000, step: 250 }).catch(() => assert.fail(`the canvas never drew the battle map (viewing ${canvas.scene?.name ?? 'nothing'}, `
+          + `ready ${canvas.ready}, loading ${canvas.loading})`));
       });
       after(() => fx.cleanup());
 

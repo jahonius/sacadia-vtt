@@ -31,10 +31,13 @@ test("adventure: folders, tokens, notes, table results and regions point at docu
     if (d.folder) assert.ok(folders.has(d.folder), `${d.name} folder`);
   }
   const actors = new Set(breach.actors.map((a) => a._id));
-  const [scene] = breach.scenes;
+  const scene = breach.scenes.find((s) => s.flags.sacadia.breach);
   for (const t of scene.tokens) assert.ok(actors.has(t.actorId), `token ${t.name}`);
   const pages = new Set(breach.journal.flatMap((j) => j.pages.map((p) => `${j._id}.${p._id}`)));
-  for (const n of scene.notes) assert.ok(pages.has(`${n.entryId}.${n.pageId}`), `note ${n.text}`);
+  for (const s of breach.scenes) {
+    for (const n of s.notes) assert.ok(pages.has(`${n.entryId}.${n.pageId}`), `${s.name}: note ${n.text}`);
+    if (s.journal) assert.ok(pages.has(`${s.journal}.${s.journalEntryPage}`), `${s.name}: its journal page`);
+  }
   for (const r of breach.tables[0].results) assert.ok(actors.has(r.documentUuid.split(".")[1]), r.name);
   const tokens = new Set(scene.tokens.map((t) => `Scene.${scene._id}.Token.${t._id}`));
   for (const r of scene.regions) {
@@ -46,7 +49,7 @@ test("adventure: folders, tokens, notes, table results and regions point at docu
 });
 
 test("adventure: Chuni's Wall is a two-level scene with walls on each level", () => {
-  const [scene] = breach.scenes;
+  const scene = breach.scenes.find((s) => s.flags.sacadia.breach);
   const levels = new Set(scene.levels.map((l) => l._id));
   assert.equal(levels.size, 2);
   assert.ok(levels.has(scene.initialLevel));
@@ -66,8 +69,40 @@ test("adventure: Chuni's Wall is a two-level scene with walls on each level", ()
   assert.ok(scene.walls.filter((w) => w.flags?.sacadia?.breach).length > 20, "the wall's faces can be breached");
   const flags = scene.flags.sacadia.breach;
   assert.ok(levels.has(flags.ground) && levels.has(flags.top));
-  assert.equal(breach.macros.length, 1);
-  assert.match(breach.macros[0].command, /getFlag\('sacadia', 'breach'\)/);
+  assert.match(breach.macros.find((m) => m.name === "Breach Chuni's Wall").command, /getFlag\('sacadia', 'breach'\)/);
+});
+
+test("adventure: the prologue's world map carries Indy Route's two routes and where the Nexus site goes", () => {
+  const world = breach.scenes.find((s) => s.flags.sacadia.prologue);
+  assert.equal(world.levels.length, 1);
+  assert.equal(world.initialLevel, world.levels[0]._id);
+  assert.match(world.levels[0].background.src, /ardus-yauga\.webp$/);
+  assert.equal(world.padding, 0, "map pixels are canvas coordinates");
+  const inside = ({ x, y }) => x >= 0 && y >= 0 && x <= world.width && y <= world.height;
+  const cfg = world.flags.sacadia.prologue;
+  assert.ok(inside(cfg.site), "the site is on the map");
+  const routes = world.flags["indy-route"].routes;
+  assert.deepEqual(routes.map((r) => r.id).sort(), [cfg.road, cfg.smoke].sort());
+  for (const r of routes) {
+    assert.ok(r.name && r.points.length >= 2 && r.points.every(inside), r.name);
+    assert.equal(r.settings.scaleWithMap, false, `${r.name}: the same line at every zoom`);
+  }
+  const road = routes.find((r) => r.id === cfg.road);
+  const selthimor = heroes.find((a) => a.name === "Selthimor");
+  assert.equal(road.settings.dotTokenUuid, `Actor.${selthimor._id}`, "Selthimor rides the road");
+  // Sacadia's speeds (rulebook p.287): five methods × three road types, a 4 km hex; the road's mode is one of them.
+  assert.equal(cfg.travelModes.length, 15);
+  assert.ok(cfg.travelModes.some((m) => m.id === road.settings.travelMode));
+  const foot = cfg.travelModes.find((m) => m.id === "sacadia-foot-dirt-road");
+  assert.ok(Math.abs(foot.perDayMiles - 4 * 4 * 0.621371) < 0.01, "on foot, a dirt road: 4 hexes a day");
+  // About 140 km from Tianois to the wall (the scale the GM guide states), measured in the scene's own miles.
+  const px = road.points.slice(1).reduce((t, p, i) => t + Math.hypot(p.x - road.points[i].x, p.y - road.points[i].y), 0);
+  const km = (px / world.grid.size) * world.grid.distance / 0.621371;
+  assert.ok(km > 120 && km < 160, `${Math.round(km)} km`);
+  const macro = breach.macros.find((m) => m.name === "Prologue: The Road to the Wall");
+  assert.match(macro.command, /getFlag\('sacadia', 'prologue'\)/);
+  assert.match(macro.command, /createLinkedSceneSite/);
+  assert.match(macro.command, /playRoute\(cfg\.road\)/);
 });
 
 test("adventure: every system asset it references ships with the system", () => {
