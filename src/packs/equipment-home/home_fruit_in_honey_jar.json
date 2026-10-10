@@ -1,0 +1,34 @@
+{
+  "_id": "74efd9f0a0906c56",
+  "_key": "!items!74efd9f0a0906c56",
+  "name": "Fruit in Honey (Jar)",
+  "type": "gear",
+  "img": "icons/consumables/food/preserves-jam-jelly-jar-brown-red.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 120,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fruit_in_honey_jar",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "86a955d210d3"
+    }
+  }
+}

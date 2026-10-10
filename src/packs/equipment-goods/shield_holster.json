@@ -1,0 +1,34 @@
+{
+  "_id": "b8bc3dce94e0c034",
+  "_key": "!items!b8bc3dce94e0c034",
+  "name": "Shield Holster",
+  "type": "gear",
+  "img": "icons/commodities/leather/leather-buckle-clip-steel.webp",
+  "folder": "75a7d1f4b9a3787e",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Readied Baggage</strong> (Passive): All Readied baggage items must be equipped to RIS to work. When occupying RIS, baggage items create extra RIS within them, often with specific requirements.</p><p><strong>Shield Holster</strong> (Passive): This item provides 3 readied item slots (RIS). You can store a single shield or buckler in the shield holster. You cannot put anything in these slots except for a shield or buckler.</p><p class=\"goods-facts\">2 Item Slots · 100gc · Readied Baggage, rulebook p.202</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 3
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shield_holster",
+      "kind": "goods",
+      "goods": {
+        "table": "readied-baggage"
+      },
+      "bargain": "baggage",
+      "buildHash": "888731e70e8e"
+    }
+  }
+}

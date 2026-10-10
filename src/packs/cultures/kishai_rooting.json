@@ -1,0 +1,45 @@
+{
+  "_id": "a5764979002f9b1a",
+  "_key": "!items!a5764979002f9b1a",
+  "name": "Rooting",
+  "type": "ability",
+  "img": "icons/magic/nature/barrier-shield-wood-vines.webp",
+  "folder": "c7b9fbce013a6974",
+  "sort": 30,
+  "system": {
+    "description": "<p>When you are standing still, your feet root into the ground. You are resistant to any ability that would try to push you on the battlemap (e.g., Kick or Dragged).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Grassfolk Ancestry",
+      "prerequisite": "Heavily Warped · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_rooting",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "5dd8e9de5b2c"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Hallowfell Compass",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot (Small). Attunement. Relic.</em></p><p><strong>Prerequisites:</strong> Fate[3] and Wiles[3]</p><p>A small, ancient brass box, this contraption is made of a complex assortment of strange gears wrapped around a smooth, jet-black obsidian stone. It is delicate and must be wound carefully - but each time it unwinds, it falls apart into a heap of junk.</p><p><strong>Probe the Hallows</strong> (Ceremony): Once per long rest, you may wind this box, and let it unwind during a rest. If you are distracted or not taking a rest such as a quick rest or fitful rest, make this check with 1X disadvantage. As it unwinds, you focus on what you desire. Make a Wiles Check, and consult the table below.<br/>Wiles 20+: You are clear in your mind's intent and focused. The box points a compass towards the strongest nearby creature that can assist with accomplishing this desire. The compass stops pointing after one hour, and can point at creatures as far as 10 miles away. If nothing within 10 miles can assist you, it points at you.<br/>Wiles 15+: You are clear in your mind's intent, but unable to hold the focus of the veil for long. The box points a compass towards the strongest nearby creature that can assist you with accomplishing this desire. This compass stops pointing after one minute, and can point as far as 1 mile away. If nothing within 1 mile can assist you, it points at you.<br/>Wiles 10+: Your mind's intent is unclear. It points at a nearby creature who can help you with this goal, or possibly another personal goal of yours, within 1 mile. If no one can assist you with any of your goals within 1 mile, it points at you.<br/>Wiles <10: The box unwinds and collapses. Anyone may use this box if they know how, however reconstructing the box takes a long rest and careful training from the previous user, or a DC16 Gadgeteer Check. This box cannot direct its user towards anything arcane, or anything lacking sufficient divinity (such as inanimate objects).</p><p><em>Rulebook p.55.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "95e2669915261b0a",
+  "_key": "!items!95e2669915261b0a",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 50,
+  "img": "icons/tools/navigation/compass-worn-copper.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_hallowfell_compass",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": true,
+        "special": ""
+      },
+      "buildHash": "32af2ec6f1dc"
+    }
+  }
+}

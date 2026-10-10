@@ -1,0 +1,35 @@
+{
+  "_id": "0e47c42a1c5d2c5b",
+  "_key": "!items!0e47c42a1c5d2c5b",
+  "name": "Red Jasper Jewelry",
+  "type": "gear",
+  "img": "icons/equipment/neck/pendant-faceted-red.webp",
+  "folder": "97967f52da7dcd2e",
+  "sort": 20,
+  "system": {
+    "description": "<p><em>Prerequisite: Courage[2].</em></p><p><strong>Red Jasper Jewelry: Hemorrhage</strong> (Passive): The condition X for this jewelry is Hemorrhage.</p><p><strong>Jewelry</strong> (Passive): Gain 1X Advantage against taking the X condition when it is first given to you, as well as on all uses of the “Make Trait Check” action against the specified X condition. The condition X is specified by the type of jewelry (the Jewelry Boons table).</p><p class=\"goods-facts\">1 Item Slot (Worn, RIS Passive) · 100gc · Jewelry, rulebook p.208</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, ris-passive, jewelry",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "red_jasper_jewelry",
+      "kind": "trinket",
+      "goods": {
+        "table": "jewelry",
+        "jewelry": "hemorrhage"
+      },
+      "bargain": "armor-trinkets",
+      "buildHash": "3cc2cbe8271d"
+    }
+  }
+}

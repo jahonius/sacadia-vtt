@@ -1,0 +1,37 @@
+{
+  "name": "Wide Tock",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Rare, Salt. 1 item slot (Small, Quickdraw). Uses: 6.</em></p><p>A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!</p><p><strong>Widetock</strong> (Action): You set the Widetock to In or Out from its safety position.</p><p><strong>Widetock (Out)</strong> (Action): (Prerequisite: Tock in the Out Position). You may throw the Widetock up to 30ft into a square. The Widetock explodes when it hits the ground. All creatures within 10ft of the Widetock make a Power Check (DC18) or are pushed 10ft away from the Widetock and knocked Prone.</p><p><strong>Widetock (In)</strong> (Action): (Prerequisite: Tock in the In Position). You may throw the Widetock up to 30ft into a square. The Widetock explodes when it hits the ground. All creatures within 15ft of the Widetock make a Power Check (DC18) or are pulled 10ft towards the Widetock and knocked Prone.</p><p><em>Rulebook p.75.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "17c200041c9bc59a",
+  "_key": "!items!17c200041c9bc59a",
+  "folder": "56c5eedd378f4a41",
+  "sort": 50,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_wide_tock",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Rare",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "6",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "85526c5dc166"
+    }
+  }
+}

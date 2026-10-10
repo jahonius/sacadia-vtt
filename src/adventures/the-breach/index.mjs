@@ -14,7 +14,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { GROUND_WALLS, TOP_WALLS, LEVEL_CHANGES, KINDS, WALL, LIGHTS, LIGHT_KINDS, CLEAR_OF_FOG, FOG_LINE } from './battlefield.mjs';
-import { WORLD, GRID as WORLD_GRID, WALL_FORT, ROAD, SMOKE, TRAVEL_MODES, ROAD_STYLE, SMOKE_STYLE } from './prologue.mjs';
+import { WORLD, GRID as WORLD_GRID, WALL_FORT, ROAD, SMOKE, JOURNEY, ROAD_STYLE, SMOKE_STYLE } from './prologue.mjs';
+import { FACTIONS, PEOPLE, QUEST } from './nexus.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 /**
@@ -49,11 +50,10 @@ export default function build(kit) {
   F.demons = folder('demons', 'Demons', 'Actor', F.actors._id, 200, '#8c1d18');
   F.optional = folder('optional', 'Optional Demons', 'Actor', F.demons._id, 100, '#8c1d18');
   F.props = folder('props', 'Siege Engines & Hazards', 'Actor', F.actors._id, 300);
-  F.culture = folder('culture', 'Tianqi Culture', 'Item', F.items._id, 100);
   F.supplies = folder('supplies', 'Supplies', 'Item', F.items._id, 200);
 
   /* ---------------------------------------------------------------------------------------------------------- */
-  /*  Adventure items: supplies and the Tianqi culture (rulebook v1.2 pp.59–65)                                  */
+  /*  Adventure items: supplies. The Tianqi culture is in the system's Cultures compendium.                      */
   /* ---------------------------------------------------------------------------------------------------------- */
 
   const p = (...paras) => paras.map((t) => `<p>${t}</p>`).join('');
@@ -63,7 +63,7 @@ export default function build(kit) {
       system: { description: p('<strong>Date (Healing)</strong> (Action): Expend one Healing Date from a RIS and choose one target within 5ft '
         + '(you can choose yourself). Remove one level of Battle Fatigue from that target. A target may benefit from a Healing Date '
         + 'no more than once per quick rest. <em>(First Aid, rulebook p.203.)</em>'), quantity: 1, value: 0, storage: 'ris', slots: 1 },
-      flags: { sacadia: { catalogId: 'breach_healing_date' } },
+      flags: { sacadia: { catalogId: 'breach_healing_date', goods: { table: 'first-aid', use: true } } },
     },
     torch: {
       name: 'Torch', type: 'gear', img: 'icons/magic/light/torch-fire-orange.webp',
@@ -72,42 +72,9 @@ export default function build(kit) {
         + 'If you critically fail to hit with it, it goes out. It burns out after one hour, or with a quick rest. <em>(Rulebook p.200.)</em>',
       '<strong>On Chuni\'s Wall:</strong> touch or throw a lit torch onto a creature soaked by an Oil Barrel to ignite it — use the '
         + 'Oil Barrel\'s <em>Ignite</em> ability for the 6D10 Fire damage.'), quantity: 3, value: 0, storage: 'ris', slots: 1 },
-      flags: { sacadia: { catalogId: 'breach_torch' } },
+      // A light source (rules/goods.mjs): lit on the sheet, it lights the pregen's token on the night scene.
+      flags: { sacadia: { catalogId: 'breach_torch', goods: { table: 'illumination', light: { bright: 10, dim: 20, burnsOut: true } } } },
     },
-    red_glyph_of_armor: {
-      name: 'Red Glyph of Armor', type: 'gear', img: 'icons/sundries/scrolls/scroll-bound-sealed-black-red.webp',
-      system: { description: p('<em>Tianqi Inheritance — Very Rare, Rot. 1 slot (Small, Worn, RIS Passive). Attunement.</em>',
-        'A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word "Protection". It is written in blood.',
-        '<strong>Armor of Blood</strong> (Passive): Every Long Rest, denote PD, TD, or MD. Until the next long rest, gain +1 to that stat. '
-        + 'You may change your selection over a long rest. Keep this Glyph in your RIS. <em>(Its effect on this item names the '
-        + 'defense; edit the effect to move it.)</em>',
-        '<strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). '
-        + 'You retain this Glyph Corruption if you remove Attunement to this Glyph. <em>(Rulebook p.65.)</em>'),
-      quantity: 1, value: 0, storage: 'ris', slots: 1 },
-      effects: [{ name: 'Armor of Blood (PD)', img: 'icons/sundries/scrolls/scroll-bound-sealed-black-red.webp', transfer: true, disabled: false,
-        changes: [{ key: 'system.bonuses.defense.pd', mode: 2, value: '1', priority: null }] }],
-      flags: { sacadia: { catalogId: 'breach_red_glyph_of_armor' } },
-    },
-  };
-
-  const tianqi = (key, name, csp, description, extra = {}) => ({
-    name, type: 'ability', img: 'icons/sundries/scrolls/scroll-symbol-eye-brown.webp',
-    system: { description: p(description), tag: 'passive', costs: { ap: 0, csp, madness: 0, limbs: [] },
-      meta: { profession: '', subpath: 'Tianqi culture', prerequisite: 'Tianqi Cultural Heritage' }, ...extra },
-    flags: { sacadia: { catalogId: `tianqi_${key}` } },
-  });
-  const CULTURE = {
-    heibrim_lore: tianqi('heibrim_lore', 'Heibrim Lore', 0, '<em>Starting Cultural Talent.</em> You gain 1 level of Talent Specialization '
-      + 'in Religion: Demon Lore. This level does not require the Religion General Talent to use, and it stacks with any other levels '
-      + 'you would take by leveling into Religion: Demon Lore. Your demon lore also works for all Qianpo demons, even though they are '
-      + 'not demons. <em>(Recorded on the Talents tab as Religion: Demon Lore.)</em>'),
-    dying_strength: tianqi('dying_strength', 'Dying Strength', 2, 'When you are Dying, increase your damage dice of all weapons you use by '
-      + 'one dice type. Additionally, if you take the Help action while Dying, give your ally 2X Advantage instead of 1X advantage.'),
-    ambushed_resiliency: tianqi('ambushed_resiliency', 'Ambushed Resiliency', 2, 'When you are Ambushed, gain damage resistance equal to 2X '
-      + 'Proficiency in the first round of combat.'),
-    demon_points: tianqi('demon_points', 'Demon Points', 4, 'For each fact you learn about an enemy at the start of combat due to Knowledge '
-      + 'Talents, increase damage you deal to that enemy through any attack you make by 1.'),
-    anemic_tolerance: tianqi('anemic_tolerance', 'Anemic Tolerance', 2, 'Reduce the damage dice of Hemorrhage given to you by one dice type.'),
   };
 
   /** A copy of an adventure item, owned by `owner` (or loose in the Items folder when `owner` is null). */
@@ -125,9 +92,18 @@ export default function build(kit) {
     'society', 'history', 'magic', 'religion', 'wilderness', 'other', 'acrobatics', 'athletics', 'nimblehands', 'performance', 'stealth',
     'survival', 'economy', 'medicine', 'perception', 'socialgraces', 'strategy', 'tools', 'transport'];
 
+  // What each pregen's Heritage and ancestry grant (rules/identity.mjs grants them on a sheet; the pregens arrive with
+  // them, as with their weapons' attacks). The Tianqi culture grants Heibrim Lore and Old Bushiu.
+  const HERITAGE_GRANTS = { human: ['her_industrial'], fixerfolk: ['her_fae_attunement'] };
+  const ANCESTRY_GRANTS = { anc_craftsman: ['anc_artisanal_crafting'], anc_talented: ['anc_extra_talents'],
+    anc_resilient: ['anc_strong_constitution'], anc_sylnfolk: ['anc_elemental_resistance'] };
+  const HERITAGE_HP = { human: 10, fixerfolk: 6 };
+  const originSource = (pack, ref) => `Compendium.sacadia.${pack}.Item.${kit.packId(pack, ref)}`;
+
   /**
    * A level-5 Tianqi wall guard. `abilities` are compendium refs (with optional per-item options), `weapons`/`armor`
-   * equipment refs, `gear` adventure supplies. HP = profession HP × 5 + `heritageHp` (the `health.bonus`).
+   * equipment refs, `gear` adventure supplies, `ancestry` an ancestry's catalog id (`picks` sets its grants' picks).
+   * HP = profession HP × 5 + the Heritage's HP at Level 1 (+ Strong Constitution), all derived on the sheet.
    */
   function pregen(key, s) {
     const owner = `actor:${key}`;
@@ -142,10 +118,25 @@ export default function build(kit) {
     }
     for (const a of s.armor ?? []) items.push(kit.owned(owner, a, { system: { equipped: true } }));
     for (const [g, o] of s.gear ?? []) items.push(local(owner, g, SUPPLIES, o));
-    items.push(local(owner, 'heibrim_lore', CULTURE));
+    // An inherited item from the Cultures compendium. The Red Glyph of Armor's Armor of Blood marks a defense (`effectDefense`).
+    for (const [ref, { effectDefense, ...o }] of s.inherited ?? []) {
+      const it = kit.owned(owner, ref, o);
+      if (effectDefense) {
+        it.effects = it.effects.map((e) => ({ ...e, name: `Armor of Blood (${effectDefense.toUpperCase()})`,
+          changes: e.changes.map((c) => ({ ...c, key: `system.bonuses.defense.${effectDefense}` })) }));
+      }
+      items.push(it);
+    }
+    // Heritage, ancestry and culture, and what they grant.
+    items.push(kit.owned(owner, 'culture_tianqi', { flags: { originSource: originSource('cultures', 'culture_tianqi') } }));
+    items.push(kit.owned(owner, s.ancestry, { flags: { originSource: originSource('heritages', s.ancestry) } }));
+    for (const ref of [...HERITAGE_GRANTS[s.heritage], ...ANCESTRY_GRANTS[s.ancestry], 'tianqi_heibrim_lore', 'tianqi_old_bushiu']) {
+      items.push(kit.owned(owner, ref, { flags: { identityGrant: true, grantKey: ref, ...(s.picks?.[ref] ? { pickValue: s.picks[ref] } : {}) } }));
+    }
 
     const level = 5;
-    const maxHp = HP_PER_LEVEL[s.profession] * level + s.heritageHp;
+    const maxHp = HP_PER_LEVEL[s.profession] * level + HERITAGE_HP[s.heritage] + (s.ancestry === 'anc_resilient' ? level : 0);
+    const ancestryName = kit.compendium(s.ancestry).doc.name;
     const talents = Object.fromEntries(TALENT_KEYS.map((t) => [t, { proficient: s.talents.includes(t) }]));
     const actorId = id('actor', key);
     kit.register('actor', key, `Actor.${actorId}`, s.name);
@@ -154,16 +145,17 @@ export default function build(kit) {
       system: {
         level,
         stats: Object.fromEntries(Object.entries(s.stats).map(([k, v]) => [k, { value: v }])),
-        health: { value: maxHp, max: maxHp, bonus: s.heritageHp, temp: 0 },
+        health: { value: maxHp, max: maxHp, bonus: 0, temp: 0 },
         healthPools: { value: level + Math.floor(s.stats.power / 2), max: level + Math.floor(s.stats.power / 2) },
         ap: { value: 3, max: 3 },
         lorePoints: { value: 1 },
         professions: { primary: { key: s.profession, level }, secondary: { key: '', level: 0 } },
-        identity: { culture: 'Tianqi', heritage: s.heritage, ancestry: s.ancestry, age: s.age ?? '', size: 'Medium' },
+        identity: { culture: 'Tianqi', heritage: s.heritage, ancestry: ancestryName, age: s.age ?? '', size: 'Medium' },
         background: s.background,
         biography: s.biography,
         talents,
-        specialties: [{ name: 'Demon Lore (Heibrim Lore)', talent: 'religion', rank: 1 }, ...(s.specialties ?? [])],
+        // Heibrim Lore's rank of Religion: Demon Lore (and any the hero bought on top).
+        specialties: [{ name: 'Demon Lore', talent: 'religion', rank: 1 + (s.demonLore ?? 0), source: 'tianqi_heibrim_lore' }, ...(s.specialties ?? [])],
         classPools: s.classPools ?? {},
         professionResources: s.professionResources ?? {},
         resistances: s.resistances ?? '',
@@ -174,7 +166,7 @@ export default function build(kit) {
       effects: [{ _id: id(owner, 'effect', 'height'), name: 'Height', img: 'icons/svg/up.svg', statuses: ['height'], transfer: false,
         disabled: false, changes: [], flags: {} }],
       ownership: { default: OBSERVER },
-      flags: { sacadia: { pregen: true } },
+      flags: { sacadia: { pregen: true, heritageHpMoved: true } },
     };
   }
 
@@ -188,19 +180,12 @@ export default function build(kit) {
     };
   }
 
-  const LAWS = '<h3>Binding Laws and Customs (Tianqi)</h3><ul>'
-    + '<li><strong>The Rootbinding:</strong> support the war against Ager and the demons of Qianpo above law, religion and family.</li>'
-    + '<li><strong>Ascendancy:</strong> unless of Noble blood, follow the orders of those with the blood of Ascendant heroes.</li>'
-    + '<li><strong>The Dead:</strong> burn the dead immediately and bury their ashes.</li>'
-    + '<li><strong>Right to Victory:</strong> whoever deals the final blow claims the spoils, honors and punishment.</li>'
-    + '<li><strong>Touching Gold:</strong> unless of Noble blood, never willingly touch or carry gold.</li></ul>';
-
   const heroes = [
     pregen('selthimor', {
-      name: 'Selthimor', sort: 100, profession: 'thug', heritage: 'fixerfolk', ancestry: 'Sylnfolk (Mist — Water)', heritageHp: 6,
+      name: 'Selthimor', sort: 100, profession: 'thug', heritage: 'fixerfolk', ancestry: 'anc_sylnfolk',
       stats: { power: 2, finesse: 2, wiles: 0, courage: 2, fate: 0 },
-      // Sylnfolk Elemental Resistance: DR equal to Proficiency against the ancestry's element (rulebook p.88).
-      resistances: 'water 3',
+      // A Sylnid of the lake mists: Elemental Resistance to Water (DR equal to Proficiency, rulebook p.88).
+      picks: { anc_elemental_resistance: 'water' },
       talents: ['athletics', 'acrobatics'],
       specialties: [{ name: 'Climber', talent: 'athletics', rank: 3 }, { name: 'Falling', talent: 'acrobatics', rank: 3 }],
       abilities: [
@@ -221,13 +206,13 @@ export default function build(kit) {
         mementos: '',
       },
       biography: p('<em>Thug, level 5 — Fixerfolk (Sylnfolk of the Mist).</em> Selthimor hits harder every time he hits in a row: get next to '
-        + 'the enemy and keep swinging. See the <strong>How to Play</strong> pages of the player handout.') + LAWS,
+        + 'the enemy and keep swinging. See the <strong>How to Play</strong> pages of the player handout.'),
     }),
     pregen('chunrudar', {
-      name: 'Chunrudar', sort: 200, profession: 'fatebound', heritage: 'human', ancestry: 'Craftsman', heritageHp: 10,
+      name: 'Chunrudar', sort: 200, profession: 'fatebound', heritage: 'human', ancestry: 'anc_craftsman', demonLore: 1,
       stats: { power: 2, finesse: 0, wiles: 0, courage: 2, fate: 2 },
       talents: ['perception', 'medicine', 'religion'],
-      specialties: [{ name: 'Medic', talent: 'medicine', rank: 3 }, { name: 'Demon Lore', talent: 'religion', rank: 1 }],
+      specialties: [{ name: 'Medic', talent: 'medicine', rank: 3 }],
       abilities: [
         'fated_strike', 'heavy_weaponry', 'targeted_foe', 'resilient_foe', 'aware_foe', 'crushing_blow', 'imbued_fury',
         'lucky_break', 'longing_fates',
@@ -246,10 +231,10 @@ export default function build(kit) {
         mementos: '',
       },
       biography: p('<em>Fatebound, level 5 — Human (Craftsman).</em> Chunrudar wields a divine greatsword of mist and twists fate to fumble '
-        + 'his enemies. Use Lucky Break from range, then close in and declare Wanabbul your Targeted Foe.') + LAWS,
+        + 'his enemies. Use Lucky Break from range, then close in and declare Wanabbul your Targeted Foe.'),
     }),
     pregen('honnasusara', {
-      name: 'Honnasusara', sort: 300, profession: 'soldier', heritage: 'human', ancestry: 'Talented', heritageHp: 10,
+      name: 'Honnasusara', sort: 300, profession: 'soldier', heritage: 'human', ancestry: 'anc_talented',
       stats: { power: 2, finesse: 1, wiles: 0, courage: 2, fate: 1 },
       talents: ['perception', 'athletics'],
       specialties: [{ name: 'Sight', talent: 'perception', rank: 3 }, { name: 'Climber', talent: 'athletics', rank: 3 },
@@ -262,7 +247,8 @@ export default function build(kit) {
       weapons: ['spear', 'armored_buckler'],
       // The glyph's Armor of Blood guards her weakest defense (MD); her iron set and buckler cover PD.
       armor: ['professional_iron_set'],
-      gear: [['healing_date', {}], ['red_glyph_of_armor', { effects: [{ name: 'Armor of Blood (MD)', img: 'icons/sundries/scrolls/scroll-bound-sealed-black-red.webp', transfer: true, disabled: false, changes: [{ key: 'system.bonuses.defense.md', mode: 2, value: '1', priority: null }] }] }]],
+      gear: [['healing_date', {}]],
+      inherited: [['tianqi_red_glyph_of_armor', { effectDefense: 'md' }]],
       classPools: { call: { value: 6, max: 6 } },
       background: {
         appearance: 'A breastplate emblazoned with the sigil of the Tianqi — a red and white flower over a blue painted field. A glyphic sigil '
@@ -274,10 +260,10 @@ export default function build(kit) {
         mementos: 'The Red Glyph of Armor, written in her own blood.',
       },
       biography: p('<em>Soldier, level 5 — Human (Talented).</em> A frontline tank and the party\'s support: stay close to your allies and '
-        + 'spend your calls on them.') + LAWS,
+        + 'spend your calls on them.'),
     }),
     pregen('manchuthara', {
-      name: 'Manchuthara', sort: 400, profession: 'sentinel', heritage: 'human', ancestry: 'Resilient', heritageHp: 15,
+      name: 'Manchuthara', sort: 400, profession: 'sentinel', heritage: 'human', ancestry: 'anc_resilient',
       stats: { power: 0, finesse: 2, wiles: 2, courage: 2, fate: 0 },
       talents: ['perception', 'acrobatics'],
       specialties: [{ name: 'Hearing', talent: 'perception', rank: 3 }, { name: 'Falling', talent: 'acrobatics', rank: 3 }],
@@ -301,7 +287,7 @@ export default function build(kit) {
         mementos: '',
       },
       biography: p('<em>Sentinel, level 5 — Human (Resilient).</em> The party\'s ranged damage: stand your ground on the wall and spend your '
-        + 'whole turn on one charged crossbow shot.') + LAWS,
+        + 'whole turn on one charged crossbow shot.'),
     }),
   ];
 
@@ -895,11 +881,31 @@ export default function build(kit) {
   /* ---------------------------------------------------------------------------------------------------------- */
 
   // The Ardus Yauga, for an optional opening on the road to the wall. Its two routes are Indy Route's (scene flags, as
-  // its Route Manager saves them); the Prologue macro makes Chuni's Wall an Augur: Nexus site on it through Nexus's API.
-  // Without the modules it's a map to talk over.
+  // its Route Manager saves them). The Travel Ledger moves the party (a token of its own, at Tianqis) along the road a day
+  // at a time. The Prologue macro files the area in Augur: Nexus through its API: the map as the Nexus scene, Chuni's
+  // Wall as a site that opens the battle map, and the organizations, people and quest in nexus.mjs. Without the modules
+  // it's a map to talk over, and the ledger still moves the token.
   const WORLD_LEVEL = id('level', 'ardus-yauga');
   const xy = ([x, y]) => ({ x, y });
   const route = (key, name, points, settings) => ({ id: id('route', key), name, points: points.map(xy), settings, createdAt: 0, updatedAt: 0 });
+  // The party marker: a token with no actor, so no hero's conditions or bars ride along on the map. 30 px, where a day
+  // on foot is about 32 px.
+  const PARTY_SIZE = 0.3;
+  const partyToken = { _id: id('token', 'world-party'), name: 'The Party', actorId: null, actorLink: false,
+    texture: { src: 'icons/environment/people/group.webp' }, width: PARTY_SIZE, height: PARTY_SIZE,
+    x: ROAD[0][0] - (PARTY_SIZE * WORLD_GRID.size) / 2, y: ROAD[0][1] - (PARTY_SIZE * WORLD_GRID.size) / 2,
+    level: WORLD_LEVEL, elevation: 0, disposition: 1, displayName: 30, displayBars: 0, lockRotation: true, _regions: [], flags: {} };
+  // What the macro files in Nexus, built here (Markdown, actor links) for it to read from the scene's flags.
+  const actorOf = (key) => actors.find((a) => a._id === id('actor', key));
+  const html = (md) => kit.markdown(md).html;
+  const nexus = {
+    factions: FACTIONS.map(({ md, ...f }) => ({ ...f, html: html(md) })),
+    people: PEOPLE.map(({ md, actor, ...p }) => {
+      const a = actor ? actorOf(actor) : null;
+      return { ...p, name: p.name ?? a.name, img: p.img ?? a.img, actorUuid: a ? `Actor.${a._id}` : null, html: html(md) };
+    }),
+    quest: { ...QUEST, md: undefined, image: asset(QUEST.image), html: html(QUEST.md) },
+  };
   const worldScene = {
     _id: worldId, name: 'The Ardus Yauga', navName: 'Prologue', folder: F.scenes._id, sort: 50, navigation: true, navOrder: 0,
     thumb: asset(WORLD.thumb), width: WORLD.width, height: WORLD.height, padding: 0,
@@ -911,15 +917,17 @@ export default function build(kit) {
     tokenVision: false, fog: { mode: 0 },
     environment: { darknessLevel: 0, darknessLock: true, cycle: false },
     journal: id('journal', 'gm'), journalEntryPage: pageId('gm', 'prologue'),
-    notes: [], tokens: [], regions: [], walls: [], lights: [], drawings: [], sounds: [], tiles: [],
+    notes: [], tokens: [partyToken], regions: [], walls: [], lights: [], drawings: [], sounds: [], tiles: [],
     ownership: { default: NONE },
     flags: {
       sacadia: { adventure: 'the-breach',
-        // Read by the Prologue macro: where the Nexus site goes, and the routes and travel modes it plays and offers.
-        prologue: { road: id('route', 'road'), smoke: id('route', 'smoke'), travelModes: TRAVEL_MODES,
-          site: { name: 'Chuni\'s Wall', x: WALL_FORT[0], y: WALL_FORT[1], iconSize: 48 } } },
+        // Read by the Prologue macro: the routes, where the Nexus site goes, and what it files in Nexus.
+        prologue: { road: id('route', 'road'), smoke: id('route', 'smoke'),
+          site: { name: 'Chuni\'s Wall', x: WALL_FORT[0], y: WALL_FORT[1], iconSize: 48 }, nexus },
+        // The Travel Ledger's journey (apps/travel-ledger.mjs), ready on the road.
+        travel: { ...JOURNEY, routeId: id('route', 'road'), tokenId: partyToken._id, travelled: 0, log: [] } },
       'indy-route': { routes: [
-        route('road', 'The Road to the Wall', ROAD, { ...ROAD_STYLE, dotTokenUuid: `Actor.${actorId.Selthimor}` }),
+        route('road', 'The Road to the Wall', ROAD, ROAD_STYLE),
         route('smoke', 'Smoke Along the Wall', SMOKE, SMOKE_STYLE),
       ] },
     },
@@ -937,9 +945,14 @@ export default function build(kit) {
   const macros = [{ _id: id('macro', 'breach'), name: 'Breach Chuni\'s Wall', type: 'script', scope: 'global', folder: F.macros._id,
     img: 'icons/environment/settlement/building-rubble.webp', command: fs.readFileSync(path.join(HERE, 'macros', 'breach-the-wall.js'), 'utf8'),
     ownership: { default: NONE }, flags: { sacadia: { adventure: 'the-breach' } } },
-  // The prologue: the world map for everyone, the road to the wall, and Chuni's Wall as a site that opens the fight.
-  { _id: id('macro', 'prologue'), name: 'Prologue: The Road to the Wall', type: 'script', scope: 'global', folder: F.macros._id, sort: -1,
+  // The prologue: the world map for everyone, and the area filed in Augur: Nexus.
+  { _id: id('macro', 'prologue'), name: 'Prologue: The Ardus Yauga', type: 'script', scope: 'global', folder: F.macros._id, sort: -2,
     img: 'icons/tools/navigation/map-chart-tan.webp', command: fs.readFileSync(path.join(HERE, 'macros', 'prologue.js'), 'utf8'),
+    ownership: { default: NONE }, flags: { sacadia: { adventure: 'the-breach' } } },
+  // The Travel Ledger, for the scene in view.
+  { _id: id('macro', 'travel-ledger'), name: 'Travel Ledger', type: 'script', scope: 'global', folder: F.macros._id, sort: -1,
+    img: 'icons/tools/navigation/compass-brass-blue-red.webp',
+    command: '// The Travel Ledger: Sacadia\'s travel rules a day at a time, for the party on the scene you\'re viewing (the GM).\ngame.sacadia.travelLedger(canvas.scene);\n',
     ownership: { default: NONE }, flags: { sacadia: { adventure: 'the-breach' } } }];
 
   /* ---------------------------------------------------------------------------------------------------------- */
@@ -960,7 +973,6 @@ export default function build(kit) {
   /* ---------------------------------------------------------------------------------------------------------- */
 
   const looseItems = [
-    ...Object.keys(CULTURE).map((k) => ({ ...local(null, k, CULTURE), folder: F.culture._id })),
     ...Object.keys(SUPPLIES).map((k) => ({ ...local(null, k, SUPPLIES), folder: F.supplies._id })),
   ];
 
@@ -974,8 +986,7 @@ export default function build(kit) {
       + 'for the flesh of humanity — hungry for you. It is a quiet and tense post. Until it isn\'t.',
     '<strong>Contents:</strong> a world map for an optional prologue on the road to the wall; the Chuni\'s Wall battle map with tokens, '
       + 'siege engines and an automated pit trap; four pregenerated '
-      + 'level-5 Tianqi wall guards; Wanabbul the Vast and three optional demons; a GM guide and player handouts; and the Tianqi '
-      + 'culture\'s cultural abilities and inheritance for players who bring their own characters.'),
+      + 'level-5 Tianqi wall guards; Wanabbul the Vast and three optional demons; and a GM guide and player handouts.'),
     sort: 0,
     folders: Object.values(F),
     actors,

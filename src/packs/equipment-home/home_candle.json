@@ -1,0 +1,33 @@
+{
+  "_id": "f16cfa40bb0105e5",
+  "_key": "!items!f16cfa40bb0105e5",
+  "name": "Candle",
+  "type": "gear",
+  "img": "icons/sundries/lights/candle-unlit-tan.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 110,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1sc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_candle",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "5ac29bdfcf42"
+    }
+  }
+}

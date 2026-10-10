@@ -1,0 +1,37 @@
+{
+  "name": "Morli’s Scroll of Contract Law",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot. Attunement. Relic.</em></p><p><strong>Prerequisites:</strong> Proficiency[4], Society: Myrgha[3].</p><p>A crusty and well-loved scroll, scribbled with personal legalist notes of the religious Bureaucrat Itthoasuan Morli. This scroll is a thickly woven tapestry, organized by section, designed to enable the use of astrological contractual pacts.</p><p><strong>Morli’s Contracts</strong> (Passive): You may create new pacts by weaving powerful magics through contract law. To use any of these pacts, you must have this book equipped in both hands. You gain 3 Fatigue if your Focus ends on any below ability during combat through any cause (including willingly ending Focus). You can buy the following abilities using combat skill points to use when you have the pact book equipped:</p><p><strong>Its pacts:</strong> @UUID[Compendium.sacadia.cultures.Item.9249322eba82dd01]{Law of the Trade}, @UUID[Compendium.sacadia.cultures.Item.8316f0a8efa5d81d]{Law of Earth}, @UUID[Compendium.sacadia.cultures.Item.f16899462aaeee84]{Law of Luck}, @UUID[Compendium.sacadia.cultures.Item.6de2aea18591d986]{Law of Pincushions}</p><p><em>Rulebook p.36.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "f573b45ce4ecbf78",
+  "_key": "!items!f573b45ce4ecbf78",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 150,
+  "img": "icons/sundries/books/book-embossed-bound-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_morlis_scroll_of_contract_law",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": true,
+        "special": ""
+      },
+      "buildHash": "77205a4c9982"
+    }
+  }
+}

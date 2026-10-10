@@ -1,0 +1,39 @@
+{
+  "_id": "287d472787efe782",
+  "_key": "!items!287d472787efe782",
+  "name": "Candle",
+  "type": "gear",
+  "img": "icons/sundries/lights/candle-unlit-white.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Candle</strong> (Passive): When you hold a candle in one hand, and it is lit, it gives off 5ft of dim light. It burns out after one hour, or with a quick rest.</p><p><strong>Illuminate/Extinguish</strong> (Action): You light (or extinguish) a source of illumination held in one hand provided you have Flint and Tinder in a combat-readied item slot. All light sources are Quickdraw.</p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 1sc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "candle",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "bright": 0,
+          "dim": 5,
+          "burnsOut": true
+        }
+      },
+      "bargain": "illumination",
+      "buildHash": "3b856146684a"
+    }
+  }
+}

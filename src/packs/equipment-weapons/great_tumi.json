@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "great_tumi",
       "kind": "weapon",
-      "buildHash": "110afb4c085d"
+      "bargain": "imbued-weapons",
+      "buildHash": "43d6c84e1841"
     }
   }
 }

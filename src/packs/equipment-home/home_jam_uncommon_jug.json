@@ -1,0 +1,34 @@
+{
+  "_id": "e425976e3be9be4e",
+  "_key": "!items!e425976e3be9be4e",
+  "name": "Jam - Uncommon (Jug)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/jug-terracotta-orange.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 200,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_jam_uncommon_jug",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "69319bc34e8e"
+    }
+  }
+}

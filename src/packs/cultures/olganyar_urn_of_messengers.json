@@ -1,0 +1,37 @@
+{
+  "name": "Urn of Messengers",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot. Attunement. Uses: 4.</em></p><p><strong>Prerequisites:</strong> Literacy General Talent</p><p>This small, unassuming urn contains seven small chunks of raw amber inside, each of which vibrates and lightly glows.</p><p><strong>Infused Flavors</strong> (Passive): This small, simply carved urn has chunks of raw amber inside. Each stone thrums with movement. You may expend a charge during a nightly rest on the following:</p><p><strong>Amber of Heavens</strong> (Ceremony): Write a small message on this stone of no more than 16 words, or one simple depiction. The stone will travel up to three hexes, or 60 miles, to the intended target, impart the message visibly and without sound. In order to select a recipient, you must both know the target well and be able to picture them in your mind. They must be within range. If they are not within range, you learn the general direction of the target when you use this item. Be warned: If the target does not have Literacy, they may be unable to read your message.</p><p><em>Rulebook p.56.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "635d70e80c780ab1",
+  "_key": "!items!635d70e80c780ab1",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 90,
+  "img": "icons/commodities/materials/bowl-powder-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_urn_of_messengers",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "4",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "c57a91f44ba1"
+    }
+  }
+}

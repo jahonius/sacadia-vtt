@@ -1,0 +1,34 @@
+{
+  "_id": "5f68d991e18e42f2",
+  "_key": "!items!5f68d991e18e42f2",
+  "name": "Garum (Bottle)",
+  "type": "gear",
+  "img": "icons/consumables/potions/bottle-pear-corked-pink.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 150,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_garum_bottle",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "6f159158b147"
+    }
+  }
+}

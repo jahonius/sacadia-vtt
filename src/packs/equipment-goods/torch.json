@@ -1,0 +1,53 @@
+{
+  "_id": "c15a2cb14161adcd",
+  "_key": "!items!c15a2cb14161adcd",
+  "name": "Torch",
+  "type": "gear",
+  "img": "icons/sundries/lights/torch-brown.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 90,
+  "system": {
+    "description": "<p><strong>Torch</strong> (Passive, Action): When you hold a lit torch in one hand, it gives off 10ft of bright light and 20ft of dim. In combat, you may treat this torch as a club (5ft Melee range, 1D6 Bludgeon vs. PD). If it is lit, deal Fire damage instead of Bludgeon. If you critically fail to hit a creature with a torch, it goes out. It burns out after one hour, or with a quick rest.</p><p><strong>Illuminate/Extinguish</strong> (Action): You light (or extinguish) a source of illumination held in one hand provided you have Flint and Tinder in a combat-readied item slot. All light sources are Quickdraw.</p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 2sc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 5
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "torch",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "bright": 10,
+          "dim": 20,
+          "burnsOut": true,
+          "litDamage": "Fire"
+        }
+      },
+      "bargain": "illumination",
+      "buildHash": "511a396c7a19"
+    }
+  }
+}

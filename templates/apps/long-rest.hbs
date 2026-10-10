@@ -1,0 +1,75 @@
+{{!-- The Long Rest window (apps/long-rest.mjs): a Long Rest Action for each week of downtime, and what each needs. --}}
+<div class="long-rest">
+  <p class="lr-intro">{{localize 'SACADIA.Downtime.Intro'}}</p>
+
+  <ol class="lr-weeks">
+    {{#each weeks as |w|}}
+    <li class="lr-week{{#if w.warn}} warn{{/if}}">
+      <div class="lr-head">
+        <b class="lr-n">{{localize 'SACADIA.Downtime.WeekN' n=w.n}}</b>
+        <select name="weeks.{{w.index}}.kind">{{selectOptions @root.kinds selected=w.kind localize=true}}</select>
+        <span class="lr-page">p.{{w.page}}</span>
+        {{#if (gt @root.weeks.length 1)}}<a class="lr-remove" data-action="removeWeek" data-index="{{w.index}}" title="{{localize 'SACADIA.Downtime.RemoveWeek'}}"><i class="fa-solid fa-xmark"></i></a>{{/if}}
+      </div>
+      <div class="lr-detail">
+        {{#if w.is_earn}}
+        <label>{{localize 'SACADIA.Downtime.Work'}}
+          <select name="weeks.{{w.index}}.earn">{{selectOptions @root.earn selected=w.earn}}</select></label>
+        {{#if w.manualEarn}}
+        <label class="narrow">{{localize 'SACADIA.Downtime.Earned'}}
+          <input type="number" name="weeks.{{w.index}}.amount" value="{{w.amount}}" min="0" step="1"/></label>
+        <label class="wide">{{localize 'SACADIA.Downtime.What'}}
+          <input type="text" name="weeks.{{w.index}}.text" value="{{w.text}}"/></label>
+        {{/if}}
+        {{/if}}
+        {{#if w.is_influence}}
+        <label class="wide">{{localize 'SACADIA.Downtime.Group'}}
+          <input type="text" name="weeks.{{w.index}}.group" value="{{w.group}}" list="{{@root.listId}}" placeholder="{{localize 'SACADIA.Downtime.GroupHint'}}"/></label>
+        {{/if}}
+        {{#if w.is_offering}}
+        <label>{{localize 'SACADIA.Downtime.Offering'}}
+          <select name="weeks.{{w.index}}.offeringItem">{{selectOptions @root.offerings selected=w.offeringItem blank=(localize 'SACADIA.Downtime.NoOfferingItem')}}</select></label>
+        <label class="narrow">{{localize 'SACADIA.Downtime.Gold'}}
+          <input type="number" name="weeks.{{w.index}}.gold" value="{{w.gold}}" min="0" step="100"/></label>
+        <label>{{localize 'SACADIA.Downtime.Religion'}}
+          <select name="weeks.{{w.index}}.religion">{{selectOptions @root.religion selected=w.religion blank="—"}}</select></label>
+        {{/if}}
+        {{#if w.is_pray}}
+        <label>{{localize 'SACADIA.Downtime.Religion'}}
+          <select name="weeks.{{w.index}}.religion">{{selectOptions @root.religion selected=w.religion blank="—"}}</select></label>
+        <label class="wide">{{localize 'SACADIA.Downtime.Question'}}
+          <input type="text" name="weeks.{{w.index}}.text" value="{{w.text}}"/></label>
+        {{/if}}
+        {{#if w.is_lead}}
+        <label class="wide">{{localize 'SACADIA.Downtime.Lead'}}
+          <input type="text" name="weeks.{{w.index}}.text" value="{{w.text}}"/></label>
+        {{/if}}
+        {{#if w.is_craft}}
+        <label class="wide">{{localize 'SACADIA.Downtime.Craft'}}
+          <input type="text" name="weeks.{{w.index}}.text" value="{{w.text}}"/></label>
+        {{/if}}
+        {{#if w.is_train}}
+        <label class="wide">{{localize 'SACADIA.Downtime.TrainWhat'}}
+          <select name="weeks.{{w.index}}.train">{{selectOptions @root.train selected=w.train blank="—"}}</select></label>
+        {{/if}}
+        {{#if w.is_other}}
+        <label class="wide">{{localize 'SACADIA.Downtime.What'}}
+          <input type="text" name="weeks.{{w.index}}.text" value="{{w.text}}"/></label>
+        {{/if}}
+        {{#if w.is_harvest}}<p class="lr-hint">{{localize 'SACADIA.Downtime.HarvestNote'}}</p>{{/if}}
+        {{#if w.is_shop}}<p class="lr-hint">{{localize 'SACADIA.Downtime.ShopHint'}}</p>{{/if}}
+      </div>
+      {{#if w.note}}<p class="lr-note">{{w.note}}</p>{{/if}}
+    </li>
+    {{/each}}
+  </ol>
+  <datalist id="{{listId}}">{{#each groups as |g|}}<option value="{{g}}"></option>{{/each}}</datalist>
+
+  <p class="lr-hint">{{localize 'SACADIA.Downtime.Swap'}}</p>
+
+  <footer class="lr-actions">
+    <button type="button" data-action="addWeek"><i class="fa-solid fa-plus"></i> {{localize 'SACADIA.Downtime.AddWeek'}}</button>
+    <span class="lr-purse"><i class="fa-solid fa-coins"></i> {{money.gc}}gc {{#if money.sc}}{{money.sc}}sc{{/if}}</span>
+    <button type="button" class="lr-go" data-action="takeRest"><i class="fa-solid fa-campground"></i> {{localize 'SACADIA.Downtime.Take' n=weeks.length}}</button>
+  </footer>
+</div>

@@ -16,7 +16,8 @@
       "catalogId": "brittlework",
       "kind": "adornment",
       "armorPrereq": "Wrought Style",
-      "buildHash": "5dc0e5703972"
+      "bargain": "adornments",
+      "buildHash": "a2f39810d6db"
     }
   }
 }

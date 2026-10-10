@@ -1,0 +1,41 @@
+{
+  "name": "Minister of the Post",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Uncommon, Air. No item slots.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Society:Cunei[1], Proficiency[3]</p><p>You are a dedicated civil servant acquainted with mail services</p><p><strong>Influential</strong> (Ceremony): Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:<br/>Take Pay: Gain 50gp<br/>Gain Lead: Gain 1 lead related to a hint or plot point actively on-going in your campaign by reading the mail</p><p><em>Rulebook p.45.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "554d8db6eac1cdb1",
+  "_key": "!items!554d8db6eac1cdb1",
+  "folder": "c931f980fe44bd4d",
+  "sort": 50,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_minister_of_the_post",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "business": {
+        "earn": "50",
+        "note": "Take Pay, at the Ministry."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "64996c9d39f6"
+    }
+  }
+}

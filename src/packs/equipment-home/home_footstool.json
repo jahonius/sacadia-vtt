@@ -1,0 +1,33 @@
+{
+  "_id": "510126eca6b1c86c",
+  "_key": "!items!510126eca6b1c86c",
+  "name": "Footstool",
+  "type": "gear",
+  "img": "icons/commodities/wood/furniture-stool-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 190,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_footstool",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "ac225f4f377d"
+    }
+  }
+}

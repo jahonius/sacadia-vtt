@@ -1,0 +1,71 @@
+{
+  "_id": "c94cb3fa33157db1",
+  "_key": "!items!c94cb3fa33157db1",
+  "name": "With All Haste",
+  "type": "ability",
+  "img": "icons/skills/movement/figure-running-gray.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 50,
+  "system": {
+    "description": "<p>You may use Finesse for melee attack to-hit and damage when in Pack Form. <em>(Applied when your Finesse is the higher.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "melee"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Pack Form Ancestry",
+      "prerequisite": "Pack Form · p.92"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "With All Haste",
+        "target": "toHit",
+        "value": "max(0, @finesse - @power)",
+        "predicate": [
+          {
+            "atom": "attack:melee"
+          },
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      },
+      {
+        "label": "With All Haste",
+        "target": "damage",
+        "value": "max(0, @finesse - @power)",
+        "predicate": [
+          {
+            "atom": "attack:melee"
+          },
+          {
+            "atom": "self:form:pack"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_with_all_haste",
+      "transcribed": true,
+      "buildHash": "5f345a6b5320"
+    }
+  }
+}

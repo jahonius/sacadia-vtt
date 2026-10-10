@@ -1,0 +1,52 @@
+{
+  "_id": "d67a4e4b234fd5c3",
+  "_key": "!items!d67a4e4b234fd5c3",
+  "name": "Grasswinds",
+  "type": "ability",
+  "img": "icons/magic/air/air-wave-gust-blue.webp",
+  "folder": "c7b9fbce013a6974",
+  "sort": 20,
+  "system": {
+    "description": "<p>As a Boost to a Move action once per turn, you may increase your Move Speed by 5ft for that Move action.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Grassfolk Ancestry",
+      "prerequisite": "Lightly Warped · p.73"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_grasswinds",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "d3cd33f30cf3"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "_id": "aeb1c6fdd35028b0",
+  "_key": "!items!aeb1c6fdd35028b0",
+  "name": "Perfect Polishing",
+  "type": "ability",
+  "img": "icons/weapons/swords/sword-guard-steel-green.webp",
+  "folder": "d438317767df20cc",
+  "sort": 20,
+  "system": {
+    "description": "<p>Choose one iron weapon you use. You gain +1 To-Hit and damage with that weapon. <em>(Choose its type on this card.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: All Cunei",
+      "prerequisite": "Cunei Cultural Heritage, Soldier · p.43"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Perfect Polishing",
+        "target": "toHit",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:cunei_perfect_polishing"
+          }
+        ]
+      },
+      {
+        "label": "Perfect Polishing",
+        "target": "damage",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:picked:cunei_perfect_polishing"
+          }
+        ]
+      }
+    ],
+    "pick": {
+      "options": [],
+      "label": "",
+      "requires": [],
+      "kind": "weaponType"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_perfect_polishing",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "3e114ab065fc"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "e40633f47ddb5d43",
+  "_key": "!items!e40633f47ddb5d43",
+  "name": "Candle Holder (Bronze)",
+  "type": "gear",
+  "img": "icons/sundries/lights/candle-pillar-lit-yellow.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 120,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 40gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 40,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_candle_holder_bronze",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "b50a0aaa469f"
+    }
+  }
+}

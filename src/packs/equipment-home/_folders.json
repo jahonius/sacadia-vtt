@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "19c0d59a5474f965",
+    "_key": "!folders!19c0d59a5474f965",
+    "name": "Property",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 1000,
+    "color": null,
+    "description": "<p>Where homes and businesses may be purchased, these prices are a baseline. The value of homes may fluctuate for other reasons, such as the location of the area; market values may also indicate the economic prosperity of a region.</p>",
+    "flags": {}
+  },
+  {
+    "_id": "7bea17507ecef153",
+    "_key": "!folders!7bea17507ecef153",
+    "name": "Trade Goods",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 2000,
+    "color": null,
+    "description": "<p>Trade Goods often vary wildly in value depending upon region; these prices are the average global value in Sacadia. Whole campaigns may be formed (especially in Trade games) around market manipulations of the values of these goods, which are common in Sacadia’s early economy.</p>",
+    "flags": {}
+  },
+  {
+    "_id": "0de756cb3b651981",
+    "_key": "!folders!0de756cb3b651981",
+    "name": "Furnishings",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 3000,
+    "color": null,
+    "description": "<p>In order to furnish a home or business, you need to buy furniture, cooking supplies, and other supplies; these prices give a sense of their costs.</p>",
+    "flags": {}
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "_id": "86f81918e525fa11",
+  "_key": "!items!86f81918e525fa11",
+  "name": "Repair Kit (Greater)",
+  "type": "gear",
+  "img": "icons/tools/smithing/tongs-steel-grey.webp",
+  "folder": "d4a9149605aa8f61",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Repair Kit</strong> (Ceremony): <em>Prerequisite: Smithing General Talent or Tailoring General Talent.</em> Repair Kits have X charges. During Quick Rests, you may expend any number of charges. For each charge expended, choose one set of Armor with Rend and make a Smithing Check (in the case of Heavy Armor) or Tailoring Check (in the case of Light or Medium Armor) against your own Check DC. If you succeed, remove one rend from that armor. Repair Kits expend all charges during a Long Rest.</p><p><strong>Repair Kit (Greater)</strong> (Passive): Has 3 Charges.</p><p class=\"goods-facts\">2 Item Slots · 300gc · Weapon & Armor Kits, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "repair_kit_greater",
+      "kind": "goods",
+      "goods": {
+        "table": "kits"
+      },
+      "bargain": "adventuring",
+      "buildHash": "ea98d89c1c90"
+    }
+  }
+}

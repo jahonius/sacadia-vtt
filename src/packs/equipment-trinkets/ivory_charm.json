@@ -3,19 +3,32 @@
   "_key": "!items!261c5a6ee52982fd",
   "name": "Ivory Charm",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/commodities/bones/bone-fragments-grey.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 60,
   "system": {
-    "description": "<p>As a reaction when you are Steadied and have an Ivory Charm in your RIS, roll 1D20. The first time on your next turn you would roll a D20, use this roll instead.</p>",
+    "description": "<p><strong>Ivory Charm</strong> (Reaction): As a reaction when you are Steadied and have an Ivory Charm in your RIS, you may roll 1D20. The first time on your next turn that you would roll a D20, do not roll 1D20; use this roll instead.</p><p class=\"goods-facts\">1 Item Slot (Small, RIS Passive) · 60gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 0
+    "value": 60,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "ivory_charm",
       "kind": "trinket",
-      "buildHash": "612998c0d0f0"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "0ed96d762f38"
     }
   }
 }

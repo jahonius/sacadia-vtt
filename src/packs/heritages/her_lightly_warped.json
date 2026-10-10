@@ -1,0 +1,46 @@
+{
+  "_id": "a4b4e5b104445610",
+  "_key": "!items!a4b4e5b104445610",
+  "name": "Lightly Warped",
+  "type": "ability",
+  "img": "icons/magic/earth/orb-ringed-lava-black-orange.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 20,
+  "system": {
+    "description": "<p>You have a small touch of a nearby Font. Denote a hint of its presence in your appearance (e.g., unnatural eyes or hair). Then, take one Human Ancestry or Heritage ability.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fontborne Heritage",
+      "prerequisite": "p.89"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_lightly_warped",
+      "transcribed": true,
+      "heritage": "fontborne",
+      "heritageChoice": "light",
+      "buildHash": "bd8ddd48c97f"
+    }
+  }
+}

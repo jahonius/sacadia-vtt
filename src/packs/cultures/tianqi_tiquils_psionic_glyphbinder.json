@@ -1,0 +1,37 @@
+{
+  "name": "Tiquil’s Psionic Glyphbinder",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot (Small, Quickdraw). Uses: 1.</em></p><p>A small paper glyph, wrapped around a cloth clasp, bearing the family sigil of Tiquil, the lordship of Kjerstwall.</p><p><strong>Glyphbinding</strong> (Action): When you are within 5ft of a creature, you may clasp this to them with an action. They may fight the effect with a Finesse Check made against your Check DC. If they fail, Immediately, any telepathic connection they have with another creature, including all Fatebound connections, are immediately severed for as long as the clasp is on their body. If a Fatebound loses connection to their Binder, they immediately take levels of Fatigue equal to their Proficiency (no Trait Checks against the effect, max: 6). The clasp can be easily destroyed with an action, renewing the connection one round after the severing.</p><p><em>Rulebook p.67.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "06bbe6de585db1d3",
+  "_key": "!items!06bbe6de585db1d3",
+  "folder": "76562f6c37f89b61",
+  "sort": 130,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_tiquils_psionic_glyphbinder",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "e4f507e90851"
+    }
+  }
+}

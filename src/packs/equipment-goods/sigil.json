@@ -1,0 +1,33 @@
+{
+  "_id": "efa8f0d1f954d7ee",
+  "_key": "!items!efa8f0d1f954d7ee",
+  "name": "Sigil",
+  "type": "gear",
+  "img": "icons/magic/symbols/rune-sigil-green.webp",
+  "folder": "c55d621768d42933",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Add-On</strong> (Passive): Add-Ons are made to an item with the Clothes Set property. They take no item slot: denote them on the Clothing Set to which they are added.</p><p><strong>Sigil</strong> (Passive): This item identifies something about you: it can be your family sigil, your country, or your guild. When you purchase this item, denote what it signifies. At a glance, anyone can identify the sigil. You may add a maximum of 1 Sigil to any Clothing Set.</p><p class=\"goods-facts\">No Item Slot · 5gc · Clothing Add-Ons, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "sigil",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "sigil",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing-add-ons"
+      },
+      "buildHash": "bcc9f9bcfb64"
+    }
+  }
+}

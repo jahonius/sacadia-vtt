@@ -1,0 +1,41 @@
+{
+  "name": "Minister of Agriculture",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Uncommon, Earth. No item slots.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Wilderness:Flora[1], Proficiency[3]</p><p>You are a dedicated civil servant acquainted with agriculture</p><p><strong>Influential</strong> (Ceremony): Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:<br/>Take Pay: Gain 50gp<br/>Gain Influence: Gain 1 Influence with the Ministry of Agriculture or a Myrgha Oligarch</p><p><strong>Agricultural Insights</strong> (Passive): When you use Wilderness:Flora regarding crops, you succeed even if you would fail.</p><p><em>Rulebook p.45.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "52c02d3b2c3c9fd3",
+  "_key": "!items!52c02d3b2c3c9fd3",
+  "folder": "c931f980fe44bd4d",
+  "sort": 40,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_minister_of_agriculture",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "business": {
+        "earn": "50",
+        "note": "Take Pay, at the Ministry."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "0fcc06b8d7eb"
+    }
+  }
+}

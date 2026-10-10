@@ -1,0 +1,33 @@
+{
+  "_id": "c6c63131d82746b5",
+  "_key": "!items!c6c63131d82746b5",
+  "name": "Fountain",
+  "type": "gear",
+  "img": "icons/commodities/stone/masonry-block-cube-white.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 200,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 400gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 400,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fountain",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "277088a09d10"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Grappleshot",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Legendary[1], Rot. 1 item slot. Attunement. Special Property: Spores.</em></p><p><strong>Prerequisites:</strong> Wiles[4]</p><p>A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!</p><p><strong>Grappleshot</strong> (Action): Make an attack using Finesse against a target ‘s TD within 40ft. If you hit, they take 3D10+Finesse damage and they make a Power Check against your Check DC against the Dragged condition. For as long as they have the rope embedded in them, they cannot fly (if they have wings). As a reaction, you may release the rope. The target can only end the Dragged Condition when they remove the rope (which requires a Power check against your Check DC using the Make Trait Check action).</p><p><strong>Load Grappling Hook</strong> (Action): You load the grappling hook with a shot.</p><p><strong>Hook Ledge</strong> (Action): You fire a shot up to 40ft, locking the rope into a spot within range. This creates a taught rope that can be climbed or balanced across using Acrobatics.</p><p><em>Rulebook p.76.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b5116a4275f9ef00",
+  "_key": "!items!b5116a4275f9ef00",
+  "folder": "56c5eedd378f4a41",
+  "sort": 60,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_grappleshot",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Legendary[1]",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": "Spores"
+      },
+      "buildHash": "c07842843c23"
+    }
+  }
+}

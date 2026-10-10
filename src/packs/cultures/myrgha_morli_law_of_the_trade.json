@@ -1,0 +1,45 @@
+{
+  "_id": "9249322eba82dd01",
+  "_key": "!items!9249322eba82dd01",
+  "name": "Law of the Trade",
+  "type": "ability",
+  "img": "icons/skills/social/trading-justice-scale-yellow.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 120,
+  "system": {
+    "description": "<p>Choose two targets on the same side in a combat that are within 2 CR levels of one another. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. Both targets must be within 60ft of you. All attacks made against you are additionally treated as 1X Advantage for as long as you maintain Focus on this.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Morli’s Contracts",
+      "prerequisite": "Morli’s Scroll of Contract Law, Economy: Appraise[3] · p.36"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_morli_law_of_the_trade",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "3b71afe8e5cd"
+    }
+  }
+}

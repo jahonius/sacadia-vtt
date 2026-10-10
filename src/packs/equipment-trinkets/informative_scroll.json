@@ -3,19 +3,32 @@
   "_key": "!items!e6076c0986a51c7d",
   "name": "Informative Scroll",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/sundries/scrolls/scroll-writing-tan.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 50,
   "system": {
-    "description": "<p>Choose one Knowledge Talent you possess. While this scroll is equipped in a RIS slot, gain +1 to all checks made with that Talent. Informative Scrolls do not stack.</p>",
+    "description": "<p><strong>Informative Scroll</strong> (Passive): When you purchase an Informative Scroll, choose one Knowledge Talent you possess. Provided this scroll is equipped in a RIS slot, you gain +1 to all Knowledge Talents made with this Talent. The effects of Informative Scrolls do not stack. <em>(On the sheet: name it after the Talent, e.g. “Informative Scroll (History)”.)</em></p><p class=\"goods-facts\">1 Item Slot (RIS Passive) · 100gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 0
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "informative_scroll",
       "kind": "trinket",
-      "buildHash": "20f54951bda1"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "aa009117a54e"
     }
   }
 }

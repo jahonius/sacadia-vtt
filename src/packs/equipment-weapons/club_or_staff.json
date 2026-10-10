@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "club_or_staff",
       "kind": "weapon",
-      "buildHash": "92d56a8f8dd5"
+      "bargain": "basic-weapons",
+      "buildHash": "8279007d271c"
     }
   }
 }

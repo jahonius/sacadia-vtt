@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "bone_cudgel",
       "kind": "weapon",
-      "buildHash": "a935f513ff1d"
+      "bargain": "imbued-weapons",
+      "buildHash": "2e0fa7eed392"
     }
   }
 }

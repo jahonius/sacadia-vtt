@@ -1,0 +1,34 @@
+{
+  "_id": "2b381695588ccdda",
+  "_key": "!items!2b381695588ccdda",
+  "name": "Wood Slips / Slip",
+  "type": "gear",
+  "img": "icons/commodities/wood/lumber-plank-beige.webp",
+  "folder": "b3df56e11756d6aa",
+  "sort": 90,
+  "system": {
+    "description": "<p><strong>Write</strong> (Ceremony): <em>Prerequisite: Literacy.</em> You create a written work during rests and downtime. For each hour you spend writing, you may create one page worth of quality written word, or three pages of hasty scrawl. To do this, you must have something to write with (charcoal, ink, etc.) and something to write on (paperweave, scroll, wood slips). The raw ingredients used to create your written document are consumed when you write. You may write anything during nightly rests, or small notes to reference later during quick rests.</p><p><strong>Draw/Paint</strong> (Ceremony): <em>Prerequisite: Illustration[1].</em> You create an illustrated work during rests. For each hour you spend drawing or painting, you may create one canvas of quality painting or illustration. To do this, you must have something to illustrate with (charcoal, ink, etc.) and something to paint on (paperweave, scroll, wood slips). The raw ingredients used to create your illustrated document are consumed when you draw.</p><p class=\"goods-facts\">1 Item Slot (Small) · 1sc · Literary Tools, rulebook p.205</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "small",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "wood_slips_slip",
+      "kind": "goods",
+      "goods": {
+        "table": "literary"
+      },
+      "bargain": "literary",
+      "buildHash": "cfde957a6edc"
+    }
+  }
+}

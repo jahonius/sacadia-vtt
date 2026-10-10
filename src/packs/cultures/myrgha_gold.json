@@ -1,0 +1,37 @@
+{
+  "name": "Gold",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a business. Common, Salt. No item slots.</em></p><p>You have a lot of savings. This is probably helpful. You feel better than everyone else, at least.</p><p><strong>Starting Gold</strong> (Passive): At the start of this campaign, start off with 5x as much money as everyone else.</p><p><em>Rulebook p.33.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "7ea172918440fb7a",
+  "_key": "!items!7ea172918440fb7a",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 30,
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_gold",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Common",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "0efe2c43b010"
+    }
+  }
+}

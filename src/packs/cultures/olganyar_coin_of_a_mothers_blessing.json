@@ -1,0 +1,37 @@
+{
+  "name": "Coin of a Mother’s Blessing",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot (Small, RIS Passive). Attunement. Special Property: Cursed.</em></p><p><strong>Prerequisites:</strong> Amber Fontborne Heritage (see The Coins’ Curse)</p><p>This small gold coin was once imprinted with cranberries on one side and an unknown, matronly figure on the other. It is very old, a relic of a time before the Olganyar. It has been roughly shorn into two parts. One roughly depicts the matronly figure and has quickly faded and tarnished, while the other remains gleaming and vividly depicts cranberries. In spite of the tarnish and age, both pieces fit together easily, though they do not stay together - instead, they must be affixed together by a jeweler.</p><p><strong>Cranberry Coin</strong> (Reaction): If you are attuned to the Cranberry Coin, the first time each combat you would take damage, you may use a reaction to reduce the damage by up to 5X (X is your Proficiency)</p><p><strong>Matron Coin</strong> (Passive): If you are attuned to the Matron Coin, treat your HP Pools as one dice type greater when you quick rest.</p><p><strong>Blessed Coin</strong> (Passive): It costs 20gp for a jeweler to affix both coins together. If affixed, it takes one attunement slot to benefit from both Matron and Cranberry coin effects. Additionally, the first time you would die, instead, do not die (retain only 1HP from death). The Matron Coin breaks off and disappears, unable to be found by the wielder in this lifetime. Instead, another, future member of your line will come into possession of the matron coin. You may only use this effect if you have committed siblicide to claim the second half of your family coin.</p><p><strong>The Coins’ Curse.</strong> The Coin of a Mother’s Blessing is a cursed artifact of the Olganyar, handed down through a single family, the descendants of Aia and Gritt (two priests and forbidden lovers from the origin myths of the Olganyar). The coin halves always pass to two siblings. Both siblings are always also the only two Amber Fontborne in the Olganyar Culture. Inevitably (through accident, malice, or otherwise), one sibling always kills the other, claims both halves of the coin, and then passes it down. This also means you can choose to inherit one half or the other of this coin.</p><p><em>Rulebook p.57.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "e96a02cba9e5add6",
+  "_key": "!items!e96a02cba9e5add6",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 100,
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_coin_of_a_mothers_blessing",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": "Cursed"
+      },
+      "buildHash": "99b234473d21"
+    }
+  }
+}

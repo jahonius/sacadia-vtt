@@ -1,0 +1,34 @@
+{
+  "_id": "d060885e405df299",
+  "_key": "!items!d060885e405df299",
+  "name": "Ivory (1lb)",
+  "type": "gear",
+  "img": "icons/commodities/bones/skull-tusked-grey.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 180,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 50gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_ivory_1lb",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "fc3aabf91bd1"
+    }
+  }
+}

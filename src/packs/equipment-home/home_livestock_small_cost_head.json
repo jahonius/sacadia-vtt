@@ -1,0 +1,34 @@
+{
+  "_id": "393c08d437e23d37",
+  "_key": "!items!393c08d437e23d37",
+  "name": "Livestock - Small (cost/head)",
+  "type": "gear",
+  "img": "icons/creatures/birds/chicken-hen-white.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 210,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_livestock_small_cost_head",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "6ca9813cadce"
+    }
+  }
+}

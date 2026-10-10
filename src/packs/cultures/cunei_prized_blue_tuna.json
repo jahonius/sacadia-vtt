@@ -1,0 +1,37 @@
+{
+  "name": "Prized Blue Tuna",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft ingredient. Very Rare, Water. 3 item slots (Craft Ingredient). Uses: 1. Special Property: Lucky.</em></p><p><strong>Prerequisites:</strong> White Cunei Myrgha</p><p>A massive bluefin tuna, recently caught, and considered lucky.</p><p><em>Rulebook p.48.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "ec428c4ebd44dc56",
+  "_key": "!items!ec428c4ebd44dc56",
+  "folder": "c931f980fe44bd4d",
+  "sort": 160,
+  "img": "icons/commodities/materials/bowl-powder-teal.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_prized_blue_tuna",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Very Rare",
+        "element": "Water",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": "Lucky"
+      },
+      "buildHash": "28276e981a6b"
+    }
+  }
+}

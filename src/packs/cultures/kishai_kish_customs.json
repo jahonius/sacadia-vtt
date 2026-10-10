@@ -1,0 +1,45 @@
+{
+  "_id": "6aa2e098692df686",
+  "_key": "!items!6aa2e098692df686",
+  "name": "Kish Customs",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-arrowheads-glow-green.webp",
+  "folder": "25040de22dc86ea7",
+  "sort": 20,
+  "system": {
+    "description": "<p>Add the following ability to the Survival Talent tree. You can purchase the below ability using Talent Points: Spinelord Resistance.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai Cultural Talent",
+      "prerequisite": "Kishai Cultural Heritage · p.69"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_kish_customs",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "fe4dcf3f3fca"
+    }
+  }
+}

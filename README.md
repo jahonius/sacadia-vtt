@@ -4,8 +4,10 @@ A Foundry Virtual Tabletop system for **Sacadia's Art of War** (rulebook v1.2, w
 addendum). It includes:
 
 - Character and NPC sheets.
-- Compendiums with every profession, Lore and prestige ability, plus weapons, armor, shields, adornments and trinkets.
+- Compendiums with every profession, Lore and prestige ability; the heritages, ancestries and five starter cultures;
+  and weapons, armor, shields, adornments, personal goods, trinkets and home goods.
 - Combat automation: attacks, Trait Checks, conditions, Focus, zones and turn upkeep.
+- Between fights: the three rests, Long Rest Actions, money and Influence, and the Travel Ledger for journeys.
 
 Sacadia's Art of War is by Connor Brashar. The rules are at
 [talesofsacadia.com](https://www.talesofsacadia.com/tales-of-sacadia).

@@ -16,7 +16,8 @@
       "catalogId": "embossed_patch",
       "kind": "adornment",
       "armorPrereq": "Leather Set",
-      "buildHash": "44caea7af6d2"
+      "bargain": "adornments",
+      "buildHash": "e571871f628a"
     }
   }
 }

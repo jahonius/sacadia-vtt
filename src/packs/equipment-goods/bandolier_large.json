@@ -1,0 +1,34 @@
+{
+  "_id": "0629c050356f607f",
+  "_key": "!items!0629c050356f607f",
+  "name": "Bandolier (Large)",
+  "type": "gear",
+  "img": "icons/containers/ammunition/bullets-belt.webp",
+  "folder": "75a7d1f4b9a3787e",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Readied Baggage</strong> (Passive): All Readied baggage items must be equipped to RIS to work. When occupying RIS, baggage items create extra RIS within them, often with specific requirements.</p><p><strong>Bandolier (Large)</strong> (Passive): This item provides 6 readied item slots (RIS). You cannot store any individual item over 2 slots in size in these slots. You cannot store weapons, shields, or baggage in these slots.</p><p class=\"goods-facts\">2 Item Slots · 150gc · Readied Baggage, rulebook p.202</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 150,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 6
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bandolier_large",
+      "kind": "goods",
+      "goods": {
+        "table": "readied-baggage"
+      },
+      "bargain": "baggage",
+      "buildHash": "dbcf535452f9"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "7adbc98a4ce63da3",
+  "_key": "!items!7adbc98a4ce63da3",
+  "name": "Strength of Warp",
+  "type": "ability",
+  "img": "icons/magic/earth/orb-stone-smoke-teal.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 10,
+  "system": {
+    "description": "<p>Work with your GM to understand nearby Fonts to choose from and their elemental affinity. Then choose one when you choose to play a Fontborne: Lightly Warped or Heavily Warped. <em>(Choose it under Heritage on the Character tab.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fontborne Heritage",
+      "prerequisite": "p.89"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_strength_of_warp",
+      "transcribed": true,
+      "heritage": "fontborne",
+      "buildHash": "70c823862ec6"
+    }
+  }
+}

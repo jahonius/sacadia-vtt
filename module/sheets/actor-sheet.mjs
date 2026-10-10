@@ -7,7 +7,12 @@ import { staleItems, refreshItems } from '../helpers/refresh.mjs';
 import { rebuildWeaponAttacks, isVersatile } from '../helpers/weapon-attacks.mjs';
 import { deleteKey } from '../helpers/update-ops.mjs';
 import { resetActionEconomy } from '../rules/turn.mjs';
-import { shortRest, longRest } from '../rules/rest.mjs';
+import { shortRest, fitfulRest } from '../rules/rest.mjs';
+import { LongRest } from '../apps/long-rest.mjs';
+import { formatCoins, receive, sellPrice, STARTING_GOLD } from '../helpers/downtime.mjs';
+import { priceGc, jewelryCheckItems, runeDeltas, runeChosen, runeSummary } from '../helpers/goods.mjs';
+import { toggleLight, useGoods, buyItem, goodsOf, isLightSource, isLanternAddOn } from '../rules/goods.mjs';
+import { silverRate } from '../rules/downtime.mjs';
 import { rollInitiative } from '../rules/initiative.mjs';
 import { AbilityUse } from '../rules/ability-use.mjs';
 import { promptCheckSpends } from '../helpers/conditions.mjs';
@@ -16,6 +21,7 @@ import { REND_KEYS } from '../helpers/rend.mjs';
 import { advantageText, cardHead, postRollCard, signed, traitEmblem } from '../helpers/chat-cards.mjs';
 import { standingAdvantage, traitBonusParts } from '../helpers/roll-breakdown.mjs';
 import { sacDialog } from '../helpers/dialogs.mjs';
+import { ancestryOf, cultureOf, originChoices, setOrigin } from '../rules/identity.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -67,7 +73,16 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       undoAction: SacadiaActorSheet.#onUndoAction,
       resetTurn: SacadiaActorSheet.#onResetTurn,
       shortRest: SacadiaActorSheet.#onShortRest,
+      fitfulRest: SacadiaActorSheet.#onFitfulRest,
       longRest: SacadiaActorSheet.#onLongRest,
+      makeChange: SacadiaActorSheet.#onMakeChange,
+      startingGold: SacadiaActorSheet.#onStartingGold,
+      sellItem: SacadiaActorSheet.#onSellItem,
+      toggleLight: SacadiaActorSheet.#onToggleLight,
+      useGoods: SacadiaActorSheet.#onUseGoods,
+      addInfluence: SacadiaActorSheet.#onAddInfluence,
+      removeInfluence: SacadiaActorSheet.#onRemoveInfluence,
+      spendInfluence: SacadiaActorSheet.#onSpendInfluence,
       rollInitiative: SacadiaActorSheet.#onRollInitiative,
       toggleEquip: SacadiaActorSheet.#onToggleEquip,
       toggleStorage: SacadiaActorSheet.#onToggleStorage,
@@ -80,6 +95,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       viewDoc: SacadiaActorSheet.#onViewDoc,
       deleteDoc: SacadiaActorSheet.#onDeleteDoc,
       toggleEffect: SacadiaActorSheet.#onToggleEffect,
+      openUuid: SacadiaActorSheet.#onOpenUuid,
     },
   };
 
@@ -191,12 +207,16 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     context.hpPct = hp.max > 0 ? Math.round(Math.min(100, Math.max(0, (hp.value / hp.max) * 100))) : 0;
     context.hpState = context.hpPct <= 25 ? 'low' : (context.hpPct <= 50 ? 'hurt' : '');
     if (context.isCharacter) {
-      // Max-HP provenance: standard per-level value + manual bonus = derived max.
+      // Max-HP provenance: standard per-level value + the Heritage's + abilities' + manual bonus = derived max.
+      const signed = (n) => `${n >= 0 ? '+' : ''}${n}`;
       const bonus = hp.bonus ?? 0;
+      const fromAbilities = actor.system.bonuses?.healthMax ?? 0;
       context.hpTip = [
         `<strong>${game.i18n.localize('SACADIA.Resource.MaxHealth')}</strong>`,
         `${game.i18n.localize('SACADIA.Resource.HealthStandard')} ${hp.standardMax ?? 0}`,
-        `${game.i18n.localize('SACADIA.Resource.HealthAdjust')} ${bonus >= 0 ? '+' : ''}${bonus}`,
+        ...(hp.heritage ? [`${game.i18n.localize('SACADIA.Resource.HealthHeritage')} +${hp.heritage}`] : []),
+        ...(fromAbilities ? [`${game.i18n.localize('SACADIA.Resource.HealthAbilities')} ${signed(fromAbilities)}`] : []),
+        `${game.i18n.localize('SACADIA.Resource.HealthAdjust')} ${signed(bonus)}`,
         `<strong>${game.i18n.localize('SACADIA.Defense.TipTotal')} ${hp.max ?? 0}</strong>`,
       ].join('<br>');
       const ap = actor.system.ap ?? {};
@@ -229,6 +249,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       context.inventory = this.#prepareInventory();
       context.classPools = this.#prepareClassPools();
       context.isHulinari = ['primary', 'secondary'].some((s) => actor.system.professions?.[s]?.key === 'hulinari_warrior');
+      context.origin = await this.#prepareOrigin();
       context.crackedRolls = actor.system.professionResources?.oracle?.cracked ?? [];
     }
 
@@ -293,6 +314,62 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   /**
+   * The Character tab's Identity: the Heritage (its HP, size and lifespan, and the choice it asks for), the ancestry and
+   * culture lists to choose from (the compendiums' and the world's; ancestries of the Heritage only), the culture's Binding
+   * Laws, subcultures and talent choice, and what they've granted (rules/identity.mjs).
+   */
+  async #prepareOrigin() {
+    const actor = this.actor;
+    const id = actor.system.identity ?? {};
+    const loc = (k) => (k ? game.i18n.localize(k) : '');
+    const info = CONFIG.SACADIA.heritageInfo[id.heritage] ?? null;
+    const culture = cultureOf(actor);
+    const ancestry = ancestryOf(actor);
+    const choices = await originChoices();
+    const cultureNames = Object.fromEntries(choices.culture.filter((c) => c.culture).map((c) => [c.culture, c.name]));
+    /** The select's option groups: the compendiums', each culture's (ancestries), and the world's; the held one is chosen. */
+    const options = (kind, held, written, keep) => {
+      const source = held?.flags?.sacadia?.originSource ?? '';
+      const listed = choices[kind].filter(keep);
+      const groups = [];
+      const none = { value: '', label: '—' };
+      const top = [none];
+      if (held && !listed.some((c) => c.uuid === source)) top.push({ value: '__held', label: held.name, selected: true });
+      else if (!held && written) top.push({ value: '__held', label: game.i18n.format('SACADIA.Origin.AsWritten', { name: written }), selected: true });
+      groups.push({ label: '', options: top });
+      const by = new Map();
+      for (const c of listed) {
+        const g = c.world ? loc('SACADIA.Origin.WorldItems') : (kind === 'ancestry' && c.culture ? (cultureNames[c.culture] ?? c.culture) : loc(`SACADIA.Origin.Book.${kind}`));
+        if (!by.has(g)) by.set(g, []);
+        by.get(g).push({ value: c.uuid, label: c.name, selected: !!held && c.uuid === source });
+      }
+      for (const [label, opts] of by) groups.push({ label, options: opts });
+      groups.push({ label: '', options: [{ value: '__new', label: loc(`SACADIA.Origin.New.${kind}`) }] });
+      return groups;
+    };
+    const granted = actor.items.filter((i) => i.flags?.sacadia?.identityGrant).map((i) => ({ id: i.id, name: i.name }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+    return {
+      heritage: info ? {
+        hp: info.hp, size: ancestry?.system.size || info.size, lifespan: ancestry?.system.lifespan || info.lifespan,
+        choice: info.choice ? { label: loc(info.choice.label), options: Object.fromEntries(Object.entries(info.choice.options).map(([k, v]) => [k, loc(v)])),
+          value: id.heritageChoice ?? '' } : null,
+      } : null,
+      ancestry: { item: ancestry, groups: options('ancestry', ancestry, id.ancestry, (c) => !id.heritage || !c.heritage || c.heritage === id.heritage) },
+      culture: {
+        item: culture, groups: options('culture', culture, id.culture, () => true),
+        laws: culture?.system.laws ?? [],
+        subcultures: culture?.system.subcultures?.length ? Object.fromEntries(culture.system.subcultures.map((s) => [s, s])) : null,
+        subculture: culture?.system.subculture ?? '',
+        options: culture?.system.options?.length ? Object.fromEntries(culture.system.options.map((o) => [o.key, o.label || o.key])) : null,
+        choice: culture?.system.choice ?? '',
+        journal: culture?.system.journal ?? '',
+      },
+      granted,
+    };
+  }
+
+  /**
    * Build the 29 talents grouped by CONFIG category, each decorated with its localized label,
    * governing stat, and the actor's proficiency flag — ready for the Stats-tab template.
    * @returns {Record<string, {label: string, talents: object[]}>}
@@ -322,7 +399,12 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   #prepareTraitExpertise() {
     const primary = this.actor.system.professions?.primary?.key;
-    const traits = CONFIG.SACADIA.professionTraitExpertise[primary] ?? [];
+    const traits = [...(CONFIG.SACADIA.professionTraitExpertise[primary] ?? [])];
+    // An ability can give one too (a Hulinari form's "You have Check Expertise in Finesse"), while a slot is free.
+    for (const item of this.actor.items) {
+      const t = item.type === 'ability' ? item.flags?.sacadia?.expertise : null;
+      if (t && !traits.includes(t) && traits.length < 2) traits.push(t);
+    }
     return traits.map((statKey, i) => {
       const slot = `slot${i + 1}`;
       return {
@@ -741,6 +823,12 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       };
       vm.broken = !!item.flags?.sacadia?.broken;
       vm.stored = item.system.storage === 'sis';
+      // Its price, and what a merchant pays (half, p.266).
+      const rate = silverRate();
+      const gc = priceGc(item.system, rate);
+      vm.price = gc ? formatCoins(gc, rate) : '';
+      vm.sellFor = sellPrice(gc, rate) ? formatCoins(sellPrice(gc, rate), rate) : '';
+      if (item.type === 'gear') Object.assign(vm, this.#goodsRow(item));
       if (item.type === 'armor') {
         vm.categoryLabel = item.system.category
           ? game.i18n.localize(CONFIG.SACADIA.armorCategories[item.system.category] ?? '') : '';
@@ -758,10 +846,49 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         armor.push(vm);
       } else if (item.type === 'gear') gear.push(vm);
     }
-    return { armor, gear };
+    const money = this.actor.system.money ?? { gc: 0, sc: 0 };
+    const startingGold = !money.gc && !money.sc ? (STARTING_GOLD[this.actor.system.professions?.primary?.key] ?? 0) : 0;
+    return { armor, gear, money, rate: silverRate(), startingGold };
+  }
+
+  /**
+   * What a personal good's row shows (src/goods.mjs): its properties, the slots it gives, the condition its jewelry guards
+   * against, a rune's changes (or that they're still to choose), whether it's lit; and its controls: light it, use one up,
+   * and what equipping it means (wear, affix, activate).
+   */
+  #goodsRow(item) {
+    const g = goodsOf(item);
+    if (!g) return {};
+    const label = (t) => t.split('-').map((w) => (w === 'ris' || w === 'sis' ? w.toUpperCase() : w[0].toUpperCase() + w.slice(1))).join(' ');
+    const facts = String(item.system.traits ?? '').split(',').map((t) => t.trim()).filter((t) => t && t !== 'jewelry' && t !== 'rune').map(label);
+    if (item.system.providesSis) facts.push(game.i18n.format('SACADIA.Goods.GivesSis', { n: item.system.providesSis }));
+    if (item.system.providesRis) facts.push(game.i18n.format('SACADIA.Goods.GivesRis', { n: item.system.providesRis }));
+    if (g.jewelry) facts.push(game.i18n.format('SACADIA.Goods.Guards', { condition: game.i18n.localize(CONFIG.SACADIA.conditions[g.jewelry]?.label ?? g.jewelry) }));
+    const choice = item.flags?.sacadia?.runeChoice;
+    const rune = g.rune ? runeSummary(runeDeltas(g.rune, choice)) : '';
+    if (rune) facts.push(rune);
+    return {
+      goodsFacts: facts.join(' · '),
+      runeUnchosen: !!g.rune && !runeChosen(g.rune, choice),
+      lightable: isLightSource(item), lit: !!item.getFlag('sacadia', 'lit'), glowing: !!g.light?.glow,
+      usable: !!g.use,
+      equipHint: game.i18n.localize(g.rune ? 'SACADIA.Goods.Activate' : isLanternAddOn(item) ? 'SACADIA.Goods.Affix' : 'SACADIA.Inventory.Equip'),
+    };
   }
 
   /* -------------------------------------------- */
+
+  /** Light or put out a light source; apply Chickenglitter Dye (rules/goods.mjs). */
+  static async #onToggleLight(event, target) {
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (item) await toggleLight(item);
+  }
+
+  /** Use up one of a consumable, posting what it does. */
+  static async #onUseGoods(event, target) {
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (item) await useGoods(item);
+  }
 
   /** Toggle an armor item's equipped state (re-derives defenses). */
   static async #onToggleEquip(event, target) {
@@ -781,10 +908,19 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
    */
   _prepareSubmitData(event, form, formData, updateData) {
     const data = super._prepareSubmitData(event, form, formData, updateData);
+    // Influence rows, the same way.
+    const inf = data?.system?.influence;
+    if (inf && !Array.isArray(inf)) {
+      data.system.influence = Object.keys(inf).sort((a, b) => Number(a) - Number(b))
+        .map((k) => ({ group: inf[k].group ?? '', value: Math.max(0, Number(inf[k].value ?? 0)) }));
+    }
     const sp = data?.system?.specialties;
-    if (sp && !Array.isArray(sp)) {
-      data.system.specialties = Object.keys(sp).sort((a, b) => Number(a) - Number(b))
-        .map((k) => ({ name: sp[k].name ?? '', talent: sp[k].talent ?? '', rank: Number(sp[k].rank ?? 1) }));
+    if (sp) {
+      // Validation may already have made the rows a list. A row a cultural talent gave keeps its source (not a form field).
+      const list = Array.isArray(sp) ? sp : Object.keys(sp).sort((a, b) => Number(a) - Number(b)).map((k) => sp[k]);
+      const rows = this.actor.system.specialties ?? [];
+      data.system.specialties = list.map((r, i) => ({ name: r.name ?? '', talent: r.talent ?? '', rank: Number(r.rank ?? 1),
+        source: r.source || rows[i]?.source || '' }));
     }
     return data;
   }
@@ -815,6 +951,16 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   async _onDropItem(event, item) {
+    // A compendium or world item dropped on the purse: bought (its price paid), then added as any drop is. (One handed over
+    // from another character isn't bought: they'd get nothing for it.)
+    if (this.actor.type === 'character' && ['gear', 'armor'].includes(item.type) && item.parent?.documentName !== 'Actor' && event.target?.closest?.('.purse')) {
+      if (!(await buyItem(this.actor, item))) return false;
+    }
+    // A culture or ancestry replaces the one held (and an ancestry sets the Heritage).
+    if (this.actor.type === 'character' && ['culture', 'ancestry'].includes(item.type)) {
+      if (item.parent !== this.actor) await setOrigin(this.actor, item);
+      return false;
+    }
     // Prerequisites (warn-but-allow): "Power 3, Bloodsight", "Handcopy[2]", "Bladedancer, Level 9" …
     if (this.actor.type === 'character' && item.type === 'ability' && item.parent !== this.actor && item.system.meta?.prerequisite) {
       const { unmet } = checkPrerequisites(item.system.meta.prerequisite, await this.#use.prerequisiteContext());
@@ -892,7 +1038,9 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       // that Talent" while it's in a readied slot.
       const scroll = actor.items.find((i) => i.type !== 'ability' && gearId(i).startsWith('informative_scroll') && i.system?.storage !== 'sis'
         && (i.name.match(/\(([^)]+)\)/)?.[1] ?? '').toLowerCase() === title.toLowerCase());
-      const extra = scroll ? [{ label: scroll.name, value: 1 }] : [];
+      // An ability's flat bonus to the talent (Farmer's Eye: "+2 to all Wilderness Checks").
+      const extra = [...(scroll ? [{ label: scroll.name, value: 1 }] : []), ...SacadiaActorSheet.#talentBonuses(actor, key)];
+      const flat = extra.reduce((a, p) => a + p.value, 0);
       // Proficient is a straight d20 + Proficiency; without the talent it's 1X disadvantage "and also do not add
       // proficiency" (book p.146), on top of the chosen level and the actor's advantage/disadvantage sinks.
       const standing = [...(proficient ? [] : [{ label: loc('SACADIA.Check.Untrained'), n: -1 }]), ...standingAdvantage(actor, 'trait')];
@@ -901,7 +1049,7 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         parts: checkParts(talent.stat, proficient, extra), standing });
       if (level === null) return;
       const fumble = await this.#spendFumble();
-      await this.#postCheck(` + @${talent.stat}${proficient ? ' + @proficiency' : ''}${tb}${scroll ? ' + 1' : ''}${minus(fumble)}`, {
+      await this.#postCheck(` + @${talent.stat}${proficient ? ' + @proficiency' : ''}${tb}${flat ? ` + ${flat}` : ''}${minus(fumble)}`, {
         stat: talent.stat, title, tag: loc('SACADIA.Check.Talent'), net: level + (proficient ? 0 : -1), proficient, fumble, standing,
         meta: [loc(CONFIG.SACADIA.stats[talent.stat]), proficient ? '' : loc('SACADIA.Check.Untrained')],
         extra: extra.map((p) => ({ label: p.label, value: signed(p.value) })),
@@ -915,20 +1063,30 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       const talent = CONFIG.SACADIA.talents[sp?.talent];
       if (!sp || !talent) return ui.notifications.warn(game.i18n.localize('SACADIA.Talent.SpecialtyNoTalent'));
       const label = `${loc(talent.label)}: ${sp.name}`;
-      if (!(actor.system.talents?.[sp.talent]?.proficient)) ui.notifications.warn(game.i18n.format('SACADIA.Talent.SpecialtyNeedsGeneral', { name: label }));
+      // A rank a cultural talent gives needs no general talent ("even if you do not have Economy").
+      if (!sp.source && !(actor.system.talents?.[sp.talent]?.proficient)) ui.notifications.warn(game.i18n.format('SACADIA.Talent.SpecialtyNeedsGeneral', { name: label }));
+      const extra = SacadiaActorSheet.#talentBonuses(actor, sp.talent);
+      const flat = extra.reduce((a, p) => a + p.value, 0);
       const standing = [...((sp.rank ?? 0) ? [{ label: game.i18n.format('SACADIA.Check.SpecialtyRank', { name: sp.name || loc('SACADIA.Check.Specialty'), n: sp.rank }), n: sp.rank }] : []),
         ...standingAdvantage(actor, 'trait')];
       const level = await AbilityUse.promptAdvantage(sp.name || loc(talent.label), { img: CONFIG.SACADIA.statArt?.[talent.stat],
         sub: game.i18n.format('SACADIA.Check.SpecialtyOf', { talent: loc(talent.label), trait: loc(CONFIG.SACADIA.stats[talent.stat]) }),
-        parts: checkParts(talent.stat, true), standing });
+        parts: checkParts(talent.stat, true, extra), standing });
       if (level === null) return;
       const fumble = await this.#spendFumble();
-      await this.#postCheck(` + @${talent.stat} + @proficiency${tb}${minus(fumble)}`, {
+      await this.#postCheck(` + @${talent.stat} + @proficiency${tb}${flat ? ` + ${flat}` : ''}${minus(fumble)}`, {
         stat: talent.stat, title: sp.name || loc(talent.label), tag: loc('SACADIA.Check.Specialty'), net: level + (sp.rank ?? 0), fumble, standing,
         meta: [game.i18n.format('SACADIA.Check.SpecialtyOf', { talent: loc(talent.label), trait: loc(CONFIG.SACADIA.stats[talent.stat]) })],
+        extra: extra.map((p) => ({ label: p.label, value: signed(p.value) })),
       });
       return this.#use.consumeRollGrants();
     }
+  }
+
+  /** Abilities' flat bonuses to a talent's checks (`flags.sacadia.talentBonus`: {wilderness: 2}), as roll parts. */
+  static #talentBonuses(actor, talent) {
+    return actor.items.filter((i) => i.type === 'ability' && Number(i.flags?.sacadia?.talentBonus?.[talent]))
+      .map((i) => ({ label: i.name, value: Number(i.flags.sacadia.talentBonus[talent]) }));
   }
 
   /**
@@ -1089,8 +1247,85 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
     await shortRest(this.actor);
   }
 
-  static async #onLongRest() {
-    await longRest(this.actor);
+  static async #onFitfulRest() {
+    await fitfulRest(this.actor);
+  }
+
+  /** A Long Rest: the window to plan its weeks (apps/long-rest.mjs). */
+  static #onLongRest() {
+    LongRest.open(this.actor);
+  }
+
+  /* -------------------------------------------- */
+  /*  Money and Influence (helpers/downtime.mjs)  */
+  /* -------------------------------------------- */
+
+  /** Change a gold coin into silver, or (shift-click) silver into a gold. */
+  static async #onMakeChange(event) {
+    const rate = silverRate();
+    const { gc = 0, sc = 0 } = this.actor.system.money ?? {};
+    if (event.shiftKey) {
+      if (sc < rate) return ui.notifications.warn(game.i18n.format('SACADIA.Money.NotEnoughSilver', { rate }));
+      return this.actor.update({ 'system.money': { gc: gc + 1, sc: sc - rate } });
+    }
+    if (gc < 1) return ui.notifications.warn(game.i18n.localize('SACADIA.Money.NoGold'));
+    return this.actor.update({ 'system.money': { gc: gc - 1, sc: sc + rate } });
+  }
+
+  /** A new character's starting gold, from their profession (pp.20–22). */
+  static async #onStartingGold() {
+    const gold = STARTING_GOLD[this.actor.system.professions?.primary?.key] ?? 0;
+    if (!gold) return;
+    const { gc = 0, sc = 0 } = this.actor.system.money ?? {};
+    await this.actor.update({ 'system.money': { gc: gc + gold, sc } });
+  }
+
+  /** Sell an item to a merchant, for half its marked price (p.266), asking first. */
+  static async #onSellItem(event, target) {
+    const item = this.actor.items.get(target.closest('[data-item-id]')?.dataset.itemId);
+    if (!item) return;
+    const rate = silverRate();
+    const qty = Math.max(1, item.system.quantity ?? 1);
+    const each = sellPrice(priceGc(item.system, rate), rate);
+    if (!each) return ui.notifications.warn(game.i18n.format('SACADIA.Money.NoValue', { name: item.name }));
+    const ok = await sacDialog.confirm({ window: { title: game.i18n.localize('SACADIA.Money.SellTitle') }, rejectClose: false,
+      content: `<p>${game.i18n.format('SACADIA.Money.SellConfirm', { name: foundry.utils.escapeHTML(item.name), price: formatCoins(each, rate) })}</p>` });
+    if (!ok) return;
+    await this.actor.update({ 'system.money': receive(this.actor.system.money ?? {}, each, rate) });
+    if (qty > 1) await item.update({ 'system.quantity': qty - 1 });
+    else await item.delete();
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Money.Sold', { name: foundry.utils.escapeHTML(this.actor.name), item: foundry.utils.escapeHTML(item.name), price: formatCoins(each, rate) })}</div>` });
+  }
+
+  static async #onAddInfluence() {
+    await this.actor.update({ 'system.influence': [...(this.actor.system.influence ?? []), { group: '', value: 1 }] });
+  }
+
+  static async #onRemoveInfluence(event, target) {
+    const list = [...(this.actor.system.influence ?? [])];
+    list.splice(Number(target.closest('[data-index]')?.dataset.index), 1);
+    await this.actor.update({ 'system.influence': list });
+  }
+
+  /** Spend a point of Influence (p.264): take action, investigate a lead, or get a thing — posted for the GM. */
+  static async #onSpendInfluence(event, target) {
+    const idx = Number(target.closest('[data-index]')?.dataset.index);
+    const list = (this.actor.system.influence ?? []).map((g) => ({ group: g.group, value: g.value }));
+    const held = list[idx];
+    if (!held?.value) return;
+    const use = await sacDialog.wait({
+      window: { title: game.i18n.format('SACADIA.Influence.SpendTitle', { group: held.group || '—' }) },
+      content: `<p>${game.i18n.localize('SACADIA.Influence.SpendHint')}</p>`,
+      buttons: ['Action', 'Lead', 'Thing'].map((k, i) => ({ action: k, label: game.i18n.localize(`SACADIA.Influence.Use.${k}`), default: i === 0, callback: () => k })),
+      rejectClose: false,
+    });
+    if (!use) return;
+    held.value -= 1;
+    await this.actor.update({ 'system.influence': list });
+    await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      content: `<div class="sacadia chat-card note-card">${game.i18n.format('SACADIA.Influence.Spent', { name: foundry.utils.escapeHTML(this.actor.name),
+        group: foundry.utils.escapeHTML(held.group || '—'), use: game.i18n.localize(`SACADIA.Influence.Use.${use}`), left: held.value })}</div>` });
   }
 
   /** Roll initiative, joining the encounter if need be (rules/initiative.mjs). */
@@ -1253,6 +1488,21 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
         if (kind === 'creature') await item.setFlag('sacadia', 'pickLabel', game.actors.get(value)?.name ?? ev.currentTarget.selectedOptions?.[0]?.text ?? '');
       });
     }
+    // Identity: choosing an ancestry or culture makes it the character's (rules/identity.mjs setOrigin); its subculture and
+    // the option it asks for are set on the held item.
+    for (const sel of this.element.querySelectorAll('select.origin-select')) {
+      sel.addEventListener('change', (ev) => {
+        ev.stopPropagation();
+        this.#chooseOrigin(ev.currentTarget.dataset.kind, ev.currentTarget.value);
+      });
+    }
+    for (const sel of this.element.querySelectorAll('select.origin-field')) {
+      sel.addEventListener('change', async (ev) => {
+        ev.stopPropagation();
+        const item = this.actor.items.get(ev.currentTarget.dataset.itemId);
+        await item?.update({ [`system.${ev.currentTarget.dataset.field}`]: ev.currentTarget.value });
+      });
+    }
     this.#refreshRangeMarkers();
     this.#restoreBioSizes();
     if (!this.#rangeHooks) {
@@ -1407,7 +1657,8 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
       [`self:checking:trait:${form.trait}`]: true };
     const srcUuid = srcToken?.document?.uuid;
     if (srcUuid && (this.actor.system.marks?.['targeted-foe'] ?? []).includes(srcUuid)) ctxOpts['self:resisting:from:targeted-foe'] = true;
-    const items = this.actor.items.filter((i) => i.type === 'ability').map((i) => ({ name: i.name, modifiers: i.system.modifiers, id: i.flags?.sacadia?.catalogId, pickValue: i.system.pick?.kind ? (i.flags?.sacadia?.pickValue ?? '') : undefined }));
+    const items = this.actor.items.filter((i) => i.type === 'ability').map((i) => ({ name: i.name, modifiers: i.system.modifiers, id: i.flags?.sacadia?.catalogId, pickValue: i.system.pick?.kind ? (i.flags?.sacadia?.pickValue ?? '') : undefined }))
+      .concat(jewelryCheckItems([...this.actor.items]));
     const own = foldCheckModifiers(items, ctxOpts, this.actor.system._modifierNumbers?.() ?? {});
     const spend = await promptCheckSpends(this.actor, ctxOpts);
     const proneDis = selfOpts['self:prone'] && /physical/i.test(grp) ? 1 : 0;
@@ -1660,6 +1911,28 @@ export class SacadiaActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) 
   }
 
   /** Resolve the embedded Item/Effect referenced by the nearest `[data-item-id]`/`[data-effect-id]`. */
+  /**
+   * Make a culture or ancestry the character's, from the Identity lists: a compendium or world item's uuid; '' clears it;
+   * `__new` makes a blank one on the character to fill in (a table's own).
+   */
+  async #chooseOrigin(kind, value) {
+    if (value === '__held') return;
+    if (value === '__new') {
+      const name = game.i18n.localize(`SACADIA.Origin.NewName.${kind}`);
+      const heritage = kind === 'ancestry' ? (this.actor.system.identity?.heritage ?? '') : undefined;
+      const [made] = await this.actor.createEmbeddedDocuments('Item', [{ name, type: kind, ...(heritage ? { system: { heritage } } : {}) }]);
+      made?.sheet.render(true);
+      return;
+    }
+    await setOrigin(this.actor, value || null, { type: kind });
+  }
+
+  /** Open a document by its uuid (a culture's journal). */
+  static async #onOpenUuid(event, target) {
+    const doc = await fromUuid(target.dataset.uuid);
+    if (doc?.sheet) doc.sheet.render(true);
+  }
+
   static #getEmbedded(actor, target) {
     const effectRow = target.closest('[data-effect-id]');
     if (effectRow) {

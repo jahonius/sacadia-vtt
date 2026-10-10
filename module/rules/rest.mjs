@@ -1,11 +1,13 @@
 /**
- * Rests (book p.235): what a Quick/Short Rest and a Long/Nightly Rest recover — pools, conditions, Rend, Health and HP
- * pools, Lore points, broken armor — and Slightly Cracked's roll at each quick rest.
+ * Rests (book p.235): what a Quick Rest and a Fitful Rest (a night) recover — pools, conditions, Rend, Health and HP
+ * pools, Lore points, broken armor — and Slightly Cracked's roll at each quick rest. A Long Rest (a week or more of
+ * downtime, rules/downtime.mjs) ends with a Fitful Rest, its weeks on the same card.
  */
 import { deleteKey } from '../helpers/update-ops.mjs';
 import { ownsAbility } from '../helpers/actor-utils.mjs';
 import { cardHead } from '../helpers/chat-cards.mjs';
 import { sacDialog } from '../helpers/dialogs.mjs';
+import { restLights } from './goods.mjs';
 
 /**
  * Common rest effects (both rest types): recover ability pools to max, remove most leveled
@@ -59,16 +61,21 @@ export async function shortRest(actor) {
   await actor.update(update);
   const cracked = await rollSlightlyCracked(actor);
   await promptHealPools(actor);
-  await restMessage(actor, 'short', before, { cracked });
+  const lights = await restLights(actor, 'short');
+  await restMessage(actor, 'short', before, { cracked, lights });
 }
 
-/** Long/Nightly Rest: full HP + HP-pool + Lore refill, all Rend cleared, plus the common recovery. */
-export async function longRest(actor) {
+/**
+ * Fitful Rest (a night, p.235): full HP and HP pools, all Rend cleared, plus the common recovery. A Long Rest passes its
+ * weeks (`long`: {weeks, rows, rolls, loreBonus}) to head the card, and refills Lore: "At the end of every Long Rest, you
+ * gain Lore Points up to your Lore Limit" (p.168), plus any an Offering won (`loreBonus`), which may pass the limit.
+ */
+export async function fitfulRest(actor, { long = null } = {}) {
   const before = restSnapshot(actor);
   const update = restRecovery(actor);
   update['system.health.value'] = actor.system.health.max;
   update['system.healthPools.value'] = actor.system.healthPools.max;
-  update['system.lorePoints.value'] = actor.system.lorePoints.max;
+  if (long) update['system.lorePoints.value'] = Math.max(actor.system.lorePoints.value ?? 0, actor.system.lorePoints.max ?? 0) + (long.loreBonus ?? 0);
   update['system.conditions.rended.value'] = 0;
   await actor.update(update);
   // "Recover all rend in your armor" (book p.235): every piece is whole again, and broken adornments (Brittlework) are
@@ -79,7 +86,8 @@ export async function longRest(actor) {
   const broken = actor.items.filter((i) => i.getFlag('sacadia', 'broken'));
   for (const b of broken) await b.unsetFlag('sacadia', 'broken');
   const cracked = await rollSlightlyCracked(actor);
-  await restMessage(actor, 'long', before, { cracked, repaired: whole.length + broken.length });
+  const lights = await restLights(actor, long ? 'long' : 'fitful');
+  await restMessage(actor, long ? 'long' : 'fitful', before, { cracked, repaired: whole.length + broken.length, long, lights });
 }
 
 /**
@@ -132,10 +140,10 @@ function restSnapshot(actor) {
  * The rest card: what the rest recovered (Health, HP pools spent, conditions cleared, Rend, ability pools, Lore, armor
  * repaired), compared with the snapshot taken before it, and the Slightly Cracked dice it rolled.
  */
-async function restMessage(actor, kind, before, { cracked = null, repaired = 0 } = {}) {
+async function restMessage(actor, kind, before, { cracked = null, repaired = 0, long = null, lights = [] } = {}) {
   const loc = (k) => game.i18n.localize(k);
   const now = restSnapshot(actor);
-  const rows = [];
+  const rows = [...(long?.rows ?? [])];
   const row = (label, value) => rows.push(`<li><span class="rest-label">${label}</span><span class="rest-value">${value}</span></li>`);
   if (now.hp !== before.hp) row(loc('SACADIA.Rest.Health'), `${before.hp} → <b>${now.hp}</b> / ${actor.system.health?.max ?? now.hp}`);
   if (now.hpPools < before.hpPools) row(loc('SACADIA.Rest.HpPools'), game.i18n.format('SACADIA.Rest.PoolsSpent', { n: before.hpPools - now.hpPools, left: now.hpPools }));
@@ -151,9 +159,15 @@ async function restMessage(actor, kind, before, { cracked = null, repaired = 0 }
   const refilled = Object.keys(now.pools).filter((k) => now.pools[k] > (before.pools[k] ?? 0)).map((k) => `${loc(CONFIG.SACADIA.pools[k])} ${now.pools[k]}`);
   if (refilled.length) row(loc('SACADIA.Rest.Refilled'), refilled.join(', '));
   if (now.lore > before.lore) row(loc('SACADIA.Rest.Lore'), `${before.lore} → <b>${now.lore}</b>`);
+  if (lights.length) row(loc('SACADIA.Rest.Lights'), lights.map((n) => foundry.utils.escapeHTML(n)).join(', '));
   if (cracked) row(loc('SACADIA.Rest.Cracked'), cracked.dice[0].results.map((x) => `<b>${x.result}</b>`).join(' · '));
-  const content = `<div class="sacadia chat-card rest-card">`
-    + cardHead({ icon: kind === 'long' ? 'fa-solid fa-bed' : 'fa-solid fa-mug-hot', title: loc(kind === 'long' ? 'SACADIA.Rest.Long' : 'SACADIA.Rest.Short') })
+  const head = {
+    short: { icon: 'fa-solid fa-mug-hot', title: loc('SACADIA.Rest.Short') },
+    fitful: { icon: 'fa-solid fa-bed', title: loc('SACADIA.Rest.Fitful') },
+    long: { icon: 'fa-solid fa-campground', title: game.i18n.format('SACADIA.Downtime.CardTitle', { n: long?.weeks ?? 1 }) },
+  }[kind];
+  const content = `<div class="sacadia chat-card rest-card${long ? ' long-rest-card' : ''}">`
+    + cardHead({ icon: head.icon, title: head.title, meta: long ? [loc('SACADIA.Downtime.CardSub')] : [] })
     + (rows.length ? `<ul class="rest-list">${rows.join('')}</ul>` : `<div class="rc-sub">${loc('SACADIA.Rest.Nothing')}</div>`) + '</div>';
-  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls: cracked ? [cracked] : [] });
+  await ChatMessage.create({ speaker: ChatMessage.getSpeaker({ actor }), content, rolls: [...(long?.rolls ?? []), ...(cracked ? [cracked] : [])] });
 }

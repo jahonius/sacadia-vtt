@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of Balance",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Salt. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3]</p><p>You have a meditative touch that you can take each rest.</p><p><strong>Meditation</strong> (Ceremony): During each Quick Rest, heal one HP pool before you spend any HP pools on you or allies. If you have full health, gain this HP as temporary HP at the start of the next combat (provided a combat occurs before the next rest). You must roll this HP pool die, and cannot take the average.</p><p><em>Rulebook p.48.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b56c20d0854508ec",
+  "_key": "!items!b56c20d0854508ec",
+  "folder": "c931f980fe44bd4d",
+  "sort": 140,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_balance",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "9bef3a90f384"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Herbological Tome: Homé’s Herbal Hemedies",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. . 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Herbalism:Salves[1], Language(Olem) or Cipher</p><p>This small, well organized scrollwork is dotted with depictions of plants and fungi, detailed in exquisite and colored detail, in the margins. These depictions appear to be purely for show, as they do not relate to the recipes.</p><p><strong>Calming Chamomile (Uncommon, Earth)</strong>: This calming tea has a soothing and minty smell, and makes all your worries disappear. Item Slots: 1. Prerequisites to Brew: Prof[2]. 10gp.</p><p><strong>Consume</strong> (Action): When you consume this tea, remove one level of one mental condition. You may also use this to remove one level of Madness as an Oracle.</p><p><strong>Sugarstem (Rare, Water)</strong>: This sweet and energizing tea makes you feel like you can take on the world, and it is great against fending off fatigue. Item Slots: 1. Prerequisites to Brew: Prof[3]. 35gp.</p><p><strong>Consume</strong> (Action): For the next minute, gain 1X advantage against all Fatigue Checks. Additionally, increase your Move Speed by 5ft for the duration.</p><p><strong>Focused Foxtail (Very Rare, Earth)</strong>: This focusing tea helps anyone to maintain concentration. Item Slots: 1. Prerequisites to Brew: Prof[4]. 250gp.</p><p><strong>Consume</strong> (Action): For the next minute, your first Focus action each turn does not exhaust your Focus even if it would.</p><p><em>Rulebook p.58.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "cbb845e171742e7a",
+  "_key": "!items!cbb845e171742e7a",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 140,
+  "img": "icons/sundries/books/book-embossed-bound-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_herbological_tome_hom_s_herbal_hemedies",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "",
+        "element": "",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "ee98a804a185"
+    }
+  }
+}

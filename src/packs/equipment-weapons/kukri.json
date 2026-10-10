@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "kukri",
       "kind": "weapon",
-      "buildHash": "65f24a1abd83"
+      "bargain": "basic-weapons",
+      "buildHash": "9612dd65b8af"
     }
   }
 }

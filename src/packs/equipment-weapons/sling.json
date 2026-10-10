@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "sling",
       "kind": "weapon",
-      "buildHash": "d741296419bd"
+      "bargain": "basic-weapons",
+      "buildHash": "3cd6e6beb157"
     }
   }
 }

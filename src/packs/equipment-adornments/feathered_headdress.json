@@ -16,7 +16,8 @@
       "catalogId": "feathered_headdress",
       "kind": "adornment",
       "armorPrereq": "Feathered Style",
-      "buildHash": "88804bbdd266"
+      "bargain": "adornments",
+      "buildHash": "402eda55574b"
     }
   }
 }

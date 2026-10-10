@@ -1,0 +1,35 @@
+{
+  "_id": "b7f4d82a959b3945",
+  "_key": "!items!b7f4d82a959b3945",
+  "name": "Ornate Box (Medium)",
+  "type": "gear",
+  "img": "icons/containers/chest/chest-simple-box-gold-brown.webp",
+  "folder": "65470c303531d49b",
+  "sort": 110,
+  "system": {
+    "description": "<p><strong>Ornate Box (Medium)</strong> (Passive): This item consumes 2 Stored Item Slots (SIS), but provides 4 SIS. You may only put items in this SIS with a max size of 1 Item Slot. Items stored in the Ornate Box do not need to be the same. You may only benefit from one Chest, Ornate Box, or Craft Pouch at a time.</p><p class=\"goods-facts\">2 Item Slots · 250gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 250,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "sis",
+    "providesSis": 4,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "ornate_box_medium",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "box"
+      },
+      "bargain": "baggage",
+      "buildHash": "c4faa3fe518b"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "f352357f172b4db4",
+    "_key": "!folders!f352357f172b4db4",
+    "name": "Baubles",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 1000,
+    "color": null,
+    "description": "<p>Trinkets are small items that can help in different ways. Most trinkets have either an action that can be used, or are RIS Passive (have a use in combat).</p>",
+    "flags": {}
+  },
+  {
+    "_id": "97967f52da7dcd2e",
+    "_key": "!folders!97967f52da7dcd2e",
+    "name": "Jewelry",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 2000,
+    "color": null,
+    "description": "",
+    "flags": {}
+  },
+  {
+    "_id": "c37e8fc7ad9c2976",
+    "_key": "!folders!c37e8fc7ad9c2976",
+    "name": "Runes",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 3000,
+    "color": null,
+    "description": "",
+    "flags": {}
+  }
+]

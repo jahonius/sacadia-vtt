@@ -1,0 +1,37 @@
+{
+  "name": "A Perfect Marble Cube",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Earth. 1 item slot. Uses: 1.</em></p><p>A perfectly carved marble cube. So perfect that even touching it alters and warps its perfection.</p><p><strong>Toss Cube</strong> (Action): When you have this item equipped in a readied item slot, you may toss it up to 30ft into the battlefield. All creatures within 15ft of the cube make Wiles Checks against 3 levels of Taunt to the cube. Any creature that is Cunei makes Wiles Checks against 6 levels of Taunt against the cube. When any creature touches the Cube, all creatures lose Taunt.</p><p><em>Rulebook p.46.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "ac4a4550a8377a4f",
+  "_key": "!items!ac4a4550a8377a4f",
+  "folder": "c931f980fe44bd4d",
+  "sort": 80,
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_a_perfect_marble_cube",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "54e1625d5c3b"
+    }
+  }
+}

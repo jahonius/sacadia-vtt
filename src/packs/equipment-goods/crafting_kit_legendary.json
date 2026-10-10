@@ -1,0 +1,34 @@
+{
+  "_id": "4c51a198b92a5e82",
+  "_key": "!items!4c51a198b92a5e82",
+  "name": "Crafting Kit (Legendary)",
+  "type": "gear",
+  "img": "icons/tools/hand/engraving-tool-black.webp",
+  "folder": "6b234e1a91f7c1c8",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Crafting Kit</strong> (Passive): When you purchase this crafting kit, you must declare the crafting Talent that this crafting kit applies to. You may only use this Crafting Kit with that talent. Crafting Kits are most useful for crafting magic items; in all cases, you must have a crafting kit in order to craft (see the Crafting Section). Most towns and villages will have craft stations for rent which will let you craft some types of items.</p><p><strong>Crafting Kit (Legendary)</strong> (Passive): You may craft legendary items with this crafting kit (levels 1-6).</p><p class=\"goods-facts\">1 Item Slot · 2500gc · Crafting Kits, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "crafting_kit_legendary",
+      "kind": "goods",
+      "goods": {
+        "table": "crafting-kits"
+      },
+      "bargain": "crafting-kits",
+      "buildHash": "cae482c726d2"
+    }
+  }
+}

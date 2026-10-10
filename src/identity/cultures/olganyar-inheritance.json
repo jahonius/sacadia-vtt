@@ -1,0 +1,391 @@
+[
+ {
+  "id": "olganyar_the_red_herring_tavern",
+  "name": "The Red Herring Tavern",
+  "section": "business",
+  "page": 54,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This small, cursed tavern serves fish and a few select imported drinks. Unfortunately, it’s deeply haunted.",
+  "effects": [
+   {
+    "name": "Work the Bar",
+    "tags": "C",
+    "text": "As a Long Rest Action, you can work on your Tavern. Choose one of the following:\nOpen the Bar: You open the tavern for business. Make 100gp. Then, increase the Spirit Counter by +2. Then, roll 1D20. If you roll a 19 or higher, the spirits attack, murdering 1D6 patrons. For each patron murdered, pay 300gp to the victim’s family. If you cannot pay, your GM decides if you narratively owe a blood debt, or if mechanically you receive a Bane Token. Reduce the Spirit Counter by 3 for each Patron murdered after this.\nRenovate Bar: You renovate the bar. Increase the money permanently made by the bar per long rest action (forever) by 10% (max: 500gp). Also, increase the Spirit Counter by +1. Do not roll.\nPlacate Spirits: (Prerequisite: 100gp of Offerings). Expend 200gp worth of offerings. Reset the Spirit Counter to 0."
+   },
+   {
+    "name": "Spirit Counters",
+    "tags": "P",
+    "text": "The Red Herring Tavern tracks spirit counters, denoting how angry the spirits are. At the start, this number is 0. It has no upper limit, but may affect your rolls."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_cheese_boat",
+  "name": "Cheese Boat",
+  "section": "business",
+  "page": 54,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You own a small boat selling fine blue cheeses you have spent years perfecting. Unfortunately, your cheese is cursed by a woodland hivemind, to whom you are now intrinsically connected.",
+  "effects": [
+   {
+    "name": "On a Boat",
+    "tags": "P",
+    "text": "You have a small, covered row boat. You can use this following the normal travel mechanics of Sacadia without having to purchase a boat."
+   },
+   {
+    "name": "On Cheese",
+    "tags": "C",
+    "text": "The cheese is extremely popular. You may sell it during a Long Rest for 200gp by taking Earn Money Long Rest action. Each time you do, a random number of people (determined narratively by your GM) eat the cheese. They may be relevant or irrelevant to your game."
+   },
+   {
+    "name": "Hivemind",
+    "tags": "C",
+    "text": "By working and inhaling the cheese so much, you have accumulated a connection to the cheese. You may concentrate for 1 minute on someone who has eaten cheese from your cheese boat, and they (unknowingly) make a Wiles Check against your Check DC. If they fail, you can read their surface level thoughts for a few seconds, learning what they are thinking about right now."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_cloak_of_the_chattering_pauldrons",
+  "name": "Cloak of the Chattering Pauldrons",
+  "section": "craft",
+  "page": 55,
+  "rarity": "Rare",
+  "element": "Fire",
+  "prerequisites": "Prof[3]",
+  "slots": "1 (Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This cloak is crafted of vibrant, amber-colored feathers in a golden hue, and connects at the shoulders through the skullcap of two skulls. Both skulls sit over your shoulders and you can (if you listen closely while wearing the cloak) envision a soft whisper",
+  "effects": [
+   {
+    "name": "Mutually Intelligible Skull Rattling",
+    "tags": "P",
+    "text": "Whenever you attempt to speak with someone and do not speak the same language, you nevertheless never create any form of miscommunication provided you are wearing this cloak - they will always understand non-specific intention of what you desire. The reverse is also true. Specifics cannot be gleaned from this cloak. For example, when trying to learn the location of a place, you may receive cardinal direction or distance but not specific instructions to get somewhere."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_luckless_armband",
+  "name": "Luckless Armband",
+  "section": "craft",
+  "page": 55,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Prof[3], Thug, Berserker Rage",
+  "slots": "1 (Worn, RIS Passive)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This tightly woven armband is soaked through in blood. Wearing it fills you with a sense of unease and mild dread",
+  "effects": [
+   {
+    "name": "Luckless Block",
+    "tags": "R",
+    "text": "As a reaction to an enemy successfully hitting you when you are in a Berserker Rage and wear these, you may deal 1D8 Bludgeon damage to them. Increase damage dealt this way to 1D10 at Level 11."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_hallowfell_compass",
+  "name": "Hallowfell Compass",
+  "section": "craft",
+  "page": 55,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Fate[3] and Wiles[3]",
+  "slots": "1 (Small)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "Yes",
+  "special": "No",
+  "description": "A small, ancient brass box, this contraption is made of a complex assortment of strange gears wrapped around a smooth, jet-black obsidian stone. It is delicate and must be wound carefully - but each time it unwinds, it falls apart into a heap of junk.",
+  "effects": [
+   {
+    "name": "Probe the Hallows",
+    "tags": "C",
+    "text": "Once per long rest, you may wind this box, and let it unwind during a rest. If you are distracted or not taking a rest such as a quick rest or fitful rest, make this check with 1X disadvantage. As it unwinds, you focus on what you desire. Make a Wiles Check, and consult the table below.\nWiles 20+: You are clear in your mind's intent and focused. The box points a compass towards the strongest nearby creature that can assist with accomplishing this desire. The compass stops pointing after one hour, and can point at creatures as far as 10 miles away. If nothing within 10 miles can assist you, it points at you.\nWiles 15+: You are clear in your mind's intent, but unable to hold the focus of the veil for long. The box points a compass towards the strongest nearby creature that can assist you with accomplishing this desire. This compass stops pointing after one minute, and can point as far as 1 mile away. If nothing within 1 mile can assist you, it points at you.\nWiles 10+: Your mind's intent is unclear. It points at a nearby creature who can help you with this goal, or possibly another personal goal of yours, within 1 mile. If no one can assist you with any of your goals within 1 mile, it points at you.\nWiles <10: The box unwinds and collapses. Anyone may use this box if they know how, however reconstructing the box takes a long rest and careful training from the previous user, or a DC16 Gadgeteer Check. This box cannot direct its user towards anything arcane, or anything lacking sufficient divinity (such as inanimate objects)."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_pot_of_the_disciple",
+  "name": "Pot of the Disciple",
+  "section": "craft",
+  "page": 56,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Prof[3]",
+  "slots": "1 (Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This small, cursed pot acts both wards and haunts its user.",
+  "effects": [
+   {
+    "name": "Cursed Pot Armor",
+    "tags": "P",
+    "text": "This pot can only be worn by a Hulinari or Curiot, and acts as a Professional Leather Set. The first time in any combat that you would take damage, reduce that damage by 2X, where X is your Proficiency. However, if the combat is against undead, instead that Undead critically hits you."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_shrimp_boots",
+  "name": "Shrimp Boots",
+  "section": "craft",
+  "page": 56,
+  "rarity": "Rare",
+  "element": "Air",
+  "prerequisites": "Prof[3], Armor Trinket Slot",
+  "slots": "1 (Shoes, Worn)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "These metallic boots are actually made of a strange iridescent chitinous material and are coated in numerous shells and tails. The tails beat lazily when the wearer is standing still, but whir into a furious buzzing hum when the wearer moves.",
+  "effects": [
+   {
+    "name": "Alien but Flamboyant Boots",
+    "tags": "P",
+    "text": "The wearer gains all the benefits of a normal pair of irontoe boots and in addition, when taking the move action, can treat a number of 5ft tiles of difficult terrain equal to half the wearers proficiency, rounded up, as normal terrain as tiny crustaceans carry them through the terrain. The wearer of these boots never leaves visible tracks."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_nanis_cleansing_bowl",
+  "name": "Nani’s Cleansing Bowl",
+  "section": "craft",
+  "page": 56,
+  "rarity": "Very Rare",
+  "element": "Fire",
+  "prerequisites": "Cooking General Talent",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "4",
+  "relic": "No",
+  "special": "No",
+  "description": "This pot smells lightly of sage and smoke. All items cooked in this pot taste slightly smoky and are infused of sage - regardless of ingredient type",
+  "effects": [
+   {
+    "name": "Infused Flavors",
+    "tags": "C",
+    "text": "The pot has four charges. When you use a cooking craft to create a craft, you may expend one charge. If you do, randomly select one craft ingredient used in the pot and roll 2D100 to determine a random special property. You may choose one of those to add to the craft ingredient while it is being used."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_urn_of_messengers",
+  "name": "Urn of Messengers",
+  "section": "craft",
+  "page": 56,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Literacy General Talent",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "4",
+  "relic": "No",
+  "special": "No",
+  "description": "This small, unassuming urn contains seven small chunks of raw amber inside, each of which vibrates and lightly glows.",
+  "effects": [
+   {
+    "name": "Infused Flavors",
+    "tags": "P",
+    "text": "This small, simply carved urn has chunks of raw amber inside. Each stone thrums with movement. You may expend a charge during a nightly rest on the following:"
+   },
+   {
+    "name": "Amber of Heavens",
+    "tags": "C",
+    "text": "Write a small message on this stone of no more than 16 words, or one simple depiction. The stone will travel up to three hexes, or 60 miles, to the intended target, impart the message visibly and without sound. In order to select a recipient, you must both know the target well and be able to picture them in your mind. They must be within range. If they are not within range, you learn the general direction of the target when you use this item. Be warned: If the target does not have Literacy, they may be unable to read your message."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_coin_of_a_mothers_blessing",
+  "name": "Coin of a Mother’s Blessing",
+  "section": "craft",
+  "page": 57,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Amber Fontborne Heritage (see The Coins’ Curse)",
+  "slots": "1 (Small, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Cursed",
+  "description": "This small gold coin was once imprinted with cranberries on one side and an unknown, matronly figure on the other. It is very old, a relic of a time before the Olganyar. It has been roughly shorn into two parts. One roughly depicts the matronly figure and has quickly faded and tarnished, while the other remains gleaming and vividly depicts cranberries. In spite of the tarnish and age, both pieces fit together easily, though they do not stay together - instead, they must be affixed together by a jeweler.",
+  "effects": [
+   {
+    "name": "Cranberry Coin",
+    "tags": "R",
+    "text": "If you are attuned to the Cranberry Coin, the first time each combat you would take damage, you may use a reaction to reduce the damage by up to 5X (X is your Proficiency)"
+   },
+   {
+    "name": "Matron Coin",
+    "tags": "P",
+    "text": "If you are attuned to the Matron Coin, treat your HP Pools as one dice type greater when you quick rest."
+   },
+   {
+    "name": "Blessed Coin",
+    "tags": "P",
+    "text": "It costs 20gp for a jeweler to affix both coins together. If affixed, it takes one attunement slot to benefit from both Matron and Cranberry coin effects. Additionally, the first time you would die, instead, do not die (retain only 1HP from death). The Matron Coin breaks off and disappears, unable to be found by the wielder in this lifetime. Instead, another, future member of your line will come into possession of the matron coin. You may only use this effect if you have committed siblicide to claim the second half of your family coin."
+   }
+  ],
+  "note": "<strong>The Coins’ Curse.</strong> The Coin of a Mother’s Blessing is a cursed artifact of the Olganyar, handed down through a single family, the descendants of Aia and Gritt (two priests and forbidden lovers from the origin myths of the Olganyar). The coin halves always pass to two siblings. Both siblings are always also the only two Amber Fontborne in the Olganyar Culture. Inevitably (through accident, malice, or otherwise), one sibling always kills the other, claims both halves of the coin, and then passes it down. This also means you can choose to inherit one half or the other of this coin."
+ },
+ {
+  "id": "olganyar_painters_supply_kit",
+  "name": "Painter’s Supply Kit",
+  "section": "craft",
+  "page": 57,
+  "rarity": "Rare",
+  "element": "Rot",
+  "prerequisites": "Prof[2], Art General Talent",
+  "slots": "1 (RIS Passive)",
+  "attunement": "No",
+  "uses": "6",
+  "relic": "No",
+  "special": "No",
+  "description": "This well crafted wooden box has all the supplies an artists needs for painting and more! A skilled member of the Cultural guild can apply esoteric teachings to produce spectacular effects",
+  "effects": [
+   {
+    "name": "Paint with Blood",
+    "tags": "A",
+    "text": "you may dip a projectile or blade into the box and coat it with one of the following paints when you have the Painter’s Supply Kit in your RIS, chosen at random. Apply the effects of the listed paint to your next successful attack.\nRed: The victim rolls against levels of hemorrhage equal to half your proficiency rounded up, using your check DC.\nYellow: The victim rolls against levels of hemorrhage and nausea equal to half your proficiency rounded up, using your check DC.\nWhite: The victim rolls against levels of hemorrhage, nausea, and delirium equal to half your proficiency rounded up, using your check DC."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_rublups_caffeine_stick",
+  "name": "Rublup’s Caffeine Stick",
+  "section": "craft",
+  "page": 57,
+  "rarity": "Common",
+  "element": "Fire",
+  "prerequisites": "No",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "8",
+  "relic": "No",
+  "special": "No",
+  "description": "This long stick of bark can be chewed on, for a slightly animating effect. It’s probably not addictive.",
+  "effects": [
+   {
+    "name": "Chew Caffeine",
+    "tags": "R",
+    "text": "As a reaction, you chew on a caffeine stick, consuming it. Gain 1AP before the end of your next turn. After that turn ends, you do not get a reaction until the start of the following turn. There are eight charges in this caffeine stick. When all are marked, the item is lost."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_cookbook_lainanis_wicked_vittles",
+  "name": "Cookbook: Lainani’s Wicked Vittles",
+  "section": "craft",
+  "page": 58,
+  "rarity": "",
+  "element": "",
+  "prerequisites": "Cooking: Baking[1], Language(Olem) or Cipher",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This old, weathered scroll is difficult to decipher. It appears that whoever wrote in it had a shaky hand, and possibly cataracts. They also clearly had no tongue, as the recipes within this scroll are all horrifying. A small note, written on the top of the scroll in a different ink and legible hand, reads “Beware: these recipes are all AWFUL ”.",
+  "effects": [
+   {
+    "name": "Cold Resistant Lava Cakes (Rare, Fire)",
+    "tags": "",
+    "text": "A deceptively reasonable looking small, sweet pastry and a layer of honey glaze hides a seething cauldron of boiling chile paste within. BEWARE: HOT is written beneath this recipe in bold letters. Item Slots: 1 (Small, Quickdraw). Prerequisites to Cook: Prof[3]. 25gp."
+   },
+   {
+    "name": "Hotcake",
+    "tags": "A",
+    "text": "When you consume one of these cakes with a body action, take 2D10 damage. You are immune to the effects of cold weather for 24 hours."
+   },
+   {
+    "name": "Curse Cookies (Very Rare, Salt)",
+    "tags": "",
+    "text": "These cookies are mostly salt, flour, and vinegar, giving them the gritty texture of wet sand. Rather than baked, they are ‘left in the sun for a day’. Item Slots: 1 (Small, Quickdraw). Prerequisites to Cook: Prof[4]. 100gp."
+   },
+   {
+    "name": "Consume Banecookie",
+    "tags": "C",
+    "text": "This item takes a full minute to get down. When you consume one of these curse cookies, remove one Bane Token. You may consume up to one of these cookies per long rest."
+   },
+   {
+    "name": "Apricot Noodle Soop (Legendary, Fire)",
+    "tags": "",
+    "text": "This spicy, apricot-laden noodle dish is an affront to all things. The addition of a sulphured egg gives it an additional, horrific pungency. It is truly an acquired taste! Item Slots: 1. Prerequisites to Cook: Prof[5]. 200gp."
+   },
+   {
+    "name": "Soopfever",
+    "tags": "C",
+    "text": "Eating this soup takes a minute of concentration. For the next hour, the eater will receive +3 to MD."
+   }
+  ]
+ },
+ {
+  "id": "olganyar_herbological_tome_hom_s_herbal_hemedies",
+  "name": "Herbological Tome: Homé’s Herbal Hemedies",
+  "section": "craft",
+  "page": 58,
+  "rarity": "",
+  "element": "",
+  "prerequisites": "Herbalism:Salves[1], Language(Olem) or Cipher",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "This small, well organized scrollwork is dotted with depictions of plants and fungi, detailed in exquisite and colored detail, in the margins. These depictions appear to be purely for show, as they do not relate to the recipes.",
+  "effects": [
+   {
+    "name": "Calming Chamomile (Uncommon, Earth)",
+    "tags": "",
+    "text": "This calming tea has a soothing and minty smell, and makes all your worries disappear. Item Slots: 1. Prerequisites to Brew: Prof[2]. 10gp."
+   },
+   {
+    "name": "Consume",
+    "tags": "A",
+    "text": "When you consume this tea, remove one level of one mental condition. You may also use this to remove one level of Madness as an Oracle."
+   },
+   {
+    "name": "Sugarstem (Rare, Water)",
+    "tags": "",
+    "text": "This sweet and energizing tea makes you feel like you can take on the world, and it is great against fending off fatigue. Item Slots: 1. Prerequisites to Brew: Prof[3]. 35gp."
+   },
+   {
+    "name": "Consume",
+    "tags": "A",
+    "text": "For the next minute, gain 1X advantage against all Fatigue Checks. Additionally, increase your Move Speed by 5ft for the duration."
+   },
+   {
+    "name": "Focused Foxtail (Very Rare, Earth)",
+    "tags": "",
+    "text": "This focusing tea helps anyone to maintain concentration. Item Slots: 1. Prerequisites to Brew: Prof[4]. 250gp."
+   },
+   {
+    "name": "Consume",
+    "tags": "A",
+    "text": "For the next minute, your first Focus action each turn does not exhaust your Focus even if it would."
+   }
+  ]
+ }
+]

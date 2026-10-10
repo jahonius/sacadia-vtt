@@ -1,0 +1,49 @@
+{
+  "_id": "7ab00a87b6f9a990",
+  "_key": "!items!7ab00a87b6f9a990",
+  "name": "Moon Rune",
+  "type": "gear",
+  "img": "icons/magic/symbols/runes-triangle-blue.webp",
+  "folder": "c37e8fc7ad9c2976",
+  "sort": 20,
+  "system": {
+    "description": "<p><em>Prerequisite: Prof[3].</em></p><p><strong>Moon Rune</strong> (Passive): -2AD. Then choose one of the following effects when you buy this rune: +3 to PD/TD/MD/DR. <em>(Make the choices on the item sheet; equip the rune to activate it.)</em></p><p><strong>Rune</strong> (Action): Runes must be worn on armor, and equipped in your RIS to use. You can activate or deactivate a Rune with an action when it is in your RIS, without taking it out of your RIS. When activated, Runes will change or alter your Armor Properties according to the rune type. You can deactivate it with another action. If you activate one Rune equipped in RIS, any other Runes you have activated will automatically deactivate.</p><p class=\"goods-facts\">1 Item Slot (RIS Passive, Worn, Rune) · 200gc · Runes, rulebook p.209</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive, worn, rune",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "moon_rune",
+      "kind": "trinket",
+      "goods": {
+        "table": "runes",
+        "rune": {
+          "fixed": {
+            "ad": -2
+          },
+          "plus": {
+            "n": 1,
+            "by": 3,
+            "from": [
+              "pd",
+              "td",
+              "md",
+              "dr"
+            ]
+          }
+        }
+      },
+      "bargain": "armor-trinkets",
+      "buildHash": "e9a780286c4d"
+    }
+  }
+}

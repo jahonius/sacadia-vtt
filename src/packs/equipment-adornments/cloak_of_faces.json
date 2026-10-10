@@ -16,7 +16,8 @@
       "catalogId": "cloak_of_faces",
       "kind": "adornment",
       "armorPrereq": "Cloaked Style",
-      "buildHash": "8f0bd5bb3779"
+      "bargain": "adornments",
+      "buildHash": "83c2842028d0"
     }
   }
 }

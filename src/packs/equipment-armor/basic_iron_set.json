@@ -19,14 +19,16 @@
     "maxStat": 22,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 60
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "basic_iron_set",
       "kind": "armor",
-      "buildHash": "71233b399a58"
+      "bargain": "armor",
+      "buildHash": "52532f9368ff"
     }
   }
 }

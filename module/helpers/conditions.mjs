@@ -51,6 +51,8 @@ export function conditionImmune(actor, condition, { self = false } = {}) {
   if (condition === 'hemorrhage' && owns('mg_blood_tome')) return true;
   // Saptouched (Warped ancestry): "You are immune to the Pin condition."
   if (condition === 'pinned' && owns('lore_saptouched')) return true;
+  // Meditative Will (Cunei): "You are immune to Frenzy."
+  if (condition === 'frenzy' && owns('cunei_meditative_will')) return true;
   // Witch's Presence (party-wide) and Tempered Aura (Panic / Taunt within the aura).
   if (witchPresenceImmune(actor, condition) || temperedAuraImmune(actor, condition)) return true;
   return (actor.system._picks?.().condition ?? []).some((p) => p.id === 'bd_caffeinated' && p.value === condition);

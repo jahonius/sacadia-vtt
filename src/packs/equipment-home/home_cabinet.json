@@ -1,0 +1,33 @@
+{
+  "_id": "f0a4d83937c37138",
+  "_key": "!items!f0a4d83937c37138",
+  "name": "Cabinet",
+  "type": "gear",
+  "img": "icons/containers/chest/chest-worn-oak-tan.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 100,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 200gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_cabinet",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "aa4296ded29b"
+    }
+  }
+}

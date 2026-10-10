@@ -1,0 +1,41 @@
+{
+  "name": "Suan of the Family",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a business. Uncommon, Salt. No item slots.</em></p><p><strong>Prerequisites:</strong> You work for a Myrgha Oligarch</p><p>Your family is extremely dedicated to a Myrgha Oligarch, making you much closer than most to your divine ruler. This has its benefits, and its costs.</p><p><strong>Suan’s Jobs</strong> (Passive): When you use the Earn Money Long Rest Action, you gain 3x as much money as is listed in the Odd Jobs table. Sometimes, your Oligarch will ask you to take on quests in exchange for this money. If you do not complete the quest before the next long rest, you permanently lose this item.</p><p><em>Rulebook p.33.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "481c590d9c1fb7aa",
+  "_key": "!items!481c590d9c1fb7aa",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 50,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_suan_of_the_family",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "business": {
+        "oddJobs": 3,
+        "note": "Your Oligarch may ask a quest of you for it."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "6f13aa7e940c"
+    }
+  }
+}

@@ -257,12 +257,39 @@
     </div>
     <div class="form-row">
       <label>{{localize 'SACADIA.Gear.Value'}}</label>
-      <input type="number" name="system.value" value="{{system.value}}" min="0"/>
+      <input type="number" name="system.value" value="{{system.value}}" min="0" step="any"/>
+      <select class="coin" name="system.coin" aria-label="{{localize 'SACADIA.Gear.Coin'}}">{{selectOptions coins selected=system.coin}}</select>
+    </div>
+    <div class="form-row" data-tooltip="{{localize 'SACADIA.Gear.SlotsHint'}}">
+      <label>{{localize 'SACADIA.Gear.Slots'}}</label>
+      <input type="number" name="system.slots" value="{{system.slots}}" min="0" step="1"/>
+    </div>
+    <div class="form-row" data-tooltip="{{localize 'SACADIA.Gear.ProvidesHint'}}">
+      <label>{{localize 'SACADIA.Gear.Provides'}}</label>
+      <input type="number" name="system.providesSis" value="{{system.providesSis}}" min="0" step="1" aria-label="SIS"/> <span class="unit">SIS</span>
+      <input type="number" name="system.providesRis" value="{{system.providesRis}}" min="0" step="1" aria-label="RIS"/> <span class="unit">RIS</span>
     </div>
     <label class="toggle">
       <input type="checkbox" name="system.equipped" {{checked system.equipped}}/>
       <span>{{localize 'SACADIA.Inventory.Equip'}}</span>
     </label>
+
+    {{!-- A rune (p.209): the changes chosen when it was bought. Equip it to activate it (one at a time, worn on armor). --}}
+    {{#if rune}}
+    <fieldset class="rune-choices">
+      <legend>{{localize 'SACADIA.Goods.RuneLegend'}}</legend>
+      {{#if rune.fixed}}<p class="rune-fixed">{{rune.fixed}}</p>{{/if}}
+      {{#each rune.sides as |side|}}
+      <div class="form-row">
+        <label>{{side.sign}}{{side.by}}{{#if side.distinct}} <small>({{localize 'SACADIA.Goods.RuneDistinct'}})</small>{{/if}}</label>
+        {{#each side.picks as |p|}}
+        <select name="{{p.name}}">{{selectOptions p.options selected=p.value blank="—"}}</select>
+        {{/each}}
+      </div>
+      {{/each}}
+      <p class="hint">{{localize 'SACADIA.Goods.RuneHint'}}</p>
+    </fieldset>
+    {{/if}}
     <div class="form-row">
       <label>{{localize 'SACADIA.Gear.Traits'}}</label>
       <input type="text" name="system.traits" value="{{system.traits}}" list="sacadia-weapon-traits"
@@ -300,6 +327,74 @@
         <label>{{localize 'SACADIA.Weapon.Hands'}}</label>
         <input type="number" name="system.hands" value="{{system.hands}}" min="1" max="2"/>
       </div>
+    </fieldset>
+  </div>
+
+  {{else if (or isCulture isAncestry)}}
+  {{!-- A culture or ancestry (data/item-origin.mjs): what it grants, the choice it asks for, and its own fields. --}}
+  <div class="origin-fields">
+    {{#if isAncestry}}
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Identity.Heritage'}}</label>
+      <select name="system.heritage">{{selectOptions config.heritages selected=system.heritage localize=true blank=""}}</select>
+    </div>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Identity.Size'}}</label>
+      <input type="text" name="system.size" value="{{system.size}}"/>
+    </div>
+    <div class="form-row">
+      <label>{{localize 'SACADIA.Origin.Lifespan'}}</label>
+      <input type="text" name="system.lifespan" value="{{system.lifespan}}"/>
+    </div>
+    {{else}}
+    <div class="form-row" data-tooltip="{{localize 'SACADIA.Origin.AliasesHint'}}">
+      <label>{{localize 'SACADIA.Origin.Aliases'}}</label>
+      <input type="text" name="system.aliases" value="{{system.aliases}}"/>
+    </div>
+    <div class="form-row" data-tooltip="{{localize 'SACADIA.Origin.SubculturesHint'}}">
+      <label>{{localize 'SACADIA.Origin.Subcultures'}}</label>
+      <input type="text" class="origin-subcultures" value="{{origin.subcultures}}"/>
+    </div>
+    <div class="form-row" data-tooltip="{{localize 'SACADIA.Origin.JournalHint'}}">
+      <label>{{localize 'SACADIA.Origin.Journal'}}</label>
+      <input type="text" name="system.journal" value="{{system.journal}}" placeholder="{{localize 'SACADIA.Origin.JournalHint'}}"/>
+    </div>
+    <fieldset class="origin-laws">
+      <legend>{{localize 'SACADIA.Origin.Laws'}} <a data-action="addOriginRow" data-field="laws" title="{{localize 'SACADIA.Origin.AddLaw'}}"><i class="fa-solid fa-plus"></i></a></legend>
+      {{#each origin.laws as |law|}}
+      <div class="form-row law-row">
+        <input type="text" name="system.laws.{{law.idx}}.name" value="{{law.name}}" placeholder="{{localize 'SACADIA.Origin.LawName'}}"/>
+        <label class="checkbox" title="{{localize 'SACADIA.Origin.Optional'}}"><input type="checkbox" name="system.laws.{{law.idx}}.optional" {{checked law.optional}}/> {{localize 'SACADIA.Origin.Optional'}}</label>
+        <a data-action="deleteOriginRow" data-field="laws" data-index="{{law.idx}}"><i class="fa-solid fa-trash"></i></a>
+        <textarea name="system.laws.{{law.idx}}.text" placeholder="{{localize 'SACADIA.Origin.LawText'}}">{{law.text}}</textarea>
+      </div>
+      {{/each}}
+    </fieldset>
+    {{/if}}
+
+    <fieldset class="origin-options" data-tooltip="{{localize 'SACADIA.Origin.OptionsHint'}}">
+      <legend>{{localize 'SACADIA.Origin.Options'}} <a data-action="addOriginRow" data-field="options" title="{{localize 'SACADIA.Origin.AddOption'}}"><i class="fa-solid fa-plus"></i></a></legend>
+      {{#each origin.options as |o|}}
+      <div class="form-row">
+        <input type="text" class="key" name="system.options.{{o.idx}}.key" value="{{o.key}}" placeholder="{{localize 'SACADIA.Origin.OptionKey'}}"/>
+        <input type="text" name="system.options.{{o.idx}}.label" value="{{o.label}}" placeholder="{{localize 'SACADIA.Origin.OptionLabel'}}"/>
+        <a data-action="deleteOriginRow" data-field="options" data-index="{{o.idx}}"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{/each}}
+    </fieldset>
+
+    <fieldset class="origin-grants" data-tooltip="{{localize 'SACADIA.Origin.GrantsHint'}}">
+      <legend>{{localize 'SACADIA.Origin.Grants'}}</legend>
+      {{#each origin.grants as |g|}}
+      <div class="form-row">
+        <input type="hidden" name="system.grants.{{g.idx}}.uuid" value="{{g.uuid}}"/>
+        <a class="grant-name" data-action="openGrant" data-uuid="{{g.uuid}}">{{g.name}}</a>
+        <select name="system.grants.{{g.idx}}.option">{{selectOptions @root.origin.optionChoices selected=g.option blank=(localize 'SACADIA.Origin.Always')}}</select>
+        <a data-action="deleteOriginRow" data-field="grants" data-index="{{g.idx}}"><i class="fa-solid fa-trash"></i></a>
+      </div>
+      {{else}}
+      <p class="hint">{{localize 'SACADIA.Origin.GrantsEmpty'}}</p>
+      {{/each}}
     </fieldset>
   </div>
 

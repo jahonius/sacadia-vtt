@@ -1,0 +1,440 @@
+[
+ {
+  "id": "cunei_restaurant_of_forever_stew",
+  "name": "Restaurant of Forever Stew",
+  "section": "business",
+  "page": 44,
+  "rarity": "Common",
+  "element": "Water",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Your family has opened a small, hole-in-the-wall, stew restaurant. If you never run out of stew, you never run out of customers, right?",
+  "effects": [
+   {
+    "name": "Forever Stew",
+    "tags": "P",
+    "text": "When you first take this Inheritance, come up with a name for your restaurant and select a location for your restaurant. Every Long Rest as a Long Rest action when in the same city as your Restaurant, when you take the Earn Money Long Rest Action, instead of taking an Odd Job, you work your restaurant, gaining the following according to the rarity of this stew:\nCommon: Gain 10gp*X, where X is your Proficiency\nUncommon: Gain 20gp*X, where X is your Proficiency\nRare: Gain 40gp*X, where X is your Proficiency Very\nRare: Gain 80gp*X, where X is your Proficiency\nLegendary[1]: Gain 100gp*X, where X is your Proficiency\nLegendary[2]: Gain 120gp*X, where X is your Proficiency, or choose one target in your party (you or an ally). That target gains one additional Lore Point during this Rest."
+   },
+   {
+    "name": "Aging Flavors",
+    "tags": "P",
+    "text": "At the end of each campaign in which you have inherited this stew and used the Earn Money action on Forever Stew at least once, increase the rarity of this craft ingredient by one type."
+   }
+  ]
+ },
+ {
+  "id": "cunei_fish_smuggling_business",
+  "name": "Fish Smuggling Business",
+  "section": "business",
+  "page": 44,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Proficiency[3], Nimble Hands:Roguecraft[1], Stealth",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Your family has opened a perfectly legitimate fishing market stall, and we’re not sure why this item says “smuggling”.",
+  "effects": [
+   {
+    "name": "Smuggling Job",
+    "tags": "C",
+    "text": "As a Long Rest Action, you may spend any amount of gold on fresh fish and declare a destination. That destination must be another city or town, and must be more than a day’s travel away. After the long rest ends, you must immediately go to that location. For every day’s travel you go, gain 1X Disadvantage to all Stealth Checks, or rolls to hide that you are transporting fish. If you reach the end destination without any NPCs identifying that you are transporting raw fish, double the amount of money you spent on fresh fish when you reach the final destination."
+   },
+   {
+    "name": "Smuggler’s Hideout",
+    "tags": "P",
+    "text": "The first time you take this Inheritance, choose a location in a Cunei city you spend a lot of time in (you may work with your GM on this). Create a business front at that location, and then denote (narratively) a smuggler’s den hidden beneath or nearby that front. Also, take Hidden Tunnels:"
+   },
+   {
+    "name": "Hidden Tunnels",
+    "tags": "P",
+    "text": "Choose a location in the city to which your smuggler’s den is secretly connected. When you do, work with your GM to define why and how the two points are secretly connected.Every time you inherit this item, you may choose an additional point to which this smuggler’s den is connected, providing you fast travel across the map."
+   }
+  ]
+ },
+ {
+  "id": "cunei_minister_of_finance",
+  "name": "Minister of Finance",
+  "section": "business",
+  "page": 45,
+  "rarity": "Uncommon",
+  "element": "Salt",
+  "prerequisites": "Society:Legalism[1], Economy, Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are a dedicated civil servant acquainted with finances",
+  "effects": [
+   {
+    "name": "Influential",
+    "tags": "C",
+    "text": "Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:\nTake Pay: Gain 50gp\nFind Clues: You may identify one clue or fact of the local region pertaining to financial matters"
+   },
+   {
+    "name": "Cook Books",
+    "tags": "P",
+    "text": "When you are performing your work at the Ministry of Finance, you can cook the books. If you do, gain X*50gp instead of 50gp. You can choose any number for X. When you do, roll XD20. If any number is a natural 1, you are found out. Lose all of your money and this Inheritance."
+   }
+  ]
+ },
+ {
+  "id": "cunei_minister_of_agriculture",
+  "name": "Minister of Agriculture",
+  "section": "business",
+  "page": 45,
+  "rarity": "Uncommon",
+  "element": "Earth",
+  "prerequisites": "Society:Legalism[1], Wilderness:Flora[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are a dedicated civil servant acquainted with agriculture",
+  "effects": [
+   {
+    "name": "Influential",
+    "tags": "C",
+    "text": "Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:\nTake Pay: Gain 50gp\nGain Influence: Gain 1 Influence with the Ministry of Agriculture or a Myrgha Oligarch"
+   },
+   {
+    "name": "Agricultural Insights",
+    "tags": "P",
+    "text": "When you use Wilderness:Flora regarding crops, you succeed even if you would fail."
+   }
+  ]
+ },
+ {
+  "id": "cunei_minister_of_the_post",
+  "name": "Minister of the Post",
+  "section": "business",
+  "page": 45,
+  "rarity": "Uncommon",
+  "element": "Air",
+  "prerequisites": "Society:Legalism[1], Society:Cunei[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are a dedicated civil servant acquainted with mail services",
+  "effects": [
+   {
+    "name": "Influential",
+    "tags": "C",
+    "text": "Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:\nTake Pay: Gain 50gp\nGain Lead: Gain 1 lead related to a hint or plot point actively on-going in your campaign by reading the mail"
+   }
+  ]
+ },
+ {
+  "id": "cunei_minister_of_diplomacy",
+  "name": "Minister of Diplomacy",
+  "section": "business",
+  "page": 45,
+  "rarity": "Uncommon",
+  "element": "Air",
+  "prerequisites": "Society:Cultural Lore[1], Social Graces: Speaker[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are a dedicated civil servant, and a diplomat.",
+  "effects": [
+   {
+    "name": "Influential",
+    "tags": "C",
+    "text": "Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:\nTake Pay: Gain 50gp\nLearn Cultures: Roll a Society:Cultural Lore Check, but learn something about any other culture rather than your own. You can learn secret or hidden facts about other cultures through this roll."
+   }
+  ]
+ },
+ {
+  "id": "cunei_marble_artisan",
+  "name": "Marble Artisan",
+  "section": "business",
+  "page": 46,
+  "rarity": "Very Rare",
+  "element": "Earth",
+  "prerequisites": "Construction:Stonework[3]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "1",
+  "relic": "Yes",
+  "special": "No",
+  "description": "You are an artist, cutting through marble like butter, and you are well known throughout the region for your marble works.",
+  "effects": [
+   {
+    "name": "Marble Contract",
+    "tags": "P",
+    "text": "You are an expert and renowned marbleworker, and have taken on a contract. If you complete all the below crafts, and incorporate them all into a final Marble Construction, you gain 10,000gp. Work with your GM to define and identify the likeness of who you make. Once you have taken this Inheritance, you cannot take it again."
+   },
+   {
+    "name": "Marble Legs",
+    "tags": "C",
+    "text": "(Prerequisite: 200gc worth of Very Rare White Marble). You craft marble legs in a marvelous likeness."
+   },
+   {
+    "name": "Marble Torso",
+    "tags": "C",
+    "text": "(Prerequisite: 500gc worth of Legendary[1] White Marble). You craft a clothed torso in a marvelous likeness."
+   },
+   {
+    "name": "Marble Arms",
+    "tags": "C",
+    "text": "(Prerequisite: 200gc worth of Very Rare White Marble). You craft arms, and tools and implements, in a marvelous likeness."
+   },
+   {
+    "name": "Marble Head",
+    "tags": "C",
+    "text": "(Prerequisite: 1000gc worth of Legendary[1] White Marble). You craft the perfect likeness of your patron in a marvelous likeness."
+   },
+   {
+    "name": "Construct Statue",
+    "tags": "C",
+    "text": "(Prerequisite: Marble Legs, Marble Torso, Marble Arms, Marble Head). Make a separate craft check for each piece of the statue to incorporate them into the likeness of your Patron. Then, gain 10,000gp."
+   },
+   {
+    "name": "Marble Magician [1]",
+    "tags": "P",
+    "text": "You purchase this ability with Talent Points. If you do, you gain 1X Advantage on any craft check to incorporate marble into a craft."
+   }
+  ]
+ },
+ {
+  "id": "cunei_a_perfect_marble_cube",
+  "name": "A Perfect Marble Cube",
+  "section": "craft",
+  "page": 46,
+  "rarity": "Rare",
+  "element": "Earth",
+  "prerequisites": "No",
+  "slots": "1",
+  "attunement": "No",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A perfectly carved marble cube. So perfect that even touching it alters and warps its perfection.",
+  "effects": [
+   {
+    "name": "Toss Cube",
+    "tags": "A",
+    "text": "When you have this item equipped in a readied item slot, you may toss it up to 30ft into the battlefield. All creatures within 15ft of the cube make Wiles Checks against 3 levels of Taunt to the cube. Any creature that is Cunei makes Wiles Checks against 6 levels of Taunt against the cube. When any creature touches the Cube, all creatures lose Taunt."
+   }
+  ]
+ },
+ {
+  "id": "cunei_just_a_good_suit_of_armor",
+  "name": "Just A Good Suit of Armor",
+  "section": "craft",
+  "page": 46,
+  "rarity": "Rare",
+  "element": "Earth",
+  "prerequisites": "Proficiency[3], Heavy Armor Proficiency",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "An artfully crafted, but simple, set of iron armor. Anyone would be proud to wear it, and shocked at how comfortable it is.",
+  "effects": [
+   {
+    "name": "Artisanal Armor",
+    "tags": "P",
+    "text": "This Armor is a Professional Iron Set, but provides +10PD, instead of +9PD."
+   }
+  ]
+ },
+ {
+  "id": "cunei_ritual_of_spring_rain",
+  "name": "Ritual of Spring Rain",
+  "section": "craft",
+  "page": 47,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Society:Legalism[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a calming mantra that you can use to calm yourself.",
+  "effects": [
+   {
+    "name": "Calming Mantra",
+    "tags": "R",
+    "text": "As a reaction when a target attempts to give you levels of Taunt or Panic, you may gain 1X advantage against that Taunt or Panic. If you are Steadied, you may roll against one fewer level."
+   }
+  ]
+ },
+ {
+  "id": "cunei_ritual_of_the_maple_leaf",
+  "name": "Ritual of The Maple Leaf",
+  "section": "craft",
+  "page": 47,
+  "rarity": "Rare",
+  "element": "Air",
+  "prerequisites": "Society:Legalism[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have an organizational mantra that reflects the organization of a leaf.",
+  "effects": [
+   {
+    "name": "Organizing Mantra",
+    "tags": "P",
+    "text": "When you are attuned to the Ritual of the Maple Leaf, increase your RIS by half your Proficiency, rounded up."
+   }
+  ]
+ },
+ {
+  "id": "cunei_ritual_of_the_stonefruit",
+  "name": "Ritual of The Stonefruit",
+  "section": "craft",
+  "page": 47,
+  "rarity": "Rare",
+  "element": "Earth",
+  "prerequisites": "Society:Legalism[1], Proficiency[3], Thug, Harm",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a mantra of power that resonates from your core.",
+  "effects": [
+   {
+    "name": "Core Mantra",
+    "tags": "P",
+    "text": "When you use the Harm action against a target to whom you have given Wrestle Pin, increase the dice type by one type."
+   }
+  ]
+ },
+ {
+  "id": "cunei_ritual_of_the_crackling_ash",
+  "name": "Ritual of The Crackling Ash",
+  "section": "craft",
+  "page": 47,
+  "rarity": "Rare",
+  "element": "Fire",
+  "prerequisites": "Society:Legalism[1], Proficiency[3], Soldier with Call of Respite",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a crackling and wild roar that you can emanate in battle to steady your allies.",
+  "effects": [
+   {
+    "name": "Ritualistic Call",
+    "tags": "B",
+    "text": "When you use Call of Respite, you can always use Courage on the Trait Check, even when it is not relevant."
+   }
+  ]
+ },
+ {
+  "id": "cunei_ritual_of_balance",
+  "name": "Ritual of Balance",
+  "section": "craft",
+  "page": 48,
+  "rarity": "Rare",
+  "element": "Salt",
+  "prerequisites": "Society:Legalism[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a meditative touch that you can take each rest.",
+  "effects": [
+   {
+    "name": "Meditation",
+    "tags": "C",
+    "text": "During each Quick Rest, heal one HP pool before you spend any HP pools on you or allies. If you have full health, gain this HP as temporary HP at the start of the next combat (provided a combat occurs before the next rest). You must roll this HP pool die, and cannot take the average."
+   }
+  ]
+ },
+ {
+  "id": "cunei_veined_marble",
+  "name": "Veined Marble",
+  "section": "ingredient",
+  "page": 48,
+  "rarity": "Legendary[1]",
+  "element": "Earth",
+  "prerequisites": "N/A",
+  "slots": "3 (Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A marvelous piece of raw marble, waiting to be formed.",
+  "effects": []
+ },
+ {
+  "id": "cunei_prized_blue_tuna",
+  "name": "Prized Blue Tuna",
+  "section": "ingredient",
+  "page": 48,
+  "rarity": "Very Rare",
+  "element": "Water",
+  "prerequisites": "White Cunei Myrgha",
+  "slots": "3 (Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "Lucky",
+  "description": "A massive bluefin tuna, recently caught, and considered lucky.",
+  "effects": []
+ },
+ {
+  "id": "cunei_blackrice_seed",
+  "name": "BlackRice Seed",
+  "section": "ingredient",
+  "page": 48,
+  "rarity": "Very Rare",
+  "element": "Fire",
+  "prerequisites": "Black Cunei Myrgha",
+  "slots": "1 (Small, Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A special grain from the wild rice sprouting at the top of a mountain",
+  "effects": []
+ },
+ {
+  "id": "cunei_ritual_of_the_ending_of_things",
+  "name": "Ritual of The Ending of Things",
+  "section": "craft",
+  "page": 48,
+  "rarity": "Rare",
+  "element": "Rot",
+  "prerequisites": "Society:Legalism[1], Proficiency[3]",
+  "slots": "N/A",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a ritual, passed down through your family, that is used to mark the passing of life to death.",
+  "effects": [
+   {
+    "name": "The Fall of a Single Leaf",
+    "tags": "P",
+    "text": "When you die, you immediately take a full turn (you die at the end of this turn)."
+   },
+   {
+    "name": "The Blanketing of Fallen Snow",
+    "tags": "F",
+    "text": "If you are the last member of your team still standing in a combat and you have less than 0HP, you may use this Focus action. If you do, and for as long as you maintain Focus, all of your hits that hit critically hit. You die when your Focus ends."
+   }
+  ]
+ }
+]

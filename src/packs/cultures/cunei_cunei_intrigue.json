@@ -1,0 +1,45 @@
+{
+  "_id": "a025e022153fe3dd",
+  "_key": "!items!a025e022153fe3dd",
+  "name": "Cunei Intrigue",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "folder": "e6e98acf43a5e597",
+  "sort": 20,
+  "system": {
+    "description": "<p>Add the following ability to the Literary Talent tree. You can purchase the below ability using Talent Points: Codebreaker.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha Cultural Talent",
+      "prerequisite": "Cunei Cultural Heritage · p.37"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_cunei_intrigue",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "1401fdc638ef"
+    }
+  }
+}

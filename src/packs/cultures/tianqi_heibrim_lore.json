@@ -1,0 +1,49 @@
+{
+  "_id": "4fad9d5a73de423b",
+  "_key": "!items!4fad9d5a73de423b",
+  "name": "Heibrim Lore",
+  "type": "ability",
+  "img": "icons/sundries/scrolls/scroll-symbol-eye-brown.webp",
+  "folder": "e7c7dbab0f7b538c",
+  "sort": 20,
+  "system": {
+    "description": "<p>You gain 1 level of Talent Specialization in Religion: Demon Lore. This level does not require the Religion General Talent to use, and it stacks with any other levels you would take by leveling into Religion: Demon Lore. Your demon lore also works for all Qianpo demons, even though they are not demons.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi Cultural Talent",
+      "prerequisite": "Tianqi Cultural Heritage · p.59"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_heibrim_lore",
+      "transcribed": true,
+      "culture": "tianqi",
+      "grantsSpecialty": {
+        "talent": "religion",
+        "name": "Demon Lore"
+      },
+      "buildHash": "7c39d6179e4a"
+    }
+  }
+}

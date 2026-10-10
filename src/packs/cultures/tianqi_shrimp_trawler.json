@@ -1,0 +1,41 @@
+{
+  "name": "Shrimp Trawler",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a business. Rare, Water. No item slots (Stilts occupy 2).</em></p><p><strong>Prerequisites:</strong> Acrobatics: Balance[2], your character is from a town bordering the Lake of Western Lights</p><p>You own a shrimp trawler business, and use this to make good money on the shores of the Lake of Western Lights.</p><p><strong>Stilts</strong> (Passive): You have a set of stilts which occupy 2 RIS. Though normally used for your business, you can equip or unequip them in combat from your RIS using an action if your are outdoors or under a high ceiling. If you do, halve your max. Move Speed. You cannot 5ft adjust or take cover when you have Stilts equipped. Gain Height advantage against Medium creatures at your level.</p><p><strong>Shrimp Trawling</strong> (Ceremony): You can only Shrimp Trawl when you take a Long Rest in a town bordering the Lake of Western Lights. When you use the Earn Money action and trawl for shrimp, you gain 60gc per week.</p><p><em>Rulebook p.64.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "9f6a06bf7afb7b5e",
+  "_key": "!items!9f6a06bf7afb7b5e",
+  "folder": "76562f6c37f89b61",
+  "sort": 10,
+  "img": "icons/environment/settlement/market-stall.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_shrimp_trawler",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "business": {
+        "earn": "60",
+        "note": "Only in a town on the Lake of Western Lights."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "f26cb11e0d5c"
+    }
+  }
+}

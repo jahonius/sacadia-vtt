@@ -1,0 +1,44 @@
+{
+  "_id": "5cce9206bd7cfa63",
+  "_key": "!items!5cce9206bd7cfa63",
+  "name": "Extra Talents",
+  "type": "ability",
+  "img": "icons/skills/trades/academics-book-study-purple.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 70,
+  "system": {
+    "description": "<p>When you choose to play this Heritage, gain one extra Talent Point to spend as you wish.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Talented Ancestry",
+      "prerequisite": "Talented Human Ancestry · p.82"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_extra_talents",
+      "transcribed": true,
+      "buildHash": "140668a1d428"
+    }
+  }
+}

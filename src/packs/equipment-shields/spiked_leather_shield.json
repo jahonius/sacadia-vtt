@@ -18,6 +18,7 @@
       "dr": 0
     },
     "maxStat": null,
+    "value": 150,
     "slots": 2,
     "storage": "ris",
     "providesSis": 0,
@@ -40,7 +41,8 @@
     "sacadia": {
       "catalogId": "spiked_leather_shield",
       "kind": "shield",
-      "buildHash": "b4895f606d20"
+      "bargain": "shields",
+      "buildHash": "6ded2b83e013"
     }
   }
 }

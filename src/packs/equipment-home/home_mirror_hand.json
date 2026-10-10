@@ -1,0 +1,33 @@
+{
+  "_id": "266ff91e3541ce2a",
+  "_key": "!items!266ff91e3541ce2a",
+  "name": "Mirror (Hand)",
+  "type": "gear",
+  "img": "icons/sundries/survival/mirror-plain.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 250,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 80gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 80,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_mirror_hand",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "23bb574ad200"
+    }
+  }
+}

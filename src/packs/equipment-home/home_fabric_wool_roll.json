@@ -1,0 +1,34 @@
+{
+  "_id": "e14cc35145eed863",
+  "_key": "!items!e14cc35145eed863",
+  "name": "Fabric - Wool (Roll)",
+  "type": "gear",
+  "img": "icons/commodities/cloth/cloth-roll-worn-tan.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 70,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 40gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 40,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fabric_wool_roll",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "176e3208293b"
+    }
+  }
+}

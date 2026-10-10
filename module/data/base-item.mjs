@@ -22,7 +22,8 @@ export default class SacadiaItemBase extends SacadiaDataModel {
   /**
    * Item slots (book pp.180–181): how many slots the item takes, and where it's kept — a Readied Item Slot (RIS: at hand
    * in combat; you start with 5) or a Stored Item Slot (SIS: in your bags, reachable only on a rest). `providesSis` is a
-   * bag's storage. Shared by gear and armor.
+   * bag's storage; `providesRis` the readied slots a bandolier, holster or pocket adds while it's readied (pp.199, 202).
+   * Shared by gear and armor.
    */
   static slotFacet() {
     const fields = foundry.data.fields;
@@ -30,6 +31,7 @@ export default class SacadiaItemBase extends SacadiaDataModel {
       slots: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0 }),
       storage: new fields.StringField({ required: true, blank: false, initial: 'ris', choices: ['ris', 'sis'] }),
       providesSis: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
+      providesRis: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
     };
   }
 

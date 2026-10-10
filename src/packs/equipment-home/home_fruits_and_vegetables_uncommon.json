@@ -1,0 +1,34 @@
+{
+  "_id": "e6c82bdafccc6f74",
+  "_key": "!items!e6c82bdafccc6f74",
+  "name": "Fruits and Vegetables (Uncommon)",
+  "type": "gear",
+  "img": "icons/consumables/fruit/dragonfruit-cut-red-white.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 140,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fruits_and_vegetables_uncommon",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "97d3a3426848"
+    }
+  }
+}

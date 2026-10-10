@@ -1,0 +1,46 @@
+{
+  "_id": "0087efcd4493e894",
+  "_key": "!items!0087efcd4493e894",
+  "name": "A Pebble That Splashes",
+  "type": "ability",
+  "img": "icons/magic/water/orb-water-bubbles-blue.webp",
+  "folder": "d438317767df20cc",
+  "sort": 80,
+  "system": {
+    "description": "<p>As a Reaction to an ally moving to within 5ft of you when you are steadied, move up to half your Move Speed (rounded up) to where they moved from.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: White Cunei",
+      "prerequisite": "White Cunei Subculture, Soldier · p.43"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_a_pebble_that_splashes",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "b2d761b38b41"
+    }
+  }
+}

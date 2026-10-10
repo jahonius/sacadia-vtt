@@ -1,0 +1,34 @@
+{
+  "_id": "b70e37013b4d411b",
+  "_key": "!items!b70e37013b4d411b",
+  "name": "Map Notes",
+  "type": "gear",
+  "img": "icons/tools/navigation/map-chart-tan.webp",
+  "folder": "f497a19dfaa67cb5",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Map Notes</strong> (Passive): <em>Prerequisite: Survival: Navigation[1].</em> When you buy a map, you may purchase Map Notes up to the level of Specialized Talent Proficiency you possess in Survival: Navigation. Each map note will add a hidden or important location to your map. Whenever you are traveling, the location will appear as visible within the regional map you travel, even if you do not have sightlines to that location.</p><p class=\"goods-facts\">No Item Slot · 20gc · Navigation Tools, rulebook p.204</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "map_notes",
+      "kind": "goods",
+      "goods": {
+        "table": "navigation"
+      },
+      "bargain": "adventuring",
+      "buildHash": "6c655637cd8a"
+    }
+  }
+}

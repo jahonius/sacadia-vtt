@@ -1,0 +1,37 @@
+{
+  "name": "Red Glyph of Luck",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p>A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Fate”. It is written in blood.</p><p><strong>Type AB+ Blood</strong> (Passive): This item has one charge. You may expend one charge to re-roll any 1D20 roll you make, provided you keep this item in your RIS. This item recovers one charge per Nightly Rest.</p><p><strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph.</p><p><em>Rulebook p.66.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b60244947106b581",
+  "_key": "!items!b60244947106b581",
+  "folder": "76562f6c37f89b61",
+  "sort": 80,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_red_glyph_of_luck",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "baac6f38fe73"
+    }
+  }
+}

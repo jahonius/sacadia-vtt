@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "short_sword",
       "kind": "weapon",
-      "buildHash": "a863bc2f6305"
+      "bargain": "basic-weapons",
+      "buildHash": "6b2a999b08ea"
     }
   }
 }

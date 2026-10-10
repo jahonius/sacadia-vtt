@@ -1,0 +1,48 @@
+{
+  "name": "Restaurant of Forever Stew",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Common, Water. No item slots.</em></p><p>Your family has opened a small, hole-in-the-wall, stew restaurant. If you never run out of stew, you never run out of customers, right?</p><p><strong>Forever Stew</strong> (Passive): When you first take this Inheritance, come up with a name for your restaurant and select a location for your restaurant. Every Long Rest as a Long Rest action when in the same city as your Restaurant, when you take the Earn Money Long Rest Action, instead of taking an Odd Job, you work your restaurant, gaining the following according to the rarity of this stew:<br/>Common: Gain 10gp*X, where X is your Proficiency<br/>Uncommon: Gain 20gp*X, where X is your Proficiency<br/>Rare: Gain 40gp*X, where X is your Proficiency Very<br/>Rare: Gain 80gp*X, where X is your Proficiency<br/>Legendary[1]: Gain 100gp*X, where X is your Proficiency<br/>Legendary[2]: Gain 120gp*X, where X is your Proficiency, or choose one target in your party (you or an ally). That target gains one additional Lore Point during this Rest.</p><p><strong>Aging Flavors</strong> (Passive): At the end of each campaign in which you have inherited this stew and used the Earn Money action on Forever Stew at least once, increase the rarity of this craft ingredient by one type.</p><p><em>Rulebook p.44.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "198ed142c752a1ea",
+  "_key": "!items!198ed142c752a1ea",
+  "folder": "c931f980fe44bd4d",
+  "sort": 10,
+  "img": "icons/environment/settlement/tavern.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_restaurant_of_forever_stew",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "business": {
+        "byRarity": {
+          "Common": 10,
+          "Uncommon": 20,
+          "Rare": 40,
+          "Very Rare": 80,
+          "Legendary[1]": 100,
+          "Legendary[2]": 120
+        },
+        "note": "In the same city as the restaurant."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Common",
+        "element": "Water",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "3b0c6fee3871"
+    }
+  }
+}

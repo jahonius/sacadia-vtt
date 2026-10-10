@@ -1,0 +1,37 @@
+{
+  "name": "Veined Marble",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft ingredient. Legendary[1], Earth. 3 item slots (Craft Ingredient). Uses: 1.</em></p><p>A marvelous piece of raw marble, waiting to be formed.</p><p><em>Rulebook p.48.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "7871124744c831cd",
+  "_key": "!items!7871124744c831cd",
+  "folder": "c931f980fe44bd4d",
+  "sort": 150,
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_veined_marble",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Legendary[1]",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "5f87b54a31fd"
+    }
+  }
+}

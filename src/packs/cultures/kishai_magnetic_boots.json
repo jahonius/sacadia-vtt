@@ -1,0 +1,37 @@
+{
+  "name": "Magnetic Boots",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Uncommon, Earth. 1 item slot (Worn, RIS Passive). Attunement.</em></p><p>Large iron-tipped boots. Nothing very special about them.</p><p><strong>Magnetic Boots</strong> (Passive): If you wear Magnetic Boots, you gain 1X Advantage against Push and Pull effects from any magnetic source, such as Tocks. You also gain 1X Advantage against the Kick Condition. Reduce your Move Speed by 5ft when you wear these boots.</p><p><em>Rulebook p.75.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b324080c16a65fcb",
+  "_key": "!items!b324080c16a65fcb",
+  "folder": "56c5eedd378f4a41",
+  "sort": 30,
+  "img": "icons/equipment/feet/boots-armored-leather-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_magnetic_boots",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Uncommon",
+        "element": "Earth",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "c500a3ca9d96"
+    }
+  }
+}

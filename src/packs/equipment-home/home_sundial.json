@@ -1,0 +1,33 @@
+{
+  "_id": "46523d2ba6ad051e",
+  "_key": "!items!46523d2ba6ad051e",
+  "name": "Sundial",
+  "type": "gear",
+  "img": "icons/commodities/treasure/plaque-stone-hammer.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 380,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 400gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 400,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_sundial",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "57d47d48f5c3"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_id": "9b82f5ff69c75083",
+  "_key": "!items!9b82f5ff69c75083",
+  "name": "Elemental Resistance",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-glow-maple-teal.webp",
+  "folder": "5757523bb3aaa415",
+  "sort": 30,
+  "system": {
+    "description": "<p>You have Damage Resistance equal to your Proficiency to damage of your elemental type. Out of combat, you are peculiarly resistant to effects of your aligned type. <em>(Choose your element on this card.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Sylnfolk Ancestry",
+      "prerequisite": "Sylnfolk Fixerfolk Ancestry · p.88"
+    },
+    "activities": [],
+    "modifiers": [],
+    "pick": {
+      "options": [],
+      "label": "SACADIA.Origin.YourElement",
+      "requires": [],
+      "kind": "element"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_elemental_resistance",
+      "transcribed": true,
+      "resistance": {
+        "pick": true,
+        "value": "@proficiency"
+      },
+      "buildHash": "400bbf69e637"
+    }
+  }
+}

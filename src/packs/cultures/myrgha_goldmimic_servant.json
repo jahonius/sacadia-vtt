@@ -1,0 +1,37 @@
+{
+  "name": "Goldmimic Servant",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Very Rare, Air. 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Proficiency[3], Magic:Magic Beast Lore[1]</p><p>A small wooden cage, inside of which is a small, snarling, winged coin. The goldmimic devours coins.</p><p><strong>Hungry for Gold</strong> (Passive): To maintain your Goldmimic, you must feed it 100gp at the end of every Long Rest. If you do not, it dies. Remove this item. When you have the Goldmimic equipped in a readied item slot, you may use the Goldsniff Action:</p><p><strong>Goldsniff</strong> (Focus): For as long as you maintain Focus, you know where the largest source of gold is within 200ft of you.</p><p><em>Rulebook p.35.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "52cb7fcb791e8697",
+  "_key": "!items!52cb7fcb791e8697",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 120,
+  "img": "icons/environment/traps/cage-simple-wood.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldmimic_servant",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Air",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "49bb1c54eab7"
+    }
+  }
+}

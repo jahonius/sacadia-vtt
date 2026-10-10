@@ -1,0 +1,56 @@
+{
+  "_id": "6b5fbd34665e591d",
+  "_key": "!items!6b5fbd34665e591d",
+  "name": "Ambushed Resiliency",
+  "type": "ability",
+  "img": "icons/magic/defensive/shield-barrier-deflect-teal.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 20,
+  "system": {
+    "description": "<p>When you are Ambushed, gain damage resistance equal to 2X Proficiency in the first round of combat. <em>(While you’re Surprised.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: All Tianqi",
+      "prerequisite": "Tianqi Cultural Heritage · p.63"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Ambushed Resiliency",
+        "target": "defense.dr",
+        "value": "2*@proficiency",
+        "predicate": [
+          {
+            "atom": "self:surprised"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_ambushed_resiliency",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "9bc60e80edc2"
+    }
+  }
+}

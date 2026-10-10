@@ -1,0 +1,37 @@
+{
+  "name": "Normal Compass",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Common, Salt. 1 item slot (Small, Quickdraw).</em></p><p><strong>Prerequisites:</strong> Survival: Navigation[1]</p><p>A small piece of lodestone balanced on a pivoting stick. It requires delicate balance to use.</p><p><strong>Magnetic North</strong> (Action): You delicately balance the compass. It points towards the center of Kish.</p><p><em>Rulebook p.78.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "a77dff2512293e6b",
+  "_key": "!items!a77dff2512293e6b",
+  "folder": "56c5eedd378f4a41",
+  "sort": 130,
+  "img": "icons/tools/navigation/compass-worn-copper.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_normal_compass",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Common",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "f6d0dbadcacf"
+    }
+  }
+}

@@ -81,7 +81,7 @@
       <h4>{{localize 'SACADIA.Talent.Specialties'}} <a data-action="addSpecialty" title="{{localize 'SACADIA.Talent.AddSpecialty'}}"><i class="fa-solid fa-plus"></i></a></h4>
       <ul class="talent-list">
         {{#each system.specialties as |sp idx|}}
-        <li class="talent specialty" data-index="{{idx}}">
+        <li class="talent specialty{{#if sp.source}} granted{{/if}}" data-index="{{idx}}" {{#if sp.source}}data-tooltip="{{localize 'SACADIA.Talent.SpecialtyGranted'}}"{{/if}}>
           <input type="text" name="system.specialties.{{idx}}.name" value="{{sp.name}}" placeholder="{{localize 'SACADIA.Talent.SpecialtyName'}}"/>
           <select name="system.specialties.{{idx}}.talent">{{selectOptions @root.talentChoices selected=sp.talent localize=true blank=""}}</select>
           <input type="number" class="rank" name="system.specialties.{{idx}}.rank" value="{{sp.rank}}" min="0" max="6" title="{{localize 'SACADIA.Talent.Rank'}}"/>

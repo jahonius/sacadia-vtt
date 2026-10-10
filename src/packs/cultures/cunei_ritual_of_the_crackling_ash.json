@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of The Crackling Ash",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Fire. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3], Soldier with Call of Respite</p><p>You have a crackling and wild roar that you can emanate in battle to steady your allies.</p><p><strong>Ritualistic Call</strong> (Boost): When you use Call of Respite, you can always use Courage on the Trait Check, even when it is not relevant.</p><p><em>Rulebook p.47.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "0246292de5282369",
+  "_key": "!items!0246292de5282369",
+  "folder": "c931f980fe44bd4d",
+  "sort": 130,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_the_crackling_ash",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Fire",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "5a75e8c7ed5d"
+    }
+  }
+}

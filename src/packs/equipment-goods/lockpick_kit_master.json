@@ -1,0 +1,34 @@
+{
+  "_id": "04afb97b1b99ea5f",
+  "_key": "!items!04afb97b1b99ea5f",
+  "name": "Lockpick Kit (Master)",
+  "type": "gear",
+  "img": "icons/tools/hand/pry-bar-hook-steel.webp",
+  "folder": "893c4dea9cc730f8",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Pick Lock</strong> (Action): <em>Prerequisite: Nimble Hands: Roguecraft[1].</em> You must have a Lockpick Kit equipped in both hands to use this ability. You attempt to pick a lock. A simple lock has a DC14 Check DC. An Advanced Lock has a DC19 Check DC. A Master’s Lock has a DC24 Check DC. Each lock comes with a Level. You must succeed at this check a number of times equal to the Lock level to open it. After opening it, you may close the lock again to lock it once more.</p><p class=\"goods-facts\">1 Item Slot · 500gc · Locks and Keys, rulebook p.204</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lockpick_kit_master",
+      "kind": "goods",
+      "goods": {
+        "table": "locks"
+      },
+      "bargain": "adventuring",
+      "buildHash": "b2930b36f800"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "A Good Position",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a business. Uncommon, Salt. No item slots.</em></p><p>You have spent your life savings on a position on the New Myrghos markets. This is probably good… as long as that item skyrockets in value this year?</p><p><strong>Market Appraisal</strong> (Passive): When you take this item, work with your GM to define one produced Myrgha good (e.g., Garum, Marbleworks, etc.). When you take this item, you gain nothing. If that item rockets in value (i.e., if the resource become significantly more rare due to an accident at the factory), immediately gain Rocketing Value:</p><p><strong>Rocketing Value</strong> (Passive): When you take this ability, gain 5,000gp.</p><p><em>Rulebook p.33.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "807654d983f11f38",
+  "_key": "!items!807654d983f11f38",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 20,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_a_good_position",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "c841bd388be6"
+    }
+  }
+}

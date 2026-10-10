@@ -1,0 +1,38 @@
+{
+  "_id": "fe428b650e97466a",
+  "_key": "!items!fe428b650e97466a",
+  "name": "Lantern Diffuser",
+  "type": "gear",
+  "img": "icons/consumables/potions/vial-cork-empty.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Lantern Diffuser</strong> (Passive, Ceremony): You may affix the lantern diffuser (or remove it) from a lantern during a short rest. If the lantern diffuser is affixed to a lantern, it gives off 50ft of dim light, but no bright light.</p><p class=\"goods-facts\">No Item Slot · 25gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 25,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lantern_diffuser",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "addOn": true,
+          "bright": 0,
+          "dim": 50
+        }
+      },
+      "buildHash": "e1b34f189213"
+    }
+  }
+}

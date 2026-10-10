@@ -11,14 +11,50 @@ Your **name** goes at the top of the sheet. On the **Character** tab, under **Bu
 sums the build up under your name. Your level and profession set these for you:
 
 - **Proficiency** and **Max AP**, from your level.
-- **Max Health**, from your profession's HP per level. Use **Max HP adjustment** (Character tab, under Build) for
-  Heritage HP or a rolled difference.
+- **Max Health**, from your profession's HP per level, plus your Heritage's HP at Level 1 (once) and abilities
+  such as Strong Constitution. Use **Max HP adjustment** (Character tab, under Build) for a rolled difference. The
+  header's HP tooltip lists each part.
 - **Check DC**, from your profession's formula.
 - **Lore points**, from your level and Fate.
 - **Move Speed** (header): 30ft, adjusted by your abilities, Heavy Armor, a Tower Shield, and Slowed.
 
-Culture, Heritage, Ancestry, and your backstory prompts go on the **Character** tab too, under **Identity** and
-**Background**.
+Your Heritage, Ancestry and Culture go on the **Character** tab too, under **Identity** (next section), and your
+backstory prompts under **Background**.
+
+## Heritage, ancestry and culture
+
+Choose them on the **Character** tab, under **Identity**. What each grants is added to your sheet for you, and taken
+back if you change it. The **Granted** line lists it.
+
+- **Heritage:** one of the six (book pp.80–92). Its HP at Level 1 is added to your Max HP, and its abilities
+  (Industrial, Friend of Nature …) are added to your Abilities. A **Daemonai** chooses Intuit or Speak beside it
+  (Natural Charisma), and a **Fontborne** chooses Lightly or Heavily Warped (Strength of Warp).
+- **Ancestry:** the list shows your Heritage's ancestries, from the **Heritages & Ancestries** compendium and every
+  culture's own (the Tianqi's Withered, the Cunei Marblekin …). Choosing one sets your Heritage and adds its
+  abilities. A Fontborne ancestry's ability follows your Strength of Warp. A **Hulinari**'s ancestry is their form
+  (Pack, Brute or Swarm): it also sets the Hulinari Warrior form, and adds the form's Check Expertise to the Stats tab.
+- **Culture:** one of the rulebook's five, from the **Cultures** compendium. Its **Binding Laws and Customs** show
+  under Identity, and its cultural talent and language are added to your Abilities. A cultural talent that gives a
+  level of a specialized talent (Heibrim Lore's Religion: Demon Lore, Eye for Gold's Economy: Appraisal) adds it to
+  your specializations; it needs no general talent, and ranks you buy in it stack on top. The **Cunei Myrgha** choose
+  their subculture (White or Black Cunei) and their cultural talent beside the culture. The scroll beside **Culture**
+  opens its Cultural Tapestry.
+
+You can also drag an ancestry or a culture from its compendium onto your sheet. It replaces the one you had.
+
+**Cultural abilities** are bought like any other ability: drag them from the culture's **Cultural Abilities** folder in
+the Cultures compendium. Their prerequisites check your culture, subculture, ancestry and Heritage ("Tianqi Oracle",
+"Black Cunei Subculture", "Withered Human Ancestry"). Your culture's **inheritance** (businesses, crafts, rituals, relics
+and craft ingredients) is in its **Inheritance** folder: drag what you inherit onto your sheet. The **Cultures of the
+Ardus Yauga** journal holds each culture's history, tapestry, ways and inheritance.
+
+**Your table's own culture or ancestry.** Choose **New culture…** (or **New ancestry…**) at the bottom of the list,
+and fill it in on its sheet: its laws, any subcultures, and its abilities (drag them onto its **Grants**). A GM can
+make one in the Items directory instead (Create Item → Culture or Ancestry), and it's offered on every sheet.
+
+**Characters made before 0.3.8.** A culture or ancestry you typed in shows in the list "as written" until you choose one.
+If your Max HP adjustment held your Heritage's HP, it was taken back out when the GM loaded the world (a notice lists
+whose), since the Heritage's HP is now added for you.
 
 ## 2. Traits
 
@@ -60,6 +96,35 @@ Drag weapons and armor from the equipment compendia onto your sheet, then use th
   the top shows both. Reaching a stored item in combat asks first. Carrying more than both hold is **Overburdened**
   (half speed).
 
+## Personal goods
+
+The **Personal Goods**, **Trinkets** and **Home Goods** compendia hold the rulebook's goods (pp.197–212): clothing and
+its add-ons, crafting kits and ingredients, light, mounts and vehicles, bags and baggage, tools, travel gear and kits; the
+baubles, jewelry and runes; and property, trade goods and furnishings. Each table is a folder. An item's description
+carries its rules and its properties' rules (Worn, Winter, Shoes …), and ends with its Item Slots, price and page.
+
+- **Buy** by dropping an item from a compendium on the **purse**: its price is paid, in gold or silver, or you're told
+  you can't afford it. Dropped anywhere else, it's added without paying.
+- **Bags and baggage.** A backpack, handbag, jar, pot, chest or pouch adds **stored** slots. Only your largest backpack
+  counts, and only one chest, ornate box or craft pouch. A bandolier, holster, vial or dagger belt adds **readied** slots
+  while it's readied, and so does a pocket. What each may hold is in its description.
+- **Light.** A torch, candle or lantern has a **flame** on its row. Light it and your tokens give off its light (a torch:
+  10ft bright, 20ft dim), and a lit torch hits as a club for Fire. Lighting asks for **Flint and Tinder** at hand, and a
+  lantern burns a **Lantern Oil**. Equip a **Diffuser**, **Hood** or **Black Lens** to affix it to your lantern (the
+  hood's "5ft/10° cone" is drawn at 30°). Any rest puts the lights out: a candle or torch burns out (one is used up), a
+  lantern goes dark. **Chickenglitter Dye** makes you glow until a Nightly Rest.
+- **Use** a consumable (a Healing Date, Bandages, an oil, a day's Rations …) with the **hand** on its row: one is used up
+  and its card is posted.
+- **Jewelry** worn in a readied slot gives 1X Advantage on Trait Checks against its condition, both when it's first given
+  and on Make Trait Check (Amber against Nausea, Turquoise against Panic …).
+- **Runes.** Make a rune's choices on its sheet (its row says **Choose its effects** until you do), then **equip** it to
+  activate it. Worn with armor, it changes your defenses. Activating one puts out the others.
+- **Also automatic:** a **Brass Horn** equipped when you roll initiative (1X Advantage), **Gold Wings** with Sandals at
+  hand (+5ft), and a **Smudge** equipped while it burns (Lavender against ranged attacks, Sage against melee; a rest uses it
+  up), with the Saltstone, Rabbit's Paw, Lodestone, Woad Facepaint and the armor adornments.
+- **Yours and the GM's:** whom your clothes let you talk to, cold regions, climbing, locks, navigation, writing, and
+  first aid and repair kits' charges. Their rules and Check DCs are in their descriptions.
+
 ## Size, resistances and talents
 
 - **Size** and **Resistances** are on the Character tab, under Build (an NPC's are in its header). Resistances take a
@@ -70,7 +135,7 @@ Drag weapons and armor from the equipment compendia onto your sheet, then use th
   Its dice button rolls that talent with 1X advantage per rank. A talent you don't have rolls at 1X disadvantage and
   without Proficiency (p.146).
 - **Prerequisites** are checked when you drag an ability onto your sheet: if one isn't met (a Trait score, a level, an
-  ability, a specialization rank) you get a warning, but the ability is still added.
+  ability, a specialization rank, your culture or ancestry) you get a warning, but the ability is still added.
 
 ## 5. Pools and profession panels
 

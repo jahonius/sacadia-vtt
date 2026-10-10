@@ -1,0 +1,63 @@
+{
+  "_id": "ebba7fd843fe709e",
+  "_key": "!items!ebba7fd843fe709e",
+  "name": "Tianqi",
+  "type": "culture",
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "folder": "e7c7dbab0f7b538c",
+  "sort": 0,
+  "system": {
+    "description": "<p>An empire at the end of ruin, the Tianqi stay alive through their union over a singular purpose - to win an endless war against a cannibalistic demon king. The Tianqi lands border Chuni’s Wall of Regret - and beyond it lies an apocalyptic wasteland ruled over by a demon king Ager, who exists for the sole purpose of destroying all Tianqi. The Tianqi are a cultic, apocalyptic demon-hunting culture at the end of their era.</p><p>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.459c85631453515a]{The Tianqi: Cultural Tapestry, Ways and Inheritance}</p><p><em>Rulebook p.59.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.4fad9d5a73de423b",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.aaeadc548c554585",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "aliases": "",
+    "laws": [
+      {
+        "name": "The Rootbinding",
+        "text": "You must support the war effort against Ager, and wherever possible, take action to help defeat the demons of Qianpo. Doing so should take precedence over law, religion, family, or any other value you possess.",
+        "optional": false
+      },
+      {
+        "name": "Ascendancy",
+        "text": "Unless you are of Noble blood, you must follow the orders of those who have the blood of Ascendant heroes, unless doing so goes against the Rootbinding.",
+        "optional": false
+      },
+      {
+        "name": "The Dead",
+        "text": "When someone dies, you must immediately burn the body and bury their ashes, unless doing so goes against the Rootbinding.",
+        "optional": false
+      },
+      {
+        "name": "Right to Victory",
+        "text": "The individual who deals the final blow to an enemy claims all spoils from that enemy, including honors, accolades, and punishment.",
+        "optional": false
+      },
+      {
+        "name": "Touching Gold",
+        "text": "Unless you are of Noble Blood, you cannot willingly touch or carry gold.",
+        "optional": false
+      }
+    ],
+    "subcultures": [],
+    "subculture": "",
+    "journal": "Compendium.sacadia.cultures-journal.JournalEntry.459c85631453515a"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "culture_tianqi",
+      "culture": "tianqi",
+      "buildHash": "50a62fc062a8"
+    }
+  }
+}

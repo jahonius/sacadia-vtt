@@ -1,0 +1,45 @@
+{
+  "_id": "1c71bb35378c75ac",
+  "_key": "!items!1c71bb35378c75ac",
+  "name": "Goldenhoard",
+  "type": "ability",
+  "img": "icons/commodities/currency/coins-plain-stack-gold.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 50,
+  "system": {
+    "description": "<p>Choose an item made of gold that you possess to be your Golden Connection. It can be a Weapon, Armor, or Accessory (i.e., something innocuous). You must have training in the armor or weapon to select it. The weapon gains a Gold Cache of X*1000gp, where X is your Proficiency. If you are an Oligarch (and not just a family member) this is instead X*2000gp. If you choose a weapon for your Golden Connection, gain Goldblade for free now. If you take Armor for your Golden Connection, gain Goldshield for free now. If you take an Accessory for your Golden Connection, gain Goldspool for free now. You can use gold you store in your Gold Cache for the following abilities.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Myrgha Cultural Heritage, Fatebound · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldenhoard",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "f3b4d3e2a157"
+    }
+  }
+}

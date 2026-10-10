@@ -1,0 +1,49 @@
+{
+  "_id": "09e7adfe2fe32ff3",
+  "_key": "!items!09e7adfe2fe32ff3",
+  "name": "Eye for Gold",
+  "type": "ability",
+  "img": "icons/commodities/gems/gem-rough-cushion-yellow.webp",
+  "folder": "a8a2e4aaa3684ab7",
+  "sort": 20,
+  "system": {
+    "description": "<p>Even if you don’t understand the economy, you have a sense for what has value. Gain 1 level in Economy: Appraisal, even if you do not have Economy. Additionally, you can always tell the difference between real gold and forgeries or false golds.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha Cultural Talent",
+      "prerequisite": "Myrgha Cultural Heritage · p.27"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_eye_for_gold",
+      "transcribed": true,
+      "culture": "myrgha",
+      "grantsSpecialty": {
+        "talent": "economy",
+        "name": "Appraisal"
+      },
+      "buildHash": "32a734584e2e"
+    }
+  }
+}

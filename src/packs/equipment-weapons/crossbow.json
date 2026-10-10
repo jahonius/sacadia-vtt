@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "crossbow",
       "kind": "weapon",
-      "buildHash": "a06c6b3d49d7"
+      "bargain": "military-weapons",
+      "buildHash": "8371ed114446"
     }
   }
 }

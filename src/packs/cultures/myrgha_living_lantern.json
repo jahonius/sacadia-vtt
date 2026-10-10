@@ -1,0 +1,37 @@
+{
+  "name": "Living Lantern",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Very Rare, Salt. 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Religion: Rochi Shamanic Order[2]</p><p>A small lantern emblazoned with eyes and a mouth, which move and look around.</p><p><strong>Talk with your Ancestors</strong> (Passive): When you use this lantern and make a Prayer Check out of combat to ask for guidance, you may ask any of your ancestors from past inheritance any one question. They will answer with any information they possess, including Talents they might have.</p><p><strong>Helpful Light</strong> (Passive): This lantern acts as a Lantern, and illuminates light around you without you wielding it in either hand, provided you have it equipped in a readied item slot.</p><p><em>Rulebook p.36.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "feb424f2b04496cf",
+  "_key": "!items!feb424f2b04496cf",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 160,
+  "img": "icons/sundries/lights/lantern-bullseye-signal-copper.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_living_lantern",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "89db0bba0ce2"
+    }
+  }
+}

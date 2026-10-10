@@ -1,0 +1,37 @@
+{
+  "name": "World-Traveled Bag",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Rare, Water. 1 item slot. Attunement. Uses: 6.</em></p><p><strong>Prerequisites:</strong> Proficiency[3]</p><p>A large woven sack of pillaged goods from neighboring cultures. The bag bulges with contents.</p><p><strong>Grab Oddity</strong> (Ceremony, Action): During a Quick Rest if this item is equipped in a Stored Item Slot, or as an action if this item is equipped in RIS, you may expend one charge of the World-Traveled Bag to gain one small item from any Ardus Yauga culture worth up to 50gp. You may declare the item when you remove it, but it must have the Small property. You can refill any number of charges at any international Myrgha market by spending 50gp/charge.</p><p><em>Rulebook p.34.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "fa07860349dd5321",
+  "_key": "!items!fa07860349dd5321",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 90,
+  "img": "icons/containers/bags/case-simple-leather-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_world_traveled_bag",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": true,
+        "uses": "6",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "0b92b3760dbd"
+    }
+  }
+}

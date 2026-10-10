@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "great_axe",
       "kind": "weapon",
-      "buildHash": "e104c9b46266"
+      "bargain": "military-weapons",
+      "buildHash": "de1b5dd80419"
     }
   }
 }

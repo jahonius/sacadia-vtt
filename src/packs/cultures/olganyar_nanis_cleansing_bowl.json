@@ -1,0 +1,37 @@
+{
+  "name": "Nani’s Cleansing Bowl",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Very Rare, Fire. 1 item slot. Attunement. Uses: 4.</em></p><p><strong>Prerequisites:</strong> Cooking General Talent</p><p>This pot smells lightly of sage and smoke. All items cooked in this pot taste slightly smoky and are infused of sage - regardless of ingredient type</p><p><strong>Infused Flavors</strong> (Ceremony): The pot has four charges. When you use a cooking craft to create a craft, you may expend one charge. If you do, randomly select one craft ingredient used in the pot and roll 2D100 to determine a random special property. You may choose one of those to add to the craft ingredient while it is being used.</p><p><em>Rulebook p.56.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "12b70938125111fc",
+  "_key": "!items!12b70938125111fc",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 80,
+  "img": "icons/commodities/materials/bowl-powder-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_nanis_cleansing_bowl",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Fire",
+        "attunement": true,
+        "uses": "4",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "1e37c5e99c46"
+    }
+  }
+}

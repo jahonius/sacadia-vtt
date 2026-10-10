@@ -1,0 +1,34 @@
+{
+  "_id": "12115d324ef55b4c",
+  "_key": "!items!12115d324ef55b4c",
+  "name": "Apartment Monthly Rent (Poor)",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-shelter-stone.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 10,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 50gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_apartment_monthly_rent_poor",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "0e48f411fc28"
+    }
+  }
+}

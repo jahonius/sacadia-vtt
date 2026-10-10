@@ -1,0 +1,35 @@
+{
+  "_id": "e79ea701e4d276bc",
+  "_key": "!items!e79ea701e4d276bc",
+  "name": "Feed (Per Day)",
+  "type": "gear",
+  "img": "icons/consumables/grains/sacks-grain-white.webp",
+  "folder": "e2aae46f62d61f55",
+  "sort": 120,
+  "system": {
+    "description": "<p><strong>Feed</strong> (Passive): Animals can consume 1 feed per day as a form of ration. You must carry this as part of travel supply. Feed represents cheaper-to-purchase animal rations than human food (humans cannot eat it).</p><p class=\"goods-facts\">No Item Slot · 2gc · Mounts and Vehicles, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "feed_per_day",
+      "kind": "goods",
+      "goods": {
+        "table": "mounts-vehicles",
+        "use": true
+      },
+      "bargain": "mounts",
+      "buildHash": "9c1fa1acd03d"
+    }
+  }
+}

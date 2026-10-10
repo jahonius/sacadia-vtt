@@ -1,0 +1,37 @@
+{
+  "name": "Red Glyph of Strength",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p>A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Power”. It is written in blood.</p><p><strong>Strength of Blood</strong> (Passive): Choose one weapon to which this Glyph applies when it is in your RIS. Increase the damage dice of that weapon by 1 Dice Type. Additionally, it overcomes Nonmagical Damage Resistance.</p><p><strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph.</p><p><em>Rulebook p.65.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "483d0e6294bd45a6",
+  "_key": "!items!483d0e6294bd45a6",
+  "folder": "76562f6c37f89b61",
+  "sort": 60,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_red_glyph_of_strength",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "41136a4907b7"
+    }
+  }
+}

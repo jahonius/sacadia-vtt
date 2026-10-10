@@ -1,0 +1,77 @@
+{
+  "_id": "57c7ce8c7f18984c",
+  "_key": "!items!57c7ce8c7f18984c",
+  "name": "With Cunning",
+  "type": "ability",
+  "img": "icons/creatures/birds/corvid-call-sound-glowing.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 110,
+  "system": {
+    "description": "<p>You may use Wiles for physical attack to-hit and damage when in Swarm Form, rather than Power. When in animal form, gain the Fly action. <em>(Applied when your Wiles is the higher.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Swarm Form Ancestry",
+      "prerequisite": "Swarm Form · p.92"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "With Cunning",
+        "target": "toHit",
+        "value": "max(0, @wiles - @power)",
+        "predicate": [
+          {
+            "atom": "attack:melee"
+          },
+          {
+            "atom": "attack:physical"
+          },
+          {
+            "atom": "self:form:swarm"
+          }
+        ]
+      },
+      {
+        "label": "With Cunning",
+        "target": "damage",
+        "value": "max(0, @wiles - @power)",
+        "predicate": [
+          {
+            "atom": "attack:melee"
+          },
+          {
+            "atom": "attack:physical"
+          },
+          {
+            "atom": "self:form:swarm"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_with_cunning",
+      "transcribed": true,
+      "buildHash": "e060849b21f7"
+    }
+  }
+}

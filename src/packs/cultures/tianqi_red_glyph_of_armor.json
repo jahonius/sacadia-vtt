@@ -1,0 +1,54 @@
+{
+  "name": "Red Glyph of Armor",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p>A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Protection”. It is written in blood.</p><p><strong>Armor of Blood</strong> (Passive): Every Long Rest, denote PD, TD, or MD. Until the next long rest, gain +1 to that stat. You may change your selection over a long rest. Keep this Glyph in your RIS.</p><p><strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph.</p><p><em>Rulebook p.65.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "29e5160507b632e1",
+  "_key": "!items!29e5160507b632e1",
+  "folder": "76562f6c37f89b61",
+  "sort": 40,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [
+    {
+      "_id": "cd51cd3351a35fbf",
+      "name": "Armor of Blood (PD)",
+      "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+      "transfer": true,
+      "disabled": false,
+      "changes": [
+        {
+          "key": "system.bonuses.defense.pd",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "flags": {}
+    }
+  ],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_red_glyph_of_armor",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "aa4735440385"
+    }
+  }
+}

@@ -6,6 +6,7 @@
  */
 import { until, sleep, fromCatalog, stubDialogs, autoAnswer, answeringMapPicks, recordErrors, settle, resetActor, fixture, arena,
   target } from './support.mjs';
+import { identitySettled } from '../rules/identity.mjs';
 
 /** The system's Item compendiums, read from their loaded indexes (so tests can be listed synchronously). */
 function systemPacks() {
@@ -135,6 +136,9 @@ export function registerSweeps(quench) {
           const pc = await fx.actor(`Collector ${pack.metadata.label}`, 'character');
           const docs = await pack.getDocuments();
           await pc.createEmbeddedDocuments('Item', docs.map((d) => { const o = d.toObject(); delete o._id; return o; }));
+          // Cultures and ancestries replace each other (one of each stays) and grant their abilities: let that finish.
+          await sleep(50);
+          await identitySettled(pc);
           await renderSheet(pc.sheet, `character with ${pack.metadata.label}`);
           await pc.delete();
         });

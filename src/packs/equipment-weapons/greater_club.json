@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "greater_club",
       "kind": "weapon",
-      "buildHash": "4381676b6812"
+      "bargain": "military-weapons",
+      "buildHash": "742a8ef67d61"
     }
   }
 }

@@ -1,0 +1,45 @@
+{
+  "_id": "5236ce97bc630bde",
+  "_key": "!items!5236ce97bc630bde",
+  "name": "Song of Triumph",
+  "type": "ability",
+  "img": "icons/skills/social/intimidation-impressing.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 60,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Song of the Solemn, all enemies have 1X Disadvantage on Trait Checks to prevent Taunt where you are the source.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Soldier · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_triumph",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "c0009470a265"
+    }
+  }
+}

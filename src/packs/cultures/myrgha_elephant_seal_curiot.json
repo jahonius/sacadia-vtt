@@ -1,0 +1,31 @@
+{
+  "_id": "038d2bbe4c927ba9",
+  "_key": "!items!038d2bbe4c927ba9",
+  "name": "Elephant Seal Curiot",
+  "type": "ancestry",
+  "img": "icons/creatures/fish/fish-grouper-tan.webp",
+  "folder": "647f4b4f10534ce0",
+  "sort": 10,
+  "system": {
+    "description": "<p>Elephant Seal Curiots are large, bulbous, and gelatinous. They are also extremely powerful, and low to the ground in weight distribution.</p><p><strong>Size:</strong> Medium (6.5–8 feet) · <strong>Lifespan:</strong> Typically 65–85 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.cultures.Item.9d9dc8a6c8600c32]{Brutish Figure}</p><p><strong>Lore uses</strong> (from level 4): @UUID[Compendium.sacadia.abilities-lore.Item.10f8395416f7f8a3]{Sealslam}</p><p><em>Myrgha ancestry. Curiot Heritage. Rulebook p.31.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.9d9dc8a6c8600c32",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "curiot",
+    "size": "Medium (6.5–8 feet)",
+    "lifespan": "Typically 65–85 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_elephant_seal_curiot",
+      "culture": "myrgha",
+      "buildHash": "3ecccde3f401"
+    }
+  }
+}

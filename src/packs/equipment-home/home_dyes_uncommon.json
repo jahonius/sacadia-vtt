@@ -1,0 +1,34 @@
+{
+  "_id": "aa25c8760269aacc",
+  "_key": "!items!aa25c8760269aacc",
+  "name": "Dyes (Uncommon)",
+  "type": "gear",
+  "img": "icons/skills/trades/textiles-cloth-dye-red.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 50,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_dyes_uncommon",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "051ada5a65b7"
+    }
+  }
+}

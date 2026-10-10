@@ -1,0 +1,48 @@
+{
+  "_id": "f96867c1e6aab279",
+  "_key": "!items!f96867c1e6aab279",
+  "name": "Farmer’s Eye",
+  "type": "ability",
+  "img": "icons/skills/trades/farming-wheat-circle-yellow.webp",
+  "folder": "e6e98acf43a5e597",
+  "sort": 30,
+  "system": {
+    "description": "<p>Add +2 to all Wilderness Checks you make. Additionally, you can always identify foodcrops at a glance.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha Cultural Talent",
+      "prerequisite": "Black Cunei Subculture · p.37"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_farmers_eye",
+      "transcribed": true,
+      "culture": "cunei",
+      "talentBonus": {
+        "wilderness": 2
+      },
+      "buildHash": "08a3e4126e73"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_id": "e467bce627f1d85b",
+  "_key": "!items!e467bce627f1d85b",
+  "name": "Scroll (Blank)",
+  "type": "gear",
+  "img": "icons/sundries/scrolls/scroll-rolled-plain-white.webp",
+  "folder": "b3df56e11756d6aa",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Write</strong> (Ceremony): <em>Prerequisite: Literacy.</em> You create a written work during rests and downtime. For each hour you spend writing, you may create one page worth of quality written word, or three pages of hasty scrawl. To do this, you must have something to write with (charcoal, ink, etc.) and something to write on (paperweave, scroll, wood slips). The raw ingredients used to create your written document are consumed when you write. You may write anything during nightly rests, or small notes to reference later during quick rests.</p><p><strong>Draw/Paint</strong> (Ceremony): <em>Prerequisite: Illustration[1].</em> You create an illustrated work during rests. For each hour you spend drawing or painting, you may create one canvas of quality painting or illustration. To do this, you must have something to illustrate with (charcoal, ink, etc.) and something to paint on (paperweave, scroll, wood slips). The raw ingredients used to create your illustrated document are consumed when you draw.</p><p class=\"goods-facts\">1 Item Slot · 50gc · Literary Tools, rulebook p.205</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "scroll_blank",
+      "kind": "goods",
+      "goods": {
+        "table": "literary"
+      },
+      "bargain": "literary",
+      "buildHash": "d20716b63a7e"
+    }
+  }
+}

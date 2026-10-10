@@ -1,0 +1,35 @@
+{
+  "_id": "a377ada4c91139b9",
+  "_key": "!items!a377ada4c91139b9",
+  "name": "Date (Healing)",
+  "type": "gear",
+  "img": "icons/consumables/fruit/berry-dates-jujube-red.webp",
+  "folder": "7469e6a4a14577d5",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Date (Healing)</strong> (Action): Expend one Healing Date from a RIS and choose one target within 5ft (you can choose yourself). Remove one level of Battle Fatigue from that target. A target may benefit from a Healing Date no more than once per quick rest.</p><p><strong>Date (Healing), p.206</strong> (Action): Until the start of your next turn, ignore 2 levels of Exhaustion from the Dying Condition. You may stack the effects of Healing Dates. <em>(The book prints both texts.)</em></p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 5gc · First Aid, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "healing_date",
+      "kind": "goods",
+      "goods": {
+        "table": "first-aid",
+        "use": true
+      },
+      "bargain": "adventuring",
+      "buildHash": "0285f1108086"
+    }
+  }
+}

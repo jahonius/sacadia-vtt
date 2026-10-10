@@ -1,0 +1,35 @@
+{
+  "_id": "6c10bc96d0123653",
+  "_key": "!items!6c10bc96d0123653",
+  "name": "Backpack (Large)",
+  "type": "gear",
+  "img": "icons/containers/bags/pack-leather-strapped-tan.webp",
+  "folder": "65470c303531d49b",
+  "sort": 30,
+  "system": {
+    "description": "<p><em>Prerequisite: Power[4].</em></p><p><strong>Backpack (Large)</strong> (Passive): Gain 60 SIS when you have this item. You may only benefit from one Backpack at a time.</p><p class=\"goods-facts\">No Item Slot · 500gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 60,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "backpack_large",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "backpack"
+      },
+      "bargain": "baggage",
+      "buildHash": "7e02bdb587c2"
+    }
+  }
+}

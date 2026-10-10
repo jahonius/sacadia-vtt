@@ -1,0 +1,34 @@
+{
+  "_id": "afa02a7522f5e281",
+  "_key": "!items!afa02a7522f5e281",
+  "name": "Key and Lock (Simple)",
+  "type": "gear",
+  "img": "icons/sundries/misc/key-steel.webp",
+  "folder": "893c4dea9cc730f8",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Key and Lock (Simple)</strong> (Passive): A Level 1 lock: Pick Lock DC14, Break Lock DC22.</p><p><strong>Locks and Keys</strong> (Passive): If you have a lock and key, you may put that lock and key on a box to secure it. If you do, creatures must succeed at a Roguecraft or Power Check to break the lock.</p><p><strong>Key</strong> (Action): When you have a key equipped in one hand, and a lock that matches that key, you can open the lock with an action. After opening it, you may close the lock again to lock it once more.</p><p><strong>Break Lock</strong> (Action): Make a Power Check to attempt to brute force break a lock. A simple lock has a DC22 Check DC. An Advanced Lock has a DC27 Check DC. A Master’s Lock has a DC32 Check DC. When you break the lock, it is destroyed.</p><p class=\"goods-facts\">1 Item Slot (Small) · 18gc · Locks and Keys, rulebook p.204</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 18,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "key_and_lock_simple",
+      "kind": "goods",
+      "goods": {
+        "table": "locks"
+      },
+      "bargain": "adventuring",
+      "buildHash": "ff92a7f2ea89"
+    }
+  }
+}

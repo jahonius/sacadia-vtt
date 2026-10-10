@@ -1,0 +1,37 @@
+{
+  "name": "Dessicated Ascendant Finger",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft ingredient. Legendary[1], Salt. 1 item slot (Small, Craft Ingredient). Uses: 1.</em></p><p>A crooked, bony finger of the long-dead Ascendant Aromon, who beat a demon general to death with his own arm.</p><p><em>Rulebook p.68.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "12a14205ef8d7ee9",
+  "_key": "!items!12a14205ef8d7ee9",
+  "folder": "76562f6c37f89b61",
+  "sort": 150,
+  "img": "icons/commodities/biological/finger-clawed-green-black.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_dessicated_ascendant_finger",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "faaec757e3d1"
+    }
+  }
+}

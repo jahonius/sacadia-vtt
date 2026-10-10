@@ -1,0 +1,37 @@
+{
+  "name": "Red Glyph of Farsight",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p>A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Farsight”. It is written in blood.</p><p><strong>Hallowed Blood</strong> (Passive): You cannot be Surprised when this Glyph is in your RIS.</p><p><strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph.</p><p><em>Rulebook p.65.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "9d73249813d4346e",
+  "_key": "!items!9d73249813d4346e",
+  "folder": "76562f6c37f89b61",
+  "sort": 70,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_red_glyph_of_farsight",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "707d22bbece4"
+    }
+  }
+}

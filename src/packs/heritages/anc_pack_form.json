@@ -1,0 +1,35 @@
+{
+  "_id": "b7f60683ea8d1f0e",
+  "_key": "!items!b7f60683ea8d1f0e",
+  "name": "Pack Form",
+  "type": "ancestry",
+  "img": "icons/creatures/mammals/spirit-deer-herd-blue.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 30,
+  "system": {
+    "description": "<p>A social creature, pack animals focus on group dynamics and control in a fight, using herd tactics to drive the course of combat. Your chosen Pack Form should be a medium-sized pack animal that lives in herds such as a zebra, saiga antelope, llama, wolves, or wild boar.</p><p><em>Hulinari are both an Ancestry and a Profession: if you choose to play one, you must take the other. Every Hulinari Ancestry is a unique animal; choose your species. This also sets your Hulinari Warrior form.</em></p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.e9d3cb52b2fe1160]{Graceful Animal}, @UUID[Compendium.sacadia.heritages.Item.c94cb3fa33157db1]{With All Haste}</p><p><em>Hulinari Heritage. Rulebook p.92.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.e9d3cb52b2fe1160",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.c94cb3fa33157db1",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "hulinari",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_pack_form",
+      "hulinariForm": "pack",
+      "buildHash": "e8a6579f0c4b"
+    }
+  }
+}

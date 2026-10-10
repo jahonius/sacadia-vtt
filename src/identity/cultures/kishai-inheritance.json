@@ -1,0 +1,380 @@
+[
+ {
+  "id": "kishai_grass_cannon",
+  "name": "Grass Cannon",
+  "section": "traded",
+  "page": 74,
+  "rarity": "Very Rare",
+  "element": "Air",
+  "prerequisites": "Training: Military Weapons",
+  "slots": "1",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A large bamboo tube-like shape, with a series of airholes to blow through. It looks all the world like a woodwind instrument, if for its much more dramatic effect.",
+  "effects": [
+   {
+    "name": "Grass Cannon",
+    "tags": "A",
+    "text": "Treat this weapon as a crossbow, except it deals magic damage (Air Element) in a 15ft cone emanating from you, rather than against a single target up to 120ft away. If you apply a Trick Strike or other effect to this cannon, the effect is applied to all creatures within the cone. If any roll you make in your to-hit with this weapon is a natural 1, the weapon misfires, and has no effect, even if it would critically hit (e.g., if you roll 3X advantage and roll a 6, 12, 20, and 1, the weapon will misfire)."
+   }
+  ]
+ },
+ {
+  "id": "kishai_staff_of_spores",
+  "name": "Staff of Spores",
+  "section": "traded",
+  "page": 74,
+  "rarity": "Legendary[1]",
+  "element": "Rot",
+  "prerequisites": "Wiles[4]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Spores",
+  "description": "A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!",
+  "effects": [
+   {
+    "name": "Illusory Caster",
+    "tags": "A",
+    "text": "When you use the Staff of Spores, choose one target within 10ft of you, then roll 1D2. If you roll a 1, the caster gives Panic. If you roll a 2, the caster gives Taunt. Then, roll 1D6. The target rolls Courage Checks (Check DC13) against X levels of the Condition, where X is the result of your 1D6 check. Narratively, visible and strange illusions display before the target as you do this. You may use this item once per Quick Rest."
+   }
+  ]
+ },
+ {
+  "id": "kishai_magnetic_boots",
+  "name": "Magnetic Boots",
+  "section": "traded",
+  "page": 75,
+  "rarity": "Uncommon",
+  "element": "Earth",
+  "prerequisites": "No",
+  "slots": "1 (Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Large iron-tipped boots. Nothing very special about them.",
+  "effects": [
+   {
+    "name": "Magnetic Boots",
+    "tags": "P",
+    "text": "If you wear Magnetic Boots, you gain 1X Advantage against Push and Pull effects from any magnetic source, such as Tocks. You also gain 1X Advantage against the Kick Condition. Reduce your Move Speed by 5ft when you wear these boots."
+   }
+  ]
+ },
+ {
+  "id": "kishai_straitock",
+  "name": "Straitock",
+  "section": "traded",
+  "page": 75,
+  "rarity": "Rare",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "6",
+  "relic": "No",
+  "special": "No",
+  "description": "A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening a small lensed window to one side. Oh, it’s beginning to glow. Maybe put it down?",
+  "effects": [
+   {
+    "name": "Straitock",
+    "tags": "A",
+    "text": "You set the Straitock to In or Out from its Safety Position."
+   },
+   {
+    "name": "Straitock (Out)",
+    "tags": "A",
+    "text": "(Prerequisite: Tock in the Out Position). You set the Straitock in front of you, declaring a 5ft x 30ft line from you. All creatures in the line must immediately make a Finesse Check (Check DC16) or are pushed 15ft away and knocked Prone. The Straitock lasts for one minute and cannot be turned off, but is destroyed if it takes 10 damage (AD12). Any creature that enters the line it forms moves 15ft slower against ‘the flow’ of the line, and 15ft faster moving away."
+   },
+   {
+    "name": "Straitock (In)",
+    "tags": "A",
+    "text": "(Prerequisite: Tock in the In Position). You set the Straitock in front of you, declaring a 5ft x 30ft line from you. All creatures in the line must immediately make a Finesse Check (Check DC16) or are pulled 15ft towards the Tock and knocked Prone. The Straitock lasts for one minute and cannot be turned off, but is destroyed if it takes 10 damage (AD12). Any creature that enters the line it forms moves 15ft slower against ‘the flow’ of the line, and 15ft faster moving away."
+   }
+  ]
+ },
+ {
+  "id": "kishai_wide_tock",
+  "name": "Wide Tock",
+  "section": "traded",
+  "page": 75,
+  "rarity": "Rare",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "6",
+  "relic": "No",
+  "special": "No",
+  "description": "A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!",
+  "effects": [
+   {
+    "name": "Widetock",
+    "tags": "A",
+    "text": "You set the Widetock to In or Out from its safety position."
+   },
+   {
+    "name": "Widetock (Out)",
+    "tags": "A",
+    "text": "(Prerequisite: Tock in the Out Position). You may throw the Widetock up to 30ft into a square. The Widetock explodes when it hits the ground. All creatures within 10ft of the Widetock make a Power Check (DC18) or are pushed 10ft away from the Widetock and knocked Prone."
+   },
+   {
+    "name": "Widetock (In)",
+    "tags": "A",
+    "text": "(Prerequisite: Tock in the In Position). You may throw the Widetock up to 30ft into a square. The Widetock explodes when it hits the ground. All creatures within 15ft of the Widetock make a Power Check (DC18) or are pulled 10ft towards the Widetock and knocked Prone."
+   }
+  ]
+ },
+ {
+  "id": "kishai_grappleshot",
+  "name": "Grappleshot",
+  "section": "traded",
+  "page": 76,
+  "rarity": "Legendary[1]",
+  "element": "Rot",
+  "prerequisites": "Wiles[4]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Spores",
+  "description": "A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!",
+  "effects": [
+   {
+    "name": "Grappleshot",
+    "tags": "A",
+    "text": "Make an attack using Finesse against a target ‘s TD within 40ft. If you hit, they take 3D10+Finesse damage and they make a Power Check against your Check DC against the Dragged condition. For as long as they have the rope embedded in them, they cannot fly (if they have wings). As a reaction, you may release the rope. The target can only end the Dragged Condition when they remove the rope (which requires a Power check against your Check DC using the Make Trait Check action)."
+   },
+   {
+    "name": "Load Grappling Hook",
+    "tags": "A",
+    "text": "You load the grappling hook with a shot."
+   },
+   {
+    "name": "Hook Ledge",
+    "tags": "A",
+    "text": "You fire a shot up to 40ft, locking the rope into a spot within range. This creates a taught rope that can be climbed or balanced across using Acrobatics."
+   }
+  ]
+ },
+ {
+  "id": "kishai_banded_drum",
+  "name": "Banded Drum",
+  "section": "traded",
+  "page": 76,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Performance: Music Making[3]",
+  "slots": "3",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A large drum, created from the leather hides of beasts over a massive bamboo core. Its rhythm is almost hypnotic, when played under the sounds of Solemnity of your people.",
+  "effects": [
+   {
+    "name": "Drumming",
+    "tags": "F",
+    "text": "This drum takes up 3 RIS. When you equip it, you must sit down, and are treated as prone. You additionally cannot move or 5ft adjust for as long as you have this equipped. When you play the drum, you enhance the Songs of the Solemn of your people:"
+   },
+   {
+    "name": "Song of the Grasshopper",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of the Grasshopper may hurdle 5ft further, and jump 10ft further still."
+   },
+   {
+    "name": "Song of the Skies",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of the Skies may apply an extra Critical Effect when they hit"
+   },
+   {
+    "name": "Song of Sorrows",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of Sorrows gain damage resistance 2 against damage they deal to themselves, instead of 1."
+   },
+   {
+    "name": "Song of the Breeze",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of the Breeze may fire through up to one obstruction without taking Disadvantage."
+   },
+   {
+    "name": "Song of Triumph",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of Triumph attempt to give 1 extra level of Taunt."
+   },
+   {
+    "name": "Song of the Net",
+    "tags": "P",
+    "text": "For as long as you maintain Focus on Drumming, allies with Song of the Net increase the damage of Harm by one additional dice type."
+   }
+  ]
+ },
+ {
+  "id": "kishai_grass_pole",
+  "name": "Grass Pole",
+  "section": "craft",
+  "page": 77,
+  "rarity": "Common",
+  "element": "Air",
+  "prerequisites": "No",
+  "slots": "1",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A long bamboo staff, capable of extending upon command.",
+  "effects": [
+   {
+    "name": "Bamboo Staff",
+    "tags": "P",
+    "text": "By default, this polearm is treated like a Staff. However, the polearm has a 10ft range instead of 5ft range."
+   }
+  ]
+ },
+ {
+  "id": "kishai_the_hoolers_whistle",
+  "name": "The Hooler’s Whistle",
+  "section": "craft",
+  "page": 77,
+  "rarity": "Rare",
+  "element": "Air",
+  "prerequisites": "Performance: Music Making[1]",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A tiny, green reed flute, with a small knotted base.",
+  "effects": [
+   {
+    "name": "Hooling",
+    "tags": "F",
+    "text": "For as long as you maintain Focus on Hooling, other creatures’ use of Song of the Solemn does not have any effect. Additionally, no creatures can hear one another. Additionally, all creatures on the map (allies and enemies) get 1X Advantage on all checks against Panic and Taunt."
+   }
+  ]
+ },
+ {
+  "id": "kishai_mailhopper",
+  "name": "Mailhopper",
+  "section": "craft",
+  "page": 77,
+  "rarity": "Rare",
+  "element": "Fire",
+  "prerequisites": "Wilderness: Fauna[1]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A large, cat-sized grasshopper, marked with a fiery pattern down its side. It stares blankly, but likes pets down its side.",
+  "effects": [
+   {
+    "name": "Return to Base",
+    "tags": "C",
+    "text": "During any rest, you can verbally give a single sentence command (up to 8 words) to the grasshopper. It will return to your chieftain via the most direct path, traveling 3 hexes per day, until it provides the message. You may use this once per long rest."
+   }
+  ]
+ },
+ {
+  "id": "kishai_woven_net",
+  "name": "Woven Net",
+  "section": "craft",
+  "page": 77,
+  "rarity": "Uncommon",
+  "element": "Air",
+  "prerequisites": "Power[2]",
+  "slots": "1",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A thickly woven net of grass fibers. It is about 10ft to a side, and the corners are tied with heavy stones.",
+  "effects": [
+   {
+    "name": "Throw Net",
+    "tags": "A",
+    "text": "When you have this net equipped in both hands, you can throw it a distance up to 5Xft (where X is your Power Score). From a square that distance away, select a 10ft x 10ft square. All creature in that space make Power Checks against your Check DC against 3 levels of Pin. If a creature takes any levels of Pin and are a flying creature, they cannot fly provided they have any levels of Pin this way. You may use the net once per quick rest."
+   }
+  ]
+ },
+ {
+  "id": "kishai_a_skif",
+  "name": "A Skif",
+  "section": "craft",
+  "page": 78,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Transport: Sailing[1]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "An enormous stone ship, carved in the neolithic era, with rough-hewn designs of suns and grasslands. The Skif is well-worn, but she functions still.",
+  "effects": [
+   {
+    "name": "Skif",
+    "tags": "P",
+    "text": "The Skif is treated as a Sailboat (in both Sacadia’s Art of War and Myths of Sacadia rules), with one exception:"
+   },
+   {
+    "name": "Heartstone Engine",
+    "tags": "P",
+    "text": "The Skif does not sail on water. Instead, it sails across the surface of grass, its base just touching the surface of whatever grasslands you cross."
+   },
+   {
+    "name": "Engine Failure",
+    "tags": "R",
+    "text": "If the Skif reaches 0HP at any point, it explodes in a vibrant blast. Creatures in the blast radius take damage according how far away they are from the center of the ship (outlined below). Creatures may choose to make a Finesse Check (negating damage) or a Power Check (halving damage). Any creature who takes damage from this effect is knocked Prone.\n0-10ft:16D10 Fire Damage (DC26 Finesse, DC20 Power)\n11-20ft: 12D10 Fire Damage (DC23 Finesse, DC18 Power)\n21-30ft: 8D10 Fire Damage (DC20 Finesse, DC16 Power)\n31-40ft: 4D10 Fire Damage (DC17 Finesse, DC4 Power)"
+   }
+  ]
+ },
+ {
+  "id": "kishai_normal_compass",
+  "name": "Normal Compass",
+  "section": "craft",
+  "page": 78,
+  "rarity": "Common",
+  "element": "Salt",
+  "prerequisites": "Survival: Navigation[1]",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of lodestone balanced on a pivoting stick. It requires delicate balance to use.",
+  "effects": [
+   {
+    "name": "Magnetic North",
+    "tags": "A",
+    "text": "You delicately balance the compass. It points towards the center of Kish."
+   }
+  ]
+ },
+ {
+  "id": "kishai_hearts_compass",
+  "name": "Heart’s Compass",
+  "section": "craft",
+  "page": 78,
+  "rarity": "Very Rare",
+  "element": "Salt",
+  "prerequisites": "Survival: Navigation[3]",
+  "slots": "1 (Small)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of Heartstone balanced within a mechanical contraption to contain it. A small piece of sporeglass covers the surface, protecting the heartstone. Only experts may touch it.",
+  "effects": [
+   {
+    "name": "Heart’s Arrow",
+    "tags": "A",
+    "text": "The compass has three points on it denoting “Close”, “Medium”, and “Far”. When you use the Heart’s compass, it points to the nearest 3 Greater Heartstones (ignoring minor Heartstones like those in a Skif). It will point to the nearest three Skyships, or, if the Center of Kish is nearer than the three closest Skyships, one needle will point to the center of Kish. The arrows align according to which Greater Heartstones are closer and further away."
+   }
+  ]
+ }
+]

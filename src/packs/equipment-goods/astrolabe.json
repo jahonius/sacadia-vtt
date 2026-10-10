@@ -1,0 +1,34 @@
+{
+  "_id": "e715506ed3ae9dc4",
+  "_key": "!items!e715506ed3ae9dc4",
+  "name": "Astrolabe",
+  "type": "gear",
+  "img": "icons/tools/navigation/sextant-brass-brown.webp",
+  "folder": "f497a19dfaa67cb5",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Astrolabe</strong> (Ceremony): <em>Prerequisite: Survival: Navigation[2].</em> If you get lost while navigating and identify that you are lost, you may use an Astrolabe to re-roll your Navigation Check for this Travel Ledger. When you re-roll this check, you may choose to keep the original or new roll. You may do this once per journey.</p><p class=\"goods-facts\">1 Item Slot · 60gc · Navigation Tools, rulebook p.204</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "astrolabe",
+      "kind": "goods",
+      "goods": {
+        "table": "navigation"
+      },
+      "bargain": "adventuring",
+      "buildHash": "38634de5c1ad"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "2c8c6ec28ba23d85",
+  "_key": "!items!2c8c6ec28ba23d85",
+  "name": "Glide",
+  "type": "ability",
+  "img": "icons/magic/control/buff-flight-wings-blue.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 50,
+  "system": {
+    "description": "<p>As a Boost to a Move action, you may glide up to your move speed. Ignore any difficult terrain or impassable areas (such as gaps). You may not vertically ascend with Glide. You still provoke attacks of opportunity.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Flying Curiot Ancestry",
+      "prerequisite": "Flying Curiot Ancestry · p.84"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_glide",
+      "transcribed": true,
+      "buildHash": "a540d7ab0eb8"
+    }
+  }
+}

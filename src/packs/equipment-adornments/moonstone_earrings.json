@@ -16,7 +16,8 @@
       "catalogId": "moonstone_earrings",
       "kind": "adornment",
       "armorPrereq": "Lucky Style",
-      "buildHash": "c5104653d180"
+      "bargain": "adornments",
+      "buildHash": "36202661d2d6"
     }
   }
 }

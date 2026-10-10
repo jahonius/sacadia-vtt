@@ -13,6 +13,9 @@ export default class SacadiaGear extends SacadiaItemBase {
     schema.quantity = new fields.NumberField({ ...requiredInteger, initial: 1, min: 0 });
     schema.weight = new fields.NumberField({ required: true, nullable: false, initial: 0, min: 0 });
     schema.value = new fields.NumberField({ required: true, nullable: false, initial: 0, min: 0 });
+    // The coin the value is in: gold, or silver for the book's sc prices (a Candle is 1sc). Kept apart from the gold so a
+    // world's silver rate (the silverPerGold setting) prices it right (helpers/downtime.mjs priceGc).
+    schema.coin = new fields.StringField({ required: true, blank: false, initial: 'gc', choices: ['gc', 'sc'] });
 
     // Whether this item is currently wielded/worn — gates its `self:wielding:*` roll options.
     schema.equipped = new fields.BooleanField({ initial: false });

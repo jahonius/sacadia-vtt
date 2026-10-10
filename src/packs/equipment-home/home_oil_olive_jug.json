@@ -1,0 +1,34 @@
+{
+  "_id": "8ccc83c950c94c42",
+  "_key": "!items!8ccc83c950c94c42",
+  "name": "Oil, Olive (Jug)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/jug-bottle-clay-brown-gold-blue.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 280,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 40gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 40,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_oil_olive_jug",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "f677cf804c9c"
+    }
+  }
+}

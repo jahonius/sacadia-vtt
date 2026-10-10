@@ -1,0 +1,34 @@
+{
+  "_id": "1370c5d6c5e896f8",
+  "_key": "!items!1370c5d6c5e896f8",
+  "name": "Stabling (Per Day)",
+  "type": "gear",
+  "img": "icons/environment/settlement/stable.webp",
+  "folder": "e2aae46f62d61f55",
+  "sort": 130,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5gc · Mounts and Vehicles, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "stabling_per_day",
+      "kind": "goods",
+      "goods": {
+        "table": "mounts-vehicles"
+      },
+      "bargain": "mounts",
+      "buildHash": "9dc792026f86"
+    }
+  }
+}

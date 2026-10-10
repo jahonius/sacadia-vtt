@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "greatsword",
       "kind": "weapon",
-      "buildHash": "6831f79dbba6"
+      "bargain": "military-weapons",
+      "buildHash": "62877eefda68"
     }
   }
 }

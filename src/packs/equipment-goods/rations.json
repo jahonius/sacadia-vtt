@@ -1,0 +1,35 @@
+{
+  "_id": "52febc4d00a1854a",
+  "_key": "!items!52febc4d00a1854a",
+  "name": "Rations / Day",
+  "type": "gear",
+  "img": "icons/consumables/food/berries-ration-round-red.webp",
+  "folder": "789b7f5285159daf",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Travel</strong> (Passive): When you travel, you consume 1 Ration per Day per character. Typically, this is tracked through the travel rules, and you shouldn’t often need to worry about purchasing rations at such a granular level.</p><p class=\"goods-facts\">1 Item Slot (Small) · 1gc · Travel Gear, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "rations",
+      "kind": "goods",
+      "goods": {
+        "table": "travel",
+        "use": true
+      },
+      "bargain": "travel",
+      "buildHash": "6fcfbd28a7bb"
+    }
+  }
+}

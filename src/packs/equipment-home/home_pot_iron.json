@@ -1,0 +1,34 @@
+{
+  "_id": "f575ee6c445e8f77",
+  "_key": "!items!f575ee6c445e8f77",
+  "name": "Pot (Iron)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/pot-meal.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 310,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 100gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_pot_iron",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "a659368b9b8a"
+    }
+  }
+}

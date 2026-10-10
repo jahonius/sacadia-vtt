@@ -1,0 +1,34 @@
+{
+  "_id": "8232bc4b6fc5ad69",
+  "_key": "!items!8232bc4b6fc5ad69",
+  "name": "Apartment Monthly Rent (Average)",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-two-stories-small.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 20,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 250gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 250,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_apartment_monthly_rent_average",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "44620e38d1da"
+    }
+  }
+}

@@ -1,0 +1,425 @@
+[
+ {
+  "id": "tianqi_shrimp_trawler",
+  "name": "Shrimp Trawler",
+  "section": "business",
+  "page": 64,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Acrobatics: Balance[2], your character is from a town bordering the Lake of Western Lights",
+  "slots": "N/A (Stilts occupy 2)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You own a shrimp trawler business, and use this to make good money on the shores of the Lake of Western Lights.",
+  "effects": [
+   {
+    "name": "Stilts",
+    "tags": "P",
+    "text": "You have a set of stilts which occupy 2 RIS. Though normally used for your business, you can equip or unequip them in combat from your RIS using an action if your are outdoors or under a high ceiling. If you do, halve your max. Move Speed. You cannot 5ft adjust or take cover when you have Stilts equipped. Gain Height advantage against Medium creatures at your level."
+   },
+   {
+    "name": "Shrimp Trawling",
+    "tags": "C",
+    "text": "You can only Shrimp Trawl when you take a Long Rest in a town bordering the Lake of Western Lights. When you use the Earn Money action and trawl for shrimp, you gain 60gc per week."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_minor_boriand",
+  "name": "Minor Boriand",
+  "section": "business",
+  "page": 64,
+  "rarity": "Very Rare",
+  "element": "Air",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Through political questions (or those of your family), you have been granted the title of Boriand, or mayor, of a small town by your local noble.",
+  "effects": [
+   {
+    "name": "Township’s Rule",
+    "tags": "P,C",
+    "text": "You have been granted the Boriandship of a small town. Work with your GM to define which Noble to whom you owe allegiance, and the town for which you are mayor. Every long rest, if you have 0 Influence in your town, gain 1 influence you can expend to support your town. If your Noble requires anything of you, you will also be expected to support them."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_stonecutter",
+  "name": "Stonecutter",
+  "section": "business",
+  "page": 64,
+  "rarity": "Uncommon",
+  "element": "Earth",
+  "prerequisites": "Construction: Stonework[1]",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are a professional stoneworker, and can use your craft to create stones to support the wall effort.",
+  "effects": [
+   {
+    "name": "Stonecutting",
+    "tags": "C",
+    "text": "You can use your stonework to earn money. When you take the Earn Money Long Rest Action, you can use Construction:Stonework instead of taking an Odd Job. If you do, roll a 1X Disadvantaged Construction:Stonework Check. Then, consult the Ingredient Rarity chart. The money you earn from your work is not based on your Proficiency. Instead, it is based on the Rarity level of the item in the Ingredient Rarity Chart (i.e., if you roll a 21, corresponding to the Check DC to incorporate a Very Rare, Level 4 ingredient, gain gold from the Odd Job table corresponding to Proficiency 4 (100gp)."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_armor",
+  "name": "Red Glyph of Armor",
+  "section": "craft",
+  "page": 65,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Protection”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Armor of Blood",
+    "tags": "P",
+    "text": "Every Long Rest, denote PD, TD, or MD. Until the next long rest, gain +1 to that stat. You may change your selection over a long rest. Keep this Glyph in your RIS."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_hiding",
+  "name": "Red Glyph of Hiding",
+  "section": "craft",
+  "page": 65,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Stealth”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Hidden Blood",
+    "tags": "P",
+    "text": "Whenever you use the Stealth: Hiding Talent, roll 1D6 and add it to your roll provided this Glyph is in your RIS."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_strength",
+  "name": "Red Glyph of Strength",
+  "section": "craft",
+  "page": 65,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Power”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Strength of Blood",
+    "tags": "P",
+    "text": "Choose one weapon to which this Glyph applies when it is in your RIS. Increase the damage dice of that weapon by 1 Dice Type. Additionally, it overcomes Nonmagical Damage Resistance."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_farsight",
+  "name": "Red Glyph of Farsight",
+  "section": "craft",
+  "page": 65,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Farsight”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Hallowed Blood",
+    "tags": "P",
+    "text": "You cannot be Surprised when this Glyph is in your RIS."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_luck",
+  "name": "Red Glyph of Luck",
+  "section": "craft",
+  "page": 66,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Fate”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Type AB+ Blood",
+    "tags": "P",
+    "text": "This item has one charge. You may expend one charge to re-roll any 1D20 roll you make, provided you keep this item in your RIS. This item recovers one charge per Nightly Rest."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_red_glyph_of_promise",
+  "name": "Red Glyph of Promise",
+  "section": "craft",
+  "page": 66,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Love”. It is written in blood.",
+  "effects": [
+   {
+    "name": "Shared Blood",
+    "tags": "P",
+    "text": "When you buy this glyph, choose a willing target. Both of you put your names on the glyph, rip it in half, attune to it, and store it in your RIS. You may both use the Help Action from 30ft away instead of 5ft on one another for as long as you are both attuned to this and the glyph is in your RIS."
+   },
+   {
+    "name": "Glyph Corruption",
+    "tags": "P",
+    "text": "When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_eye_of_insanity",
+  "name": "Eye of Insanity",
+  "section": "craft",
+  "page": 67,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "Oracle Profession, Proficiency[4]",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A stone wrapped in papers. Each paper has an eye scrawled on it in deep black ink.",
+  "effects": [
+   {
+    "name": "Open the Insane Eye",
+    "tags": "A",
+    "text": "You open the eye and immediately go insane. Set your Madness to 6. Your madness is Irrecoverable until you drop to Unconsciousness. If there are no enemies visible within range, you use your full turn to attack your allies as best you are able until you drop to unconsciousness or die."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_pigsqueak_poison",
+  "name": "Pigsqueak Poison",
+  "section": "craft",
+  "page": 67,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "4",
+  "relic": "No",
+  "special": "No",
+  "description": "A vibrant purple paste sits within a small pot. There are about four doses.",
+  "effects": [
+   {
+    "name": "Pigsqueak Poison",
+    "tags": "A",
+    "text": "If you consume this poison, you immediately make Power Checks against 4 levels of Frenzy. Additionally, for one minute, you go blind."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_noble_blood",
+  "name": "Noble Blood",
+  "section": "craft",
+  "page": 67,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have inherited the greatest gift of the Tianqi - genetic lineage from the Ascendants themselves.",
+  "effects": [
+   {
+    "name": "Touching Gold",
+    "tags": "P",
+    "text": "Through your divine blood, you can touch and interact with gold."
+   },
+   {
+    "name": "Commanding Presence",
+    "tags": "P",
+    "text": "People tend to listen to you, and you have a commanding presence. If you are a soldier, gain 1 extra Call Point beginning at Level 6."
+   },
+   {
+    "name": "Boriand’s Blessing",
+    "tags": "P",
+    "text": "Beginning at Level 11, you gain the notice of nobility. You are given a minor Boriandship. Gain 1 Influence with a Tianqi City of your choosing."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_tiquils_psionic_glyphbinder",
+  "name": "Tiquil’s Psionic Glyphbinder",
+  "section": "craft",
+  "page": 67,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "1 (Small, Quickdraw)",
+  "attunement": "No",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A small paper glyph, wrapped around a cloth clasp, bearing the family sigil of Tiquil, the lordship of Kjerstwall.",
+  "effects": [
+   {
+    "name": "Glyphbinding",
+    "tags": "A",
+    "text": "When you are within 5ft of a creature, you may clasp this to them with an action. They may fight the effect with a Finesse Check made against your Check DC. If they fail, Immediately, any telepathic connection they have with another creature, including all Fatebound connections, are immediately severed for as long as the clasp is on their body. If a Fatebound loses connection to their Binder, they immediately take levels of Fatigue equal to their Proficiency (no Trait Checks against the effect, max: 6). The clasp can be easily destroyed with an action, renewing the connection one round after the severing."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_wailing_pigsqueak",
+  "name": "Wailing Pigsqueak",
+  "section": "ingredient",
+  "page": 68,
+  "rarity": "Legendary[1]",
+  "element": "Water",
+  "prerequisites": "No",
+  "slots": "1 (Small, Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A blue Pigsqueak flower. Though lesser pigsqueak is said to give hallucinations, this pigsqueak is said to have more potent effects.",
+  "effects": []
+ },
+ {
+  "id": "tianqi_dessicated_ascendant_finger",
+  "name": "Dessicated Ascendant Finger",
+  "section": "ingredient",
+  "page": 68,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "1 (Small, Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "No",
+  "description": "A crooked, bony finger of the long-dead Ascendant Aromon, who beat a demon general to death with his own arm.",
+  "effects": []
+ },
+ {
+  "id": "tianqi_demon_general_blood",
+  "name": "Demon General Blood",
+  "section": "ingredient",
+  "page": 68,
+  "rarity": "Very Rare",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "1 (Small, Craft Ingredient)",
+  "attunement": "N/A",
+  "uses": "1",
+  "relic": "No",
+  "special": "Cursed",
+  "description": "The cursed blood of a demon general, in a small vial.",
+  "effects": []
+ },
+ {
+  "id": "tianqi_rattling_bones",
+  "name": "Rattling Bones",
+  "section": "craft",
+  "page": 68,
+  "rarity": "Rare",
+  "element": "Rot",
+  "prerequisites": "Proficiency[3]",
+  "slots": "1 (Worn)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A necklace made of rattling bones, it jangles when you move, providing a comforting sound.",
+  "effects": [
+   {
+    "name": "Rattle the Bones",
+    "tags": "F",
+    "text": "When you maintain Focus on the Rattling Bones and you are wearing them, they soothe you. For as long as you maintain Focus, you are immune to Panic that would be given to you. If you already have Panic, gain 1X Advantage to all Trait Checks you make to remove this Panic."
+   }
+  ]
+ },
+ {
+  "id": "tianqi_paperglyph",
+  "name": "Paperglyph",
+  "section": "craft",
+  "page": 68,
+  "rarity": "Uncommon",
+  "element": "Rot",
+  "prerequisites": "Proficiency[2]",
+  "slots": "1 (Small, Worn, RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A protective paper glyph, with a sticky back, allowing you to slap it right on armor. The glyph shows a shield, with some details.",
+  "effects": [
+   {
+    "name": "Rendproof",
+    "tags": "P",
+    "text": "This item has 2 charges. When you take any levels of Rend to your armor, instead remove one charge from this item. You may refill a charge with 50gp at any market, but it does not charge on its own."
+   }
+  ]
+ }
+]

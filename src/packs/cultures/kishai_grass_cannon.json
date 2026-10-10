@@ -1,0 +1,37 @@
+{
+  "name": "Grass Cannon",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Very Rare, Air. 1 item slot.</em></p><p><strong>Prerequisites:</strong> Training: Military Weapons</p><p>A large bamboo tube-like shape, with a series of airholes to blow through. It looks all the world like a woodwind instrument, if for its much more dramatic effect.</p><p><strong>Grass Cannon</strong> (Action): Treat this weapon as a crossbow, except it deals magic damage (Air Element) in a 15ft cone emanating from you, rather than against a single target up to 120ft away. If you apply a Trick Strike or other effect to this cannon, the effect is applied to all creatures within the cone. If any roll you make in your to-hit with this weapon is a natural 1, the weapon misfires, and has no effect, even if it would critically hit (e.g., if you roll 3X advantage and roll a 6, 12, 20, and 1, the weapon will misfire).</p><p><em>Rulebook p.74.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "773413bcc0c0afcd",
+  "_key": "!items!773413bcc0c0afcd",
+  "folder": "56c5eedd378f4a41",
+  "sort": 10,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_grass_cannon",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Very Rare",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "b35e1f23a637"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "83f3ec94b664b526",
+  "_key": "!items!83f3ec94b664b526",
+  "name": "Meditative Will",
+  "type": "ability",
+  "img": "icons/magic/perception/third-eye-blue-red.webp",
+  "folder": "d438317767df20cc",
+  "sort": 40,
+  "system": {
+    "description": "<p>You are immune to Frenzy.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: All Cunei",
+      "prerequisite": "Cunei Cultural Heritage · p.43"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_meditative_will",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "0bb7c3812564"
+    }
+  }
+}

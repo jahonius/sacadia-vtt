@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "longsword",
       "kind": "weapon",
-      "buildHash": "a22de42240e0"
+      "bargain": "military-weapons",
+      "buildHash": "dd926a0b78df"
     }
   }
 }

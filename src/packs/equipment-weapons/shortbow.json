@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "shortbow",
       "kind": "weapon",
-      "buildHash": "aad60c692389"
+      "bargain": "basic-weapons",
+      "buildHash": "d6527432303f"
     }
   }
 }

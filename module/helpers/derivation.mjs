@@ -107,11 +107,13 @@ export function damageAfterDr(damage, dr) {
 /**
  * Check an ability's prerequisite text ("Power 3, Bloodsight", "Fate[2]", "Religion: Astrology[3]", "Bladedancer, Level
  * 9", "Prof[3]") against a character. Each comma-separated part is classified: a Trait at a score, a level, a
- * Proficiency, a profession, a specialized talent at a rank (`Name[N]`), or an ability by name. Parts it can't classify
- * (ancestries, cultures, "Heibrim in Empire") are returned as `unknown`, never as unmet.
+ * Proficiency, a profession, a specialized talent at a rank (`Name[N]`), where the character comes from (a culture,
+ * subculture, ancestry or Heritage: `originMatch`), or an ability by name. Parts it can't classify ("Heibrim in Empire",
+ * "You work for a Myrgha Oligarch") are returned as `unknown`, never as unmet.
  * @param {string} text
  * @param {{stats: object, level: number, proficiency: number, professions: string[], abilities: Set<string>,
- *   knownAbilities?: Set<string>, specialties: Record<string, number>, talents: Set<string>}} ctx  names lower-cased
+ *   knownAbilities?: Set<string>, specialties: Record<string, number>, talents: Set<string>, origin?: object}} ctx
+ *   names lower-cased; `origin` from rules/identity.mjs originContext
  * @returns {{unmet: string[], unknown: string[]}}
  */
 export function checkPrerequisites(text, ctx) {
@@ -134,6 +136,12 @@ export function checkPrerequisites(text, ctx) {
       if ((ctx.proficiency ?? 0) < Number(m[1])) unmet.push(part);
     } else if ((m = /^(?:[a-z ]+:\s*)?([a-z][a-z' -]*?)\s*\[\s*(\d+)\s*\]$/.exec(p))) {
       if ((ctx.specialties?.[m[1].trim()] ?? 0) < Number(m[2])) unmet.push(part);
+    } else if (ctx.origin && (m = originMatch(p, ctx.origin)) !== null) {
+      if (!m) unmet.push(part);
+    } else if (ctx.origin && (m = /^(.+) (\S+)$/.exec(p)) && (ctx.professionNames ?? []).includes(m[2])
+      && originMatch(`${m[1]} cultural heritage`, ctx.origin) !== null) {
+      // "Tianqi Oracle": a culture's profession.
+      if (!originMatch(`${m[1]} cultural heritage`, ctx.origin) || !(ctx.professions ?? []).includes(m[2])) unmet.push(part);
     } else if (stats.includes(p)) {
       if ((ctx.stats?.[p] ?? 0) < 1) unmet.push(part);
     } else if ((ctx.professionNames ?? []).includes(p)) {
@@ -147,6 +155,36 @@ export function checkPrerequisites(text, ctx) {
     } else unknown.push(part);
   }
   return { unmet, unknown };
+}
+
+/**
+ * A prerequisite about where a character comes from, lower-cased (see checkPrerequisites): "Tianqi Cultural Heritage", "Black
+ * Cunei Subculture" (or "White Cunei Myrgha"), "Withered Human Ancestry", "Daemonai Heritage", "Human", "Heavily Corrupted
+ * Fontborne Heritage" (Strength of Warp). An ancestry is matched without its Heritage's name ("Brute Curiot" is "Brute").
+ * @param {string} p
+ * @param {{cultures: string[], subcultures: string[], subculture: string, ancestry: string, heritage: string,
+ *   heritageNames: Record<string, string>, heritageChoice: string}} o
+ * @returns {boolean|null}  met, unmet, or null when it isn't about origin (or is the table's call: "A Nature Fixerfolk Ancestry")
+ */
+export function originMatch(p, o) {
+  let m;
+  if ((m = /^(.+?) cultural heritage$/.exec(p))) return o.cultures.includes(m[1]);
+  const sub = o.subcultures.find((s) => p === s || p === `${s} subculture` || p.startsWith(`${s} `));
+  if (sub) return o.subculture === sub;
+  if ((m = /^(.+?) subculture$/.exec(p))) return o.subculture === m[1];
+  if ((m = /^(.+?) ancestry$/.exec(p))) {
+    if (/^an? /.test(m[1])) return null;
+    const names = Object.keys(o.heritageNames ?? {});
+    const strip = (s) => names.reduce((acc, h) => (acc.endsWith(` ${h}`) ? acc.slice(0, -h.length - 1) : acc), s);
+    return !!o.ancestry && strip(m[1]) === strip(o.ancestry);
+  }
+  if ((m = /^(?:(weakly|lightly|heavily) (?:corrupted|warped) )?(.+?) heritage$/.exec(p)) && o.heritageNames?.[m[2]]) {
+    const key = o.heritageNames[m[2]];
+    if (o.heritage !== key) return false;
+    return !m[1] || o.heritageChoice === (m[1] === 'heavily' ? 'heavy' : 'light');
+  }
+  if (o.heritageNames?.[p]) return o.heritage === o.heritageNames[p];
+  return null;
 }
 
 /**

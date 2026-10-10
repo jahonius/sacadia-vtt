@@ -1,0 +1,34 @@
+{
+  "_id": "e4cd378d8bacce1a",
+  "_key": "!items!e4cd378d8bacce1a",
+  "name": "Apartment Monthly Rent (Wealthy)",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-two-stories.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 30,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1000gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_apartment_monthly_rent_wealthy",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "475bee65ab2a"
+    }
+  }
+}

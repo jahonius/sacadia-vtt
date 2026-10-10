@@ -1,0 +1,31 @@
+{
+  "_id": "98b02d09245c9991",
+  "_key": "!items!98b02d09245c9991",
+  "name": "Toadclan",
+  "type": "ancestry",
+  "img": "icons/creatures/amphibians/bullfrog-glowing-green.webp",
+  "folder": "f928a0400efbad4b",
+  "sort": 10,
+  "system": {
+    "description": "<p>Toadclan are small, squat Curiot folk, who typically resemble humanoid toads or frogs. They are frequent fermenters and cheesemongers, and are known for their sense of taste.</p><p><strong>Size:</strong> Medium (3.5–5 feet) · <strong>Lifespan:</strong> Typically 30–50 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.cultures.Item.0b0cd0b670ef32d1]{Toxic Skin}</p><p><strong>Lore uses</strong> (from level 4): @UUID[Compendium.sacadia.abilities-lore.Item.0259e62272efc111]{Toxic Touch}</p><p><em>Olganyar ancestry. Curiot Heritage. Rulebook p.53.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.0b0cd0b670ef32d1",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "curiot",
+    "size": "Medium (3.5–5 feet)",
+    "lifespan": "Typically 30–50 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_toadclan",
+      "culture": "olganyar",
+      "buildHash": "ae8174a0ce88"
+    }
+  }
+}

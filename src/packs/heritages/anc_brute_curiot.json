@@ -1,0 +1,30 @@
+{
+  "_id": "c329ab53e73c5fb8",
+  "_key": "!items!c329ab53e73c5fb8",
+  "name": "Brute Curiot",
+  "type": "ancestry",
+  "img": "icons/creatures/mammals/ox-buffalo-horned-green.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 20,
+  "system": {
+    "description": "<p>Brute Curiots are large, imposing, and powerful. They may represent bears, boars, elephants, rhinos, etc.</p><p><strong>Size:</strong> Medium (6–7.5 feet) · <strong>Lifespan:</strong> Typically 45–65 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.531a466f8b37d5ff]{Brutish Constitution}</p><p><em>Curiot Heritage. Rulebook p.84.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.531a466f8b37d5ff",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "curiot",
+    "size": "Medium (6–7.5 feet)",
+    "lifespan": "Typically 45–65 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_brute_curiot",
+      "buildHash": "6c33d0614406"
+    }
+  }
+}

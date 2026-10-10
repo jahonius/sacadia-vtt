@@ -1,0 +1,44 @@
+{
+  "_id": "f6847b8981262a41",
+  "_key": "!items!f6847b8981262a41",
+  "name": "Changing Physicality",
+  "type": "ability",
+  "img": "icons/magic/perception/mask-stone-eyes-orange.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 50,
+  "system": {
+    "description": "<p>Every long rest, change one aspect of your appearance permanently. You may select any part of your appearance, including gender. Once you soulbond, fix your appearance (do not even age) until you die.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Courter Ancestry",
+      "prerequisite": "Courter Daemonai Ancestry · p.86"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_changing_physicality",
+      "transcribed": true,
+      "buildHash": "a311e49464aa"
+    }
+  }
+}

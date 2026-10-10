@@ -1,0 +1,33 @@
+{
+  "_id": "5516a67e922d67f2",
+  "_key": "!items!5516a67e922d67f2",
+  "name": "Statue (Large)",
+  "type": "gear",
+  "img": "icons/commodities/treasure/statue-gold-laurel-wreath.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 400,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1000gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_statue_large",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "a11d9049c7e6"
+    }
+  }
+}

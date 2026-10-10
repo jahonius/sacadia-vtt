@@ -1,0 +1,34 @@
+{
+  "_id": "f62ee54504d47601",
+  "_key": "!items!f62ee54504d47601",
+  "name": "Tripod",
+  "type": "gear",
+  "img": "icons/tools/cooking/soup-ladle.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 430,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_tripod",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "80e376220cce"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "_id": "de800695a4a1beaf",
+  "_key": "!journal!de800695a4a1beaf",
+  "name": "Cultures of the Ardus Yauga",
+  "pages": [
+    {
+      "_id": "cd634446fa1373c0",
+      "_key": "!journal.pages!de800695a4a1beaf.cd634446fa1373c0",
+      "name": "Cultures of Sacadia",
+      "type": "text",
+      "sort": 100000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p><img src=\"systems/sacadia/assets/adventures/the-breach/ardus-yauga.webp\" alt=\"Map of Cultures of the Ardus Yauga\"/></p><p>At the core of every Sacadia game is a culture. A culture trending towards empire, or toward ruin. As players in Sacadia’s Art of War, you will take on the role of people within a set cultural framework, and either aid your culture towards glory or chaos.</p>\n<h2>Your Culture</h2>\n<p>Many table groups will create their own culture through the Cultural Tapestry Rules of the Myths of Sacadia game. Sacadia’s Art of War, however, is focused on Micro Play - that is, it is a game about people who exist within a culture, rather than about the motion of those cultures across generations. If you have your own culture, you may disregard this section. This section provides Cultural Tapestry guidance for a number of cultures you can choose to play within Sacadia - “Starter Cultures” for your games.</p>\n<h2>Do I Need a Culture?</h2>\n<p>Most Sacadia games are games about cultures and their clashes, as they grow and die. If you choose not to play with a defined Culture, you can still use the rules of Sacadia’s Art of War. You will ignore mentions of how cultures influence your playstyles, including the Cultural Tapestry, Binding Laws and Customs, Cultural Ancestries and Heritages, Cultural Talents, Cultural Abilities and Inheritance. You can also pick one of the Starter Cultures, and still pick up any of these elements, without having to create your own unique culture.</p>\n<h2>Starter Cultures</h2>\n<p>The Starter Cultures have already gone through the Cultural Tapestry creation rules in Myths of Sacadia. They are ready to play and use as your own culture, if you would like. Each culture comes with:</p>\n<ol><li><strong>A Cultural Tapestry:</strong> the narrative background of your culture, to help you frame your character.</li><li><strong>Binding Laws and Customs:</strong> if you choose to play this Culture, the rules you must live by when you play, and the binding events you must follow in game.</li><li><strong>Cultural Ancestries and Heritages:</strong> unique Ancestries and Heritages that you unlock by choosing to play this culture.</li><li><strong>Cultural Abilities:</strong> each culture unlocks unique abilities for you to take, depending upon the professions you play. Not all cultures unlock unique abilities for all Professions.</li><li><strong>Cultural Talents:</strong> each culture automatically gains one unique talent, or creates a unique talent that can be taken by members of that culture.</li><li><strong>Inheritance:</strong> within each culture, items, abilities, rituals, and crafts are passed down. If you play one of these cultures, you can take one of the magic items that culture creates to pass down.</li></ol>\n<h2>Custom Cultures</h2>\n<p>You can create a custom culture following the rules of Myths of Sacadia. If you do, you will create all of the same elements captured in this section (or grow them naturally over time).</p>"
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "9ebdeb9020720e1c",
+      "_key": "!journal.pages!de800695a4a1beaf.9ebdeb9020720e1c",
+      "name": "The Starter Cultures",
+      "type": "text",
+      "sort": 200000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<ul><li><strong>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.0f5f2a50e7f258e0]{The Myrgha}.</strong> “The Empire at the Edge of the World”, the Myrgha are a naval power with a fist of dominance stretched across the Ardus Yauga Sea. Their culture is ruled by twelve divinely ordained Oligarchs, whose power is absolute, but beginning to fracture. Supplementing this divine “Trickle Up Economics” Oligarchy is a complex and Byzantine legalist Bureaucracy. The Myrgha are an Oligarchic and Legalist empire at the height of empire, ready to decline.</li><li><strong>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.b3f12a3db3c9dd7a]{The Cunei Myrgha}.</strong> A once-colony of the Myrgha, the Cuneises have achieved independence through a series of rebellions, and today exist with the fractured but fading resemblance of the Myrgha. This proud, fierce people is known for artisanship, mining, and agriculture, still serving as the Myrgha breadbasket. The Black and White Cuneises are culturally similar, but still fractured as two separate and distinct cultures, so the Cunei Myrgha have two subcultures: the Black Cuneis (the Agricultural Core of the Cuneises) and the White Cuneis (the Mining and Marblework Core of the Cuneises). The Cunei Myrgha are an Industrial, Legalistic colony at the beginning of their rise to empire.</li><li><strong>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.a5092adb7f9a0e36]{The Olganyar}.</strong> A bitter rival of the Myrgha, the Olganyar are a close confederation of guild cities on the northern coast of the Ardus Yauga sea. Pirates by nature, the Olganyar are at once conniving and crafty. Their government rules through a group of Guilds, and the civilization inhabits the ruins of an ancient, long-dead civilization. The Olganyar are a Guild-based naval culture at the beginning of their rise to empire.</li><li><strong>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.459c85631453515a]{The Tianqi}.</strong> An empire at the end of ruin, the Tianqi stay alive through their union over a singular purpose - to win an endless war against a cannibalistic demon king. The Tianqi lands border Chuni’s Wall of Regret - and beyond it lies an apocalyptic wasteland ruled over by a demon king Ager, who exists for the sole purpose of destroying all Tianqi. The Tianqi are a cultic, apocalyptic demon-hunting culture at the end of their era.</li><li><strong>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.4c409167230fda4e]{The Kishai}.</strong> The Kishai are grassland tribesmen, inhabiting semi-controllable, giant floating metallic shells that collect iron beneath them from the iron-rich, but tormented, grass font beneath them. Each of their few remaining skyships are held together through strange mysteries, and they worship the ships as Gods. The Kishai are a superstitious, tribal culture at the end of their lifespan.</li></ul>"
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "00adaf18d7a07d2b",
+      "_key": "!journal.pages!de800695a4a1beaf.00adaf18d7a07d2b",
+      "name": "On Your Character Sheet",
+      "type": "text",
+      "sort": 300000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "<p>Choose where your character comes from on the <strong>Character</strong> tab, under <strong>Identity</strong>:</p>\n<ul><li><strong>Heritage:</strong> one of the six. Your Heritage's HP at Level 1 is added to your Max HP, and its abilities are added to your sheet. A Daemonai chooses Intuit or Speak there (Natural Charisma), and a Fontborne chooses Lightly or Heavily Warped (Strength of Warp).</li><li><strong>Ancestry:</strong> the ancestries of your Heritage, from the <strong>Heritages &amp; Ancestries</strong> compendium and every culture's unique ones. Your ancestry's abilities are added to your sheet. A Hulinari's ancestry is their form (Pack, Brute or Swarm), which also sets their Hulinari Warrior form.</li><li><strong>Culture:</strong> one of the five starter cultures, from the <strong>Cultures</strong> compendium. Its Binding Laws and Customs show on the Character tab, and its cultural talent and language are added to your sheet. A cultural talent that gives a level of a specialized talent (Heibrim Lore's Religion: Demon Lore) adds it to your specialized talents.</li></ul>\n<p>What they grant is taken back if you change them. Cultural abilities are bought like any other ability: drag them from the culture's <strong>Cultural Abilities</strong> folder. Their prerequisites check your culture, subculture, ancestry and Heritage. An inherited item is dragged from the culture's <strong>Inheritance</strong> folder.</p>\n<p><strong>Your own culture.</strong> Make a <strong>Culture</strong> item (Items tab → Create Item → Culture) with its laws, its language and talent abilities (drag them onto it) and any subcultures, and it's offered on every sheet. An <strong>Ancestry</strong> item is made the same way.</p>"
+      },
+      "ownership": {
+        "default": -1
+      },
+      "flags": {}
+    }
+  ],
+  "ownership": {
+    "default": 2
+  },
+  "sort": 0,
+  "folder": null,
+  "flags": {
+    "sacadia": {
+      "intro": true
+    }
+  }
+}

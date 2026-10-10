@@ -1,0 +1,34 @@
+{
+  "_id": "ab9ac703cd7a9b5b",
+  "_key": "!items!ab9ac703cd7a9b5b",
+  "name": "Home Purchase (Wealthy)",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-manor.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 60,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 100000gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_home_purchase_wealthy",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "50e94afde400"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "ccb8331a98629092",
+  "_key": "!items!ccb8331a98629092",
+  "name": "Caffeine Stick",
+  "type": "gear",
+  "img": "icons/consumables/grains/breadsticks-crackers-wrapped-ration-brown.webp",
+  "folder": "7469e6a4a14577d5",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Caffeine Stick</strong> (Action): Expend one Caffeine Stick from a RIS. Ignore all Battle Fatigue until the start of your next turn. Take one extra Battle Fatigue at the start of your next turn. If you have the Medicine General Talent, you may roll a general Medicine Check against your Check DC when you take this. If you roll above your Check DC, do not take one extra Battle Fatigue.</p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 20gc · First Aid, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "caffeine_stick",
+      "kind": "goods",
+      "goods": {
+        "table": "first-aid",
+        "use": true
+      },
+      "bargain": "adventuring",
+      "buildHash": "c50ce1faf0a6"
+    }
+  }
+}

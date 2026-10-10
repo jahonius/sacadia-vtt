@@ -1,0 +1,37 @@
+{
+  "name": "Prospector’s Rights",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a business. Rare, Earth. No item slots.</em></p><p><strong>Prerequisites:</strong> You work for a Myrgha Oligarch</p><p>Your Oligarch has granted you with unique Prospector rights due to your family’s good services, allowing you to send expeditions to search for resources.</p><p><strong>Survey</strong> (Action): As a Long Rest Action, roll 1D20. For every Long Rest Action you use on this roll, gain 1X Advantage. If you roll a nat20, you find a vein of natural resources. Then, roll 1D6 and consult the table below:<br/>1: Your Oligarch thanks you, and takes the resources. Gain 1 Influence with your Oligarch and 1,000gp.<br/>2-5: You get rich from your find. Gain 10,000gp immediately<br/>6: You find an enormous vein of resources that affect your Civilization for centuries to come. Add 1 new resource type randomly from the City Building rules of Myths of Sacadia (if relevant to your game). Then, gain 10,000gp and 1 Influence from your Oligarch.</p><p><em>Rulebook p.32.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "0d71f46d9e1c2684",
+  "_key": "!items!0d71f46d9e1c2684",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 10,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_prospectors_rights",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Rare",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "34aad9ef919e"
+    }
+  }
+}

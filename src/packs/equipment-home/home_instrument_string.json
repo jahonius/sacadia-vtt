@@ -1,0 +1,33 @@
+{
+  "_id": "95ff49b72c53239c",
+  "_key": "!items!95ff49b72c53239c",
+  "name": "Instrument (String)",
+  "type": "gear",
+  "img": "icons/tools/instruments/lute-gold-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 230,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 300gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_instrument_string",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "f9dccb19c407"
+    }
+  }
+}

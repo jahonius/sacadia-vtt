@@ -1,0 +1,37 @@
+{
+  "name": "Demon General Blood",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft ingredient. Very Rare, Rot. 1 item slot (Small, Craft Ingredient). Uses: 1. Special Property: Cursed.</em></p><p>The cursed blood of a demon general, in a small vial.</p><p><em>Rulebook p.68.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "8a1a749f9d2fedca",
+  "_key": "!items!8a1a749f9d2fedca",
+  "folder": "76562f6c37f89b61",
+  "sort": 160,
+  "img": "icons/consumables/potions/bottle-conical-corked-labeled-skull-poison-green.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_demon_general_blood",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": "Cursed"
+      },
+      "buildHash": "10c8f45b0e33"
+    }
+  }
+}

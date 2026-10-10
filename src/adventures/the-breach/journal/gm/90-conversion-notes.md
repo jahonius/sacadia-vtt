@@ -7,7 +7,7 @@ The Breach was written in 2024 against an early version of the rules. This adven
 The one-shot's character sheets were hand-simplified: abilities rewritten in plain terms, bespoke pools ("6 Call Points", "6 Trick Strike Points") and some abilities a level-5 character couldn't have. The pregens here are **rules-legal level-5 characters** built from the system's compendiums, so every ability on their sheets is the real one and the system automates it:
 
 - level 5: Proficiency +3, 3 AP, **34 Combat Skill Points**, 6 Trait Points (no Trait above 2), 10 Talent Points;
-- Tianqi culture: the *Heibrim Lore* cultural talent (Religion: Demon Lore 1) and the Binding Laws in each hero's *Story* (Character tab);
+- Tianqi culture: the *Heibrim Lore* cultural talent (Religion: Demon Lore 1) and the Binding Laws on each hero's Character tab (the Tianqi culture item);
 - their level features: Level 3 boon, *Rousing Success* with 1 Lore Point, and a Level 5 Mastery;
 - HP from the book: profession HP × 5 plus Heritage HP.
 

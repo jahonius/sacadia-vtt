@@ -1,0 +1,35 @@
+{
+  "_id": "ab69a6ab6a0deeeb",
+  "_key": "!items!ab69a6ab6a0deeeb",
+  "name": "Agate Jewelry",
+  "type": "gear",
+  "img": "icons/equipment/neck/amulet-round-brown.webp",
+  "folder": "97967f52da7dcd2e",
+  "sort": 70,
+  "system": {
+    "description": "<p><em>Prerequisite: Wiles[2].</em></p><p><strong>Agate Jewelry: Taunt</strong> (Passive): The condition X for this jewelry is Taunt.</p><p><strong>Jewelry</strong> (Passive): Gain 1X Advantage against taking the X condition when it is first given to you, as well as on all uses of the “Make Trait Check” action against the specified X condition. The condition X is specified by the type of jewelry (the Jewelry Boons table).</p><p class=\"goods-facts\">1 Item Slot (Worn, RIS Passive) · 200gc · Jewelry, rulebook p.208</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, ris-passive, jewelry",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "agate_jewelry",
+      "kind": "trinket",
+      "goods": {
+        "table": "jewelry",
+        "jewelry": "taunt"
+      },
+      "bargain": "armor-trinkets",
+      "buildHash": "c07b634360e1"
+    }
+  }
+}

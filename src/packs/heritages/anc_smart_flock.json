@@ -1,0 +1,45 @@
+{
+  "_id": "c081443068842715",
+  "_key": "!items!c081443068842715",
+  "name": "Smart Flock",
+  "type": "ability",
+  "img": "icons/creatures/birds/corvid-watchful-glowing-green.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 100,
+  "system": {
+    "description": "<p>You have Check Expertise in Wiles.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Swarm Form Ancestry",
+      "prerequisite": "Swarm Form · p.92"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_smart_flock",
+      "transcribed": true,
+      "expertise": "wiles",
+      "buildHash": "56c250fcc188"
+    }
+  }
+}

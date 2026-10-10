@@ -1,0 +1,34 @@
+{
+  "_id": "bba4db1cc6c74574",
+  "_key": "!items!bba4db1cc6c74574",
+  "name": "Home Purchase (Poor)",
+  "type": "gear",
+  "img": "icons/environment/settlement/hut.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 40,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5000gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_home_purchase_poor",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "b8a3cdb4c7ad"
+    }
+  }
+}

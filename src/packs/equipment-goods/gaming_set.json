@@ -1,0 +1,34 @@
+{
+  "_id": "d8526e5008806890",
+  "_key": "!items!d8526e5008806890",
+  "name": "Gaming Set",
+  "type": "gear",
+  "img": "icons/sundries/gaming/gaming-set-dice.webp",
+  "folder": "789b7f5285159daf",
+  "sort": 40,
+  "system": {
+    "description": "<p class=\"goods-facts\">1 Item Slot · 25gc · Travel Gear, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 25,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "gaming_set",
+      "kind": "goods",
+      "goods": {
+        "table": "travel"
+      },
+      "bargain": "travel",
+      "buildHash": "d2e99d1fcadf"
+    }
+  }
+}

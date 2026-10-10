@@ -1,0 +1,34 @@
+{
+  "_id": "7fdb15b066ce7bfc",
+  "_key": "!items!7fdb15b066ce7bfc",
+  "name": "Flour (Sack)",
+  "type": "gear",
+  "img": "icons/consumables/grains/sack-grain-open-white.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 110,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_flour_sack",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "2be14be7cc13"
+    }
+  }
+}

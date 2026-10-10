@@ -12,6 +12,7 @@ import { consumeGrants } from './grants.mjs';
 import { damageAfterDr, evaluatePredicate, poolsAfterDamage, resolveModifierValue, sizeAdvantage, typedResistance } from '../helpers/derivation.mjs';
 import { deleteKey, replaceWith } from '../helpers/update-ops.mjs';
 import { grantsFrom } from '../helpers/prestige.mjs';
+import { jewelryCheckItems } from '../helpers/goods.mjs';
 
 /**
  * A zone's Trait Check card for a creature in it (GM-side): DC = the caster's Check DC; damage (a dice formula,
@@ -184,7 +185,9 @@ export async function onSaveRoll(event) {
 
   const rd = actor.getRollData();
   const baseMod = (trait ? Number(rd[trait]) || 0 : 0) + (Number(rd.proficiency) || 0) + (Number(rd.traitBonus) || 0);
-  const items = actor.items.filter((i) => i.type === 'ability').map((i) => ({ name: i.name, modifiers: i.system.modifiers, id: i.flags?.sacadia?.catalogId, pickValue: i.system.pick?.kind ? (i.flags?.sacadia?.pickValue ?? '') : undefined }));
+  // The checker's abilities, and the jewelry they wear (1X Advantage against its condition, p.208).
+  const items = actor.items.filter((i) => i.type === 'ability').map((i) => ({ name: i.name, modifiers: i.system.modifiers, id: i.flags?.sacadia?.catalogId, pickValue: i.system.pick?.kind ? (i.flags?.sacadia?.pickValue ?? '') : undefined }))
+    .concat(jewelryCheckItems([...actor.items]));
   const selfOpts = actor.system._rollOptions?.() ?? {};
   const nums = actor.system._modifierNumbers?.() ?? {};
   const sinks = (actor.system.advantage?.trait ?? 0) - (actor.system.disadvantage?.trait ?? 0);

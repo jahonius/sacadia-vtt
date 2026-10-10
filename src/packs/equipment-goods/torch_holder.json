@@ -1,0 +1,34 @@
+{
+  "_id": "dd15221e0504e72b",
+  "_key": "!items!dd15221e0504e72b",
+  "name": "Torch Holder",
+  "type": "gear",
+  "img": "icons/sundries/lights/torch-black.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 100,
+  "system": {
+    "description": "<p><strong>Torch Holder</strong> (Passive): When you have a Torch Holder equipped in RIS, you may place a lit Torch in a RIS slot (instead of keeping it in your hands). The torch continues to illuminate the area without requiring a hand to use.</p><p class=\"goods-facts\">1 Item Slot (RIS Passive) · 50gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "torch_holder",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination"
+      },
+      "bargain": "illumination",
+      "buildHash": "c7be9c80f897"
+    }
+  }
+}

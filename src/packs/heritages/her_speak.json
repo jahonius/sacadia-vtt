@@ -1,0 +1,46 @@
+{
+  "_id": "0892b934129d69ba",
+  "_key": "!items!0892b934129d69ba",
+  "name": "Speak",
+  "type": "ability",
+  "img": "icons/skills/social/diplomacy-peace-alliance.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 30,
+  "system": {
+    "description": "<p>You may roll 1D6 and add it to any roll you make to speak dramatically, either to intimidate or to charm.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Daemonai Heritage",
+      "prerequisite": "p.85"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_speak",
+      "transcribed": true,
+      "heritage": "daemonai",
+      "heritageChoice": "speak",
+      "buildHash": "ab4c277125a7"
+    }
+  }
+}

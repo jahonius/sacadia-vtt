@@ -1,0 +1,34 @@
+{
+  "_id": "c6f859df1f183cf3",
+  "_key": "!items!c6f859df1f183cf3",
+  "name": "Smudge (Sage)",
+  "type": "gear",
+  "img": "icons/consumables/plants/basil-herb-green.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 120,
+  "system": {
+    "description": "<p><strong>Smudge (Sage)</strong> (Action): When you hold a lit smudge in both hands, it gives off a strong but pleasant scented smoke. Melee attacks have 1X Disadvantage against you. The Smudge goes out after 1 minute, with a quick rest, or when you stop holding it in both hands. Expend the Smudge when you use it. <em>(On the sheet: equip it while it burns.)</em></p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 100gc · Baubles, rulebook p.207</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "smudge_sage",
+      "kind": "trinket",
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "b507f427ad30"
+    }
+  }
+}

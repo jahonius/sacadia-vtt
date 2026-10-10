@@ -1,0 +1,34 @@
+{
+  "_id": "3cf4af5d15c2e274",
+  "_key": "!items!3cf4af5d15c2e274",
+  "name": "Flag - Nation",
+  "type": "gear",
+  "img": "icons/sundries/flags/banner-standard-brown.webp",
+  "folder": "789b7f5285159daf",
+  "sort": 30,
+  "system": {
+    "description": "<p class=\"goods-facts\">1 Item Slot · 50gc · Travel Gear, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "flag_nation",
+      "kind": "goods",
+      "goods": {
+        "table": "travel"
+      },
+      "bargain": "travel",
+      "buildHash": "e12773e1b791"
+    }
+  }
+}

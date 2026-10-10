@@ -1,0 +1,33 @@
+{
+  "_id": "e54ce30511475221",
+  "_key": "!items!e54ce30511475221",
+  "name": "Statue (Small)",
+  "type": "gear",
+  "img": "icons/commodities/treasure/figurine-goddess.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 390,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 200gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_statue_small",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "401eb15c6b99"
+    }
+  }
+}

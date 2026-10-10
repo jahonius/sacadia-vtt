@@ -1,0 +1,37 @@
+{
+  "name": "Cloak of the Chattering Pauldrons",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Rare, Fire. 1 item slot (Worn, RIS Passive). Attunement.</em></p><p><strong>Prerequisites:</strong> Prof[3]</p><p>This cloak is crafted of vibrant, amber-colored feathers in a golden hue, and connects at the shoulders through the skullcap of two skulls. Both skulls sit over your shoulders and you can (if you listen closely while wearing the cloak) envision a soft whisper</p><p><strong>Mutually Intelligible Skull Rattling</strong> (Passive): Whenever you attempt to speak with someone and do not speak the same language, you nevertheless never create any form of miscommunication provided you are wearing this cloak - they will always understand non-specific intention of what you desire. The reverse is also true. Specifics cannot be gleaned from this cloak. For example, when trying to learn the location of a place, you may receive cardinal direction or distance but not specific instructions to get somewhere.</p><p><em>Rulebook p.55.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "8fd0bd4fe87c2c5f",
+  "_key": "!items!8fd0bd4fe87c2c5f",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 30,
+  "img": "icons/equipment/back/cloak-brown-collared-fur-white-tied.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_cloak_of_the_chattering_pauldrons",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Fire",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "a789cbcd88d8"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "2bda3a70b69f0f3f",
+  "_key": "!items!2bda3a70b69f0f3f",
+  "name": "Water Running over Stone",
+  "type": "ability",
+  "img": "icons/magic/water/bubbles-air-water-blue.webp",
+  "folder": "d438317767df20cc",
+  "sort": 50,
+  "system": {
+    "description": "<p>Choose one square within 15ft of you. You may move there without provoking an attack of Opportunity. You may only use this ability if you are Surrounded.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 15,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: Black Cunei",
+      "prerequisite": "Black Cunei Subculture, Sentinel · p.43"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_water_running_over_stone",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "9e5b35dc09a7"
+    }
+  }
+}

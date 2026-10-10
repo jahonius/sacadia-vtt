@@ -1,5 +1,15 @@
 <section class="tab {{tabs.inventory.cssClass}}" data-group="primary" data-tab="inventory">
 
+  {{!-- The purse (helpers/downtime.mjs): gold and silver coins; change a gold into silver (shift: silver into a gold); a new
+       character's starting gold. An item dropped on it is bought (rules/goods.mjs). --}}
+  <div class="purse" data-tooltip="{{localize 'SACADIA.Money.DropToBuy'}}" data-tooltip-direction="UP">
+    <i class="fa-solid fa-coins"></i><span class="sac-label">{{localize 'SACADIA.Money.Purse'}}</span>
+    <label><input type="number" name="system.money.gc" value="{{system.money.gc}}" min="0" step="1"/> gc</label>
+    <label><input type="number" name="system.money.sc" value="{{system.money.sc}}" min="0" step="1"/> sc</label>
+    <a class="purse-change" data-action="makeChange" data-tooltip="{{localize 'SACADIA.Money.ChangeHint' rate=inventory.rate}}"><i class="fa-solid fa-right-left"></i></a>
+    {{#if inventory.startingGold}}<a class="purse-start" data-action="startingGold">{{localize 'SACADIA.Money.StartingGold' n=inventory.startingGold}}</a>{{/if}}
+  </div>
+
   {{!-- Item slots (book pp.180–181): readied (at hand in combat) and stored (in your bags); over both is Overburdened
        (half speed). --}}
   {{#if system.itemSlots}}
@@ -50,11 +60,13 @@
             {{#if item.categoryLabel}}<span class="fact-tag">{{item.categoryLabel}}</span>{{/if}}
             {{#if item.armorText}}<span>{{item.armorText}}</span>{{/if}}
             {{#if item.weaponSummary}}<span>{{item.weaponSummary}}</span>{{/if}}
+            {{#if item.price}}<span class="fact-price">{{item.price}}</span>{{/if}}
           </div>
         </div>
         <div class="inv-controls">
           {{> storage item=item}}
           <span class="hover-controls">
+            {{#if item.sellFor}}<a data-action="sellItem" data-tooltip="{{localize 'SACADIA.Money.SellFor' price=item.sellFor}}"><i class="fa-solid fa-coins"></i></a>{{/if}}
             <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
             <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
           </span>
@@ -76,8 +88,8 @@
     </div>
     <ol class="inv-list">
       {{#each inventory.gear as |item|}}
-      <li class="inv-row draggable {{#if item.system.equipped}}equipped{{/if}}" data-item-id="{{item.id}}">
-        <a class="equip-toggle" data-action="toggleEquip" title="{{localize 'SACADIA.Inventory.Equip'}}">
+      <li class="inv-row draggable {{#if item.system.equipped}}equipped{{/if}} {{#if item.lit}}lit{{/if}}" data-item-id="{{item.id}}">
+        <a class="equip-toggle" data-action="toggleEquip" title="{{#if item.equipHint}}{{item.equipHint}}{{else}}{{localize 'SACADIA.Inventory.Equip'}}{{/if}}">
           <i class="fa-solid fa-hand-fist"></i>
         </a>
         <img class="inv-img" src="{{item.img}}" width="36" height="36"/>
@@ -88,12 +100,19 @@
             {{#if item.isSignature}}<span class="sac-chip signature" title="{{localize 'SACADIA.Inventory.SignatureHint'}}"><i class="fa-solid fa-star"></i> {{localize 'SACADIA.Inventory.Signature'}}</span>{{/if}}
             {{#if item.namedBy}}<span class="sac-chip signature" title="{{localize 'SACADIA.Inventory.NamedHint'}}"><i class="fa-solid fa-star"></i> {{item.namedBy}}</span>{{/if}}
             {{#if item.broken}}<span class="sac-chip warn">{{localize 'SACADIA.Rend.Broken'}}</span>{{/if}}
+            {{#if item.lit}}<span class="sac-chip lit"><i class="fa-solid fa-fire"></i> {{localize 'SACADIA.Goods.Lit'}}</span>{{/if}}
+            {{#if item.runeUnchosen}}<span class="sac-chip warn" data-tooltip="{{localize 'SACADIA.Goods.RuneChooseHint'}}">{{localize 'SACADIA.Goods.RuneChoose'}}</span>{{/if}}
           </div>
-          {{#if item.weaponSummary}}<div class="inv-facts"><span>{{item.weaponSummary}}</span></div>{{/if}}
+          {{#if (or item.weaponSummary item.goodsFacts item.price)}}<div class="inv-facts">{{#if item.weaponSummary}}<span>{{item.weaponSummary}}</span>{{/if}}{{#if item.goodsFacts}}<span>{{item.goodsFacts}}</span>{{/if}}{{#if item.price}}<span class="fact-price">{{item.price}}</span>{{/if}}</div>{{/if}}
         </div>
         <div class="inv-controls">
+          {{#if item.lightable}}<a class="light-toggle {{#if item.lit}}on{{/if}}" data-action="toggleLight"
+             data-tooltip="{{#if item.glowing}}{{localize 'SACADIA.Goods.ApplyGlow'}}{{else if item.lit}}{{localize 'SACADIA.Goods.Extinguish'}}{{else}}{{localize 'SACADIA.Goods.Illuminate'}}{{/if}}">
+            <i class="fa-solid {{#if item.glowing}}fa-wand-sparkles{{else}}fa-fire{{/if}}"></i></a>{{/if}}
+          {{#if item.usable}}<a class="use-goods" data-action="useGoods" data-tooltip="{{localize 'SACADIA.Goods.Use'}}"><i class="fa-solid fa-hand-holding"></i></a>{{/if}}
           {{> storage item=item}}
           <span class="hover-controls">
+            {{#if item.sellFor}}<a data-action="sellItem" data-tooltip="{{localize 'SACADIA.Money.SellFor' price=item.sellFor}}"><i class="fa-solid fa-coins"></i></a>{{/if}}
             <a data-action="viewDoc" title="{{localize 'DOCUMENT.Update' type='Item'}}"><i class="fa-solid fa-edit"></i></a>
             <a data-action="deleteDoc" title="{{localize 'DOCUMENT.Delete' type='Item'}}"><i class="fa-solid fa-trash"></i></a>
           </span>

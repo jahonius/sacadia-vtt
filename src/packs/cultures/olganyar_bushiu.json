@@ -1,0 +1,45 @@
+{
+  "_id": "289f02170f2cf189",
+  "_key": "!items!289f02170f2cf189",
+  "name": "Bushiu",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-letter-tan.webp",
+  "folder": "0d8d39c83413b8e1",
+  "sort": 30,
+  "system": {
+    "description": "<p>You speak the Bushiu language.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Olganyar Language",
+      "prerequisite": "Olganyar Cultural Heritage · p.49"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_bushiu",
+      "transcribed": true,
+      "culture": "olganyar",
+      "buildHash": "816a60cafb82"
+    }
+  }
+}

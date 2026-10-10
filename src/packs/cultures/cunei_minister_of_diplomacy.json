@@ -1,0 +1,41 @@
+{
+  "name": "Minister of Diplomacy",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Uncommon, Air. No item slots.</em></p><p><strong>Prerequisites:</strong> Society:Cultural Lore[1], Social Graces: Speaker[1], Proficiency[3]</p><p>You are a dedicated civil servant, and a diplomat.</p><p><strong>Influential</strong> (Ceremony): Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:<br/>Take Pay: Gain 50gp<br/>Learn Cultures: Roll a Society:Cultural Lore Check, but learn something about any other culture rather than your own. You can learn secret or hidden facts about other cultures through this roll.</p><p><em>Rulebook p.45.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "a6e3600ad12ccf3d",
+  "_key": "!items!a6e3600ad12ccf3d",
+  "folder": "c931f980fe44bd4d",
+  "sort": 60,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_minister_of_diplomacy",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "business": {
+        "earn": "50",
+        "note": "Take Pay, at the Ministry."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "f917fa5253e3"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_id": "113eba5c6947a764",
+  "_key": "!items!113eba5c6947a764",
+  "name": "Whetstone",
+  "type": "gear",
+  "img": "icons/commodities/stone/stone-chunk-grey-white.webp",
+  "folder": "d4a9149605aa8f61",
+  "sort": 80,
+  "system": {
+    "description": "<p><strong>Whetstone</strong> (Ceremony): <em>Prerequisite: Smithing: Weapons[3].</em> Every quick rest, choose one slashing weapon. The next time that weapon deals damage, increase the dice type by one dice type. The effects of Whetstone cannot stack, and only works on the next successful hit of that weapon.</p><p class=\"goods-facts\">1 Item Slot · 200gc · Weapon & Armor Kits, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "whetstone",
+      "kind": "goods",
+      "goods": {
+        "table": "kits"
+      },
+      "bargain": "adventuring",
+      "buildHash": "d556ffe19347"
+    }
+  }
+}

@@ -4,7 +4,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildAdventures, loadCatalog } from "../src/build-adventures.mjs";
-import { maxCspForLevel } from "../module/helpers/derivation.mjs";
+import { maxCspForLevel, originMatch } from "../module/helpers/derivation.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const [breach] = (await buildAdventures({ catalog: loadCatalog() })).filter((a) => a.name === "The Breach");
@@ -72,7 +72,7 @@ test("adventure: Chuni's Wall is a two-level scene with walls on each level", ()
   assert.match(breach.macros.find((m) => m.name === "Breach Chuni's Wall").command, /getFlag\('sacadia', 'breach'\)/);
 });
 
-test("adventure: the prologue's world map carries Indy Route's two routes and where the Nexus site goes", () => {
+test("adventure: the prologue's world map: the planned road, the party at Tianqis, the ledger's journey, and what Nexus files", () => {
   const world = breach.scenes.find((s) => s.flags.sacadia.prologue);
   assert.equal(world.levels.length, 1);
   assert.equal(world.initialLevel, world.levels[0]._id);
@@ -86,23 +86,45 @@ test("adventure: the prologue's world map carries Indy Route's two routes and wh
   for (const r of routes) {
     assert.ok(r.name && r.points.length >= 2 && r.points.every(inside), r.name);
     assert.equal(r.settings.scaleWithMap, false, `${r.name}: the same line at every zoom`);
+    // Indy Route draws over the canvas, not the scene: a line that never fades stays up over the next scene.
+    assert.ok(r.settings.lingerMs > 0, `${r.name} fades`);
   }
+  // The party: a token of its own (no hero's conditions on the map) at the road's start, and the Travel Ledger's journey.
   const road = routes.find((r) => r.id === cfg.road);
-  const selthimor = heroes.find((a) => a.name === "Selthimor");
-  assert.equal(road.settings.dotTokenUuid, `Actor.${selthimor._id}`, "Selthimor rides the road");
-  // Sacadia's speeds (rulebook p.287): five methods × three road types, a 4 km hex; the road's mode is one of them.
-  assert.equal(cfg.travelModes.length, 15);
-  assert.ok(cfg.travelModes.some((m) => m.id === road.settings.travelMode));
-  const foot = cfg.travelModes.find((m) => m.id === "sacadia-foot-dirt-road");
-  assert.ok(Math.abs(foot.perDayMiles - 4 * 4 * 0.621371) < 0.01, "on foot, a dirt road: 4 hexes a day");
-  // About 140 km from Tianois to the wall (the scale the GM guide states), measured in the scene's own miles.
+  const [party] = world.tokens;
+  assert.equal(party.name, "The Party");
+  assert.equal(party.actorId, null);
+  assert.equal(party.level, world.levels[0]._id);
+  const center = { x: party.x + (party.width * world.grid.size) / 2, y: party.y + (party.height * world.grid.size) / 2 };
+  assert.ok(Math.hypot(center.x - road.points[0].x, center.y - road.points[0].y) < 1, "at Tianqis");
+  const travel = world.flags.sacadia.travel;
+  assert.equal(travel.routeId, road.id);
+  assert.equal(travel.tokenId, party._id);
+  assert.ok(travel.food + travel.water <= 5, "what a traveller on foot carries");
+  // About 140 km from Tianqis to the wall (the scale the GM guide states): 35 hexes.
   const px = road.points.slice(1).reduce((t, p, i) => t + Math.hypot(p.x - road.points[i].x, p.y - road.points[i].y), 0);
   const km = (px / world.grid.size) * world.grid.distance / 0.621371;
   assert.ok(km > 120 && km < 160, `${Math.round(km)} km`);
-  const macro = breach.macros.find((m) => m.name === "Prologue: The Road to the Wall");
-  assert.match(macro.command, /getFlag\('sacadia', 'prologue'\)/);
-  assert.match(macro.command, /createLinkedSceneSite/);
-  assert.match(macro.command, /playRoute\(cfg\.road\)/);
+  // What the macro files in Nexus: every person's actor exists, and every link names a faction, person or objective.
+  const { factions, people, quest } = cfg.nexus;
+  const actorIds = new Set(breach.actors.map((a) => `Actor.${a._id}`));
+  for (const p of people) {
+    if (p.actorUuid) assert.ok(actorIds.has(p.actorUuid), `${p.name}'s actor`);
+    assert.ok(factions.some((f) => f.key === p.faction), `${p.name}'s organization`);
+    assert.ok(p.html, `${p.name}'s page`);
+  }
+  assert.ok(people.find((p) => p.key === "ager").leader, "Ager leads his demons");
+  assert.ok(people.find((p) => p.key === "monarch").leader, "the Monarch leads the Tianqi");
+  for (const name of ["Wanabbul the Vast", "Grubnut", "Csenorras the Manyworm"]) assert.ok(people.some((p) => p.name === name), name);
+  const keys = new Set([...factions, ...people].map((x) => x.key));
+  for (const [slot, goal, target] of quest.links) {
+    assert.ok(keys.has(target), `${slot}: ${target}`);
+    if (goal) assert.ok(quest.objectives.some((o) => o.key === goal), `${slot}: objective ${goal}`);
+  }
+  const prologue = breach.macros.find((m) => m.name === "Prologue: The Ardus Yauga");
+  for (const call of ["createLinkedSceneSite", "createFaction", "createNpc", "createQuest", "connectQuestEntity"]) assert.match(prologue.command, new RegExp(call));
+  assert.match(breach.macros.find((m) => m.name === "Travel Ledger").command, /game\.sacadia\.travelLedger/);
+  assert.doesNotMatch(JSON.stringify(breach), /Tianois/, "the port is Tianqis");
 });
 
 test("adventure: every system asset it references ships with the system", () => {
@@ -134,19 +156,44 @@ test("adventure: the pregens are legal level-5 v1.2 characters", () => {
     // Prerequisites: Trait minimums and required abilities (the Tianqi culture prerequisite is the culture itself).
     const owned = new Set(a.items.map((i) => i.name.toLowerCase()));
     for (const i of a.items.filter((x) => x.type === "ability")) {
-      for (const part of (i.system.meta?.prerequisite ?? "").split(/,\s*/).filter((x) => x && !/^none$/i.test(x))) {
+      for (const part of (i.system.meta?.prerequisite ?? "").split(/,\s*|\s*·\s*/).filter((x) => x && !/^none$/i.test(x) && !/^p\.\d+$/.test(x))) {
         const m = /^(Power|Finesse|Wiles|Courage|Fate)\s+(\d+)$/i.exec(part);
+        const origin = originMatch(part.toLowerCase(), originOf(a));
         if (m) assert.ok(s.stats[m[1].toLowerCase()].value >= Number(m[2]), `${a.name}: ${i.name} needs ${part}`);
-        else if (!/^Level \d+$|Cultural Heritage/.test(part)) assert.ok(owned.has(part.toLowerCase()), `${a.name}: ${i.name} needs ${part}`);
+        else if (origin !== null) assert.ok(origin, `${a.name}: ${i.name} needs ${part}`);
+        else if (!/^Level \d+$/.test(part)) assert.ok(owned.has(part.toLowerCase()), `${a.name}: ${i.name} needs ${part}`);
       }
     }
     // One Level 5 Mastery and Rousing Success; the Tianqi cultural talent.
     assert.equal(a.items.filter((i) => i.flags?.sacadia?.mastery).length, 1, `${a.name} mastery`);
     assert.ok(a.items.some((i) => i.flags?.sacadia?.catalogId === "rousing_success"));
     assert.equal(s.identity.culture, "Tianqi");
+    // The Tianqi culture item and an ancestry of the hero's Heritage, and what they grant (rules/identity.mjs).
+    const culture = a.items.filter((i) => i.type === "culture");
+    const ancestry = a.items.filter((i) => i.type === "ancestry");
+    assert.deepEqual(culture.map((i) => i.flags.sacadia.catalogId), ["culture_tianqi"], `${a.name}: the Tianqi culture`);
+    assert.equal(ancestry.length, 1, `${a.name}: one ancestry`);
+    assert.equal(ancestry[0].system.heritage, s.identity.heritage, `${a.name}: an ancestry of their Heritage`);
+    assert.equal(s.identity.ancestry, ancestry[0].name);
+    const granted = a.items.filter((i) => i.flags?.sacadia?.identityGrant).map((i) => i.flags.sacadia.catalogId);
+    for (const id of ["tianqi_heibrim_lore", "tianqi_old_bushiu"]) assert.ok(granted.includes(id), `${a.name}: ${id}`);
     assert.equal(s.specialties[0].talent, "religion");
+    assert.equal(s.specialties[0].source, "tianqi_heibrim_lore", "Heibrim Lore's rank");
+    // The Heritage's HP is derived (no adjustment), and the old adjustment is never taken back out again.
+    assert.equal(s.health.bonus, 0);
+    assert.equal(a.flags.sacadia.heritageHpMoved, true);
   }
 });
+
+/** The origin context the prerequisite checker reads (rules/identity.mjs originContext), from built actor data. */
+function originOf(a) {
+  const culture = a.items.find((i) => i.type === "culture");
+  const ancestry = a.items.find((i) => i.type === "ancestry");
+  const names = { human: "human", curiot: "curiot", daemonai: "daemonai", fixerfolk: "fixerfolk", fontborne: "fontborne", hulinari: "hulinari" };
+  return { cultures: [culture.name.toLowerCase(), ...culture.system.aliases.split(",").map((x) => x.trim().toLowerCase()).filter(Boolean)],
+    subcultures: culture.system.subcultures.map((x) => x.toLowerCase()), subculture: culture.system.subculture.toLowerCase(),
+    ancestry: ancestry.name.toLowerCase(), heritage: a.system.identity.heritage, heritageNames: names, heritageChoice: a.system.identity.heritageChoice ?? "" };
+}
 
 test("adventure: Manchuthara's Favored Enemy and Bigger Stones are picks on the abilities", () => {
   const m = heroes.find((a) => a.name === "Manchuthara");

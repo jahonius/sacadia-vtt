@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "black_lance",
       "kind": "weapon",
-      "buildHash": "52b6b5c39a4a"
+      "bargain": "imbued-weapons",
+      "buildHash": "ccf174bdb43a"
     }
   }
 }

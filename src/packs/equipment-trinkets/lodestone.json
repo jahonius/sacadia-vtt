@@ -3,19 +3,32 @@
   "_key": "!items!6f377ae0edcbefe0",
   "name": "Lodestone",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/commodities/stone/ore-chunk-iron-black.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 70,
   "system": {
-    "description": "<p>While you have a Lodestone in your RIS, if you attempt to kick or grab a target wearing Iron Armor, they gain 1X Disadvantage.</p>",
+    "description": "<p><strong>Lodestone</strong> (Passive): When you have a Lodestone in RIS, if you attempt to kick or grab a target who is wearing Iron Armor, they gain 1X Disadvantage.</p><p class=\"goods-facts\">1 Item Slot (RIS Passive) · 20gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 0
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "lodestone",
       "kind": "trinket",
-      "buildHash": "d3d5abcfe269"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "3c1b8d9cbe92"
     }
   }
 }

@@ -1,0 +1,44 @@
+{
+  "_id": "5284b5f1c8e2f835",
+  "_key": "!items!5284b5f1c8e2f835",
+  "name": "Tight Squeeze",
+  "type": "ability",
+  "img": "icons/creatures/mammals/rodent-rat-green.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 70,
+  "system": {
+    "description": "<p>Once during a move action as a boost, you move through a space occupied by a creature (or a gap between two creatures on a diagonal) as though it is difficult terrain. If another effect already gives you the ability to move through these spaces as difficult terrain, you may move through them freely.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Stealthy Curiot Ancestry",
+      "prerequisite": "Stealthy Curiot Ancestry · p.84"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_tight_squeeze",
+      "transcribed": true,
+      "buildHash": "d88aee63be1b"
+    }
+  }
+}

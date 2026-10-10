@@ -1,0 +1,34 @@
+{
+  "_id": "1b7f1d6528e4a6ce",
+  "_key": "!items!1b7f1d6528e4a6ce",
+  "name": "Dagger Belt",
+  "type": "gear",
+  "img": "icons/equipment/waist/belt-armored-studded-steel.webp",
+  "folder": "75a7d1f4b9a3787e",
+  "sort": 70,
+  "system": {
+    "description": "<p><strong>Readied Baggage</strong> (Passive): All Readied baggage items must be equipped to RIS to work. When occupying RIS, baggage items create extra RIS within them, often with specific requirements.</p><p><strong>Dagger Belt</strong> (Passive): This item provides 6 readied item slots (RIS). You can only put weapons in the dagger family in these slots.</p><p class=\"goods-facts\">2 Item Slots · 150gc · Readied Baggage, rulebook p.202</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 150,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 6
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "dagger_belt",
+      "kind": "goods",
+      "goods": {
+        "table": "readied-baggage"
+      },
+      "bargain": "baggage",
+      "buildHash": "deff96b21c14"
+    }
+  }
+}

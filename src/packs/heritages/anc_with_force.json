@@ -1,0 +1,60 @@
+{
+  "_id": "67b5054b2edf4134",
+  "_key": "!items!67b5054b2edf4134",
+  "name": "With Force",
+  "type": "ability",
+  "img": "icons/creatures/mammals/ox-bull-horned-glowing-orange.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 80,
+  "system": {
+    "description": "<p>Gain proficiency in Heavy Physical Armor. Your unarmed attacks do 1D10 base damage instead of 1D8.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Brute Form Ancestry",
+      "prerequisite": "Brute Form · p.92"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "With Force",
+        "target": "damage",
+        "mode": "step",
+        "scope": "melee",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:attack:weapon:unarmed"
+          },
+          {
+            "atom": "self:form:brute"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_with_force",
+      "transcribed": true,
+      "buildHash": "9e8d975c93c5"
+    }
+  }
+}

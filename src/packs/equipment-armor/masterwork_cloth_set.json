@@ -19,14 +19,16 @@
     "maxStat": 30,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 800
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "masterwork_cloth_set",
       "kind": "armor",
-      "buildHash": "7f2c21e22c22"
+      "bargain": "armor",
+      "buildHash": "a519ad72630a"
     }
   }
 }

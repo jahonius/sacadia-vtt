@@ -1,0 +1,37 @@
+{
+  "name": "Woven Net",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Uncommon, Air. 1 item slot.</em></p><p><strong>Prerequisites:</strong> Power[2]</p><p>A thickly woven net of grass fibers. It is about 10ft to a side, and the corners are tied with heavy stones.</p><p><strong>Throw Net</strong> (Action): When you have this net equipped in both hands, you can throw it a distance up to 5Xft (where X is your Power Score). From a square that distance away, select a 10ft x 10ft square. All creature in that space make Power Checks against your Check DC against 3 levels of Pin. If a creature takes any levels of Pin and are a flying creature, they cannot fly provided they have any levels of Pin this way. You may use the net once per quick rest.</p><p><em>Rulebook p.77.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "e4742552261fce43",
+  "_key": "!items!e4742552261fce43",
+  "folder": "56c5eedd378f4a41",
+  "sort": 110,
+  "img": "icons/environment/traps/net.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_woven_net",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Uncommon",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "936e37780281"
+    }
+  }
+}

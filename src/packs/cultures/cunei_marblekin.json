@@ -1,0 +1,31 @@
+{
+  "_id": "b58eae13a9dd2ab3",
+  "_key": "!items!b58eae13a9dd2ab3",
+  "name": "Marblekin",
+  "type": "ancestry",
+  "img": "icons/magic/defensive/armor-stone-skin.webp",
+  "folder": "b5e4d67c6f6a86a3",
+  "sort": 10,
+  "system": {
+    "description": "<p>Marblekin have skin and eyes of pure marble, and are typically powerful and large.</p><p><strong>Size:</strong> Medium (6.5–8 feet) · <strong>Lifespan:</strong> Typically 65–85 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.cultures.Item.5c6322ff232c01e7]{Stoneskin}</p><p><strong>Lore uses</strong> (from level 4): @UUID[Compendium.sacadia.abilities-lore.Item.4e7fc3e45cb92def]{Marble Swim}</p><p><em>Cunei Myrgha ancestry. Fixerfolk Heritage. Rulebook p.43.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.5c6322ff232c01e7",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fixerfolk",
+    "size": "Medium (6.5–8 feet)",
+    "lifespan": "Typically 65–85 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_marblekin",
+      "culture": "cunei",
+      "buildHash": "5f4138d64995"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "a40a159196299a3c",
+  "_key": "!items!a40a159196299a3c",
+  "name": "Pot, Small (Iron)",
+  "type": "gear",
+  "img": "icons/tools/cooking/pot-camping-iron-black.webp",
+  "folder": "65470c303531d49b",
+  "sort": 60,
+  "system": {
+    "description": "<p><strong>Pot, Small (Iron)</strong> (Passive): This item consumes 2 Stored Item Slots (SIS), but provides 5 SIS. You may only put items with the Small Property into these SIS. All items placed in the pot’s slots must be the same. You may benefit from only one Pot at a time.</p><p class=\"goods-facts\">2 Item Slots · 10gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "sis",
+    "providesSis": 5,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pot_small_iron",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "pot"
+      },
+      "bargain": "baggage",
+      "buildHash": "1875bbb6b855"
+    }
+  }
+}

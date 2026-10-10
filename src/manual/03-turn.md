@@ -76,7 +76,8 @@ created (marks, grants on allies, zones). Going Insane ends all your Focus abili
 
 ## Lore abilities
 
-Your **Lore points** (from level 4, more with Fate 3 and 6) refill on a Long Rest. Every character has
+Your **Lore points** (from level 4, more with Fate 3 and 6) refill at the end of a Long Rest (p.168), not after a
+night's Fitful Rest. Every character has
 **Rousing Success**; at levels 4, 9, and 13 you add one more from the **Lore Abilities** compendium
 (prerequisites such as an ancestry or profession are listed on each).
 
@@ -102,8 +103,14 @@ Abilities that may target only so many creatures warn when more are targeted.
 
 ## Resting
 
-Rests are in the header:
+The book's three rests (p.235) are in the header:
 
-- **Short (Quick) Rest:** refills pools, clears most conditions, restores one point of Rend to your armor, and offers
-  to spend Health Pools. Oracles with Slightly Cracked roll their saved d3s.
-- **Long Rest:** full Health, refills Health Pools and Lore, clears all Rend and repairs broken armor.
+- **Quick Rest:** refills pools, clears most conditions, restores one point of Rend to your armor, and offers to spend
+  Health Pools. Oracles with Slightly Cracked roll their saved d3s.
+- **Fitful Rest** (a night): full Health, refills Health Pools and ability pools, clears conditions and all Rend, and
+  repairs broken armor.
+- **Long Rest** (a week or more of downtime): opens the Long Rest window, a Long Rest Action a week, and ends with a
+  Fitful Rest and your Lore points refilled. See **Downtime and Money**.
+
+Every rest puts out your lights: a lit candle or torch burns out, a lantern goes dark, and a burning smudge is used up.
+A Fitful or Long Rest also ends a Chickenglitter glow.

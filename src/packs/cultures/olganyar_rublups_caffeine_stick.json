@@ -1,0 +1,37 @@
+{
+  "name": "Rublup’s Caffeine Stick",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Common, Fire. 1 item slot (Small, Quickdraw). Uses: 8.</em></p><p>This long stick of bark can be chewed on, for a slightly animating effect. It’s probably not addictive.</p><p><strong>Chew Caffeine</strong> (Reaction): As a reaction, you chew on a caffeine stick, consuming it. Gain 1AP before the end of your next turn. After that turn ends, you do not get a reaction until the start of the following turn. There are eight charges in this caffeine stick. When all are marked, the item is lost.</p><p><em>Rulebook p.57.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "f997fbbc0f064974",
+  "_key": "!items!f997fbbc0f064974",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 120,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_rublups_caffeine_stick",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Common",
+        "element": "Fire",
+        "attunement": false,
+        "uses": "8",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "c324ff0825a6"
+    }
+  }
+}

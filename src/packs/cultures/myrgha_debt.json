@@ -1,0 +1,37 @@
+{
+  "name": "Debt",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a business. Common, Rot. No item slots.</em></p><p>You are in debt big time. Your Oligarch has a lot of demands, and you are behind already on paying them off.</p><p><strong>Starting Debt</strong> (Passive): When you take this inherited item, work with your GM to define the task you owe your Oligarch. This forms a personal quest for you. Every Long Rest you do not complete the quest, gain 1 Bane Token. When you complete the quest, gain 1 Influence with your Oligarch and 1 Lore Point.</p><p><em>Rulebook p.33.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "c36e640a2b48a809",
+  "_key": "!items!c36e640a2b48a809",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 40,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_debt",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Common",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "fed2f70c0c45"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Staff of Spores",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Legendary[1], Rot. 1 item slot. Attunement. Special Property: Spores.</em></p><p><strong>Prerequisites:</strong> Wiles[4]</p><p>A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening small openings all over the sides. It’s letting out such a pretty light!</p><p><strong>Illusory Caster</strong> (Action): When you use the Staff of Spores, choose one target within 10ft of you, then roll 1D2. If you roll a 1, the caster gives Panic. If you roll a 2, the caster gives Taunt. Then, roll 1D6. The target rolls Courage Checks (Check DC13) against X levels of the Condition, where X is the result of your 1D6 check. Narratively, visible and strange illusions display before the target as you do this. You may use this item once per Quick Rest.</p><p><em>Rulebook p.74.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "98bf6c267c9b5210",
+  "_key": "!items!98bf6c267c9b5210",
+  "folder": "56c5eedd378f4a41",
+  "sort": 20,
+  "img": "icons/skills/melee/hand-grip-staff-blue.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_staff_of_spores",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Legendary[1]",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": "Spores"
+      },
+      "buildHash": "466e3a50fa34"
+    }
+  }
+}

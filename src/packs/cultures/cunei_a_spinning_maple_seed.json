@@ -1,0 +1,45 @@
+{
+  "_id": "5d5ffeafcd9985ed",
+  "_key": "!items!5d5ffeafcd9985ed",
+  "name": "A Spinning Maple Seed",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-glow-maple-teal.webp",
+  "folder": "d438317767df20cc",
+  "sort": 70,
+  "system": {
+    "description": "<p>When you are within 5ft of an allied Soldier, increase your bow’s to-hit and damage by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: White Cunei",
+      "prerequisite": "White Cunei Subculture, Sentinel · p.43"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_a_spinning_maple_seed",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "6adffd4e6195"
+    }
+  }
+}

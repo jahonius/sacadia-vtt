@@ -191,6 +191,11 @@ export function woadFacepaint(actor) {
   return findGear(actor, 'woad_facepaint', { where: 'hand' });
 }
 
+/** A Brass Horn held (equipped) as combat starts: "gain 1X Advantage to your Initiative roll" (p.207). */
+export function brassHorn(actor) {
+  return findGear(actor, 'brass_horn', { where: 'equipped' });
+}
+
 /**
  * Berserker Rage at the raging creature's turn end: one round fewer; when none are left (or Explosive Rage ends it this
  * turn), the rage ends and "you gain Fatigue equal to half your Proficiency, rounded up". Endurance Mastery: "roll Power

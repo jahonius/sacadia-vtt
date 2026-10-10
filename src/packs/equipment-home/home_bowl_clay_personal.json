@@ -1,0 +1,34 @@
+{
+  "_id": "106c45de0075a6e0",
+  "_key": "!items!106c45de0075a6e0",
+  "name": "Bowl (Clay, Personal)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/bowl-clay-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 60,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_bowl_clay_personal",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "134ed3a7ccfd"
+    }
+  }
+}

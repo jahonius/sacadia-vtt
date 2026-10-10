@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "dagger",
       "kind": "weapon",
-      "buildHash": "c76c557ab8a4"
+      "bargain": "basic-weapons",
+      "buildHash": "476c0fe055f5"
     }
   }
 }

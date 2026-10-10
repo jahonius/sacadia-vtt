@@ -1,0 +1,34 @@
+{
+  "_id": "0dc70b3fb7fb5a1c",
+  "_key": "!items!0dc70b3fb7fb5a1c",
+  "name": "Bowl (Clay, Serving)",
+  "type": "gear",
+  "img": "icons/consumables/food/bowl-stew-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 70,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_bowl_clay_serving",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "adefb5f38d1a"
+    }
+  }
+}

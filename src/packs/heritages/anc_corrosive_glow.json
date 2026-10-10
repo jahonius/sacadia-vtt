@@ -1,0 +1,51 @@
+{
+  "_id": "06d12e7e0f778cf9",
+  "_key": "!items!06d12e7e0f778cf9",
+  "name": "Corrosive Glow",
+  "type": "ability",
+  "img": "icons/magic/unholy/beam-impact-green.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 60,
+  "system": {
+    "description": "<p>Once per long rest, you can blast a radiation of corrosion outwards from you. All creatures within 5Xft (where X is half your Proficiency, rounded up) make Fate Checks against X levels of Corrosion (where X is half your Proficiency, rounded up).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fiestal Ancestry",
+      "prerequisite": "Heavily Warped · p.90"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_corrosive_glow",
+      "transcribed": true,
+      "buildHash": "fbd3c57fc37a"
+    }
+  }
+}

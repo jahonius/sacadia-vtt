@@ -1,0 +1,49 @@
+{
+  "_id": "c57ba725e388d913",
+  "_key": "!items!c57ba725e388d913",
+  "name": "Artisanal Marblework",
+  "type": "ability",
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+  "folder": "e6e98acf43a5e597",
+  "sort": 40,
+  "system": {
+    "description": "<p>You have an innate sense for marble and how to use it. Gain 1 level in Construction: Stonework, even if you do not have Construction. Additionally, if you create a craft using only Marble, increase the resultant rarity by one type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha Cultural Talent",
+      "prerequisite": "White Cunei Subculture · p.37"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_artisanal_marblework",
+      "transcribed": true,
+      "culture": "cunei",
+      "grantsSpecialty": {
+        "talent": "construction",
+        "name": "Stonework"
+      },
+      "buildHash": "d3523528bda9"
+    }
+  }
+}

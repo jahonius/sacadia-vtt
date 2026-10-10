@@ -1,0 +1,45 @@
+{
+  "_id": "4960264ef28d6251",
+  "_key": "!items!4960264ef28d6251",
+  "name": "Fae Attunement",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-glow-triple-teal.webp",
+  "folder": "5757523bb3aaa415",
+  "sort": 10,
+  "system": {
+    "description": "<p>You have a natural intuition of Fae and Fae magic. When you encounter Fae magic, you can recognize the feeling of it. You also have a more natural attunement to the earth, and can use this to recognize natural magic.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fixerfolk Heritage",
+      "prerequisite": "p.87"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_fae_attunement",
+      "transcribed": true,
+      "heritage": "fixerfolk",
+      "buildHash": "4edbf9afd39e"
+    }
+  }
+}

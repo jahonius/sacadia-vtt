@@ -1,0 +1,45 @@
+{
+  "_id": "b7a4205d043bc6e6",
+  "_key": "!items!b7a4205d043bc6e6",
+  "name": "Count the Hand",
+  "type": "ability",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 10,
+  "system": {
+    "description": "<p>At the start of your turn, declare a number of successful hits you will make. If you successfully make that number of hits, and do not make any additional hits on your turn, increase the damage dice type of Consecutive Threat by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Bureau of Measurement Thugs",
+      "prerequisite": "Myrgha Cultural Heritage, Consecutive Threat · p.31"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_count_the_hand",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "a182620c186f"
+    }
+  }
+}

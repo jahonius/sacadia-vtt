@@ -19,14 +19,16 @@
     "maxStat": 29,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 1000
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "masterwork_iron_set",
       "kind": "armor",
-      "buildHash": "502841506fdc"
+      "bargain": "armor",
+      "buildHash": "5ed4328c0bb2"
     }
   }
 }

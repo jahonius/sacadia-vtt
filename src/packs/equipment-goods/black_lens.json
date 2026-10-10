@@ -1,0 +1,37 @@
+{
+  "_id": "19f29c1b0098e7ae",
+  "_key": "!items!19f29c1b0098e7ae",
+  "name": "Black Lens",
+  "type": "gear",
+  "img": "icons/tools/scribal/lens-grey-brown.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Black Lens</strong> (Passive): When you purchase Black Glass, choose a lantern to which it is affixed. The lantern illuminates Bright and Dim light half as far (round down), but that light reveals all creatures in the Hallowfell (i.e., any invisible creatures that are invisible through magical means).</p><p class=\"goods-facts\">No Item Slot · 500gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "black_lens",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "addOn": true,
+          "scale": 0.5
+        }
+      },
+      "buildHash": "f6f78264f876"
+    }
+  }
+}

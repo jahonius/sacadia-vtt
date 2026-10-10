@@ -49,9 +49,11 @@ export function giverHemorrhageSteps(giver) {
 export async function turnDamageSteps(actor, key) {
   const src = actor.system.conditions?.[key]?.source ?? {};
   const recorded = src.dieSteps ?? 0;
-  if (key !== 'hemorrhage' || !src.casterUuid) return recorded;
+  // Anemic Tolerance (Tianqi): "Reduce the damage dice of Hemorrhage given to you by one dice type."
+  const tolerance = key === 'hemorrhage' && owns(actor, 'tianqi_anemic_tolerance') ? -1 : 0;
+  if (key !== 'hemorrhage' || !src.casterUuid) return recorded + tolerance;
   const giver = await actorOf(src.casterUuid);
-  return giver ? giverHemorrhageSteps(giver) : recorded;
+  return (giver ? giverHemorrhageSteps(giver) : recorded) + tolerance;
 }
 
 /** Roll a turn-damage condition at `level` (Hemorrhage: level × d10, its die stepped). Returns the evaluated Roll. */
@@ -60,7 +62,10 @@ export async function rollTurnDamage(actor, key, level) {
   if (!dmg || !level) return null;
   const steps = await turnDamageSteps(actor, key);
   const [, den] = /d(\d+)/.exec(dmg.perLevelDice) ?? [];
-  const die = steps && den ? stepDie('1', Number(den), steps, CONFIG.SACADIA.diceLadder) : null;
+  const SIZES = [2, 4, 6, 8, 10];
+  const die = steps > 0 && den ? stepDie('1', Number(den), steps, CONFIG.SACADIA.diceLadder)
+    // Stepped down (Anemic Tolerance): one die size smaller each, to a d2 at least.
+    : steps < 0 && SIZES.includes(Number(den)) ? { count: '1', denomination: SIZES[Math.max(0, SIZES.indexOf(Number(den)) + steps)] } : null;
   const formula = die ? `${level * Number(die.count)}d${die.denomination}` : `${level}${dmg.perLevelDice.replace(/^\d+/, '')}`;
   return new Roll(formula).evaluate();
 }

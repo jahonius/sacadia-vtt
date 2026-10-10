@@ -1,0 +1,67 @@
+{
+  "_id": "ee23cfdffedec522",
+  "_key": "!items!ee23cfdffedec522",
+  "name": "Kishai",
+  "type": "culture",
+  "img": "icons/magic/nature/leaf-arrowheads-glow-green.webp",
+  "folder": "25040de22dc86ea7",
+  "sort": 0,
+  "system": {
+    "description": "<p>The Kishai are grassland tribesmen, inhabiting semi-controllable, giant floating metallic shells that collect iron beneath them from the iron-rich, but tormented, grass font beneath them. Each of their few remaining skyships are held together through strange mysteries, and they worship the ships as Gods. The Kishai are a superstitious, tribal culture at the end of their lifespan.</p><p>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.4c409167230fda4e]{The Kishai: Cultural Tapestry, Ways and Inheritance}</p><p><em>Rulebook p.69.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.6aa2e098692df686",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.cef1764889ff881b",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.793244e80f36f492",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "aliases": "Kish",
+    "laws": [
+      {
+        "name": "Property",
+        "text": "You cannot possess personal property, and must share all items with others, according to who can take best advantage of each item.",
+        "optional": false
+      },
+      {
+        "name": "Respect for Elderly",
+        "text": "You must respect the authority and will of Kishai who are older than you at all times.",
+        "optional": false
+      },
+      {
+        "name": "Outsiders",
+        "text": "You are forbidden from talking with outsiders to Kish, unless you are specifically designated by your tribe to speak with Outsiders. If an Outsider comes into Kish without the express permission of your tribal leader, you must kill them.",
+        "optional": false
+      },
+      {
+        "name": "Meat",
+        "text": "You cannot eat meat except as a part of holy Kishai ceremonies.",
+        "optional": false
+      },
+      {
+        "name": "Illiterate",
+        "text": "You cannot take the Literary Talent.",
+        "optional": false
+      }
+    ],
+    "subcultures": [],
+    "subculture": "",
+    "journal": "Compendium.sacadia.cultures-journal.JournalEntry.4c409167230fda4e"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "culture_kishai",
+      "culture": "kishai",
+      "buildHash": "8e78daf4ef12"
+    }
+  }
+}

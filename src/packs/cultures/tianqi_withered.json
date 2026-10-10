@@ -1,0 +1,31 @@
+{
+  "_id": "8d92c2be5199751e",
+  "_key": "!items!8d92c2be5199751e",
+  "name": "Withered",
+  "type": "ancestry",
+  "img": "icons/magic/unholy/hand-fire-skeleton-pink.webp",
+  "folder": "c3ee098a24db43aa",
+  "sort": 10,
+  "system": {
+    "description": "<p>The result of partaking in too much blood magic, the Withered are not naturally born, but made. Tianqi Redwardens become Withered naturally through their cursed magicks. When you become Withered, replace your Human Ancestral abilities with this.</p><p><strong>Lifespan:</strong> Typically 90–110 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.cultures.Item.91e72e3f4b76ca4c]{Blood Arts}</p><p><strong>Lore uses</strong> (from level 4): @UUID[Compendium.sacadia.abilities-lore.Item.a327ce0e39cb8bfe]{Cursed Contract}</p><p><em>Tianqi ancestry. Human Heritage. Rulebook p.63.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.91e72e3f4b76ca4c",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "human",
+    "size": "",
+    "lifespan": "Typically 90–110 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_withered",
+      "culture": "tianqi",
+      "buildHash": "e3c1a18a5729"
+    }
+  }
+}

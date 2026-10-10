@@ -1,0 +1,34 @@
+{
+  "_id": "2f8261c69f40aac3",
+  "_key": "!items!2f8261c69f40aac3",
+  "name": "Canoe",
+  "type": "gear",
+  "img": "icons/tools/nautical/steering-wheel.webp",
+  "folder": "e2aae46f62d61f55",
+  "sort": 90,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1000gc · Mounts and Vehicles, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "canoe",
+      "kind": "goods",
+      "goods": {
+        "table": "mounts-vehicles"
+      },
+      "bargain": "mounts",
+      "buildHash": "3aacc21ada84"
+    }
+  }
+}

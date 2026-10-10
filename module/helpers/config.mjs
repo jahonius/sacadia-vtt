@@ -197,8 +197,8 @@ SACADIA.professionProficientAttacks = {
 SACADIA.prestigeProfessions = ['magus', 'witch'];
 
 /**
- * The six Heritages — a character's ancestral makeup / species (book Chapter III, pp.80–92). The
- * specialized Ancestry within a Heritage stays free text (open-ended and Culture-gated).
+ * The six Heritages — a character's ancestral makeup / species (book Chapter III, pp.80–92). An Ancestry within a
+ * Heritage is an `ancestry` item (the Heritages & Ancestries compendium, or one a table makes).
  * @type {Record<string, string>} heritage key -> i18n label path
  */
 SACADIA.heritages = {
@@ -208,6 +208,24 @@ SACADIA.heritages = {
   fixerfolk: 'SACADIA.Heritage.Fixerfolk',
   fontborne: 'SACADIA.Heritage.Fontborne',
   hulinari: 'SACADIA.Heritage.Hulinari',
+};
+
+/**
+ * Each Heritage's attributes (book pp.81–92): the HP it adds once (its "HP at Level 1"), its size and lifespan (an
+ * Ancestry may give its own), and the choice some make when you take them (Natural Charisma, Strength of Warp). Every
+ * Heritage moves 30ft. Its abilities are in the Heritages & Ancestries compendium (`flags.sacadia.heritage`); one that
+ * goes with a choice names it (`flags.sacadia.heritageChoice`), and so may an ancestry's grant (Fontborne ancestries).
+ * @type {Record<string, {hp: number, size: string, lifespan: string, choice?: {label: string, options: Record<string, string>}}>}
+ */
+SACADIA.heritageInfo = {
+  human: { hp: 10, size: 'Medium (5–6 feet)', lifespan: '40–60 years' },
+  curiot: { hp: 6, size: '', lifespan: '' },
+  daemonai: { hp: 6, size: '', lifespan: '',
+    choice: { label: 'SACADIA.Origin.NaturalCharisma', options: { intuit: 'SACADIA.Origin.Intuit', speak: 'SACADIA.Origin.Speak' } } },
+  fixerfolk: { hp: 6, size: 'Medium (3–5 feet)', lifespan: '30–50 years' },
+  fontborne: { hp: 8, size: '4–6 feet', lifespan: '40–60 years',
+    choice: { label: 'SACADIA.Origin.StrengthOfWarp', options: { light: 'SACADIA.Origin.LightlyWarped', heavy: 'SACADIA.Origin.HeavilyWarped' } } },
+  hulinari: { hp: 8, size: 'Medium (4–7 feet)', lifespan: '20–600 years (varies by species)' },
 };
 
 /**

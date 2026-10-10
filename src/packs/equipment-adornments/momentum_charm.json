@@ -16,7 +16,8 @@
       "catalogId": "momentum_charm",
       "kind": "adornment",
       "armorPrereq": "Padded Style",
-      "buildHash": "7b6e1e0dd305"
+      "bargain": "adornments",
+      "buildHash": "a0b3d14eb4bb"
     }
   }
 }

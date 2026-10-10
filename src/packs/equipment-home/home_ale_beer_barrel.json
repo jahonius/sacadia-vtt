@@ -1,0 +1,34 @@
+{
+  "_id": "797ea336aad7eb80",
+  "_key": "!items!797ea336aad7eb80",
+  "name": "Ale/Beer (Barrel)",
+  "type": "gear",
+  "img": "icons/containers/barrels/barrel-oak-tan.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 10,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_ale_beer_barrel",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "722ad6cf65f0"
+    }
+  }
+}

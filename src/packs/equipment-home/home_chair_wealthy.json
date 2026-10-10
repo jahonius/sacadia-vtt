@@ -1,0 +1,33 @@
+{
+  "_id": "993fe87285d13010",
+  "_key": "!items!993fe87285d13010",
+  "name": "Chair (Wealthy)",
+  "type": "gear",
+  "img": "icons/commodities/wood/framing-reinforced-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 140,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 400gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 400,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_chair_wealthy",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "7aab6dcdb7a9"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_id": "711396832a3ea099",
+  "_key": "!items!711396832a3ea099",
+  "name": "Reactive Gold",
+  "type": "ability",
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 110,
+  "system": {
+    "description": "<p>As a reaction to someone hitting you with an attack (whether they miss or hit), you may move gold between Goldblade, Goldshield, and Goldspool.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Goldenhoard · p.32"
+    },
+    "activities": [],
+    "modifiers": [],
+    "reactionTrigger": "move"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_reactive_gold",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "9fc921d06c86"
+    }
+  }
+}

@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "ceremonial_blade",
       "kind": "weapon",
-      "buildHash": "7359570d40b7"
+      "bargain": "imbued-weapons",
+      "buildHash": "62694fc1c2b8"
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "_id": "b5fdad4758d3c566",
+  "_key": "!items!b5fdad4758d3c566",
+  "name": "Belt",
+  "type": "gear",
+  "img": "icons/equipment/waist/belt-leather-brown.webp",
+  "folder": "c55d621768d42933",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Add-On</strong> (Passive): Add-Ons are made to an item with the Clothes Set property. They take no item slot: denote them on the Clothing Set to which they are added.</p><p><strong>Belt</strong> (Passive): In a pinch, a belt can be used as 5ft of rope. You may add a maximum of 1 belt to any Clothing Set.</p><p class=\"goods-facts\">No Item Slot · 1gc · Clothing Add-Ons, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "belt",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "belt",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing-add-ons"
+      },
+      "buildHash": "35403f148865"
+    }
+  }
+}

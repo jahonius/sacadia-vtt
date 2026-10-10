@@ -603,6 +603,42 @@
       font-size: 0.85rem;
       &:focus { border-color: var(--sac-gold-lo); outline: none; }
     }
+    .sac-label a { margin-left: 0.3rem; color: var(--sac-gold-lo); &:hover { color: var(--sac-gold); } }
+  }
+}
+
+// What the Heritage, Ancestry and Culture give: the Heritage's HP and lifespan, the abilities granted, the Binding Laws.
+.origin-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: -0.3rem 0 0.7rem;
+  padding: 0 0.6rem;
+  font-size: 0.85rem;
+
+  .origin-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.8rem;
+    margin: 0;
+    color: var(--sac-dim);
+    b { color: var(--sac-gold); }
+  }
+  .origin-granted {
+    gap: 0.25rem 0.5rem;
+    .origin-grant {
+      padding: 0 0.35rem;
+      border: 1px solid var(--sac-line);
+      border-radius: 3px;
+      color: var(--sac-text);
+      &:hover { border-color: var(--sac-gold-lo); }
+    }
+  }
+  .origin-laws {
+    h4 { margin: 0.2rem 0; font-family: var(--sac-font-display); font-size: 0.9rem; color: var(--sac-gold-lo); border: none; }
+    ul { margin: 0; padding-left: 1.1rem; }
+    li { margin: 0.12rem 0; line-height: 1.35; }
   }
 }
 
@@ -721,6 +757,52 @@
   }
 }
 
+// --- Purse (Inventory tab): gold and silver coins, change, starting gold ---
+.purse {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.7rem; margin: 0.15rem 0 0.35rem;
+  font-size: 0.85rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums;
+  > i { color: var(--sac-gold); font-size: 0.8rem; }
+  label { display: inline-flex; align-items: center; gap: 0.25rem;
+    input { width: 4.2rem; text-align: right; background: var(--sac-inset); border: 1px solid var(--sac-line); border-radius: 3px; color: var(--sac-text); } }
+  a { cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+  .purse-start { padding: 0.05rem 0.5rem; border: 1px solid var(--sac-gold-lo); border-radius: 10px; color: var(--sac-gold-hi); }
+}
+.inv-facts .fact-price { color: var(--sac-gold-lo); }
+
+// --- Personal goods (rules/goods.mjs): a light source's flame (lit: warm), use one up, a lit chip ---
+.inv-row {
+  .light-toggle { color: var(--sac-dim); &.on { color: #f0a046; text-shadow: 0 0 6px rgba(240, 160, 70, 0.55); } }
+  &.lit { background: linear-gradient(90deg, rgba(240, 160, 70, 0.1), transparent 60%); }
+  .sac-chip.lit { color: #f3b765; border-color: rgba(240, 160, 70, 0.5); i { color: #f0a046; } }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .inv-row .light-toggle.on i { animation: sac-flicker 2.4s ease-in-out infinite; }
+}
+@keyframes sac-flicker { 0%, 100% { opacity: 1; } 45% { opacity: 0.78; } 60% { opacity: 0.95; } }
+
+// The gear sheet: value and its coin, slots given, a rune's choices.
+.gear-fields {
+  select.coin { flex: 0 0 4.2rem; }
+  .unit { flex: 0 0 auto; color: var(--sac-dim); font-size: 0.8rem; }
+  .rune-choices {
+    select { flex: 0 0 5rem; }
+    .rune-fixed { margin: 0.1rem 0 0.3rem; color: var(--sac-gold-hi); font-variant-numeric: lining-nums tabular-nums; }
+    .hint { margin: 0.3rem 0 0; color: var(--sac-dim); font-style: italic; font-size: 0.8rem; }
+  }
+}
+
+// --- Influence (Character tab): a group, its points, spend ---
+h3 .h-add { margin-left: 0.4rem; font-size: 0.8rem; cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+.influence-list {
+  list-style: none; margin: 0 0 0.7rem; padding: 0; display: flex; flex-direction: column; gap: 0.3rem;
+  .influence-row { display: flex; align-items: center; gap: 0.5rem;
+    input[type="text"] { flex: 1 1 auto; }
+    .influence-value { flex: 0 0 3.2rem; width: 3.2rem; text-align: center; }
+    a { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); white-space: nowrap; font-size: 0.82rem; &:hover { color: var(--sac-gold-hi); }
+      &.disabled { opacity: 0.4; pointer-events: none; } } }
+  .influence-empty { font-size: 0.82rem; color: var(--sac-dim); font-style: italic; }
+}
+
 // --- Item slot counter (Inventory tab) ---
 .item-slots {
   display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; align-items: center; margin: 0.15rem 0 0.2rem;
@@ -742,7 +824,9 @@
     input[type="text"] { flex: 1 1 6rem; min-width: 6rem; }
     select { flex: 0 0 7.5rem; min-width: 0; font-size: 0.8rem; }
     .rank { flex: 0 0 2.6rem; width: 2.6rem; text-align: center; }
-    a { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } } }
+    a { flex: 0 0 auto; cursor: pointer; color: var(--sac-dim); &:hover { color: var(--sac-gold-hi); } }
+    // A rank a cultural talent or Heritage gives (its `source`).
+    &.granted { box-shadow: inset 2px 0 0 var(--sac-gold-lo); } }
 }
 
 // --- Item sheet: header + equip toggles ---
@@ -1053,6 +1137,8 @@
   display: flex; align-items: center; gap: 0.5rem; margin-left: auto;
   a { cursor: pointer; white-space: nowrap; font-size: 0.8rem; opacity: 0.85; &:hover { opacity: 1; } }
 }
+// The three rests, one quiet group: Quick · Fitful · Long.
+.rest-controls .rest-group { display: inline-flex; align-items: center; gap: 0.45rem; }
 // The name row's main action (Initiative): the one gold-outlined chip; the rests stay quiet links.
 .rest-controls a.primary, .npc-controls a.primary {
   padding: 0.12rem 0.6rem; border: 1px solid var(--sac-gold-lo); border-radius: 10px;
@@ -1223,10 +1309,27 @@
   > select, > input, > multi-checkbox { flex: 1; }
 }
 
+// A culture's or ancestry's sheet: each law's name and switches on a line, its text below; grants by name.
+.origin-fields {
+  .law-row {
+    flex-wrap: wrap;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--sac-line);
+    > input[type="text"] { flex: 1; }
+    > label.checkbox { display: flex; align-items: center; gap: 0.25rem; flex: 0 0 auto; opacity: 0.8; }
+    > textarea { flex: 1 1 100%; min-height: 3.4rem; font-family: var(--sac-font-ui); font-size: 0.85rem; resize: vertical; }
+  }
+  .origin-options input.key { flex: 0 0 7rem; }
+  .origin-grants .grant-name { flex: 1; cursor: pointer; &:hover { color: var(--sac-gold-hi); } }
+  .origin-grants select { flex: 0 0 11rem; }
+  .hint { margin: 0.2rem 0; color: var(--sac-dim); font-style: italic; }
+}
+
 // Every item-sheet fieldset gets a gold eyebrow legend, matching the actor's section headers.
 .ability-fields fieldset,
 .armor-fields fieldset,
-.gear-fields fieldset {
+.gear-fields fieldset,
+.origin-fields fieldset {
   margin: 0.5rem 0;
   border: 1px solid var(--sac-line);
   border-radius: 4px;
@@ -1535,6 +1638,18 @@
   li { display: contents; }
   .rest-label { font-size: 0.7rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sac-dim); }
   .rest-value { font-size: 0.85rem; font-variant-numeric: lining-nums tabular-nums; b { color: var(--sac-gold-hi); } }
+}
+// A Long Rest's weeks say more: each label over its line, the full width.
+&.long-rest-card .rest-list {
+  grid-template-columns: 1fr; gap: 0.1rem;
+  .rest-value { margin-bottom: 0.3rem; small { color: var(--sac-dim); } em { color: var(--sac-dim); } }
+}
+// Links to documents on a card (a bargain's items): gold on the card's dark ground, not Foundry's pale chip.
+a.content-link {
+  background: rgba(212, 165, 60, 0.1); border: 1px solid var(--sac-gold-lo); border-radius: 3px; padding: 0 0.25rem;
+  color: var(--sac-gold-hi); white-space: nowrap;
+  i { color: var(--sac-gold); }
+  &:hover { background: rgba(212, 165, 60, 0.2); text-shadow: none; }
 }
 
 // --- Note card: a one-line notice (Rend, Rage ending, a Madness change, a save prompt's text and its button) ---

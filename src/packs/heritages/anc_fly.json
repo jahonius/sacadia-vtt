@@ -1,0 +1,44 @@
+{
+  "_id": "c70c0fac00c40cd6",
+  "_key": "!items!c70c0fac00c40cd6",
+  "name": "Fly",
+  "type": "ability",
+  "img": "icons/creatures/birds/birds-flock-fly-yellow.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 120,
+  "system": {
+    "description": "<p>A player with the ability to fly can fly up to their move speed. This action can be split by another action, which can be put in the middle of movement. The fly action can be used in lieu of a move action by a Hulinari character in Swarm Form. <em>(Your Fly speed shows in the header while you’re in Swarm Form.)</em></p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Swarm Form Ancestry",
+      "prerequisite": "Swarm Form · p.92"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_fly",
+      "transcribed": true,
+      "buildHash": "f9863c21b375"
+    }
+  }
+}

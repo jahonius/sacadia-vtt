@@ -1,0 +1,33 @@
+{
+  "_id": "0a0791fbcd52fb3d",
+  "_key": "!items!0a0791fbcd52fb3d",
+  "name": "Instrument (Woodwind)",
+  "type": "gear",
+  "img": "icons/tools/instruments/flute-simple-wood.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 240,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 300gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_instrument_woodwind",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "2f0857861286"
+    }
+  }
+}

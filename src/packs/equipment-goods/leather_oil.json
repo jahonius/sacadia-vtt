@@ -1,0 +1,35 @@
+{
+  "_id": "5cc26f17e1abdf9c",
+  "_key": "!items!5cc26f17e1abdf9c",
+  "name": "Leather Oil",
+  "type": "gear",
+  "img": "icons/consumables/potions/bottle-round-corked-pink.webp",
+  "folder": "d4a9149605aa8f61",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Leather Oil</strong> (Ceremony): <em>Prerequisite: Tailoring: Leatherwork[3].</em> Choose one set of Leather Armor during a quick rest. Expend your Leather Oil. Add +1 TD to that armor until the next rest.</p><p class=\"goods-facts\">1 Item Slot · 200gc · Weapon & Armor Kits, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "leather_oil",
+      "kind": "goods",
+      "goods": {
+        "table": "kits",
+        "use": true
+      },
+      "bargain": "adventuring",
+      "buildHash": "bc2cc4c92606"
+    }
+  }
+}

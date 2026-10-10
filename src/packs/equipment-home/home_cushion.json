@@ -1,0 +1,33 @@
+{
+  "_id": "2d759f9c4c840a13",
+  "_key": "!items!2d759f9c4c840a13",
+  "name": "Cushion",
+  "type": "gear",
+  "img": "icons/commodities/cloth/cloth-patterned-teal.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 180,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 80gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 80,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_cushion",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "1aebff747ce2"
+    }
+  }
+}

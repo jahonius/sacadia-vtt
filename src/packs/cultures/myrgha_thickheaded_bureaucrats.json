@@ -1,0 +1,45 @@
+{
+  "_id": "0cc1adac1a88b207",
+  "_key": "!items!0cc1adac1a88b207",
+  "name": "Thickheaded Bureaucrats",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-official-capital.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 20,
+  "system": {
+    "description": "<p>When you use Pained Bash, you may count it as an additional attack for the purposes of Consecutive Threat.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Bureau of Measurement Thugs",
+      "prerequisite": "Myrgha Cultural Heritage, Consecutive Threat, Pained Bash · p.31"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_thickheaded_bureaucrats",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "cb0a68361d26"
+    }
+  }
+}

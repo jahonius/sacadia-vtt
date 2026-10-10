@@ -18,6 +18,7 @@
       "dr": 0
     },
     "maxStat": null,
+    "value": 200,
     "slots": 3,
     "storage": "ris",
     "providesSis": 0,
@@ -40,7 +41,8 @@
     "sacadia": {
       "catalogId": "professional_tower_shield",
       "kind": "shield",
-      "buildHash": "7e2ea25678c9"
+      "bargain": "shields",
+      "buildHash": "8411061e804d"
     }
   }
 }

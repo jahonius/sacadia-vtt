@@ -1,0 +1,34 @@
+{
+  "_id": "749ef3bd81ecee15",
+  "_key": "!items!749ef3bd81ecee15",
+  "name": "Lantern Oil (1hr Supply)",
+  "type": "gear",
+  "img": "icons/consumables/potions/flask-corked-green.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 80,
+  "system": {
+    "description": "<p><strong>Lantern Oil</strong> (Passive): A lantern burns through 1 supply of lantern oil per hour. (On the sheet, lighting a lantern uses one.)</p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 1gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lantern_oil",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination"
+      },
+      "bargain": "illumination",
+      "buildHash": "99d3c5204f07"
+    }
+  }
+}

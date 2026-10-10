@@ -1,0 +1,87 @@
+{
+  "_id": "45f03b54bc336c85",
+  "_key": "!items!45f03b54bc336c85",
+  "name": "Cunei Myrgha",
+  "type": "culture",
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+  "folder": "e6e98acf43a5e597",
+  "sort": 0,
+  "system": {
+    "description": "<p>A once-colony of the Myrgha, the Cuneises have achieved independence through a series of rebellions, and today exist with the fractured but fading resemblance of the Myrgha. This proud, fierce people is known for artisanship, mining, and agriculture, still serving as the Myrgha breadbasket. The Black and White Cuneises are culturally similar, but still fractured as two separate and distinct cultures, so the Cunei Myrgha have two subcultures: the Black Cuneis (the Agricultural Core of the Cuneises) and the White Cuneis (the Mining and Marblework Core of the Cuneises). The Cunei Myrgha are an Industrial, Legalistic colony at the beginning of their rise to empire.</p><p>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.b3f12a3db3c9dd7a]{The Cunei Myrgha: Cultural Tapestry, Ways and Inheritance}</p><p><em>Rulebook p.37.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.a025e022153fe3dd",
+        "option": "intrigue"
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.f96867c1e6aab279",
+        "option": "farmer"
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.c57ba725e388d913",
+        "option": "marble"
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.07df1125aa004e87",
+        "option": ""
+      }
+    ],
+    "options": [
+      {
+        "key": "intrigue",
+        "label": "Cunei Intrigue"
+      },
+      {
+        "key": "farmer",
+        "label": "Farmer’s Eye (Black Cunei)"
+      },
+      {
+        "key": "marble",
+        "label": "Artisanal Marblework (White Cunei)"
+      }
+    ],
+    "choice": "",
+    "aliases": "Cunei",
+    "laws": [
+      {
+        "name": "Simple Artisanship",
+        "text": "You must value a well-made and simple craft as a thing of beauty. You disdain poor craftsmanship and overly complex crafts.",
+        "optional": false
+      },
+      {
+        "name": "Legalist Pride",
+        "text": "You must value Cunei Legalism, using the letter of the law and not the spirit of the law in your interpretation of law.",
+        "optional": false
+      },
+      {
+        "name": "A Prejudiced Color Scheme",
+        "text": "You must wear the shade of your home Cuneis (black or white) and never an article of clothing or item from the other - not even if painted over.",
+        "optional": false
+      },
+      {
+        "name": "Cunei Prejudice",
+        "text": "You have an innate disdain for members of the other Cuneis, and may struggle to clamp this down, even if you wish to.",
+        "optional": true
+      },
+      {
+        "name": "Myrgha Prejudice",
+        "text": "You have an innate suspicion and mistrust of the Myrgha, and see them as the root of problems in your culture.",
+        "optional": true
+      }
+    ],
+    "subcultures": [
+      "White Cunei",
+      "Black Cunei"
+    ],
+    "subculture": "",
+    "journal": "Compendium.sacadia.cultures-journal.JournalEntry.b3f12a3db3c9dd7a"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "culture_cunei",
+      "culture": "cunei",
+      "buildHash": "ec20790fafd9"
+    }
+  }
+}

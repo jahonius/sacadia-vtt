@@ -1,0 +1,37 @@
+{
+  "name": "BlackRice Seed",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft ingredient. Very Rare, Fire. 1 item slot (Small, Craft Ingredient). Uses: 1.</em></p><p><strong>Prerequisites:</strong> Black Cunei Myrgha</p><p>A special grain from the wild rice sprouting at the top of a mountain</p><p><em>Rulebook p.48.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "e5bf66ac7b2a3be2",
+  "_key": "!items!e5bf66ac7b2a3be2",
+  "folder": "c931f980fe44bd4d",
+  "sort": 170,
+  "img": "icons/commodities/materials/bowl-powder-teal.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_blackrice_seed",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Very Rare",
+        "element": "Fire",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "78f5c6e0dd2e"
+    }
+  }
+}

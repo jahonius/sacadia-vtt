@@ -1,0 +1,34 @@
+{
+  "_id": "3ea52e5a2d2c9f66",
+  "_key": "!items!3ea52e5a2d2c9f66",
+  "name": "Fiestal",
+  "type": "ancestry",
+  "img": "icons/magic/unholy/orb-smoking-green.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 40,
+  "system": {
+    "description": "<p>Born of the heart of the dead Roving Titan Sydyk, which is itself a solid font of Uranium, Fiestal are born strong when born of miners, who dive beneath the Bay of Sydyk to mine their God’s heart. Lightly Corrupted Fiestal are born in the nearby great city of Sydykos, of the Elosine. Sydyk is a Fire Element Font. Take the ability that matches the strength of your Corruption (Strength of Warp).</p><p><strong>By your Strength of Warp:</strong> @UUID[Compendium.sacadia.heritages.Item.6008ec959bcc0a7f]{Radiation Sickness} (Lightly Warped), @UUID[Compendium.sacadia.heritages.Item.06d12e7e0f778cf9]{Corrosive Glow} (Heavily Warped)</p><p><em>Fontborne Heritage. Rulebook p.90.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.6008ec959bcc0a7f",
+        "option": "light"
+      },
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.06d12e7e0f778cf9",
+        "option": "heavy"
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fontborne",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_fiestal",
+      "buildHash": "bc5b7ddeb9ed"
+    }
+  }
+}

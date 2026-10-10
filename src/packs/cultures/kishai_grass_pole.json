@@ -1,0 +1,51 @@
+{
+  "_id": "4019b52ac3560462",
+  "_key": "!items!4019b52ac3560462",
+  "name": "Grass Pole",
+  "type": "gear",
+  "img": "icons/skills/melee/hand-grip-staff-blue.webp",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Common, Air. 1 item slot.</em></p><p>A long bamboo staff, capable of extending upon command.</p><p><strong>Bamboo Staff</strong> (Passive): By default, this polearm is treated like a Staff. However, the polearm has a 10ft range instead of 5ft range.</p><p><em>Rulebook p.77.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "weaponType": "bludgeon",
+    "weaponDamage": {
+      "count": "1",
+      "denomination": 6,
+      "trait": "power"
+    },
+    "hands": 1,
+    "defense": "pd",
+    "damageType": "Bludgeon",
+    "range": {
+      "type": "melee",
+      "value": 10
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_grass_pole",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Common",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "d0cd3f01dd5a"
+    }
+  },
+  "folder": "56c5eedd378f4a41",
+  "sort": 80
+}

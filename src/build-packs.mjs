@@ -26,12 +26,14 @@ import { MASTERIES } from './masteries.mjs';
 import { BASICS } from './basics.mjs';
 import { PROGRESSION } from './progression.mjs';
 import { buildManual } from './manual.mjs';
-import { ADORNMENTS, TRINKETS, WEAPONS, ARMORS, SHIELDS } from './equipment.mjs';
+import { ADORNMENTS, WEAPONS, ARMORS, SHIELDS } from './equipment.mjs';
 import { SHIPPED_DIR, hasIcons, iconGroup, iconPattern, systemPath } from './icons.mjs';
 import { inferMaterial, inferShieldSize } from '../module/helpers/actor-utils.mjs';
 import { MODIFIER_OVERRIDES, CHOICE_OVERRIDES, MARK_OVERRIDES, FOCUS_OVERRIDES, INFLICT_OVERRIDES, GRANT_OVERRIDES, BOOST_OVERRIDES, ACTIVITY_OVERRIDES, TEMPHP_OVERRIDES, REACTION_GRANT_OVERRIDES, NEXT_ATTACK_OVERRIDES, ONUSE_OVERRIDES, KILLTRIGGER_OVERRIDES, MULTIATTACK_OVERRIDES, SELFSCALING_OVERRIDES, CHOICEREDIRECT_OVERRIDES, PICK_OVERRIDES, PICK2_OVERRIDES, ZONE_OVERRIDES, TEXT_OVERRIDES, TAG_OVERRIDES, EXTRAAP_OVERRIDES, POOL_OVERRIDES, AMOUNTPROMPT_OVERRIDES, LORE_MADNESS, USAGE_OVERRIDES, USAGE_UPGRADES, AID_RESIST_OVERRIDES, OPPORTUNITY_IDS } from './modifiers.mjs';
 import { MADNESS_ANNOTATIONS } from './madness.mjs';
 import { LORE_NO_COST } from './lore-overrides.mjs';
+import { buildIdentity } from './build-identity.mjs';
+import { buildGoods } from './build-goods.mjs';
 
 // Pool-granting abilities (one per pool): they set the pool's max, never charge it. Their pool cost is
 // blanked at build so the detector's "consumes a point" flavour doesn't mis-charge them.
@@ -608,7 +610,7 @@ function equipmentToItem(pack, kind, e) {
     img: kind === 'adornment' ? 'icons/svg/statue.svg' : 'icons/svg/chest.svg',
     system: { description: `<p>${e.description}</p>`, quantity: 1, weight: 0, value: e.value ?? 0 },
     effects: [],
-    flags: { sacadia: { catalogId: id, kind, ...(e.armor ? { armorPrereq: e.armor } : {}) } },
+    flags: { sacadia: { catalogId: id, kind, ...(e.armor ? { armorPrereq: e.armor } : {}), ...(kind === 'adornment' ? { bargain: 'adornments' } : {}) } },
   };
 }
 
@@ -644,7 +646,8 @@ function weaponToItem(pack, e) {
       range: { type: ranged ? 'ranged' : 'melee', value: ranged ? e.range : (e.reach ?? 5) },
     },
     effects: [],
-    flags: { sacadia: { catalogId: id, kind: 'weapon' } },
+    // Shop for Bargains (p.266) rolls the Basic, Military and Imbued tables; the cultural examples aren't on one.
+    flags: { sacadia: { catalogId: id, kind: 'weapon', ...(e.cultural ? {} : { bargain: !e.prereq ? 'basic-weapons' : /Training/.test(e.prereq) ? 'military-weapons' : 'imbued-weapons' }) } },
   };
 }
 
@@ -658,9 +661,10 @@ function armorToItem(pack, e) {
     system: {
       description: e.prereq ? `<p><em>Prerequisite: ${e.prereq}</em></p>` : '',
       equipped: false, category: e.category, material: inferMaterial(e.name), defenses, maxStat: e.maxStat ?? null, slots: 1, storage: 'ris', providesSis: 0,
+      value: e.value ?? 0,
     },
     effects: [],
-    flags: { sacadia: { catalogId: id, kind: 'armor' } },
+    flags: { sacadia: { catalogId: id, kind: 'armor', bargain: 'armor' } },
   };
 }
 
@@ -675,7 +679,7 @@ function shieldToItem(pack, e) {
     _id, _key: `!items!${_id}`, name: e.name, type: 'armor', img: 'icons/svg/shield.svg',
     system: {
       description: descParts.join(''),
-      equipped: false, category: '', material: inferMaterial(e.name), shieldSize: inferShieldSize(e.name), defenses, maxStat: null,
+      equipped: false, category: '', material: inferMaterial(e.name), shieldSize: inferShieldSize(e.name), defenses, maxStat: null, value: e.value ?? 0,
       // Item slots (book p.195): bucklers 1, shields 2, tower shields 3.
       slots: { buckler: 1, shield: 2, tower: 3 }[inferShieldSize(e.name)], storage: 'ris', providesSis: 0,
       // Shield Bash: a Bludgeon attack vs PD (Power), reach 5ft.
@@ -684,7 +688,7 @@ function shieldToItem(pack, e) {
       hands: 1, defense: 'pd', damageType: 'Bludgeon', range: { type: 'melee', value: 5 },
     },
     effects: [],
-    flags: { sacadia: { catalogId: id, kind: 'shield' } },
+    flags: { sacadia: { catalogId: id, kind: 'shield', bargain: 'shields' } },
   };
 }
 
@@ -722,7 +726,7 @@ function stampBuildHash(item) {
   item.flags.sacadia.buildHash = crypto.createHash('sha1').update(content).digest('hex').slice(0, 12);
 }
 
-async function writePack(pack, items) {
+async function writePack(pack, items, folders = []) {
   for (const item of items) stampBuildHash(item);
   const srcDir = path.join(SRC_PACKS, pack);
   fs.rmSync(srcDir, { recursive: true, force: true });
@@ -730,6 +734,7 @@ async function writePack(pack, items) {
   for (const item of items) {
     fs.writeFileSync(path.join(srcDir, `${item.flags.sacadia.catalogId}.json`), JSON.stringify(item, null, 2));
   }
+  if (folders.length) fs.writeFileSync(path.join(srcDir, '_folders.json'), JSON.stringify(folders, null, 2));
   // Compile the LevelDB. Open *first* (this acquires the DB lock and throws if Foundry has the world
   // loaded — a safe abort), then clear + rewrite. Never `rm` the dir before opening: that destroys
   // files a running Foundry still holds open and corrupts the pack ("recovered 0 files"). Rebuild
@@ -744,7 +749,31 @@ async function writePack(pack, items) {
   }
   await db.clear();
   const batch = db.batch();
+  for (const f of folders) batch.put(f._key, f);
   for (const item of items) batch.put(item._key, item);
+  await batch.write();
+  await db.close();
+}
+
+/** Write a JournalEntry pack of several entries (see writeJournalPack): one source file per entry, with its pages. */
+async function writeJournalEntries(pack, entries, pages) {
+  const srcDir = path.join(SRC_PACKS, pack);
+  fs.rmSync(srcDir, { recursive: true, force: true });
+  fs.mkdirSync(srcDir, { recursive: true });
+  for (const entry of entries) {
+    const own = pages.filter((p) => entry.pages.includes(p._id));
+    fs.writeFileSync(path.join(srcDir, `${entry.flags?.sacadia?.culture ?? 'intro'}.json`), JSON.stringify({ ...entry, pages: own }, null, 2));
+  }
+  const db = new ClassicLevel(path.join(OUT_PACKS, pack), { keyEncoding: 'utf8', valueEncoding: 'json' });
+  try {
+    await db.open();
+  } catch (err) {
+    throw new Error(`Cannot open pack "${pack}" — is Foundry running with the world loaded?\n  ${err.message}`);
+  }
+  await db.clear();
+  const batch = db.batch();
+  for (const e of entries) batch.put(e._key, e);
+  for (const p of pages) batch.put(p._key, p);
   await batch.write();
   await db.close();
 }
@@ -781,7 +810,6 @@ async function main() {
     ['abilities-witch', prestige.witch.map((e) => prestigeToItem('abilities-witch', 'witch', e)), 'abilities'],
     ['abilities-lore', JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'lore.json'), 'utf8')).map(loreToItem), 'lore abilities'],
     ['equipment-adornments', ADORNMENTS.map((e) => equipmentToItem('equipment-adornments', 'adornment', e)), 'adornments'],
-    ['equipment-trinkets', TRINKETS.map((e) => equipmentToItem('equipment-trinkets', 'trinket', e)), 'trinkets'],
     ['equipment-weapons', WEAPONS.map((e) => weaponToItem('equipment-weapons', e)), 'weapons'],
     ['equipment-armor', ARMORS.map((e) => armorToItem('equipment-armor', e)), 'armor'],
     ['equipment-shields', SHIELDS.map((e) => shieldToItem('equipment-shields', e)), 'shields'],
@@ -792,12 +820,30 @@ async function main() {
     console.log(`  ${pack.padEnd(24)} ${String(items.length).padStart(3)} ${noun}`);
   }
 
+  // Heritages & Ancestries, Cultures, and the Cultures of the Ardus Yauga journal (src/identity/).
+  const identity = buildIdentity({ makeId, buildActivities, overrideFields, detectRange, ACTIVE_TAGS, ACTIVITY_OVERRIDES,
+    weaponToItem, armorToItem, WEAPONS, ARMORS, lore: JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'lore.json'), 'utf8')) });
+  for (const [pack, { items, folders }] of [['heritages', identity.heritages], ['cultures', identity.cultures]]) {
+    await writePack(pack, items, folders);
+    grand += items.length;
+    console.log(`  ${pack.padEnd(24)} ${String(items.length).padStart(3)} heritage, ancestry and culture items`);
+  }
+  await writeJournalEntries('cultures-journal', identity.journal.entries, identity.journal.pages);
+  console.log(`  ${'cultures-journal'.padEnd(24)} ${String(identity.journal.pages.length).padStart(3)} pages`);
+
+  // Personal Goods, Trinkets and Home Goods (src/goods.mjs), a compendium folder per table.
+  for (const [pack, { items, folders }] of Object.entries(buildGoods({ makeId }))) {
+    await writePack(pack, items, folders);
+    grand += items.length;
+    console.log(`  ${pack.padEnd(24)} ${String(items.length).padStart(3)} goods`);
+  }
+
   // The User Manual (src/manual/*.md → one JournalEntry).
   const manual = buildManual(path.join(ROOT, 'src', 'manual'), (k) => makeId('user-manual', k));
   await writeJournalPack('user-manual', manual.entry, manual.pages);
   console.log(`  ${'user-manual'.padEnd(24)} ${String(manual.pages.length).padStart(3)} manual pages`);
 
-  console.log(`\nBuilt ${Object.keys(CATALOGS).length + extra.length + 1} packs, ${grand} items total.`);
+  console.log(`\nBuilt ${Object.keys(CATALOGS).length + extra.length + 7} packs, ${grand} items total.`);
   console.log(`  (range auto-detected on ${ranged} catalog abilities)`);
 }
 

@@ -1,0 +1,34 @@
+{
+  "_id": "5d60fe29ba673be7",
+  "_key": "!items!5d60fe29ba673be7",
+  "name": "Fishing Rod",
+  "type": "gear",
+  "img": "icons/tools/fishing/rod-simple-stick-brown.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 100,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fishing_rod",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "1b800b35f346"
+    }
+  }
+}

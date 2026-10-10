@@ -4,7 +4,7 @@
 
 You are Tianqi wall guards: a stationed group of soldiers trained to fight the demons that prowl the Upper Heibrim. Two hundred years ago the gods cursed the cannibal city of Qianpo, and its people became demons; Chuni's Wall, 40ft of fortified stone, has held them north of the Lower Heibrim ever since. Tonight, one of them comes for the gate.
 
-Pick one of the four heroes below. If yours falls, take the next unused one. Every hero is a level-5 Tianqi, bound by the Tianqi laws and customs in the *Story* on their sheet's Character tab, and knows the demons through *Heibrim Lore* (Religion: Demon Lore).
+Pick one of the four heroes below. If yours falls, take the next unused one. Every hero is a level-5 Tianqi, bound by the Tianqi's Binding Laws and Customs (on their sheet's Character tab, under Identity), and knows the demons through *Heibrim Lore* (Religion: Demon Lore).
 
 ## Honnasusara the Soldier
 
@@ -32,4 +32,4 @@ Chunrudar is intricately tied to this land: he made a pact with a demon of the m
 
 ## Bringing your own character
 
-You're welcome to bring your own character instead. Make them **level 5**. If they're Tianqi, the adventure's Items folder has the culture's cultural talent, cultural abilities and inheritance.
+You're welcome to bring your own character instead. Make them **level 5**. If they're Tianqi, choose the Tianqi culture on their Character tab. Its cultural abilities and inheritance are in the **Cultures** compendium.

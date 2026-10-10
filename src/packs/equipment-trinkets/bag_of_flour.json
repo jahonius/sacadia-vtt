@@ -1,0 +1,35 @@
+{
+  "_id": "db7b977668691b1b",
+  "_key": "!items!db7b977668691b1b",
+  "name": "Bag of Flour",
+  "type": "gear",
+  "img": "icons/consumables/grains/sack-rice-flour-brown.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Bag of Flour</strong> (Action): With a bag of flour equipped in 1 hand, choose a 10x10ft square in front of you. All invisible (but material) creatures in that 10x10ft square are revealed to you. They cannot remove the flour until a quick rest. Expend your Bag of Flour when you use this.</p><p class=\"goods-facts\">1 Item Slot · 1gc · Baubles, rulebook p.207</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bag_of_flour",
+      "kind": "trinket",
+      "goods": {
+        "table": "baubles",
+        "use": true
+      },
+      "bargain": "miscellany",
+      "buildHash": "c5b72c69eea0"
+    }
+  }
+}

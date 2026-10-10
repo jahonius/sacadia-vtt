@@ -1,0 +1,37 @@
+{
+  "name": "Lucky Coin",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Uncommon, Salt. 1 item slot (Small). Attunement.</em></p><p>A small, tarnished coin, marred on one side. It looks very innocuous.</p><p><strong>Bargain Hunter</strong> (Passive): This coin is worth 1gp. Whenever you take the Shop Long Rest action, you may re-roll any single die you roll to Shop. You must keep the second result.</p><p><em>Rulebook p.35.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "47ee4d92556cf37c",
+  "_key": "!items!47ee4d92556cf37c",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 110,
+  "img": "icons/commodities/currency/coin-embossed-crown-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_lucky_coin",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Uncommon",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "6fe4f41318fe"
+    }
+  }
+}

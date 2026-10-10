@@ -1,0 +1,33 @@
+{
+  "_id": "5f17257af69b91fc",
+  "_key": "!items!5f17257af69b91fc",
+  "name": "Pillow (Decorative)",
+  "type": "gear",
+  "img": "icons/commodities/cloth/cloth-patterned-pink.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 270,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_pillow_decorative",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "330a529f7602"
+    }
+  }
+}

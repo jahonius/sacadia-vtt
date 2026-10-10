@@ -1,0 +1,30 @@
+{
+  "_id": "b6bc0d138faa9dc8",
+  "_key": "!items!b6bc0d138faa9dc8",
+  "name": "Courter",
+  "type": "ancestry",
+  "img": "icons/magic/perception/mask-stone-eyes-orange.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 40,
+  "system": {
+    "description": "<p>Courters are the descendants of Tallemar - demonic shapeshifters who stole first the hearts, then the souls of their victims. Courters are often considered divinely persuasive, and they have a unique curse - they are immortal until they fall in love, at which time they soulbond to their partner, living until their partner dies.</p><p><strong>Size:</strong> Medium (5–6 feet) · <strong>Lifespan:</strong> Immortal until bonded, then the lifespan of their partner</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.f6847b8981262a41]{Changing Physicality}</p><p><em>Daemonai Heritage. Rulebook p.86.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.f6847b8981262a41",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "daemonai",
+    "size": "Medium (5–6 feet)",
+    "lifespan": "Immortal until bonded, then the lifespan of their partner"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_courter",
+      "buildHash": "71dd823b0b00"
+    }
+  }
+}

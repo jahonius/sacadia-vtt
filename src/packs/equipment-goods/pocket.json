@@ -1,0 +1,33 @@
+{
+  "_id": "8681a4cd0c8eb23e",
+  "_key": "!items!8681a4cd0c8eb23e",
+  "name": "Pocket",
+  "type": "gear",
+  "img": "icons/containers/bags/pouch-cloth-tan.webp",
+  "folder": "c55d621768d42933",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Add-On</strong> (Passive): Add-Ons are made to an item with the Clothes Set property. They take no item slot: denote them on the Clothing Set to which they are added.</p><p><strong>Pocket</strong> (Passive): This item gives you 1 RIS. You may only place a Trinket in this RIS slot. You may add a maximum of 2 Pockets to any Clothing Set.</p><p class=\"goods-facts\">No Item Slot · 1gc · Clothing Add-Ons, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "pocket",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 1
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pocket",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing-add-ons"
+      },
+      "buildHash": "d17af106feea"
+    }
+  }
+}

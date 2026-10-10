@@ -1,0 +1,37 @@
+{
+  "name": "Mailhopper",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Rare, Fire. 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Wilderness: Fauna[1]</p><p>A large, cat-sized grasshopper, marked with a fiery pattern down its side. It stares blankly, but likes pets down its side.</p><p><strong>Return to Base</strong> (Ceremony): During any rest, you can verbally give a single sentence command (up to 8 words) to the grasshopper. It will return to your chieftain via the most direct path, traveling 3 hexes per day, until it provides the message. You may use this once per long rest.</p><p><em>Rulebook p.77.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "5faa9cf2a3cebea5",
+  "_key": "!items!5faa9cf2a3cebea5",
+  "folder": "56c5eedd378f4a41",
+  "sort": 100,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_mailhopper",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Fire",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "58d4d62f1b88"
+    }
+  }
+}
