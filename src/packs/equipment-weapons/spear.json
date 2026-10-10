@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "spear",
       "kind": "weapon",
-      "buildHash": "96df697377ab"
+      "bargain": "basic-weapons",
+      "buildHash": "9f6c5a7e9d7e"
     }
   }
 }

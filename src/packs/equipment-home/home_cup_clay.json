@@ -1,0 +1,34 @@
+{
+  "_id": "c7d7e26acfb2d73d",
+  "_key": "!items!c7d7e26acfb2d73d",
+  "name": "Cup (Clay)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/goblet-simple-clay-white.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 170,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 25sc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 25,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_cup_clay",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "1d69f450eb33"
+    }
+  }
+}

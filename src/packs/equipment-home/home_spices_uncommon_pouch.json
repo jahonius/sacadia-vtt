@@ -1,0 +1,34 @@
+{
+  "_id": "cf87c50fe6445217",
+  "_key": "!items!cf87c50fe6445217",
+  "name": "Spices - Uncommon (Pouch)",
+  "type": "gear",
+  "img": "icons/containers/bags/pouch-leather-spiral-red-brown.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 320,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_spices_uncommon_pouch",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "a13f35a33288"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_id": "e8d90581e231854f",
+  "_key": "!items!e8d90581e231854f",
+  "name": "Boots",
+  "type": "gear",
+  "img": "icons/equipment/feet/boots-leather-laced-brown.webp",
+  "folder": "179b66112d2da804",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Worn</strong> (Passive): Worn Items can be worn on your person. A Worn Item must still be placed in RIS to use, but if it is in your RIS, it is assumed that you are wearing it. If it is in your SIS, it is assumed that the item is in your bags. Many Worn items have an effect when worn.</p><p><strong>Shoes</strong> (Passive): <em>Prerequisite: Finesse[2].</em> Shoes protect your feet from terrain challenges. If you wear shoes, you may 5ft adjust into difficult terrain.</p><p><strong>Winter</strong> (Passive): You must wear a Winter Clothes Set to enter cold regions of the world. For each additional Winter Item you wear in your RIS, gain 1X Advantage against the effects of cold storms when you travel or in combat.</p><p class=\"goods-facts\">1 Item Slot · 30gc · Clothing, rulebook p.198</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 30,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, shoes, winter",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "boots",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing"
+      },
+      "bargain": "clothes",
+      "buildHash": "559fb4e32ac3"
+    }
+  }
+}

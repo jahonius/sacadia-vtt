@@ -1,0 +1,34 @@
+{
+  "_id": "1f10b98792c30362",
+  "_key": "!items!1f10b98792c30362",
+  "name": "Crafting Kit (Advanced)",
+  "type": "gear",
+  "img": "icons/tools/hand/awl-steel-tan.webp",
+  "folder": "6b234e1a91f7c1c8",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Crafting Kit</strong> (Passive): When you purchase this crafting kit, you must declare the crafting Talent that this crafting kit applies to. You may only use this Crafting Kit with that talent. Crafting Kits are most useful for crafting magic items; in all cases, you must have a crafting kit in order to craft (see the Crafting Section). Most towns and villages will have craft stations for rent which will let you craft some types of items.</p><p><strong>Crafting Kit (Advanced)</strong> (Passive): You may craft advanced items with this crafting kit (levels 1-4).</p><p class=\"goods-facts\">1 Item Slot · 100gc · Crafting Kits, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "crafting_kit_advanced",
+      "kind": "goods",
+      "goods": {
+        "table": "crafting-kits"
+      },
+      "bargain": "crafting-kits",
+      "buildHash": "c20e47f90f68"
+    }
+  }
+}

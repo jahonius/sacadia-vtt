@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of The Ending of Things",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Rot. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3]</p><p>You have a ritual, passed down through your family, that is used to mark the passing of life to death.</p><p><strong>The Fall of a Single Leaf</strong> (Passive): When you die, you immediately take a full turn (you die at the end of this turn).</p><p><strong>The Blanketing of Fallen Snow</strong> (Focus): If you are the last member of your team still standing in a combat and you have less than 0HP, you may use this Focus action. If you do, and for as long as you maintain Focus, all of your hits that hit critically hit. You die when your Focus ends.</p><p><em>Rulebook p.48.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "c0de149a2121b351",
+  "_key": "!items!c0de149a2121b351",
+  "folder": "c931f980fe44bd4d",
+  "sort": 180,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_the_ending_of_things",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "9b7cba7a5a6b"
+    }
+  }
+}

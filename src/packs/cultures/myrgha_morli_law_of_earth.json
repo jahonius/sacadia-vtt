@@ -1,0 +1,45 @@
+{
+  "_id": "8316f0a8efa5d81d",
+  "_key": "!items!8316f0a8efa5d81d",
+  "name": "Law of Earth",
+  "type": "ability",
+  "img": "icons/magic/earth/barrier-stone-brown-green.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 130,
+  "system": {
+    "description": "<p>All ground within 60ft of you is considered natural Difficult Terrain for all creatures. You cannot move.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 60,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Morli’s Contracts",
+      "prerequisite": "Morli’s Scroll of Contract Law · p.36"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_morli_law_of_earth",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "d5791edf5b6d"
+    }
+  }
+}

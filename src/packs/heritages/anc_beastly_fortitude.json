@@ -1,0 +1,45 @@
+{
+  "_id": "45d2e84fc7d1bbbf",
+  "_key": "!items!45d2e84fc7d1bbbf",
+  "name": "Beastly Fortitude",
+  "type": "ability",
+  "img": "icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 70,
+  "system": {
+    "description": "<p>You have Check Expertise in Power.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Brute Form Ancestry",
+      "prerequisite": "Brute Form · p.92"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_beastly_fortitude",
+      "transcribed": true,
+      "expertise": "power",
+      "buildHash": "4763eec8cad8"
+    }
+  }
+}

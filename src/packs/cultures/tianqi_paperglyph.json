@@ -1,0 +1,37 @@
+{
+  "name": "Paperglyph",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Uncommon, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p><strong>Prerequisites:</strong> Proficiency[2]</p><p>A protective paper glyph, with a sticky back, allowing you to slap it right on armor. The glyph shows a shield, with some details.</p><p><strong>Rendproof</strong> (Passive): This item has 2 charges. When you take any levels of Rend to your armor, instead remove one charge from this item. You may refill a charge with 50gp at any market, but it does not charge on its own.</p><p><em>Rulebook p.68.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b7a23fffdb408ff8",
+  "_key": "!items!b7a23fffdb408ff8",
+  "folder": "76562f6c37f89b61",
+  "sort": 180,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_paperglyph",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Uncommon",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "9f61096282ca"
+    }
+  }
+}

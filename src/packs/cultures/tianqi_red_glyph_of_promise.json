@@ -1,0 +1,37 @@
+{
+  "name": "Red Glyph of Promise",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Worn, RIS Passive). Attunement.</em></p><p>A small piece of heavy paper, upon which a detailed Tianqi glyph emblazons the word “Love”. It is written in blood.</p><p><strong>Shared Blood</strong> (Passive): When you buy this glyph, choose a willing target. Both of you put your names on the glyph, rip it in half, attune to it, and store it in your RIS. You may both use the Help Action from 30ft away instead of 5ft on one another for as long as you are both attuned to this and the glyph is in your RIS.</p><p><strong>Glyph Corruption</strong> (Passive): When you attune to this item, you permanently gain 1 Glyph Corruption (randomly). You retain this Glyph Corruption if you remove Attunement to this Glyph.</p><p><em>Rulebook p.66.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "e512f80f0e0c45e2",
+  "_key": "!items!e512f80f0e0c45e2",
+  "folder": "76562f6c37f89b61",
+  "sort": 90,
+  "img": "icons/sundries/scrolls/scroll-bound-sealed-black-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_red_glyph_of_promise",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "658884e7bbb0"
+    }
+  }
+}

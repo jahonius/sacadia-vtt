@@ -1,0 +1,33 @@
+{
+  "_id": "e0d056f1e00d38df",
+  "_key": "!items!e0d056f1e00d38df",
+  "name": "Pocket (Hidden)",
+  "type": "gear",
+  "img": "icons/containers/bags/pouch-simple-brown.webp",
+  "folder": "c55d621768d42933",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Add-On</strong> (Passive): Add-Ons are made to an item with the Clothes Set property. They take no item slot: denote them on the Clothing Set to which they are added.</p><p><strong>Pocket</strong> (Passive): This item gives you 1 RIS. You may only place a Trinket in this RIS slot. You may add a maximum of 2 Pockets to any Clothing Set.</p><p><strong>Hidden</strong> (Passive): This item is obscured. A creature must make a Perception: Sight or Perception: Touch Trait Check against your Check DC to identify this item.</p><p class=\"goods-facts\">No Item Slot · 10gc · Clothing Add-Ons, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "pocket, hidden",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 1
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "pocket_hidden",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing-add-ons"
+      },
+      "buildHash": "ff5bbc62b0ed"
+    }
+  }
+}

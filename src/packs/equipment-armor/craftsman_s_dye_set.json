@@ -19,14 +19,16 @@
     "maxStat": 23,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 450
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_dye_set",
       "kind": "armor",
-      "buildHash": "5304e3406cc9"
+      "bargain": "armor",
+      "buildHash": "ca237bd91cc6"
     }
   }
 }

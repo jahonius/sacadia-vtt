@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "athame",
       "kind": "weapon",
-      "buildHash": "e5ee5b713d3a"
+      "bargain": "imbued-weapons",
+      "buildHash": "a7aa66aba42f"
     }
   }
 }

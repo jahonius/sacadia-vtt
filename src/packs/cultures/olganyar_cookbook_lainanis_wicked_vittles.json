@@ -1,0 +1,37 @@
+{
+  "name": "Cookbook: Lainani’s Wicked Vittles",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. . 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Cooking: Baking[1], Language(Olem) or Cipher</p><p>This old, weathered scroll is difficult to decipher. It appears that whoever wrote in it had a shaky hand, and possibly cataracts. They also clearly had no tongue, as the recipes within this scroll are all horrifying. A small note, written on the top of the scroll in a different ink and legible hand, reads “Beware: these recipes are all AWFUL ”.</p><p><strong>Cold Resistant Lava Cakes (Rare, Fire)</strong>: A deceptively reasonable looking small, sweet pastry and a layer of honey glaze hides a seething cauldron of boiling chile paste within. BEWARE: HOT is written beneath this recipe in bold letters. Item Slots: 1 (Small, Quickdraw). Prerequisites to Cook: Prof[3]. 25gp.</p><p><strong>Hotcake</strong> (Action): When you consume one of these cakes with a body action, take 2D10 damage. You are immune to the effects of cold weather for 24 hours.</p><p><strong>Curse Cookies (Very Rare, Salt)</strong>: These cookies are mostly salt, flour, and vinegar, giving them the gritty texture of wet sand. Rather than baked, they are ‘left in the sun for a day’. Item Slots: 1 (Small, Quickdraw). Prerequisites to Cook: Prof[4]. 100gp.</p><p><strong>Consume Banecookie</strong> (Ceremony): This item takes a full minute to get down. When you consume one of these curse cookies, remove one Bane Token. You may consume up to one of these cookies per long rest.</p><p><strong>Apricot Noodle Soop (Legendary, Fire)</strong>: This spicy, apricot-laden noodle dish is an affront to all things. The addition of a sulphured egg gives it an additional, horrific pungency. It is truly an acquired taste! Item Slots: 1. Prerequisites to Cook: Prof[5]. 200gp.</p><p><strong>Soopfever</strong> (Ceremony): Eating this soup takes a minute of concentration. For the next hour, the eater will receive +3 to MD.</p><p><em>Rulebook p.58.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "c35b219298574b8b",
+  "_key": "!items!c35b219298574b8b",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 130,
+  "img": "icons/sundries/books/book-embossed-bound-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_cookbook_lainanis_wicked_vittles",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "",
+        "element": "",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "96fc22b83ac9"
+    }
+  }
+}

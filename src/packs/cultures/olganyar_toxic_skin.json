@@ -1,0 +1,45 @@
+{
+  "_id": "0b0cd0b670ef32d1",
+  "_key": "!items!0b0cd0b670ef32d1",
+  "name": "Toxic Skin",
+  "type": "ability",
+  "img": "icons/creatures/amphibians/treefrog-leaf-green.webp",
+  "folder": "f928a0400efbad4b",
+  "sort": 20,
+  "system": {
+    "description": "<p>As a Focus action when you have levels of Wrestle Pin, you coat your skin in a toxic venom. For as long as the target continues to give you Wrestle Pin, they take 1 additional level of Enduring Hemorrhage at the start of each Pin (levels given this way stack). The Hemorrhage given this way stops being enduring when you lose all levels of Pin.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Toadclan Ancestry",
+      "prerequisite": "Toadclan Curiot Ancestry · p.53"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_toxic_skin",
+      "transcribed": true,
+      "culture": "olganyar",
+      "buildHash": "f6be22b5c318"
+    }
+  }
+}

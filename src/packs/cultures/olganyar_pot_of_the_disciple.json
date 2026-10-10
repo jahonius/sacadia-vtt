@@ -1,0 +1,45 @@
+{
+  "_id": "89a515054db2250f",
+  "_key": "!items!89a515054db2250f",
+  "name": "Pot of the Disciple",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-steel-gold.webp",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Rare, Water. 1 item slot (Worn, RIS Passive). Attunement.</em></p><p><strong>Prerequisites:</strong> Prof[3]</p><p>This small, cursed pot acts both wards and haunts its user.</p><p><strong>Cursed Pot Armor</strong> (Passive): This pot can only be worn by a Hulinari or Curiot, and acts as a Professional Leather Set. The first time in any combat that you would take damage, reduce that damage by 2X, where X is your Proficiency. However, if the combat is against undead, instead that Undead critically hits you.</p><p><em>Rulebook p.56.</em></p>",
+    "equipped": false,
+    "category": "medium",
+    "material": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 3,
+      "td": 6,
+      "md": 2,
+      "dr": 0
+    },
+    "maxStat": 24,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "value": 180
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_pot_of_the_disciple",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "f2ac9d0c4a24"
+    }
+  },
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 60
+}

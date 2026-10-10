@@ -1,0 +1,37 @@
+{
+  "name": "Ancestral Lantern",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Uncommon, Salt. 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Religion: Rochi Shamanic Order[1]</p><p>A small lantern emblazoned with your family crest.</p><p><strong>Pray to the Ancestors</strong> (Passive): When you use this lantern and make a Prayer Check out of combat to ask for guidance, you may roll your Religion Check with 1X advantage. Every campaign in which you inherit and light this lantern at least once, mark it with one level of Inherited Prayer. If this lantern ever gains 6 levels of Inherited Prayer, it immediately turns into a Living Lantern. Delete this item and gain a Living Lantern.</p><p><em>Rulebook p.36.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "05fa80947cc69cab",
+  "_key": "!items!05fa80947cc69cab",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 140,
+  "img": "icons/sundries/lights/lantern-bullseye-signal-copper.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_ancestral_lantern",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Uncommon",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "c2f722db9f7c"
+    }
+  }
+}

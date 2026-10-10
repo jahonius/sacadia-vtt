@@ -20,12 +20,13 @@ import { revealHidden } from './helpers/conditions.mjs';
 import { abilityItem, ownsAbility } from './helpers/actor-utils.mjs';
 import { postRollCard, styleInitiativeMessage } from './helpers/chat-cards.mjs';
 import { migratePicks } from './helpers/legacy-picks.mjs';
+import { TravelLedger } from './apps/travel-ledger.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
 // In-Foundry tests: registered only when the Quench module is active.
 import './tests/quench.mjs';
 // GM-side rules (module/rules/): the hooks below call into them.
-import { applyBladeAuraTurnStart, turnAutomation, woadFacepaint } from './rules/turn.mjs';
+import { applyBladeAuraTurnStart, turnAutomation, woadFacepaint, brassHorn } from './rules/turn.mjs';
 import { createItemMacro, rollItemMacro } from './rules/macros.mjs';
 import { drawConditionLevels, reflectStatusToSchema, syncConditionEffects } from './rules/token-display.mjs';
 import { endInsane, goInsane, onMindMap } from './rules/madness.mjs';
@@ -35,7 +36,9 @@ import { onPostRoll } from './rules/reactions.mjs';
 import { onSaveRoll, zoneDamage, zoneSaveCard } from './rules/saves.mjs';
 import { reapOrphanGrants, removeSacadiaEffects } from './rules/grants.mjs';
 import { reconcileBasicGrants, reconcileProfessionGrants, refreshWorldItems, refreshableActors } from './rules/world.mjs';
+import { adoptOrigin, moveHeritageHp, queueIdentity, reconcileIdentityGrants } from './rules/identity.mjs';
 import { whisperReactions } from './rules/attack.mjs';
+import { goodsItemChanged } from './rules/goods.mjs';
 import { sacDialog } from './helpers/dialogs.mjs';
 
 /* -------------------------------------------- */
@@ -49,6 +52,8 @@ Hooks.once('init', function () {
     SacadiaActor,
     SacadiaItem,
     rollItemMacro,
+    // The Travel Ledger: Sacadia's travel rules a day at a time, for the party on a scene (the viewed one by default).
+    travelLedger: (scene) => TravelLedger.open(scene),
   };
 
   // Add custom constants for configuration.
@@ -90,6 +95,16 @@ Hooks.once('init', function () {
   // When GM-request tracking began (helpers: resolveRequests / pendingRequests): only cards after it can be pending.
   game.settings.register('sacadia', 'requestsSince', { scope: 'world', config: false, type: Number, default: 0 });
 
+  // How many silver coins make a gold (helpers/downtime.mjs). The rulebook prices in both and never says.
+  game.settings.register('sacadia', 'silverPerGold', {
+    name: 'SACADIA.Settings.SilverPerGold.Name',
+    hint: 'SACADIA.Settings.SilverPerGold.Hint',
+    scope: 'world',
+    config: true,
+    type: Number,
+    default: 100,
+  });
+
   game.settings.register('sacadia', 'conditionStacking', {
     name: 'SACADIA.Settings.ConditionStacking.Name',
     hint: 'SACADIA.Settings.ConditionStacking.Hint',
@@ -113,11 +128,13 @@ Hooks.once('init', function () {
     formula: '1d20 + max(@courage, @finesse) + @proficiency',
     decimals: 2,
   };
-  // Woad Facepaint (trinket): "Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it."
+  // Woad Facepaint (trinket): "Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it." A Brass Horn
+  // held as combat starts: "gain 1X Advantage to your Initiative roll."
   CONFIG.Combatant.documentClass = class SacadiaCombatant extends CONFIG.Combatant.documentClass {
     _getInitiativeFormula() {
       const f = super._getInitiativeFormula();
-      return woadFacepaint(this.actor) ? f.replace(/^1d20/, '2d20kh') : f;
+      const adv = (woadFacepaint(this.actor) ? 1 : 0) + (brassHorn(this.actor) ? 1 : 0);
+      return adv ? f.replace(/^1d20/, `${1 + adv}d20kh`) : f;
     }
   };
 
@@ -135,7 +152,9 @@ Hooks.once('init', function () {
   CONFIG.Item.dataModels = {
     ability: models.SacadiaAbility,
     armor: models.SacadiaArmor,
-    gear: models.SacadiaGear
+    gear: models.SacadiaGear,
+    culture: models.SacadiaCulture,
+    ancestry: models.SacadiaAncestry,
   }
   // Placed zones (Stygian Abyss, Suppressing Fire, Focal Point …) — a Region behavior subtype.
   CONFIG.RegionBehavior.dataModels.zone = defineZoneBehavior();
@@ -398,6 +417,21 @@ Hooks.once('ready', async () => {
   for (const actor of actors) {
     try { await migratePicks(actor); } catch (err) { console.error(`Sacadia | moving ${actor.name}'s ability picks`, err); }
   }
+  // 0.3.8: the Heritage's HP is added for you, and the Heritage, Ancestry and Culture grant their abilities.
+  const moved = [];
+  for (const actor of actors) {
+    try {
+      const hp = await moveHeritageHp(actor);
+      if (hp) moved.push(`${actor.name} (${hp})`);
+      await reconcileIdentityGrants(actor);
+    } catch (err) { console.error(`Sacadia | ${actor.name}'s heritage, ancestry and culture`, err); }
+  }
+  if (moved.length) ui.notifications.info(game.i18n.format('SACADIA.Origin.HeritageHpMoved', { list: moved.join(', ') }), { permanent: true });
+});
+
+// A character made from now on has no Heritage HP typed into its adjustment to take back out (moveHeritageHp).
+Hooks.on('preCreateActor', (actor) => {
+  if (actor.type === 'character' && !actor.getFlag('sacadia', 'heritageHpMoved')) actor.updateSource({ 'flags.sacadia.heritageHpMoved': true });
 });
 
 // Paint the condition level as a number over its token status icon. Core has no native status
@@ -442,6 +476,37 @@ Hooks.on('updateActor', async (actor, changes, options, userId) => {
     && !foundry.utils.hasProperty(changes, 'system.professions.secondary.key')) return;
   await reconcileProfessionGrants(actor);
 });
+
+// A character's Heritage, Ancestry and Culture grant their abilities while it has them (rules/identity.mjs). Changes made
+// through `setOrigin` (the Character tab) reconcile themselves (`sacadiaOrigin`); anything else is caught here.
+// A new Heritage drops the old one's choice (Natural Charisma, Strength of Warp).
+Hooks.on('preUpdateActor', (actor, changes) => {
+  const heritage = foundry.utils.getProperty(changes, 'system.identity.heritage');
+  if (heritage !== undefined && heritage !== actor.system.identity?.heritage && !foundry.utils.hasProperty(changes, 'system.identity.heritageChoice')) {
+    foundry.utils.setProperty(changes, 'system.identity.heritageChoice', '');
+  }
+});
+Hooks.on('updateActor', (actor, changes, options, userId) => {
+  if (userId !== game.user.id || actor.type !== 'character' || options.sacadiaOrigin) return;
+  if (foundry.utils.hasProperty(changes, 'system.identity.heritage') || foundry.utils.hasProperty(changes, 'system.identity.heritageChoice')) queueIdentity(actor);
+});
+Hooks.on('createItem', (item, options, userId) => {
+  if (userId !== game.user.id || options.sacadiaOrigin || item.parent?.type !== 'character') return;
+  if (['culture', 'ancestry'].includes(item.type)) adoptOrigin(item);
+  else if (item.flags?.sacadia?.grantsSpecialty && !item.flags.sacadia.identityGrant) queueIdentity(item.parent);
+});
+Hooks.on('updateItem', (item, changes, options, userId) => {
+  if (userId !== game.user.id || options.sacadiaOrigin || item.parent?.type !== 'character' || !['culture', 'ancestry'].includes(item.type)) return;
+  if (foundry.utils.hasProperty(changes, 'system.choice') || foundry.utils.hasProperty(changes, 'system.grants')) queueIdentity(item.parent);
+});
+Hooks.on('deleteItem', (item, options, userId) => {
+  if (userId !== game.user.id || options.sacadiaOrigin || item.parent?.type !== 'character') return;
+  if (['culture', 'ancestry'].includes(item.type) || (item.flags?.sacadia?.grantsSpecialty && !item.flags.sacadia.identityGrant)) queueIdentity(item.parent);
+});
+
+// Personal goods (rules/goods.mjs): a light lit, put out, affixed or dropped re-lights the tokens; one rune active at a time.
+Hooks.on('updateItem', (item, changes, options, userId) => { if (item.type === 'gear') goodsItemChanged(item, changes, userId); });
+Hooks.on('deleteItem', (item, options, userId) => { if (item.type === 'gear') goodsItemChanged(item, null, userId); });
 
 // Surprise "goes away … if they take damage" (book p.258): whichever client lowers a Surprised creature's
 // Health also clears the status (it has permission — it just updated the actor).

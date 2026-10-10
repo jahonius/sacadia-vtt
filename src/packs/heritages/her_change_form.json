@@ -1,0 +1,45 @@
+{
+  "_id": "b32222f339585077",
+  "_key": "!items!b32222f339585077",
+  "name": "Change Form",
+  "type": "ability",
+  "img": "icons/creatures/mammals/wolf-howl-moon-forest-blue.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 20,
+  "system": {
+    "description": "<p>You may change between human and beast form with a single action. That action exhausts all limbs. When you are in animal form, retain the benefits of all worn armor that does not use a limb component to wield to your mental and physical defense. You may not use any item or somatic ability, and beginning at level 1 you cannot speak at all when in animal form. Beginning at level 5, you can say a single human word per round of combat in animal form. Beginning at level 11, you can say up to five words per round. <em>(Toggle Beast Form on your token.)</em></p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Heritage",
+      "prerequisite": "p.91"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_change_form",
+      "transcribed": true,
+      "heritage": "hulinari",
+      "buildHash": "2a9f36bcd600"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_id": "4dd4db6ab78d7113",
+  "_key": "!items!4dd4db6ab78d7113",
+  "name": "Whitewarden’s Blessing",
+  "type": "ability",
+  "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 50,
+  "system": {
+    "description": "<p>&lt;P:M5, M-N&gt;. As a reaction to an ally making an attack within 30ft of you, reduce your Madness by N, and give them N Advantage on that attack. You must select to use this Reaction before they roll their attack. Charging weapons do not increase in damage from this ability.</p>",
+    "tag": "reaction",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: Glyphwardens",
+      "prerequisite": "Tianqi Oracle · p.63"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": false,
+      "prereq": 5,
+      "gain": "",
+      "spend": "N"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_whitewardens_blessing",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "d32508bd8d80"
+    }
+  }
+}

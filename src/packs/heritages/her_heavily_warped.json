@@ -1,0 +1,46 @@
+{
+  "_id": "4075f3da6bad7693",
+  "_key": "!items!4075f3da6bad7693",
+  "name": "Heavily Warped",
+  "type": "ability",
+  "img": "icons/magic/earth/lava-stone-fire-eye.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 30,
+  "system": {
+    "description": "<p>You have a heavy touch of a nearby Font. Dramatically alter your appearance to match the Font (e.g., your skin cracks with sand). Also, you naturally warp the characteristics of materials with the same type of natural affinity as you. If you craft with a craft ingredient of an elemental type aligned with your Font, increase the rarity by one type and double the probability of it having a strange property.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fontborne Heritage",
+      "prerequisite": "p.89"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_heavily_warped",
+      "transcribed": true,
+      "heritage": "fontborne",
+      "heritageChoice": "heavy",
+      "buildHash": "05e565e2db19"
+    }
+  }
+}

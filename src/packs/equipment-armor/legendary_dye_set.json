@@ -19,14 +19,16 @@
     "maxStat": 27,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 1800
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "legendary_dye_set",
       "kind": "armor",
-      "buildHash": "bfd6dfd667c6"
+      "bargain": "armor",
+      "buildHash": "0dcda290e011"
     }
   }
 }

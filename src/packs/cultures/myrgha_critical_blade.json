@@ -1,0 +1,45 @@
+{
+  "_id": "4cf7d7887570e5ba",
+  "_key": "!items!4cf7d7887570e5ba",
+  "name": "Critical Blade",
+  "type": "ability",
+  "img": "icons/skills/melee/strike-sword-gray.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 80,
+  "system": {
+    "description": "<p>As a Boost to making a weapon attack with Goldblade, you can permanently expend 1,000gc. If you do, you critically hit with the attack.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Fate[5], Goldblade · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_critical_blade",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "2eed573473e9"
+    }
+  }
+}

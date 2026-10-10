@@ -1,0 +1,34 @@
+{
+  "_id": "892351f036c618e7",
+  "_key": "!items!892351f036c618e7",
+  "name": "Fabric - Silk (Roll)",
+  "type": "gear",
+  "img": "icons/commodities/cloth/cloth-bolt-gold-red.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 80,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 200gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fabric_silk_roll",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "35f9492b2c7f"
+    }
+  }
+}

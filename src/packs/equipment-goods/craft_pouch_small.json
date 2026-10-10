@@ -1,0 +1,35 @@
+{
+  "_id": "10c0dd2a43da1c4d",
+  "_key": "!items!10c0dd2a43da1c4d",
+  "name": "Craft Pouch (Small)",
+  "type": "gear",
+  "img": "icons/containers/bags/pouch-leather-simple-tan.webp",
+  "folder": "65470c303531d49b",
+  "sort": 130,
+  "system": {
+    "description": "<p><strong>Craft Pouch (Small)</strong> (Passive): This item consumes 1 Stored Item Slot (SIS), but provides 3 SIS. You may only put craft ingredients in a Craft Pouch. You may only benefit from one Chest, Ornate Box, or Craft Pouch at a time.</p><p class=\"goods-facts\">1 Item Slot · 10gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "sis",
+    "providesSis": 3,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "craft_pouch_small",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "box"
+      },
+      "bargain": "baggage",
+      "buildHash": "bde0efb7c5fb"
+    }
+  }
+}

@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "sharp_rock",
       "kind": "weapon",
-      "buildHash": "050b5c1c7749"
+      "bargain": "basic-weapons",
+      "buildHash": "971cef288e83"
     }
   }
 }

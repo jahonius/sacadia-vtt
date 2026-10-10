@@ -1,0 +1,34 @@
+{
+  "_id": "d7a4c5046e85db6a",
+  "_key": "!items!d7a4c5046e85db6a",
+  "name": "Offering",
+  "type": "gear",
+  "img": "icons/commodities/treasure/goblet-coins-gold.webp",
+  "folder": "48f4628afce9117c",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Making an Offering</strong> (Passive): As a Long Rest action, you may use Religion to make an Offering to your deity, potentially gaining their favor. To do so, you must make at least a token offering (1gc). You may, alternatively, spend any amount of money on offerings, in 100gc increments, to gain 1X advantage/100gc spent on your Offering Long Rest Action.</p><p class=\"goods-facts\">1 Item Slot · 100gc · Holy Tools, rulebook p.205</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "offering",
+      "kind": "goods",
+      "goods": {
+        "table": "holy"
+      },
+      "bargain": "adventuring",
+      "buildHash": "1ee9f23467e9"
+    }
+  }
+}

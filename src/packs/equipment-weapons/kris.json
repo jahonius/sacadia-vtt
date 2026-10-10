@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "kris",
       "kind": "weapon",
-      "buildHash": "e852e8013b34"
+      "bargain": "imbued-weapons",
+      "buildHash": "b8b052e182e4"
     }
   }
 }

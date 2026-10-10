@@ -1,0 +1,45 @@
+{
+  "_id": "ec933ed9e98cbb13",
+  "_key": "!items!ec933ed9e98cbb13",
+  "name": "Goldshield",
+  "type": "ability",
+  "img": "icons/equipment/shield/heater-steel-gold.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 90,
+  "system": {
+    "description": "<p>Move gold from your Gold Cache to a Goldweave armor you equip. For every 500gc you move to your golden armor, choose MD, PD, or TD, and increase your defense by that type by 1 for as long as you have allocated gold from your Gold Cache to this armor.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Goldenhoard, Goldweave Armor · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldshield",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "ba8c46ba237f"
+    }
+  }
+}

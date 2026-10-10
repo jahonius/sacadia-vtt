@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of The Maple Leaf",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Air. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3]</p><p>You have an organizational mantra that reflects the organization of a leaf.</p><p><strong>Organizing Mantra</strong> (Passive): When you are attuned to the Ritual of the Maple Leaf, increase your RIS by half your Proficiency, rounded up.</p><p><em>Rulebook p.47.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b1e16827a27bd753",
+  "_key": "!items!b1e16827a27bd753",
+  "folder": "c931f980fe44bd4d",
+  "sort": 110,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_the_maple_leaf",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Air",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "fbbbdb3dd0c3"
+    }
+  }
+}

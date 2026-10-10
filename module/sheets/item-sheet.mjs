@@ -31,6 +31,9 @@ export class SacadiaItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       deleteModifier: SacadiaItemSheet.#onDeleteModifier,
       addPredicate: SacadiaItemSheet.#onAddPredicate,
       deletePredicate: SacadiaItemSheet.#onDeletePredicate,
+      addOriginRow: SacadiaItemSheet.#onAddOriginRow,
+      deleteOriginRow: SacadiaItemSheet.#onDeleteOriginRow,
+      openGrant: SacadiaItemSheet.#onOpenGrant,
     },
   };
 
@@ -72,8 +75,44 @@ export class SacadiaItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       isAbility: item.type === 'ability',
       isArmor: item.type === 'armor',
       isGear: item.type === 'gear',
+      isCulture: item.type === 'culture',
+      isAncestry: item.type === 'ancestry',
       tabs: this.#getTabs(),
     });
+
+    // A personal good (src/goods.mjs): its coins, and a rune's choices (one select per pick, `flags.sacadia.runeChoice`).
+    if (context.isGear) {
+      context.coins = { gc: 'gc', sc: 'sc' };
+      const rune = item.flags?.sacadia?.goods?.rune;
+      if (rune) {
+        const choice = item.flags.sacadia.runeChoice ?? {};
+        const pick = (side) => {
+          const spec = rune[side];
+          if (!spec) return null;
+          const chosen = Array.isArray(choice[side]) ? choice[side] : Object.values(choice[side] ?? {});
+          const options = Object.fromEntries(spec.from.map((k) => [k, k.toUpperCase()]));
+          return { side, by: spec.by, sign: side === 'minus' ? '−' : '+', distinct: !!spec.distinct,
+            picks: Array.from({ length: spec.n }, (_, i) => ({ name: `flags.sacadia.runeChoice.${side}.${i}`, value: chosen[i] ?? '', options })) };
+        };
+        const fixed = Object.entries(rune.fixed ?? {}).map(([k, v]) => `${k.toUpperCase()} ${v > 0 ? '+' : '−'}${Math.abs(v)}`).join(' · ');
+        context.rune = { fixed, sides: [pick('minus'), pick('plus')].filter(Boolean) };
+      }
+    }
+
+    // A culture or ancestry: its grants (named), the options they can be tied to, its laws and subcultures.
+    if (context.isCulture || context.isAncestry) {
+      const sys = item.system;
+      const optionChoices = Object.fromEntries((sys.options ?? []).map((o) => [o.key, o.label || o.key]));
+      if (context.isAncestry) Object.assign(optionChoices, { light: game.i18n.localize('SACADIA.Origin.LightlyWarped'), heavy: game.i18n.localize('SACADIA.Origin.HeavilyWarped'),
+        intuit: game.i18n.localize('SACADIA.Origin.Intuit'), speak: game.i18n.localize('SACADIA.Origin.Speak') });
+      context.origin = {
+        grants: await Promise.all((sys.grants ?? []).map(async (g, idx) => ({ ...g, idx, name: (await fromUuid(g.uuid).catch(() => null))?.name ?? g.uuid }))),
+        optionChoices,
+        options: (sys.options ?? []).map((o, idx) => ({ ...o, idx })),
+        laws: (sys.laws ?? []).map((l, idx) => ({ ...l, idx })),
+        subcultures: (sys.subcultures ?? []).join(', '),
+      };
+    }
 
     // Precompute per-activity UI flags + indices (templates can't use an `eq` helper).
     if (context.isAbility) {
@@ -138,6 +177,69 @@ export class SacadiaItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   /** Switch the active tab. */
   static #onChangeTab(event, target) {
     this.changeTab(target.dataset.tab, target.dataset.group);
+  }
+
+  /* -------------------------------------------- */
+  /*  Culture & ancestry editor                   */
+  /* -------------------------------------------- */
+
+  #dropBound = false;
+
+  /** @override — a culture or ancestry takes dropped abilities as grants (and a culture a dropped journal as its tapestry). */
+  _onRender(context, options) {
+    super._onRender?.(context, options);
+    if (!['culture', 'ancestry'].includes(this.item.type) || !this.isEditable) return;
+    // The window's root element outlives a re-render: listen on it once.
+    if (!this.#dropBound) {
+      this.#dropBound = true;
+      this.element.addEventListener('dragover', (ev) => ev.preventDefault());
+      this.element.addEventListener('drop', (ev) => this.#onOriginDrop(ev));
+    }
+    const subs = this.element.querySelector('input.origin-subcultures');
+    subs?.addEventListener('change', (ev) => {
+      ev.stopPropagation();
+      const list = ev.currentTarget.value.split(',').map((x) => x.trim()).filter(Boolean);
+      this.item.update({ 'system.subcultures': list });
+    });
+  }
+
+  async #onOriginDrop(event) {
+    const data = foundry.applications.ux.TextEditor.implementation.getDragEventData(event);
+    if (!data?.uuid) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const doc = await fromUuid(data.uuid);
+    if (data.type === 'JournalEntry' || data.type === 'JournalEntryPage') {
+      if (this.item.type === 'culture') await this.item.update({ 'system.journal': doc?.uuid ?? data.uuid });
+      return;
+    }
+    if (data.type !== 'Item' || doc?.type !== 'ability') return ui.notifications.warn(game.i18n.localize('SACADIA.Origin.GrantsEmpty'));
+    // An ability on a character isn't a lasting source: grant the one it came from, if it came from somewhere.
+    const uuid = doc.parent ? (doc._stats?.compendiumSource || doc.uuid) : doc.uuid;
+    const grants = this.item.system.toObject().grants ?? [];
+    if (grants.some((g) => g.uuid === uuid)) return;
+    grants.push({ uuid, option: '' });
+    await this.item.update({ 'system.grants': grants });
+  }
+
+  /** Add a law (culture) or an option. */
+  static async #onAddOriginRow(event, target) {
+    const field = target.dataset.field;
+    const rows = this.item.system.toObject()[field] ?? [];
+    rows.push(field === 'laws' ? { name: '', text: '', optional: false } : { key: `option${rows.length + 1}`, label: '' });
+    return this.item.update({ [`system.${field}`]: rows });
+  }
+
+  /** Remove a law, an option or a grant. */
+  static async #onDeleteOriginRow(event, target) {
+    const field = target.dataset.field;
+    const rows = this.item.system.toObject()[field] ?? [];
+    rows.splice(Number(target.dataset.index), 1);
+    return this.item.update({ [`system.${field}`]: rows });
+  }
+
+  static async #onOpenGrant(event, target) {
+    (await fromUuid(target.dataset.uuid))?.sheet?.render(true);
   }
 
   /* -------------------------------------------- */

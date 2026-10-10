@@ -19,14 +19,16 @@
     "maxStat": 17,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 20
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shoddy_dye_set",
       "kind": "armor",
-      "buildHash": "b00e8c309e09"
+      "bargain": "armor",
+      "buildHash": "dff123ab3c16"
     }
   }
 }

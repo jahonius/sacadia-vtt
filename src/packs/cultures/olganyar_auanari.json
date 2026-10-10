@@ -1,0 +1,31 @@
+{
+  "_id": "1b1580c6a7779e66",
+  "_key": "!items!1b1580c6a7779e66",
+  "name": "Auanari",
+  "type": "ancestry",
+  "img": "icons/magic/water/orb-water-transparent.webp",
+  "folder": "f928a0400efbad4b",
+  "sort": 30,
+  "system": {
+    "description": "<p>Mercurial Fixerfolk who are dropped on the door of the Spire Gates, Auanari are said to be left by ephemeral ghosts that haunt the Spire, the ruins of an ancient city. Or, they could be the children of the Mercurial - diseased citizens of the Spire Gates who have been exposed to too much mercury. This would explain their eyes, which have the appearance of liquid mercury, and the fact that a few Auanari have been born with shimmering metal horns, or patches of skin colored like liquid mercury.</p><p><strong>Size:</strong> Medium (4–5 feet)</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.cultures.Item.83a81352c1264771]{Emotive Touch}</p><p><strong>Lore uses</strong> (from level 4): @UUID[Compendium.sacadia.abilities-lore.Item.888a6aa96e76ab8f]{Foment}</p><p><em>Olganyar ancestry. Fixerfolk Heritage. Rulebook p.53.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.83a81352c1264771",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fixerfolk",
+    "size": "Medium (4–5 feet)",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_auanari",
+      "culture": "olganyar",
+      "buildHash": "6eda29bb6fd2"
+    }
+  }
+}

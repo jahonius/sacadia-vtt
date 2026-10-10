@@ -12,8 +12,12 @@
       {{#if isCharacter}}
       <div class="rest-controls">
         <a class="primary" data-action="rollInitiative" title="{{localize 'SACADIA.Initiative.Hint'}}"><i class="fa-solid fa-dice-d20"></i> {{localize 'SACADIA.Initiative.Roll'}}</a>
-        <a data-action="shortRest" title="{{localize 'SACADIA.Rest.ShortHint'}}"><i class="fa-solid fa-mug-hot"></i> {{localize 'SACADIA.Rest.Short'}}</a>
-        <a data-action="longRest" title="{{localize 'SACADIA.Rest.LongHint'}}"><i class="fa-solid fa-bed"></i> {{localize 'SACADIA.Rest.Long'}}</a>
+        {{!-- The book's three rests (p.235): a Quick Rest, a Fitful Rest (a night), a Long Rest (weeks of downtime). --}}
+        <span class="rest-group" role="group" aria-label="{{localize 'SACADIA.Rest.Group'}}">
+          <a data-action="shortRest" data-tooltip="{{localize 'SACADIA.Rest.ShortHint'}}"><i class="fa-solid fa-mug-hot"></i> {{localize 'SACADIA.Rest.ShortBtn'}}</a>
+          <a data-action="fitfulRest" data-tooltip="{{localize 'SACADIA.Rest.FitfulHint'}}"><i class="fa-solid fa-bed"></i> {{localize 'SACADIA.Rest.FitfulBtn'}}</a>
+          <a data-action="longRest" data-tooltip="{{localize 'SACADIA.Rest.LongHint'}}"><i class="fa-solid fa-campground"></i> {{localize 'SACADIA.Rest.LongBtn'}}</a>
+        </span>
       </div>
       {{/if}}
       {{!-- NPC quick-build lives in the always-visible header so it's clearly available. --}}

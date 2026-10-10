@@ -1,0 +1,45 @@
+{
+  "_id": "a8d9866d64ebf3e2",
+  "_key": "!items!a8d9866d64ebf3e2",
+  "name": "Natural Charisma",
+  "type": "ability",
+  "img": "icons/skills/social/intimidation-impressing.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 10,
+  "system": {
+    "description": "<p>You have a natural and easy charisma that comes through whether you intend it to or not. Gain one of the following abilities (choose one now): Intuit or Speak. <em>(Choose it under Heritage on the Character tab.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Daemonai Heritage",
+      "prerequisite": "p.85"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_natural_charisma",
+      "transcribed": true,
+      "heritage": "daemonai",
+      "buildHash": "7142c7a6ffe5"
+    }
+  }
+}

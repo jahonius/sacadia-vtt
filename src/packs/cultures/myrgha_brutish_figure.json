@@ -1,0 +1,52 @@
+{
+  "_id": "9d9dc8a6c8600c32",
+  "_key": "!items!9d9dc8a6c8600c32",
+  "name": "Brutish Figure",
+  "type": "ability",
+  "img": "icons/creatures/mammals/ox-buffalo-horned-green.webp",
+  "folder": "647f4b4f10534ce0",
+  "sort": 20,
+  "system": {
+    "description": "<p>You are slow but mighty. Reduce your Move Speed by 5ft. You are immune to targeted enemy effects to knock you Prone. Additionally, gain 1X Advantage against Kick, and any other (non-targeted) effect to knock you Prone.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Elephant Seal Curiot Ancestry",
+      "prerequisite": "Elephant Seal Curiot Ancestry · p.31"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Brutish Figure",
+        "target": "speed",
+        "value": "-5",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_brutish_figure",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "1e55984c738a"
+    }
+  }
+}

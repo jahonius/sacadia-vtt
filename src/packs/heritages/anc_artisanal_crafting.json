@@ -1,0 +1,44 @@
+{
+  "_id": "e8ba69c268d38334",
+  "_key": "!items!e8ba69c268d38334",
+  "name": "Artisanal Crafting",
+  "type": "ability",
+  "img": "icons/skills/trades/construction-carpentry-hammer.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 30,
+  "system": {
+    "description": "<p>Whenever you are crafting, you may roll 1D6 and add it to any single crafting roll you make. You may only do this once per craft, but you may choose to roll this after you have made your craft roll. This 1D6 changes to 1D8 at level 5, and to 1D10 at level 11.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Craftsman Ancestry",
+      "prerequisite": "Craftsman Human Ancestry · p.82"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_artisanal_crafting",
+      "transcribed": true,
+      "buildHash": "777cc395b6cd"
+    }
+  }
+}

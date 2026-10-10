@@ -1,0 +1,33 @@
+{
+  "_id": "33fe29a48b28fe7a",
+  "_key": "!items!33fe29a48b28fe7a",
+  "name": "Shrimp Bauble",
+  "type": "gear",
+  "img": "icons/environment/creatures/crustacean-shrimp.webp",
+  "folder": "c55d621768d42933",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Add-On</strong> (Passive): Add-Ons are made to an item with the Clothes Set property. They take no item slot: denote them on the Clothing Set to which they are added.</p><p><strong>Shrimp</strong> (Passive): <em>Prerequisite: Boots.</em> When you purchase this item, apply it to a pair of boots. When you wear that pair of boots, you can 5ft adjust in water.</p><p class=\"goods-facts\">No Item Slot · 50gc · Clothing Add-Ons, rulebook p.199</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "shrimp",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "shrimp_bauble",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing-add-ons"
+      },
+      "buildHash": "9344e5968bcc"
+    }
+  }
+}

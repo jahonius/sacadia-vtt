@@ -1,0 +1,37 @@
+{
+  "name": "Banded Drum",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Legendary[1], Salt. 3 item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Performance: Music Making[3]</p><p>A large drum, created from the leather hides of beasts over a massive bamboo core. Its rhythm is almost hypnotic, when played under the sounds of Solemnity of your people.</p><p><strong>Drumming</strong> (Focus): This drum takes up 3 RIS. When you equip it, you must sit down, and are treated as prone. You additionally cannot move or 5ft adjust for as long as you have this equipped. When you play the drum, you enhance the Songs of the Solemn of your people:</p><p><strong>Song of the Grasshopper</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of the Grasshopper may hurdle 5ft further, and jump 10ft further still.</p><p><strong>Song of the Skies</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of the Skies may apply an extra Critical Effect when they hit</p><p><strong>Song of Sorrows</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of Sorrows gain damage resistance 2 against damage they deal to themselves, instead of 1.</p><p><strong>Song of the Breeze</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of the Breeze may fire through up to one obstruction without taking Disadvantage.</p><p><strong>Song of Triumph</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of Triumph attempt to give 1 extra level of Taunt.</p><p><strong>Song of the Net</strong> (Passive): For as long as you maintain Focus on Drumming, allies with Song of the Net increase the damage of Harm by one additional dice type.</p><p><em>Rulebook p.76.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 3,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "c2d3b90a27748212",
+  "_key": "!items!c2d3b90a27748212",
+  "folder": "56c5eedd378f4a41",
+  "sort": 70,
+  "img": "icons/tools/instruments/drum-hand-tan.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_banded_drum",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "6b40fa7ddd26"
+    }
+  }
+}

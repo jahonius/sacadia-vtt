@@ -16,7 +16,8 @@
       "catalogId": "shimmering_polish",
       "kind": "adornment",
       "armorPrereq": "Iron Set",
-      "buildHash": "796e6b88dfa4"
+      "bargain": "adornments",
+      "buildHash": "254fd53380f3"
     }
   }
 }

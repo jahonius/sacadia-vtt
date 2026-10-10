@@ -1,0 +1,40 @@
+{
+  "name": "Stonecutter",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a business. Uncommon, Earth. No item slots.</em></p><p><strong>Prerequisites:</strong> Construction: Stonework[1]</p><p>You are a professional stoneworker, and can use your craft to create stones to support the wall effort.</p><p><strong>Stonecutting</strong> (Ceremony): You can use your stonework to earn money. When you take the Earn Money Long Rest Action, you can use Construction:Stonework instead of taking an Odd Job. If you do, roll a 1X Disadvantaged Construction:Stonework Check. Then, consult the Ingredient Rarity chart. The money you earn from your work is not based on your Proficiency. Instead, it is based on the Rarity level of the item in the Ingredient Rarity Chart (i.e., if you roll a 21, corresponding to the Check DC to incorporate a Very Rare, Level 4 ingredient, gain gold from the Odd Job table corresponding to Proficiency 4 (100gp).</p><p><em>Rulebook p.64.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "8f85e6205e4b8145",
+  "_key": "!items!8f85e6205e4b8145",
+  "folder": "76562f6c37f89b61",
+  "sort": 30,
+  "img": "icons/environment/settlement/market-stall.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_stonecutter",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "business": {
+        "note": "A Construction: Stonework Check at 1X disadvantage, paid by the Ingredient Rarity chart."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "19943a8d1075"
+    }
+  }
+}

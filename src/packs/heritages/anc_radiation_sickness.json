@@ -1,0 +1,68 @@
+{
+  "_id": "6008ec959bcc0a7f",
+  "_key": "!items!6008ec959bcc0a7f",
+  "name": "Radiation Sickness",
+  "type": "ability",
+  "img": "icons/magic/unholy/orb-smoking-green.webp",
+  "folder": "857dc9fff4fc5db7",
+  "sort": 50,
+  "system": {
+    "description": "<p>For as long as you maintain Focus, you radiate a Dim green glow up to 5Xft (where X is half your proficiency, rounded up). The first time a creature enters this range in a combat, they roll Fate Checks against X Nausea, where X is half your Proficiency (rounded up). You can use this once per Nightly Rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Fiestal Ancestry",
+      "prerequisite": "Lightly Warped · p.90"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": [],
+    "usage": {
+      "per": "rest",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_radiation_sickness",
+      "transcribed": true,
+      "buildHash": "f38e0b104fda"
+    }
+  }
+}

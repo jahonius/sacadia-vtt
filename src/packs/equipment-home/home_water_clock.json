@@ -1,0 +1,33 @@
+{
+  "_id": "f4a3147cd23b0294",
+  "_key": "!items!f4a3147cd23b0294",
+  "name": "Water Clock",
+  "type": "gear",
+  "img": "icons/tools/navigation/hourglass.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 440,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1000gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_water_clock",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "e3f748975e98"
+    }
+  }
+}

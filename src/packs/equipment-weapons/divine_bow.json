@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "divine_bow",
       "kind": "weapon",
-      "buildHash": "f908d0cf0e7b"
+      "bargain": "imbued-weapons",
+      "buildHash": "3038baa76d2f"
     }
   }
 }

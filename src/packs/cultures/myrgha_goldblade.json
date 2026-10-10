@@ -1,0 +1,45 @@
+{
+  "_id": "20d972ce64fb27f0",
+  "_key": "!items!20d972ce64fb27f0",
+  "name": "Goldblade",
+  "type": "ability",
+  "img": "icons/weapons/swords/sword-guard-gold-red.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 60,
+  "system": {
+    "description": "<p>Move gold from your Gold Cache to a golden weapon you wield. For every 1,000gc you move to a golden weapon, increase the damage dice of that weapon by 1 dice type.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Goldenhoard, Goldweave Weapon · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldblade",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "1341a2748b47"
+    }
+  }
+}

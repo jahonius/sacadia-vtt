@@ -1,0 +1,34 @@
+{
+  "_id": "1e932b7a07bf4093",
+  "_key": "!items!1e932b7a07bf4093",
+  "name": "Perfume Vial (Simple)",
+  "type": "gear",
+  "img": "icons/consumables/potions/potion-vial-corked-purple.webp",
+  "folder": "179b66112d2da804",
+  "sort": 110,
+  "system": {
+    "description": "<p><strong>Worn</strong> (Passive): Worn Items can be worn on your person. A Worn Item must still be placed in RIS to use, but if it is in your RIS, it is assumed that you are wearing it. If it is in your SIS, it is assumed that the item is in your bags. Many Worn items have an effect when worn.</p><p><strong>Scented</strong> (Passive): When you wear this item, you have a noticeable (pleasant) scent. Define the scent when you purchase this item. It is uniquely yours. All creatures have 1X Advantage to identify you by smell or track you.</p><p class=\"goods-facts\">1 Item Slot (Small) · 50gc · Clothing, rulebook p.198</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, worn, scented",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "perfume_vial_simple",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing"
+      },
+      "bargain": "clothes",
+      "buildHash": "98b4ae32cb90"
+    }
+  }
+}

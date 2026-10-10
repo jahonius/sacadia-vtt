@@ -1,0 +1,45 @@
+{
+  "_id": "e9d3cb52b2fe1160",
+  "_key": "!items!e9d3cb52b2fe1160",
+  "name": "Graceful Animal",
+  "type": "ability",
+  "img": "icons/creatures/mammals/deer-movement-leap-green.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 40,
+  "system": {
+    "description": "<p>You have Check Expertise in Finesse.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Pack Form Ancestry",
+      "prerequisite": "Pack Form · p.92"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_graceful_animal",
+      "transcribed": true,
+      "expertise": "finesse",
+      "buildHash": "20f400f4c555"
+    }
+  }
+}

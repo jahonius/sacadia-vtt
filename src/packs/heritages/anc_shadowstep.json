@@ -1,0 +1,44 @@
+{
+  "_id": "a7f6cf6be2c1bf0f",
+  "_key": "!items!a7f6cf6be2c1bf0f",
+  "name": "Shadowstep",
+  "type": "ability",
+  "img": "icons/magic/perception/silhouette-stealth-shadow.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 70,
+  "system": {
+    "description": "<p>As a Boost to a move action, you may step from one shadow to another up to 30ft away. Treat this step as 5ft of Movement. Shadowstep does provoke an attack of opportunity, but only from the stepping origin point as you leave.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Shadesman Ancestry",
+      "prerequisite": "Shadesman Daemonai Ancestry · p.86"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_shadowstep",
+      "transcribed": true,
+      "buildHash": "a6dd5cb502ae"
+    }
+  }
+}

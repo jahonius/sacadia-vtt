@@ -1,0 +1,34 @@
+{
+  "_id": "fe6cd48b67a6d886",
+  "_key": "!items!fe6cd48b67a6d886",
+  "name": "Grappling Hook",
+  "type": "gear",
+  "img": "icons/sundries/survival/climbing-anchor-steel-grey.webp",
+  "folder": "e2ad82be035f80b1",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Grappling Hook</strong> (Boost): <em>Prerequisite: Nimble Hands.</em> Provided you have a Grappling Hook equipped in your RIS, you may use the Affix Rope action to affix rope to any point within Xft, where X is the length of your rope, instead of to a spot within 5ft.</p><p class=\"goods-facts\">1 Item Slot (RIS Passive) · 20gc · Climbing Tools, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "grappling_hook",
+      "kind": "goods",
+      "goods": {
+        "table": "climbing"
+      },
+      "bargain": "adventuring",
+      "buildHash": "ee62fc6aa1e2"
+    }
+  }
+}

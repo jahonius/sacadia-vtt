@@ -1,0 +1,33 @@
+{
+  "_id": "ec220deb381c9629",
+  "_key": "!items!ec220deb381c9629",
+  "name": "Bed (Large)",
+  "type": "gear",
+  "img": "icons/sundries/survival/bedroll-blue-red.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 40,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 500gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_bed_large",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "e83dd8b2d9e0"
+    }
+  }
+}

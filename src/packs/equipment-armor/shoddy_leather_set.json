@@ -19,14 +19,16 @@
     "maxStat": 20,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 15
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shoddy_leather_set",
       "kind": "armor",
-      "buildHash": "f95f5949d01f"
+      "bargain": "armor",
+      "buildHash": "22867a9cedf8"
     }
   }
 }

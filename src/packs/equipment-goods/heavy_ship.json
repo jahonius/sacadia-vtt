@@ -1,0 +1,34 @@
+{
+  "_id": "a8585cee4af92187",
+  "_key": "!items!a8585cee4af92187",
+  "name": "Heavy Ship",
+  "type": "gear",
+  "img": "icons/environment/settlement/ship.webp",
+  "folder": "e2aae46f62d61f55",
+  "sort": 110,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 3200gc · Mounts and Vehicles, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 3200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "heavy_ship",
+      "kind": "goods",
+      "goods": {
+        "table": "mounts-vehicles"
+      },
+      "bargain": "mounts",
+      "buildHash": "eb1b476833d6"
+    }
+  }
+}

@@ -56,32 +56,103 @@
     </label>
   </div>
 
-  {{!-- Identity band: the ancestral/cultural anchors (book Ch. I–III). --}}
+  {{!-- Identity (book Ch. I–III): the Heritage, the ancestry and culture (items, rules/identity.mjs), and what they give. --}}
+  {{#*inline "originSelect"}}
+  <select class="origin-select" data-kind="{{kind}}" {{#unless editable}}disabled{{/unless}}>
+    {{#each groups as |g|}}
+    {{#if g.label}}<optgroup label="{{g.label}}">{{/if}}
+      {{#each g.options as |o|}}<option value="{{o.value}}" {{#if o.selected}}selected{{/if}}>{{o.label}}</option>{{/each}}
+    {{#if g.label}}</optgroup>{{/if}}
+    {{/each}}
+  </select>
+  {{/inline}}
   <h3>{{localize 'SACADIA.Identity.Title'}}</h3>
   <div class="identity-band">
-    <label class="id-field wide">
-      <span class="sac-label">{{localize 'SACADIA.Identity.Culture'}}</span>
-      <input type="text" name="system.identity.culture" value="{{system.identity.culture}}" placeholder="—"/>
-    </label>
     <label class="id-field">
       <span class="sac-label">{{localize 'SACADIA.Identity.Heritage'}}</span>
       <select name="system.identity.heritage">
         {{selectOptions config.heritages selected=system.identity.heritage localize=true blank=""}}
       </select>
     </label>
-    <label class="id-field wide">
-      <span class="sac-label">{{localize 'SACADIA.Identity.Ancestry'}}</span>
-      <input type="text" name="system.identity.ancestry" value="{{system.identity.ancestry}}" placeholder="—"/>
+    {{#if origin.heritage.choice}}
+    <label class="id-field">
+      <span class="sac-label">{{origin.heritage.choice.label}}</span>
+      <select name="system.identity.heritageChoice">{{selectOptions origin.heritage.choice.options selected=origin.heritage.choice.value blank=""}}</select>
     </label>
+    {{/if}}
+    <div class="id-field wide">
+      <span class="sac-label">{{localize 'SACADIA.Identity.Ancestry'}}
+        {{#if origin.ancestry.item}}<a data-action="viewDoc" data-item-id="{{origin.ancestry.item.id}}" title="{{localize 'SACADIA.Origin.Open'}}"><i class="fa-solid fa-book-open"></i></a>{{/if}}</span>
+      {{> originSelect kind="ancestry" groups=origin.ancestry.groups editable=editable}}
+    </div>
+    <div class="id-field wide">
+      <span class="sac-label">{{localize 'SACADIA.Identity.Culture'}}
+        {{#if origin.culture.item}}<a data-action="viewDoc" data-item-id="{{origin.culture.item.id}}" title="{{localize 'SACADIA.Origin.Open'}}"><i class="fa-solid fa-book-open"></i></a>{{/if}}
+        {{#if origin.culture.journal}}<a data-action="openUuid" data-uuid="{{origin.culture.journal}}" title="{{localize 'SACADIA.Origin.Tapestry'}}"><i class="fa-solid fa-scroll"></i></a>{{/if}}</span>
+      {{> originSelect kind="culture" groups=origin.culture.groups editable=editable}}
+    </div>
+    {{#if origin.culture.subcultures}}
+    <label class="id-field">
+      <span class="sac-label">{{localize 'SACADIA.Origin.Subculture'}}</span>
+      <select class="origin-field" data-item-id="{{origin.culture.item.id}}" data-field="subculture">{{selectOptions origin.culture.subcultures selected=origin.culture.subculture blank=""}}</select>
+    </label>
+    {{/if}}
+    {{#if origin.culture.options}}
+    <label class="id-field wide">
+      <span class="sac-label">{{localize 'SACADIA.Origin.CulturalTalent'}}</span>
+      <select class="origin-field" data-item-id="{{origin.culture.item.id}}" data-field="choice">{{selectOptions origin.culture.options selected=origin.culture.choice blank=""}}</select>
+    </label>
+    {{/if}}
     <label class="id-field">
       <span class="sac-label">{{localize 'SACADIA.Identity.Age'}}</span>
       <input type="text" name="system.identity.age" value="{{system.identity.age}}" placeholder="—"/>
     </label>
     <label class="id-field">
       <span class="sac-label">{{localize 'SACADIA.Identity.Size'}}</span>
-      <input type="text" name="system.identity.size" value="{{system.identity.size}}" placeholder="—"/>
+      <input type="text" name="system.identity.size" value="{{system.identity.size}}" placeholder="{{origin.heritage.size}}"/>
     </label>
   </div>
+  {{#if (or origin.heritage origin.granted.length origin.culture.laws.length)}}
+  <div class="origin-details">
+    {{#if origin.heritage}}
+    <p class="origin-line">
+      <span>{{localize 'SACADIA.Origin.HeritageHp'}} <b>+{{origin.heritage.hp}}</b></span>
+      {{#if origin.heritage.lifespan}}<span>{{localize 'SACADIA.Origin.Lifespan'}} {{origin.heritage.lifespan}}</span>{{/if}}
+    </p>
+    {{/if}}
+    {{#if origin.granted.length}}
+    <p class="origin-line origin-granted">
+      <span class="sac-label">{{localize 'SACADIA.Origin.Granted'}}</span>
+      {{#each origin.granted as |g|}}<a class="origin-grant" data-action="viewDoc" data-item-id="{{g.id}}">{{g.name}}</a>{{/each}}
+    </p>
+    {{/if}}
+    {{#if origin.culture.laws.length}}
+    <div class="origin-laws">
+      <h4>{{localize 'SACADIA.Origin.Laws'}}</h4>
+      <ul>
+        {{#each origin.culture.laws as |law|}}
+        <li><strong>{{law.name}}{{#if law.optional}} <em>({{localize 'SACADIA.Origin.Optional'}})</em>{{/if}}:</strong> {{law.text}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{!-- Influence (book p.264): favor with a group, gained in downtime (a Long Rest Action) and spent while it's present. --}}
+  <h3>{{localize 'SACADIA.Influence.Title'}} <a class="h-add" data-action="addInfluence" title="{{localize 'SACADIA.Influence.Add'}}"><i class="fa-solid fa-plus"></i></a></h3>
+  <ul class="influence-list">
+    {{#each system.influence as |g idx|}}
+    <li class="influence-row" data-index="{{idx}}">
+      <input type="text" name="system.influence.{{idx}}.group" value="{{g.group}}" placeholder="{{localize 'SACADIA.Influence.GroupHint'}}"/>
+      <input type="number" class="influence-value" name="system.influence.{{idx}}.value" value="{{g.value}}" min="0"/>
+      <a data-action="spendInfluence" class="{{#unless g.value}}disabled{{/unless}}" data-tooltip="{{localize 'SACADIA.Influence.SpendHintShort'}}"><i class="fa-solid fa-hand-holding-hand"></i> {{localize 'SACADIA.Influence.Spend'}}</a>
+      <a data-action="removeInfluence" title="{{localize 'SACADIA.Influence.Remove'}}"><i class="fa-solid fa-trash"></i></a>
+    </li>
+    {{else}}
+    <li class="influence-empty">{{localize 'SACADIA.Influence.Empty'}}</li>
+    {{/each}}
+  </ul>
 
   {{!-- Guided background prompts, straight from the book's "Creating your Background" step (p.18). --}}
   <h3>{{localize 'SACADIA.Background.Title'}}</h3>

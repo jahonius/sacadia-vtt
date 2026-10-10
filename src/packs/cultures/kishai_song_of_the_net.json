@@ -1,0 +1,45 @@
+{
+  "_id": "76c63172cd75bf37",
+  "_key": "!items!76c63172cd75bf37",
+  "name": "Song of the Net",
+  "type": "ability",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 70,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Song of the Solemn, increase the damage of Harm by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Thug, Harm · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_the_net",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "bb3672fa4073"
+    }
+  }
+}

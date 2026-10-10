@@ -1,0 +1,37 @@
+{
+  "name": "Marble Artisan",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Very Rare, Earth. No item slots. Uses: 1. Relic.</em></p><p><strong>Prerequisites:</strong> Construction:Stonework[3]</p><p>You are an artist, cutting through marble like butter, and you are well known throughout the region for your marble works.</p><p><strong>Marble Contract</strong> (Passive): You are an expert and renowned marbleworker, and have taken on a contract. If you complete all the below crafts, and incorporate them all into a final Marble Construction, you gain 10,000gp. Work with your GM to define and identify the likeness of who you make. Once you have taken this Inheritance, you cannot take it again.</p><p><strong>Marble Legs</strong> (Ceremony): (Prerequisite: 200gc worth of Very Rare White Marble). You craft marble legs in a marvelous likeness.</p><p><strong>Marble Torso</strong> (Ceremony): (Prerequisite: 500gc worth of Legendary[1] White Marble). You craft a clothed torso in a marvelous likeness.</p><p><strong>Marble Arms</strong> (Ceremony): (Prerequisite: 200gc worth of Very Rare White Marble). You craft arms, and tools and implements, in a marvelous likeness.</p><p><strong>Marble Head</strong> (Ceremony): (Prerequisite: 1000gc worth of Legendary[1] White Marble). You craft the perfect likeness of your patron in a marvelous likeness.</p><p><strong>Construct Statue</strong> (Ceremony): (Prerequisite: Marble Legs, Marble Torso, Marble Arms, Marble Head). Make a separate craft check for each piece of the statue to incorporate them into the likeness of your Patron. Then, gain 10,000gp.</p><p><strong>Marble Magician [1]</strong> (Passive): You purchase this ability with Talent Points. If you do, you gain 1X Advantage on any craft check to incorporate marble into a craft.</p><p><em>Rulebook p.46.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "984cc155a633f18e",
+  "_key": "!items!984cc155a633f18e",
+  "folder": "c931f980fe44bd4d",
+  "sort": 70,
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_marble_artisan",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Very Rare",
+        "element": "Earth",
+        "attunement": false,
+        "uses": "1",
+        "relic": true,
+        "special": ""
+      },
+      "buildHash": "57c343277761"
+    }
+  }
+}

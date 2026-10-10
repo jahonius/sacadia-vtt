@@ -1,0 +1,61 @@
+{
+  "_id": "59796c6c4337b0a3",
+  "_key": "!items!59796c6c4337b0a3",
+  "name": "On-the-Fly Restoration",
+  "type": "ability",
+  "img": "icons/tools/smithing/hammer-sledge-steel-grey.webp",
+  "folder": "d438317767df20cc",
+  "sort": 30,
+  "system": {
+    "description": "<p>Remove one level of Rend you possess. You may use this only once per turn.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: All Cunei",
+      "prerequisite": "Cunei Cultural Heritage · p.43"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "turn",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    },
+    "onUse": {
+      "self": [
+        {
+          "condition": "rended",
+          "amount": "-1"
+        }
+      ],
+      "target": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_on_the_fly_restoration",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "ffcc75f87f5c"
+    }
+  }
+}

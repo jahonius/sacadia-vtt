@@ -16,7 +16,8 @@
       "catalogId": "visaged_breastplate",
       "kind": "adornment",
       "armorPrereq": "Bulwark Style",
-      "buildHash": "533d805519e0"
+      "bargain": "adornments",
+      "buildHash": "eab8416f1c24"
     }
   }
 }

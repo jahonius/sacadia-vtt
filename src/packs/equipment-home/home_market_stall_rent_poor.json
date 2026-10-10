@@ -1,0 +1,34 @@
+{
+  "_id": "851a53f712c36284",
+  "_key": "!items!851a53f712c36284",
+  "name": "Market Stall Rent (Poor)",
+  "type": "gear",
+  "img": "icons/environment/settlement/wood-stall.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 80,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 300gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_market_stall_rent_poor",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "1c3c2b9fa194"
+    }
+  }
+}

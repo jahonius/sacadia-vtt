@@ -1,0 +1,34 @@
+{
+  "_id": "8191d00594c72570",
+  "_key": "!items!8191d00594c72570",
+  "name": "Market Stall Rent (Wealthy)",
+  "type": "gear",
+  "img": "icons/environment/settlement/tent-flag.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 100,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1500gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1500,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_market_stall_rent_wealthy",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "87eef1b66c51"
+    }
+  }
+}

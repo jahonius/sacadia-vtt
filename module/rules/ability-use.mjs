@@ -6,6 +6,7 @@
  */
 import { hallowsAttackAdvantage, confusionSources, trendSide } from '../helpers/auras.mjs';
 import { zoneAttackDisadvantage, tokensInCloud, cloudContext } from '../helpers/zones.mjs';
+import { originContext } from './identity.mjs';
 import { stepDie, resolveLimbSlots, effectiveApCost, resolveModifierValue, evaluatePredicate, foldPendingAttack, modifierIsRollTime, normalizeDamageType, checkPrerequisites, trendToArcana, predicateAtoms } from '../helpers/derivation.mjs';
 import { isSurrounded } from '../helpers/geometry.mjs';
 import { matchArmedBoosts, foldBoostEffects, boostLimit } from '../helpers/boosts.mjs';
@@ -55,7 +56,13 @@ export class AbilityUse {
       professionNames: Object.keys(CONFIG.SACADIA.professions).flatMap((k) => [k, k.replace(/_.*/, ''), game.i18n.localize(CONFIG.SACADIA.professions[k]?.label ?? CONFIG.SACADIA.professions[k] ?? k).toLowerCase()]),
       abilities: new Set(this.actor.items.filter((i) => i.type === 'ability').map((i) => i.name.toLowerCase())),
       knownAbilities: AbilityUse.#knownAbilities,
-      specialties: Object.fromEntries((sys.specialties ?? []).map((s) => [String(s.name).toLowerCase().trim(), s.rank ?? 0])),
+      // Ranks of the same specialty in two rows (a cultural talent's and the player's own) add up.
+      specialties: (sys.specialties ?? []).reduce((acc, s) => {
+        const k = String(s.name).toLowerCase().trim();
+        acc[k] = (acc[k] ?? 0) + (s.rank ?? 0);
+        return acc;
+      }, {}),
+      origin: originContext(this.actor),
       talents: new Set(Object.values(CONFIG.SACADIA.talents).map((t) => game.i18n.localize(t.label).toLowerCase())),
       ownedTalents: new Set(Object.entries(CONFIG.SACADIA.talents).filter(([k]) => sys.talents?.[k]?.proficient).map(([, t]) => game.i18n.localize(t.label).toLowerCase())),
     };
@@ -3188,8 +3195,11 @@ export class AbilityUse {
       if (incR) note(`Field of Flowers (${target.name})`, incR);
       const inc = target.system.bonuses?.incomingAdvantage ?? 0;
       if (inc) note(`${game.i18n.localize('SACADIA.Situation.Incoming')} (${target.name})`, inc);
-      // Smudge (trinket): "Hold a lit smudge in both hands: ranged attacks have 1X Disadvantage against you."
-      if (category === 'ranged' && findGear(target, 'smudge', { prefix: true, where: 'equipped' })) note(`Smudge (${target.name})`, -1);
+      // Smudges (trinkets, p.207), held lit in both hands (equipped): Lavender, "Ranged attacks have 1X Disadvantage against
+      // you"; Sage, "Melee attacks have 1X Disadvantage against you."
+      const smudge = category === 'ranged' ? 'smudge_lavender' : category === 'melee' ? 'smudge_sage' : null;
+      const lit = smudge && findGear(target, smudge, { where: 'equipped' });
+      if (lit) note(`${lit.name} (${target.name})`, -1);
       // Reckless exposure: "attacks made against you (your PD) at X advantage until your next turn".
       const ex = target.getFlag('sacadia', 'exposed');
       if (ex?.adv && (!ex.vs || ex.vs === defenseKey)) note(`${ex.label ?? ''} (${target.name})`, ex.adv);

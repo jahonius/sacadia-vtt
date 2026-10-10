@@ -1,0 +1,45 @@
+{
+  "_id": "5d94f5de79ab3b26",
+  "_key": "!items!5d94f5de79ab3b26",
+  "name": "Goldspool",
+  "type": "ability",
+  "img": "icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 100,
+  "system": {
+    "description": "<p>Move gold from your Gold Cache across your physique. Allocate some amount of gold to this. For every 1 damage you would take (rounded down), instead permanently remove 25gc from gold you have spooled across your physique.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Goldenhoard, Goldweave Accessory · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldspool",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "c61176c6a088"
+    }
+  }
+}

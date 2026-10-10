@@ -1,0 +1,30 @@
+{
+  "_id": "ad46141122d76613",
+  "_key": "!items!ad46141122d76613",
+  "name": "Stealthy Curiot",
+  "type": "ancestry",
+  "img": "icons/creatures/mammals/rodent-rat-green.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 60,
+  "system": {
+    "description": "<p>Stealthy Curiots are small, quiet, and unimposing. They can represent rodents, small frogs, or other tiny creatures.</p><p><strong>Size:</strong> Medium (3.5–5 feet) · <strong>Lifespan:</strong> Typically 35–55 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.5284b5f1c8e2f835]{Tight Squeeze}</p><p><em>Curiot Heritage. Rulebook p.84.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.5284b5f1c8e2f835",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "curiot",
+    "size": "Medium (3.5–5 feet)",
+    "lifespan": "Typically 35–55 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_stealthy_curiot",
+      "buildHash": "375b5cb8bcf9"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "A Skif",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Legendary[1], Salt. No item slots.</em></p><p><strong>Prerequisites:</strong> Transport: Sailing[1]</p><p>An enormous stone ship, carved in the neolithic era, with rough-hewn designs of suns and grasslands. The Skif is well-worn, but she functions still.</p><p><strong>Skif</strong> (Passive): The Skif is treated as a Sailboat (in both Sacadia’s Art of War and Myths of Sacadia rules), with one exception:</p><p><strong>Heartstone Engine</strong> (Passive): The Skif does not sail on water. Instead, it sails across the surface of grass, its base just touching the surface of whatever grasslands you cross.</p><p><strong>Engine Failure</strong> (Reaction): If the Skif reaches 0HP at any point, it explodes in a vibrant blast. Creatures in the blast radius take damage according how far away they are from the center of the ship (outlined below). Creatures may choose to make a Finesse Check (negating damage) or a Power Check (halving damage). Any creature who takes damage from this effect is knocked Prone.<br/>0-10ft:16D10 Fire Damage (DC26 Finesse, DC20 Power)<br/>11-20ft: 12D10 Fire Damage (DC23 Finesse, DC18 Power)<br/>21-30ft: 8D10 Fire Damage (DC20 Finesse, DC16 Power)<br/>31-40ft: 4D10 Fire Damage (DC17 Finesse, DC4 Power)</p><p><em>Rulebook p.78.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "88db6888ed8488c9",
+  "_key": "!items!88db6888ed8488c9",
+  "folder": "56c5eedd378f4a41",
+  "sort": 120,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_a_skif",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "89c9cb87aaac"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Cheese Boat",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a business. Very Rare, Rot. No item slots.</em></p><p>You own a small boat selling fine blue cheeses you have spent years perfecting. Unfortunately, your cheese is cursed by a woodland hivemind, to whom you are now intrinsically connected.</p><p><strong>On a Boat</strong> (Passive): You have a small, covered row boat. You can use this following the normal travel mechanics of Sacadia without having to purchase a boat.</p><p><strong>On Cheese</strong> (Ceremony): The cheese is extremely popular. You may sell it during a Long Rest for 200gp by taking Earn Money Long Rest action. Each time you do, a random number of people (determined narratively by your GM) eat the cheese. They may be relevant or irrelevant to your game.</p><p><strong>Hivemind</strong> (Ceremony): By working and inhaling the cheese so much, you have accumulated a connection to the cheese. You may concentrate for 1 minute on someone who has eaten cheese from your cheese boat, and they (unknowingly) make a Wiles Check against your Check DC. If they fail, you can read their surface level thoughts for a few seconds, learning what they are thinking about right now.</p><p><em>Rulebook p.54.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "ac949a411a4fb645",
+  "_key": "!items!ac949a411a4fb645",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 20,
+  "img": "icons/consumables/food/cheese-cube-gold.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_cheese_boat",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "business": {
+        "earn": "200",
+        "note": "A random number of people eat the cheese."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "b570519e0c33"
+    }
+  }
+}

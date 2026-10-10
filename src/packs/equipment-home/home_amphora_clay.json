@@ -1,0 +1,33 @@
+{
+  "_id": "477e73648d3cd415",
+  "_key": "!items!477e73648d3cd415",
+  "name": "Amphora, Clay",
+  "type": "gear",
+  "img": "icons/consumables/drinks/wine-amphora-clay-gray.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 20,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_amphora_clay",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "02cfcd83d206"
+    }
+  }
+}

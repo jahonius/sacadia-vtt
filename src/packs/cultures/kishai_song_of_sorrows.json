@@ -1,0 +1,45 @@
+{
+  "_id": "dce3dfcec725d838",
+  "_key": "!items!dce3dfcec725d838",
+  "name": "Song of Sorrows",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-glow-teal.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 40,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Song of the Solemn, gain damage resistance 1 against damage you would deal to yourself.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Oracle · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_sorrows",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "e288dd131955"
+    }
+  }
+}

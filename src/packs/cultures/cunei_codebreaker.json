@@ -1,0 +1,45 @@
+{
+  "_id": "5f6287f3a40696c2",
+  "_key": "!items!5f6287f3a40696c2",
+  "name": "Codebreaker",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-symbol-eye.webp",
+  "folder": "d438317767df20cc",
+  "sort": 10,
+  "system": {
+    "description": "<p><em>Talent Points: 1.</em> You can decipher a text without a codex. Doing so requires that you expend a Long Rest action deciphering the text.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: Literary Talent",
+      "prerequisite": "Cunei Cultural Heritage, Literary: Translate[3] · p.37"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_codebreaker",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "b05d71eabd48"
+    }
+  }
+}

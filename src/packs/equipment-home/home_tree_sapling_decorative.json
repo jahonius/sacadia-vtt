@@ -1,0 +1,33 @@
+{
+  "_id": "c9d6529841f42722",
+  "_key": "!items!c9d6529841f42722",
+  "name": "Tree, Sapling (Decorative)",
+  "type": "gear",
+  "img": "icons/commodities/materials/plant-sprout-seed-green.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 340,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 30gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 30,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_tree_sapling_decorative",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "d4aaadfc55d7"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "9113bdcb1cdfee0f",
+  "_key": "!items!9113bdcb1cdfee0f",
+  "name": "Sylnfolk",
+  "type": "ancestry",
+  "img": "icons/magic/nature/leaf-flower-wreath-glow-green-blue.webp",
+  "folder": "5757523bb3aaa415",
+  "sort": 20,
+  "system": {
+    "description": "<p>Sylnfolk are born of the union between an ephemeral, fleeting spirit of nature and a human.</p><p><strong>Sylnfolk Heritage:</strong> When you create your character, define the origins of your Sylnid Heritage. It should be a celebration of natural phenomena (e.g., the sea breeze, the first flower of spring). Choose an associated Element (Fire, Water, Earth, Air, Rot, Salt) and biome (e.g., Grasslands, the Sea, Deserts), then take Elemental Resistance.</p><p><strong>Size:</strong> Medium (4–5 feet)</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.9b82f5ff69c75083]{Elemental Resistance}</p><p><em>Fixerfolk Heritage. Rulebook p.88.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.9b82f5ff69c75083",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fixerfolk",
+    "size": "Medium (4–5 feet)",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_sylnfolk",
+      "buildHash": "c55eb39a2c8a"
+    }
+  }
+}

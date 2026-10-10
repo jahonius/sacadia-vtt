@@ -19,14 +19,16 @@
     "maxStat": 27,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 400
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_cloth_set",
       "kind": "armor",
-      "buildHash": "4237d41f342a"
+      "bargain": "armor",
+      "buildHash": "da24f65273c1"
     }
   }
 }

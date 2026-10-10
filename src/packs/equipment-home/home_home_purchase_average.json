@@ -1,0 +1,34 @@
+{
+  "_id": "355fbf493adea0ca",
+  "_key": "!items!355fbf493adea0ca",
+  "name": "Home Purchase (Average)",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-city.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 50,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20000gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_home_purchase_average",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "05c04c710c79"
+    }
+  }
+}

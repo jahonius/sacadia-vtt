@@ -1,0 +1,34 @@
+{
+  "_id": "09919537336d2bb9",
+  "_key": "!items!09919537336d2bb9",
+  "name": "Brazier",
+  "type": "gear",
+  "img": "icons/tools/smithing/furnace-fire-metal-orange.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 80,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 80gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 80,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_brazier",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "add6f04db66b"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Wailing Pigsqueak",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft ingredient. Legendary[1], Water. 1 item slot (Small, Craft Ingredient). Uses: 1.</em></p><p>A blue Pigsqueak flower. Though lesser pigsqueak is said to give hallucinations, this pigsqueak is said to have more potent effects.</p><p><em>Rulebook p.68.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": "ingredient"
+  },
+  "_id": "0b7dd5a9f5452fdc",
+  "_key": "!items!0b7dd5a9f5452fdc",
+  "folder": "76562f6c37f89b61",
+  "sort": 140,
+  "img": "icons/consumables/potions/bottle-conical-corked-labeled-skull-poison-green.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_wailing_pigsqueak",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "ingredient",
+        "rarity": "Legendary[1]",
+        "element": "Water",
+        "attunement": false,
+        "uses": "1",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "2daff583288e"
+    }
+  }
+}

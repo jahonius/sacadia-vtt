@@ -1,0 +1,45 @@
+{
+  "_id": "91e72e3f4b76ca4c",
+  "_key": "!items!91e72e3f4b76ca4c",
+  "name": "Blood Arts",
+  "type": "ability",
+  "img": "icons/magic/unholy/hand-claw-fire-blue.webp",
+  "folder": "c3ee098a24db43aa",
+  "sort": 20,
+  "system": {
+    "description": "<p>When you are dying, ignore the effects of Enduring Fatigue you take from the Dying Condition until that Fatigue knocks you unconscious.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Withered Ancestry",
+      "prerequisite": "Withered Human Ancestry · p.63"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_blood_arts",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "9ffa1bf54d63"
+    }
+  }
+}

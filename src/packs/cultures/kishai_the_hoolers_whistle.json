@@ -1,0 +1,37 @@
+{
+  "name": "The Hooler’s Whistle",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Rare, Air. 1 item slot (Small, Quickdraw).</em></p><p><strong>Prerequisites:</strong> Performance: Music Making[1]</p><p>A tiny, green reed flute, with a small knotted base.</p><p><strong>Hooling</strong> (Focus): For as long as you maintain Focus on Hooling, other creatures’ use of Song of the Solemn does not have any effect. Additionally, no creatures can hear one another. Additionally, all creatures on the map (allies and enemies) get 1X Advantage on all checks against Panic and Taunt.</p><p><em>Rulebook p.77.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "2cd468767f0155bf",
+  "_key": "!items!2cd468767f0155bf",
+  "folder": "56c5eedd378f4a41",
+  "sort": 90,
+  "img": "icons/tools/instruments/flute-simple-wood.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_the_hoolers_whistle",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "34d94ecd3ab6"
+    }
+  }
+}

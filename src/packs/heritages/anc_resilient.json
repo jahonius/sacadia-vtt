@@ -1,0 +1,30 @@
+{
+  "_id": "e3d5ec15d1c0e194",
+  "_key": "!items!e3d5ec15d1c0e194",
+  "name": "Resilient",
+  "type": "ancestry",
+  "img": "icons/magic/defensive/armor-stone-skin.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 40,
+  "system": {
+    "description": "<p>You, like many humans, are naturally resilient. When others get knocked down and stay down, you get back up. Your resilience has made you strong, and will keep you out of trouble (or in it).</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.1f40b2b191203b4a]{Strong Constitution}</p><p><em>Human Heritage. Rulebook p.82.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.1f40b2b191203b4a",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "human",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_resilient",
+      "buildHash": "f9070225bc24"
+    }
+  }
+}

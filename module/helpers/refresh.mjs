@@ -15,6 +15,8 @@ export const KEEP_SYSTEM = {
   gear: ['equipped', 'storage', 'quantity'],
   armor: ['equipped', 'storage', 'rend'],
   ability: [],
+  culture: ['choice', 'subculture'],
+  ancestry: ['choice'],
 };
 
 /**
@@ -22,7 +24,9 @@ export const KEEP_SYSTEM = {
  * longer has; every other `flags.sacadia` key (a pick, a named weapon, a broken piece, a researched spell …) is kept.
  */
 export const STATIC_FLAGS = ['catalogId', 'buildHash', 'selfScaling', 'opportunity', 'transcribed', 'mastery', 'basic', 'postRoll',
-  'steadiedCrit', 'feature', 'level', 'legendary', 'prestige', 'tome', 'research', 'lore', 'kind', 'armorPrereq'];
+  'steadiedCrit', 'feature', 'level', 'legendary', 'prestige', 'tome', 'research', 'lore', 'kind', 'armorPrereq',
+  'heritage', 'heritageChoice', 'culture', 'grantsSpecialty', 'expertise', 'resistance', 'hulinariForm', 'inheritance', 'talentBonus', 'business',
+  'goods', 'bargain'];
 
 /** Is an owned item out of date against its compendium entry (`{buildHash}` from the index)? */
 export function isStale(owned, entry) {

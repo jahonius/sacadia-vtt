@@ -1,0 +1,37 @@
+{
+  "name": "Luckless Armband",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Rare, Water. 1 item slot (Worn, RIS Passive).</em></p><p><strong>Prerequisites:</strong> Prof[3], Thug, Berserker Rage</p><p>This tightly woven armband is soaked through in blood. Wearing it fills you with a sense of unease and mild dread</p><p><strong>Luckless Block</strong> (Reaction): As a reaction to an enemy successfully hitting you when you are in a Berserker Rage and wear these, you may deal 1D8 Bludgeon damage to them. Increase damage dealt this way to 1D10 at Level 11.</p><p><em>Rulebook p.55.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "007e2540baba83bd",
+  "_key": "!items!007e2540baba83bd",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 40,
+  "img": "icons/equipment/neck/amulet-carved-stone-eye.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_luckless_armband",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "b28fe1d4ed43"
+    }
+  }
+}

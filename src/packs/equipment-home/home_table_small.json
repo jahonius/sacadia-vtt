@@ -1,0 +1,33 @@
+{
+  "_id": "b89b01ebd4224f87",
+  "_key": "!items!b89b01ebd4224f87",
+  "name": "Table (Small)",
+  "type": "gear",
+  "img": "icons/commodities/wood/blocks-cut-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 410,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 200gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_table_small",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "006abb8c6955"
+    }
+  }
+}

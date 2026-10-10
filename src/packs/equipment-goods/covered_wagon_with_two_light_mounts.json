@@ -1,0 +1,34 @@
+{
+  "_id": "4c9dfc7f7dae4603",
+  "_key": "!items!4c9dfc7f7dae4603",
+  "name": "Covered Wagon (with two Light Mounts)",
+  "type": "gear",
+  "img": "icons/environment/settlement/wagon-black.webp",
+  "folder": "e2aae46f62d61f55",
+  "sort": 70,
+  "system": {
+    "description": "<p><strong>Mounts and Vehicles</strong> (Passive): Mounts and vehicles are particularly useful for travel (the travel rules cover them). Mounts in Sacadia vary by region and culture; your Cultural Tapestry may say which. If not, the default mount is a Helk (a large elk that can be ridden).</p><p><strong>Covered Wagon</strong> (Passive): You may take a nightly rest in a covered wagon provided you are in a safe area, and can let your guard down.</p><p class=\"goods-facts\">No Item Slot · 2200gc · Mounts and Vehicles, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "covered_wagon_with_two_light_mounts",
+      "kind": "goods",
+      "goods": {
+        "table": "mounts-vehicles"
+      },
+      "bargain": "mounts",
+      "buildHash": "6dbc64995d04"
+    }
+  }
+}

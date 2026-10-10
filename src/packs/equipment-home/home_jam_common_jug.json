@@ -1,0 +1,34 @@
+{
+  "_id": "4b1e9e753b137411",
+  "_key": "!items!4b1e9e753b137411",
+  "name": "Jam - Common (Jug)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/jug-clay-brown.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 190,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1sc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_jam_common_jug",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "dbb8bd55e50b"
+    }
+  }
+}

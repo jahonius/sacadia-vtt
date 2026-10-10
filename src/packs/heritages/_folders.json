@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "8688b2e67e25dc8c",
+    "_key": "!folders!8688b2e67e25dc8c",
+    "name": "Human",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 1000,
+    "color": null,
+    "description": "The most common Heritage on Sacadia, humans are industrious, lawful folk. Capable of great feats of violence and love, they have constructed the world we know today. All humans get Industrial, and one ability for their Ancestry.",
+    "flags": {}
+  },
+  {
+    "_id": "52e13c9c5d5a6dd5",
+    "_key": "!folders!52e13c9c5d5a6dd5",
+    "name": "Curiot",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 2000,
+    "color": null,
+    "description": "The descendants of the Hulinari, a wild protectorate Fae Heritage that embodies the very soul of an entire species of animal. All Curiot Ancestries are local: each descends from a single Hulinari.",
+    "flags": {}
+  },
+  {
+    "_id": "f85ce61f9b2c8af5",
+    "_key": "!folders!f85ce61f9b2c8af5",
+    "name": "Daemonai",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 3000,
+    "color": null,
+    "description": "Humanoids descended from Demons. Almost all Daemonai are highly charismatic. The most common are Courters, highly charismatic shapeshifters.",
+    "flags": {}
+  },
+  {
+    "_id": "5757523bb3aaa415",
+    "_key": "!folders!5757523bb3aaa415",
+    "name": "Fixerfolk",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 4000,
+    "color": null,
+    "description": "Fae spirits who look mostly human, descended from Nature Spirits (Sylnfolk) or Folk Spirits (local to a culture).",
+    "flags": {}
+  },
+  {
+    "_id": "857dc9fff4fc5db7",
+    "_key": "!folders!857dc9fff4fc5db7",
+    "name": "Fontborne",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 5000,
+    "color": null,
+    "description": "Those descended from the warping of Fonts, Fontborne have a connection to the warped arcane corruption of Fonts. All Fontborne ancestries are local to a Font.",
+    "flags": {}
+  },
+  {
+    "_id": "07c04271e5f5dd35",
+    "_key": "!folders!07c04271e5f5dd35",
+    "name": "Hulinari",
+    "type": "Item",
+    "folder": null,
+    "sorting": "m",
+    "sort": 6000,
+    "color": null,
+    "description": "A guardian spirit of animals, able to shapeshift between an animalistic human and a magical beast. Hulinari are both an Ancestry and a Profession, and can only be played in early games of empire.",
+    "flags": {}
+  }
+]

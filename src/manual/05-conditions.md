@@ -33,7 +33,8 @@ Adversarial conditions (Pin, Hemorrhage, Panic, Fatigue, Fumble, and so on) have
   of your worn armor or shield, finishing one piece before moving to the next; Rend Armor's choice and Clever Rend's pick
   go first. The Inventory tab shows each piece's rend, and a piece with nothing left is **Broken**. A creature wearing no
   armor, or with none left, can't be rended.
-- A **quick rest** restores one point; a **long rest** restores all of it and repairs broken pieces.
+- A **quick rest** restores one point; a **fitful rest** (or a long rest, which ends with one) restores all of it and
+  repairs broken pieces.
 - **Corroded** gives one level of Rend per level at the start of your turn. Once there's nothing left to rend, all your
   Corroded turns into Hemorrhage.
 

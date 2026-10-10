@@ -1,0 +1,39 @@
+{
+  "_id": "90fd6cb219a564ae",
+  "_key": "!items!90fd6cb219a564ae",
+  "name": "Chickenglitter Dye",
+  "type": "gear",
+  "img": "icons/commodities/materials/bowl-powder-gold.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Chickenglitter Dye</strong> (Action): When you apply Chickenglitter Dye, expend it. For the next hour or until a Nightly Rest, you glow 5ft Bright, 5ft Dim.</p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 10gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "chickenglitter_dye",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "bright": 5,
+          "dim": 5,
+          "glow": true
+        }
+      },
+      "bargain": "illumination",
+      "buildHash": "f4af02a5bac2"
+    }
+  }
+}

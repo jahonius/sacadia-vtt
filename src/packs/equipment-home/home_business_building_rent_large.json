@@ -1,0 +1,34 @@
+{
+  "_id": "fa8e38927c393a44",
+  "_key": "!items!fa8e38927c393a44",
+  "name": "Business Building Rent (Large)",
+  "type": "gear",
+  "img": "icons/environment/settlement/warehouse-crates.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 120,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 2600gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2600,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_business_building_rent_large",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "4b20d0b6e66f"
+    }
+  }
+}

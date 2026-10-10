@@ -1,0 +1,45 @@
+{
+  "_id": "022ca9aa0558fd71",
+  "_key": "!items!022ca9aa0558fd71",
+  "name": "The Root of a Mighty Maple",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "folder": "d438317767df20cc",
+  "sort": 60,
+  "system": {
+    "description": "<p>Increase damage you deal with melee attacks by one dice type per ally you have within 5ft of you when maintaining Focus on Protectorate, rather than only behind you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 3,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha: Black Cunei",
+      "prerequisite": "Black Cunei Subculture, Soldier, Propped Up · p.43"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_the_root_of_a_mighty_maple",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "fceb47a7ff86"
+    }
+  }
+}

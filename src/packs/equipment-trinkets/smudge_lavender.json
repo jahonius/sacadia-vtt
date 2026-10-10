@@ -3,19 +3,32 @@
   "_key": "!items!b4db7d2c58dc352d",
   "name": "Smudge (Lavender)",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/consumables/plants/leaf-pink.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 110,
   "system": {
-    "description": "<p>Hold a lit smudge in both hands: ranged attacks have 1X Disadvantage against you. It goes out after 1 minute, a quick rest, or when you stop holding it. Expend on use.</p>",
+    "description": "<p><strong>Smudge (Lavender)</strong> (Action): When you hold a lit smudge in both hands, it gives off a strong but pleasant scented smoke. Ranged attacks have 1X Disadvantage against you. The Smudge goes out after 1 minute, with a quick rest, or when you stop holding it in both hands. Expend the Smudge when you use it. <em>(On the sheet: equip it while it burns.)</em></p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 50gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 0
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "smudge_lavender",
       "kind": "trinket",
-      "buildHash": "bb19228aed6f"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "8913a8b63322"
     }
   }
 }

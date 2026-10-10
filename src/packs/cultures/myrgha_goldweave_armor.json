@@ -1,0 +1,45 @@
+{
+  "_id": "915447aec0c571ad",
+  "_key": "!items!915447aec0c571ad",
+  "name": "Goldweave Armor",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-steel-gold.webp",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot (Worn). Attunement. Special Property: Goldstore.</em></p><p><strong>Prerequisites:</strong> You are a family member of the Myrgha Oligarchy, Proficiency[5], Heavy Armor Proficiency</p><p>A thinly laced weave of golden fabric supports a suit of armor, deeply and ornately detailed in the gaudy fashion of the Myrgha. This armor is extremely thin, and designed to be worn beneath robes or other clothes by a Goldbound warrior. It is emblazoned with your family crest.</p><p><strong>Goldweave Armor</strong> (Passive): Using this armor provides a baseline effect of +5AD, 2 Adornment Slots, 0 Trinket Slots, and 0 Additional RIS. The armor is inherently worth 2,000gp that cannot be consumed through Goldbinder abilities (but can be sold if the armor is destroyed and melted down). If you are a Goldbinder Fatebound, you can take Goldshield and Goldenhoard when you are attuned to this item.</p><p><em>Rulebook p.34.</em></p>",
+    "equipped": false,
+    "category": "",
+    "material": "",
+    "defenses": {
+      "ad": 5,
+      "pd": 0,
+      "td": 0,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": null,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "value": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldweave_armor",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": "Goldstore"
+      },
+      "buildHash": "4b5a8b8bbda4"
+    }
+  },
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 60
+}

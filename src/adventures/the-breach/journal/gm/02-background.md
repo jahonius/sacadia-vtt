@@ -6,7 +6,7 @@ Highly superstitious and grim, the Tianqi live difficult lives at the edge of hu
 
 Their culture is struggling under the weight of constant demon incursions. These take so much of their military strength that their other neighbors nip at their borders unchallenged. They are tired.
 
-*The Tianqi are one of the rulebook's starter cultures (v1.2 pp.59–65): Binding Laws and Customs, the Heibrim Lore cultural talent, and cultural abilities and inheritance. The pregens follow them, and those abilities are in this adventure's Items folder.*
+*The Tianqi are one of the rulebook's starter cultures (v1.2 pp.59–65): Binding Laws and Customs, the Heibrim Lore cultural talent, and cultural abilities and inheritance. The pregens follow them. The culture, its abilities and its inheritance are in the system's **Cultures** compendium, and its tapestry in the **Cultures of the Ardus Yauga** journal.*
 
 ## The demons
 

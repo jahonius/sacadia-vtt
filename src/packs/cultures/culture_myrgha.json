@@ -1,0 +1,58 @@
+{
+  "_id": "8f693f01562b3b97",
+  "_key": "!items!8f693f01562b3b97",
+  "name": "Myrgha",
+  "type": "culture",
+  "img": "icons/commodities/currency/coins-plain-stack-gold.webp",
+  "folder": "a8a2e4aaa3684ab7",
+  "sort": 0,
+  "system": {
+    "description": "<p>“The Empire at the Edge of the World”, the Myrgha are a naval power with a fist of dominance stretched across the Ardus Yauga Sea. Their culture is ruled by twelve divinely ordained Oligarchs, whose power is absolute, but beginning to fracture. Supplementing this divine “Trickle Up Economics” Oligarchy is a complex and Byzantine legalist Bureaucracy. The Myrgha are an Oligarchic and Legalist empire at the height of empire, ready to decline.</p><p>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.0f5f2a50e7f258e0]{The Myrgha: Cultural Tapestry, Ways and Inheritance}</p><p><em>Rulebook p.27.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.09e7adfe2fe32ff3",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.6e87bddfc00c5de2",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "aliases": "",
+    "laws": [
+      {
+        "name": "Letter of the Law",
+        "text": "You must value Myrgha laws, using the letter of the law and not the spirit of the law in your interpretation. Many Myrgha extend this to the laws of other lands into which they travel - doing so is up to you.",
+        "optional": false
+      },
+      {
+        "name": "Gambling",
+        "text": "You cannot gamble.",
+        "optional": false
+      },
+      {
+        "name": "Checkered Details",
+        "text": "You must proudly display black and white checkered patterns at all time on your person, and cannot hide that you are Myrgha.",
+        "optional": false
+      },
+      {
+        "name": "Oligarchic Loyalty",
+        "text": "If you are not an Oligarch, you serve one. You cannot disobey the order of any Oligarch, unless another Oligarch to whom you owe allegiance supercedes it. Direct oligarchic orders supercede all other Laws and Customs on this list.",
+        "optional": false
+      }
+    ],
+    "subcultures": [],
+    "subculture": "",
+    "journal": "Compendium.sacadia.cultures-journal.JournalEntry.0f5f2a50e7f258e0"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "culture_myrgha",
+      "culture": "myrgha",
+      "buildHash": "eb2f269533de"
+    }
+  }
+}

@@ -45,6 +45,6 @@ always overrule the automation.
   Settings → User Manual**, or from any character sheet's header menu (**⋮ → Open the User Manual**).
 - **Compendia:** abilities by profession (including the **Magus** and **Witch** prestige professions),
   **Lore Abilities**, Profession Masteries, **Profession Features & Legendary Masteries**, Basic Actions & Reactions, and
-  equipment (weapons, armor, shields, adornments, trinkets).
+  equipment (weapons, armor, shields, adornments, personal goods, trinkets, home goods).
 - **Rules version:** the system follows *Sacadia's Art of War* **v1.2** and the Prestige Classes
   addendum (v0.2-3).

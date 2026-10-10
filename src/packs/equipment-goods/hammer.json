@@ -1,0 +1,34 @@
+{
+  "_id": "c815d90339fc31e0",
+  "_key": "!items!c815d90339fc31e0",
+  "name": "Hammer",
+  "type": "gear",
+  "img": "icons/tools/hand/hammer-simple-wood.webp",
+  "folder": "789b7f5285159daf",
+  "sort": 50,
+  "system": {
+    "description": "<p class=\"goods-facts\">1 Item Slot · 2gc · Travel Gear, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 2,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hammer",
+      "kind": "goods",
+      "goods": {
+        "table": "travel"
+      },
+      "bargain": "travel",
+      "buildHash": "1d120878e4f3"
+    }
+  }
+}

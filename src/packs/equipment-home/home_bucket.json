@@ -1,0 +1,34 @@
+{
+  "_id": "29eec1fd11b5061a",
+  "_key": "!items!29eec1fd11b5061a",
+  "name": "Bucket",
+  "type": "gear",
+  "img": "icons/containers/misc/bucket-wooden-brown.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 90,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_bucket",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "bargain": "cooking",
+      "buildHash": "c6578d123ba6"
+    }
+  }
+}

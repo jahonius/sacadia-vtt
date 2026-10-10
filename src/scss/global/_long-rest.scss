@@ -1,0 +1,34 @@
+// The Long Rest window (apps/long-rest.mjs), in the prompts' skin like the Travel Ledger: a card per week of downtime, its
+// action and what that needs, a note where the book's limits bite, and the rest taken from the footer.
+.application.sacadia-long-rest {
+  .window-content { padding: 0.7rem 0.85rem 0.85rem; }
+  .long-rest { display: flex; flex-direction: column; gap: 0.6rem; }
+  .lr-intro, .lr-hint { margin: 0; font-size: 0.8rem; color: var(--sac-dim); }
+
+  .lr-weeks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+  .lr-week { padding: 0.45rem 0.6rem 0.5rem; border: 1px solid var(--sac-line); border-radius: 5px; background: var(--sac-panel);
+    &.warn { border-color: var(--sac-blood); } }
+  .lr-head { display: flex; align-items: center; gap: 0.55rem;
+    .lr-n { flex: 0 0 4.2rem; font-family: var(--sac-font-display); color: var(--sac-gold-hi); font-variant-numeric: lining-nums tabular-nums; }
+    select { flex: 1 1 auto; }
+    .lr-page { font-size: 0.72rem; color: var(--sac-dim); }
+    .lr-remove { color: var(--sac-dim); cursor: pointer; &:hover { color: var(--sac-blood); } } }
+  .lr-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 0.6rem; margin-top: 0.4rem;
+    &:empty { display: none; }
+    label { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--sac-dim);
+      select, input { font-size: 0.86rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+      &.wide { grid-column: 1 / -1; } }
+    .lr-hint { grid-column: 1 / -1; } }
+  .lr-note { margin: 0.35rem 0 0; font-size: 0.78rem; color: var(--sac-gold); }
+  .lr-week.warn .lr-note { color: var(--sac-blood); }
+
+  .lr-actions { display: flex; align-items: center; gap: 0.5rem;
+    button { flex: 0 0 auto; min-height: 2rem; padding: 0 0.7rem; background: var(--sac-panel); border: 1px solid var(--sac-line-strong);
+      border-radius: 4px; color: var(--sac-text); font-size: 0.85rem; i { color: var(--sac-dim); }
+      &:hover { border-color: var(--sac-gold-lo); background: rgba(212, 165, 60, 0.1); } }
+    .lr-purse { flex: 1 1 auto; text-align: center; font-size: 0.85rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums;
+      i { color: var(--sac-gold); } }
+    .lr-go { border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: 700; background: rgba(212, 165, 60, 0.16); i { color: var(--sac-gold); } }
+  }
+}

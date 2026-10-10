@@ -19,14 +19,16 @@
     "maxStat": 22,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 50
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "basic_leather_set",
       "kind": "armor",
-      "buildHash": "6ac4907ae0c2"
+      "bargain": "armor",
+      "buildHash": "488161414ab5"
     }
   }
 }

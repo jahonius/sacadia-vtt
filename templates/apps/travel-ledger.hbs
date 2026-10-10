@@ -1,0 +1,81 @@
+{{!-- The Travel Ledger (apps/travel-ledger.mjs): where the journey stands, its setup, today's conditions, and the days so far. --}}
+<div class="travel-ledger">
+  {{#if progress}}
+  <section class="tl-progress">
+    <div class="tl-bar"><span style="width: {{progress.pct}}%"></span></div>
+    <div class="tl-facts">
+      <b>{{localize 'SACADIA.Travel.DayN' n=day}}</b>
+      <span>{{localize 'SACADIA.Travel.HexesOf' done=progress.done total=progress.total}}</span>
+      <span>{{#if progress.arrived}}{{localize 'SACADIA.Travel.Arrived'}}{{else}}{{localize 'SACADIA.Travel.HexesLeft' n=progress.left}}{{/if}}</span>
+    </div>
+  </section>
+  {{/if}}
+
+  <fieldset class="tl-journey">
+    <legend>{{localize 'SACADIA.Travel.Journey'}}</legend>
+    <div class="tl-grid">
+      <label>{{localize 'SACADIA.Travel.Route'}}
+        <select name="routeId">{{selectOptions routes selected=st.routeId blank=(localize 'SACADIA.Travel.NoRoute')}}</select></label>
+      <label>{{localize 'SACADIA.Travel.Party'}}
+        <select name="tokenId">{{selectOptions tokens selected=st.tokenId blank=(localize 'SACADIA.Travel.NoToken')}}</select></label>
+      <label class="wide">{{localize 'SACADIA.Travel.Destination'}}
+        <input type="text" name="destination" value="{{st.destination}}" placeholder="{{localize 'SACADIA.Travel.DestinationHint'}}"/></label>
+      <label>{{localize 'SACADIA.Travel.Method.Label'}}
+        <select name="method">{{selectOptions methods selected=st.method}}</select></label>
+      <label>{{localize 'SACADIA.Travel.Pace.Label'}}
+        <select name="pace">{{selectOptions paces selected=st.pace}}</select></label>
+      <label>{{localize 'SACADIA.Travel.Food'}}
+        <input type="number" name="food" value="{{st.food}}" min="0" step="1"/></label>
+      <label>{{localize 'SACADIA.Travel.Water'}}
+        <input type="number" name="water" value="{{st.water}}" min="0" step="1"/></label>
+      <label class="check wide"><input type="checkbox" name="freshWater" {{checked st.freshWater}}/> {{localize 'SACADIA.Travel.FreshWater'}}</label>
+    </div>
+    <p class="tl-hint {{#if overSupply}}warn{{/if}}">{{supplyHint}}{{#if laden}} {{localize 'SACADIA.Travel.Laden'}}{{/if}}{{#if overSupply}} {{localize 'SACADIA.Travel.Overladen'}}{{/if}}</p>
+  </fieldset>
+
+  <fieldset class="tl-today">
+    <legend>{{localize 'SACADIA.Travel.DayN' n=day}}</legend>
+    <div class="tl-grid">
+      <label>{{localize 'SACADIA.Travel.Road.Label'}}
+        <select name="today.road">{{selectOptions roads selected=st.today.road}}</select></label>
+      <label>{{localize 'SACADIA.Travel.Weather.Label'}}
+        <select name="today.weather">{{selectOptions weather selected=st.today.weather}}</select></label>
+      <label>{{localize 'SACADIA.Travel.Terrain.Label'}}
+        <select name="today.terrain">{{selectOptions terrain selected=st.today.terrain}}</select></label>
+      <label>{{localize 'SACADIA.Travel.CheckDC'}}
+        <select name="today.difficulty">{{selectOptions difficulties selected=st.today.difficulty}}</select></label>
+      <label class="wide">{{localize 'SACADIA.Travel.Note'}}
+        <input type="text" name="today.note" value="{{st.today.note}}" placeholder="{{localize 'SACADIA.Travel.NoteHint'}}"/></label>
+    </div>
+    <div class="tl-preview">
+      {{#if preview.stuck}}<b class="warn">{{localize 'SACADIA.Travel.Stuck'}}</b>
+      {{else}}<b>{{preview.hexLabel}}</b> <span class="km">({{preview.km}} km)</span>{{/if}}
+      <span>{{localize 'SACADIA.Travel.Eats' food=preview.food water=preview.water}}</span>
+      <span>{{localize 'SACADIA.Travel.Sightlines' n=preview.sightlines}}</span>
+      <span>{{localize 'SACADIA.Travel.CheckDCn' n=preview.dc}}</span>
+    </div>
+  </fieldset>
+
+  <footer class="tl-actions">
+    <button type="button" class="tl-go" data-action="travelDay" {{#if busy}}disabled{{/if}}>
+      <i class="fa-solid {{#if busy}}fa-spinner fa-spin{{else}}fa-person-hiking{{/if}}"></i> {{localize 'SACADIA.Travel.TravelDay' n=day}}</button>
+    <button type="button" data-action="undoDay" {{#unless log.length}}disabled{{/unless}} {{#if busy}}disabled{{/if}}>
+      <i class="fa-solid fa-rotate-left"></i> {{localize 'SACADIA.Travel.Undo'}}</button>
+    <button type="button" data-action="startOver" {{#unless log.length}}disabled{{/unless}} {{#if busy}}disabled{{/if}}>
+      <i class="fa-solid fa-backward-fast"></i> {{localize 'SACADIA.Travel.StartOver'}}</button>
+  </footer>
+  {{#unless indy}}<p class="tl-hint">{{localize 'SACADIA.Travel.NoIndy'}}</p>{{/unless}}
+
+  {{#if log.length}}
+  <table class="tl-log">
+    <thead><tr><th>{{localize 'SACADIA.Travel.Day'}}</th><th>{{localize 'SACADIA.Travel.Road.Label'}}</th><th>{{localize 'SACADIA.Travel.Slowed'}}</th>
+      <th class="num">{{localize 'SACADIA.Travel.HexesShort'}}</th><th class="num">{{localize 'SACADIA.Travel.Food'}}</th><th class="num">{{localize 'SACADIA.Travel.Water'}}</th></tr></thead>
+    <tbody>
+      {{#each log as |d|}}
+      <tr><td>{{d.day}}</td><td>{{d.roadLabel}} <small>{{d.paceLabel}}</small></td><td>{{d.slowed}}{{#if d.note}} <em>{{d.note}}</em>{{/if}}</td>
+        <td class="num">{{d.hexes}}</td><td class="num">{{d.food}}</td><td class="num">{{d.water}}</td></tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{/if}}
+</div>

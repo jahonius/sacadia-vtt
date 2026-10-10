@@ -1,0 +1,41 @@
+{
+  "name": "Minister of Finance",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Uncommon, Salt. No item slots.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Economy, Proficiency[3]</p><p>You are a dedicated civil servant acquainted with finances</p><p><strong>Influential</strong> (Ceremony): Every Long Rest that you take in your home city, you must spend at least one Long Rest action working for the Ministry. When you do, choose one effect:<br/>Take Pay: Gain 50gp<br/>Find Clues: You may identify one clue or fact of the local region pertaining to financial matters</p><p><strong>Cook Books</strong> (Passive): When you are performing your work at the Ministry of Finance, you can cook the books. If you do, gain X*50gp instead of 50gp. You can choose any number for X. When you do, roll XD20. If any number is a natural 1, you are found out. Lose all of your money and this Inheritance.</p><p><em>Rulebook p.45.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "78b78948b3da99fc",
+  "_key": "!items!78b78948b3da99fc",
+  "folder": "c931f980fe44bd4d",
+  "sort": 30,
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_minister_of_finance",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "business": {
+        "earn": "50",
+        "note": "Take Pay, at the Ministry."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Uncommon",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "127aa58c45d5"
+    }
+  }
+}

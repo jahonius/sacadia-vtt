@@ -1,0 +1,34 @@
+{
+  "_id": "572da4783fd8be09",
+  "_key": "!items!572da4783fd8be09",
+  "name": "Tent, 2-person",
+  "type": "gear",
+  "img": "icons/sundries/survival/shelter-tent-small.webp",
+  "folder": "789b7f5285159daf",
+  "sort": 90,
+  "system": {
+    "description": "<p><strong>Nightly Rests</strong> (Passive): In order to nightly rest, a character must be Safe (nothing could attack you), Sheltered from the elements (in a tent, covered wagon, or lean-to), have Food and Water (clean water and food), and Comfort (you can rest your head comfortably: blankets, or a bedroll). Only then can you take a nightly rest.</p><p class=\"goods-facts\">2 Item Slots · 18gc · Travel Gear, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 18,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tent_2_person",
+      "kind": "goods",
+      "goods": {
+        "table": "travel"
+      },
+      "bargain": "travel",
+      "buildHash": "550150e6d2c7"
+    }
+  }
+}

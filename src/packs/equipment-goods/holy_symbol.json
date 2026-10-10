@@ -1,0 +1,34 @@
+{
+  "_id": "24222aa16a3dd8a8",
+  "_key": "!items!24222aa16a3dd8a8",
+  "name": "Holy Symbol",
+  "type": "gear",
+  "img": "icons/equipment/neck/amulet-carved-stone-cross.webp",
+  "folder": "48f4628afce9117c",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Holy Symbols</strong> (Passive): If you hold a holy symbol, you can pray in both longform and shortform situations. Prayer as a Longform action is the Pray for Guidance Long Rest Action.</p><p><strong>Pray</strong> (Focus): <em>Prerequisite: Religion, Fate[1].</em> For as long as you pray, you cannot take any other actions or reactions. Spend all your AP on Prayer each turn. This ability has no effect if you do not spend your full turn in prayer. You may only use this ability when you hold a holy symbol in hand.<br/><strong>Fumble:</strong> Choose one target enemy you can see. They gain Fumble equal to twice the AP you spend on your turn.<br/><strong>Fates:</strong> Make a consistent Fate Check using all AP. You may exchange one ally D20 rolled with your Fate Check before the start of your next turn.</p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 6gc · Holy Tools, rulebook p.205</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 6,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "holy_symbol",
+      "kind": "goods",
+      "goods": {
+        "table": "holy"
+      },
+      "bargain": "adventuring",
+      "buildHash": "ade4a44b8530"
+    }
+  }
+}

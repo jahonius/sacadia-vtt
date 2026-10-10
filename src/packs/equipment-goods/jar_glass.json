@@ -1,0 +1,34 @@
+{
+  "_id": "c5aae18b483412d9",
+  "_key": "!items!c5aae18b483412d9",
+  "name": "Jar (Glass)",
+  "type": "gear",
+  "img": "icons/consumables/potions/potion-jar-capped-teal.webp",
+  "folder": "65470c303531d49b",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Jar (Glass)</strong> (Passive): This item consumes 1 Stored Item Slot (SIS), but provides 3 SIS. You may only put items with the Small Property into these SIS. All items placed in the jar’s slots must be the same.</p><p class=\"goods-facts\">1 Item Slot · 1gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "sis",
+    "providesSis": 3,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "jar_glass",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage"
+      },
+      "bargain": "baggage",
+      "buildHash": "21bce4eb99d0"
+    }
+  }
+}

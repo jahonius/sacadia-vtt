@@ -1,0 +1,37 @@
+{
+  "name": "Painter’s Supply Kit",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Rare, Rot. 1 item slot (RIS Passive). Uses: 6.</em></p><p><strong>Prerequisites:</strong> Prof[2], Art General Talent</p><p>This well crafted wooden box has all the supplies an artists needs for painting and more! A skilled member of the Cultural guild can apply esoteric teachings to produce spectacular effects</p><p><strong>Paint with Blood</strong> (Action): you may dip a projectile or blade into the box and coat it with one of the following paints when you have the Painter’s Supply Kit in your RIS, chosen at random. Apply the effects of the listed paint to your next successful attack.<br/>Red: The victim rolls against levels of hemorrhage equal to half your proficiency rounded up, using your check DC.<br/>Yellow: The victim rolls against levels of hemorrhage and nausea equal to half your proficiency rounded up, using your check DC.<br/>White: The victim rolls against levels of hemorrhage, nausea, and delirium equal to half your proficiency rounded up, using your check DC.</p><p><em>Rulebook p.57.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "0f2356ef84d361b9",
+  "_key": "!items!0f2356ef84d361b9",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 110,
+  "img": "icons/tools/hand/brush-paint-brown-tan.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_painters_supply_kit",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "6",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "b75dd7444206"
+    }
+  }
+}

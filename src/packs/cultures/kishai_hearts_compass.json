@@ -1,0 +1,37 @@
+{
+  "name": "Heart’s Compass",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a craft or ritual. Very Rare, Salt. 1 item slot (Small). Attunement.</em></p><p><strong>Prerequisites:</strong> Survival: Navigation[3]</p><p>A small piece of Heartstone balanced within a mechanical contraption to contain it. A small piece of sporeglass covers the surface, protecting the heartstone. Only experts may touch it.</p><p><strong>Heart’s Arrow</strong> (Action): The compass has three points on it denoting “Close”, “Medium”, and “Far”. When you use the Heart’s compass, it points to the nearest 3 Greater Heartstones (ignoring minor Heartstones like those in a Skif). It will point to the nearest three Skyships, or, if the Center of Kish is nearer than the three closest Skyships, one needle will point to the center of Kish. The arrows align according to which Greater Heartstones are closer and further away.</p><p><em>Rulebook p.78.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "a7dcc4f7d14ea1ef",
+  "_key": "!items!a7dcc4f7d14ea1ef",
+  "folder": "56c5eedd378f4a41",
+  "sort": 140,
+  "img": "icons/tools/navigation/compass-worn-copper.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_hearts_compass",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "d20b64800678"
+    }
+  }
+}

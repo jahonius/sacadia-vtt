@@ -1,0 +1,34 @@
+{
+  "_id": "d861c70d6f4113e0",
+  "_key": "!items!d861c70d6f4113e0",
+  "name": "Suet, Lard, or Butter (Jug)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/jug-clay-brown-sealed.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 330,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5sc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_suet_lard_or_butter_jug",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "29ae081e2d42"
+    }
+  }
+}

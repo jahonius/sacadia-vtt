@@ -1,0 +1,45 @@
+{
+  "_id": "27f7d4fb9cbc32df",
+  "_key": "!items!27f7d4fb9cbc32df",
+  "name": "Just A Good Suit of Armor",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-banded-steel-gold.webp",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Earth. 1 item slot. Attunement.</em></p><p><strong>Prerequisites:</strong> Proficiency[3], Heavy Armor Proficiency</p><p>An artfully crafted, but simple, set of iron armor. Anyone would be proud to wear it, and shocked at how comfortable it is.</p><p><strong>Artisanal Armor</strong> (Passive): This Armor is a Professional Iron Set, but provides +10PD, instead of +9PD.</p><p><em>Rulebook p.46.</em></p>",
+    "equipped": false,
+    "category": "heavy",
+    "material": "",
+    "defenses": {
+      "ad": 0,
+      "pd": 10,
+      "td": 3,
+      "md": 0,
+      "dr": 0
+    },
+    "maxStat": 25,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "value": 200
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_just_a_good_suit_of_armor",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Earth",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "998d0bebb891"
+    }
+  },
+  "folder": "c931f980fe44bd4d",
+  "sort": 90
+}

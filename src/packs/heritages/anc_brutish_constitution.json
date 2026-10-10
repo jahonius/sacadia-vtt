@@ -1,0 +1,51 @@
+{
+  "_id": "531a466f8b37d5ff",
+  "_key": "!items!531a466f8b37d5ff",
+  "name": "Brutish Constitution",
+  "type": "ability",
+  "img": "icons/creatures/mammals/ox-buffalo-horned-green.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 30,
+  "system": {
+    "description": "<p>You are particularly large and imposing. Increase your starting Level 1 HP by an additional 6.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Brute Curiot Ancestry",
+      "prerequisite": "Brute Curiot Ancestry · p.84"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Brutish Constitution",
+        "target": "health.max",
+        "value": "6",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_brutish_constitution",
+      "transcribed": true,
+      "buildHash": "269ee2a50d03"
+    }
+  }
+}

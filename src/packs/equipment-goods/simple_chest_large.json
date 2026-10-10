@@ -1,0 +1,35 @@
+{
+  "_id": "7d86d34c7a37b04a",
+  "_key": "!items!7d86d34c7a37b04a",
+  "name": "Simple Chest (Large)",
+  "type": "gear",
+  "img": "icons/containers/chest/chest-reinforced-steel-oak-tan.webp",
+  "folder": "65470c303531d49b",
+  "sort": 90,
+  "system": {
+    "description": "<p><strong>Chest (Large)</strong> (Passive): This item consumes 2 Stored Item Slots (SIS), but provides 4 SIS. You may only put items in this SIS with a max size of 1 Item Slot. Items stored in the Chest do not need to be the same. You may only benefit from one Chest, Ornate Box, or Craft Pouch at a time. <em>(As printed on p.202; the table lists 3 Item Slots.)</em></p><p class=\"goods-facts\">3 Item Slots · 100gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 3,
+    "storage": "sis",
+    "providesSis": 4,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "simple_chest_large",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "box"
+      },
+      "bargain": "baggage",
+      "buildHash": "77db3b614655"
+    }
+  }
+}

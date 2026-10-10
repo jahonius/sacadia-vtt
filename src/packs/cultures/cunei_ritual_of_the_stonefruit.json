@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of The Stonefruit",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Earth. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3], Thug, Harm</p><p>You have a mantra of power that resonates from your core.</p><p><strong>Core Mantra</strong> (Passive): When you use the Harm action against a target to whom you have given Wrestle Pin, increase the dice type by one type.</p><p><em>Rulebook p.47.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "7b51028d244dc465",
+  "_key": "!items!7b51028d244dc465",
+  "folder": "c931f980fe44bd4d",
+  "sort": 120,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_the_stonefruit",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Earth",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "8275a1d4f96a"
+    }
+  }
+}

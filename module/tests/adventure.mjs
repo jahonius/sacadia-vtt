@@ -5,8 +5,11 @@
  */
 import { until, settle, stubDialogs, autoAnswer, fixture, target, recordErrors, sleep } from './support.mjs';
 import { staleItems } from '../helpers/refresh.mjs';
+import { reconcileIdentityGrants } from '../rules/identity.mjs';
 import { conditionImmune } from '../helpers/conditions.mjs';
 import { resetActionEconomy } from '../rules/turn.mjs';
+import { TravelLedger } from '../apps/travel-ledger.mjs';
+import { pxPerHex } from '../helpers/travel.mjs';
 
 /** The to-hit roll (the one with a d20) and the damage roll on an attack card. */
 function cardRolls(message) {
@@ -139,7 +142,10 @@ export function registerAdventure(quench) {
           const a = actor(name);
           await until(() => a.items.some((i) => i.flags?.sacadia?.catalogId === 'basic_block'), { what: `${name}'s basic actions` });
           assert.deepEqual((await staleItems(a)).map((i) => i.name), [], `${name} has no out-of-date items`);
+          // They arrive with what their Heritage, ancestry and Tianqi culture grant: nothing to add or take away.
+          assert.equal(await reconcileIdentityGrants(a), false, `${name}'s heritage, ancestry and culture grants`);
         }
+        assert.equal(actor('Selthimor').system.typedDr.water, 3, 'Sylnfolk of the mist: Elemental Resistance to Water');
       });
 
       it('the demons carry their stat blocks: speed, size, rendable hide, immunities, trait advantage', () => {
@@ -471,34 +477,76 @@ export function registerAdventure(quench) {
         await settle(since);
       });
 
-      // Last: it makes the world map the active scene. With Augur: Nexus and Indy Route installed and active (they aren't in
-      // the default test world), it also checks the site it makes and the road it plays.
-      it('the Prologue macro opens the world map; with Augur: Nexus it makes Chuni\'s Wall a site there, once; with Indy Route it plays the road', async () => {
-        const world = created.Scene.find((s) => s.flags.sacadia?.prologue);
-        const macro = created.Macro.find((m) => m.name === 'Prologue: The Road to the Wall');
+      // Last: these two make the world map the active scene, and the second puts things back. With Augur: Nexus and Indy
+      // Route installed and active (they aren't in the default test world), they also check what those do.
+      let world, active, prior;
+      it('the Prologue macro opens the world map; with Augur: Nexus it files the area there, once', async () => {
+        world = created.Scene.find((s) => s.flags.sacadia?.prologue);
+        active = game.scenes.active;
+        prior = { folders: new Set(game.folders.map((f) => f.id)), journal: new Set(game.journal.map((j) => j.id)) };
+        const macro = created.Macro.find((m) => m.name === 'Prologue: The Ardus Yauga');
+        await macro.execute();
+        await until(() => world.active && canvas.scene?.id === world.id && canvas.ready, { timeout: 20000, what: 'the world map' });
+        assert.deepEqual(errors.errors, []);
+        if (!game.modules.get('augur-nexus')?.active) return;
+        const cfg = world.flags.sacadia.prologue;
         const sitesTo = () => Object.values(world.getFlag('augur-nexus', 'sites')?.records ?? {}).filter((r) => r.linkedSceneId === scene.id);
-        const folders = new Set(game.folders.map((f) => f.id));
-        const active = game.scenes.active;
+        const filed = () => game.journal.filter((j) => !prior.journal.has(j.id) && j.flags?.['augur-nexus']?.campaignEntity);
+        const ofType = (type) => filed().filter((j) => j.flags['augur-nexus'].campaignEntity.type === type);
+        assert.isTrue(world.getFlag('augur-nexus', 'nexusRoot'), 'the Nexus scene');
+        assert.equal(sitesTo().length, 1, 'a site that opens the battle map');
+        assert.equal(scene.getFlag('augur-nexus', 'lineage')?.parentSceneId, world.id, 'the battle map sits under the world map');
+        assert.equal(ofType('faction').length, cfg.nexus.factions.length, 'the organizations');
+        assert.equal(ofType('npc').length, cfg.nexus.people.length, 'their people');
+        assert.equal(ofType('quest').length, 1, 'the quest');
+        const wanabbul = ofType('npc').find((j) => j.name === 'Wanabbul the Vast');
+        assert.equal(wanabbul.flags['augur-nexus'].campaignEntity.projections.actorUuid, actor('Wanabbul the Vast').uuid, 'linked to its actor');
+        const count = filed().length;
+        await macro.execute();
+        assert.equal(sitesTo().length, 1, 'running it again makes no second site');
+        assert.equal(filed().length, count, 'or anything else twice');
+      });
+
+      it('the Travel Ledger walks the party along the road a day at a time (hexes, supply, a chat card); Undo and Start Over take days back', async () => {
         const indy = game.modules.get('indy-route')?.active ? game.modules.get('indy-route').api : null;
+        const travel = () => world.flags.sacadia.travel;
+        const party = world.tokens.get(travel().tokenId);
+        const start = { x: party.x, y: party.y };
+        const dayTiles = () => world.tiles.filter((t) => t.flags?.sacadia?.travelDay).length;
+        const ledger = new TravelLedger({ scene: world });
         try {
-          await macro.execute();
-          await until(() => world.active && canvas.scene?.id === world.id && canvas.ready, { timeout: 20000, what: 'the world map' });
+          const since = Date.now();
+          const day1 = await ledger.travelDay();
+          assert.equal(day1.hexes, 4, 'on foot on a dirt road');
+          // The road's first stretch is straight and longer than a day, so the day is a straight 4 hexes.
+          assert.closeTo(Math.hypot(party.x - start.x, party.y - start.y), 4 * pxPerHex(world.grid), 1.5, 'the party moved 4 hexes along the road');
+          assert.deepEqual([travel().food, travel().water], [2, 1], 'ate a food and a water');
+          const card = await until(() => game.messages.contents.find((m) => (m.timestamp ?? 0) >= since && /travel-card/.test(m.content)),
+            { what: "the day's card" });
+          assert.match(card.content, /Day 1/);
+          const afterDay1 = { x: party.x, y: party.y };
+          await world.setFlag('sacadia', 'travel', { today: { weather: -1, terrain: -1 } });
+          const day2 = await ledger.travelDay();
+          assert.equal(day2.hexes, 2, 'rain in the hills: 4 − 1 − 1');
+          if (indy) assert.equal(dayTiles(), 2, 'each day stays on the map as a tile');
+          await ledger.undoDay();
+          assert.equal(travel().log.length, 1);
+          assert.deepEqual({ x: party.x, y: party.y }, afterDay1, 'the party back where day 1 ended');
+          assert.deepEqual([travel().food, travel().water], [2, 1], "day 2's supply back");
+          if (indy) assert.equal(dayTiles(), 1, "day 2's tile gone");
+          await ledger.startOver({ confirm: false });
+          assert.equal(travel().log.length, 0);
+          assert.deepEqual({ x: party.x, y: party.y }, start, 'the party back at Tianqis');
+          assert.deepEqual([travel().food, travel().water], [3, 2], 'all the supply back');
+          assert.equal(dayTiles(), 0);
+          // Nothing of Indy Route's left on screen to follow the GM to the next scene.
+          if (indy) assert.equal((window.__indyRouteBroadcast?.containers ?? []).filter((c) => !c.container?.destroyed).length, 0, 'no live lines');
           assert.deepEqual(errors.errors, []);
-          if (game.modules.get('augur-nexus')?.active) {
-            assert.equal(sitesTo().length, 1, 'a site that opens the battle map');
-            assert.equal(scene.getFlag('augur-nexus', 'lineage')?.parentSceneId, world.id, 'the battle map sits under the world map');
-            await macro.execute();
-            assert.equal(sitesTo().length, 1, 'running it again makes no second site');
-          }
-          if (indy) {
-            const road = world.getFlag('sacadia', 'prologue').road;
-            assert.ok(indy.listRoutes().some((r) => r.id === road), "the road is in Indy Route's Route Manager");
-            await until(() => indy.isRouteActive(road), { timeout: 10000, what: 'the road to play' });
-          }
         } finally {
-          indy?.clearAllRoutes();
-          // Nexus files the battle map in a folder under the world map's name: remove it with the rest.
-          for (const f of game.folders.filter((x) => !folders.has(x.id))) fx.track(f);
+          await party.update(start, { animate: false });
+          // What Nexus filed (its folders and journal entries) goes with the rest.
+          for (const f of game.folders.filter((x) => !prior.folders.has(x.id))) fx.track(f);
+          for (const j of game.journal.filter((x) => !prior.journal.has(x.id))) fx.track(j);
           // Nexus turns deleting a map with sites into a confirm for its whole branch, so delete these two here, telling it
           // the deletion is handled (the rest of the cleanup is after()).
           if (game.modules.get('augur-nexus')?.active) for (const s of [scene, world]) await s.delete({ 'augur-nexus': { nexusDeleteHandled: true } });

@@ -16,7 +16,8 @@
       "catalogId": "tusk_headdress",
       "kind": "adornment",
       "armorPrereq": "Fur Set",
-      "buildHash": "fea9b6d6494c"
+      "bargain": "adornments",
+      "buildHash": "16a0e5b22456"
     }
   }
 }

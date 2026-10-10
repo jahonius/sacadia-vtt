@@ -1,5 +1,6 @@
 import SacadiaDataModel from "./base-model.mjs";
 import { gearId, gearSlug, findGear, armorMaterial, shieldSize } from "../helpers/actor-utils.mjs";
+import { goodsCapacity, runeDeltas } from "../helpers/goods.mjs";
 import { defenseValue, effectiveDefenseStat, evaluatePredicate, resolveModifierValue, modifierIsRollTime, parseResistances, predicateAtoms } from "../helpers/derivation.mjs";
 import { REND_KEYS } from "../helpers/rend.mjs";
 
@@ -271,7 +272,7 @@ export default class SacadiaActorBase extends SacadiaDataModel {
     this._applyConditionEffects(); // fold leveled conditions into bonuses/disadvantage before defenses
     this._prepareStats();
     this._prepareModifiers();      // fold qualifying conditional modifiers into the sinks (pre-defense)
-    this._prepareGearEffects();    // adornments and trinkets kept at hand (Saltstone, Finger Necklace, Tusk Headdress)
+    this._prepareGearEffects();    // adornments and trinkets kept at hand (Saltstone, Finger Necklace, Tusk Headdress), an active rune
     this._prepareDefenses();
     this._prepareResistances();
     this._prepareSize();
@@ -317,6 +318,8 @@ export default class SacadiaActorBase extends SacadiaDataModel {
     const fullyRended = worn.length > 0 && worn.every((i) => REND_KEYS.every((k) => (i.system.rend?.[k] ?? 0) >= (i.system.defenses?.[k] ?? 0)));
     if (fullyRended && findGear(this.parent, 'stamped_feathers')) { value += 10; notes.push('stamped-feathers'); }
     if (opts['self:gear:visaged-breastplate']) { value -= 5; notes.push('visaged-breastplate'); }
+    // Gold Wings (clothing add-on, p.199): "When wearing those Sandals, increase your base move speed by 5ft."
+    if (opts['self:gear:gold-wings'] && findGear(this.parent, 'sandals', { where: 'hand' })) { value += 5; notes.push('gold-wings'); }
     if (opts['self:wielding:tower-shield'] && !opts['self:ability:mastery_defensive']) { value -= 5; notes.push('tower'); }
     // Toxin to Tonic turns Slowed into +5ft per level.
     if (slowed > 0) { value += ((this.bonuses?.tonic?.slowed ?? 0) > 0 ? 5 : -5) * Math.min(6, slowed); notes.push('slowed'); }
@@ -781,6 +784,14 @@ export default class SacadiaActorBase extends SacadiaDataModel {
       const a = this._armorContribution();
       if (!(a.ad + a.pd + a.td + a.md)) this.bonuses.defense.dr += 1;
     }
+    // An active Rune (p.209): worn on armor, readied, activated (equipped). Its changes are the ones chosen when bought.
+    const items = this.parent?.items ?? [];
+    const rune = items.find((i) => i.type === 'gear' && i.flags?.sacadia?.goods?.rune && i.system.equipped && i.system.storage !== 'sis');
+    const armored = items.some((i) => i.type === 'armor' && i.system.equipped && i.system.weaponType !== 'shield');
+    if (rune && armored) {
+      const d = runeDeltas(rune.flags.sacadia.goods.rune, rune.flags.sacadia.runeChoice);
+      for (const k of Object.keys(d)) this.bonuses.defense[k] += d[k];
+    }
   }
 
   /**
@@ -793,9 +804,10 @@ export default class SacadiaActorBase extends SacadiaDataModel {
     const items = (this.parent.items ?? []).filter((i) => ['gear', 'armor'].includes(i.type));
     const opts = this._rollOptions?.() ?? {};
     const freeDivine = !!opts['self:ability:fb_elemental_weapon'];
-    let risUsed = 0; let sisUsed = 0; let sisMax = 0;
+    // Bags and containers give SIS (only the largest Backpack, Chest … counts), readied baggage and pockets give RIS.
+    const capacity = goodsCapacity(items);
+    let risUsed = 0; let sisUsed = 0; const sisMax = capacity.sis;
     for (const i of items) {
-      sisMax += i.system.providesSis ?? 0;
       if (freeDivine && i.flags?.sacadia?.signature) continue;
       if (i.system.storage === 'sis') sisUsed += i.system.slots ?? 1; else risUsed += i.system.slots ?? 1;
     }
@@ -804,7 +816,7 @@ export default class SacadiaActorBase extends SacadiaDataModel {
     const readied = items.filter((i) => i.system.storage !== 'sis');
     const axehappy = !!opts['self:ability:bd_axehappy'] && readied.length > 0 && readied.every((i) => (i.type === 'armor'
       ? i.system.equipped : (/\bversatile\b/i.test(i.system.traits ?? '') || /(^|_)(clothes|clothing|dagger_belt)(_|$)/.test(gearId(i)))));
-    const risMax = 5 + (axehappy ? 3 : 0) + (this.bonuses?.ris ?? 0);
+    const risMax = 5 + (axehappy ? 3 : 0) + capacity.ris + (this.bonuses?.ris ?? 0);
     this.itemSlots = { ris: { used: risUsed, max: risMax }, sis: { used: sisUsed, max: sisMax },
       overburdened: risUsed + sisUsed > risMax + sisMax, axehappy };
   }
@@ -836,6 +848,14 @@ export default class SacadiaActorBase extends SacadiaDataModel {
       // Favored Style, favoring Fontmade: "gain resistance to this [chosen] damage type equal to your Proficiency".
       const element = item.flags?.sacadia?.catalogId === "favored_style" ? item.flags.sacadia.pickValue : "";
       if (element && this._favoredTypes().includes("fontmade")) out[element] = (out[element] ?? 0) + (this._modifierNumbers?.().proficiency ?? 0);
+      // An ability's standing resistance (`flags.sacadia.resistance`: {types, pick, value}): Elemental Resistance's
+      // Proficiency against its picked element, Stoneskin's half Proficiency against slashing and piercing weapons.
+      const r = item.type === "ability" ? item.flags?.sacadia?.resistance : null;
+      if (r) {
+        const types = r.pick ? [item.flags.sacadia.pickValue].filter(Boolean) : (r.types ?? []);
+        const v = resolveModifierValue(r.value, this._modifierNumbers?.() ?? {});
+        for (const t of types) out[t] = (out[t] ?? 0) + v;
+      }
     }
     this.typedDr = out;
   }

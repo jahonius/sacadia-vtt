@@ -1,0 +1,34 @@
+{
+  "_id": "19179ce1788cd552",
+  "_key": "!items!19179ce1788cd552",
+  "name": "Salt - Uncommon (Pouch)",
+  "type": "gear",
+  "img": "icons/consumables/food/salt-seasoning-spice-pink.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 300,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 5gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_salt_uncommon_pouch",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "deb014dbb21c"
+    }
+  }
+}

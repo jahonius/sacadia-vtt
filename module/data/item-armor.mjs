@@ -15,6 +15,8 @@ export default class SacadiaArmor extends SacadiaItemBase {
     const schema = super.defineSchema(); // description
 
     schema.equipped = new fields.BooleanField({ initial: false });
+    // Retail value in gc (the equipment tables' "Retail Value"); a merchant buys at half (helpers/downtime.mjs).
+    schema.value = new fields.NumberField({ required: true, nullable: false, initial: 0, min: 0 });
     // Armor weight class (book pp.192–194). Blank = unclassified. Each equipped armor advertises
     // `self:armor:<category>`; a derived `self:armor:only-light` fires when every worn armor is light.
     schema.category = new fields.StringField({

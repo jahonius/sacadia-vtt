@@ -1,0 +1,33 @@
+{
+  "_id": "f4c2ca4bed9b0613",
+  "_key": "!items!f4c2ca4bed9b0613",
+  "name": "Painting (Wall) / 5ft x 5ft Square",
+  "type": "gear",
+  "img": "icons/tools/hand/paint-palette.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 260,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 160gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 160,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_painting_wall_5ft_x_5ft_square",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "829403586eba"
+    }
+  }
+}

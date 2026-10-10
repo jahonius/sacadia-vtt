@@ -3,19 +3,32 @@
   "_key": "!items!91012c98fc912bd6",
   "name": "Woad Facepaint",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/commodities/materials/bowl-powder-blue.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 140,
   "system": {
-    "description": "<p>Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it.</p>",
+    "description": "<p><strong>Woad Facepaint</strong> (Passive): If you equip Woad Facepaint in your RIS, gain 1X Advantage to Initiative. After you roll 1X Advantage to Initiative, expend the Woad Facepaint.</p><p class=\"goods-facts\">1 Item Slot (Small, Worn, RIS Passive) · 10gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 10
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, worn, ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "woad_facepaint",
       "kind": "trinket",
-      "buildHash": "66e3e15e8899"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "75ab944abe0e"
     }
   }
 }

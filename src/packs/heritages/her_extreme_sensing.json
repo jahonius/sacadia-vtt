@@ -1,0 +1,49 @@
+{
+  "_id": "7435da49a1d8e81e",
+  "_key": "!items!7435da49a1d8e81e",
+  "name": "Extreme Sensing",
+  "type": "ability",
+  "img": "icons/magic/perception/eye-ringed-green.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 10,
+  "system": {
+    "description": "<p>Gain one free Perception Talent Specialization now. You do not need to take general Perception prerequisites to take this talent, though you may not further level into this talent without taking the general Perception talent you specialize into. <em>(It’s added to your specialized talents; name it there.)</em></p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Hulinari Heritage",
+      "prerequisite": "p.91"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_extreme_sensing",
+      "transcribed": true,
+      "heritage": "hulinari",
+      "grantsSpecialty": {
+        "talent": "perception",
+        "name": ""
+      },
+      "buildHash": "7db143e62027"
+    }
+  }
+}

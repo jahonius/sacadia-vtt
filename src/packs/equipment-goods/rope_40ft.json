@@ -1,0 +1,34 @@
+{
+  "_id": "a4043a69c4c3cd2e",
+  "_key": "!items!a4043a69c4c3cd2e",
+  "name": "Rope (40ft)",
+  "type": "gear",
+  "img": "icons/sundries/survival/rope-coiled-brown.webp",
+  "folder": "e2ad82be035f80b1",
+  "sort": 20,
+  "system": {
+    "description": "<p><strong>Affix Rope</strong> (Action): With rope equipped in both hands, choose one spot within 5ft of you. You affix the rope to that point. You may also use this action to untie rope, and return it to your hands.</p><p><strong>Pull Rope</strong> (Action): Choose rope that is affixed to a spot within 5ft of you. You may either drape it down a rock face (making it climbable), or pull it up so that it cannot be climbed.</p><p><strong>Climb w/Rope</strong> (Action): You may climb up or down a rope. Move up to your move speed, but treat the distance climbed as difficult terrain. You may end your turn on a wall, but if you do, you may not use a Reaction or your arms, and you are treated as prone.</p><p class=\"goods-facts\">1 Item Slot · 5sc · Climbing Tools, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "rope_40ft",
+      "kind": "goods",
+      "goods": {
+        "table": "climbing"
+      },
+      "bargain": "adventuring",
+      "buildHash": "8e4acf9bc32a"
+    }
+  }
+}

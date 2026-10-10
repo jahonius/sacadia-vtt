@@ -1,0 +1,34 @@
+{
+  "_id": "8863f5aa7d2ff820",
+  "_key": "!items!8863f5aa7d2ff820",
+  "name": "Splint",
+  "type": "gear",
+  "img": "icons/tools/medical/bandages-gauze-rough.webp",
+  "folder": "7469e6a4a14577d5",
+  "sort": 70,
+  "system": {
+    "description": "<p><strong>Splint</strong> (Ceremony): <em>Prerequisite: Medicine General Talent.</em> During a Quick Rest, choose one target with Enduring Exhaustion on a specific wound (e.g., a Wounded limb, if you use the Wound Variant Dying Rules). Remove the limb exhaustion on that wound.</p><p class=\"goods-facts\">1 Item Slot · 100gc · First Aid, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "splint",
+      "kind": "goods",
+      "goods": {
+        "table": "first-aid"
+      },
+      "bargain": "adventuring",
+      "buildHash": "efcbd26235ae"
+    }
+  }
+}

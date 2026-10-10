@@ -706,6 +706,317 @@
   color: var(--sac-blood);
 }
 
+.application.sacadia-travel .window-content {
+  padding: 0.7rem 0.85rem 0.85rem;
+}
+.application.sacadia-travel .travel-ledger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.application.sacadia-travel .tl-progress .tl-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  overflow: hidden;
+}
+.application.sacadia-travel .tl-progress .tl-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--sac-blood-deep), var(--sac-blood));
+}
+.application.sacadia-travel .tl-progress .tl-facts {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-travel .tl-progress .tl-facts b {
+  font-family: var(--sac-font-display);
+  font-size: 1rem;
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-travel fieldset {
+  margin: 0;
+  padding: 0.5rem 0.6rem 0.6rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  background: var(--sac-panel);
+}
+.application.sacadia-travel legend {
+  padding: 0 0.3rem;
+  font-family: var(--sac-font-display);
+  font-weight: 700;
+  color: var(--sac-gold-hi);
+}
+.application.sacadia-travel .tl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 0.7rem;
+}
+.application.sacadia-travel .tl-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.application.sacadia-travel .tl-grid label select, .application.sacadia-travel .tl-grid label input[type=text], .application.sacadia-travel .tl-grid label input[type=number] {
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.application.sacadia-travel .tl-grid label.wide {
+  grid-column: 1/-1;
+}
+.application.sacadia-travel .tl-grid label.check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--sac-text);
+}
+.application.sacadia-travel .tl-hint {
+  margin: 0.4rem 0 0;
+  font-size: 0.75rem;
+  color: var(--sac-dim);
+}
+.application.sacadia-travel .tl-hint.warn {
+  color: var(--sac-blood);
+}
+.application.sacadia-travel .warn {
+  color: var(--sac-blood);
+}
+.application.sacadia-travel .tl-preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.8rem;
+  margin-top: 0.55rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 4px;
+  background: var(--sac-inset);
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-travel .tl-preview b {
+  color: var(--sac-gold-hi);
+  font-size: 0.95rem;
+}
+.application.sacadia-travel .tl-preview .km {
+  margin-left: -0.5rem;
+}
+.application.sacadia-travel .tl-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+.application.sacadia-travel .tl-actions button {
+  flex: 0 0 auto;
+  min-height: 2rem;
+  padding: 0 0.7rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  color: var(--sac-text);
+  font-size: 0.85rem;
+}
+.application.sacadia-travel .tl-actions button i {
+  color: var(--sac-dim);
+}
+.application.sacadia-travel .tl-actions button:hover:not(:disabled) {
+  border-color: var(--sac-gold-lo);
+  background: rgba(212, 165, 60, 0.1);
+}
+.application.sacadia-travel .tl-actions button:disabled {
+  opacity: 0.45;
+}
+.application.sacadia-travel .tl-actions .tl-go {
+  flex: 1 1 auto;
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  font-weight: 700;
+  background: rgba(212, 165, 60, 0.16);
+}
+.application.sacadia-travel .tl-actions .tl-go i {
+  color: var(--sac-gold);
+}
+.application.sacadia-travel .tl-log {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-travel .tl-log th {
+  text-align: left;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+  padding: 0.2rem 0.35rem;
+  border-bottom: 1px solid var(--sac-line-strong);
+}
+.application.sacadia-travel .tl-log td {
+  padding: 0.25rem 0.35rem;
+  border-bottom: 1px solid var(--sac-line);
+  vertical-align: top;
+}
+.application.sacadia-travel .tl-log td small, .application.sacadia-travel .tl-log td em {
+  color: var(--sac-dim);
+}
+.application.sacadia-travel .tl-log .num {
+  text-align: right;
+}
+.application.sacadia-travel .tl-log tbody tr:first-child td {
+  color: var(--sac-gold-hi);
+}
+
+.application.sacadia-long-rest .window-content {
+  padding: 0.7rem 0.85rem 0.85rem;
+}
+.application.sacadia-long-rest .long-rest {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.application.sacadia-long-rest .lr-intro, .application.sacadia-long-rest .lr-hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--sac-dim);
+}
+.application.sacadia-long-rest .lr-weeks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.application.sacadia-long-rest .lr-week {
+  padding: 0.45rem 0.6rem 0.5rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 5px;
+  background: var(--sac-panel);
+}
+.application.sacadia-long-rest .lr-week.warn {
+  border-color: var(--sac-blood);
+}
+.application.sacadia-long-rest .lr-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.application.sacadia-long-rest .lr-head .lr-n {
+  flex: 0 0 4.2rem;
+  font-family: var(--sac-font-display);
+  color: var(--sac-gold-hi);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-long-rest .lr-head select {
+  flex: 1 1 auto;
+}
+.application.sacadia-long-rest .lr-head .lr-page {
+  font-size: 0.72rem;
+  color: var(--sac-dim);
+}
+.application.sacadia-long-rest .lr-head .lr-remove {
+  color: var(--sac-dim);
+  cursor: pointer;
+}
+.application.sacadia-long-rest .lr-head .lr-remove:hover {
+  color: var(--sac-blood);
+}
+.application.sacadia-long-rest .lr-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.6rem;
+  margin-top: 0.4rem;
+}
+.application.sacadia-long-rest .lr-detail:empty {
+  display: none;
+}
+.application.sacadia-long-rest .lr-detail label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sac-dim);
+}
+.application.sacadia-long-rest .lr-detail label select, .application.sacadia-long-rest .lr-detail label input {
+  font-size: 0.86rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.application.sacadia-long-rest .lr-detail label.wide {
+  grid-column: 1/-1;
+}
+.application.sacadia-long-rest .lr-detail .lr-hint {
+  grid-column: 1/-1;
+}
+.application.sacadia-long-rest .lr-note {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: var(--sac-gold);
+}
+.application.sacadia-long-rest .lr-week.warn .lr-note {
+  color: var(--sac-blood);
+}
+.application.sacadia-long-rest .lr-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.application.sacadia-long-rest .lr-actions button {
+  flex: 0 0 auto;
+  min-height: 2rem;
+  padding: 0 0.7rem;
+  background: var(--sac-panel);
+  border: 1px solid var(--sac-line-strong);
+  border-radius: 4px;
+  color: var(--sac-text);
+  font-size: 0.85rem;
+}
+.application.sacadia-long-rest .lr-actions button i {
+  color: var(--sac-dim);
+}
+.application.sacadia-long-rest .lr-actions button:hover {
+  border-color: var(--sac-gold-lo);
+  background: rgba(212, 165, 60, 0.1);
+}
+.application.sacadia-long-rest .lr-actions .lr-purse {
+  flex: 1 1 auto;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.application.sacadia-long-rest .lr-actions .lr-purse i {
+  color: var(--sac-gold);
+}
+.application.sacadia-long-rest .lr-actions .lr-go {
+  border-color: var(--sac-gold);
+  color: var(--sac-gold-hi);
+  font-weight: 700;
+  background: rgba(212, 165, 60, 0.16);
+}
+.application.sacadia-long-rest .lr-actions .lr-go i {
+  color: var(--sac-gold);
+}
+
 /* Styles limited to sacadia sheets */
 .sacadia {
   /* ============================================================
@@ -1958,6 +2269,59 @@
   border-color: var(--sac-gold-lo);
   outline: none;
 }
+.sacadia .identity-band .id-field .sac-label a {
+  margin-left: 0.3rem;
+  color: var(--sac-gold-lo);
+}
+.sacadia .identity-band .id-field .sac-label a:hover {
+  color: var(--sac-gold);
+}
+.sacadia .origin-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: -0.3rem 0 0.7rem;
+  padding: 0 0.6rem;
+  font-size: 0.85rem;
+}
+.sacadia .origin-details .origin-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.8rem;
+  margin: 0;
+  color: var(--sac-dim);
+}
+.sacadia .origin-details .origin-line b {
+  color: var(--sac-gold);
+}
+.sacadia .origin-details .origin-granted {
+  gap: 0.25rem 0.5rem;
+}
+.sacadia .origin-details .origin-granted .origin-grant {
+  padding: 0 0.35rem;
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  color: var(--sac-text);
+}
+.sacadia .origin-details .origin-granted .origin-grant:hover {
+  border-color: var(--sac-gold-lo);
+}
+.sacadia .origin-details .origin-laws h4 {
+  margin: 0.2rem 0;
+  font-family: var(--sac-font-display);
+  font-size: 0.9rem;
+  color: var(--sac-gold-lo);
+  border: none;
+}
+.sacadia .origin-details .origin-laws ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.sacadia .origin-details .origin-laws li {
+  margin: 0.12rem 0;
+  line-height: 1.35;
+}
 .sacadia .bio-sections {
   display: flex;
   flex-direction: column;
@@ -2161,6 +2525,153 @@
 .sacadia .inv-row .storage-toggle.sis i {
   color: var(--sac-dim);
 }
+.sacadia .purse {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.7rem;
+  margin: 0.15rem 0 0.35rem;
+  font-size: 0.85rem;
+  color: var(--sac-dim);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .purse > i {
+  color: var(--sac-gold);
+  font-size: 0.8rem;
+}
+.sacadia .purse label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.sacadia .purse label input {
+  width: 4.2rem;
+  text-align: right;
+  background: var(--sac-inset);
+  border: 1px solid var(--sac-line);
+  border-radius: 3px;
+  color: var(--sac-text);
+}
+.sacadia .purse a {
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia .purse a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .purse .purse-start {
+  padding: 0.05rem 0.5rem;
+  border: 1px solid var(--sac-gold-lo);
+  border-radius: 10px;
+  color: var(--sac-gold-hi);
+}
+.sacadia .inv-facts .fact-price {
+  color: var(--sac-gold-lo);
+}
+.sacadia .inv-row .light-toggle {
+  color: var(--sac-dim);
+}
+.sacadia .inv-row .light-toggle.on {
+  color: #f0a046;
+  text-shadow: 0 0 6px rgba(240, 160, 70, 0.55);
+}
+.sacadia .inv-row.lit {
+  background: linear-gradient(90deg, rgba(240, 160, 70, 0.1), transparent 60%);
+}
+.sacadia .inv-row .sac-chip.lit {
+  color: #f3b765;
+  border-color: rgba(240, 160, 70, 0.5);
+}
+.sacadia .inv-row .sac-chip.lit i {
+  color: #f0a046;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sacadia .inv-row .light-toggle.on i {
+    animation: sac-flicker 2.4s ease-in-out infinite;
+  }
+}
+@keyframes sac-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0.78;
+  }
+  60% {
+    opacity: 0.95;
+  }
+}
+.sacadia .gear-fields select.coin {
+  flex: 0 0 4.2rem;
+}
+.sacadia .gear-fields .unit {
+  flex: 0 0 auto;
+  color: var(--sac-dim);
+  font-size: 0.8rem;
+}
+.sacadia .gear-fields .rune-choices select {
+  flex: 0 0 5rem;
+}
+.sacadia .gear-fields .rune-choices .rune-fixed {
+  margin: 0.1rem 0 0.3rem;
+  color: var(--sac-gold-hi);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.sacadia .gear-fields .rune-choices .hint {
+  margin: 0.3rem 0 0;
+  color: var(--sac-dim);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.sacadia h3 .h-add {
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--sac-dim);
+}
+.sacadia h3 .h-add:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .influence-list {
+  list-style: none;
+  margin: 0 0 0.7rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.sacadia .influence-list .influence-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sacadia .influence-list .influence-row input[type=text] {
+  flex: 1 1 auto;
+}
+.sacadia .influence-list .influence-row .influence-value {
+  flex: 0 0 3.2rem;
+  width: 3.2rem;
+  text-align: center;
+}
+.sacadia .influence-list .influence-row a {
+  flex: 0 0 auto;
+  cursor: pointer;
+  color: var(--sac-dim);
+  white-space: nowrap;
+  font-size: 0.82rem;
+}
+.sacadia .influence-list .influence-row a:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .influence-list .influence-row a.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.sacadia .influence-list .influence-empty {
+  font-size: 0.82rem;
+  color: var(--sac-dim);
+  font-style: italic;
+}
 .sacadia .item-slots {
   display: flex;
   flex-wrap: wrap;
@@ -2225,6 +2736,9 @@
 }
 .sacadia .talent-group.specialties .specialty a:hover {
   color: var(--sac-gold-hi);
+}
+.sacadia .talent-group.specialties .specialty.granted {
+  box-shadow: inset 2px 0 0 var(--sac-gold-lo);
 }
 .sacadia.item .sheet-header {
   display: flex;
@@ -2831,6 +3345,11 @@
 .sacadia .npc-controls a:hover {
   opacity: 1;
 }
+.sacadia .rest-controls .rest-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
 .sacadia .rest-controls a.primary, .sacadia .npc-controls a.primary {
   padding: 0.12rem 0.6rem;
   border: 1px solid var(--sac-gold-lo);
@@ -3130,9 +3649,50 @@
 .sacadia .form-row > select, .sacadia .form-row > input, .sacadia .form-row > multi-checkbox {
   flex: 1;
 }
+.sacadia .origin-fields .law-row {
+  flex-wrap: wrap;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--sac-line);
+}
+.sacadia .origin-fields .law-row > input[type=text] {
+  flex: 1;
+}
+.sacadia .origin-fields .law-row > label.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+  opacity: 0.8;
+}
+.sacadia .origin-fields .law-row > textarea {
+  flex: 1 1 100%;
+  min-height: 3.4rem;
+  font-family: var(--sac-font-ui);
+  font-size: 0.85rem;
+  resize: vertical;
+}
+.sacadia .origin-fields .origin-options input.key {
+  flex: 0 0 7rem;
+}
+.sacadia .origin-fields .origin-grants .grant-name {
+  flex: 1;
+  cursor: pointer;
+}
+.sacadia .origin-fields .origin-grants .grant-name:hover {
+  color: var(--sac-gold-hi);
+}
+.sacadia .origin-fields .origin-grants select {
+  flex: 0 0 11rem;
+}
+.sacadia .origin-fields .hint {
+  margin: 0.2rem 0;
+  color: var(--sac-dim);
+  font-style: italic;
+}
 .sacadia .ability-fields fieldset,
 .sacadia .armor-fields fieldset,
-.sacadia .gear-fields fieldset {
+.sacadia .gear-fields fieldset,
+.sacadia .origin-fields fieldset {
   margin: 0.5rem 0;
   border: 1px solid var(--sac-line);
   border-radius: 4px;
@@ -3140,7 +3700,8 @@
 }
 .sacadia .ability-fields fieldset legend,
 .sacadia .armor-fields fieldset legend,
-.sacadia .gear-fields fieldset legend {
+.sacadia .gear-fields fieldset legend,
+.sacadia .origin-fields fieldset legend {
   padding: 0 0.35rem;
   font-family: var(--sac-font-display);
   font-size: 0.72rem;
@@ -3150,14 +3711,16 @@
 }
 .sacadia .ability-fields fieldset legend a,
 .sacadia .armor-fields fieldset legend a,
-.sacadia .gear-fields fieldset legend a {
+.sacadia .gear-fields fieldset legend a,
+.sacadia .origin-fields fieldset legend a {
   margin-left: 0.3rem;
   cursor: pointer;
   color: var(--sac-dim);
 }
 .sacadia .ability-fields fieldset legend a:hover,
 .sacadia .armor-fields fieldset legend a:hover,
-.sacadia .gear-fields fieldset legend a:hover {
+.sacadia .gear-fields fieldset legend a:hover,
+.sacadia .origin-fields fieldset legend a:hover {
   color: var(--sac-gold-hi);
 }
 .sacadia .activity {
@@ -3913,6 +4476,34 @@
 }
 .sacadia.rest-card .rest-list .rest-value b {
   color: var(--sac-gold-hi);
+}
+.sacadia.long-rest-card .rest-list {
+  grid-template-columns: 1fr;
+  gap: 0.1rem;
+}
+.sacadia.long-rest-card .rest-list .rest-value {
+  margin-bottom: 0.3rem;
+}
+.sacadia.long-rest-card .rest-list .rest-value small {
+  color: var(--sac-dim);
+}
+.sacadia.long-rest-card .rest-list .rest-value em {
+  color: var(--sac-dim);
+}
+.sacadia a.content-link {
+  background: rgba(212, 165, 60, 0.1);
+  border: 1px solid var(--sac-gold-lo);
+  border-radius: 3px;
+  padding: 0 0.25rem;
+  color: var(--sac-gold-hi);
+  white-space: nowrap;
+}
+.sacadia a.content-link i {
+  color: var(--sac-gold);
+}
+.sacadia a.content-link:hover {
+  background: rgba(212, 165, 60, 0.2);
+  text-shadow: none;
 }
 .sacadia.note-card {
   padding: 0.4rem 0.55rem;

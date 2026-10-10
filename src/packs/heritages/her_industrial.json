@@ -1,0 +1,45 @@
+{
+  "_id": "e106b98ffaa52202",
+  "_key": "!items!e106b98ffaa52202",
+  "name": "Industrial",
+  "type": "ability",
+  "img": "icons/tools/smithing/anvil.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 10,
+  "system": {
+    "description": "<p>You are extremely industrious, and are adept at using the tools you need. Choose one weapon, tool, or armor in which you do not already have Training, and gain Training in the use of that item.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Human Heritage",
+      "prerequisite": "p.81"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_industrial",
+      "transcribed": true,
+      "heritage": "human",
+      "buildHash": "3259b92624e3"
+    }
+  }
+}

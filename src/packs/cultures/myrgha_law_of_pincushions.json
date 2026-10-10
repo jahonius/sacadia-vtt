@@ -1,0 +1,52 @@
+{
+  "_id": "949cc18d32788a66",
+  "_key": "!items!949cc18d32788a66",
+  "name": "Law of Pincushions",
+  "type": "ability",
+  "img": "icons/skills/social/trading-injustice-scale-gray.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 40,
+  "system": {
+    "description": "<p>Choose one target within 30ft of you. For as long as you maintain Focus, they critically hit with their first attack each turn that hits but does not critically hit. Each time they do, gain one Curse Counter. Each time you are hit (and the attack does not critically hit you), remove one Curse Counter. The attack dealt against you critically hits. You may only use this when you are below half HP. You lose all Curse Counters on a Nightly Rest, and one per quick rest. You lose Focus if they move outside of 30ft range of you. You may use this once per combat.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 7,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Bureau of Religion Oracles",
+      "prerequisite": "Myrgha Cultural Heritage, Oracle, Society: Myrgha[3], Society: Legalism[3], Religion: Specific[3] · p.31"
+    },
+    "activities": [],
+    "modifiers": [],
+    "usage": {
+      "per": "combat",
+      "max": 1,
+      "requires": [],
+      "requiresLabel": "",
+      "upgrades": []
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_law_of_pincushions",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "08ea8d74994e"
+    }
+  }
+}

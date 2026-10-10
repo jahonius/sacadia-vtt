@@ -1,0 +1,45 @@
+{
+  "_id": "8fe0ec6e4a9116f6",
+  "_key": "!items!8fe0ec6e4a9116f6",
+  "name": "Song of the Skies",
+  "type": "ability",
+  "img": "icons/magic/air/air-burst-spiral-large-blue.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 30,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Song of the Solemn, increase your critical hit range by 1 against a Targeted Foe (i.e., if you would critical hit on a natural 20, you do on a 19 or 20).</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Fatebound, Targeted Foe · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_the_skies",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "d1d3b8692732"
+    }
+  }
+}

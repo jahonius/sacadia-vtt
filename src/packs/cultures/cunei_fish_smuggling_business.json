@@ -1,0 +1,37 @@
+{
+  "name": "Fish Smuggling Business",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a business. Rare, Water. No item slots.</em></p><p><strong>Prerequisites:</strong> Proficiency[3], Nimble Hands:Roguecraft[1], Stealth</p><p>Your family has opened a perfectly legitimate fishing market stall, and we’re not sure why this item says “smuggling”.</p><p><strong>Smuggling Job</strong> (Ceremony): As a Long Rest Action, you may spend any amount of gold on fresh fish and declare a destination. That destination must be another city or town, and must be more than a day’s travel away. After the long rest ends, you must immediately go to that location. For every day’s travel you go, gain 1X Disadvantage to all Stealth Checks, or rolls to hide that you are transporting fish. If you reach the end destination without any NPCs identifying that you are transporting raw fish, double the amount of money you spent on fresh fish when you reach the final destination.</p><p><strong>Smuggler’s Hideout</strong> (Passive): The first time you take this Inheritance, choose a location in a Cunei city you spend a lot of time in (you may work with your GM on this). Create a business front at that location, and then denote (narratively) a smuggler’s den hidden beneath or nearby that front. Also, take Hidden Tunnels:</p><p><strong>Hidden Tunnels</strong> (Passive): Choose a location in the city to which your smuggler’s den is secretly connected. When you do, work with your GM to define why and how the two points are secretly connected.Every time you inherit this item, you may choose an additional point to which this smuggler’s den is connected, providing you fast travel across the map.</p><p><em>Rulebook p.44.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "3c0923be58fba3e1",
+  "_key": "!items!3c0923be58fba3e1",
+  "folder": "c931f980fe44bd4d",
+  "sort": 20,
+  "img": "icons/environment/settlement/market-stall.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_fish_smuggling_business",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "business",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "6c790b1a9dec"
+    }
+  }
+}

@@ -19,14 +19,16 @@
     "maxStat": 25,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 850
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "masterwork_dye_set",
       "kind": "armor",
-      "buildHash": "ed79de210e02"
+      "bargain": "armor",
+      "buildHash": "6ce2cef244c4"
     }
   }
 }

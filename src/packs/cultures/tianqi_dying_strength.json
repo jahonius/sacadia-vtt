@@ -1,0 +1,58 @@
+{
+  "_id": "ae12698708b3185a",
+  "_key": "!items!ae12698708b3185a",
+  "name": "Dying Strength",
+  "type": "ability",
+  "img": "icons/skills/wounds/blood-spurt-spray-red.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 10,
+  "system": {
+    "description": "<p>When you are Dying, increase your damage dice of all weapons you use by one dice type. Additionally, if you take the Help action while Dying, give your ally 2X Advantage instead of 1X advantage.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: All Tianqi",
+      "prerequisite": "Tianqi Cultural Heritage · p.63"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Dying Strength",
+        "target": "damage",
+        "mode": "step",
+        "scope": "all",
+        "value": "1",
+        "predicate": [
+          {
+            "atom": "self:wounded"
+          }
+        ]
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_dying_strength",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "0880f0a8d01c"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "68ab23219540c152",
+  "_key": "!items!68ab23219540c152",
+  "name": "Swarm Form",
+  "type": "ancestry",
+  "img": "icons/creatures/birds/corvid-flying-wings-purple.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 90,
+  "system": {
+    "description": "<p>An intelligent and wily creature, swarming birds fly about the battlefield causing chaos, controlling the course of events, and manipulating enemies. Your chosen Swarm Form should be a flocking, flying animal that can coalesce in large clouds, such as cicadas, bees, crows, owls, or vampire bats.</p><p><em>Hulinari are both an Ancestry and a Profession: if you choose to play one, you must take the other. Every Hulinari Ancestry is a unique animal; choose your species. This also sets your Hulinari Warrior form.</em></p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.c081443068842715]{Smart Flock}, @UUID[Compendium.sacadia.heritages.Item.57c7ce8c7f18984c]{With Cunning}, @UUID[Compendium.sacadia.heritages.Item.c70c0fac00c40cd6]{Fly}</p><p><em>Hulinari Heritage. Rulebook p.92.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.c081443068842715",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.57c7ce8c7f18984c",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.c70c0fac00c40cd6",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "hulinari",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_swarm_form",
+      "hulinariForm": "swarm",
+      "buildHash": "018a221e512c"
+    }
+  }
+}

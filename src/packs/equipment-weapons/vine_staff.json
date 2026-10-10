@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "vine_staff",
       "kind": "weapon",
-      "buildHash": "da1ec12ec96f"
+      "bargain": "imbued-weapons",
+      "buildHash": "206985a7d91c"
     }
   }
 }

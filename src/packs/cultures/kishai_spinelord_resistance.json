@@ -1,0 +1,45 @@
+{
+  "_id": "354150f0e375cf03",
+  "_key": "!items!354150f0e375cf03",
+  "name": "Spinelord Resistance",
+  "type": "ability",
+  "img": "icons/magic/nature/leaf-arrowheads-glow-green.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 10,
+  "system": {
+    "description": "<p><em>Talent Points: 1 to 3.</em> When you make Survival Checks to navigate Kish, Forage, survive unique Kish biomes, or when you roll against Font Corruption from the Grass Font, gain 1X advantage for each level of Spinelord Resistance you possess.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Survival Talent",
+      "prerequisite": "Kishai Cultural Heritage, Survival · p.69"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_spinelord_resistance",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "d66cf8778f26"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "_id": "334fb58743ad45a5",
+  "_key": "!items!334fb58743ad45a5",
+  "name": "Chest (Small)",
+  "type": "gear",
+  "img": "icons/containers/chest/chest-simple-walnut.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 150,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 100gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_chest_small",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "bb7205b4e123"
+    }
+  }
+}

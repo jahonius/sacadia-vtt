@@ -1,0 +1,37 @@
+{
+  "name": "Noble Blood",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Legendary[1], Salt. No item slots.</em></p><p>You have inherited the greatest gift of the Tianqi - genetic lineage from the Ascendants themselves.</p><p><strong>Touching Gold</strong> (Passive): Through your divine blood, you can touch and interact with gold.</p><p><strong>Commanding Presence</strong> (Passive): People tend to listen to you, and you have a commanding presence. If you are a soldier, gain 1 extra Call Point beginning at Level 6.</p><p><strong>Boriand’s Blessing</strong> (Passive): Beginning at Level 11, you gain the notice of nobility. You are given a minor Boriandship. Gain 1 Influence with a Tianqi City of your choosing.</p><p><em>Rulebook p.67.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "5ee7d8aef9b50af3",
+  "_key": "!items!5ee7d8aef9b50af3",
+  "folder": "76562f6c37f89b61",
+  "sort": 120,
+  "img": "icons/consumables/potions/bottle-conical-corked-labeled-skull-poison-green.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_noble_blood",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "5483f872fe61"
+    }
+  }
+}

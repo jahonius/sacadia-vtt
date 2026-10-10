@@ -1,0 +1,35 @@
+{
+  "_id": "5e44d9e476e39104",
+  "_key": "!items!5e44d9e476e39104",
+  "name": "Sapline",
+  "type": "ancestry",
+  "img": "icons/commodities/gems/gem-amber-insect-orange.webp",
+  "folder": "f928a0400efbad4b",
+  "sort": 50,
+  "system": {
+    "description": "<p>The Sapline are birthed from the Amber Font, which fell into a small piece of sap in a tree. The warped realm around it crystalized into amber, its rivers flowing of golden sap. Sapline drip with this ooze. Lightly Corrupted Sapline have golden eyes or sticky skin. Heavily Corrupted Sapline have hair that constantly drips, or see-through skin. The Amber Font is an Earth Element Font. The Amber Fontborne are cursed, and can only be played when accompanied with one half of the Inherited Item Coin of a Mother’s Blessing. Take the ability that matches the strength of your Corruption (Strength of Warp): Saptouched or Oozing Flow.</p><p><strong>By your Strength of Warp:</strong> @UUID[Compendium.sacadia.abilities-lore.Item.20c61193a890578d]{Saptouched} (Lightly Warped), @UUID[Compendium.sacadia.abilities-lore.Item.eb5182c4e8a86e35]{Oozing Flow} (Heavily Warped)</p><p><em>Olganyar ancestry. Fontborne Heritage. Rulebook p.53.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.abilities-lore.Item.20c61193a890578d",
+        "option": "light"
+      },
+      {
+        "uuid": "Compendium.sacadia.abilities-lore.Item.eb5182c4e8a86e35",
+        "option": "heavy"
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fontborne",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_sapline",
+      "culture": "olganyar",
+      "buildHash": "09e5076c92f6"
+    }
+  }
+}

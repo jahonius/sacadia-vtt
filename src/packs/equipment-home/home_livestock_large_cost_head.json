@@ -1,0 +1,34 @@
+{
+  "_id": "27144699dc430bae",
+  "_key": "!items!27144699dc430bae",
+  "name": "Livestock - Large (cost/head)",
+  "type": "gear",
+  "img": "icons/creatures/mammals/livestock-cow-green.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 220,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 100gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_livestock_large_cost_head",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "ca7cfd196179"
+    }
+  }
+}

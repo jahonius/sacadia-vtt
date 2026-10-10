@@ -19,14 +19,16 @@
     "maxStat": 14,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 20
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "shoddy_fur_set",
       "kind": "armor",
-      "buildHash": "0e3367980c2d"
+      "bargain": "armor",
+      "buildHash": "b04af5326004"
     }
   }
 }

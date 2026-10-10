@@ -1,0 +1,375 @@
+[
+ {
+  "id": "myrgha_prospectors_rights",
+  "name": "Prospector’s Rights",
+  "section": "business",
+  "page": 32,
+  "rarity": "Rare",
+  "element": "Earth",
+  "prerequisites": "You work for a Myrgha Oligarch",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Your Oligarch has granted you with unique Prospector rights due to your family’s good services, allowing you to send expeditions to search for resources.",
+  "effects": [
+   {
+    "name": "Survey",
+    "tags": "A",
+    "text": "As a Long Rest Action, roll 1D20. For every Long Rest Action you use on this roll, gain 1X Advantage. If you roll a nat20, you find a vein of natural resources. Then, roll 1D6 and consult the table below:\n1: Your Oligarch thanks you, and takes the resources. Gain 1 Influence with your Oligarch and 1,000gp.\n2-5: You get rich from your find. Gain 10,000gp immediately\n6: You find an enormous vein of resources that affect your Civilization for centuries to come. Add 1 new resource type randomly from the City Building rules of Myths of Sacadia (if relevant to your game). Then, gain 10,000gp and 1 Influence from your Oligarch."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_a_good_position",
+  "name": "A Good Position",
+  "section": "business",
+  "page": 33,
+  "rarity": "Uncommon",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have spent your life savings on a position on the New Myrghos markets. This is probably good… as long as that item skyrockets in value this year?",
+  "effects": [
+   {
+    "name": "Market Appraisal",
+    "tags": "P",
+    "text": "When you take this item, work with your GM to define one produced Myrgha good (e.g., Garum, Marbleworks, etc.). When you take this item, you gain nothing. If that item rockets in value (i.e., if the resource become significantly more rare due to an accident at the factory), immediately gain Rocketing Value:"
+   },
+   {
+    "name": "Rocketing Value",
+    "tags": "P",
+    "text": "When you take this ability, gain 5,000gp."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_gold",
+  "name": "Gold",
+  "section": "business",
+  "page": 33,
+  "rarity": "Common",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You have a lot of savings. This is probably helpful. You feel better than everyone else, at least.",
+  "effects": [
+   {
+    "name": "Starting Gold",
+    "tags": "P",
+    "text": "At the start of this campaign, start off with 5x as much money as everyone else."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_debt",
+  "name": "Debt",
+  "section": "business",
+  "page": 33,
+  "rarity": "Common",
+  "element": "Rot",
+  "prerequisites": "No",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "You are in debt big time. Your Oligarch has a lot of demands, and you are behind already on paying them off.",
+  "effects": [
+   {
+    "name": "Starting Debt",
+    "tags": "P",
+    "text": "When you take this inherited item, work with your GM to define the task you owe your Oligarch. This forms a personal quest for you. Every Long Rest you do not complete the quest, gain 1 Bane Token. When you complete the quest, gain 1 Influence with your Oligarch and 1 Lore Point."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_suan_of_the_family",
+  "name": "Suan of the Family",
+  "section": "business",
+  "page": 33,
+  "rarity": "Uncommon",
+  "element": "Salt",
+  "prerequisites": "You work for a Myrgha Oligarch",
+  "slots": "N/A",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "Your family is extremely dedicated to a Myrgha Oligarch, making you much closer than most to your divine ruler. This has its benefits, and its costs.",
+  "effects": [
+   {
+    "name": "Suan’s Jobs",
+    "tags": "P",
+    "text": "When you use the Earn Money Long Rest Action, you gain 3x as much money as is listed in the Odd Jobs table. Sometimes, your Oligarch will ask you to take on quests in exchange for this money. If you do not complete the quest before the next long rest, you permanently lose this item."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_goldweave_armor",
+  "name": "Goldweave Armor",
+  "section": "craft",
+  "page": 34,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "You are a family member of the Myrgha Oligarchy, Proficiency[5], Heavy Armor Proficiency",
+  "slots": "1 (Worn)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Goldstore",
+  "description": "A thinly laced weave of golden fabric supports a suit of armor, deeply and ornately detailed in the gaudy fashion of the Myrgha. This armor is extremely thin, and designed to be worn beneath robes or other clothes by a Goldbound warrior. It is emblazoned with your family crest.",
+  "effects": [
+   {
+    "name": "Goldweave Armor",
+    "tags": "P",
+    "text": "Using this armor provides a baseline effect of +5AD, 2 Adornment Slots, 0 Trinket Slots, and 0 Additional RIS. The armor is inherently worth 2,000gp that cannot be consumed through Goldbinder abilities (but can be sold if the armor is destroyed and melted down). If you are a Goldbinder Fatebound, you can take Goldshield and Goldenhoard when you are attuned to this item."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_goldweave_blade",
+  "name": "Goldweave Blade",
+  "section": "craft",
+  "page": 34,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "You are a family member of the Myrgha Oligarchy, Proficiency[4]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Goldstore",
+  "description": "A detailed and uniquely ornamental longsword made out of pure gold.",
+  "effects": [
+   {
+    "name": "Goldweave Blade",
+    "tags": "P",
+    "text": "This sword is treated as a Longsword. It overcomes all nonmagical damage resistances, and you gain +1 to all To-Hit and damage when using it. If you are a Goldbinder Fatebound, you can take Goldblade and Goldenhoard when you are attuned to this item."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_legal_clifs_notes",
+  "name": "Legal Clif’s Notes",
+  "section": "craft",
+  "page": 34,
+  "rarity": "Uncommon",
+  "element": "Air",
+  "prerequisites": "You do not have Society:Legalism[1]",
+  "slots": "1 (RIS Passive)",
+  "attunement": "No",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A set of legal notes about the laws of the Byzantine Bureaucracy of the Myrgha. Just enough for you to get by, written by someone named Clif.",
+  "effects": [
+   {
+    "name": "Faking Legalist Lore",
+    "tags": "P",
+    "text": "You have a set of documents that helps you understand the basics of Myrgha Law without actually trying. For as long as you do not have any levels of Society:Legalism and keep this scroll in your RIS, you can roll as though you have Society: Legalism[1] when rolling regarding any Myrgha laws. If you take any levels of Legalism, you realize these notes are gibberish (and who is Clif anyway?), at which point these notes stop being helpful."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_world_traveled_bag",
+  "name": "World-Traveled Bag",
+  "section": "craft",
+  "page": 34,
+  "rarity": "Rare",
+  "element": "Water",
+  "prerequisites": "Proficiency[3]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "6",
+  "relic": "No",
+  "special": "No",
+  "description": "A large woven sack of pillaged goods from neighboring cultures. The bag bulges with contents.",
+  "effects": [
+   {
+    "name": "Grab Oddity",
+    "tags": "C,A",
+    "text": "During a Quick Rest if this item is equipped in a Stored Item Slot, or as an action if this item is equipped in RIS, you may expend one charge of the World-Traveled Bag to gain one small item from any Ardus Yauga culture worth up to 50gp. You may declare the item when you remove it, but it must have the Small property. You can refill any number of charges at any international Myrgha market by spending 50gp/charge."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_goldweave_comb",
+  "name": "Goldweave Comb",
+  "section": "craft",
+  "page": 35,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "You are a family member of the Myrgha Oligarchy, Proficiency[4]",
+  "slots": "1 (RIS Passive)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "Goldstore",
+  "description": "A detailed and uniquely ornamental comb carved of mammoth ivory, and inlaid with extremely intricate golden designs.",
+  "effects": [
+   {
+    "name": "Goldweave Accessory",
+    "tags": "P",
+    "text": "When you have attuned to this comb and have it equipped in a RIS, you may purchase the Goldspool and Goldenhoard abilities if you are a Goldbinder Fatebound."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_lucky_coin",
+  "name": "Lucky Coin",
+  "section": "craft",
+  "page": 35,
+  "rarity": "Uncommon",
+  "element": "Salt",
+  "prerequisites": "No",
+  "slots": "1 (Small)",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small, tarnished coin, marred on one side. It looks very innocuous.",
+  "effects": [
+   {
+    "name": "Bargain Hunter",
+    "tags": "P",
+    "text": "This coin is worth 1gp. Whenever you take the Shop Long Rest action, you may re-roll any single die you roll to Shop. You must keep the second result."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_goldmimic_servant",
+  "name": "Goldmimic Servant",
+  "section": "craft",
+  "page": 35,
+  "rarity": "Very Rare",
+  "element": "Air",
+  "prerequisites": "Proficiency[3], Magic:Magic Beast Lore[1]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small wooden cage, inside of which is a small, snarling, winged coin. The goldmimic devours coins.",
+  "effects": [
+   {
+    "name": "Hungry for Gold",
+    "tags": "P",
+    "text": "To maintain your Goldmimic, you must feed it 100gp at the end of every Long Rest. If you do not, it dies. Remove this item. When you have the Goldmimic equipped in a readied item slot, you may use the Goldsniff Action:"
+   },
+   {
+    "name": "Goldsniff",
+    "tags": "F",
+    "text": "For as long as you maintain Focus, you know where the largest source of gold is within 200ft of you."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_hand_me_down_lockpicks",
+  "name": "Hand-me-down Lockpicks",
+  "section": "craft",
+  "page": 35,
+  "rarity": "Rare",
+  "element": "Rot",
+  "prerequisites": "Nimble Hands: Roguecraft[1]",
+  "slots": "1 (Quickdraw)",
+  "attunement": "Yes",
+  "uses": "6",
+  "relic": "No",
+  "special": "No",
+  "description": "A small, well-worn lockpick set, handed down to you from a weirdly supportive parent.",
+  "effects": [
+   {
+    "name": "Master Lockpick",
+    "tags": "P",
+    "text": "When you have these lockpicks equipped in both hands and use Nimble Hands: Roguecraft to pick a lock, if you fail to pick a nonmagical lock you may expend one use of the lockpick to succeed instead. When all 6 uses are expended, these lockpicks break."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_ancestral_lantern",
+  "name": "Ancestral Lantern",
+  "section": "craft",
+  "page": 36,
+  "rarity": "Uncommon",
+  "element": "Salt",
+  "prerequisites": "Religion: Rochi Shamanic Order[1]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small lantern emblazoned with your family crest.",
+  "effects": [
+   {
+    "name": "Pray to the Ancestors",
+    "tags": "P",
+    "text": "When you use this lantern and make a Prayer Check out of combat to ask for guidance, you may roll your Religion Check with 1X advantage. Every campaign in which you inherit and light this lantern at least once, mark it with one level of Inherited Prayer. If this lantern ever gains 6 levels of Inherited Prayer, it immediately turns into a Living Lantern. Delete this item and gain a Living Lantern."
+   }
+  ]
+ },
+ {
+  "id": "myrgha_morlis_scroll_of_contract_law",
+  "name": "Morli’s Scroll of Contract Law",
+  "section": "craft",
+  "page": 36,
+  "rarity": "Legendary[1]",
+  "element": "Salt",
+  "prerequisites": "Proficiency[4], Society: Myrgha[3].",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "Yes",
+  "special": "No",
+  "description": "A crusty and well-loved scroll, scribbled with personal legalist notes of the religious Bureaucrat Itthoasuan Morli. This scroll is a thickly woven tapestry, organized by section, designed to enable the use of astrological contractual pacts.",
+  "effects": [
+   {
+    "name": "Morli’s Contracts",
+    "tags": "P",
+    "text": "You may create new pacts by weaving powerful magics through contract law. To use any of these pacts, you must have this book equipped in both hands. You gain 3 Fatigue if your Focus ends on any below ability during combat through any cause (including willingly ending Focus). You can buy the following abilities using combat skill points to use when you have the pact book equipped:"
+   }
+  ],
+  "abilities": [
+   "myrgha_morli_law_of_the_trade",
+   "myrgha_morli_law_of_earth",
+   "myrgha_morli_law_of_luck",
+   "myrgha_morli_law_of_pincushions"
+  ]
+ },
+ {
+  "id": "myrgha_living_lantern",
+  "name": "Living Lantern",
+  "section": "craft",
+  "page": 36,
+  "rarity": "Very Rare",
+  "element": "Salt",
+  "prerequisites": "Religion: Rochi Shamanic Order[2]",
+  "slots": "1",
+  "attunement": "Yes",
+  "uses": "N/A",
+  "relic": "No",
+  "special": "No",
+  "description": "A small lantern emblazoned with eyes and a mouth, which move and look around.",
+  "effects": [
+   {
+    "name": "Talk with your Ancestors",
+    "tags": "P",
+    "text": "When you use this lantern and make a Prayer Check out of combat to ask for guidance, you may ask any of your ancestors from past inheritance any one question. They will answer with any information they possess, including Talents they might have."
+   },
+   {
+    "name": "Helpful Light",
+    "tags": "P",
+    "text": "This lantern acts as a Lantern, and illuminates light around you without you wielding it in either hand, provided you have it equipped in a readied item slot."
+   }
+  ]
+ }
+]

@@ -1,0 +1,37 @@
+{
+  "name": "Ritual of Spring Rain",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Cunei Myrgha Inheritance: a craft or ritual. Rare, Water. No item slots. Attunement.</em></p><p><strong>Prerequisites:</strong> Society:Legalism[1], Proficiency[3]</p><p>You have a calming mantra that you can use to calm yourself.</p><p><strong>Calming Mantra</strong> (Reaction): As a reaction when a target attempts to give you levels of Taunt or Panic, you may gain 1X advantage against that Taunt or Panic. If you are Steadied, you may roll against one fewer level.</p><p><em>Rulebook p.47.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "82485caa10fca2de",
+  "_key": "!items!82485caa10fca2de",
+  "folder": "c931f980fe44bd4d",
+  "sort": 100,
+  "img": "icons/magic/nature/leaf-glow-maple-orange.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_ritual_of_spring_rain",
+      "kind": "inheritance",
+      "culture": "cunei",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Water",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "3aebf9149cc1"
+    }
+  }
+}

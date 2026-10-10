@@ -1,0 +1,35 @@
+{
+  "_id": "2c2dd4ac6444b3b6",
+  "_key": "!items!2c2dd4ac6444b3b6",
+  "name": "Backpack (Medium)",
+  "type": "gear",
+  "img": "icons/containers/bags/pack-leather-brown.webp",
+  "folder": "65470c303531d49b",
+  "sort": 20,
+  "system": {
+    "description": "<p><em>Prerequisite: Power[2].</em></p><p><strong>Backpack (Medium)</strong> (Passive): Gain 40 SIS when you have this item. You may only benefit from one Backpack at a time.</p><p class=\"goods-facts\">No Item Slot · 100gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 40,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "backpack_medium",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "backpack"
+      },
+      "bargain": "baggage",
+      "buildHash": "fed3d22e1852"
+    }
+  }
+}

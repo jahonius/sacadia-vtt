@@ -18,6 +18,7 @@
       "dr": 0
     },
     "maxStat": null,
+    "value": 120,
     "slots": 1,
     "storage": "ris",
     "providesSis": 0,
@@ -40,7 +41,8 @@
     "sacadia": {
       "catalogId": "armored_buckler",
       "kind": "shield",
-      "buildHash": "27d7cb99d621"
+      "bargain": "shields",
+      "buildHash": "d3008302245b"
     }
   }
 }

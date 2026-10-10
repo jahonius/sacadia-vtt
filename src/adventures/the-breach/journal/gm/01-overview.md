@@ -25,13 +25,13 @@ The fight has two acts:
 
 | | |
 | --- | --- |
-| **Prologue** | {{scene:ardus-yauga}}: the rulebook's world map, for an optional opening on the road to the wall ({{page:gm/prologue}}). With the Indy Route and Augur: Nexus modules, the road plays as an animated route and the wall is a site that opens the battle map. |
+| **Prologue** | {{scene:ardus-yauga}}: the rulebook's world map, for an optional opening on the road to the wall ({{page:gm/prologue}}). The **Travel Ledger** walks the party there a day at a time by Sacadia's travel rules, drawing each day with the Indy Route module. With Augur: Nexus, the area is filed as a world: the battle map inside the map, the Tianqi and Ager's Demons, their people, and a quest. |
 | **Scene** | {{scene:chunis-wall}}: the battle map (20 × 48 squares) as a two-level scene (the Ground and the Wall Top 40ft up) with walls and line of sight. The defenders are at their starting positions, Wanabbul is to the north, the siege engines are in place, and every feature has a map pin. A **Breach Chuni's Wall** macro opens the hole when the demon breaks through. |
 | **Heroes** | {{actor:selthimor}}, {{actor:chunrudar}}, {{actor:honnasusara}} and {{actor:manchuthara}}: level-5 Tianqi wall guards, rebuilt as rules-legal v1.2 characters. |
 | **Demons** | Wanabbul the Vast, plus Grubnut, Csenorras the Manyworm (with its split swarms), the Weaver's Daughter and her Weaverspools. |
 | **Siege engines & hazards** | The Wall Ballista, the Fixed Ballista and the Oil Barrels (owned by every player, so anyone can crew them), the Pit Trap, and Chuni's Wall. |
 | **Handouts** | {{journal:players}}: the characters, how to play each one, Demonology, and a quick-rules sheet. |
-| **Items** | The Tianqi culture's cultural talent, cultural abilities and the Red Glyph of Armor, for players who bring their own Tianqi characters. |
+| **Items** | Healing Dates and Torches. The Tianqi culture (its cultural talent, abilities and the Red Glyph of Armor) is in the system's **Cultures** compendium. |
 
 ## Setting up
 
@@ -44,6 +44,6 @@ The fight has two acts:
 
 If a hero dies, that player takes the next unused character. With four players, roll up a fifth Tianqi wall guard or let them crew the siege engines until the end of the fight.
 
-**Players bringing their own characters** must be level 5. The adventure's Items folder has the Tianqi culture's cultural abilities and inheritance (rulebook v1.2 pp.59–65).
+**Players bringing their own characters** must be level 5. The Tianqi culture, its cultural abilities and its inheritance are in the system's **Cultures** compendium (rulebook v1.2 pp.59–68).
 
 The rules changes from the 2024 PDF are listed on {{page:gm/conversion-notes}}.

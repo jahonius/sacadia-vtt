@@ -1,0 +1,45 @@
+{
+  "_id": "88b54addde9cea3b",
+  "_key": "!items!88b54addde9cea3b",
+  "name": "Demon Points",
+  "type": "ability",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 30,
+  "system": {
+    "description": "<p>For each fact you learn about an enemy at the start of combat due to Knowledge Talents, increase damage you deal to that enemy through any attack you make by 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: All Tianqi",
+      "prerequisite": "Tianqi Cultural Heritage · p.63"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_demon_points",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "5639dccb97ca"
+    }
+  }
+}

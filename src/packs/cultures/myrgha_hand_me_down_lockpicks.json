@@ -1,0 +1,37 @@
+{
+  "name": "Hand-me-down Lockpicks",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Rare, Rot. 1 item slot (Quickdraw). Attunement. Uses: 6.</em></p><p><strong>Prerequisites:</strong> Nimble Hands: Roguecraft[1]</p><p>A small, well-worn lockpick set, handed down to you from a weirdly supportive parent.</p><p><strong>Master Lockpick</strong> (Passive): When you have these lockpicks equipped in both hands and use Nimble Hands: Roguecraft to pick a lock, if you fail to pick a nonmagical lock you may expend one use of the lockpick to succeed instead. When all 6 uses are expended, these lockpicks break.</p><p><em>Rulebook p.35.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "042c75c537a7cfa8",
+  "_key": "!items!042c75c537a7cfa8",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 130,
+  "img": "icons/tools/hand/lockpicks-steel-grey.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_hand_me_down_lockpicks",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "6",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "bc4d85e3a2f4"
+    }
+  }
+}

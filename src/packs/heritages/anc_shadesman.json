@@ -1,0 +1,30 @@
+{
+  "_id": "d12c01b0f1e1774f",
+  "_key": "!items!d12c01b0f1e1774f",
+  "name": "Shadesman",
+  "type": "ancestry",
+  "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 60,
+  "system": {
+    "description": "<p>Shadesmen are the descendants of Shades - powerful shadow demons that once stalked the dark shadows of the world, hunting victims from their own shadows. Shadesmen are at home in the dark, and have the appearance of a dark, shadowy figure, obscured physically in black smoke or shadow.</p><p><strong>Size:</strong> Medium (6–7 feet) · <strong>Lifespan:</strong> 60–80 years</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.a7f6cf6be2c1bf0f]{Shadowstep}</p><p><em>Daemonai Heritage. Rulebook p.86.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.a7f6cf6be2c1bf0f",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "daemonai",
+    "size": "Medium (6–7 feet)",
+    "lifespan": "60–80 years"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_shadesman",
+      "buildHash": "2cce6760e732"
+    }
+  }
+}

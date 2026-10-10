@@ -1,0 +1,45 @@
+{
+  "_id": "fda704941c1507ae",
+  "_key": "!items!fda704941c1507ae",
+  "name": "Friend of Nature",
+  "type": "ability",
+  "img": "icons/creatures/mammals/deer-antlers-green.webp",
+  "folder": "52e13c9c5d5a6dd5",
+  "sort": 10,
+  "system": {
+    "description": "<p>When you choose to play a Curiot, choose an animal species that you embody. Whenever you encounter this species of animal, you may speak to them in their native language and they will always treat you as friendly.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Curiot Heritage",
+      "prerequisite": "p.83"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_friend_of_nature",
+      "transcribed": true,
+      "heritage": "curiot",
+      "buildHash": "94c9a8640bb9"
+    }
+  }
+}

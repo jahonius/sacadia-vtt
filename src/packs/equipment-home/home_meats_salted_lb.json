@@ -1,0 +1,34 @@
+{
+  "_id": "cf2225e11246e66e",
+  "_key": "!items!cf2225e11246e66e",
+  "name": "Meats - Salted (lb)",
+  "type": "gear",
+  "img": "icons/consumables/meat/hock-leg-pink-brown.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 240,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_meats_salted_lb",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "c7e32cd7aca5"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_id": "62e802e1f996228b",
+  "_key": "!items!62e802e1f996228b",
+  "name": "Land Purchase / Acre",
+  "type": "gear",
+  "img": "icons/environment/settlement/house-farmland.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 70,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10000gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_land_purchase_acre",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "d959fc90c6b8"
+    }
+  }
+}

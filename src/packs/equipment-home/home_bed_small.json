@@ -1,0 +1,33 @@
+{
+  "_id": "9b7c79e43a68de2b",
+  "_key": "!items!9b7c79e43a68de2b",
+  "name": "Bed (Small)",
+  "type": "gear",
+  "img": "icons/sundries/survival/bedroll-tan.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 30,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 100gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_bed_small",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "cb67b0d02598"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Pigsqueak Poison",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Quickdraw). Uses: 4.</em></p><p>A vibrant purple paste sits within a small pot. There are about four doses.</p><p><strong>Pigsqueak Poison</strong> (Action): If you consume this poison, you immediately make Power Checks against 4 levels of Frenzy. Additionally, for one minute, you go blind.</p><p><em>Rulebook p.67.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "618c6431aac4bfd0",
+  "_key": "!items!618c6431aac4bfd0",
+  "folder": "76562f6c37f89b61",
+  "sort": 110,
+  "img": "icons/consumables/potions/bottle-conical-corked-labeled-skull-poison-green.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_pigsqueak_poison",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "4",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "638f48173aca"
+    }
+  }
+}

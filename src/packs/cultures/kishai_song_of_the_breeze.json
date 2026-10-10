@@ -1,0 +1,45 @@
+{
+  "_id": "b54905c715c72afa",
+  "_key": "!items!b54905c715c72afa",
+  "name": "Song of the Breeze",
+  "type": "ability",
+  "img": "icons/magic/air/air-wave-gust-smoke-yellow.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 50,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on Song of the Solemn, your ranged weapon attacks ignore any disadvantage effects caused by wind conditions. Additionally, increase the range of all ranged weapons by 20ft.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Sentinel · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_the_breeze",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "f35daa501fe2"
+    }
+  }
+}

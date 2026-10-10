@@ -1,0 +1,34 @@
+{
+  "_id": "b0cdbf05f31c0d7e",
+  "_key": "!items!b0cdbf05f31c0d7e",
+  "name": "Orrery",
+  "type": "gear",
+  "img": "icons/tools/navigation/sextant-complex-brown.webp",
+  "folder": "f497a19dfaa67cb5",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Orrery</strong> (Passive): <em>Prerequisite: Survival: Navigation[3].</em> Gain 1X Advantage to all Trait Checks to Navigate.</p><p class=\"goods-facts\">2 Item Slots · 1000gc · Navigation Tools, rulebook p.204</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "orrery",
+      "kind": "goods",
+      "goods": {
+        "table": "navigation"
+      },
+      "bargain": "adventuring",
+      "buildHash": "c274cf49b2f4"
+    }
+  }
+}

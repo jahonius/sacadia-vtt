@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "halberd",
       "kind": "weapon",
-      "buildHash": "19e18e5a1f4f"
+      "bargain": "military-weapons",
+      "buildHash": "14d2f11677cf"
     }
   }
 }

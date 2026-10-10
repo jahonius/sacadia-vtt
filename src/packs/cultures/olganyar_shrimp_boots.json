@@ -1,0 +1,37 @@
+{
+  "name": "Shrimp Boots",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a craft or ritual. Rare, Air. 1 item slot (Shoes, Worn).</em></p><p><strong>Prerequisites:</strong> Prof[3], Armor Trinket Slot</p><p>These metallic boots are actually made of a strange iridescent chitinous material and are coated in numerous shells and tails. The tails beat lazily when the wearer is standing still, but whir into a furious buzzing hum when the wearer moves.</p><p><strong>Alien but Flamboyant Boots</strong> (Passive): The wearer gains all the benefits of a normal pair of irontoe boots and in addition, when taking the move action, can treat a number of 5ft tiles of difficult terrain equal to half the wearers proficiency, rounded up, as normal terrain as tiny crustaceans carry them through the terrain. The wearer of these boots never leaves visible tracks.</p><p><em>Rulebook p.56.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b3aa8fe93f7cc99a",
+  "_key": "!items!b3aa8fe93f7cc99a",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 70,
+  "img": "icons/equipment/feet/boots-armored-leather-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_shrimp_boots",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "7b0166dff757"
+    }
+  }
+}

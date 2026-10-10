@@ -1,0 +1,33 @@
+{
+  "_id": "6652ef5b19d7da04",
+  "_key": "!items!6652ef5b19d7da04",
+  "name": "Tree, Sapling (Fruit)",
+  "type": "gear",
+  "img": "icons/commodities/materials/plant-pot-flower.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 350,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 60gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 60,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_tree_sapling_fruit",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "2787ce63b2cc"
+    }
+  }
+}

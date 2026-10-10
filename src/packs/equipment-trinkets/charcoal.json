@@ -1,0 +1,35 @@
+{
+  "_id": "7d352eb06db36bcf",
+  "_key": "!items!7d352eb06db36bcf",
+  "name": "Charcoal",
+  "type": "gear",
+  "img": "icons/commodities/stone/ore-chunk-black.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Charcoal</strong> (Action): Consume 1 charcoal. Gain 1X Advantage to ‘Make Trait Check’ to reduce levels of Hemorrhage caused by poisons until the end of your turn.</p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 1sc · Baubles, rulebook p.207</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1,
+    "coin": "sc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "charcoal",
+      "kind": "trinket",
+      "goods": {
+        "table": "baubles",
+        "use": true
+      },
+      "bargain": "miscellany",
+      "buildHash": "d58a287bd2c6"
+    }
+  }
+}

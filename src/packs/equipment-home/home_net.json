@@ -1,0 +1,34 @@
+{
+  "_id": "eeec05296a60269d",
+  "_key": "!items!eeec05296a60269d",
+  "name": "Net",
+  "type": "gear",
+  "img": "icons/tools/fishing/net-simple-brown.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 260,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 20gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 20,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_net",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "082392100ad3"
+    }
+  }
+}

@@ -16,7 +16,8 @@
       "catalogId": "painted_face",
       "kind": "adornment",
       "armorPrereq": "Dye Set",
-      "buildHash": "33321803e4b9"
+      "bargain": "adornments",
+      "buildHash": "bda9263cfad2"
     }
   }
 }

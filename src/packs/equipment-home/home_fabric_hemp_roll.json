@@ -1,0 +1,34 @@
+{
+  "_id": "eddaaf51a25f0d6d",
+  "_key": "!items!eddaaf51a25f0d6d",
+  "name": "Fabric - Hemp (Roll)",
+  "type": "gear",
+  "img": "icons/commodities/cloth/cloth-roll-tan.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 60,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 10gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_fabric_hemp_roll",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "2f986e2c3d90"
+    }
+  }
+}

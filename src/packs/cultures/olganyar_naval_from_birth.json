@@ -1,0 +1,49 @@
+{
+  "_id": "3c7d0f59835786c0",
+  "_key": "!items!3c7d0f59835786c0",
+  "name": "Naval from Birth",
+  "type": "ability",
+  "img": "icons/skills/trades/profession-sailing-ship.webp",
+  "folder": "0d8d39c83413b8e1",
+  "sort": 20,
+  "system": {
+    "description": "<p>Gain 1 level in Survival: Swimmer, even if you do not have Survival. Additionally, you can navigate without wind better than most. Increase the speed of any boat you travel with by 1 tile if you travel against the wind.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Olganyar Cultural Talent",
+      "prerequisite": "Olganyar Cultural Heritage · p.49"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_naval_from_birth",
+      "transcribed": true,
+      "culture": "olganyar",
+      "grantsSpecialty": {
+        "talent": "survival",
+        "name": "Swimmer"
+      },
+      "buildHash": "bb715e2a0d33"
+    }
+  }
+}

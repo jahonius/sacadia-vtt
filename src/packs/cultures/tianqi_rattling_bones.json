@@ -1,0 +1,37 @@
+{
+  "name": "Rattling Bones",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Rare, Rot. 1 item slot (Worn). Attunement.</em></p><p><strong>Prerequisites:</strong> Proficiency[3]</p><p>A necklace made of rattling bones, it jangles when you move, providing a comforting sound.</p><p><strong>Rattle the Bones</strong> (Focus): When you maintain Focus on the Rattling Bones and you are wearing them, they soothe you. For as long as you maintain Focus, you are immune to Panic that would be given to you. If you already have Panic, gain 1X Advantage to all Trait Checks you make to remove this Panic.</p><p><em>Rulebook p.68.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "e295309cc2a387fc",
+  "_key": "!items!e295309cc2a387fc",
+  "folder": "76562f6c37f89b61",
+  "sort": 170,
+  "img": "icons/equipment/neck/amulet-carved-stone-eye.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_rattling_bones",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "dbee870eb990"
+    }
+  }
+}

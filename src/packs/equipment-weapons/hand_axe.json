@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "hand_axe",
       "kind": "weapon",
-      "buildHash": "0b5cf1d512e2"
+      "bargain": "basic-weapons",
+      "buildHash": "22a9e73445f8"
     }
   }
 }

@@ -1,0 +1,37 @@
+{
+  "name": "Goldweave Comb",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Legendary[1], Salt. 1 item slot (RIS Passive). Attunement. Special Property: Goldstore.</em></p><p><strong>Prerequisites:</strong> You are a family member of the Myrgha Oligarchy, Proficiency[4]</p><p>A detailed and uniquely ornamental comb carved of mammoth ivory, and inlaid with extremely intricate golden designs.</p><p><strong>Goldweave Accessory</strong> (Passive): When you have attuned to this comb and have it equipped in a RIS, you may purchase the Goldspool and Goldenhoard abilities if you are a Goldbinder Fatebound.</p><p><em>Rulebook p.35.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "10c04fc8f78587d8",
+  "_key": "!items!10c04fc8f78587d8",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 100,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_goldweave_comb",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Legendary[1]",
+        "element": "Salt",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": "Goldstore"
+      },
+      "buildHash": "8e758f619845"
+    }
+  }
+}

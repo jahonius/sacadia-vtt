@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "mace",
       "kind": "weapon",
-      "buildHash": "426418106baa"
+      "bargain": "military-weapons",
+      "buildHash": "4bcd6d32d231"
     }
   }
 }

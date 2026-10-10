@@ -19,7 +19,7 @@
       "thumbnail": "systems/sacadia/assets/anvil-impact.png"
     }
   ],
-  "version": "0.3.7",
+  "version": "0.3.8",
   "flags": {
     "hotReload": {
       "extensions": [
@@ -71,6 +71,39 @@
       "system": "sacadia",
       "ownership": {
         "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "heritages",
+      "label": "Heritages & Ancestries",
+      "path": "packs/heritages",
+      "type": "Item",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "cultures",
+      "label": "Cultures",
+      "path": "packs/cultures",
+      "type": "Item",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "cultures-journal",
+      "label": "Cultures of the Ardus Yauga",
+      "path": "packs/cultures-journal",
+      "type": "JournalEntry",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
     },
@@ -240,9 +273,31 @@
       }
     },
     {
+      "name": "equipment-goods",
+      "label": "Personal Goods",
+      "path": "packs/equipment-goods",
+      "type": "Item",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
       "name": "equipment-trinkets",
       "label": "Trinkets",
       "path": "packs/equipment-trinkets",
+      "type": "Item",
+      "system": "sacadia",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "equipment-home",
+      "label": "Home Goods",
+      "path": "packs/equipment-home",
       "type": "Item",
       "system": "sacadia",
       "ownership": {
@@ -293,6 +348,15 @@
       ]
     },
     {
+      "name": "Heritage & Culture",
+      "sorting": "m",
+      "packs": [
+        "cultures-journal",
+        "heritages",
+        "cultures"
+      ]
+    },
+    {
       "name": "Abilities",
       "sorting": "m",
       "packs": [
@@ -319,7 +383,9 @@
         "equipment-armor",
         "equipment-shields",
         "equipment-adornments",
-        "equipment-trinkets"
+        "equipment-goods",
+        "equipment-trinkets",
+        "equipment-home"
       ]
     }
   ],
@@ -331,7 +397,9 @@
     "Item": {
       "ability": {},
       "armor": {},
-      "gear": {}
+      "gear": {},
+      "culture": {},
+      "ancestry": {}
     },
     "RegionBehavior": {
       "zone": {}
@@ -339,7 +407,7 @@
   },
   "socket": true,
   "manifest": "https://github.com/jahonius/sacadia-vtt/releases/latest/download/system.json",
-  "download": "https://github.com/jahonius/sacadia-vtt/releases/download/v0.3.7/system.zip",
+  "download": "https://github.com/jahonius/sacadia-vtt/releases/download/v0.3.8/system.zip",
   "background": "systems/sacadia/assets/anvil-impact.png",
   "gridDistance": 5,
   "gridUnits": "ft",

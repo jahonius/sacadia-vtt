@@ -1,0 +1,39 @@
+{
+  "_id": "418558743ecefd0b",
+  "_key": "!items!418558743ecefd0b",
+  "name": "Lantern",
+  "type": "gear",
+  "img": "icons/sundries/lights/lantern-iron-yellow.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Lantern</strong> (Passive): When you hold an illuminated lantern in one hand, it gives off 20ft of bright and 40ft of dim light. It burns through lantern oil at a rate of 1 supply per hour. If it would go out (either in combat, after an hour, or at the end of a rest), the lantern oil can be replenished using your other hand. You may affix one item to the lantern (a diffuser, lens, or hood).</p><p><strong>Illuminate/Extinguish</strong> (Action): You light (or extinguish) a source of illumination held in one hand provided you have Flint and Tinder in a combat-readied item slot. All light sources are Quickdraw.</p><p class=\"goods-facts\">1 Item Slot (Quickdraw) · 45gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 45,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lantern",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "bright": 20,
+          "dim": 40,
+          "fuel": "lantern_oil"
+        }
+      },
+      "bargain": "illumination",
+      "buildHash": "aecb37d4cebc"
+    }
+  }
+}

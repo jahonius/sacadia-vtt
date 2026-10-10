@@ -1,0 +1,46 @@
+// The Travel Ledger (apps/travel-ledger.mjs), in the prompts' skin (_dialogs.scss): where the journey stands as a bar,
+// its setup and today's conditions as two-column fields, a line of what today brings, and the days so far as a ledger.
+.application.sacadia-travel {
+  .window-content { padding: 0.7rem 0.85rem 0.85rem; }
+  .travel-ledger { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .tl-progress {
+    .tl-bar { height: 8px; border-radius: 4px; background: var(--sac-inset); border: 1px solid var(--sac-line); overflow: hidden;
+      span { display: block; height: 100%; background: linear-gradient(90deg, var(--sac-blood-deep), var(--sac-blood)); } }
+    .tl-facts { display: flex; gap: 0.9rem; margin-top: 0.3rem; font-size: 0.85rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums;
+      b { font-family: var(--sac-font-display); font-size: 1rem; color: var(--sac-gold-hi); } }
+  }
+
+  fieldset { margin: 0; padding: 0.5rem 0.6rem 0.6rem; border: 1px solid var(--sac-line); border-radius: 5px; background: var(--sac-panel); }
+  legend { padding: 0 0.3rem; font-family: var(--sac-font-display); font-weight: 700; color: var(--sac-gold-hi); }
+  .tl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 0.7rem; }
+  .tl-grid label { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--sac-dim);
+    select, input[type="text"], input[type="number"] { font-size: 0.88rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+    &.wide { grid-column: 1 / -1; }
+    &.check { flex-direction: row; align-items: center; gap: 0.4rem; text-transform: none; letter-spacing: 0; font-size: 0.85rem; font-weight: 400; color: var(--sac-text); }
+  }
+  .tl-hint { margin: 0.4rem 0 0; font-size: 0.75rem; color: var(--sac-dim); &.warn { color: var(--sac-blood); } }
+  .warn { color: var(--sac-blood); }
+
+  .tl-preview { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.8rem; margin-top: 0.55rem; padding: 0.4rem 0.55rem;
+    border-radius: 4px; background: var(--sac-inset); font-size: 0.85rem; color: var(--sac-dim); font-variant-numeric: lining-nums tabular-nums;
+    b { color: var(--sac-gold-hi); font-size: 0.95rem; } .km { margin-left: -0.5rem; } }
+
+  .tl-actions { display: flex; gap: 0.4rem;
+    button { flex: 0 0 auto; min-height: 2rem; padding: 0 0.7rem; background: var(--sac-panel); border: 1px solid var(--sac-line-strong);
+      border-radius: 4px; color: var(--sac-text); font-size: 0.85rem; i { color: var(--sac-dim); }
+      &:hover:not(:disabled) { border-color: var(--sac-gold-lo); background: rgba(212, 165, 60, 0.1); }
+      &:disabled { opacity: 0.45; } }
+    .tl-go { flex: 1 1 auto; border-color: var(--sac-gold); color: var(--sac-gold-hi); font-weight: 700; background: rgba(212, 165, 60, 0.16);
+      i { color: var(--sac-gold); } }
+  }
+
+  .tl-log { width: 100%; border-collapse: collapse; font-size: 0.82rem; font-variant-numeric: lining-nums tabular-nums;
+    th { text-align: left; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sac-dim); padding: 0.2rem 0.35rem;
+      border-bottom: 1px solid var(--sac-line-strong); }
+    td { padding: 0.25rem 0.35rem; border-bottom: 1px solid var(--sac-line); vertical-align: top; small, em { color: var(--sac-dim); } }
+    .num { text-align: right; }
+    tbody tr:first-child td { color: var(--sac-gold-hi); }
+  }
+}

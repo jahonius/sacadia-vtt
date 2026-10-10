@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "composite_bow",
       "kind": "weapon",
-      "buildHash": "24c04eaaff6a"
+      "bargain": "military-weapons",
+      "buildHash": "8b3b75acfb72"
     }
   }
 }

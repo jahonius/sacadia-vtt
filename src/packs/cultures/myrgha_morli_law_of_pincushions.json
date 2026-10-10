@@ -1,0 +1,45 @@
+{
+  "_id": "6de2aea18591d986",
+  "_key": "!items!6de2aea18591d986",
+  "name": "Law of Pincushions",
+  "type": "ability",
+  "img": "icons/skills/social/trading-injustice-scale-gray.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 150,
+  "system": {
+    "description": "<p>Choose one target. For as long as you maintain Focus, they critically hit with their first attack each turn. Each time they do, gain 2 Curse Counters. Each time you are hit, remove one Curse Counter. The attack dealt against you critically hits. You may only use this when you are below half HP. You lose all Curse Counters on a Nightly Rest.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Morli’s Contracts",
+      "prerequisite": "Morli’s Scroll of Contract Law, Society: Legalism[3] · p.36"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_morli_law_of_pincushions",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "d6719b67dbe1"
+    }
+  }
+}

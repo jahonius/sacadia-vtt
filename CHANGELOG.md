@@ -1,5 +1,124 @@
 # Changelog
 
+## 0.3.8
+
+- **Personal goods** (rulebook pp.197–212), in three new compendiums in the Equipment folder, a folder per table:
+  - **Personal Goods:** clothing and its add-ons, crafting kits and ingredients, illumination, mounts and vehicles,
+    stored and readied baggage, climbing, first aid, locks, navigation, holy and literary tools, travel gear, and weapon
+    and armor kits (126 items).
+  - **Trinkets:** the full table now, with prices: the baubles, the 14 kinds of jewelry and the 9 runes (37).
+  - **Home Goods:** property, trade goods and furnishings (90).
+  - Each carries its rules and its properties' rules (Worn, Winter, Shoes …), its Item Slots and its price, in gold or
+    **silver** (a Candle is 1sc, priced right at any silver rate).
+- **On the sheet:**
+  - **Buy** an item by dropping it from a compendium on the purse: its price is paid, or you're told you can't afford it.
+  - **Bags and baggage give slots:** a backpack, handbag, jar, pot, chest or pouch gives stored slots (only the largest
+    backpack, and one chest, box or pouch); a bandolier, holster, vial, dagger belt or pocket gives readied slots.
+  - **Light:** a torch, candle or lantern lights on its row, and the character's tokens give off its light. A lantern
+    burns oil, takes a diffuser, hood or black lens, and a lit torch hits for Fire. Every rest puts the lights out (a
+    candle or torch burns out). Chickenglitter Dye glows until a Nightly Rest.
+  - **Use** a consumable (a Healing Date, Bandages, an oil, Rations …): one is used up, with its card.
+  - **Jewelry** gives 1X Advantage against its condition. **Runes** change the defenses as chosen on their sheet, one
+    active at a time, worn with armor.
+  - The **Brass Horn** (Advantage on Initiative), **Gold Wings** (+5ft with Sandals) and the **Sage Smudge** (against
+    melee attacks) work too.
+- **The Long Rest uses them:** an Offering counts at its price toward its Advantage (the Holy Tools' Offering is 100gc),
+  Pray for Guidance looks for a Holy Symbol, and **Shop for Bargains** rolls the actual items on deal, linked on the
+  card with their bargain prices.
+- **Gear sheets** show the coin, the Item Slots and the slots a bag gives. Item links on chat cards are readable on the
+  dark cards.
+- **The Breach:** the pregens' torches light their tokens on the night scene.
+
+- **The three rests** (rulebook p.235), in the header as **Quick · Fitful · Long**:
+  - **Quick Rest:** as before (it was "Short Rest").
+  - **Fitful Rest** (a night): what "Long Rest" did before (full Health, pools, Rend), except Lore, which the rulebook
+    refills "at the end of every Long Rest" (p.168).
+  - **Long Rest** (a week or more of downtime) is new: a window to plan a Long Rest Action for each week, then one card
+    with every week's result, a Fitful Rest, and Lore refilled.
+- **Long Rest Actions** (pp.263–266), resolved by the rules:
+  - **Earn Money:** odd jobs pay by Proficiency (10–250gc), or an inherited business pays (the Shrimp Trawler, the
+    Restaurant of Forever Stew by its rarity, a Ministry, the Cheese Boat, the Red Herring Tavern; Suan of the Family
+    triples odd jobs).
+  - **Acquire Influence:** +1 with a group, at most 2 a Long Rest.
+  - **Make an Offering:** expends an Offering and rolls 1D20 at a level of Advantage per Religion rank, 100gc offered and
+    week given; a natural 20 gains a Lore point.
+  - **Pray for Guidance:** a Religion Check against 20, once answered.
+  - **Shop for Bargains:** rolls the Bargain Sale and Bargain Buy and the Economy: Bargaining Checks for each.
+  - **Train:** removes an ability, talent or specialization rank (not one another ability needs), its points back.
+  - **Investigate a Lead, Harvest, Craft** and anything else go on the card for the GM. The window shows where the book's
+    limits stop a week counting.
+- **Money:** a purse of gold and silver coins on the Inventory tab, with each profession's starting gold, change both
+  ways, prices on items (armor now carries its price too), and **Sell** for half the price (p.266). How many silver make
+  a gold is a world setting (default 100): the rulebook never says.
+- **Influence:** a list on the Character tab, gained in downtime and **Spent** while the group is present (take action,
+  a hint about a lead, get a thing).
+- **User Manual:** a new **Downtime and Money** page.
+
+- **Heritage, ancestry and culture are built in** (rulebook Chapters II–III). On the Character tab, under Identity:
+  - **Heritage:** its HP at Level 1 is now added to Max HP for you, and its abilities are added to the sheet. A
+    Daemonai chooses Intuit or Speak, and a Fontborne Lightly or Heavily Warped.
+  - **Ancestry:** chosen from a list of your Heritage's ancestries. It sets the Heritage and adds its abilities. A
+    Hulinari's ancestry is their form, and sets their Hulinari Warrior form.
+  - **Culture:** one of the five starter cultures. Its Binding Laws and Customs show on the tab, and its cultural talent
+    and language are added. A talent's specialized-talent rank (Heibrim Lore's Religion: Demon Lore) goes on the Stats
+    tab, needing no general talent. The Cunei choose their subculture and talent.
+  - What they grant is taken back when they change. An ancestry or culture can also be dragged onto the sheet.
+  - **Prerequisites** now check culture, subculture, ancestry and Heritage ("Tianqi Oracle", "Black Cunei Subculture",
+    "Withered Human Ancestry").
+  - **A table's own:** a Culture or Ancestry item made in the world (or on the sheet) is offered too, with its laws,
+    options and the abilities it grants.
+- **New compendiums,** in a Heritage & Culture folder:
+  - **Heritages & Ancestries:** the six heritages' abilities and the 14 global ancestries (the three Hulinari forms included),
+    with their abilities.
+  - **Cultures:** the Myrgha, Cunei Myrgha, Olganyar, Tianqi and Kishai. Each has its culture item, talents and language,
+    unique ancestries, cultural abilities, and inheritance: 80 businesses, crafts, rituals, relics and craft ingredients.
+  - **Cultures of the Ardus Yauga** (journal): the chapter's opening with the map, and each culture's history, Cultural
+    Tapestry, Ways and Inheritance, linked to the items.
+- **Automated where the rules allow:**
+  - Max HP: Strong Constitution and Brutish Constitution. Move Speed: Brutish Figure.
+  - Damage resistance: Elemental Resistance (Proficiency against the element picked on its card) and Stoneskin.
+  - Hulinari forms: their Check Expertise; With All Haste and With Cunning's Finesse or Wiles to-hit and damage; With
+    Force's die.
+  - Tianqi: Dying Strength, Ambushed Resiliency, and Anemic Tolerance (Hemorrhage a die smaller).
+  - Cunei: Perfect Polishing, On-the-Fly Restoration, Meditative Will, and Farmer's Eye (+2 to Wilderness checks).
+  - Inheritance: the Red Glyph of Armor's +1. Inherited armor and weapons are real armor and weapons (Just A Good Suit
+    of Armor, Goldweave Blade, the Grass Pole …).
+- **Characters from earlier versions:** a culture or ancestry typed in shows "as written" until one is chosen. Heritage
+  HP typed into Max HP adjustment is taken back out once, when the GM loads the world (a notice says whose).
+- **The Breach:** the pregens hold the Tianqi culture item and their ancestries, with what those grant. Their laws are
+  on the Character tab rather than in their Story. Selthimor's Water resistance comes from his Elemental Resistance.
+  The adventure's own copies of the Tianqi abilities are gone: they're in the Cultures compendium.
+
+- **The Travel Ledger: Sacadia's travel rules, a day at a time** (rulebook pp.283–297). A GM window for the party's
+  journey on a scene, opened with `game.sacadia.travelLedger()`.
+  - **The journey:** the route, the party's token, the destination, how they travel, their pace, and their food and water.
+  - **Each day:** pick the road, the weather, the terrain and the travel Check DC, then **Travel Day**:
+    - **Distance:** the hexes for the method of travel on that road, one more pushing it or one fewer going slowly, and
+      one to three fewer each for bad weather and hard terrain. At 0 the party is stuck; a laden wagon or cart goes at
+      half speed.
+    - **Supply:** the party eats 1 food and 1 water a day, each set of mounts as much again, one more pushing it, and
+      no water along fresh water.
+    - **Chat:** the day posts a card with the distance, the supply left, the sightlines, the Check DC and the hexes still
+      ahead.
+  - **With the Indy Route module,** the day's leg draws on the map, the party token rides it, and the leg stays on the
+    map as a tile. Without it, the token moves to where the day ends.
+  - **Undo** and **Start Over** take days back. The journey is kept on the scene.
+- **The Breach's prologue, reworked:**
+  - **The road isn't scripted:** the Travel Ledger walks the party to the wall from Tianqis, on foot, with a token of
+    its own and 3 food and 2 water. They'll need to buy more on the way.
+  - **Augur: Nexus:** the **Prologue: The Ardus Yauga** macro files the area there, through Nexus's API:
+    - the map as the world's Nexus scene (it asks before replacing one);
+    - the battle map inside it, behind the Chuni's Wall site;
+    - two organizations, the Tianqi and Ager's Demons, with the rulebook's lore;
+    - their people: the demons, linked to their actors and led by Ager, the Cannibal King; and the heroes as player
+      characters under their Monarch;
+    - the quest **Man the Wall**: hold the gate, raise the alarm, kill the demon.
+
+    Running it again only adds what's missing.
+  - **Fix:** in 0.3.7 the road's line stayed on screen over the battle map. Indy Route draws over the canvas, not the
+    scene, so nothing the adventure plays is left up now; the ledger's days stay on the map as tiles.
+  - **Fix:** the Tianqi port is **Tianqis**. 0.3.7 misread the map as "Tianois".
+
 ## 0.3.7
 
 - **The Breach: a prologue on the world map.** A new scene, **The Ardus Yauga**, is the rulebook's world map (v1.2 p.25),

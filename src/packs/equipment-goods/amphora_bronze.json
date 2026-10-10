@@ -1,0 +1,35 @@
+{
+  "_id": "b9d29c3d8a7180cc",
+  "_key": "!items!b9d29c3d8a7180cc",
+  "name": "Amphora (Bronze)",
+  "type": "gear",
+  "img": "icons/consumables/drinks/wine-amphora-clay-red.webp",
+  "folder": "65470c303531d49b",
+  "sort": 70,
+  "system": {
+    "description": "<p><strong>Amphora (Bronze)</strong> (Passive): This item consumes 3 Stored Item Slots (SIS), but provides 8 SIS. You may only put items with the Small Property into these SIS. All items placed in the Amphora’s slots must be the same. You may benefit from only one Amphora at a time.</p><p class=\"goods-facts\">3 Item Slots · 120gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 120,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 3,
+    "storage": "sis",
+    "providesSis": 8,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "amphora_bronze",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "amphora"
+      },
+      "bargain": "baggage",
+      "buildHash": "6dc5b32c72b9"
+    }
+  }
+}

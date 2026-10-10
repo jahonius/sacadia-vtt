@@ -1,0 +1,35 @@
+{
+  "_id": "26550ee2b2dce11c",
+  "_key": "!items!26550ee2b2dce11c",
+  "name": "Grassfolk",
+  "type": "ancestry",
+  "img": "icons/magic/nature/leaf-arrowheads-glow-green.webp",
+  "folder": "c7b9fbce013a6974",
+  "sort": 10,
+  "system": {
+    "description": "<p>A child of Kish, you are corrupted by your time spent within the Sea of Blades. You might be corrupted weakly (if Lightly Warped) or strongly (if Heavily Warped). Kish is an Air Element Font. You may be corrupted into a Grassfolk from a Human Ancestry by Grass Font corruption in Kish. If so, you will replace your Human Ancestry abilities with General Fontborne Ancestry abilities as well as those below. Take the ability that matches the strength of your Corruption (Strength of Warp).</p><p><strong>By your Strength of Warp:</strong> @UUID[Compendium.sacadia.cultures.Item.d67a4e4b234fd5c3]{Grasswinds} (Lightly Warped), @UUID[Compendium.sacadia.cultures.Item.a5764979002f9b1a]{Rooting} (Heavily Warped)</p><p><em>Kishai ancestry. Fontborne Heritage. Rulebook p.73.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.d67a4e4b234fd5c3",
+        "option": "light"
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.a5764979002f9b1a",
+        "option": "heavy"
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fontborne",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_grassfolk",
+      "culture": "kishai",
+      "buildHash": "0ad066be458e"
+    }
+  }
+}

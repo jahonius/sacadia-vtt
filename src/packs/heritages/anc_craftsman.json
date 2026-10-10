@@ -1,0 +1,30 @@
+{
+  "_id": "b2a056c1d5396aaf",
+  "_key": "!items!b2a056c1d5396aaf",
+  "name": "Craftsman",
+  "type": "ancestry",
+  "img": "icons/skills/trades/construction-carpentry-hammer-gray.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 20,
+  "system": {
+    "description": "<p>You are a natural craftsman, and have a knack for making things. Perhaps you’ve trained your whole life, or maybe you’re just a natural. Either way, you are an exceptional crafter.</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.e8ba69c268d38334]{Artisanal Crafting}</p><p><em>Human Heritage. Rulebook p.82.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.e8ba69c268d38334",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "human",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_craftsman",
+      "buildHash": "6eecd8c7d358"
+    }
+  }
+}

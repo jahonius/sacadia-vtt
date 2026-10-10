@@ -1,0 +1,34 @@
+{
+  "_id": "9c2be5e2064ad6c1",
+  "_key": "!items!9c2be5e2064ad6c1",
+  "name": "Clothes (Traveler’s)",
+  "type": "gear",
+  "img": "icons/equipment/chest/shirt-collared-green.webp",
+  "folder": "179b66112d2da804",
+  "sort": 50,
+  "system": {
+    "description": "<p><strong>Worn</strong> (Passive): Worn Items can be worn on your person. A Worn Item must still be placed in RIS to use, but if it is in your RIS, it is assumed that you are wearing it. If it is in your SIS, it is assumed that the item is in your bags. Many Worn items have an effect when worn.</p><p><strong>Clothes Set</strong> (Passive): You must equip at least one item marked Clothes Set to interact with humans from cultures that wear clothing.</p><p class=\"goods-facts\">1 Item Slot · 55gc · Clothing, rulebook p.198</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 55,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, clothes-set",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "clothes_traveler_s",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing"
+      },
+      "bargain": "clothes",
+      "buildHash": "73b157ef8374"
+    }
+  }
+}

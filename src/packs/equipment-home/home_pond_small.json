@@ -1,0 +1,33 @@
+{
+  "_id": "81f4c363e52dc3dc",
+  "_key": "!items!81f4c363e52dc3dc",
+  "name": "Pond (Small)",
+  "type": "gear",
+  "img": "icons/commodities/materials/liquid-droplet-blue.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 280,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 1200gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 1200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_pond_small",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "0c08c5a41405"
+    }
+  }
+}

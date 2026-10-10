@@ -19,14 +19,16 @@
     "maxStat": 27,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 600
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "craftsman_s_iron_set",
       "kind": "armor",
-      "buildHash": "84fb58bd4799"
+      "bargain": "armor",
+      "buildHash": "71cfb57f813a"
     }
   }
 }

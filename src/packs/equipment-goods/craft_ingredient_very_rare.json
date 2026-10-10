@@ -1,0 +1,33 @@
+{
+  "_id": "aa0192b813ed2914",
+  "_key": "!items!aa0192b813ed2914",
+  "name": "Craft Ingredient (Very Rare)",
+  "type": "gear",
+  "img": "icons/commodities/materials/bowl-powder-pink.webp",
+  "folder": "aaed84b995563a44",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Craft Ingredients</strong> (Passive): You cannot go into a market to purchase craft ingredients from this table. Instead, you must search a market for rare finds (see the Crafting Section). Once you have found a Rare Find, you must purchase it according to these costs. You cannot identify that a Craft Ingredient has a Special Property, Craft Taint, or the Relic Property until you purchase it, and these do not affect the price of items.</p><p class=\"goods-facts\">1 Item Slot · 200gc · Craft Ingredients, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "craft_ingredient_very_rare",
+      "kind": "goods",
+      "goods": {
+        "table": "craft-ingredients"
+      },
+      "buildHash": "f021a05c1767"
+    }
+  }
+}

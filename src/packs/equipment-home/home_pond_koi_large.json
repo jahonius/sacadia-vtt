@@ -1,0 +1,33 @@
+{
+  "_id": "3dafa8953b179861",
+  "_key": "!items!3dafa8953b179861",
+  "name": "Pond, Koi (Large)",
+  "type": "gear",
+  "img": "icons/environment/creatures/fish-crosshatched-blue-purple.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 290,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 3000gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 3000,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_pond_koi_large",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "b359a9aaa88d"
+    }
+  }
+}

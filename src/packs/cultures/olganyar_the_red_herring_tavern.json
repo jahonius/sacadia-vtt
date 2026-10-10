@@ -1,0 +1,41 @@
+{
+  "name": "The Red Herring Tavern",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Olganyar Inheritance: a business. Very Rare, Rot. No item slots.</em></p><p>This small, cursed tavern serves fish and a few select imported drinks. Unfortunately, it’s deeply haunted.</p><p><strong>Work the Bar</strong> (Ceremony): As a Long Rest Action, you can work on your Tavern. Choose one of the following:<br/>Open the Bar: You open the tavern for business. Make 100gp. Then, increase the Spirit Counter by +2. Then, roll 1D20. If you roll a 19 or higher, the spirits attack, murdering 1D6 patrons. For each patron murdered, pay 300gp to the victim’s family. If you cannot pay, your GM decides if you narratively owe a blood debt, or if mechanically you receive a Bane Token. Reduce the Spirit Counter by 3 for each Patron murdered after this.<br/>Renovate Bar: You renovate the bar. Increase the money permanently made by the bar per long rest action (forever) by 10% (max: 500gp). Also, increase the Spirit Counter by +1. Do not roll.<br/>Placate Spirits: (Prerequisite: 100gp of Offerings). Expend 200gp worth of offerings. Reset the Spirit Counter to 0.</p><p><strong>Spirit Counters</strong> (Passive): The Red Herring Tavern tracks spirit counters, denoting how angry the spirits are. At the start, this number is 0. It has no upper limit, but may affect your rolls.</p><p><em>Rulebook p.54.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "602fae5c812dc5c7",
+  "_key": "!items!602fae5c812dc5c7",
+  "folder": "a58b7fdfcc247ad6",
+  "sort": 10,
+  "img": "icons/environment/settlement/tavern.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_the_red_herring_tavern",
+      "kind": "inheritance",
+      "culture": "olganyar",
+      "business": {
+        "earn": "100",
+        "note": "Open the Bar: the Spirit Counter rises by 2, and on a 19+ on 1D20 the spirits attack."
+      },
+      "inheritance": {
+        "section": "business",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "fee519a5c85f"
+    }
+  }
+}

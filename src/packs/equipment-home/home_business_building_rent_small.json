@@ -1,0 +1,34 @@
+{
+  "_id": "38f23754e7f93a07",
+  "_key": "!items!38f23754e7f93a07",
+  "name": "Business Building Rent (Small)",
+  "type": "gear",
+  "img": "icons/environment/settlement/pottery-shop-shed-red.webp",
+  "folder": "19c0d59a5474f965",
+  "sort": 110,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 800gc · Property, rulebook p.211</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 800,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_business_building_rent_small",
+      "kind": "home",
+      "goods": {
+        "table": "property"
+      },
+      "bargain": "homes",
+      "buildHash": "7daef078bfe1"
+    }
+  }
+}

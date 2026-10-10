@@ -1,0 +1,45 @@
+{
+  "_id": "8351d9b58fa2e3cb",
+  "_key": "!items!8351d9b58fa2e3cb",
+  "name": "Song of the Grasshopper",
+  "type": "ability",
+  "img": "icons/creatures/invertebrates/beetle-stag-yellow-green.webp",
+  "folder": "d0b0b889a5c2a7cc",
+  "sort": 20,
+  "system": {
+    "description": "<p>For as long as you maintain Focus, you may hurdle a 5ft greater gap, or jump a 10ft greater horizontal distance.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai: Songs of the Solemn",
+      "prerequisite": "Song of the Solemn, Bladedancer · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_the_grasshopper",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "4999ba463146"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_id": "d955247460f7991d",
+  "_key": "!items!d955247460f7991d",
+  "name": "Patlar",
+  "type": "ancestry",
+  "img": "icons/magic/unholy/hand-claw-glow-orange.webp",
+  "folder": "5757523bb3aaa415",
+  "sort": 40,
+  "system": {
+    "description": "<p>The cursed servants of the war goddess Palta, the Patlar appear as normal humans in youth, but whenever the blood of another person is spilled on them, it permanently stains their skin and hair blood red where it sets. As they grow, Patlar become larger and stronger than normal humans. If untempered, they develop a bloodlust for war.</p><p><strong>Size:</strong> Medium (6–7 feet)</p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.ecafa73cc030c428]{Tempered Calm}</p><p><em>Fixerfolk Heritage. Rulebook p.88.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.ecafa73cc030c428",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "fixerfolk",
+    "size": "Medium (6–7 feet)",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_patlar",
+      "buildHash": "78ed13711337"
+    }
+  }
+}

@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "fist_wraps",
       "kind": "weapon",
-      "buildHash": "17dfe4039b31"
+      "bargain": "basic-weapons",
+      "buildHash": "45b38ea869b2"
     }
   }
 }

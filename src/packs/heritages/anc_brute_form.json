@@ -1,0 +1,35 @@
+{
+  "_id": "a18844612c58d083",
+  "_key": "!items!a18844612c58d083",
+  "name": "Brute Form",
+  "type": "ancestry",
+  "img": "icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp",
+  "folder": "07c04271e5f5dd35",
+  "sort": 60,
+  "system": {
+    "description": "<p>A powerful and singularly willed creature, brutes are enormous in both size and power. Your chosen Brute Form should be a powerful solitary land beast no more than eight feet in length, such as a short-faced bear, a smilodon, a dire boar, a giant sloth, or a tiger.</p><p><em>Hulinari are both an Ancestry and a Profession: if you choose to play one, you must take the other. Every Hulinari Ancestry is a unique animal; choose your species. This also sets your Hulinari Warrior form.</em></p><p><strong>Abilities:</strong> @UUID[Compendium.sacadia.heritages.Item.45d2e84fc7d1bbbf]{Beastly Fortitude}, @UUID[Compendium.sacadia.heritages.Item.67b5054b2edf4134]{With Force}</p><p><em>Hulinari Heritage. Rulebook p.92.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.45d2e84fc7d1bbbf",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.heritages.Item.67b5054b2edf4134",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "heritage": "hulinari",
+    "size": "",
+    "lifespan": ""
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_brute_form",
+      "hulinariForm": "brute",
+      "buildHash": "d44733f6338b"
+    }
+  }
+}

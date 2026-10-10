@@ -1,0 +1,34 @@
+{
+  "_id": "95c2f5fdeee49849",
+  "_key": "!items!95c2f5fdeee49849",
+  "name": "Wine (Jug)",
+  "type": "gear",
+  "img": "icons/consumables/drinks/wine-amphora-clay-pink.webp",
+  "folder": "7bea17507ecef153",
+  "sort": 340,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 8gc · Trade Goods, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 8,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_wine_jug",
+      "kind": "home",
+      "goods": {
+        "table": "trade-goods"
+      },
+      "bargain": "trade-goods",
+      "buildHash": "34ca5fc03cd1"
+    }
+  }
+}

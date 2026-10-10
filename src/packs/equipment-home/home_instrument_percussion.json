@@ -1,0 +1,33 @@
+{
+  "_id": "a0e034c6daa375a7",
+  "_key": "!items!a0e034c6daa375a7",
+  "name": "Instrument (Percussion)",
+  "type": "gear",
+  "img": "icons/tools/instruments/drum-hand-tan.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 220,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 300gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 300,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_instrument_percussion",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "6a5e6636a64b"
+    }
+  }
+}

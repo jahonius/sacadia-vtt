@@ -1,0 +1,67 @@
+/** The Myrgha (rulebook v1.2 printed pp.27–36). The shape is described in src/identity/cultures.mjs. */
+export default {
+  key: 'myrgha', name: 'Myrgha', page: 27, img: 'icons/commodities/currency/coins-plain-stack-gold.webp',
+  summary: '“The Empire at the Edge of the World”, the Myrgha are a naval power with a fist of dominance stretched across the Ardus Yauga Sea. Their culture is ruled by twelve divinely ordained Oligarchs, whose power is absolute, but beginning to fracture. Supplementing this divine “Trickle Up Economics” Oligarchy is a complex and Byzantine legalist Bureaucracy. The Myrgha are an Oligarchic and Legalist empire at the height of empire, ready to decline.',
+  laws: [
+    ['Letter of the Law', 'You must value Myrgha laws, using the letter of the law and not the spirit of the law in your interpretation. Many Myrgha extend this to the laws of other lands into which they travel - doing so is up to you.'],
+    ['Gambling', 'You cannot gamble.'],
+    ['Checkered Details', 'You must proudly display black and white checkered patterns at all time on your person, and cannot hide that you are Myrgha.'],
+    ['Oligarchic Loyalty', 'If you are not an Oligarch, you serve one. You cannot disobey the order of any Oligarch, unless another Oligarch to whom you owe allegiance supercedes it. Direct oligarchic orders supercede all other Laws and Customs on this list.'],
+  ],
+  talents: [
+    { id: 'myrgha_eye_for_gold', name: 'Eye for Gold', tag: 'passive', page: 27, prerequisite: 'Myrgha Cultural Heritage', img: 'icons/commodities/gems/gem-rough-cushion-yellow.webp',
+      grantsSpecialty: { talent: 'economy', name: 'Appraisal' },
+      description: 'Even if you don’t understand the economy, you have a sense for what has value. Gain 1 level in Economy: Appraisal, even if you do not have Economy. Additionally, you can always tell the difference between real gold and forgeries or false golds.' },
+  ],
+  language: { id: 'myrgha_bushiu', name: 'Bushiu', page: 27, description: 'You speak the Bushiu language.' },
+  ancestries: [
+    { id: 'myrgha_elephant_seal_curiot', name: 'Elephant Seal Curiot', heritage: 'curiot', page: 31, size: 'Medium (6.5–8 feet)', lifespan: 'Typically 65–85 years',
+      img: 'icons/creatures/fish/fish-grouper-tan.webp', lore: ['lore_sealslam'],
+      description: 'Elephant Seal Curiots are large, bulbous, and gelatinous. They are also extremely powerful, and low to the ground in weight distribution.',
+      abilities: [
+        { id: 'myrgha_brutish_figure', name: 'Brutish Figure', tag: 'passive', page: 31, prerequisite: 'Elephant Seal Curiot Ancestry', img: 'icons/creatures/mammals/ox-buffalo-horned-green.webp',
+          modifiers: [{ label: 'Brutish Figure', target: 'speed', value: '-5', predicate: [] }],
+          description: 'You are slow but mighty. Reduce your Move Speed by 5ft. You are immune to targeted enemy effects to knock you Prone. Additionally, gain 1X Advantage against Kick, and any other (non-targeted) effect to knock you Prone.' },
+      ] },
+  ],
+  groups: [
+    { label: 'Bureau of Measurement Thugs', note: 'Oligarchic Legalism: certain Bureaucrats in the Legalist tradition of the Myrgha can weave contract law into the very air of combat. Thugs who work within the Bureau of Measurement have access to the following abilities.', abilities: [
+      { id: 'myrgha_count_the_hand', name: 'Count the Hand', tag: 'passive', csp: 3, page: 31, prerequisite: 'Myrgha Cultural Heritage, Consecutive Threat', img: 'icons/skills/melee/unarmed-punch-fist.webp',
+        description: 'At the start of your turn, declare a number of successful hits you will make. If you successfully make that number of hits, and do not make any additional hits on your turn, increase the damage dice type of Consecutive Threat by one dice type.' },
+      { id: 'myrgha_thickheaded_bureaucrats', name: 'Thickheaded Bureaucrats', tag: 'passive', csp: 4, page: 31, prerequisite: 'Myrgha Cultural Heritage, Consecutive Threat, Pained Bash', img: 'icons/sundries/documents/document-official-capital.webp',
+        description: 'When you use Pained Bash, you may count it as an additional attack for the purposes of Consecutive Threat.' },
+    ] },
+    { label: 'Bureau of Religion Oracles', note: 'Oracles who work within the Bureau of Religion and have a good eye for economies have access to the following abilities.', abilities: [
+      { id: 'myrgha_law_of_trades', name: 'Law of Trades', tag: 'focus', csp: 6, page: 31, prerequisite: 'Myrgha Cultural Heritage, Oracle, Religion: Specific[3], Economy: Appraise[3]', img: 'icons/skills/social/trading-justice-scale-gold.webp',
+        description: 'Choose two targets on the same side in a combat that are the same level or CR. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. Both targets must be within 60ft of you. All attacks made against you are additionally treated as Advantaged for as long as you maintain Focus on this.' },
+      { id: 'myrgha_law_of_pincushions', name: 'Law of Pincushions', tag: 'focus', csp: 7, page: 31, prerequisite: 'Myrgha Cultural Heritage, Oracle, Society: Myrgha[3], Society: Legalism[3], Religion: Specific[3]', img: 'icons/skills/social/trading-injustice-scale-gray.webp',
+        description: 'Choose one target within 30ft of you. For as long as you maintain Focus, they critically hit with their first attack each turn that hits but does not critically hit. Each time they do, gain one Curse Counter. Each time you are hit (and the attack does not critically hit you), remove one Curse Counter. The attack dealt against you critically hits. You may only use this when you are below half HP. You lose all Curse Counters on a Nightly Rest, and one per quick rest. You lose Focus if they move outside of 30ft range of you. You may use this once per combat.' },
+    ] },
+    { label: 'Goldbinder Fatebound', note: 'Generational Gold: if you are a member of the Oligarchy, you can Fatebind yourself to gold itself, through your divine blood connection to the Demon King Gongshuan. Goldbinders are special Fatebound who do not bind themselves to a patron or deity, but bind themselves directly to gold. Doing so is incredibly costly (literally), but also powerful. If you Fatebind to Gold, instead of taking Fated Strike, take Goldenhoard.', abilities: [
+      { id: 'myrgha_goldenhoard', name: 'Goldenhoard', tag: 'passive', page: 32, prerequisite: 'Myrgha Cultural Heritage, Fatebound', img: 'icons/commodities/currency/coins-plain-stack-gold.webp',
+        description: 'Choose an item made of gold that you possess to be your Golden Connection. It can be a Weapon, Armor, or Accessory (i.e., something innocuous). You must have training in the armor or weapon to select it. The weapon gains a Gold Cache of X*1000gp, where X is your Proficiency. If you are an Oligarch (and not just a family member) this is instead X*2000gp. If you choose a weapon for your Golden Connection, gain Goldblade for free now. If you take Armor for your Golden Connection, gain Goldshield for free now. If you take an Accessory for your Golden Connection, gain Goldspool for free now. You can use gold you store in your Gold Cache for the following abilities.' },
+      { id: 'myrgha_goldblade', name: 'Goldblade', tag: 'action', csp: 6, page: 32, prerequisite: 'Goldenhoard, Goldweave Weapon', img: 'icons/weapons/swords/sword-guard-gold-red.webp',
+        description: 'Move gold from your Gold Cache to a golden weapon you wield. For every 1,000gc you move to a golden weapon, increase the damage dice of that weapon by 1 dice type.' },
+      { id: 'myrgha_fated_blade', name: 'Fated Blade', tag: 'passive', csp: 6, page: 32, prerequisite: 'Fate[5], Goldblade', img: 'icons/weapons/swords/sword-guard-gold-red.webp',
+        description: 'Your Goldblade attacks AD.' },
+      { id: 'myrgha_critical_blade', name: 'Critical Blade', tag: 'boost', csp: 3, page: 32, prerequisite: 'Fate[5], Goldblade', img: 'icons/skills/melee/strike-sword-gray.webp',
+        description: 'As a Boost to making a weapon attack with Goldblade, you can permanently expend 1,000gc. If you do, you critically hit with the attack.' },
+      { id: 'myrgha_goldshield', name: 'Goldshield', tag: 'action', csp: 5, page: 32, prerequisite: 'Goldenhoard, Goldweave Armor', img: 'icons/equipment/shield/heater-steel-gold.webp',
+        description: 'Move gold from your Gold Cache to a Goldweave armor you equip. For every 500gc you move to your golden armor, choose MD, PD, or TD, and increase your defense by that type by 1 for as long as you have allocated gold from your Gold Cache to this armor.' },
+      { id: 'myrgha_goldspool', name: 'Goldspool', tag: 'action', csp: 6, page: 32, prerequisite: 'Goldenhoard, Goldweave Accessory', img: 'icons/commodities/currency/coins-assorted-mix-copper-silver-gold.webp',
+        description: 'Move gold from your Gold Cache across your physique. Allocate some amount of gold to this. For every 1 damage you would take (rounded down), instead permanently remove 25gc from gold you have spooled across your physique.' },
+      { id: 'myrgha_reactive_gold', name: 'Reactive Gold', tag: 'reaction', csp: 4, page: 32, prerequisite: 'Goldenhoard', img: 'icons/commodities/currency/coin-embossed-crown-gold.webp',
+        description: 'As a reaction to someone hitting you with an attack (whether they miss or hit), you may move gold between Goldblade, Goldshield, and Goldspool.' },
+    ] },
+    { label: 'Morli’s Contracts', note: 'With Morli’s Scroll of Contract Law (an inherited relic) equipped in both hands, you can buy these pacts with Combat Skill Points. You gain 3 Fatigue if your Focus ends on any of them during combat through any cause (including willingly ending Focus).', abilities: [
+      { id: 'myrgha_morli_law_of_the_trade', name: 'Law of the Trade', tag: 'focus', csp: 6, page: 36, prerequisite: 'Morli’s Scroll of Contract Law, Economy: Appraise[3]', img: 'icons/skills/social/trading-justice-scale-yellow.webp',
+        description: 'Choose two targets on the same side in a combat that are within 2 CR levels of one another. All attacks against one gain Advantage. All attacks against the other gain Disadvantage. Both targets must be within 60ft of you. All attacks made against you are additionally treated as 1X Advantage for as long as you maintain Focus on this.' },
+      { id: 'myrgha_morli_law_of_earth', name: 'Law of Earth', tag: 'focus', csp: 3, page: 36, prerequisite: 'Morli’s Scroll of Contract Law', img: 'icons/magic/earth/barrier-stone-brown-green.webp',
+        description: 'All ground within 60ft of you is considered natural Difficult Terrain for all creatures. You cannot move.' },
+      { id: 'myrgha_morli_law_of_luck', name: 'Law of Luck', tag: 'focus', csp: 4, page: 36, prerequisite: 'Morli’s Scroll of Contract Law, Religion: Astrology[3]', img: 'icons/magic/control/buff-luck-fortune-gold.webp',
+        description: 'Choose one target. Attempt to give them 6 levels of Jinxing (Fate Check negates). Jinxing given this way is treated as Enduring for as long as they have it. Take however many levels of Enduring Jinxing they take.' },
+      { id: 'myrgha_morli_law_of_pincushions', name: 'Law of Pincushions', tag: 'focus', csp: 6, page: 36, prerequisite: 'Morli’s Scroll of Contract Law, Society: Legalism[3]', img: 'icons/skills/social/trading-injustice-scale-gray.webp',
+        description: 'Choose one target. For as long as you maintain Focus, they critically hit with their first attack each turn. Each time they do, gain 2 Curse Counters. Each time you are hit, remove one Curse Counter. The attack dealt against you critically hits. You may only use this when you are below half HP. You lose all Curse Counters on a Nightly Rest.' },
+    ] },
+  ],
+};

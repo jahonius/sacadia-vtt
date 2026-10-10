@@ -1,0 +1,37 @@
+{
+  "name": "Eye of Insanity",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Tianqi Inheritance: a craft or ritual. Very Rare, Rot. 1 item slot (Small, Quickdraw). Attunement.</em></p><p><strong>Prerequisites:</strong> Oracle Profession, Proficiency[4]</p><p>A stone wrapped in papers. Each paper has an eye scrawled on it in deep black ink.</p><p><strong>Open the Insane Eye</strong> (Action): You open the eye and immediately go insane. Set your Madness to 6. Your madness is Irrecoverable until you drop to Unconsciousness. If there are no enemies visible within range, you use your full turn to attack your allies as best you are able until you drop to unconsciousness or die.</p><p><em>Rulebook p.67.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "3951a6350ecb984d",
+  "_key": "!items!3951a6350ecb984d",
+  "folder": "76562f6c37f89b61",
+  "sort": 100,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_eye_of_insanity",
+      "kind": "inheritance",
+      "culture": "tianqi",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Very Rare",
+        "element": "Rot",
+        "attunement": true,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "9546c068df59"
+    }
+  }
+}

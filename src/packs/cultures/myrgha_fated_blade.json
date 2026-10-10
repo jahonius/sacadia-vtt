@@ -1,0 +1,45 @@
+{
+  "_id": "4f1cfe3439550d60",
+  "_key": "!items!4f1cfe3439550d60",
+  "name": "Fated Blade",
+  "type": "ability",
+  "img": "icons/weapons/swords/sword-guard-gold-red.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 70,
+  "system": {
+    "description": "<p>Your Goldblade attacks AD.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 6,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Goldbinder Fatebound",
+      "prerequisite": "Fate[5], Goldblade · p.32"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_fated_blade",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "6817ba33dda7"
+    }
+  }
+}

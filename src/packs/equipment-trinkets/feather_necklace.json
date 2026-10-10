@@ -3,19 +3,32 @@
   "_key": "!items!fee4d9cb1444288a",
   "name": "Feather Necklace",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/equipment/neck/necklace-simple-feather-red-brown.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 40,
   "system": {
-    "description": "<p>While wearing a Feather Necklace, treat all fall distances as 10ft shorter.</p>",
+    "description": "<p><strong>Feather Necklace</strong> (Passive): When you are wearing a Feather Necklace, treat all fall distances as 10ft shorter.</p><p class=\"goods-facts\">1 Item Slot (Worn, RIS Passive) · 10gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 10
+    "value": 10,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, ris-passive",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "feather_necklace",
       "kind": "trinket",
-      "buildHash": "310a6ed2ff1d"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "2e386dfcaf43"
     }
   }
 }

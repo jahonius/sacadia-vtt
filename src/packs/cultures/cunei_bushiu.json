@@ -1,0 +1,45 @@
+{
+  "_id": "07df1125aa004e87",
+  "_key": "!items!07df1125aa004e87",
+  "name": "Bushiu",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-letter-tan.webp",
+  "folder": "e6e98acf43a5e597",
+  "sort": 50,
+  "system": {
+    "description": "<p>You speak the Bushiu language.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Cunei Myrgha Language",
+      "prerequisite": "Cunei Myrgha Cultural Heritage · p.37"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_bushiu",
+      "transcribed": true,
+      "culture": "cunei",
+      "buildHash": "85a57d99a299"
+    }
+  }
+}

@@ -19,14 +19,16 @@
     "maxStat": 32,
     "slots": 1,
     "storage": "ris",
-    "providesSis": 0
+    "providesSis": 0,
+    "value": 2000
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "legendary_cloth_set",
       "kind": "armor",
-      "buildHash": "08d7ce21b444"
+      "bargain": "armor",
+      "buildHash": "d0f40718fcdf"
     }
   }
 }

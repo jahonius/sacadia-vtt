@@ -1,0 +1,45 @@
+{
+  "_id": "49034cce7cd93279",
+  "_key": "!items!49034cce7cd93279",
+  "name": "Anemic Tolerance",
+  "type": "ability",
+  "img": "icons/skills/wounds/blood-drip-droplet-red.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 40,
+  "system": {
+    "description": "<p>Reduce the damage dice of Hemorrhage given to you by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 2,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: All Tianqi",
+      "prerequisite": "Tianqi Cultural Heritage · p.63"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_anemic_tolerance",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "bb60ade5fb9e"
+    }
+  }
+}

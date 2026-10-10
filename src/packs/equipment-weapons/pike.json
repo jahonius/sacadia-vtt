@@ -33,7 +33,8 @@
     "sacadia": {
       "catalogId": "pike",
       "kind": "weapon",
-      "buildHash": "51d18a29d473"
+      "bargain": "military-weapons",
+      "buildHash": "85b543d57270"
     }
   }
 }

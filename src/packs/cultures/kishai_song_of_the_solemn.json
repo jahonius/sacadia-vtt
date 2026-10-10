@@ -1,0 +1,45 @@
+{
+  "_id": "cef1764889ff881b",
+  "_key": "!items!cef1764889ff881b",
+  "name": "Song of the Solemn",
+  "type": "ability",
+  "img": "icons/magic/nature/instrument-recorder-leaves.webp",
+  "folder": "25040de22dc86ea7",
+  "sort": 30,
+  "system": {
+    "description": "<p>For as long as you maintain Focus on this, you cannot speak. All allied Kishai know exactly which square you are on the combat map for as long as you use this ability.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai Cultural Talent",
+      "prerequisite": "Kishai Cultural Heritage · p.73"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_song_of_the_solemn",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "34c1e5de44ad"
+    }
+  }
+}

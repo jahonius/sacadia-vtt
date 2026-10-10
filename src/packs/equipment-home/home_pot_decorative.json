@@ -1,0 +1,33 @@
+{
+  "_id": "04dd4a3671794904",
+  "_key": "!items!04dd4a3671794904",
+  "name": "Pot (Decorative)",
+  "type": "gear",
+  "img": "icons/containers/kitchenware/vase-clay-painted-blue-gold.webp",
+  "folder": "0de756cb3b651981",
+  "sort": 320,
+  "system": {
+    "description": "<p class=\"goods-facts\">No Item Slot · 240gc · Furnishings, rulebook p.212</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 240,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "sis",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "home_pot_decorative",
+      "kind": "home",
+      "goods": {
+        "table": "furnishings"
+      },
+      "buildHash": "7419eb62d6e6"
+    }
+  }
+}

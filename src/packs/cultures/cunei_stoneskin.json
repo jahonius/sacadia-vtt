@@ -1,0 +1,52 @@
+{
+  "_id": "5c6322ff232c01e7",
+  "_key": "!items!5c6322ff232c01e7",
+  "name": "Stoneskin",
+  "type": "ability",
+  "img": "icons/magic/defensive/armor-stone-skin.webp",
+  "folder": "b5e4d67c6f6a86a3",
+  "sort": 20,
+  "system": {
+    "description": "<p>Your skin is tough to pierce. Gain Damage Resistance equal to half your Proficiency (rounded up) to slashing or piercing weapons.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Marblekin Ancestry",
+      "prerequisite": "Marblekin Fixerfolk Ancestry · p.43"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "cunei_stoneskin",
+      "transcribed": true,
+      "culture": "cunei",
+      "resistance": {
+        "types": [
+          "slashing",
+          "piercing"
+        ],
+        "value": "ceil(@proficiency/2)"
+      },
+      "buildHash": "42b3495306d0"
+    }
+  }
+}

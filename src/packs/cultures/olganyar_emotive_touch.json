@@ -1,0 +1,45 @@
+{
+  "_id": "83a81352c1264771",
+  "_key": "!items!83a81352c1264771",
+  "name": "Emotive Touch",
+  "type": "ability",
+  "img": "icons/magic/unholy/hand-light-pink.webp",
+  "folder": "f928a0400efbad4b",
+  "sort": 40,
+  "system": {
+    "description": "<p>When you have levels of Taunt or Panic, you can touch an enemy and force them to roll against X levels of the same condition, where X is the same number of levels as you have (you are the target of this effect).</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": "touch"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Auanari Ancestry",
+      "prerequisite": "Auanari Fixerfolk Ancestry · p.53"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "olganyar_emotive_touch",
+      "transcribed": true,
+      "culture": "olganyar",
+      "buildHash": "eed77eafa04d"
+    }
+  }
+}

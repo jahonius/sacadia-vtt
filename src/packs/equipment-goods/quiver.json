@@ -1,0 +1,34 @@
+{
+  "_id": "5df482862e2b356e",
+  "_key": "!items!5df482862e2b356e",
+  "name": "Quiver",
+  "type": "gear",
+  "img": "icons/containers/ammunition/arrows-quiver-brown.webp",
+  "folder": "75a7d1f4b9a3787e",
+  "sort": 80,
+  "system": {
+    "description": "<p><strong>Readied Baggage</strong> (Passive): All Readied baggage items must be equipped to RIS to work. When occupying RIS, baggage items create extra RIS within them, often with specific requirements.</p><p><strong>Quiver</strong> (Passive): You must equip a Quiver to use a Bow. Do not count arrows.</p><p class=\"goods-facts\">2 Item Slots · 100gc · Readied Baggage, rulebook p.202</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "quiver",
+      "kind": "goods",
+      "goods": {
+        "table": "readied-baggage"
+      },
+      "bargain": "baggage",
+      "buildHash": "c604d6777345"
+    }
+  }
+}

@@ -19,11 +19,14 @@ import { applyDamageTo } from '../rules/damage.mjs';
 import { onSaveRoll } from '../rules/saves.mjs';
 import { PREFIX, until, fromCatalog, stubDialogs, fixture } from './support.mjs';
 import { standingAdvantage, traitBonusParts } from '../helpers/roll-breakdown.mjs';
-import { shortRest, longRest } from '../rules/rest.mjs';
+import { shortRest, fitfulRest } from '../rules/rest.mjs';
 import { moveLegacySentinelPicks, migratePicks } from '../helpers/legacy-picks.mjs';
 import { registerSweeps } from './sweep.mjs';
 import { registerFlows } from './flows.mjs';
 import { registerAdventure, registerAdventureLook } from './adventure.mjs';
+import { registerIdentity } from './identity.mjs';
+import { registerDowntime } from './downtime.mjs';
+import { registerGoods } from './goods.mjs';
 
 function registerBatches(quench) {
   const opts = (displayName) => ({ displayName: `Sacadia: ${displayName}` });
@@ -327,8 +330,9 @@ function registerBatches(quench) {
           await until(() => sheet.rendered && pickOn(style.id), { what: 'the Fontmade dropdown' });
           await pc.items.get(enemy.id).setFlag('sacadia', 'pickValue', 'demon');
           assert.notOk(pc.system.typedDr.fire, 'no resistance without favoring Fontmade');
-          await sheet.render(); // (a new character's basic actions are still arriving; render what's there now)
-          assert.ok(pickOn(enemy.id) && !pickOn(style.id), 'the Fontmade dropdown is gone');
+          // A new character's basic actions are still arriving, re-rendering the sheet as they do: render until it's settled.
+          await until(async () => { await sheet.render(); return pickOn(enemy.id) && !pickOn(style.id); },
+            { timeout: 10000, step: 300, what: 'the Fontmade dropdown to go' });
         } finally { await sheet.close(); }
       });
 
@@ -343,7 +347,7 @@ function registerBatches(quench) {
         assert.isFalse(await migratePicks(pc), 'a second load has nothing to do');
       });
 
-      it('Rend lands on worn armor and shields (never DR), is capped at what is left, and a long rest repairs it', async () => {
+      it('Rend lands on worn armor and shields (never DR), is capped at what is left, and a fitful rest repairs it', async () => {
         const pc = await fx.actor('Rended', 'character');
         const made = await pc.createEmbeddedDocuments('Item', [
           { name: 'Hide Coat', type: 'armor', system: { equipped: true, defenses: { pd: 2, dr: 1 } } },
@@ -358,7 +362,7 @@ function registerBatches(quench) {
         assert.equal(pc.items.get(armor.id).system.rend.dr, 0);
         assert.equal(pc.items.get(shield.id).system.rend.ad, 1);
         assert.equal(pc.system.defenses.dr.value, 1);
-        await longRest(pc);
+        await fitfulRest(pc);
         assert.equal(rendOf(armor.id) + rendOf(shield.id), 0);
         assert.equal(pc.system.conditions.rended.value, 0);
       });
@@ -671,6 +675,9 @@ function registerBatches(quench) {
 Hooks.on('quenchReady', (quench) => {
   registerBatches(quench);
   registerFlows(quench);
+  registerIdentity(quench);
+  registerDowntime(quench);
+  registerGoods(quench);
   registerAdventure(quench);
   registerAdventureLook(quench);
   registerSweeps(quench);

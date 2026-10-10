@@ -1,0 +1,45 @@
+{
+  "_id": "3cadbfccbe94b7cd",
+  "_key": "!items!3cadbfccbe94b7cd",
+  "name": "Blood Gibbering",
+  "type": "ability",
+  "img": "icons/magic/unholy/orb-glowing-purple.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 70,
+  "system": {
+    "description": "<p>For each Red Glyph you have equipped in a RIS, increase the damage dice of Gibbering by one dice type.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 5,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: Glyphwardens",
+      "prerequisite": "Tianqi Oracle · p.63"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_blood_gibbering",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "7c6980b653bf"
+    }
+  }
+}

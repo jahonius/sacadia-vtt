@@ -1,6 +1,6 @@
 /**
- * Armor Adornments (book p.195) and Trinkets/Baubles (pp.207–210) — hand-transcribed, since neither
- * is in the Roll20 catalogs. Both are conditional/triggered effects, so — like the Masteries and the
+ * Armor Adornments (book p.195) — hand-transcribed, since they're not in the Roll20 catalogs (the Trinkets are in
+ * src/goods.mjs, with the rest of the Personal Goods). They are conditional/triggered effects, so — like the Masteries and the
  * display-only conditions — they ship as compendium `gear` Items carrying the effect as rules text
  * (with retail value), rather than auto-wired Active Effects. Adornments note their armor
  * prerequisite; the book's "one adornment per armor piece" cap is left to the table (descriptive).
@@ -20,18 +20,6 @@ export const ADORNMENTS = [
   { name: 'Stamped Feathers', armor: 'Platted Style', value: 30, description: "Whenever your armor is fully rended, increase your Move Speed by 10ft." },
   { name: 'Cloak of Faces', armor: 'Cloaked Style', value: 100, description: "The first time each turn you 5ft adjust, you do not provoke an attack of opportunity." },
   { name: 'Moonstone Earrings', armor: 'Lucky Style', value: 100, description: "When you expend a Lore Point, roll 1D10. On a 10, you do not expend the Lore Point." },
-];
-
-export const TRINKETS = [
-  { name: 'Woad Facepaint', value: 10, description: "Gain 1X Advantage to Initiative. Expend the Woad Facepaint after you roll it." },
-  { name: 'Feather Necklace', value: 10, description: "While wearing a Feather Necklace, treat all fall distances as 10ft shorter." },
-  { name: 'Informative Scroll', value: 0, description: "Choose one Knowledge Talent you possess. While this scroll is equipped in a RIS slot, gain +1 to all checks made with that Talent. Informative Scrolls do not stack." },
-  { name: 'Ivory Charm', value: 0, description: "As a reaction when you are Steadied and have an Ivory Charm in your RIS, roll 1D20. The first time on your next turn you would roll a D20, use this roll instead." },
-  { name: 'Lodestone', value: 0, description: "While you have a Lodestone in your RIS, if you attempt to kick or grab a target wearing Iron Armor, they gain 1X Disadvantage." },
-  { name: "Rabbit's Paw", value: 0, description: "(Prerequisite: Fate 3, wearing Medium Armor.) While a Rabbit's Paw is equipped in a RIS, increase your Dodge's dice type by one dice type." },
-  { name: 'Saltstone', value: 0, description: "While you have a Saltstone equipped in your RIS, gain +1 to your Check DC." },
-  { name: 'Signet Ring', value: 0, description: "While wearing a Signet Ring you may seal any document you write; a recipient knows if it has been opened or tampered with, and that it comes from you." },
-  { name: 'Smudge (Lavender)', value: 0, description: "Hold a lit smudge in both hands: ranged attacks have 1X Disadvantage against you. It goes out after 1 minute, a quick rest, or when you stop holding it. Expend on use." },
 ];
 
 /**
@@ -75,9 +63,9 @@ export const WEAPONS = [
   { name: 'Black Lance', type: 'spear', hands: 2, reach: 10, count: 1, denom: 6, defense: 'md', damageType: 'Piercing', value: 300, prereq: 'Wiles[3], Fate[1]' },
   { name: 'Divine Bow', type: 'bow', hands: 2, range: 200, count: 1, denom: 6, defense: 'md', damageType: 'Piercing', value: 500, prereq: 'Wiles[3], Fate[2]' },
   // --- Cultural / example ---
-  { name: 'Shuriken', type: 'dagger', hands: 1, range: 60, count: 1, denom: 4, defense: 'td', damageType: 'Slashing', value: 10, prereq: 'Finesse[1]', note: 'On a critical hit, may give Hemorrhage at range.' },
-  { name: 'Bola', type: 'sling', hands: 1, range: 60, defense: 'pd', value: 50, prereq: 'Finesse[1]', note: 'Deals no damage. On hit, the target makes Trait Checks against 3 Pin.' },
-  { name: 'Greensword', type: 'sword', hands: 2, reach: 5, count: 2, denom: 10, defense: 'md', damageType: 'Slashing', value: 5000, prereq: 'Training: Heavy Weapons, Fate[3]', note: 'Sickly Radiation: at the start of each round you wield it, take 1D6 damage and permanently reduce your Max HP by that amount.' },
+  { cultural: true, name: 'Shuriken', type: 'dagger', hands: 1, range: 60, count: 1, denom: 4, defense: 'td', damageType: 'Slashing', value: 10, prereq: 'Finesse[1]', note: 'On a critical hit, may give Hemorrhage at range.' },
+  { cultural: true, name: 'Bola', type: 'sling', hands: 1, range: 60, defense: 'pd', value: 50, prereq: 'Finesse[1]', note: 'Deals no damage. On hit, the target makes Trait Checks against 3 Pin.' },
+  { cultural: true, name: 'Greensword', type: 'sword', hands: 2, reach: 5, count: 2, denom: 10, defense: 'md', damageType: 'Slashing', value: 5000, prereq: 'Training: Heavy Weapons, Fate[3]', note: 'Sickly Radiation: at the start of each round you wield it, take 1D6 damage and permanently reduce your Max HP by that amount.' },
 ];
 
 /**

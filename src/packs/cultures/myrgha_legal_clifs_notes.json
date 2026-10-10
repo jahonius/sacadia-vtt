@@ -1,0 +1,37 @@
+{
+  "name": "Legal Clif’s Notes",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Myrgha Inheritance: a craft or ritual. Uncommon, Air. 1 item slot (RIS Passive).</em></p><p><strong>Prerequisites:</strong> You do not have Society:Legalism[1]</p><p>A set of legal notes about the laws of the Byzantine Bureaucracy of the Myrgha. Just enough for you to get by, written by someone named Clif.</p><p><strong>Faking Legalist Lore</strong> (Passive): You have a set of documents that helps you understand the basics of Myrgha Law without actually trying. For as long as you do not have any levels of Society:Legalism and keep this scroll in your RIS, you can roll as though you have Society: Legalism[1] when rolling regarding any Myrgha laws. If you take any levels of Legalism, you realize these notes are gibberish (and who is Clif anyway?), at which point these notes stop being helpful.</p><p><em>Rulebook p.34.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "e6c6fe08e5ee4a84",
+  "_key": "!items!e6c6fe08e5ee4a84",
+  "folder": "a5e8e1cbf96cd413",
+  "sort": 80,
+  "img": "icons/sundries/books/book-embossed-bound-brown.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_legal_clifs_notes",
+      "kind": "inheritance",
+      "culture": "myrgha",
+      "inheritance": {
+        "section": "craft",
+        "rarity": "Uncommon",
+        "element": "Air",
+        "attunement": false,
+        "uses": "",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "ebee9afee51f"
+    }
+  }
+}

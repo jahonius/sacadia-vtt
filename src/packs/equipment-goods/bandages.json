@@ -1,0 +1,35 @@
+{
+  "_id": "b566edfb00ed16d8",
+  "_key": "!items!b566edfb00ed16d8",
+  "name": "Bandages",
+  "type": "gear",
+  "img": "icons/tools/medical/bandage-rough.webp",
+  "folder": "7469e6a4a14577d5",
+  "sort": 10,
+  "system": {
+    "description": "<p><strong>Bandages</strong> (Action): <em>Prerequisite: Medicine: Medic[1].</em> When you have Bandages equipped in both hands, choose one Dying target within 5ft. Roll a Medicine:Medic Check against that target. The target gains HP equal to your Medicine Check rolled, to a maximum of -1 HP (i.e., they do not recover from Dying from this). They then gain 1 Battle Fatigue. You may only use this once on each target per quick rest (i.e., the effect cannot stack). The bandages are then consumed.</p><p class=\"goods-facts\">1 Item Slot (Small, Quickdraw) · 50gc · First Aid, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "small, quickdraw",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "bandages",
+      "kind": "goods",
+      "goods": {
+        "table": "first-aid",
+        "use": true
+      },
+      "bargain": "adventuring",
+      "buildHash": "639438f3f87e"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "_id": "d3d31835cd9e8180",
+  "_key": "!items!d3d31835cd9e8180",
+  "name": "First Aid Kit (Lesser)",
+  "type": "gear",
+  "img": "icons/tools/medical/medkit-steel.webp",
+  "folder": "7469e6a4a14577d5",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>First Aid Kit</strong> (Ceremony): <em>Prerequisite: Medicine General Talent.</em> First Aid Kits have X charges. During Quick Rests, you may expend any number of charges. For each charge expended, choose one ally and roll a Medicine Check against your own Check DC. If you succeed, the ally gains 1 HP Pool to spend immediately. First Aid Kits expend all charges during a Long Rest.</p><p><strong>First Aid Kit (Lesser)</strong> (Passive): Has 1 Charge, DC14.</p><p class=\"goods-facts\">2 Item Slots · 50gc · First Aid, rulebook p.203</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "first_aid_kit_lesser",
+      "kind": "goods",
+      "goods": {
+        "table": "first-aid"
+      },
+      "bargain": "adventuring",
+      "buildHash": "f98a41ea249f"
+    }
+  }
+}

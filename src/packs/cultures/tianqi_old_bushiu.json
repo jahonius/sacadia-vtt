@@ -1,0 +1,45 @@
+{
+  "_id": "aaeadc548c554585",
+  "_key": "!items!aaeadc548c554585",
+  "name": "Old Bushiu",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-letter-tan.webp",
+  "folder": "e7c7dbab0f7b538c",
+  "sort": 30,
+  "system": {
+    "description": "<p>You speak the Old Bushiu language. You can mutually understand Bushiu, and those who speak Bushiu can understand you.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi Language",
+      "prerequisite": "Tianqi Cultural Heritage · p.59"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_old_bushiu",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "17038b2e9a09"
+    }
+  }
+}

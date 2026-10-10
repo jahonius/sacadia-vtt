@@ -1,0 +1,51 @@
+{
+  "_id": "6fc3d461c0079cd2",
+  "_key": "!items!6fc3d461c0079cd2",
+  "name": "Redwarden’s Bite",
+  "type": "ability",
+  "img": "icons/magic/unholy/hand-claw-fire-green.webp",
+  "folder": "680a7e1011642bfe",
+  "sort": 60,
+  "system": {
+    "description": "<p>&lt;M+1D3-1&gt;. Choose one enemy within 5ft of you. Attempt to give them X levels of Hemorrhage, where X is half your Proficiency, rounded up. Fate Checks negate. When you do this, gain 1D4 temporary HP for every level of Hemorrhage they take.</p>",
+    "tag": "action",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": 5,
+      "type": "ranged"
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Tianqi: Glyphwardens",
+      "prerequisite": "Tianqi Oracle · p.63"
+    },
+    "activities": [],
+    "modifiers": [],
+    "madness": {
+      "insaneOnly": false,
+      "prereq": null,
+      "gain": "1d3-1",
+      "spend": ""
+    }
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "tianqi_redwardens_bite",
+      "transcribed": true,
+      "culture": "tianqi",
+      "buildHash": "f00d1ed9c757"
+    }
+  }
+}

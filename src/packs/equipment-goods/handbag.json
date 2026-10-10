@@ -1,0 +1,35 @@
+{
+  "_id": "c6f0cfa8fbebf720",
+  "_key": "!items!c6f0cfa8fbebf720",
+  "name": "Handbag",
+  "type": "gear",
+  "img": "icons/containers/bags/satchel-leather-brown.webp",
+  "folder": "65470c303531d49b",
+  "sort": 40,
+  "system": {
+    "description": "<p><strong>Handbag</strong> (Passive): Gain 3 SIS when you have this item. You may only benefit from one Handbag at a time.</p><p class=\"goods-facts\">No Item Slot · 5gc · Stored Baggage, rulebook p.201</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 5,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 3,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "handbag",
+      "kind": "goods",
+      "goods": {
+        "table": "stored-baggage",
+        "storageGroup": "handbag"
+      },
+      "bargain": "baggage",
+      "buildHash": "11aecb09c618"
+    }
+  }
+}

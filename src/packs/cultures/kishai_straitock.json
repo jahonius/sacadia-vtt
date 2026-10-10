@@ -1,0 +1,37 @@
+{
+  "name": "Straitock",
+  "type": "gear",
+  "system": {
+    "description": "<p><em>Kishai Inheritance: a traded good. Rare, Salt. 1 item slot (Small, Quickdraw). Uses: 6.</em></p><p>A small metal contraption, filled with gears and mechanisms. It looks like it can be turned along one axis, opening a small lensed window to one side. Oh, it’s beginning to glow. Maybe put it down?</p><p><strong>Straitock</strong> (Action): You set the Straitock to In or Out from its Safety Position.</p><p><strong>Straitock (Out)</strong> (Action): (Prerequisite: Tock in the Out Position). You set the Straitock in front of you, declaring a 5ft x 30ft line from you. All creatures in the line must immediately make a Finesse Check (Check DC16) or are pushed 15ft away and knocked Prone. The Straitock lasts for one minute and cannot be turned off, but is destroyed if it takes 10 damage (AD12). Any creature that enters the line it forms moves 15ft slower against ‘the flow’ of the line, and 15ft faster moving away.</p><p><strong>Straitock (In)</strong> (Action): (Prerequisite: Tock in the In Position). You set the Straitock in front of you, declaring a 5ft x 30ft line from you. All creatures in the line must immediately make a Finesse Check (Check DC16) or are pulled 15ft towards the Tock and knocked Prone. The Straitock lasts for one minute and cannot be turned off, but is destroyed if it takes 10 damage (AD12). Any creature that enters the line it forms moves 15ft slower against ‘the flow’ of the line, and 15ft faster moving away.</p><p><em>Rulebook p.75.</em></p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 0,
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "traits": ""
+  },
+  "_id": "b004d7fcc9304423",
+  "_key": "!items!b004d7fcc9304423",
+  "folder": "56c5eedd378f4a41",
+  "sort": 40,
+  "img": "icons/containers/chest/chest-reinforced-steel-red.webp",
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_straitock",
+      "kind": "inheritance",
+      "culture": "kishai",
+      "inheritance": {
+        "section": "traded",
+        "rarity": "Rare",
+        "element": "Salt",
+        "attunement": false,
+        "uses": "6",
+        "relic": false,
+        "special": ""
+      },
+      "buildHash": "d122583d526e"
+    }
+  }
+}

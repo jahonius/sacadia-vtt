@@ -66,13 +66,15 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       secondary: professionField(0)
     });
 
-    // Character identity (book Ch. I–III): the ancestral/cultural anchors shown on the Backstory tab.
-    // Heritage is bounded to the six species; Culture and the specialized Ancestry stay free text
-    // (open-ended, Culture-gated). Age/size are Heritage attributes recorded as free text.
+    // Character identity (book Ch. I–III), on the Character tab. Heritage is one of the six; the culture and the
+    // ancestry are items the character holds (data/item-origin.mjs). `culture` / `ancestry` are their names as written
+    // before those items existed (0.3.8), shown until one is chosen. `heritageChoice` is the choice a Heritage asks for
+    // (CONFIG.SACADIA.heritageInfo: Natural Charisma, Strength of Warp). Age/size are recorded as free text.
     const heritageKeys = Object.keys(CONFIG.SACADIA.heritages);
     schema.identity = new fields.SchemaField({
       culture: new fields.StringField({ required: true, blank: true }),
       heritage: new fields.StringField({ required: true, blank: true, choices: heritageKeys }),
+      heritageChoice: new fields.StringField({ required: true, blank: true }),
       ancestry: new fields.StringField({ required: true, blank: true }),
       age: new fields.StringField({ required: true, blank: true }),
       size: new fields.StringField({ required: true, blank: true })
@@ -111,6 +113,23 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       name: new fields.StringField({ required: true, blank: true }),
       talent: new fields.StringField({ required: true, blank: true }),
       rank: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0, max: 6 }),
+      // A rank given by an ability (a cultural talent's "1 level in Economy: Appraisal, even if you do not have Economy"):
+      // its catalog id. Added and taken back with that ability (rules/identity.mjs); it needs no general talent.
+      source: new fields.StringField({ required: true, blank: true }),
+    }));
+
+    // Money (book p.180; helpers/downtime.mjs): gold coins (the book's gc, also written gp) and silver coins (sc). How many
+    // silver make a gold is a world setting.
+    schema.money = new fields.SchemaField({
+      gc: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
+      sc: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
+    });
+
+    // Influence (book p.264): favor with a group (a guild, a temple, a city's people …), gained as a Long Rest Action and
+    // spent while the group is present.
+    schema.influence = new fields.ArrayField(new fields.SchemaField({
+      group: new fields.StringField({ required: true, blank: true }),
+      value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 1, min: 0 }),
     }));
 
     // (Leveled conditions live on the shared base actor.)
@@ -241,9 +260,11 @@ export default class SacadiaCharacter extends SacadiaActorBase {
       { hpPerLevel: hp[primary.key], level: primary.level },
       { hpPerLevel: hp[secondary.key], level: secondary.level }
     ]);
-    // `bonuses.healthMax` carries owned `health.max` modifiers (Living Wall's +2/level), folded in
-    // during super.prepareDerivedData()'s `_prepareModifiers` — so it's populated by the time we get here.
-    this.health.max = Math.max(0, this.health.standardMax + (this.health.bonus ?? 0) + (this.bonuses?.healthMax ?? 0));
+    // The Heritage's HP at Level 1, added once (book p.80). `bonuses.healthMax` carries owned `health.max` modifiers
+    // (Living Wall's +2/level, Strong Constitution's +1/level), folded in during super.prepareDerivedData()'s
+    // `_prepareModifiers` — so it's populated by the time we get here.
+    this.health.heritage = CONFIG.SACADIA.heritageInfo[this.identity?.heritage]?.hp ?? 0;
+    this.health.max = Math.max(0, this.health.standardMax + this.health.heritage + (this.health.bonus ?? 0) + (this.bonuses?.healthMax ?? 0));
     if (this.health.value > this.health.max) this.health.value = this.health.max;
     // Healthy Soul (General): "Increase the number of HP pools you receive by 1."
     const healthySoul = this.parent?.items?.some((i) => i.flags?.sacadia?.catalogId === 'healthy_soul') ? 1 : 0;

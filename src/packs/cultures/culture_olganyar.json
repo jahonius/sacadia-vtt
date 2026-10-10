@@ -1,0 +1,63 @@
+{
+  "_id": "5c0c51a4907adc6c",
+  "_key": "!items!5c0c51a4907adc6c",
+  "name": "Olganyar",
+  "type": "culture",
+  "img": "icons/environment/settlement/watchtower-cliff.webp",
+  "folder": "0d8d39c83413b8e1",
+  "sort": 0,
+  "system": {
+    "description": "<p>A bitter rival of the Myrgha, the Olganyar are a close confederation of guild cities on the northern coast of the Ardus Yauga sea. Pirates by nature, the Olganyar are at once conniving and crafty. Their government rules through a group of Guilds, and the civilization inhabits the ruins of an ancient, long-dead civilization. The Olganyar are a Guild-based naval culture at the beginning of their rise to empire.</p><p>@UUID[Compendium.sacadia.cultures-journal.JournalEntry.a5092adb7f9a0e36]{The Olganyar: Cultural Tapestry, Ways and Inheritance}</p><p><em>Rulebook p.49.</em></p>",
+    "grants": [
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.3c7d0f59835786c0",
+        "option": ""
+      },
+      {
+        "uuid": "Compendium.sacadia.cultures.Item.289f02170f2cf189",
+        "option": ""
+      }
+    ],
+    "options": [],
+    "choice": "",
+    "aliases": "Olgani",
+    "laws": [
+      {
+        "name": "Digging",
+        "text": "You cannot, for any reason, dig.",
+        "optional": false
+      },
+      {
+        "name": "The Dead",
+        "text": "When an Olganyar dies, they must be cremated within 24 hours, and interred overlooking a saltwater body of water within 3 days.",
+        "optional": false
+      },
+      {
+        "name": "Exchanges",
+        "text": "You are forbidden for partaking in any exchange, deal, or sale within the limits of any Olganyar City. It is considered bad luck to do so in the city of any other culture as well (though not forbidden).",
+        "optional": false
+      },
+      {
+        "name": "Vengeance",
+        "text": "You are forbidden for acting out of vengeance, unless that vengeance is directed at Myrgha.",
+        "optional": false
+      },
+      {
+        "name": "Myrgha",
+        "text": "You must hate the Myrgha. You are not required to hate or dislike the Cunei Myrgha.",
+        "optional": false
+      }
+    ],
+    "subcultures": [],
+    "subculture": "",
+    "journal": "Compendium.sacadia.cultures-journal.JournalEntry.a5092adb7f9a0e36"
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "culture_olganyar",
+      "culture": "olganyar",
+      "buildHash": "e45412c70198"
+    }
+  }
+}

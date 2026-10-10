@@ -1,0 +1,51 @@
+{
+  "_id": "1f40b2b191203b4a",
+  "_key": "!items!1f40b2b191203b4a",
+  "name": "Strong Constitution",
+  "type": "ability",
+  "img": "icons/magic/control/buff-strength-muscle-damage-red.webp",
+  "folder": "8688b2e67e25dc8c",
+  "sort": 50,
+  "system": {
+    "description": "<p>Gain an additional 1 HP per level, beginning at level 1.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Resilient Ancestry",
+      "prerequisite": "Resilient Human Ancestry · p.82"
+    },
+    "activities": [],
+    "modifiers": [
+      {
+        "label": "Strong Constitution",
+        "target": "health.max",
+        "value": "@level",
+        "predicate": []
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "anc_strong_constitution",
+      "transcribed": true,
+      "buildHash": "5cb02e2a3891"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "_id": "f16899462aaeee84",
+  "_key": "!items!f16899462aaeee84",
+  "name": "Law of Luck",
+  "type": "ability",
+  "img": "icons/magic/control/buff-luck-fortune-gold.webp",
+  "folder": "2f681f6a8a33e822",
+  "sort": 140,
+  "system": {
+    "description": "<p>Choose one target. Attempt to give them 6 levels of Jinxing (Fate Check negates). Jinxing given this way is treated as Enduring for as long as they have it. Take however many levels of Enduring Jinxing they take.</p>",
+    "tag": "focus",
+    "costs": {
+      "ap": 1,
+      "csp": 4,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Myrgha: Morli’s Contracts",
+      "prerequisite": "Morli’s Scroll of Contract Law, Religion: Astrology[3] · p.36"
+    },
+    "activities": [
+      {
+        "type": "save",
+        "label": "",
+        "attack": {
+          "category": "",
+          "trait": "",
+          "defense": ""
+        },
+        "save": {
+          "trait": "fate",
+          "dc": null,
+          "onSuccess": "none"
+        },
+        "damage": [],
+        "inflict": []
+      }
+    ],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "myrgha_morli_law_of_luck",
+      "transcribed": true,
+      "culture": "myrgha",
+      "buildHash": "3b28564aaaf6"
+    }
+  }
+}

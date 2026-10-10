@@ -1,0 +1,39 @@
+{
+  "_id": "cf193954146b3c3f",
+  "_key": "!items!cf193954146b3c3f",
+  "name": "Lantern Hood",
+  "type": "gear",
+  "img": "icons/sundries/lights/lantern-bullseye-signal-copper.webp",
+  "folder": "00920a0bb12bf2cb",
+  "sort": 70,
+  "system": {
+    "description": "<p><strong>Lantern Hood</strong> (Passive, Ceremony): You may affix the Lantern Hood (or remove it) from a lantern during a short rest. If the lantern hood is affixed to a lantern, it gives off 40ft bright light, and 40ft dim, in a 5ft/10° cone.</p><p class=\"goods-facts\">No Item Slot · 50gc · Illumination, rulebook p.200</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 50,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 0,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "lantern_hood",
+      "kind": "goods",
+      "goods": {
+        "table": "illumination",
+        "light": {
+          "addOn": true,
+          "bright": 40,
+          "dim": 40,
+          "angle": 30
+        }
+      },
+      "buildHash": "5bd4349465e7"
+    }
+  }
+}

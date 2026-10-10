@@ -1,0 +1,46 @@
+{
+  "_id": "b7d7c2963e37d16c",
+  "_key": "!items!b7d7c2963e37d16c",
+  "name": "Intuit",
+  "type": "ability",
+  "img": "icons/magic/perception/eye-slit-orange.webp",
+  "folder": "f85ce61f9b2c8af5",
+  "sort": 20,
+  "system": {
+    "description": "<p>You may roll 1D6 and add it to any roll you make to understand someone’s intent, or to intuit their feelings.</p>",
+    "tag": "boost",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Daemonai Heritage",
+      "prerequisite": "p.85"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "her_intuit",
+      "transcribed": true,
+      "heritage": "daemonai",
+      "heritageChoice": "intuit",
+      "buildHash": "46d9c9555201"
+    }
+  }
+}

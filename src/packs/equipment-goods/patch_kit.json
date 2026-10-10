@@ -1,0 +1,35 @@
+{
+  "_id": "e421718e3e9cdbcb",
+  "_key": "!items!e421718e3e9cdbcb",
+  "name": "Patch Kit",
+  "type": "gear",
+  "img": "icons/commodities/cloth/thread-and-needle.webp",
+  "folder": "d4a9149605aa8f61",
+  "sort": 30,
+  "system": {
+    "description": "<p><strong>Patch Kit</strong> (Ceremony): <em>Prerequisite: Tailoring: Clothier[3].</em> Choose one set of Cloth Armor during a quick rest. Expend your Patch Kit. Add +1 MD to that armor until the next rest.</p><p class=\"goods-facts\">1 Item Slot · 200gc · Weapon & Armor Kits, rulebook p.206</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 200,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "patch_kit",
+      "kind": "goods",
+      "goods": {
+        "table": "kits",
+        "use": true
+      },
+      "bargain": "adventuring",
+      "buildHash": "1d672d45aded"
+    }
+  }
+}

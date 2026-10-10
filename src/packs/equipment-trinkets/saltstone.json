@@ -3,19 +3,32 @@
   "_key": "!items!5a381e83141c197d",
   "name": "Saltstone",
   "type": "gear",
-  "img": "icons/svg/chest.svg",
+  "img": "icons/commodities/stone/stone-white-quartz-ball.webp",
+  "folder": "f352357f172b4db4",
+  "sort": 90,
   "system": {
-    "description": "<p>While you have a Saltstone equipped in your RIS, gain +1 to your Check DC.</p>",
+    "description": "<p><strong>Saltstone</strong> (Passive): When you have a Saltstone equipped in your RIS, gain +1 to your Check DC.</p><p class=\"goods-facts\">2 Item Slots (RIS Passive) · 800gc · Baubles, rulebook p.207</p>",
     "quantity": 1,
     "weight": 0,
-    "value": 0
+    "value": 800,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "ris-passive",
+    "slots": 2,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
   },
   "effects": [],
   "flags": {
     "sacadia": {
       "catalogId": "saltstone",
       "kind": "trinket",
-      "buildHash": "28c75432ae1e"
+      "goods": {
+        "table": "baubles"
+      },
+      "bargain": "miscellany",
+      "buildHash": "fd1219663725"
     }
   }
 }

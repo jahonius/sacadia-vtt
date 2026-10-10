@@ -1,0 +1,45 @@
+{
+  "_id": "793244e80f36f492",
+  "_key": "!items!793244e80f36f492",
+  "name": "Kish",
+  "type": "ability",
+  "img": "icons/sundries/documents/document-letter-tan.webp",
+  "folder": "25040de22dc86ea7",
+  "sort": 40,
+  "system": {
+    "description": "<p>You speak the Kish language.</p>",
+    "tag": "passive",
+    "costs": {
+      "ap": 0,
+      "csp": 0,
+      "madness": 0,
+      "limbs": [],
+      "pool": {
+        "key": "",
+        "amount": 0,
+        "variable": false,
+        "max": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "type": ""
+    },
+    "meta": {
+      "profession": "",
+      "subpath": "Kishai Language",
+      "prerequisite": "Kishai Cultural Heritage · p.69"
+    },
+    "activities": [],
+    "modifiers": []
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "kishai_kish",
+      "transcribed": true,
+      "culture": "kishai",
+      "buildHash": "1007880fd1f7"
+    }
+  }
+}

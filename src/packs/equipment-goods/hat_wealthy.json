@@ -1,0 +1,34 @@
+{
+  "_id": "e60602457bd7ad5e",
+  "_key": "!items!e60602457bd7ad5e",
+  "name": "Hat (Wealthy)",
+  "type": "gear",
+  "img": "icons/equipment/head/hat-cocked-feather-green.webp",
+  "folder": "179b66112d2da804",
+  "sort": 100,
+  "system": {
+    "description": "<p><strong>Worn</strong> (Passive): Worn Items can be worn on your person. A Worn Item must still be placed in RIS to use, but if it is in your RIS, it is assumed that you are wearing it. If it is in your SIS, it is assumed that the item is in your bags. Many Worn items have an effect when worn.</p><p><strong>Wealthy</strong> (Passive): When you wear this item, you appear obviously wealthy. This can be helpful when interacting with rich communities, and may hinder when you attempt to interact with the poor.</p><p><strong>Hat</strong> (Passive): When worn in a RIS slot, you have protection from Bright lights from a source. Provided you are not attacking the source (or something wielding the source) of a bright light, you may ignore the Bright Condition from a single source.</p><p class=\"goods-facts\">1 Item Slot · 100gc · Clothing, rulebook p.198</p>",
+    "quantity": 1,
+    "weight": 0,
+    "value": 100,
+    "coin": "gc",
+    "equipped": false,
+    "traits": "worn, wealthy, hat",
+    "slots": 1,
+    "storage": "ris",
+    "providesSis": 0,
+    "providesRis": 0
+  },
+  "effects": [],
+  "flags": {
+    "sacadia": {
+      "catalogId": "hat_wealthy",
+      "kind": "goods",
+      "goods": {
+        "table": "clothing"
+      },
+      "bargain": "clothes",
+      "buildHash": "618a72d8e9a6"
+    }
+  }
+}
