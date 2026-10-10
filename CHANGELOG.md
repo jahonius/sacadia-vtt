@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.7
+
+- **The Breach: a prologue on the world map.** A new scene, **The Ardus Yauga**, is the rulebook's world map (v1.2 p.25),
+  for an optional opening before the fight. A **Prologue: The Road to the Wall** macro shows it to everyone, and the
+  GM Guide's new **Prologue** page has a read-aloud and the steps. It works without modules. With these two, it also
+  shows them off:
+  - **Indy Route:** the road from Tianois north past Valli Falls and Low Ballom to Chuni's Wall plays as an animated
+    route, with Selthimor riding it. A second route, *Smoke Along the Wall*, sends the alarm west from fort to fort. The
+    macro offers to add Sacadia's land travel speeds (on foot, light mount, wagon, heavy cart and mount relay, by road
+    type; rulebook p.286) to Indy Route's travel modes, so the road's tooltip gives the days it takes.
+  - **Augur: Nexus:** the macro makes Chuni's Wall a site on the map, through Nexus's API. Clicking the site steps
+    everyone into the battle map, and Nexus's Back tool returns to the map. If the world has no Nexus scene yet, the
+    map becomes it.
+
+  The map has no scale in the rulebook. The scene takes about 1 km per pixel of the rulebook's copy, which makes the
+  road about 140 km, or 35 travel hexes. The GM Guide says so and how to change it.
+
 ## 0.3.6
 
 Every choice an ability makes when you take it is now made on that ability's row on the Abilities tab, not elsewhere on
